@@ -6,12 +6,13 @@ interface ITheme {
   colors: {
     primaryFont: string;
     otherFont: string;
+    headerBG: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
     // accent: string;
     // green: string;
-    // white: string;
+    white: string;
     // grey: string;
     // lightgrey: string;
     // blueBtn: string;
@@ -22,7 +23,7 @@ interface ITheme {
     // authFormBG: string;
   };
   fontFamily: {
-    // primary: string
+    primary: string;
   };
   fontWeight: {
     // primary: number;
@@ -40,11 +41,11 @@ interface ITheme {
     // authForm: number;
   };
   borderRadius: {
-    // primary: number;
+    primary: number;
     // secondary: number
   };
   containerWidth: {
-    // desktop: number
+    desktop: number;
   };
   shadows: {
     // primary: string;
@@ -57,13 +58,14 @@ const theme: ITheme = {
   colors: {
     primaryFont: '#000000',
     otherFont: '#555555',
+    headerBG: '#001A35',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',
     // primaryFont: '#141414',
     // accent: '#0b44cd',
     // green: '#00FF00',
-    // white: '#FFFFFF',
+    white: '#FFFFFF',
     // grey: '#555759',
     // lightgrey: '#d3d3d3',
     // blueBtn: '#7fd1ff',
@@ -74,7 +76,7 @@ const theme: ITheme = {
     // authFormBG: '#fcfcfc',
   },
   fontFamily: {
-    // primaryFontFamily: 'Manrope'
+    primary: 'Manrope',
   },
   fontWeight: {
     other: 400,
@@ -90,11 +92,11 @@ const theme: ITheme = {
     // authForm: 32,
   },
   borderRadius: {
-    // primary: 8,
-    // secondary: 4,
+    primary: 4,
+    // secondary: 8,
   },
   containerWidth: {
-    // desktop: 1200
+    desktop: 1200,
   },
   shadows: {
     // primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
