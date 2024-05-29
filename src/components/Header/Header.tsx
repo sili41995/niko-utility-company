@@ -6,8 +6,8 @@ import { IoMdSettings } from 'react-icons/io';
 import {
   Address,
   BtnTitle,
-  Container,
   Content,
+  ContentWrap,
   Logo,
   Name,
   Nav,
@@ -18,6 +18,7 @@ import {
 } from './Headr.styled';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
+import Container from '../Container';
 
 const Header: FC = () => {
   const title = 'РОЗРАХУНКОВИй ЦЕНТР';
@@ -30,22 +31,24 @@ const Header: FC = () => {
   return (
     <StyledHeader>
       <Container>
-        <Content>
-          <Nav>
-            <Link to={PagePaths.root}>
-              <Logo src={logo} alt='logo' width={86} height={86} />
-            </Link>
-          </Nav>
-          <TitleWrap>
-            <Title>{title}</Title>
-            <Name>КП "Міське паркове господарство"</Name>
-            <Address>Дніпропетровська область, м. Нікополь</Address>
-          </TitleWrap>
-        </Content>
-        <SettingsBtn type='button' onClick={onSettingsBtnClick}>
-          <IoMdSettings size={IconSizes.primary} />
-          <BtnTitle>Налаштування</BtnTitle>
-        </SettingsBtn>
+        <ContentWrap>
+          <Content>
+            <Nav>
+              <Link to={PagePaths.root}>
+                <Logo src={logo} alt='logo' width={86} height={86} />
+              </Link>
+            </Nav>
+            <TitleWrap>
+              <Title>{title}</Title>
+              <Name>КП "Міське паркове господарство"</Name>
+              <Address>Дніпропетровська область, м. Нікополь</Address>
+            </TitleWrap>
+          </Content>
+          <SettingsBtn type='button' onClick={onSettingsBtnClick}>
+            <IoMdSettings size={IconSizes.primary} />
+            <BtnTitle>Налаштування</BtnTitle>
+          </SettingsBtn>
+        </ContentWrap>
       </Container>
     </StyledHeader>
   );

@@ -4,9 +4,10 @@ declare module '@emotion/react' {
 
 interface ITheme {
   colors: {
-    primaryFont: string;
+    black: string;
     otherFont: string;
     headerBG: string;
+    body: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -56,9 +57,10 @@ interface ITheme {
 
 const theme: ITheme = {
   colors: {
-    primaryFont: '#000000',
+    black: '#000000',
     otherFont: '#555555',
     headerBG: '#001A35',
+    body: '#e5e5e5',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',

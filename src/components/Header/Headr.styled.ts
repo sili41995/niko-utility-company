@@ -6,16 +6,10 @@ export const StyledHeader = styled.header`
   padding-bottom: ${({ theme }) => theme.padding.container}px;
 `;
 
-export const Container = styled.div`
+export const ContentWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${({ theme }) =>
-    theme.containerWidth.desktop + theme.padding.container * 2}px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: ${({ theme }) => theme.padding.container}px;
-  padding-right: ${({ theme }) => theme.padding.container}px;
 `;
 
 export const Content = styled.div`
