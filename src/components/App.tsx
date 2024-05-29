@@ -4,8 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout';
 import PublicRoute from './PublicRoute';
 import Loader from './Loader';
+import PrivateRoute from './PrivateRoute';
 
 const SignInPage = lazy(() => import('@/pages/SignInPage'));
+const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 const App: FC = () => {
@@ -35,6 +37,10 @@ const App: FC = () => {
         <Route
           path={PagePaths.signInPath}
           element={<PublicRoute restricted element={<SignInPage />} />}
+        />
+        <Route
+          path={PagePaths.dashboard}
+          element={<PrivateRoute element={<DashboardPage />} />}
         />
         <Route path='*' element={<PublicRoute element={<NotFoundPage />} />} />
       </Route>

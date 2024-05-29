@@ -9,6 +9,7 @@ const enum PagePaths {
   oneOffJobs = '/one-off-jobs',
   materials = '/materials',
   documents = '/documents',
+  dashboard = '/dashboard',
 }
 
 export default PagePaths;
