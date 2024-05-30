@@ -3,6 +3,8 @@ import { MouseEvent } from 'react';
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
+export type Func = () => void;
+
 export interface INavSection {
   path: PagePaths;
   title: string;

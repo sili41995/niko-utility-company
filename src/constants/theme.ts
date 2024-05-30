@@ -8,10 +8,11 @@ interface ITheme {
     otherFont: string;
     headerBG: string;
     body: string;
+    navSectionItem: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
-    // accent: string;
+    accent: string;
     // green: string;
     white: string;
     // grey: string;
@@ -43,13 +44,13 @@ interface ITheme {
   };
   borderRadius: {
     primary: number;
-    // secondary: number
+    secondary: number;
   };
   containerWidth: {
     desktop: number;
   };
   shadows: {
-    // primary: string;
+    primary: string;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -61,11 +62,12 @@ const theme: ITheme = {
     otherFont: '#555555',
     headerBG: '#001A35',
     body: '#e5e5e5',
+    navSectionItem: 'rgba(137, 137, 137, 0.43)',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',
     // primaryFont: '#141414',
-    // accent: '#0b44cd',
+    accent: '#0b44cd',
     // green: '#00FF00',
     white: '#FFFFFF',
     // grey: '#555759',
@@ -95,13 +97,13 @@ const theme: ITheme = {
   },
   borderRadius: {
     primary: 4,
-    // secondary: 8,
+    secondary: 8,
   },
   containerWidth: {
     desktop: 1200,
   },
   shadows: {
-    // primaryShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+    primary: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
   },
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,

@@ -1,19 +1,28 @@
 import { FC } from 'react';
 import { IProps } from './NavSections.types';
 import { Link } from 'react-router-dom';
+import {
+  Desc,
+  ListItem,
+  SectionsList,
+  TittleWrap,
+  Title,
+} from './NavSections.styled';
 
 const NavSections: FC<IProps> = ({ navSections }) => {
   return (
-    <ul>
+    <SectionsList>
       {navSections.map(({ desc, path, title }) => (
-        <li>
+        <ListItem key={title}>
           <Link to={path}>
-            <span>{title}</span>
-            <span>{desc}</span>
+            <TittleWrap>
+              <Title>{title}</Title>
+            </TittleWrap>
+            <Desc>{desc}</Desc>
           </Link>
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </SectionsList>
   );
 };
 
