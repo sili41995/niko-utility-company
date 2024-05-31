@@ -12,3 +12,15 @@ export interface INavSection {
 }
 
 export type NavSections = INavSection[];
+
+export interface IPathes {
+  [key: string]: string;
+  [PagePaths.houses]: string;
+  [PagePaths.enterprises]: string;
+  [PagePaths.subscribers]: string;
+  [PagePaths.counters]: string;
+  [PagePaths.accounting]: string;
+  [PagePaths.oneOffJobs]: string;
+  [PagePaths.materials]: string;
+  [PagePaths.documents]: string;
+}

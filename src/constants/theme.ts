@@ -9,12 +9,17 @@ interface ITheme {
     headerBG: string;
     body: string;
     navSectionItem: string;
+    housesSection: string;
+    subscribersSection: string;
+    accountingSection: string;
+    documentsSection: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
     accent: string;
     // green: string;
     white: string;
+    navSectionDesc: string;
     // grey: string;
     // lightgrey: string;
     // blueBtn: string;
@@ -63,6 +68,11 @@ const theme: ITheme = {
     headerBG: '#001A35',
     body: '#e5e5e5',
     navSectionItem: 'rgba(137, 137, 137, 0.43)',
+    housesSection: '#ba5b50',
+    subscribersSection: '#ee9646',
+    accountingSection: '#3CB371',
+    documentsSection: '#994499',
+    navSectionDesc: '#343a40',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',

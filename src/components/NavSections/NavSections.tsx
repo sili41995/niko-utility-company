@@ -7,21 +7,31 @@ import {
   SectionsList,
   TittleWrap,
   Title,
+  DescWrap,
 } from './NavSections.styled';
+import { getNavSectionDesc } from '@/utils';
 
 const NavSections: FC<IProps> = ({ navSections }) => {
   return (
     <SectionsList>
-      {navSections.map(({ desc, path, title }) => (
-        <ListItem key={title}>
-          <Link to={path}>
-            <TittleWrap>
-              <Title>{title}</Title>
-            </TittleWrap>
-            <Desc>{desc}</Desc>
-          </Link>
-        </ListItem>
-      ))}
+      {navSections.map(({ desc, path, title }) => {
+        const description = getNavSectionDesc(desc);
+
+        return (
+          <ListItem key={title}>
+            <Link to={path}>
+              <TittleWrap path={path}>
+                <Title>{title}</Title>
+              </TittleWrap>
+              <DescWrap>
+                {description.map((desc) => (
+                  <Desc key={desc}>{desc}</Desc>
+                ))}
+              </DescWrap>
+            </Link>
+          </ListItem>
+        );
+      })}
     </SectionsList>
   );
 };

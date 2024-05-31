@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { IStyledProps } from './NavSections.types';
+import { setNavSectionTitleWrapBGColor } from '@/utils';
 
 export const SectionsList = styled.ul`
   display: flex;
@@ -13,12 +15,14 @@ export const ListItem = styled.li`
   border: 0.5px solid ${({ theme }) => theme.colors.navSectionItem};
   border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  overflow: hidden;
 
   & a {
     display: flex;
     align-items: center;
     gap: ${({ theme }) => theme.spacing(5)};
     padding: ${({ theme }) => theme.spacing(3)};
+    background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.black};
   }
 
@@ -28,16 +32,34 @@ export const ListItem = styled.li`
   }
 `;
 
-export const TittleWrap = styled.span`
+export const TittleWrap = styled.span<IStyledProps>`
   flex-shrink: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 220px;
   min-height: 80px;
   padding: ${({ theme }) => theme.spacing(4)};
-  outline: 1px solid greenyellow;
+  background-color: ${({ path }) => setNavSectionTitleWrapBGColor(path)};
 `;
 
-export const Title = styled.span``;
+export const Title = styled.span`
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+`;
 
-export const Desc = styled.span``;
+export const DescWrap = styled.span`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(0.5)};
+`;
+
+export const Desc = styled.span`
+  color: ${({ theme }) => theme.colors.navSectionDesc};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+`;
