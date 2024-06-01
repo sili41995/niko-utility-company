@@ -4,6 +4,7 @@ import { useSetSearchParams } from '@/hooks';
 import { SearchParamsKeys } from '@/constants';
 import { Container } from './Pagination.styled';
 import { IProps } from './Pagination.types';
+import PaginationBar from '../PaginationBar';
 
 const Pagination: FC<IProps> = ({ count, totalCount }) => {
   const { searchParams } = useSetSearchParams();
@@ -14,6 +15,7 @@ const Pagination: FC<IProps> = ({ count, totalCount }) => {
   return (
     <Container>
       <PaginationTitle start={start} end={end} totalCount={totalCount} />
+      <PaginationBar />
     </Container>
   );
 };
