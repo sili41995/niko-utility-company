@@ -48,3 +48,9 @@ export interface IGetPaginationBarSettings {
   isShowPrevTemplateBtn: boolean;
   isLastPage: boolean;
 }
+
+export interface ISetBtnDisplayProps {
+  currentPage?: number;
+  page?: number;
+  step?: number;
+}

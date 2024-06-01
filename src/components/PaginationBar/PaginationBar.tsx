@@ -1,8 +1,10 @@
 import { usePaginationBar } from '@/hooks';
 import { FC } from 'react';
 import PaginationBarBtn from '../PaginationBarBtn';
+import { Button, Item, List, TemplateItem } from './PaginationBar.styled';
+import { IProps } from './PaginationBar.types';
 
-const PaginationBar: FC = () => {
+const PaginationBar: FC<IProps> = ({ totalCount }) => {
   const {
     isBackNavBtnDisable,
     onPrevPageBtnClick,
@@ -21,7 +23,7 @@ const PaginationBar: FC = () => {
     isNextNavBtnDisable,
     onNextPageBtnClick,
     step,
-  } = usePaginationBar({});
+  } = usePaginationBar({ totalCount });
 
   return (
     <List>
@@ -40,7 +42,16 @@ const PaginationBar: FC = () => {
           <Button disabled>...</Button>
         </TemplateItem>
       )}
-      {isValidPage && pageNumbers.map((number) => <PaginationBarBtn />)}
+      {isValidPage &&
+        pageNumbers.map((number) => (
+          <PaginationBarBtn
+            key={number}
+            number={number}
+            currentPage={currentPage}
+            step={step}
+            setPage={setPage}
+          />
+        ))}
       {isShowNextTemplateBtn && (
         <TemplateItem>
           <Button disabled>...</Button>

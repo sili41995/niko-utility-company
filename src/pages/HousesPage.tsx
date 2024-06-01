@@ -8,7 +8,6 @@ import { GeneralParams } from '@/constants';
 const HousesPage: FC = () => {
   const count = Number(GeneralParams.recordLimit);
   const totalCount = 200;
-  //  const count = ;
   //  const totalCount = ;
 
   return (

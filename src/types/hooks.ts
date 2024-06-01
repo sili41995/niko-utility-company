@@ -17,6 +17,8 @@ export interface IUsePaginationBarProps {
   step?: number;
 }
 
+export type SetPage = (data: IOnPageBtnClickProps) => void;
+
 export interface IUsePaginationBar {
   isBackNavBtnDisable: boolean;
   isShowFirstPageBtn: boolean;
@@ -33,7 +35,7 @@ export interface IUsePaginationBar {
   step: number;
   onPrevPageBtnClick: (e: BtnClickEvent) => void;
   onFirstPageBtnClick: (e: BtnClickEvent) => void;
-  setPage: (data: IOnPageBtnClickProps) => void;
+  setPage: SetPage;
   onLastPageBtnClick: (e: BtnClickEvent) => void;
   onNextPageBtnClick: (e: BtnClickEvent) => void;
 }

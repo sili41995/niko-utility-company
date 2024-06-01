@@ -5,3 +5,5 @@ export { default as navSections } from './navSections';
 export { default as AriaLabels } from './ariaLabels';
 export { default as GeneralParams } from './generalParams';
 export { default as SearchParamsKeys } from './searchParamsKeys';
+export { default as ClassNames } from './classNames';
+export { default as DisplayProp } from './displayProp';
