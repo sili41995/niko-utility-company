@@ -1,4 +1,4 @@
-import { Houses } from '@/types/types';
+import { Houses } from '@/types/data';
 
 export const houses: Houses = [
   {

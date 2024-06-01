@@ -11,7 +11,7 @@ export const TableHeadRow = styled.tr`
 `;
 
 export const TableHeader = styled.th`
-  padding: ${({ theme }) => theme.spacing()};
+  padding: ${({ theme }) => theme.spacing(4)};
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 12px;
