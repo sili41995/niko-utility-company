@@ -7,3 +7,5 @@ export { default as GeneralParams } from './generalParams';
 export { default as SearchParamsKeys } from './searchParamsKeys';
 export { default as ClassNames } from './classNames';
 export { default as DisplayProp } from './displayProp';
+export { default as InputTypes } from './inputTypes';
+export { default as SettingsCategories } from './settingsCategories';

@@ -19,7 +19,7 @@ import {
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
 import Container from '../Container';
-import ModalWin from '../ModalWin';
+import SettingsModalWin from '../SettingsModalWin';
 
 const Header: FC = () => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
@@ -58,11 +58,7 @@ const Header: FC = () => {
           </ContentWrap>
         </Container>
       </StyledHeader>
-      {showModalWin && (
-        <ModalWin setModalWinState={setModalWinState}>
-          <div>1111111111</div>
-        </ModalWin>
-      )}
+      {showModalWin && <SettingsModalWin setModalWinState={setModalWinState} />}
     </>
   );
 };

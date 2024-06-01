@@ -14,7 +14,6 @@ export const Backdrop = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 540px;
   position: relative;
   border-radius: 24px;
   background-color: #ffffff;

@@ -1,7 +1,11 @@
 import { PagePaths } from '@/constants';
-import { MouseEvent } from 'react';
+import { ChangeEvent, MouseEvent } from 'react';
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
+
+export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
+
+export type InputChangeFunc = (e: InputChangeEvent) => void;
 
 export type Func = () => void;
 
