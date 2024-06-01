@@ -10,6 +10,7 @@ const SignInPage = lazy(() => import('@/pages/SignInPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const HousesPage = lazy(() => import('@/pages/HousesPage'));
+const SubscribersPage = lazy(() => import('@/pages/SubscribersPage'));
 
 const App: FC = () => {
   // const isRefreshing = useAuthStore(selectIsRefreshing);
@@ -42,10 +43,14 @@ const App: FC = () => {
         <Route
           path={PagePaths.dashboard}
           element={<PrivateRoute element={<DashboardPage />} />}
-        />{' '}
+        />
         <Route
           path={PagePaths.houses}
           element={<PrivateRoute element={<HousesPage />} />}
+        />
+        <Route
+          path={PagePaths.subscribers}
+          element={<PrivateRoute element={<SubscribersPage />} />}
         />
         <Route path='*' element={<PublicRoute element={<NotFoundPage />} />} />
       </Route>

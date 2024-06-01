@@ -10,6 +10,7 @@ export const StyledFooter = styled.footer`
 export const ContentWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(5)};
 `;
 

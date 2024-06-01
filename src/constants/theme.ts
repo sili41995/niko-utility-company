@@ -13,6 +13,7 @@ interface ITheme {
     subscribersSection: string;
     accountingSection: string;
     documentsSection: string;
+    tableData: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -20,6 +21,7 @@ interface ITheme {
     // green: string;
     white: string;
     navSectionDesc: string;
+    tableHeader: string;
     // grey: string;
     // lightgrey: string;
     // blueBtn: string;
@@ -73,6 +75,8 @@ const theme: ITheme = {
     accountingSection: '#3CB371',
     documentsSection: '#994499',
     navSectionDesc: '#343a40',
+    tableHeader: '#0051a3',
+    tableData: ' #212529',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',

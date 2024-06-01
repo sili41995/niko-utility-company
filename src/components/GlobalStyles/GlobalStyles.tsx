@@ -12,6 +12,7 @@ const GlobalStyles: FC = () => (
           'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow-y: scroll;
       }
 
       code {

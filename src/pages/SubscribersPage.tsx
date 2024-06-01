@@ -1,16 +1,16 @@
 import Container from '@/components/Container';
 import Section from '@/components/Section';
-import HousesTable from '@/components/HousesTable';
 import { FC } from 'react';
+import SubscribersTable from '@/components/SubscribersTable';
 
-const HousesPage: FC = () => {
+const SubscribersPage: FC = () => {
   return (
     <Section paddingBottom={24} paddingTop={24}>
       <Container>
-        <HousesTable />
+        <SubscribersTable />
       </Container>
     </Section>
   );
 };
 
-export default HousesPage;
+export default SubscribersPage;

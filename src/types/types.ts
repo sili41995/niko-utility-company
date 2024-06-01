@@ -25,7 +25,7 @@ export interface IPathes {
   [PagePaths.documents]: string;
 }
 
-export interface IDataItem {
+export interface IHouse {
   location: string;
   street: string;
   houseNumber: string;
@@ -39,23 +39,20 @@ export interface IDataItem {
   rateSecondary: number;
 }
 
-export type Data = Partial<IDataItem>[];
+export type Houses = IHouse[];
 
-export type Titles = Array<keyof Partial<IDataItem>>;
+export interface ISubscriber {
+  subscriberAccount: string;
+  accountType: string;
+  location: string;
+  street: string;
+  houseNumber: number;
+  apartmentNumber: number;
+  typeOfRoom: string;
+  parameters: string[];
+  services: string;
+  accountBalance: number;
+  consumers: number;
+}
 
-export type HouseItem = Pick<
-  IDataItem,
-  | 'location'
-  | 'street'
-  | 'houseNumber'
-  | 'floors'
-  | 'exploitation'
-  | 'houseType'
-  | 'house'
-  | 'territory'
-  | 'services'
-  | 'rate'
-  | 'rateSecondary'
->;
-
-export type Houses = HouseItem[];
+export type Subscribers = ISubscriber[];
