@@ -8,4 +8,5 @@ export interface IProps {
   value: SettingsCategories;
   onChange: InputChangeFunc;
   name: SettingsCategories;
+  title: string;
 }

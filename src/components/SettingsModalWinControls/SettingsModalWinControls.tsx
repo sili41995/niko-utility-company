@@ -2,6 +2,7 @@ import { FC } from 'react';
 import SettingsModalWinBtn from '../SettingsModalWinBtn';
 import { InputTypes, SettingsCategories } from '@/constants';
 import { IProps } from './SettingsModalWinControls.types';
+import { Container, Form } from './SettingsModalWinControls.styled';
 
 const SettingsModalWinControls: FC<IProps> = ({
   isSettlementsCategory,
@@ -10,15 +11,16 @@ const SettingsModalWinControls: FC<IProps> = ({
   isUsersCategory,
   isGeneralSettingsCategory,
   onChange,
-}) => {
-  return (
-    <form>
+}) => (
+  <Container>
+    <Form>
       <SettingsModalWinBtn
         checked={isSettlementsCategory}
         name={SettingsCategories.name}
         onChange={onChange}
         type={InputTypes.radio}
         value={SettingsCategories.settlements}
+        title='Населені пункти'
       />
       <SettingsModalWinBtn
         checked={isServiceListCategory}
@@ -26,6 +28,7 @@ const SettingsModalWinControls: FC<IProps> = ({
         onChange={onChange}
         type={InputTypes.radio}
         value={SettingsCategories.serviceList}
+        title='Перелік послуг'
       />
       <SettingsModalWinBtn
         checked={isCurrentServicesCategory}
@@ -33,6 +36,7 @@ const SettingsModalWinControls: FC<IProps> = ({
         onChange={onChange}
         type={InputTypes.radio}
         value={SettingsCategories.currentServices}
+        title='Поточні послуги'
       />
       <SettingsModalWinBtn
         checked={isUsersCategory}
@@ -40,6 +44,7 @@ const SettingsModalWinControls: FC<IProps> = ({
         onChange={onChange}
         type={InputTypes.radio}
         value={SettingsCategories.users}
+        title='Користувачі'
       />
       <SettingsModalWinBtn
         checked={isGeneralSettingsCategory}
@@ -47,9 +52,10 @@ const SettingsModalWinControls: FC<IProps> = ({
         onChange={onChange}
         type={InputTypes.radio}
         value={SettingsCategories.generalSettings}
+        title='Загальні налаштування'
       />
-    </form>
-  );
-};
+    </Form>
+  </Container>
+);
 
 export default SettingsModalWinControls;

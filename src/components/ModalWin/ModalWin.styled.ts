@@ -15,9 +15,9 @@ export const Backdrop = styled.div`
 
 export const Container = styled.div`
   position: relative;
-  border-radius: 24px;
+  border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
   background-color: #ffffff;
-  padding: ${({ theme }) => theme.spacing(10)};
+  overflow: hidden;
 `;
 
 export const CloseBtn = styled.button`

@@ -7,10 +7,11 @@ const SettingsModalWinBtn: FC<IProps> = ({
   value,
   onChange,
   name,
+  title,
 }) => {
   return (
     <label>
-      <span></span>
+      <span>{title}</span>
       <input
         type={type}
         checked={checked}
