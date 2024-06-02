@@ -1,6 +1,12 @@
 import { FC } from 'react';
 import { IProps } from './ServiceListItem.types';
-import { AddServiceBtn, Title, TitleWrap } from './ServiceListItem.styled';
+import {
+  AddServiceBtn,
+  List,
+  ListItem,
+  Title,
+  TitleWrap,
+} from './ServiceListItem.styled';
 import { IoIosAdd } from 'react-icons/io';
 import { IconSizes } from '@/constants';
 import { InputChangeEvent } from '@/types/types';
@@ -18,22 +24,22 @@ const ServiceListItem: FC<IProps> = ({ services, title }) => {
           <IoIosAdd size={IconSizes.secondary} />
         </AddServiceBtn>
       </TitleWrap>
-      <ul>
+      <List>
         {services.map(({ id, isActive, name, category }) => {
           console.log(isActive);
           return (
-            <li key={id}>
-              <p>{name}</p>
+            <ListItem key={id}>
+              <Title>{name}</Title>
               <input
                 type='checkbox'
                 name={category}
                 checked={isActive}
                 onChange={onChange}
               />
-            </li>
+            </ListItem>
           );
         })}
-      </ul>
+      </List>
     </>
   );
 };

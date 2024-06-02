@@ -18,6 +18,7 @@ interface ITheme {
     servicesTitle: string;
     addBntIcon: string;
     addBtnIconAccent: string;
+    serviceBG: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -85,6 +86,7 @@ const theme: ITheme = {
     servicesTitle: '#dddfeb',
     addBntIcon: '#007bff',
     addBtnIconAccent: '#0056b3',
+    serviceBG: '#eeeeee',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',

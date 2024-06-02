@@ -30,3 +30,17 @@ export const AddServiceBtn = styled.button`
     color: ${({ theme }) => theme.colors.addBtnIconAccent};
   }
 `;
+
+export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+`;
+
+export const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.serviceBG};
+  padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};
+`;
