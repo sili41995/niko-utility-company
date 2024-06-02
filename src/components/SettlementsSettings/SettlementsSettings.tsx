@@ -1,15 +1,14 @@
 import { FC } from 'react';
 import {
-  Container,
   ListItem,
   Locality,
   SettlementsList,
   Title,
-} from './SettlementsSettings';
+} from './SettlementsSettings.styled';
 
 const SettlementsSettings: FC = () => {
   return (
-    <Container>
+    <>
       <Title>Підприємство працює з населеними пунктами:</Title>
       <SettlementsList>
         <ListItem>
@@ -18,7 +17,7 @@ const SettlementsSettings: FC = () => {
           </Locality>
         </ListItem>
       </SettlementsList>
-    </Container>
+    </>
   );
 };
 

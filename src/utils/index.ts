@@ -3,3 +3,4 @@ export { default as setNavSectionTitleWrapBGColor } from './setNavSectionTitleWr
 export { default as getNavSectionDesc } from './getNavSectionDesc';
 export { default as getPageNumbers } from './getPageNumbers';
 export { default as getPaginationBarSettings } from './getPaginationBarSettings';
+export { default as groupServicesByCategory } from './groupServicesByCategory';

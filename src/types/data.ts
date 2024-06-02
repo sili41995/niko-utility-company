@@ -1,3 +1,5 @@
+import { ServiceCategories } from '@/constants';
+
 export interface IHouse {
   location: string;
   street: string;
@@ -38,3 +40,12 @@ export interface IDocument {
 }
 
 export type Documents = IDocument[];
+
+export interface IService {
+  id: number;
+  name: string;
+  category: ServiceCategories;
+  isActive: boolean;
+}
+
+export type Services = IService[];

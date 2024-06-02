@@ -15,6 +15,9 @@ interface ITheme {
     documentsSection: string;
     tableData: string;
     checkedSettingsBtn: string;
+    servicesTitle: string;
+    addBntIcon: string;
+    addBtnIconAccent: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -79,6 +82,9 @@ const theme: ITheme = {
     tableHeader: '#0051a3',
     tableData: ' #212529',
     checkedSettingsBtn: ' rgb(133, 135, 150)',
+    servicesTitle: '#dddfeb',
+    addBntIcon: '#007bff',
+    addBtnIconAccent: '#0056b3',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',
