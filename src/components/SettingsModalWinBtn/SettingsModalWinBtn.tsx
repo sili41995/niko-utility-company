@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './SettingsModalWinBtn.types';
+import { Container, Title } from './SettingsModalWinBtn.styled';
 
 const SettingsModalWinBtn: FC<IProps> = ({
   type,
@@ -10,8 +11,8 @@ const SettingsModalWinBtn: FC<IProps> = ({
   title,
 }) => {
   return (
-    <label>
-      <span>{title}</span>
+    <Container>
+      <Title>{title}</Title>
       <input
         type={type}
         checked={checked}
@@ -19,7 +20,7 @@ const SettingsModalWinBtn: FC<IProps> = ({
         onChange={onChange}
         name={name}
       />
-    </label>
+    </Container>
   );
 };
 

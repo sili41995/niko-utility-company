@@ -2,7 +2,7 @@ import { FC } from 'react';
 import SettingsModalWinBtn from '../SettingsModalWinBtn';
 import { InputTypes, SettingsCategories } from '@/constants';
 import { IProps } from './SettingsModalWinControls.types';
-import { Container, Form } from './SettingsModalWinControls.styled';
+import { Container, Form, Title } from './SettingsModalWinControls.styled';
 
 const SettingsModalWinControls: FC<IProps> = ({
   isSettlementsCategory,
@@ -13,6 +13,7 @@ const SettingsModalWinControls: FC<IProps> = ({
   onChange,
 }) => (
   <Container>
+    <Title>Налаштування</Title>
     <Form>
       <SettingsModalWinBtn
         checked={isSettlementsCategory}

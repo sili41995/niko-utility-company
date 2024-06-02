@@ -14,6 +14,7 @@ interface ITheme {
     accountingSection: string;
     documentsSection: string;
     tableData: string;
+    checkedSettingsBtn: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -77,6 +78,7 @@ const theme: ITheme = {
     navSectionDesc: '#343a40',
     tableHeader: '#0051a3',
     tableData: ' #212529',
+    checkedSettingsBtn: ' rgb(133, 135, 150)',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',
