@@ -6,11 +6,16 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(18, 20, 23, 0.5);
+  overflow-y: scroll;
+`;
+
+export const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(18, 20, 23, 0.5);
-  overflow-y: scroll;
+  min-height: 100vh;
+  padding: 20px;
 `;
 
 export const Container = styled.div`

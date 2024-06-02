@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { CgClose } from 'react-icons/cg';
 import { AriaLabels, IconSizes } from '@/constants';
 import { IProps } from './ModalWin.types';
-import { Backdrop, CloseBtn, Container } from './ModalWin.styled';
+import { Backdrop, CloseBtn, Container, Section } from './ModalWin.styled';
 
 const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {
   const modalRoot = document.querySelector('#modal-root');
@@ -34,12 +34,17 @@ const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {
     modalRoot &&
     createPortal(
       <Backdrop onClick={hideModalWin}>
-        <Container>
-          <CloseBtn aria-label={AriaLabels.closeBtn} onClick={setModalWinState}>
-            <CgClose size={IconSizes.secondary} />
-          </CloseBtn>
-          {children}
-        </Container>
+        <Section>
+          <Container>
+            <CloseBtn
+              aria-label={AriaLabels.closeBtn}
+              onClick={setModalWinState}
+            >
+              <CgClose size={IconSizes.secondary} />
+            </CloseBtn>
+            {children}
+          </Container>
+        </Section>
       </Backdrop>,
       modalRoot
     )
