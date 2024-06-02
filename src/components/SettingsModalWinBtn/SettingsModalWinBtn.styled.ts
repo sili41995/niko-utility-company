@@ -17,5 +17,5 @@ export const Container = styled.label`
 export const Title = styled.span`
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: ${({ theme }) => theme.fontSize.primary};
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
 `;

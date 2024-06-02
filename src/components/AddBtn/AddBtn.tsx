@@ -1,10 +1,14 @@
-import React, { FC } from 'react';
+import { IconSizes } from '@/constants';
+import { FC } from 'react';
+import { FcPlus } from 'react-icons/fc';
+import { IProps } from './AddBtn.types';
+import { BtnTitle, Button } from './AddBtn.styled';
 
 const AddBtn: FC<IProps> = ({ title, onClick }) => (
-  <button type='button' onClick={onClick}>
-    <span>{title}</span>
+  <Button type='button' onClick={onClick}>
+    <BtnTitle>{title}</BtnTitle>
     <FcPlus size={IconSizes.secondary} />
-  </button>
+  </Button>
 );
 
 export default AddBtn;

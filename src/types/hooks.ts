@@ -1,5 +1,5 @@
 import { SetURLSearchParams } from 'react-router-dom';
-import { BtnClickEvent, IOnPageBtnClickProps } from './types';
+import { IOnPageBtnClickProps, OnBtnClickFunc } from './types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -33,9 +33,9 @@ export interface IUsePaginationBar {
   currentPage: number;
   lastPage: number;
   step: number;
-  onPrevPageBtnClick: (e: BtnClickEvent) => void;
-  onFirstPageBtnClick: (e: BtnClickEvent) => void;
+  onPrevPageBtnClick: OnBtnClickFunc;
+  onFirstPageBtnClick: OnBtnClickFunc;
   setPage: SetPage;
-  onLastPageBtnClick: (e: BtnClickEvent) => void;
-  onNextPageBtnClick: (e: BtnClickEvent) => void;
+  onLastPageBtnClick: OnBtnClickFunc;
+  onNextPageBtnClick: OnBtnClickFunc;
 }

@@ -7,6 +7,8 @@ export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 
 export type InputChangeFunc = (e: InputChangeEvent) => void;
 
+export type OnBtnClickFunc = (e: BtnClickEvent) => void;
+
 export type Func = () => void;
 
 export interface INavSection {

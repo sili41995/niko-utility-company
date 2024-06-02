@@ -1,17 +1,20 @@
 import { FC } from 'react';
 import SettingsSectionTitle from '../SettingsSectionTitle';
-import { FcPlus } from 'react-icons/fc';
-import { IconSizes } from '@/constants';
+import AddBtn from '../AddBtn';
+import { BtnClickEvent } from '@/types/types';
+import { Container, Title } from './CurrentServicesSettings.styled';
 
 const CurrentServicesSettings: FC = () => {
+  const onAddBntClick = (e: BtnClickEvent): void => {
+    console.log(e);
+    // console.log(e);
+  };
+
   return (
-    <>
+    <Container>
       <SettingsSectionTitle title='Підприємство надає послуги:' />
-      <button type='button'>
-        <span>Нова подія</span>
-        <FcPlus size={IconSizes.secondary} />
-      </button>
-      <p>Поточні послуги:</p>
+      <AddBtn title='Нова подія' onClick={onAddBntClick} />
+      <Title>Поточні послуги:</Title>
       <ul>
         <li>
           <p>Останні зміни:</p>
@@ -34,13 +37,13 @@ const CurrentServicesSettings: FC = () => {
           </li>
           <li>
             <p>Вивезення побутових відходів (п/с)</p>
-            <li>
-              <p>Вивезення побутових відходів (за 1м3)</p>
-            </li>
+          </li>
+          <li>
+            <p>Вивезення побутових відходів (за 1м3)</p>
           </li>
         </ul>
       </div>
-    </>
+    </Container>
   );
 };
 

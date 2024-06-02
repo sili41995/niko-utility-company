@@ -11,7 +11,7 @@ export const TitleWrap = styled.div`
 export const Title = styled.p`
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: ${({ theme }) => theme.fontSize.primary};
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: 400;
 `;
 
