@@ -12,7 +12,7 @@ export const Title = styled.p`
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;
 
 export const AddServiceBtn = styled.button`

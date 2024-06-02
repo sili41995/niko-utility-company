@@ -40,9 +40,7 @@ interface ITheme {
     primary: string;
   };
   fontWeight: {
-    // primary: number;
-    // secondary: number;
-    other: number;
+    primary: number;
   };
   fontSize: {
     primary: number;
@@ -107,7 +105,7 @@ const theme: ITheme = {
     primary: 'Manrope',
   },
   fontWeight: {
-    other: 400,
+    primary: 400,
   },
   fontSize: {
     primary: 16,

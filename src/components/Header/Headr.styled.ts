@@ -65,7 +65,7 @@ export const Address = styled.p`
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 12px;
   color: ${({ theme }) => theme.colors.white};
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;
 
 export const SettingsBtn = styled.button`
@@ -89,5 +89,5 @@ export const SettingsBtn = styled.button`
 export const BtnTitle = styled.span`
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 12px;
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;

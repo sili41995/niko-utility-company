@@ -15,7 +15,7 @@ export const TableHeader = styled.th`
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 12px;
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;
 
 export const TableBody = styled.tbody``;
@@ -29,5 +29,5 @@ export const TableData = styled.td`
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 12px;
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;

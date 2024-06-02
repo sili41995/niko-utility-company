@@ -2,7 +2,18 @@ import { FC } from 'react';
 import SettingsSectionTitle from '../SettingsSectionTitle';
 import AddBtn from '../AddBtn';
 import { BtnClickEvent } from '@/types/types';
-import { Container, Title } from './CurrentServicesSettings.styled';
+import {
+  Container,
+  ServicesListItem,
+  ServicesList,
+  Title,
+  ServiceText,
+  InstructionWrap,
+  InstructionTitle,
+  Instruction,
+  InstructionItem,
+  InstructionText,
+} from './CurrentServicesSettings.styled';
 
 const CurrentServicesSettings: FC = () => {
   const onAddBntClick = (e: BtnClickEvent): void => {
@@ -15,34 +26,40 @@ const CurrentServicesSettings: FC = () => {
       <SettingsSectionTitle title='Підприємство надає послуги:' />
       <AddBtn title='Нова подія' onClick={onAddBntClick} />
       <Title>Поточні послуги:</Title>
-      <ul>
-        <li>
-          <p>Останні зміни:</p>
-          <p>Введеняя в експлуатацію</p>
-        </li>
-        <li>
-          <p>Дата:</p>
-          <p>01.01.2024</p>
-        </li>
-        <li>
-          <p>Підстава:</p>
-          <p>1 від 01.01.2024 Початок експлуатації</p>
-        </li>
-      </ul>
-      <div>
-        <p>Поводження з побутовими відходами:</p>
-        <ul>
-          <li>
-            <p>Вивезення побутових відходів (б/с)</p>
-          </li>
-          <li>
-            <p>Вивезення побутових відходів (п/с)</p>
-          </li>
-          <li>
-            <p>Вивезення побутових відходів (за 1м3)</p>
-          </li>
-        </ul>
-      </div>
+      <ServicesList>
+        <ServicesListItem>
+          <ServiceText>Останні зміни:</ServiceText>
+          <ServiceText>Введеняя в експлуатацію</ServiceText>
+        </ServicesListItem>
+        <ServicesListItem>
+          <ServiceText>Дата:</ServiceText>
+          <ServiceText>01.01.2024</ServiceText>
+        </ServicesListItem>
+        <ServicesListItem>
+          <ServiceText>Підстава:</ServiceText>
+          <ServiceText>1 від 01.01.2024 Початок експлуатації</ServiceText>
+        </ServicesListItem>
+      </ServicesList>
+      <InstructionWrap>
+        <InstructionTitle>Поводження з побутовими відходами:</InstructionTitle>
+        <Instruction>
+          <InstructionItem>
+            <InstructionText>
+              Вивезення побутових відходів (б/с)
+            </InstructionText>
+          </InstructionItem>
+          <InstructionItem>
+            <InstructionText>
+              Вивезення побутових відходів (п/с)
+            </InstructionText>
+          </InstructionItem>
+          <InstructionItem>
+            <InstructionText>
+              Вивезення побутових відходів (за 1м3)
+            </InstructionText>
+          </InstructionItem>
+        </Instruction>
+      </InstructionWrap>
     </Container>
   );
 };

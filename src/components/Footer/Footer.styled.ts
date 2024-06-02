@@ -18,7 +18,7 @@ export const Title = styled.p`
   color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
   line-height: 1.5;
 `;
 
@@ -40,6 +40,6 @@ export const Link = styled.a`
   color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
   font-style: normal;
 `;
