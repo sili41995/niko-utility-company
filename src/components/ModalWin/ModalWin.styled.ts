@@ -13,6 +13,7 @@ export const Backdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   padding: 20px;
   background-color: rgba(18, 20, 23, 0.5);
 `;
