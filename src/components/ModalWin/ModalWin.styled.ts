@@ -14,7 +14,7 @@ export const Backdrop = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: ${({ theme }) => theme.spacing(7)};
   background-color: rgba(18, 20, 23, 0.5);
 `;
 
