@@ -1,21 +1,20 @@
 import styled from '@emotion/styled';
 
-export const Backdrop = styled.div`
+export const Section = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(18, 20, 23, 0.5);
   overflow-y: scroll;
 `;
 
-export const Section = styled.div`
+export const Backdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: 20px;
+  background-color: rgba(18, 20, 23, 0.5);
 `;
 
 export const Container = styled.div`

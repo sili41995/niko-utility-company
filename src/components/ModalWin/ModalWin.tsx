@@ -33,8 +33,8 @@ const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {
   return (
     modalRoot &&
     createPortal(
-      <Backdrop onClick={hideModalWin}>
-        <Section>
+      <Section>
+        <Backdrop onClick={hideModalWin}>
           <Container>
             <CloseBtn
               aria-label={AriaLabels.closeBtn}
@@ -44,8 +44,8 @@ const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {
             </CloseBtn>
             {children}
           </Container>
-        </Section>
-      </Backdrop>,
+        </Backdrop>
+      </Section>,
       modalRoot
     )
   );
