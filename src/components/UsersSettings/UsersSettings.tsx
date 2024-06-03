@@ -3,7 +3,7 @@ import SettingsSectionTitle from '../SettingsSectionTitle';
 import AddBtn from '../AddBtn';
 import { Container, Title } from './UsersSettings.styled';
 import { BtnClickEvent } from '@/types/types';
-import { users } from '@/data/users';
+import UsersList from '../UsersList';
 
 const UsersSettings: FC = () => {
   const onAddBntClick = (e: BtnClickEvent): void => {
@@ -16,16 +16,7 @@ const UsersSettings: FC = () => {
       <SettingsSectionTitle title='Користувачі' />
       <AddBtn title='Новий користувач' onClick={onAddBntClick} />
       <Title>Користувачі:</Title>
-      <ul>
-        {users.map(({ id, name, username }) => (
-          <li key={id}>
-            <p>
-              <span>{name}</span> : <span>{username}</span>
-            </p>
-            <ul></ul>
-          </li>
-        ))}
-      </ul>
+      <UsersList />
     </Container>
   );
 };
