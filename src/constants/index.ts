@@ -11,3 +11,4 @@ export { default as InputTypes } from './inputTypes';
 export { default as SettingsCategories } from './settingsCategories';
 export { default as ServiceCategories } from './serviceCategories';
 export { default as CheckboxNames } from './checkboxNames';
+export { default as FormTypes } from './formTypes';

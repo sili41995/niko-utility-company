@@ -34,7 +34,7 @@ interface ITheme {
     // redIcon: string;
     // greenBtn: string;
     // greenIcon: string;
-    // authFormBG: string;
+    authFormBG: string;
   };
   fontFamily: {
     primary: string;
@@ -55,6 +55,7 @@ interface ITheme {
   borderRadius: {
     primary: number;
     secondary: number;
+    other: number;
   };
   containerWidth: {
     desktop: number;
@@ -85,6 +86,7 @@ const theme: ITheme = {
     addBntIcon: '#007bff',
     addBtnIconAccent: '#0056b3',
     serviceBG: '#eeeeee',
+    authFormBG: '#fcfcfc',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',
@@ -120,6 +122,7 @@ const theme: ITheme = {
   borderRadius: {
     primary: 4,
     secondary: 8,
+    other: 30,
   },
   containerWidth: {
     desktop: 1200,
