@@ -49,3 +49,20 @@ export interface IService {
 }
 
 export type Services = IService[];
+
+export interface IUser {
+  id: number;
+  name: string;
+  username: string;
+  token: string | null;
+  fullAccess: boolean;
+  houses: boolean;
+  subscribers: boolean;
+  accounting: boolean;
+  documents: boolean;
+  counters: boolean;
+  oneOffJobs: boolean;
+  settings: boolean;
+}
+
+export type Users = IUser[];
