@@ -1,4 +1,4 @@
-import { PagePaths } from '@/constants';
+import { Messages, PagePaths } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
@@ -59,4 +59,8 @@ export interface ISetBtnDisplayProps {
   currentPage?: number;
   page?: number;
   step?: number;
+}
+
+export interface IErrorMessage {
+  [key: string]: Messages;
 }

@@ -12,3 +12,5 @@ export { default as setModalFormPadding } from './setModalFormPadding';
 export { default as setModalFormWidth } from './setModalFormWidth';
 export { default as setInputFontSize } from './setInputFontSize';
 export { default as setInputPadding } from './setInputPadding';
+export { default as setInputHeight } from './setInputHeight';
+export { default as toasts } from './toasts';

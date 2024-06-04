@@ -12,7 +12,7 @@ export const SectionsList = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  border: 0.5px solid ${({ theme }) => theme.colors.navSectionItem};
+  border: 0.5px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   overflow: hidden;

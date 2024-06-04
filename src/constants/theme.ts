@@ -8,7 +8,7 @@ interface ITheme {
     otherFont: string;
     headerBG: string;
     body: string;
-    navSectionItem: string;
+    border: string;
     housesSection: string;
     subscribersSection: string;
     accountingSection: string;
@@ -21,6 +21,7 @@ interface ITheme {
     serviceBG: string;
     primary: string;
     primaryFont: string;
+    secondary: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -76,7 +77,6 @@ const theme: ITheme = {
     otherFont: '#555555',
     headerBG: '#001A35',
     body: '#e5e5e5',
-    navSectionItem: 'rgba(137, 137, 137, 0.43)',
     housesSection: '#ba5b50',
     subscribersSection: '#ee9646',
     accountingSection: '#3CB371',
@@ -91,7 +91,9 @@ const theme: ITheme = {
     serviceBG: '#eeeeee',
     authFormBG: '#fcfcfc',
     primary: '#3456FF',
+    secondary: '#4d5ae5',
     primaryFont: '#000000',
+    border: 'rgba(137, 137, 137, 0.43)',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',

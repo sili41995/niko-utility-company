@@ -4,6 +4,7 @@ const enum AriaLabels {
   //   currentMonth = 'Current month',
   closeBtn = 'Close modal window',
   pageBtn = 'Go to page number',
+  authBtn = 'authentication button',
   //   addEvent = 'Add event',
   //   edit = 'set edit event status',
   //   delete = 'delete event',

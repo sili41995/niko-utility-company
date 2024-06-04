@@ -1,5 +1,11 @@
 import { SetURLSearchParams } from 'react-router-dom';
 import { IOnPageBtnClickProps, OnBtnClickFunc } from './types';
+import {
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from 'react-hook-form';
+import { Credentials } from './data';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -38,4 +44,11 @@ export interface IUsePaginationBar {
   setPage: SetPage;
   onLastPageBtnClick: OnBtnClickFunc;
   onNextPageBtnClick: OnBtnClickFunc;
+}
+
+export interface IUseSignInForm {
+  handleFormSubmit: SubmitHandler<Credentials>;
+  handleSubmit: UseFormHandleSubmit<Credentials, undefined>;
+  register: UseFormRegister<Credentials>;
+  isLoading: boolean;
 }

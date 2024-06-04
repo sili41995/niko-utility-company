@@ -1,4 +1,5 @@
 import ModalForm from '@/components/ModalForm';
+import SignInForm from '@/components/SignInForm';
 import { FormTypes } from '@/constants';
 import { FC } from 'react';
 

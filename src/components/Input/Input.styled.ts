@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './Input.types';
-import { setInputFontSize, setInputPadding } from '@/utils';
+import { setInputFontSize, setInputHeight, setInputPadding } from '@/utils';
 
 export const Container = styled.span`
   position: relative;
@@ -16,12 +16,10 @@ export const Container = styled.span`
 
 export const StyledInput = styled.input<IStyledProps>`
   width: 100%;
-  max-width: ${({ formType }) => setInputMaxWidth(formType)};
-  height: ${({ formType }) => setInputHeight(formType)};
+  height: ${({ formType }) => setInputHeight(formType)}px;
   background-color: transparent;
-  border: 1px solid ${({ formType }) => setInputBorderColor(formType)};
-  border-radius: ${({ formType }) => setInputBorderRadius(formType)};
-  filter: ${({ formType }) => setInputFilter(formType)};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.borderRadius.secondary};
   padding: ${({ formType }) => setInputPadding(formType)};
   font-family: Inter;
   color: ${({ theme }) => theme.colors.primaryFont};

@@ -54,6 +54,7 @@ export interface IUser {
   id: number;
   name: string;
   username: string;
+  password: string;
   token: string | null;
   fullAccess: boolean;
   houses: boolean;
@@ -65,4 +66,12 @@ export interface IUser {
   settings: boolean;
 }
 
-export type Users = IUser[];
+export type UserData = Omit<IUser, 'password'>;
+
+export type Password = Pick<IUser, 'password'>;
+
+export type Username = Pick<IUser, 'username'>;
+
+export type Credentials = Pick<IUser, 'username' | 'password'>;
+
+export type Users = UserData[];

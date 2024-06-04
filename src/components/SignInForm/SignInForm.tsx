@@ -1,7 +1,10 @@
 import { FC } from 'react';
 import { Form, Message, Title } from './SignInForm.styles';
-import { FormTypes, InputTypes, Messages } from '@/constants';
+import { FormTypes, IconSizes, InputTypes, Messages } from '@/constants';
 import AuthFormBtn from '../AuthFormBtn';
+import Input from '../Input';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { useSignInForm } from '@/hooks';
 
 const SignInForm: FC = () => {
   const { handleFormSubmit, handleSubmit, register, isLoading } =
@@ -13,10 +16,11 @@ const SignInForm: FC = () => {
       <Message>{Messages.greetings}!</Message>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
-          settings={{ ...register('email', { required: true }) }}
-          type={InputTypes.email}
-          placeholder='Email'
+          settings={{ ...register('username', { required: true }) }}
+          type={InputTypes.text}
+          placeholder='Username'
           formType={FormTypes.authForm}
+          icon={<FaEnvelope size={IconSizes.secondary} />}
           autoFocus
         />
         <Input
@@ -26,6 +30,7 @@ const SignInForm: FC = () => {
           type={InputTypes.password}
           placeholder='Password'
           formType={FormTypes.authForm}
+          icon={<FaLock size={IconSizes.secondary} />}
         />
         <AuthFormBtn title='Sign in' disabled={isLoading} />
       </Form>

@@ -14,3 +14,4 @@ export { default as CheckboxNames } from './checkboxNames';
 export { default as FormTypes } from './formTypes';
 export { default as BtnTypes } from './btnTypes';
 export { default as Messages } from './messages';
+export { default as AuthParams } from './authParams';
