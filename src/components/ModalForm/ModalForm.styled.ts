@@ -14,9 +14,9 @@ export const Container = styled.div<IStyledProps>`
   width: ${({ formType }) => setModalFormWidth(formType)};
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(5)};
-  padding: ${({ formType }) => setModalFormPadding(formType)};
+  padding: ${({ formType }) => setModalFormPadding(formType)}px;
   background-color: ${({ formType }) => setModalFormBGColor(formType)};
-  border-radius: ${({ formType }) => setModalFormBorderRadius(formType)};
+  border-radius: ${({ formType }) => setModalFormBorderRadius(formType)}px;
   box-shadow: ${({ formType }) => setModalFormBoxShadow(formType)};
   margin: ${({ formType }) => setModalFormMargin(formType)};
 `;

@@ -1,4 +1,4 @@
-import { IconSizes, PagePaths } from '@/constants';
+import { BtnTypes, IconSizes, PagePaths } from '@/constants';
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '@/images/logo.png';
@@ -51,7 +51,7 @@ const Header: FC = () => {
                 <Address>Дніпропетровська область, м. Нікополь</Address>
               </TitleWrap>
             </Content>
-            <SettingsBtn type='button' onClick={onSettingsBtnClick}>
+            <SettingsBtn type={BtnTypes.button} onClick={onSettingsBtnClick}>
               <IoMdSettings size={IconSizes.primary} />
               <BtnTitle>Налаштування</BtnTitle>
             </SettingsBtn>

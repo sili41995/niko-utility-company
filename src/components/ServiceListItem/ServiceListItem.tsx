@@ -8,7 +8,7 @@ import {
   TitleWrap,
 } from './ServiceListItem.styled';
 import { IoIosAdd } from 'react-icons/io';
-import { IconSizes } from '@/constants';
+import { BtnTypes, IconSizes } from '@/constants';
 import { InputChangeEvent } from '@/types/types';
 import Checkbox from '../Checkbox';
 
@@ -21,7 +21,7 @@ const ServiceListItem: FC<IProps> = ({ services, title }) => {
     <>
       <TitleWrap>
         <Title>{title}:</Title>
-        <AddServiceBtn type='button'>
+        <AddServiceBtn type={BtnTypes.button}>
           <IoIosAdd size={IconSizes.secondary} />
         </AddServiceBtn>
       </TitleWrap>

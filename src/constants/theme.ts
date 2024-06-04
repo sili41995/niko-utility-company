@@ -19,6 +19,8 @@ interface ITheme {
     addBntIcon: string;
     addBtnIconAccent: string;
     serviceBG: string;
+    primary: string;
+    primaryFont: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -27,7 +29,7 @@ interface ITheme {
     white: string;
     navSectionDesc: string;
     tableHeader: string;
-    // grey: string;
+    grey: string;
     // lightgrey: string;
     // blueBtn: string;
     // redBtn: string;
@@ -44,13 +46,13 @@ interface ITheme {
   };
   fontSize: {
     primary: number;
-    // subtitle: number;
+    secondary: number;
+    other: number;
     title: number;
-    // secondary: number;
   };
   padding: {
     container: number;
-    // authForm: number;
+    authForm: number;
   };
   borderRadius: {
     primary: number;
@@ -62,6 +64,7 @@ interface ITheme {
   };
   shadows: {
     primary: string;
+    secondary: string;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -87,6 +90,8 @@ const theme: ITheme = {
     addBtnIconAccent: '#0056b3',
     serviceBG: '#eeeeee',
     authFormBG: '#fcfcfc',
+    primary: '#3456FF',
+    primaryFont: '#000000',
     // secondaryFont: '#7c7c7c',
     // primary: '#3470ff',
     // other: '#38b6ff',
@@ -94,7 +99,7 @@ const theme: ITheme = {
     accent: '#0b44cd',
     // green: '#00FF00',
     white: '#FFFFFF',
-    // grey: '#555759',
+    grey: '#555759',
     // lightgrey: '#d3d3d3',
     // blueBtn: '#7fd1ff',
     // redBtn: '#ff9192',
@@ -111,13 +116,14 @@ const theme: ITheme = {
   },
   fontSize: {
     primary: 16,
+    secondary: 18,
+    other: 20,
     // subtitle: 25,
     title: 36,
-    // secondary: 20,
   },
   padding: {
     container: 16,
-    // authForm: 32,
+    authForm: 32,
   },
   borderRadius: {
     primary: 4,
@@ -129,6 +135,7 @@ const theme: ITheme = {
   },
   shadows: {
     primary: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+    secondary: '0px 4px 17px 0px rgba(0, 0, 0, 0.17)',
   },
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
