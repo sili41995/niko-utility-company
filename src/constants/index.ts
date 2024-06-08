@@ -15,3 +15,4 @@ export { default as FormTypes } from './formTypes';
 export { default as BtnTypes } from './btnTypes';
 export { default as Messages } from './messages';
 export { default as AuthParams } from './authParams';
+export { default as regExp } from './regExp';

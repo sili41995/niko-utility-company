@@ -1,9 +1,8 @@
 import { FC, MouseEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { CgClose } from 'react-icons/cg';
-import { AriaLabels, IconSizes } from '@/constants';
 import { IProps } from './ModalWin.types';
-import { Backdrop, CloseBtn, Container, Section } from './ModalWin.styled';
+import { Backdrop, Container, Section } from './ModalWin.styled';
+import CloseBtn from '../CloseBtn';
 
 const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {
   const modalRoot = document.querySelector('#modal-root');
@@ -36,12 +35,7 @@ const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {
       <Section>
         <Backdrop onClick={hideModalWin}>
           <Container>
-            <CloseBtn
-              aria-label={AriaLabels.closeBtn}
-              onClick={setModalWinState}
-            >
-              <CgClose size={IconSizes.secondary} />
-            </CloseBtn>
+            <CloseBtn onClick={setModalWinState} />
             {children}
           </Container>
         </Backdrop>

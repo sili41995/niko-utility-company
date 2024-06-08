@@ -1,5 +1,6 @@
 const enum FormTypes {
-  authForm = 'authForm',
+  auth = 'auth',
+  addUser = 'addUser',
 }
 
 export default FormTypes;

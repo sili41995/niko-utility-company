@@ -1,9 +1,15 @@
 import { FC } from 'react';
 import { Form, Message, Title } from './SignInForm.styles';
-import { FormTypes, IconSizes, InputTypes, Messages } from '@/constants';
+import {
+  AuthParams,
+  FormTypes,
+  IconSizes,
+  InputTypes,
+  Messages,
+} from '@/constants';
 import AuthFormBtn from '../AuthFormBtn';
 import Input from '../Input';
-import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { FaLock, FaUser } from 'react-icons/fa';
 import { useSignInForm } from '@/hooks';
 
 const SignInForm: FC = () => {
@@ -13,23 +19,27 @@ const SignInForm: FC = () => {
   return (
     <>
       <Title>sign in</Title>
-      <Message>{Messages.greetings}!</Message>
+      <Message>{Messages.greetings}</Message>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
           settings={{ ...register('username', { required: true }) }}
           type={InputTypes.text}
           placeholder='Username'
-          formType={FormTypes.authForm}
-          icon={<FaEnvelope size={IconSizes.secondary} />}
+          formType={FormTypes.auth}
+          icon={<FaUser size={IconSizes.secondary} />}
           autoFocus
         />
         <Input
           settings={{
-            ...register('password', { required: true, minLength: 6 }),
+            ...register('password', {
+              required: true,
+              minLength: AuthParams.passMinLength,
+              maxLength: AuthParams.passMaxLength,
+            }),
           }}
           type={InputTypes.password}
           placeholder='Password'
-          formType={FormTypes.authForm}
+          formType={FormTypes.auth}
           icon={<FaLock size={IconSizes.secondary} />}
         />
         <AuthFormBtn title='Sign in' disabled={isLoading} />

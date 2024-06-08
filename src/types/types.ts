@@ -64,3 +64,7 @@ export interface ISetBtnDisplayProps {
 export interface IErrorMessage {
   [key: string]: Messages;
 }
+
+export interface IRegExp {
+  email: RegExp;
+}

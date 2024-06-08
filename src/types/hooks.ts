@@ -5,7 +5,7 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from 'react-hook-form';
-import { Credentials } from './data';
+import { Credentials, NewUser } from './data';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -50,5 +50,12 @@ export interface IUseSignInForm {
   handleFormSubmit: SubmitHandler<Credentials>;
   handleSubmit: UseFormHandleSubmit<Credentials, undefined>;
   register: UseFormRegister<Credentials>;
+  isLoading: boolean;
+}
+
+export interface IUseAddUserForm {
+  handleFormSubmit: SubmitHandler<NewUser>;
+  handleSubmit: UseFormHandleSubmit<NewUser, undefined>;
+  register: UseFormRegister<NewUser>;
   isLoading: boolean;
 }

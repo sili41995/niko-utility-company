@@ -14,6 +14,7 @@ export const users: Users = [
     counters: false,
     oneOffJobs: true,
     settings: false,
+    email: 'alex@mail.com',
   },
   {
     id: 2,
@@ -28,5 +29,6 @@ export const users: Users = [
     counters: false,
     oneOffJobs: true,
     settings: false,
+    email: 'alex@mail.com',
   },
 ];

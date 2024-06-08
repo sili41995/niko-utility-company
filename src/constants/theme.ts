@@ -35,8 +35,8 @@ interface ITheme {
     // blueBtn: string;
     // redBtn: string;
     // redIcon: string;
-    // greenBtn: string;
-    // greenIcon: string;
+    green: string;
+    greenAccent: string;
     authFormBG: string;
   };
   fontFamily: {
@@ -99,7 +99,7 @@ const theme: ITheme = {
     // other: '#38b6ff',
     // primaryFont: '#141414',
     accent: '#0b44cd',
-    // green: '#00FF00',
+    greenAccent: '#00FF00',
     white: '#FFFFFF',
     grey: '#555759',
     // lightgrey: '#d3d3d3',
@@ -107,7 +107,7 @@ const theme: ITheme = {
     // redBtn: '#ff9192',
     // redIcon: '#d3232f',
     // greenBtn: '#89f2a6',
-    // greenIcon: '#00c938',
+    green: '#00c938',
     // authFormBG: '#fcfcfc',
   },
   fontFamily: {

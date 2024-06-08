@@ -4,8 +4,8 @@ import { FcPlus } from 'react-icons/fc';
 import { IProps } from './AddBtn.types';
 import { BtnTitle, Button } from './AddBtn.styled';
 
-const AddBtn: FC<IProps> = ({ title, onClick }) => (
-  <Button type={BtnTypes.button} onClick={onClick}>
+const AddBtn: FC<IProps> = ({ title, onClick, disabled }) => (
+  <Button type={BtnTypes.button} onClick={onClick} disabled={disabled}>
     <BtnTitle>{title}</BtnTitle>
     <FcPlus size={IconSizes.secondary} />
   </Button>

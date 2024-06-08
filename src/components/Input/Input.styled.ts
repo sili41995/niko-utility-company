@@ -19,7 +19,7 @@ export const StyledInput = styled.input<IStyledProps>`
   height: ${({ formType }) => setInputHeight(formType)}px;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.borderRadius.secondary};
+  border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
   padding: ${({ formType }) => setInputPadding(formType)};
   font-family: Inter;
   color: ${({ theme }) => theme.colors.primaryFont};

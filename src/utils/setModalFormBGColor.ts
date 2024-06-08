@@ -2,7 +2,7 @@ import { FormTypes, theme } from '@/constants';
 
 const setModalFormBGColor = (formType: FormTypes | undefined): string => {
   switch (formType) {
-    case FormTypes.authForm:
+    case FormTypes.auth:
       return theme.colors.authFormBG;
 
     default:

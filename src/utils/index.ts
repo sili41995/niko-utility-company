@@ -7,7 +7,6 @@ export { default as groupServicesByCategory } from './groupServicesByCategory';
 export { default as setModalFormBGColor } from './setModalFormBGColor';
 export { default as setModalFormBorderRadius } from './setModalFormBorderRadius';
 export { default as setModalFormBoxShadow } from './setModalFormBoxShadow';
-export { default as setModalFormMargin } from './setModalFormMargin';
 export { default as setModalFormPadding } from './setModalFormPadding';
 export { default as setModalFormWidth } from './setModalFormWidth';
 export { default as setInputFontSize } from './setInputFontSize';

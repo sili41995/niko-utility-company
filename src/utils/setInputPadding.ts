@@ -2,7 +2,7 @@ import { FormTypes, theme } from '@/constants';
 
 const setInputPadding = (formType: FormTypes | undefined): string => {
   switch (formType) {
-    case FormTypes.authForm:
+    case FormTypes.auth:
       return `
       ${theme.spacing(2)}
       ${theme.spacing(10)}`;

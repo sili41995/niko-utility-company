@@ -4,7 +4,6 @@ import {
   setModalFormBGColor,
   setModalFormBorderRadius,
   setModalFormBoxShadow,
-  setModalFormMargin,
   setModalFormPadding,
   setModalFormWidth,
 } from '@/utils';
@@ -18,5 +17,6 @@ export const Container = styled.div<IStyledProps>`
   background-color: ${({ formType }) => setModalFormBGColor(formType)};
   border-radius: ${({ formType }) => setModalFormBorderRadius(formType)}px;
   box-shadow: ${({ formType }) => setModalFormBoxShadow(formType)};
-  margin: ${({ formType }) => setModalFormMargin(formType)};
+  margin-left: auto;
+  margin-right: auto;
 `;
