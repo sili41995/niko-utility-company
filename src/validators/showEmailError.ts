@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { Email } from '@/types/data';
+import { Email } from '@/types/data.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

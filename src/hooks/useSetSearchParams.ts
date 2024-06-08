@@ -1,5 +1,8 @@
 import { useSearchParams } from 'react-router-dom';
-import { IUpdateSearchParamsProps, IUseSetSearchParams } from '@/types/hooks';
+import {
+  IUpdateSearchParamsProps,
+  IUseSetSearchParams,
+} from '@/types/hooks.types';
 
 const useSetSearchParams = (): IUseSetSearchParams => {
   const [searchParams, setSearchParams] = useSearchParams();

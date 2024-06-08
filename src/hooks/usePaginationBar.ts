@@ -2,7 +2,7 @@ import { GeneralParams, SearchParamsKeys } from '@/constants';
 import useSetSearchParams from './useSetSearchParams';
 import { getPageNumbers, getPaginationBarSettings, makeBlur } from '@/utils';
 import { BtnClickEvent, IOnPageBtnClickProps } from '@/types/types';
-import { IUsePaginationBar, IUsePaginationBarProps } from '@/types/hooks';
+import { IUsePaginationBar, IUsePaginationBarProps } from '@/types/hooks.types';
 
 const usePaginationBar = ({
   totalCount,

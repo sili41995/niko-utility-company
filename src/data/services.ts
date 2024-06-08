@@ -1,5 +1,5 @@
 import { ServiceCategories } from '@/constants';
-import { Services } from '@/types/data';
+import { Services } from '@/types/data.types';
 
 export const services: Services = [
   {

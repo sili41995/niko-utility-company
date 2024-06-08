@@ -5,7 +5,7 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from 'react-hook-form';
-import { Credentials, NewUser } from './data';
+import { Credentials, NewUser } from './data.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;

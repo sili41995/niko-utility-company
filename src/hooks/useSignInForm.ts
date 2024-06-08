@@ -1,6 +1,6 @@
 import { Messages } from '@/constants';
-import { Credentials } from '@/types/data';
-import { IUseSignInForm } from '@/types/hooks';
+import { Credentials } from '@/types/data.types';
+import { IUseSignInForm } from '@/types/hooks.types';
 import { toasts } from '@/utils';
 import { validateSignInForm } from '@/validators';
 import { useEffect } from 'react';

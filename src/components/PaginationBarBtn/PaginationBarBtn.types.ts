@@ -1,4 +1,4 @@
-import { SetPage } from '@/types/hooks';
+import { SetPage } from '@/types/hooks.types';
 
 export interface IProps {
   number: number;

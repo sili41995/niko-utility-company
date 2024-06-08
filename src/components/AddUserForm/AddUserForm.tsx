@@ -24,8 +24,8 @@ const AddUserForm: FC = () => {
         settings={{
           ...register('password', {
             required: true,
-            minLength: AuthParams.passMinLength,
-            maxLength: AuthParams.passMaxLength,
+            minLength: Number(AuthParams.passMinLength),
+            maxLength: Number(AuthParams.passMaxLength),
           }),
         }}
         type={InputTypes.text}

@@ -1,6 +1,6 @@
 import { Messages } from '@/constants';
-import { NewUser } from '@/types/data';
-import { IUseAddUserForm } from '@/types/hooks';
+import { NewUser } from '@/types/data.types';
+import { IUseAddUserForm } from '@/types/hooks.types';
 import { toasts } from '@/utils';
 import { validateAddUserForm } from '@/validators';
 import { useEffect } from 'react';

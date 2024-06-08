@@ -1,4 +1,4 @@
-import { Documents } from '@/types/data';
+import { Documents } from '@/types/data.types';
 
 export const documents: Documents = [
   {

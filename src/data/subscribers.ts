@@ -1,4 +1,4 @@
-import { Subscribers } from '@/types/data';
+import { Subscribers } from '@/types/data.types';
 
 export const subscribers: Subscribers = [
   {

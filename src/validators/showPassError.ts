@@ -1,4 +1,4 @@
-import { Password } from '@/types/data';
+import { Password } from '@/types/data.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 import getPassFieldError from './getPassFieldError';
