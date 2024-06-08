@@ -1,11 +1,6 @@
 import { FC } from 'react';
-import { Form,  } from './AddUserForm.styles';
-import {
-  AuthParams,
-  FormTypes,
-  IconSizes,
-  InputTypes,
-} from '@/constants';
+import { Form } from './AddUserForm.styles';
+import { AuthParams, FormTypes, IconSizes, InputTypes } from '@/constants';
 import AuthFormBtn from '../AuthFormBtn';
 import Input from '../Input';
 import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
@@ -18,7 +13,7 @@ const AddUserForm: FC = () => {
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Input
-        settings={{ ...register('username', { required: true }) }}
+        settings={{ ...register('login', { required: true }) }}
         type={InputTypes.text}
         placeholder='Логін'
         formType={FormTypes.addUser}

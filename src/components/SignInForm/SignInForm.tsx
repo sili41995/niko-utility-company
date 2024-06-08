@@ -22,9 +22,9 @@ const SignInForm: FC = () => {
       <Message>{Messages.greetings}</Message>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
-          settings={{ ...register('username', { required: true }) }}
+          settings={{ ...register('login', { required: true }) }}
           type={InputTypes.text}
-          placeholder='Username'
+          placeholder='Login'
           formType={FormTypes.auth}
           icon={<FaUser size={IconSizes.secondary} />}
           autoFocus

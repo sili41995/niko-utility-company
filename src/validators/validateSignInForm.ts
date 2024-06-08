@@ -1,10 +1,10 @@
 import { Credentials } from '@/types/data';
 import { FieldErrors } from 'react-hook-form';
-import showUsernameError from './showUsernameError';
+import showLoginError from './showLoginError';
 import showPassError from './showPassError';
 
 const validateSignInForm = (errors: FieldErrors<Credentials>): void => {
-  showUsernameError(errors);
+  showLoginError(errors);
   showPassError(errors);
 };
 

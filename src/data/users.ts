@@ -4,7 +4,7 @@ export const users: Users = [
   {
     id: 1,
     name: 'pedro',
-    username: 'pedro_1',
+    login: 'pedro_1',
     token: null,
     fullAccess: true,
     houses: false,
@@ -19,7 +19,7 @@ export const users: Users = [
   {
     id: 2,
     name: 'pedro',
-    username: 'pedro_2',
+    login: 'pedro_2',
     token: null,
     fullAccess: false,
     houses: false,

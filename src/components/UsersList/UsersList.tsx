@@ -8,7 +8,7 @@ import {
   Name,
   Title,
   TitleWrap,
-  Username,
+  Login,
   AccessName,
 } from './UsersList.styled';
 import { users } from '@/data/users';
@@ -27,7 +27,7 @@ const UsersList: FC = () => {
         ({
           id,
           name,
-          username,
+          login,
           accounting,
           counters,
           documents,
@@ -40,7 +40,7 @@ const UsersList: FC = () => {
           <ListItem key={id}>
             <TitleWrap>
               <Title>
-                <Name>{name}</Name> : <Username>{username}</Username>
+                <Name>{name}</Name> : <Login>{login}</Login>
               </Title>
             </TitleWrap>
             <AccessList>

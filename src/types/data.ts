@@ -53,9 +53,9 @@ export type Services = IService[];
 export interface IUser {
   id: number;
   name: string;
-  username: string;
-  password: string;
+  login: string;
   email: string;
+  password: string;
   token: string | null;
   fullAccess: boolean;
   houses: boolean;
@@ -67,18 +67,18 @@ export interface IUser {
   settings: boolean;
 }
 
-export type NewUser = Pick<IUser, 'username' | 'name' | 'password' | 'email'>;
+export type NewUser = Pick<IUser, 'login' | 'name' | 'password' | 'email'>;
 
 export type UserData = Omit<IUser, 'password'>;
 
 export type Password = Pick<IUser, 'password'>;
 
-export type Username = Pick<IUser, 'username'>;
+export type Login = Pick<IUser, 'login'>;
 
 export type Name = Pick<IUser, 'name'>;
 
 export type Email = Pick<IUser, 'email'>;
 
-export type Credentials = Pick<IUser, 'username' | 'password'>;
+export type Credentials = Pick<IUser, 'login' | 'password'>;
 
 export type Users = UserData[];

@@ -28,7 +28,7 @@ export const Name = styled.span`
   font-weight: 700;
 `;
 
-export const Username = styled.span`
+export const Login = styled.span`
   color: ${({ theme }) => theme.colors.addBntIcon};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
