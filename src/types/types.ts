@@ -67,4 +67,6 @@ export interface IErrorMessage {
 
 export interface IRegExp {
   email: RegExp;
+  phone: RegExp;
+  currentAccount: RegExp;
 }

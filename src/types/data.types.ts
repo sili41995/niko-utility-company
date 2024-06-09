@@ -87,3 +87,18 @@ export interface IGetUpdatedUsersProps {
   users: Users;
   updatedUser: UserData;
 }
+
+export interface IGeneralSettings {
+  currentAccount: string;
+  mfi: string;
+  helpPhone: string;
+  adsInPayments: string;
+}
+
+export type CurrentAccount = Pick<IGeneralSettings, 'currentAccount'>;
+
+export type MFI = Pick<IGeneralSettings, 'mfi'>;
+
+export type HelpPhone = Pick<IGeneralSettings, 'helpPhone'>;
+
+export type AdsInPayments = Pick<IGeneralSettings, 'adsInPayments'>;

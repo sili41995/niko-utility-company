@@ -1,8 +1,15 @@
 import { FC } from 'react';
-import { Container, StyledInput } from './Input.styled';
+import { Container, InputWrap, Label, StyledInput } from './Input.styled';
 import { IProps } from './Input.types';
 
-const Input: FC<IProps> = ({ settings, icon, type, formType, placeholder }) => {
+const Input: FC<IProps> = ({
+  settings,
+  icon,
+  type,
+  formType,
+  placeholder,
+  label,
+}) => {
   const input = (
     <StyledInput
       type={type}
@@ -12,13 +19,22 @@ const Input: FC<IProps> = ({ settings, icon, type, formType, placeholder }) => {
     />
   );
 
-  return icon ? (
+  const styledInput = icon ? (
     <Container>
       {input}
       {icon}
     </Container>
   ) : (
     input
+  );
+
+  return label ? (
+    <InputWrap>
+      <Label>{label}</Label>
+      {styledInput}
+    </InputWrap>
+  ) : (
+    styledInput
   );
 };
 

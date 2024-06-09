@@ -39,7 +39,7 @@ const UsersList: FC = () => {
           settings,
           subscribers,
         }) => {
-          const isCurrentUser = user.id === id;
+          const isCurrentUser = user.id === id && !user.fullAccess;
 
           const onInputChange = (e: InputChangeEvent): void => {
             const { checked, name } = e.currentTarget;

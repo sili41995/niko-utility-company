@@ -1,22 +1,10 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './Input.types';
-import { setInputFontSize, setInputHeight, setInputPadding } from '@/utils';
+import { setInputFontSize, setInputPadding } from '@/utils';
+import { IStyledProps } from './TextArea.types';
 
-export const Container = styled.span`
-  position: relative;
-  & > svg {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: ${({ theme }) => theme.colors.grey};
-  }
-`;
-
-export const StyledInput = styled.input<IStyledProps>`
+export const StyledTextArea = styled.input<IStyledProps>`
   width: 100%;
-  height: ${({ formType }) => setInputHeight(formType)}px;
+  height: 110px;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
@@ -32,14 +20,9 @@ export const StyledInput = styled.input<IStyledProps>`
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary};
   }
-
-  &:focus + svg {
-    transition: color ${({ theme }) => theme.transitionDurationAndFunc};
-    color: ${({ theme }) => theme.colors.primary};
-  }
 `;
 
-export const InputWrap = styled.label`
+export const TextAreaWrap = styled.label`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};

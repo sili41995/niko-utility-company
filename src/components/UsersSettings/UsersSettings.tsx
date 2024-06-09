@@ -9,6 +9,7 @@ import AddDataModalForm from '../AddDataModalForm';
 import { useUsersStore } from '@/store/store';
 import { selectFetchUsers, selectIsLoaded } from '@/store/users/selectors';
 import Loader from '../Loader';
+import { makeBlur } from '@/utils';
 
 const UsersSettings: FC = () => {
   const [showAddUserForm, setShowAddUserForm] = useState<boolean>(false);
@@ -25,6 +26,7 @@ const UsersSettings: FC = () => {
   };
 
   const onAddBntClick = (e: BtnClickEvent): void => {
+    makeBlur(e.currentTarget);
     toggleShowAddUserForm();
   };
 
