@@ -39,9 +39,8 @@ const changeAccessStatusOperation = async ({
   get,
 }: IChangeAccessStatusProps): Promise<UserData | undefined> => {
   const { items: users } = get();
-  console.log(data);
+  
   const response = await usersService.changeAccessStatus(data);
-  console.log(response);
   const updatedUsers = getUpdatedUsers({
     users,
     updatedUser: response,

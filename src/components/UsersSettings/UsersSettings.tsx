@@ -25,7 +25,6 @@ const UsersSettings: FC = () => {
   };
 
   const onAddBntClick = (e: BtnClickEvent): void => {
-    console.log(e);
     toggleShowAddUserForm();
   };
 

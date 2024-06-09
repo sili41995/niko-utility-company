@@ -20,7 +20,6 @@ const operationWrapper = <T, K>(
       const response = await operation(data);
       return response;
     } catch (error) {
-      console.log(error);
       if (error instanceof AxiosError) {
         const message = error.response?.data.message;
         data.set({ error: message });
