@@ -8,13 +8,13 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/App.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<ThemeProvider theme={theme}>
-				<App />
-				<GlobalStyles />
-				<Toast />
-			</ThemeProvider>
-		</BrowserRouter>
-	</React.StrictMode>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <App />
+        <GlobalStyles />
+        <Toast />
+      </ThemeProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );

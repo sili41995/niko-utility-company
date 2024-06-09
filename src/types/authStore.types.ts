@@ -1,5 +1,6 @@
 import { StorageValue } from 'zustand/middleware';
 import { Credentials, IUser, UserData } from './data.types';
+import { GetStateFunc, SetStateFunc } from './store.types';
 
 export interface IUserState {
   id: null | number;
@@ -39,21 +40,6 @@ export interface IAuthStateLS {
 export type GetLSGetItem =
   | StorageValue<IAuthState>
   | Promise<StorageValue<IAuthState>>;
-
-export type SetState<T> = (data: Partial<T>) => void;
-
-export type SetStateFunc<T> = (
-  partial: Partial<T>,
-  replaceState?: boolean,
-  actionName?: string
-) => void;
-
-export type GetStateFunc<T> = () => T;
-
-export interface ISetStateProps<T> {
-  set: SetStateFunc<T>;
-  name: string;
-}
 
 export type SetAuthStateFunc = SetStateFunc<IAuthState>;
 

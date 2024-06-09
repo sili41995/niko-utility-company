@@ -1,4 +1,4 @@
-import { ISetStateProps, SetState } from '@/types/authStore.types';
+import { ISetStateProps, SetState } from '@/types/store.types';
 
 const setState =
   <T>({ set, name }: ISetStateProps<T>): SetState<T> =>

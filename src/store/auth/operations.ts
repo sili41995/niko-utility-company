@@ -7,7 +7,7 @@ import {
   SignInRes,
 } from '@/types/authStore.types';
 import authService from '@/services/auth.service';
-import operationWrapper from '../operationWrapper';
+import operationWrapper from './operationWrapper';
 
 const signInOperation = async ({
   set,
@@ -41,7 +41,7 @@ const refreshUserOperation = async ({
   } finally {
     set({
       isLoading: initialState.isLoading,
-      isRefreshing: initialState.isRefreshing,
+      isRefreshing: false,
     });
   }
 };

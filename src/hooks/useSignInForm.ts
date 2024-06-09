@@ -26,7 +26,6 @@ const useSignInForm = (): IUseSignInForm => {
   }, [isSubmitting, errors]);
 
   const handleFormSubmit: SubmitHandler<Credentials> = async (data) => {
-    console.log(data);
     try {
       await signIn(data);
       toasts.successToast(Messages.signInSuccess);

@@ -1,17 +1,15 @@
-import { GetUsersStateFunc, SetUsersStateFunc } from '@/types/usersStore.types';
-import initialState from './users/initialState';
+import initialState from '../users/initialState';
 import { AxiosError } from 'axios';
+import { SetAuthStateFunc } from '@/types/authStore.types';
 
 const operationWrapper = <T, K>(
   operation: (data: {
-    set: SetUsersStateFunc;
-    get: GetUsersStateFunc;
+    set: SetAuthStateFunc;
     data: K;
   }) => Promise<T | undefined>
 ) => {
   return async (data: {
-    set: SetUsersStateFunc;
-    get: GetUsersStateFunc;
+    set: SetAuthStateFunc;
     data: K;
   }): Promise<T | undefined> => {
     try {
