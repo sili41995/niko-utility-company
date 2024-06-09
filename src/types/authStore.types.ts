@@ -48,9 +48,22 @@ export type SetStateFunc<T> = (
   actionName?: string
 ) => void;
 
+export type GetStateFunc<T> = () => T;
+
 export interface ISetStateProps<T> {
   set: SetStateFunc<T>;
   name: string;
 }
 
 export type SetAuthStateFunc = SetStateFunc<IAuthState>;
+
+export type GetAuthStateFunc = GetStateFunc<IAuthState>;
+
+export interface ISignInOperationProps {
+  set: SetAuthStateFunc;
+  data: Credentials;
+}
+
+export interface IAuthOperationProps {
+  set: SetAuthStateFunc;
+}

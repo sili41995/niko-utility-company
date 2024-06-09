@@ -5,6 +5,12 @@ import SharedLayout from './SharedLayout';
 import PublicRoute from './PublicRoute';
 import Loader from './Loader';
 import PrivateRoute from './PrivateRoute';
+import { useAuthStore } from '@/store/store';
+import {
+  selectIsRefreshing,
+  selectRefreshUser,
+  selectToken,
+} from '@/store/auth/selectors';
 
 const SignInPage = lazy(() => import('@/pages/SignInPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
@@ -14,19 +20,17 @@ const SubscribersPage = lazy(() => import('@/pages/SubscribersPage'));
 const DocumentsPage = lazy(() => import('@/pages/DocumentsPage'));
 
 const App: FC = () => {
-  // const isRefreshing = useAuthStore(selectIsRefreshing);
-  const isRefreshing = false;
-  // const token = useAuthStore(selectToken);
-  const token = null;
-  // const refreshUser = useAuthStore(selectRefreshUser);
+  const isRefreshing = useAuthStore(selectIsRefreshing);
+  const token = useAuthStore(selectToken);
+  const refreshUser = useAuthStore(selectRefreshUser);
 
   useEffect(() => {
     if (!token) {
       return;
     }
 
-    // refreshUser();
-  }, [token]);
+    refreshUser();
+  }, [refreshUser, token]);
 
   return isRefreshing ? (
     <Loader />

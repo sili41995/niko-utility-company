@@ -1,4 +1,6 @@
 import { Messages } from '@/constants';
+import { selectIsLoading, selectSignIn } from '@/store/auth/selectors';
+import { useAuthStore } from '@/store/store';
 import { Credentials } from '@/types/data.types';
 import { IUseSignInForm } from '@/types/hooks.types';
 import { toasts } from '@/utils';
@@ -7,9 +9,9 @@ import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 const useSignInForm = (): IUseSignInForm => {
-  // const isLoading = useAuthStore(selectIsLoading);
-  const isLoading = false;
-  //   const signIn = useAuthStore(selectSignIn);
+  const isLoading = useAuthStore(selectIsLoading);
+  const signIn = useAuthStore(selectSignIn);
+
   const {
     register,
     formState: { errors, isSubmitting },
@@ -26,7 +28,7 @@ const useSignInForm = (): IUseSignInForm => {
   const handleFormSubmit: SubmitHandler<Credentials> = async (data) => {
     console.log(data);
     try {
-      // await signIn(data);
+      await signIn(data);
       toasts.successToast(Messages.signInSuccess);
     } catch (error) {
       if (error instanceof Error) {
@@ -39,7 +41,6 @@ const useSignInForm = (): IUseSignInForm => {
     handleFormSubmit,
     handleSubmit,
     register,
-    // signUpPath,
     isLoading,
   };
 };

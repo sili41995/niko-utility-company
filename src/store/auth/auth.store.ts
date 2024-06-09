@@ -10,6 +10,7 @@ import setState from '@/store/setState';
 import initialState from './initialState';
 import { AuthParams } from '@/constants';
 import { getTokenFromLS } from '@/utils';
+import { refreshUser, signIn } from './operations';
 
 const authSlice = (set: SetAuthStateFunc): IAuthState => ({
   ...initialState,
@@ -17,7 +18,6 @@ const authSlice = (set: SetAuthStateFunc): IAuthState => ({
   signIn: async (data: Credentials): Promise<SignInRes | undefined> =>
     await signIn({
       set: setState({ set, name: 'signIn' }),
-      get: undefined,
       data,
     }),
   refreshUser: async (): Promise<UserData | undefined> =>
