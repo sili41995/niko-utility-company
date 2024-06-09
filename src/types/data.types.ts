@@ -82,3 +82,8 @@ export type Email = Pick<IUser, 'email'>;
 export type Credentials = Pick<IUser, 'login' | 'password'>;
 
 export type Users = UserData[];
+
+export interface IGetUpdatedUsersProps {
+  users: Users;
+  updatedUser: UserData;
+}

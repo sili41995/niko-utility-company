@@ -4,4 +4,5 @@ export interface IProps {
   name: string;
   checked: boolean;
   onChange: InputChangeFunc;
+  disabled?: boolean;
 }

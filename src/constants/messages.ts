@@ -12,6 +12,7 @@ const enum Messages {
   passMinLengthErr = `Мінімальна довжина паролю - ${AuthParams.passMinLength} символів`,
   passMaxLengthErr = `Максимальна довжина паролю - ${AuthParams.passMaxLength} символів`,
   userAddSuccess = 'Користувача успішно додано',
+  dataUpdateSuccess = 'Дані успішно оновлені',
 }
 
 export default Messages;

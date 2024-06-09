@@ -1,6 +1,7 @@
 import { GetUsersStateFunc, SetUsersStateFunc } from '@/types/usersStore.types';
-import initialState from './users/initialState';
+import initialState from './initialState';
 import { AxiosError } from 'axios';
+import { toasts } from '@/utils';
 
 const operationWrapper = <T, K>(
   operation: (data: {
@@ -19,9 +20,12 @@ const operationWrapper = <T, K>(
       const response = await operation(data);
       return response;
     } catch (error) {
+      console.log(error);
       if (error instanceof AxiosError) {
-        data.set({ error: error.message });
-        throw new Error(error.response?.data.message);
+        const message = error.response?.data.message;
+        data.set({ error: message });
+        toasts.errorToast(message);
+        throw new Error(message);
       }
     } finally {
       data.set({ isLoading: initialState.isLoading });
