@@ -5,7 +5,7 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from 'react-hook-form';
-import { Credentials, NewUser } from './data.types';
+import { Credentials, IGeneralSettings, NewUser } from './data.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -58,4 +58,15 @@ export interface IUseAddUserForm {
   handleSubmit: UseFormHandleSubmit<NewUser, undefined>;
   register: UseFormRegister<NewUser>;
   isLoading: boolean;
+}
+
+export interface IUseGeneralSettingsForm {
+  handleSubmit: UseFormHandleSubmit<IGeneralSettings, undefined>;
+  register: UseFormRegister<IGeneralSettings>;
+  handleFormSubmit: SubmitHandler<IGeneralSettings>;
+  isLoading: boolean;
+  adsInPayments: string;
+  mfi: string;
+  currentAccount: string;
+  helpPhone: string;
 }

@@ -14,3 +14,4 @@ export { default as setInputPadding } from './setInputPadding';
 export { default as setInputHeight } from './setInputHeight';
 export { default as toasts } from './toasts';
 export { default as getTokenFromLS } from './getTokenFromLS';
+export { default as getGeneralSettingsFormDefaultValues } from './getGeneralSettingsFormDefaultValues';

@@ -1,15 +1,25 @@
+import { Messages } from '@/constants';
+import {
+  selectGeneralSettings,
+  selectIsLoading,
+  selectUpdateGeneralSettings,
+} from '@/store/generalSettings/selectors';
+import { useGeneralSettingsStore } from '@/store/store';
 import { IGeneralSettings } from '@/types/data.types';
+import { IUseGeneralSettingsForm } from '@/types/hooks.types';
+import { getGeneralSettingsFormDefaultValues, toasts } from '@/utils';
 import validateGeneralSettingsForm from '@/validators/validateGeneralSettingsForm';
 import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-const useGeneralSettingsForm = () => {
-  //  const isLoading = useGeneralSettingsStore(selectIsLoading);
-  //  const setGeneralSettings = useGeneralSettingsStore(selectSetGeneralSettings);
-  const isLoading = false;
-  const setGeneralSettings = () => {
-    console.log('setGeneralSettings');
-  };
+const useGeneralSettingsForm = (id: number): IUseGeneralSettingsForm => {
+  const generalSettings = useGeneralSettingsStore(selectGeneralSettings);
+  const isLoading = useGeneralSettingsStore(selectIsLoading);
+  const updateGeneralSettings = useGeneralSettingsStore(
+    selectUpdateGeneralSettings
+  );
+  const { adsInPayments, currentAccount, helpPhone, mfi } =
+    getGeneralSettingsFormDefaultValues(generalSettings);
 
   const {
     register,
@@ -23,6 +33,28 @@ const useGeneralSettingsForm = () => {
       validateGeneralSettingsForm(errors);
     }
   }, [isSubmitting, errors]);
+
+  const handleFormSubmit: SubmitHandler<IGeneralSettings> = async (data) => {
+    try {
+      await updateGeneralSettings({ id, data });
+      toasts.successToast(Messages.generalSettingsUpdateSuccess);
+    } catch (error) {
+      if (error instanceof Error) {
+        toasts.errorToast(error.message);
+      }
+    }
+  };
+
+  return {
+    handleSubmit,
+    register,
+    handleFormSubmit,
+    isLoading,
+    adsInPayments,
+    mfi,
+    currentAccount,
+    helpPhone,
+  };
 };
 
 export default useGeneralSettingsForm;

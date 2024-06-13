@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Form } from './AddUserForm.styles';
 import { AuthParams, FormTypes, IconSizes, InputTypes } from '@/constants';
-import AuthFormBtn from '../AuthFormBtn';
+import AuthFormBtn from '../SubmitFormBtn';
 import Input from '../Input';
 import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
 import { useAddUserForm } from '@/hooks';

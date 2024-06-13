@@ -9,6 +9,7 @@ export interface IProps {
   formType?: FormTypes;
   autoFocus?: boolean;
   label?: string;
+  defaultValue?: string;
 }
 
 export interface IStyledProps {

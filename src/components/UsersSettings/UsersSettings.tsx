@@ -15,7 +15,7 @@ const UsersSettings: FC = () => {
   const [showAddUserForm, setShowAddUserForm] = useState<boolean>(false);
   const fetchUsers = useUsersStore(selectFetchUsers);
   const isLoaded = useUsersStore(selectIsLoaded);
-  const isLoading = !isLoaded;
+  const isLoadingData = !isLoaded;
 
   useEffect(() => {
     fetchUsers();
@@ -30,7 +30,7 @@ const UsersSettings: FC = () => {
     toggleShowAddUserForm();
   };
 
-  return isLoading ? (
+  return isLoadingData ? (
     <Loader />
   ) : (
     <Container>

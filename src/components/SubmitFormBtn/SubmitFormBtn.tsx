@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { IProps } from './AuthFormBtn.types';
+import { IProps } from './SubmitFormBtn.types';
 import Loader from '../Loader';
 import { AriaLabels, BtnTypes } from '@/constants';
-import { Button } from './AuthFormBtn.styled';
+import { Button } from './SubmitFormBtn.styled';
 
-const AuthFormBtn: FC<IProps> = ({ title, disabled }) => (
+const SubmitFormBtn: FC<IProps> = ({ title, disabled }) => (
   <Button
     disabled={disabled}
     type={BtnTypes.submit}
@@ -14,4 +14,4 @@ const AuthFormBtn: FC<IProps> = ({ title, disabled }) => (
   </Button>
 );
 
-export default AuthFormBtn;
+export default SubmitFormBtn;

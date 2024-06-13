@@ -89,11 +89,17 @@ export interface IGetUpdatedUsersProps {
 }
 
 export interface IGeneralSettings {
+  id: number;
   currentAccount: string;
   mfi: string;
   helpPhone: string;
   adsInPayments: string;
 }
+
+export type IGetGeneralSettingsFormDefaultValues = Pick<
+  IGeneralSettings,
+  'adsInPayments' | 'currentAccount' | 'helpPhone' | 'mfi'
+>;
 
 export type CurrentAccount = Pick<IGeneralSettings, 'currentAccount'>;
 

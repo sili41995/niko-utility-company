@@ -7,7 +7,7 @@ import {
   InputTypes,
   Messages,
 } from '@/constants';
-import AuthFormBtn from '../AuthFormBtn';
+import AuthFormBtn from '../SubmitFormBtn';
 import Input from '../Input';
 import { FaLock, FaUser } from 'react-icons/fa';
 import { useSignInForm } from '@/hooks';

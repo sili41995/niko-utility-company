@@ -9,6 +9,7 @@ const Input: FC<IProps> = ({
   formType,
   placeholder,
   label,
+  defaultValue,
 }) => {
   const input = (
     <StyledInput
@@ -16,6 +17,7 @@ const Input: FC<IProps> = ({
       formType={formType}
       {...settings}
       placeholder={placeholder}
+      defaultValue={defaultValue}
     />
   );
 

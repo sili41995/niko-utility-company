@@ -20,6 +20,7 @@ const enum Messages {
   mfiLengthErr = `Мінімальна довжина МФО - ${GeneralParams.mfiLength} символів`,
   currentAccountReqErr = 'Поле Розрахунковий рахунок має бути заповнене',
   currentAccountRegExpErr = 'Розрахунковий рахунок повинен починатись з символів UA та має містити 29 символів',
+  generalSettingsUpdateSuccess = 'Загальні налаштування успішно оновлені',
 }
 
 export default Messages;
