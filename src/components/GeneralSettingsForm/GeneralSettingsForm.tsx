@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Input from '../Input';
-import { GeneralParams, InputLabels, InputTypes, regExp } from '@/constants';
+import { InputLabels, InputTypes, regExp } from '@/constants';
 import { Form } from './GeneralSettingsForm.styled';
 import TextArea from '../TextArea';
 import { useGeneralSettingsForm } from '@/hooks';
@@ -30,32 +30,34 @@ const GeneralSettingsForm: FC<IProps> = ({ id }) => {
         }}
         type={InputTypes.text}
         label={InputLabels.currentAccount}
-        defaultValue={currentAccountDefaultValue}
+        defaultValue={currentAccount}
       />
       <Input
         settings={{
           ...register('mfi', {
             required: true,
-            minLength: Number(GeneralParams.mfiLength),
-            maxLength: Number(GeneralParams.mfiLength),
+            pattern: regExp.mfi,
           }),
         }}
         type={InputTypes.text}
         label={InputLabels.mfi}
-        defaultValue={mfiDefaultValue}
+        defaultValue={mfi}
       />
       <Input
         settings={{
-          ...register('helpPhone', { required: true, pattern: regExp.phone }),
+          ...register('helpPhone', {
+            required: true,
+            pattern: regExp.helpPhone,
+          }),
         }}
         type={InputTypes.text}
         label={InputLabels.helpPhone}
-        defaultValue={helpPhoneDefaultValue}
+        defaultValue={helpPhone}
       />
       <TextArea
         settings={{ ...register('adsInPayments') }}
         label={InputLabels.adsInPayments}
-        defaultValue={adsInPaymentsDefaultValue}
+        defaultValue={adsInPayments}
       />
       <SubmitFormBtn disabled={isLoading} title='Зберегти' />
     </Form>

@@ -17,7 +17,7 @@ const enum Messages {
   userAddSuccess = 'Користувача успішно додано',
   dataUpdateSuccess = 'Дані успішно оновлені',
   mfiReqErr = 'Поле МФО має бути заповнене',
-  mfiLengthErr = `Мінімальна довжина МФО - ${GeneralParams.mfiLength} символів`,
+  mfiLengthErr = `Довжина МФО має бути ${GeneralParams.mfiLength} символів`,
   currentAccountReqErr = 'Поле Розрахунковий рахунок має бути заповнене',
   currentAccountRegExpErr = 'Розрахунковий рахунок повинен починатись з символів UA та має містити 29 символів',
   generalSettingsUpdateSuccess = 'Загальні налаштування успішно оновлені',

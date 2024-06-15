@@ -3,7 +3,7 @@ import { GetStateFunc, SetStateFunc } from './store.types';
 
 export interface IUpdateGeneralSettingsData {
   id: number;
-  data: IGeneralSettings;
+  data: Partial<IGeneralSettings>;
 }
 
 export interface ISettings {

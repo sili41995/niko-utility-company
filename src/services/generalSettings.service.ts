@@ -19,7 +19,10 @@ class GeneralSettingsService extends HttpService {
     id,
     data,
   }: IUpdateGeneralSettingsData): Promise<IGeneralSettings> {
-    const response = await this.patch<IGeneralSettings, IGeneralSettings>({
+    const response = await this.put<
+      IGeneralSettings,
+      Partial<IGeneralSettings>
+    >({
       url: `general-settings/${id}`,
       data,
     });

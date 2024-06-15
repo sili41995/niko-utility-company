@@ -89,6 +89,7 @@ export interface IGetUpdatedUsersProps {
 }
 
 export interface IGeneralSettings {
+  [key: string]: string | number;
   id: number;
   currentAccount: string;
   mfi: string;

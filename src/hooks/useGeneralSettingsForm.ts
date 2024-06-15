@@ -7,7 +7,11 @@ import {
 import { useGeneralSettingsStore } from '@/store/store';
 import { IGeneralSettings } from '@/types/data.types';
 import { IUseGeneralSettingsForm } from '@/types/hooks.types';
-import { getGeneralSettingsFormDefaultValues, toasts } from '@/utils';
+import {
+  filterGeneralSettingsData,
+  getGeneralSettingsFormDefaultValues,
+  toasts,
+} from '@/utils';
 import validateGeneralSettingsForm from '@/validators/validateGeneralSettingsForm';
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -36,7 +40,8 @@ const useGeneralSettingsForm = (id: number): IUseGeneralSettingsForm => {
 
   const handleFormSubmit: SubmitHandler<IGeneralSettings> = async (data) => {
     try {
-      await updateGeneralSettings({ id, data });
+      const filteredData = filterGeneralSettingsData(data);
+      await updateGeneralSettings({ id, data: filteredData });
       toasts.successToast(Messages.generalSettingsUpdateSuccess);
     } catch (error) {
       if (error instanceof Error) {
