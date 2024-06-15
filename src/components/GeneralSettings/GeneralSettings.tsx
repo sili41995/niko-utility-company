@@ -3,12 +3,15 @@ import SettingsSectionTitle from '../SettingsSectionTitle';
 import GeneralSettingsForm from '../GeneralSettingsForm';
 import { useGeneralSettingsStore } from '@/store/store';
 import {
+  selectError,
   selectFetchGeneralSettings,
   selectGeneralSettings,
   selectIsLoaded,
+  selectIsLoading,
 } from '@/store/generalSettings/selectors';
 import Loader from '../Loader';
 import { Container } from './GeneralSettings.styled';
+import ErrorMessage from '../ErrorMessage';
 
 const GeneralSettings: FC = () => {
   const { id } = useGeneralSettingsStore(selectGeneralSettings);
@@ -16,7 +19,9 @@ const GeneralSettings: FC = () => {
     selectFetchGeneralSettings
   );
   const isLoaded = useGeneralSettingsStore(selectIsLoaded);
-  const isLoadingData = !isLoaded;
+  const isLoading = useGeneralSettingsStore(selectIsLoading);
+  const isLoadingData = !isLoaded && isLoading;
+  const error = useGeneralSettingsStore(selectError);
 
   useEffect(() => {
     fetchGeneralSettings();
@@ -28,6 +33,7 @@ const GeneralSettings: FC = () => {
     <Container>
       <SettingsSectionTitle title='Загальні налаштування:' />
       {id && <GeneralSettingsForm id={id} />}
+      {error && <ErrorMessage error={error} />}
     </Container>
   );
 };

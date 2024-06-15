@@ -20,9 +20,12 @@ import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
 import Container from '../Container';
 import SettingsModalWin from '../SettingsModalWin';
+import { useAuthStore } from '@/store/store';
+import { selectIsLoggedIn } from '@/store/auth/selectors';
 
 const Header: FC = () => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
+  const isLoggedIn = useAuthStore(selectIsLoggedIn);
   const title = 'РОЗРАХУНКОВИй ЦЕНТР';
 
   const setModalWinState = () => {
@@ -51,10 +54,12 @@ const Header: FC = () => {
                 <Address>Дніпропетровська область, м. Нікополь</Address>
               </TitleWrap>
             </Content>
-            <SettingsBtn type={BtnTypes.button} onClick={onSettingsBtnClick}>
-              <IoMdSettings size={IconSizes.primary} />
-              <BtnTitle>Налаштування</BtnTitle>
-            </SettingsBtn>
+            {isLoggedIn && (
+              <SettingsBtn type={BtnTypes.button} onClick={onSettingsBtnClick}>
+                <IoMdSettings size={IconSizes.primary} />
+                <BtnTitle>Налаштування</BtnTitle>
+              </SettingsBtn>
+            )}
           </ContentWrap>
         </Container>
       </StyledHeader>

@@ -7,15 +7,23 @@ import UsersList from '../UsersList';
 import AddUserForm from '../AddUserForm';
 import AddDataModalForm from '../AddDataModalForm';
 import { useUsersStore } from '@/store/store';
-import { selectFetchUsers, selectIsLoaded } from '@/store/users/selectors';
+import {
+  selectError,
+  selectFetchUsers,
+  selectIsLoaded,
+  selectIsLoading,
+} from '@/store/users/selectors';
 import Loader from '../Loader';
 import { makeBlur } from '@/utils';
+import ErrorMessage from '../ErrorMessage';
 
 const UsersSettings: FC = () => {
   const [showAddUserForm, setShowAddUserForm] = useState<boolean>(false);
   const fetchUsers = useUsersStore(selectFetchUsers);
+  const isLoading = useUsersStore(selectIsLoading);
   const isLoaded = useUsersStore(selectIsLoaded);
-  const isLoadingData = !isLoaded;
+  const isLoadingData = !isLoaded && isLoading;
+  const error = useUsersStore(selectError);
 
   useEffect(() => {
     fetchUsers();
@@ -33,24 +41,31 @@ const UsersSettings: FC = () => {
   return isLoadingData ? (
     <Loader />
   ) : (
-    <Container>
-      <SettingsSectionTitle title='Користувачі' />
-      <AddBtn
-        title='Новий користувач'
-        onClick={onAddBntClick}
-        disabled={showAddUserForm}
-      />
-      {showAddUserForm && (
-        <AddDataModalForm
-          title='Додати нового користувача'
-          onCloseBtnClick={toggleShowAddUserForm}
-        >
-          <AddUserForm />
-        </AddDataModalForm>
-      )}
-      <Title>Користувачі:</Title>
-      <UsersList />
-    </Container>
+    <>
+      <Container>
+        <SettingsSectionTitle title='Користувачі' />
+        {isLoaded && (
+          <>
+            <AddBtn
+              title='Новий користувач'
+              onClick={onAddBntClick}
+              disabled={showAddUserForm}
+            />
+            {showAddUserForm && (
+              <AddDataModalForm
+                title='Додати нового користувача'
+                onCloseBtnClick={toggleShowAddUserForm}
+              >
+                <AddUserForm />
+              </AddDataModalForm>
+            )}
+            <Title>Користувачі:</Title>
+            <UsersList />
+          </>
+        )}
+        {error && <ErrorMessage error={error} />}
+      </Container>
+    </>
   );
 };
 

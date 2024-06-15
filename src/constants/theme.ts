@@ -22,6 +22,7 @@ interface ITheme {
     primary: string;
     primaryFont: string;
     secondary: string;
+    error: string;
     // secondaryFont: string;
     // primary: string;
     // other: string;
@@ -34,7 +35,7 @@ interface ITheme {
     // lightgrey: string;
     // blueBtn: string;
     // redBtn: string;
-    // redIcon: string;
+    redIcon: string;
     green: string;
     greenAccent: string;
     authFormBG: string;
@@ -105,7 +106,8 @@ const theme: ITheme = {
     // lightgrey: '#d3d3d3',
     // blueBtn: '#7fd1ff',
     // redBtn: '#ff9192',
-    // redIcon: '#d3232f',
+    redIcon: '#d3232f',
+    error: '#C12F1C',
     // greenBtn: '#89f2a6',
     green: '#00c938',
     // authFormBG: '#fcfcfc',
