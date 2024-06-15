@@ -8,6 +8,7 @@ import {
   selectIsLoaded,
 } from '@/store/generalSettings/selectors';
 import Loader from '../Loader';
+import { Container } from './GeneralSettings.styled';
 
 const GeneralSettings: FC = () => {
   const { id } = useGeneralSettingsStore(selectGeneralSettings);
@@ -24,10 +25,10 @@ const GeneralSettings: FC = () => {
   return isLoadingData ? (
     <Loader />
   ) : (
-    <div>
+    <Container>
       <SettingsSectionTitle title='Загальні налаштування:' />
       {id && <GeneralSettingsForm id={id} />}
-    </div>
+    </Container>
   );
 };
 

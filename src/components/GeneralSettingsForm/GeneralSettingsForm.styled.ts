@@ -1,3 +1,8 @@
 import styled from '@emotion/styled';
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)};
+  margin-top: ${({ theme }) => theme.spacing(6)};
+`;

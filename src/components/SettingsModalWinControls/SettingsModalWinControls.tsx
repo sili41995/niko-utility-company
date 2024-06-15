@@ -6,8 +6,6 @@ import { Container, Form, Title } from './SettingsModalWinControls.styled';
 
 const SettingsModalWinControls: FC<IProps> = ({
   isSettlementsCategory,
-  isServiceListCategory,
-  isCurrentServicesCategory,
   isUsersCategory,
   isGeneralSettingsCategory,
   onChange,
@@ -22,22 +20,6 @@ const SettingsModalWinControls: FC<IProps> = ({
         type={InputTypes.radio}
         value={SettingsCategories.settlements}
         title='Населені пункти'
-      />
-      <SettingsModalWinBtn
-        checked={isServiceListCategory}
-        name={SettingsCategories.name}
-        onChange={onChange}
-        type={InputTypes.radio}
-        value={SettingsCategories.serviceList}
-        title='Перелік послуг'
-      />
-      <SettingsModalWinBtn
-        checked={isCurrentServicesCategory}
-        name={SettingsCategories.name}
-        onChange={onChange}
-        type={InputTypes.radio}
-        value={SettingsCategories.currentServices}
-        title='Поточні послуги'
       />
       <SettingsModalWinBtn
         checked={isUsersCategory}

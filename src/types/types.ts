@@ -21,7 +21,6 @@ export type NavSections = INavSection[];
 
 export interface IPathes {
   [key: string]: string;
-  [PagePaths.houses]: string;
   [PagePaths.enterprises]: string;
   [PagePaths.subscribers]: string;
   [PagePaths.counters]: string;
