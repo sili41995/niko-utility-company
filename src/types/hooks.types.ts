@@ -85,3 +85,10 @@ export interface IUseAddSubscriberAccountForm {
   register: UseFormRegister<ISubscriberAccount>;
   defaultValue: number;
 }
+
+export interface IUseStreetsData {
+  isLoadingData: boolean;
+  housesError: string | null;
+  streetsError: string | null;
+  isError: boolean;
+}

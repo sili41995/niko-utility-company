@@ -1,6 +1,6 @@
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
 import { useHousesStore, useStreetsStore } from '@/store/store';
-import { selectFetchStreets, selectStreets } from '@/store/streets/selectors';
+import { selectStreets } from '@/store/streets/selectors';
 import { ISubscriberAccount } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { useEffect } from 'react';
@@ -12,7 +12,6 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const streetId = watch('street');
   const fetchHouses = useHousesStore(selectFetchHouses);
   const houses = useHousesStore(selectHouses);
-  const fetchStreets = useStreetsStore(selectFetchStreets);
 
   const defaultValue = streets[0]?.id;
 
@@ -23,10 +22,6 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
 
     fetchHouses(Number(streetId));
   }, [fetchHouses, streetId]);
-
-  useEffect(() => {
-    fetchStreets();
-  }, [fetchStreets]);
 
   return {
     streets,
