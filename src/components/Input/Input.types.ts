@@ -10,8 +10,13 @@ export interface IProps {
   autoFocus?: boolean;
   label?: string;
   defaultValue?: string;
+  accent?: boolean;
 }
 
 export interface IStyledProps {
   formType?: FormTypes;
+}
+
+export interface IStyledLabelProps {
+  accent: boolean;
 }

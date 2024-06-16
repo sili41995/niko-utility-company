@@ -3,6 +3,8 @@ const enum InputTypes {
   radio = 'radio',
   email = 'email',
   password = 'password',
+  date = 'date',
+  number = 'number',
 }
 
 export default InputTypes;

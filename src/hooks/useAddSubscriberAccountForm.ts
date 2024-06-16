@@ -1,8 +1,10 @@
+import { AccountTypes, apartmentTypes, individualHeating } from '@/constants';
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
 import { useHousesStore, useStreetsStore } from '@/store/store';
 import { selectStreets } from '@/store/streets/selectors';
 import { ISubscriberAccount } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
+import { getCurrentDateParams } from '@/utils';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -12,6 +14,9 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const streetId = watch('street');
   const fetchHouses = useHousesStore(selectFetchHouses);
   const houses = useHousesStore(selectHouses);
+  const { currentMonth, currentYear, firstDayOfMonth } = getCurrentDateParams();
+  const currentDate = `${currentYear}р. ${currentMonth}`;
+  const accountTypes = Object.values(AccountTypes);
 
   const defaultValue = streets[0]?.id;
 
@@ -29,6 +34,11 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     handleSubmit,
     defaultValue,
     houses,
+    currentDate,
+    firstDayOfMonth,
+    accountTypes,
+    apartmentTypes,
+    individualHeating,
   };
 };
 

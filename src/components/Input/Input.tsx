@@ -10,6 +10,7 @@ const Input: FC<IProps> = ({
   placeholder,
   label,
   defaultValue,
+  accent = false,
 }) => {
   const input = (
     <StyledInput
@@ -32,7 +33,7 @@ const Input: FC<IProps> = ({
 
   return label ? (
     <InputWrap>
-      <Label>{label}</Label>
+      <Label accent={accent}>{label}</Label>
       {styledInput}
     </InputWrap>
   ) : (

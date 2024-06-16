@@ -1,4 +1,4 @@
-import { ServiceCategories } from '@/constants';
+import { AccountTypes, ServiceCategories } from '@/constants';
 
 export interface ISubscriber {
   subscriberAccount: string;
@@ -113,4 +113,14 @@ export type Houses = IHouse[];
 export interface ISubscriberAccount {
   street: string;
   house: string;
+  apartment: string;
+  subscriberAccount: string;
+  contract: string;
+  contractDate: Date;
+  accountType: AccountTypes;
+  isLivingApartment: boolean;
+  residents: string;
+  floor: string;
+  rooms: string;
+  individualHeating: string;
 }

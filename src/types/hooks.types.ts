@@ -1,5 +1,11 @@
 import { SetURLSearchParams } from 'react-router-dom';
-import { Func, IOnPageBtnClickProps, OnBtnClickFunc } from './types';
+import {
+  ApartmentTypes,
+  Func,
+  IOnPageBtnClickProps,
+  IndividualHeating,
+  OnBtnClickFunc,
+} from './types';
 import {
   SubmitHandler,
   UseFormHandleSubmit,
@@ -84,6 +90,11 @@ export interface IUseAddSubscriberAccountForm {
   handleSubmit: UseFormHandleSubmit<ISubscriberAccount, undefined>;
   register: UseFormRegister<ISubscriberAccount>;
   defaultValue: number;
+  currentDate: string;
+  firstDayOfMonth: string;
+  accountTypes: string[];
+  apartmentTypes: ApartmentTypes;
+  individualHeating: IndividualHeating;
 }
 
 export interface IUseStreetsData {

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './Input.types';
+import { IStyledLabelProps, IStyledProps } from './Input.types';
 import { setInputFontSize, setInputHeight, setInputPadding } from '@/utils';
 
 export const Container = styled.span`
@@ -45,9 +45,10 @@ export const InputWrap = styled.label`
   gap: ${({ theme }) => theme.spacing()};
 `;
 
-export const Label = styled.span`
+export const Label = styled.span<IStyledLabelProps>`
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: ${({ theme }) => theme.fontWeight.primary};
+  font-weight: ${({ theme, accent }) =>
+    accent ? 700 : theme.fontWeight.primary};
 `;

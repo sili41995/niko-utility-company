@@ -74,3 +74,23 @@ export interface IRegExp {
   currentAccount: RegExp;
   mfi: RegExp;
 }
+
+export interface IGetCurrentDateParams {
+  currentMonth: string;
+  currentYear: string;
+  firstDayOfMonth: string;
+}
+
+export interface IApartmentType {
+  title: string;
+  value: 'false' | 'true';
+}
+
+export type ApartmentTypes = IApartmentType[];
+
+export interface IIndividualHeating {
+  title: string;
+  value: 'false' | 'true';
+}
+
+export type IndividualHeating = IIndividualHeating[];
