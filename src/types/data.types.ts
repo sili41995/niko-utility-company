@@ -1,21 +1,5 @@
 import { ServiceCategories } from '@/constants';
 
-export interface IHouse {
-  location: string;
-  street: string;
-  houseNumber: string;
-  floors: null | number;
-  exploitation: string;
-  houseType: null | string;
-  house: string[];
-  territory: string[];
-  services: string;
-  rate: number;
-  rateSecondary: number;
-}
-
-export type Houses = IHouse[];
-
 export interface ISubscriber {
   subscriberAccount: string;
   accountType: string;
@@ -109,3 +93,24 @@ export type MFI = Pick<IGeneralSettings, 'mfi'>;
 export type HelpPhone = Pick<IGeneralSettings, 'helpPhone'>;
 
 export type AdsInPayments = Pick<IGeneralSettings, 'adsInPayments'>;
+
+export interface IStreet {
+  id: number;
+  name: string;
+  type: string;
+}
+
+export type Streets = IStreet[];
+
+export interface IHouse {
+  id: number;
+  number: string;
+  street: number;
+}
+
+export type Houses = IHouse[];
+
+export interface ISubscriberAccount {
+  street: string;
+  house: string;
+}

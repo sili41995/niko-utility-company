@@ -44,6 +44,4 @@ export interface IUsersState extends IUsersInitialState {
   changeAccessStatus: (
     data: IChangeAccessStatusData
   ) => Promise<UserData | undefined>;
-  //   deleteTodo: (id: number) => Promise<ITodo | undefined>;
-  //   updateTodo: (data: IUpdateTodoData) => Promise<ITodo | undefined>;
 }

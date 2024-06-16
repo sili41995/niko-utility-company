@@ -6,6 +6,10 @@ import { IUsersState } from '@/types/usersStore.types';
 import usersStore from './users/users.store';
 import generalSettingsStore from './generalSettings/generalSettings.store';
 import { IGeneralSettingsState } from '@/types/generalSettingsStore.types';
+import { IStreetsState } from '@/types/streetsStore.types';
+import streetsStore from './streets/streets.store';
+import { IHousesState } from '@/types/housesStore.types';
+import housesStore from './houses/streets.store';
 
 export const useAuthStore = create<IAuthState>()(
   devtools(
@@ -20,4 +24,12 @@ export const useUsersStore = create<IUsersState>()(
 
 export const useGeneralSettingsStore = create<IGeneralSettingsState>()(
   devtools(generalSettingsStore.store, generalSettingsStore.params)
+);
+
+export const useStreetsStore = create<IStreetsState>()(
+  devtools(streetsStore.store, streetsStore.params)
+);
+
+export const useHousesStore = create<IHousesState>()(
+  devtools(housesStore.store, housesStore.params)
 );

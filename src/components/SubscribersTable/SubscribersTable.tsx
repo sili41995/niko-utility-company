@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeadRow,
   TableHeader,
-} from '@/components/HousesTable/HousesTable.styled';
+} from './SubscribersTable.styled';
 import { subscribers } from '@/data/subscribers';
 
 const SubscribersTable: FC = () => {

@@ -5,7 +5,14 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from 'react-hook-form';
-import { Credentials, IGeneralSettings, NewUser } from './data.types';
+import {
+  Credentials,
+  Houses,
+  IGeneralSettings,
+  ISubscriberAccount,
+  NewUser,
+  Streets,
+} from './data.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -69,4 +76,12 @@ export interface IUseGeneralSettingsForm {
   mfi: string;
   currentAccount: string;
   helpPhone: string;
+}
+
+export interface IUseAddSubscriberAccountForm {
+  streets: Streets;
+  houses: Houses;
+  handleSubmit: UseFormHandleSubmit<ISubscriberAccount, undefined>;
+  register: UseFormRegister<ISubscriberAccount>;
+  defaultValue: number;
 }
