@@ -1,5 +1,5 @@
 import { SetURLSearchParams } from 'react-router-dom';
-import { IOnPageBtnClickProps, OnBtnClickFunc } from './types';
+import { Func, IOnPageBtnClickProps, OnBtnClickFunc } from './types';
 import {
   SubmitHandler,
   UseFormHandleSubmit,
@@ -91,4 +91,26 @@ export interface IUseStreetsData {
   housesError: string | null;
   streetsError: string | null;
   isError: boolean;
+}
+
+export interface IUseGeneralSettings {
+  isLoadingData: boolean;
+  id: number | null;
+  error: string | null;
+}
+
+export interface IUseHeader {
+  isLoggedIn: boolean;
+  onSettingsBtnClick: OnBtnClickFunc;
+  showModalWin: boolean;
+  setModalWinState: Func;
+}
+
+export interface IUseUsersSettings {
+  isLoadingData: boolean;
+  isLoaded: boolean;
+  onAddBntClick: OnBtnClickFunc;
+  showAddUserForm: boolean;
+  toggleShowAddUserForm: Func;
+  error: string | null;
 }

@@ -3,11 +3,15 @@ import { ChangeEvent, MouseEvent } from 'react';
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
+export type DivClickEvent = MouseEvent<HTMLDivElement>;
+
 export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 
 export type InputChangeFunc = (e: InputChangeEvent) => void;
 
 export type OnBtnClickFunc = (e: BtnClickEvent) => void;
+
+export type onDivClickFunc = (e: DivClickEvent) => void;
 
 export type Func = () => void;
 

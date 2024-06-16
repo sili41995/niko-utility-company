@@ -1,5 +1,5 @@
 import { BtnTypes, IconSizes, PagePaths } from '@/constants';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '@/images/logo.png';
 import { IoMdSettings } from 'react-icons/io';
@@ -16,26 +16,14 @@ import {
   Title,
   TitleWrap,
 } from './Headr.styled';
-import { BtnClickEvent } from '@/types/types';
-import { makeBlur } from '@/utils';
 import Container from '../Container';
 import SettingsModalWin from '../SettingsModalWin';
-import { useAuthStore } from '@/store/store';
-import { selectIsLoggedIn } from '@/store/auth/selectors';
+import { useHeader } from '@/hooks';
 
 const Header: FC = () => {
-  const [showModalWin, setShowModalWin] = useState<boolean>(false);
-  const isLoggedIn = useAuthStore(selectIsLoggedIn);
   const title = 'РОЗРАХУНКОВИй ЦЕНТР';
-
-  const setModalWinState = () => {
-    setShowModalWin((prevState) => !prevState);
-  };
-
-  const onSettingsBtnClick = (e: BtnClickEvent) => {
-    makeBlur(e.currentTarget);
-    setModalWinState();
-  };
+  const { isLoggedIn, onSettingsBtnClick, showModalWin, setModalWinState } =
+    useHeader();
 
   return (
     <>

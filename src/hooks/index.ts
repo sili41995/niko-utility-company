@@ -5,3 +5,7 @@ export { default as useAddUserForm } from './useAddUserForm';
 export { default as useGeneralSettingsForm } from './useGeneralSettingsForm';
 export { default as useAddSubscriberAccountForm } from './useAddSubscriberAccountForm';
 export { default as useStreetsData } from './useStreetsData';
+export { default as useGeneralSettings } from './useGeneralSettings';
+export { default as useHeader } from './useHeader';
+export { default as useModalWin } from './useModalWin';
+export { default as useUsersSettings } from './useUsersSettings';

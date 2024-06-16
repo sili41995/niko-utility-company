@@ -1,33 +1,12 @@
-import { FC, MouseEvent, useEffect } from 'react';
+import { FC } from 'react';
 import { createPortal } from 'react-dom';
 import { IProps } from './ModalWin.types';
 import { Backdrop, Container, Section } from './ModalWin.styled';
 import CloseBtn from '../CloseBtn';
+import { useModalWin } from '@/hooks';
 
 const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {
-  const modalRoot = document.querySelector('#modal-root');
-
-  useEffect(() => {
-    const hideModalWin = (e: KeyboardEvent) => {
-      if (e.code === 'Escape') {
-        setModalWinState();
-      }
-    };
-
-    window.addEventListener('keydown', hideModalWin);
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', hideModalWin);
-    };
-  }, [setModalWinState]);
-
-  const hideModalWin = (e: MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      setModalWinState();
-    }
-  };
+  const { modalRoot, hideModalWin } = useModalWin(setModalWinState);
 
   return (
     modalRoot &&

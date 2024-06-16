@@ -9,8 +9,6 @@ const SharedLayout: FC = () => {
   return (
     <>
       <Header />
-      {/* <Container><NavigationBar /></Container> */}
-
       <Main>
         <Suspense fallback={<Loader />}>
           <Outlet />
