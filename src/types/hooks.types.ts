@@ -89,6 +89,7 @@ export interface IUseAddSubscriberAccountForm {
   streets: Streets;
   houses: Houses;
   handleSubmit: UseFormHandleSubmit<ISubscriberAccount, undefined>;
+  handleFormSubmit: SubmitHandler<ISubscriberAccount>;
   register: UseFormRegister<ISubscriberAccount>;
   defaultValue: number;
   currentDate: string;
@@ -97,6 +98,9 @@ export interface IUseAddSubscriberAccountForm {
   apartmentTypes: ApartmentTypes;
   individualHeating: IndividualHeating;
   period: Period;
+  isLoading: boolean;
+  checked: boolean;
+  onCheckboxChange: Func;
 }
 
 export interface IUseStreetsData {

@@ -70,7 +70,7 @@ export interface IErrorMessage {
 
 export interface IRegExp {
   email: RegExp;
-  helpPhone: RegExp;
+  phone: RegExp;
   currentAccount: RegExp;
   mfi: RegExp;
 }

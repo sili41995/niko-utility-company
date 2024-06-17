@@ -138,4 +138,14 @@ export interface ISubscriberAccount {
   motorcycle: string;
   watering: string;
   period: string;
+  isRemovalHouseholdWaste: boolean;
+  utr: string;
+  passport: string;
+  surname: string;
+  name: string;
+  middleName: string;
+  phone: string;
+  additionalPhone: string;
+  email: string;
+  birthday: string;
 }

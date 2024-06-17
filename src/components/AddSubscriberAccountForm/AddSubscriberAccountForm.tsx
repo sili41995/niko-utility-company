@@ -1,11 +1,14 @@
 import { useAddSubscriberAccountForm } from '@/hooks';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import Input from '../Input';
-import { InputTypes } from '@/constants';
+import { InputTypes, regExp } from '@/constants';
 import {
   ApartmentParameters,
+  PersonParameters,
   SubscriberAccountContainer,
 } from './AddSubscriberAccountForm.styled';
+import Checkbox from '../Checkbox';
+import SubmitFormBtn from '../SubmitFormBtn';
 
 const AddSubscriberAccountForm: FC = () => {
   const {
@@ -19,10 +22,19 @@ const AddSubscriberAccountForm: FC = () => {
     apartmentTypes,
     individualHeating,
     period,
+    isLoading,
+    handleFormSubmit,
+    handleSubmit,
+    checked,
+    onCheckboxChange,
   } = useAddSubscriberAccountForm();
 
+  useEffect(() => {
+    console.log(checked);
+  });
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(handleFormSubmit)}>
       <p>
         Поточний період: <span>{currentDate}</span>
       </p>
@@ -188,7 +200,7 @@ const AddSubscriberAccountForm: FC = () => {
           settings={{ ...register('motorcycle') }}
           label='Мотоцикл (вода) (шт.):'
           type={InputTypes.number}
-        />{' '}
+        />
         <Input
           settings={{ ...register('watering') }}
           label='Полив (вода) (сот.):'
@@ -207,7 +219,63 @@ const AddSubscriberAccountForm: FC = () => {
             </select>
           </label>
         </div>
+        <div>
+          <p>- Вивезення побутових відходів (б/с)</p>
+          <Checkbox
+            settings={{ ...register('isRemovalHouseholdWaste') }}
+            checked={checked}
+            onChange={onCheckboxChange}
+          />
+        </div>
+        <PersonParameters>
+          <Input
+            settings={{ ...register('utr') }}
+            label='ІПН:'
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('passport') }}
+            label='Паспорт:'
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('surname') }}
+            label='Прізвище:'
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('name') }}
+            label="Ім'я:"
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('middleName') }}
+            label='По-батькові:'
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('phone'), pattern: regExp.phone }}
+            label='Телефон:'
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('additionalPhone'), pattern: regExp.phone }}
+            label='Телефон додатковий:'
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('email'), pattern: regExp.email }}
+            label='Електронна адреса:'
+            type={InputTypes.text}
+          />
+          <Input
+            settings={{ ...register('birthday') }}
+            label='День народження:'
+            type={InputTypes.date}
+          />
+        </PersonParameters>
       </ApartmentParameters>
+      <SubmitFormBtn title='Зберегти' disabled={isLoading} />
     </form>
   );
 };

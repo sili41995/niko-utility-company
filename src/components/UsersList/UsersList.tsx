@@ -43,6 +43,7 @@ const UsersList: FC = () => {
 
           const onInputChange = (e: InputChangeEvent): void => {
             const { checked, name } = e.currentTarget;
+
             changeAccessStatus({
               data: { [name]: checked },
               id,

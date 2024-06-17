@@ -47,7 +47,7 @@ const GeneralSettingsForm: FC<IProps> = ({ id }) => {
         settings={{
           ...register('helpPhone', {
             required: true,
-            pattern: regExp.helpPhone,
+            pattern: regExp.phone,
           }),
         }}
         type={InputTypes.text}
