@@ -14,7 +14,8 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const streetId = watch('street');
   const fetchHouses = useHousesStore(selectFetchHouses);
   const houses = useHousesStore(selectHouses);
-  const { currentMonth, currentYear, firstDayOfMonth } = getCurrentDateParams();
+  const { currentMonth, currentYear, firstDayOfMonth, period } =
+    getCurrentDateParams();
   const currentDate = `${currentYear}р. ${currentMonth}`;
   const accountTypes = Object.values(AccountTypes);
 
@@ -39,6 +40,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     accountTypes,
     apartmentTypes,
     individualHeating,
+    period,
   };
 };
 

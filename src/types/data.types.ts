@@ -123,4 +123,19 @@ export interface ISubscriberAccount {
   floor: string;
   rooms: string;
   individualHeating: string;
+  totalArea: string;
+  heatingArea: string;
+  dwellingPlace: string;
+  loggiaArea: string;
+  balconyArea: string;
+  terraceArea: string;
+  storageRoomsArea: string;
+  cattle: string;
+  calf: string;
+  goats: string;
+  birds: string;
+  auto: string;
+  motorcycle: string;
+  watering: string;
+  period: string;
 }

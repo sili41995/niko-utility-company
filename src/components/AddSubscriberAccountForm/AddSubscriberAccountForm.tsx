@@ -18,6 +18,7 @@ const AddSubscriberAccountForm: FC = () => {
     accountTypes,
     apartmentTypes,
     individualHeating,
+    period,
   } = useAddSubscriberAccountForm();
 
   return (
@@ -116,6 +117,96 @@ const AddSubscriberAccountForm: FC = () => {
             ))}
           </select>
         </label>
+        <Input
+          settings={{ ...register('totalArea') }}
+          label='Загальна площа (м2):'
+          type={InputTypes.number}
+          step={0.01}
+        />
+        <Input
+          settings={{ ...register('heatingArea') }}
+          label='Опалювальна пл. (м2):'
+          type={InputTypes.number}
+          step={0.1}
+        />
+        <Input
+          settings={{ ...register('dwellingPlace') }}
+          label='Житлова площа (м2):'
+          type={InputTypes.number}
+          step={0.1}
+        />
+        <Input
+          settings={{ ...register('loggiaArea') }}
+          label='Площа лоджій (м2):'
+          type={InputTypes.number}
+          step={0.1}
+        />
+        <Input
+          settings={{ ...register('balconyArea') }}
+          label='Площа балконів (м2):'
+          type={InputTypes.number}
+          step={0.1}
+        />
+        <Input
+          settings={{ ...register('terraceArea') }}
+          label='Площа терас (м2):'
+          type={InputTypes.number}
+          step={0.1}
+        />
+        <Input
+          settings={{ ...register('storageRoomsArea') }}
+          label='Площа кладових приміщень (м2):'
+          type={InputTypes.number}
+          step={0.01}
+        />
+        <Input
+          settings={{ ...register('cattle') }}
+          label='Велика рогата худоба (вода) (шт.):'
+          type={InputTypes.number}
+        />
+        <Input
+          settings={{ ...register('calf') }}
+          label='Теля (вода) (шт.):'
+          type={InputTypes.number}
+        />
+        <Input
+          settings={{ ...register('goats') }}
+          label='Кози (вода) (шт.):'
+          type={InputTypes.number}
+        />
+        <Input
+          settings={{ ...register('birds') }}
+          label='Птиця (вода) (шт.):'
+          type={InputTypes.number}
+        />
+        <Input
+          settings={{ ...register('auto') }}
+          label='Авто (вода) (шт.):'
+          type={InputTypes.number}
+        />
+        <Input
+          settings={{ ...register('motorcycle') }}
+          label='Мотоцикл (вода) (шт.):'
+          type={InputTypes.number}
+        />{' '}
+        <Input
+          settings={{ ...register('watering') }}
+          label='Полив (вода) (сот.):'
+          type={InputTypes.number}
+        />
+        <div>
+          <p>Послуги:</p>
+          <label>
+            <span>Послуги надаються з:</span>
+            <select {...register('period')}>
+              {period.map(({ title, period }) => (
+                <option value={period} key={period}>
+                  {`${period} ${title}`}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
       </ApartmentParameters>
     </form>
   );

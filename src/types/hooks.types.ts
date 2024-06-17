@@ -5,6 +5,7 @@ import {
   IOnPageBtnClickProps,
   IndividualHeating,
   OnBtnClickFunc,
+  Period,
 } from './types';
 import {
   SubmitHandler,
@@ -95,6 +96,7 @@ export interface IUseAddSubscriberAccountForm {
   accountTypes: string[];
   apartmentTypes: ApartmentTypes;
   individualHeating: IndividualHeating;
+  period: Period;
 }
 
 export interface IUseStreetsData {

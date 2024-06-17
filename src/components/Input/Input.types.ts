@@ -7,10 +7,11 @@ export interface IProps {
   placeholder?: string;
   icon?: ReactNode;
   formType?: FormTypes;
-  autoFocus?: boolean;
   label?: string;
   defaultValue?: string;
   accent?: boolean;
+  step?: number;
+  min?: number;
 }
 
 export interface IStyledProps {

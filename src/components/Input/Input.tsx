@@ -11,6 +11,8 @@ const Input: FC<IProps> = ({
   label,
   defaultValue,
   accent = false,
+  step,
+  min = 0,
 }) => {
   const input = (
     <StyledInput
@@ -19,6 +21,8 @@ const Input: FC<IProps> = ({
       {...settings}
       placeholder={placeholder}
       defaultValue={defaultValue}
+      step={step}
+      min={min}
     />
   );
 

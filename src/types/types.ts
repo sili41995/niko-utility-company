@@ -75,22 +75,32 @@ export interface IRegExp {
   mfi: RegExp;
 }
 
+export interface IPeriod {
+  period: string;
+  title: 'Поточний період' | 'Наступний період';
+}
+
+export type Period = IPeriod[];
+
 export interface IGetCurrentDateParams {
   currentMonth: string;
   currentYear: string;
   firstDayOfMonth: string;
+  period: Period;
 }
 
 export interface IApartmentType {
   title: string;
-  value: 'false' | 'true';
+  value: BooleanValue;
 }
 
 export type ApartmentTypes = IApartmentType[];
 
 export interface IIndividualHeating {
   title: string;
-  value: 'false' | 'true';
+  value: BooleanValue;
 }
 
 export type IndividualHeating = IIndividualHeating[];
+
+export type BooleanValue = 'true' | 'false';

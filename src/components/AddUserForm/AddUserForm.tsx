@@ -18,7 +18,6 @@ const AddUserForm: FC = () => {
         placeholder='Логін'
         formType={FormTypes.addUser}
         icon={<FaUser size={IconSizes.secondary} />}
-        autoFocus
       />
       <Input
         settings={{

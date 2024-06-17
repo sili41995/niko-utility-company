@@ -27,7 +27,6 @@ const SignInForm: FC = () => {
           placeholder='Login'
           formType={FormTypes.auth}
           icon={<FaUser size={IconSizes.secondary} />}
-          autoFocus
         />
         <Input
           settings={{
