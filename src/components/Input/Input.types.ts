@@ -12,12 +12,19 @@ export interface IProps {
   accent?: boolean;
   step?: number;
   min?: number;
+  horizontal?: boolean;
+  width?: number;
 }
 
-export interface IStyledProps {
+export interface IStyledInputProps {
   formType?: FormTypes;
+  width?: number;
 }
 
 export interface IStyledLabelProps {
   accent: boolean;
+}
+
+export interface IStyledInputWrapProps {
+  horizontal: boolean;
 }

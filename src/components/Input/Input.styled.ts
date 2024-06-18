@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
-import { IStyledLabelProps, IStyledProps } from './Input.types';
+import {
+  IStyledInputWrapProps,
+  IStyledLabelProps,
+  IStyledInputProps,
+} from './Input.types';
 import { setInputFontSize, setInputHeight, setInputPadding } from '@/utils';
 
 export const Container = styled.span`
@@ -14,8 +18,8 @@ export const Container = styled.span`
   }
 `;
 
-export const StyledInput = styled.input<IStyledProps>`
-  width: 100%;
+export const StyledInput = styled.input<IStyledInputProps>`
+  width: ${({ width }) => (width ? `${width}px` : '100%')};
   height: ${({ formType }) => setInputHeight(formType)}px;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.border};
@@ -39,13 +43,16 @@ export const StyledInput = styled.input<IStyledProps>`
   }
 `;
 
-export const InputWrap = styled.label`
+export const InputWrap = styled.label<IStyledInputWrapProps>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ horizontal }) => (horizontal ? 'row' : 'column')};
+  align-items: ${({ horizontal }) => (horizontal ? 'center' : 'flex-start')};
+  justify-content: space-between;
   gap: ${({ theme }) => theme.spacing()};
 `;
 
 export const Label = styled.span<IStyledLabelProps>`
+  flex-shrink: 0;
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;

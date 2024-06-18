@@ -169,3 +169,10 @@ export type Phone = Pick<ISubscriberAccount, 'phone'>;
 export type AdditionalPhone = Pick<ISubscriberAccount, 'additionalPhone'>;
 
 export type SubscriberAccountEmail = Pick<ISubscriberAccount, 'email'>;
+
+export interface ISelectData {
+  value: string;
+  title: string;
+}
+
+export type SelectData = ISelectData[];

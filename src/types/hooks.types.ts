@@ -12,11 +12,10 @@ import {
 } from 'react-hook-form';
 import {
   Credentials,
-  Houses,
   IGeneralSettings,
   ISubscriberAccount,
   NewUser,
-  Streets,
+  SelectData,
 } from './data.types';
 
 export interface IUpdateSearchParamsProps {
@@ -84,12 +83,12 @@ export interface IUseGeneralSettingsForm {
 }
 
 export interface IUseAddSubscriberAccountForm {
-  streets: Streets;
-  houses: Houses;
+  streets: SelectData;
+  houses: SelectData;
   handleSubmit: UseFormHandleSubmit<ISubscriberAccount, undefined>;
   handleFormSubmit: SubmitHandler<ISubscriberAccount>;
   register: UseFormRegister<ISubscriberAccount>;
-  defaultValue: number;
+  streetDefaultValue: number;
   currentDate: string;
   firstDayOfMonth: string;
   accountTypes: string[];

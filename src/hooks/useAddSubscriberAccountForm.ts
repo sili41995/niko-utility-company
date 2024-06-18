@@ -2,7 +2,7 @@ import { AccountTypes, apartmentTypes } from '@/constants';
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
 import { useHousesStore, useStreetsStore } from '@/store/store';
 import { selectStreets } from '@/store/streets/selectors';
-import { ISubscriberAccount } from '@/types/data.types';
+import { ISubscriberAccount, SelectData } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { filterAddSubscriberAccountData, getCurrentDateParams } from '@/utils';
 import { validateAddSubscriberAccountForm } from '@/validators';
@@ -26,7 +26,15 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const accountTypes = Object.values(AccountTypes);
   const isLoading = false;
   //  const isLoading = false;
-  const defaultValue = streets[0]?.id;
+  const streetDefaultValue = streets[0]?.id;
+  const streetsSelectData: SelectData = streets.map(({ name, type, id }) => ({
+    title: `${type} ${name}`,
+    value: String(id),
+  }));
+  const housesSelectData: SelectData = houses.map(({ id, number }) => ({
+    title: number,
+    value: String(id),
+  }));
 
   useEffect(() => {
     if (!streetId) {
@@ -54,12 +62,12 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   };
 
   return {
-    streets,
+    streets: streetsSelectData,
+    houses: housesSelectData,
     register,
     handleSubmit,
     handleFormSubmit,
-    defaultValue,
-    houses,
+    streetDefaultValue,
     currentDate,
     firstDayOfMonth,
     accountTypes,

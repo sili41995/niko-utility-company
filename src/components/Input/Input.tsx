@@ -13,6 +13,8 @@ const Input: FC<IProps> = ({
   accent = false,
   step,
   min = 0,
+  horizontal = false,
+  width,
 }) => {
   const input = (
     <StyledInput
@@ -23,6 +25,7 @@ const Input: FC<IProps> = ({
       defaultValue={defaultValue}
       step={step}
       min={min}
+      width={width}
     />
   );
 
@@ -36,7 +39,7 @@ const Input: FC<IProps> = ({
   );
 
   return label ? (
-    <InputWrap>
+    <InputWrap horizontal={horizontal}>
       <Label accent={accent}>{label}</Label>
       {styledInput}
     </InputWrap>
