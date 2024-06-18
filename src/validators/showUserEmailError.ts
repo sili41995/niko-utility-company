@@ -1,9 +1,9 @@
 import { Messages } from '@/constants';
-import { Email } from '@/types/data.types';
+import { UserEmail } from '@/types/data.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showEmailError = (errors: FieldErrors<Email>): void => {
+const showUserEmailError = (errors: FieldErrors<UserEmail>): void => {
   errors.email &&
     toasts.errorToast(
       errors.email.type === 'required'
@@ -12,4 +12,4 @@ const showEmailError = (errors: FieldErrors<Email>): void => {
     );
 };
 
-export default showEmailError;
+export default showUserEmailError;

@@ -17,3 +17,4 @@ export { default as getTokenFromLS } from './getTokenFromLS';
 export { default as getGeneralSettingsFormDefaultValues } from './getGeneralSettingsFormDefaultValues';
 export { default as filterGeneralSettingsData } from './filterGeneralSettingsData';
 export { default as getCurrentDateParams } from './getCurrentDateParams';
+export { default as filterAddSubscriberAccountData } from './filterAddSubscriberAccountData';

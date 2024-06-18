@@ -75,18 +75,10 @@ export interface IRegExp {
   mfi: RegExp;
 }
 
-export interface IPeriod {
-  period: string;
-  title: 'Поточний період' | 'Наступний період';
-}
-
-export type Period = IPeriod[];
-
 export interface IGetCurrentDateParams {
   currentMonth: string;
   currentYear: string;
   firstDayOfMonth: string;
-  period: Period;
 }
 
 export interface IApartmentType {

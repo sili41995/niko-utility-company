@@ -59,9 +59,9 @@ export type Password = Pick<IUser, 'password'>;
 
 export type Login = Pick<IUser, 'login'>;
 
-export type Name = Pick<IUser, 'name'>;
+export type UserName = Pick<IUser, 'name'>;
 
-export type Email = Pick<IUser, 'email'>;
+export type UserEmail = Pick<IUser, 'email'>;
 
 export type Credentials = Pick<IUser, 'login' | 'password'>;
 
@@ -111,6 +111,7 @@ export interface IHouse {
 export type Houses = IHouse[];
 
 export interface ISubscriberAccount {
+  [key: string]: string | Date | boolean | undefined;
   street: string;
   house: string;
   apartment: string;
@@ -120,23 +121,6 @@ export interface ISubscriberAccount {
   accountType: AccountTypes;
   isLivingApartment: boolean;
   residents: string;
-  floor: string;
-  rooms: string;
-  individualHeating: string;
-  totalArea: string;
-  heatingArea: string;
-  dwellingPlace: string;
-  loggiaArea: string;
-  balconyArea: string;
-  terraceArea: string;
-  storageRoomsArea: string;
-  cattle: string;
-  calf: string;
-  goats: string;
-  birds: string;
-  auto: string;
-  motorcycle: string;
-  watering: string;
   period: string;
   isRemovalHouseholdWaste: boolean;
   utr: string;
@@ -146,6 +130,42 @@ export interface ISubscriberAccount {
   middleName: string;
   phone: string;
   additionalPhone: string;
-  email: string;
-  birthday: string;
+  email?: string;
+  birthday?: Date;
 }
+
+export type Street = Pick<ISubscriberAccount, 'street'>;
+
+export type House = Pick<ISubscriberAccount, 'house'>;
+
+export type Apartment = Pick<ISubscriberAccount, 'apartment'>;
+
+export type SubscriberAccount = Pick<ISubscriberAccount, 'subscriberAccount'>;
+
+export type Contract = Pick<ISubscriberAccount, 'contract'>;
+
+export type ContractDate = Pick<ISubscriberAccount, 'contractDate'>;
+
+export type AccountType = Pick<ISubscriberAccount, 'accountType'>;
+
+export type IsLivingApartment = Pick<ISubscriberAccount, 'isLivingApartment'>;
+
+export type Residents = Pick<ISubscriberAccount, 'residents'>;
+
+export type Period = Pick<ISubscriberAccount, 'period'>;
+
+export type Utr = Pick<ISubscriberAccount, 'utr'>;
+
+export type Passport = Pick<ISubscriberAccount, 'passport'>;
+
+export type Surname = Pick<ISubscriberAccount, 'surname'>;
+
+export type SubscriberAccountName = Pick<ISubscriberAccount, 'name'>;
+
+export type MiddleName = Pick<ISubscriberAccount, 'middleName'>;
+
+export type Phone = Pick<ISubscriberAccount, 'phone'>;
+
+export type AdditionalPhone = Pick<ISubscriberAccount, 'additionalPhone'>;
+
+export type SubscriberAccountEmail = Pick<ISubscriberAccount, 'email'>;

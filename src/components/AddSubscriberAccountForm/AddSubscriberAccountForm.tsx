@@ -1,9 +1,8 @@
 import { useAddSubscriberAccountForm } from '@/hooks';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import Input from '../Input';
 import { InputTypes, regExp } from '@/constants';
 import {
-  ApartmentParameters,
   PersonParameters,
   SubscriberAccountContainer,
 } from './AddSubscriberAccountForm.styled';
@@ -20,19 +19,13 @@ const AddSubscriberAccountForm: FC = () => {
     firstDayOfMonth,
     accountTypes,
     apartmentTypes,
-    individualHeating,
-    period,
     isLoading,
     handleFormSubmit,
     handleSubmit,
     checked,
     onCheckboxChange,
   } = useAddSubscriberAccountForm();
-
-  useEffect(() => {
-    console.log(checked);
-  });
-
+  // давай продолжим со стилей
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)}>
       <p>
@@ -41,7 +34,10 @@ const AddSubscriberAccountForm: FC = () => {
       <SubscriberAccountContainer>
         <label>
           <span>Вулиця:</span>
-          <select {...register('street')} defaultValue={defaultValue}>
+          <select
+            {...register('street', { required: true })}
+            defaultValue={defaultValue}
+          >
             {streets.map(({ name, id, type }) => (
               <option value={id} key={id}>
                 {`${type} ${name}`}
@@ -51,7 +47,7 @@ const AddSubscriberAccountForm: FC = () => {
         </label>
         <label>
           <span>Будинок:</span>
-          <select {...register('house')}>
+          <select {...register('house', { required: true })}>
             {houses.map(({ id, number }) => (
               <option value={id} key={id}>
                 {number}
@@ -60,31 +56,31 @@ const AddSubscriberAccountForm: FC = () => {
           </select>
         </label>
         <Input
-          settings={{ ...register('apartment') }}
+          settings={{ ...register('apartment', { required: true }) }}
           label='№ квартири:'
           type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('subscriberAccount') }}
+          settings={{ ...register('subscriberAccount', { required: true }) }}
           label='Абон. рахунок №:'
           type={InputTypes.text}
           accent={true}
         />
         <Input
-          settings={{ ...register('contract') }}
+          settings={{ ...register('contract', { required: true }) }}
           label='Договір №:'
           type={InputTypes.text}
           accent={true}
         />
         <Input
-          settings={{ ...register('contractDate') }}
+          settings={{ ...register('contractDate', { required: true }) }}
           label='від'
           type={InputTypes.date}
           defaultValue={firstDayOfMonth}
         />
         <label>
           <span>Тип рахунку:</span>
-          <select {...register('accountType')}>
+          <select {...register('accountType', { required: true })}>
             {accountTypes.map((type) => (
               <option value={type} key={type}>
                 {type}
@@ -93,8 +89,8 @@ const AddSubscriberAccountForm: FC = () => {
           </select>
         </label>
         <label>
-          <span>Тип рахунку:</span>
-          <select {...register('isLivingApartment')}>
+          <span>Тип приміщення:</span>
+          <select {...register('isLivingApartment', { required: true })}>
             {apartmentTypes.map(({ title, value }) => (
               <option value={value} key={title}>
                 {title}
@@ -103,178 +99,85 @@ const AddSubscriberAccountForm: FC = () => {
           </select>
         </label>
         <Input
-          settings={{ ...register('residents') }}
+          settings={{ ...register('residents', { required: true }) }}
           label='Мешканців:'
           type={InputTypes.number}
         />
       </SubscriberAccountContainer>
-      <ApartmentParameters>
+      <div>
+        <p>Послуги:</p>
         <Input
-          settings={{ ...register('floor') }}
-          label='Поверх:'
-          type={InputTypes.number}
+          settings={{ ...register('period', { required: true }) }}
+          label='Послуги надаються з:'
+          type={InputTypes.date}
+        />
+      </div>
+      <div>
+        <p>- Вивезення побутових відходів (б/с)</p>
+        <Checkbox
+          settings={{
+            ...register('isRemovalHouseholdWaste'),
+          }}
+          checked={checked}
+          onChange={onCheckboxChange}
+        />
+      </div>
+      <PersonParameters>
+        <Input
+          settings={{ ...register('utr', { required: true }) }}
+          label='ІПН:'
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('rooms') }}
-          label='Кількість кімнат:'
-          type={InputTypes.number}
-        />
-        <label>
-          <span>Індивідуальне опалення:</span>
-          <select {...register('individualHeating')}>
-            {individualHeating.map(({ title, value }) => (
-              <option value={value} key={title}>
-                {title}
-              </option>
-            ))}
-          </select>
-        </label>
-        <Input
-          settings={{ ...register('totalArea') }}
-          label='Загальна площа (м2):'
-          type={InputTypes.number}
-          step={0.01}
+          settings={{ ...register('passport', { required: true }) }}
+          label='Паспорт:'
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('heatingArea') }}
-          label='Опалювальна пл. (м2):'
-          type={InputTypes.number}
-          step={0.1}
+          settings={{ ...register('surname', { required: true }) }}
+          label='Прізвище:'
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('dwellingPlace') }}
-          label='Житлова площа (м2):'
-          type={InputTypes.number}
-          step={0.1}
+          settings={{ ...register('name', { required: true }) }}
+          label="Ім'я:"
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('loggiaArea') }}
-          label='Площа лоджій (м2):'
-          type={InputTypes.number}
-          step={0.1}
+          settings={{ ...register('middleName', { required: true }) }}
+          label='По-батькові:'
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('balconyArea') }}
-          label='Площа балконів (м2):'
-          type={InputTypes.number}
-          step={0.1}
+          settings={{
+            ...register('phone', { required: true, pattern: regExp.phone }),
+          }}
+          label='Телефон:'
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('terraceArea') }}
-          label='Площа терас (м2):'
-          type={InputTypes.number}
-          step={0.1}
+          settings={{
+            ...register('additionalPhone', {
+              required: true,
+              pattern: regExp.phone,
+            }),
+          }}
+          label='Телефон додатковий:'
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('storageRoomsArea') }}
-          label='Площа кладових приміщень (м2):'
-          type={InputTypes.number}
-          step={0.01}
+          settings={{
+            ...register('email', { pattern: regExp.email }),
+          }}
+          label='Email:'
+          type={InputTypes.text}
         />
         <Input
-          settings={{ ...register('cattle') }}
-          label='Велика рогата худоба (вода) (шт.):'
-          type={InputTypes.number}
+          settings={{ ...register('birthday') }}
+          label='День народження:'
+          type={InputTypes.date}
         />
-        <Input
-          settings={{ ...register('calf') }}
-          label='Теля (вода) (шт.):'
-          type={InputTypes.number}
-        />
-        <Input
-          settings={{ ...register('goats') }}
-          label='Кози (вода) (шт.):'
-          type={InputTypes.number}
-        />
-        <Input
-          settings={{ ...register('birds') }}
-          label='Птиця (вода) (шт.):'
-          type={InputTypes.number}
-        />
-        <Input
-          settings={{ ...register('auto') }}
-          label='Авто (вода) (шт.):'
-          type={InputTypes.number}
-        />
-        <Input
-          settings={{ ...register('motorcycle') }}
-          label='Мотоцикл (вода) (шт.):'
-          type={InputTypes.number}
-        />
-        <Input
-          settings={{ ...register('watering') }}
-          label='Полив (вода) (сот.):'
-          type={InputTypes.number}
-        />
-        <div>
-          <p>Послуги:</p>
-          <label>
-            <span>Послуги надаються з:</span>
-            <select {...register('period')}>
-              {period.map(({ title, period }) => (
-                <option value={period} key={period}>
-                  {`${period} ${title}`}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <div>
-          <p>- Вивезення побутових відходів (б/с)</p>
-          <Checkbox
-            settings={{ ...register('isRemovalHouseholdWaste') }}
-            checked={checked}
-            onChange={onCheckboxChange}
-          />
-        </div>
-        <PersonParameters>
-          <Input
-            settings={{ ...register('utr') }}
-            label='ІПН:'
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('passport') }}
-            label='Паспорт:'
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('surname') }}
-            label='Прізвище:'
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('name') }}
-            label="Ім'я:"
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('middleName') }}
-            label='По-батькові:'
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('phone'), pattern: regExp.phone }}
-            label='Телефон:'
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('additionalPhone'), pattern: regExp.phone }}
-            label='Телефон додатковий:'
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('email'), pattern: regExp.email }}
-            label='Електронна адреса:'
-            type={InputTypes.text}
-          />
-          <Input
-            settings={{ ...register('birthday') }}
-            label='День народження:'
-            type={InputTypes.date}
-          />
-        </PersonParameters>
-      </ApartmentParameters>
+      </PersonParameters>
       <SubmitFormBtn title='Зберегти' disabled={isLoading} />
     </form>
   );

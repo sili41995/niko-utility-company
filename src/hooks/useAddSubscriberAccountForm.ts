@@ -1,22 +1,27 @@
-import { AccountTypes, apartmentTypes, individualHeating } from '@/constants';
+import { AccountTypes, apartmentTypes } from '@/constants';
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
 import { useHousesStore, useStreetsStore } from '@/store/store';
 import { selectStreets } from '@/store/streets/selectors';
 import { ISubscriberAccount } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
-import { getCurrentDateParams } from '@/utils';
+import { filterAddSubscriberAccountData, getCurrentDateParams } from '@/utils';
+import { validateAddSubscriberAccountForm } from '@/validators';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const [checked, setChecked] = useState<boolean>(false);
-  const { register, handleSubmit, watch } = useForm<ISubscriberAccount>();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { isSubmitting, errors },
+  } = useForm<ISubscriberAccount>();
   const streets = useStreetsStore(selectStreets);
   const streetId = watch('street');
   const fetchHouses = useHousesStore(selectFetchHouses);
   const houses = useHousesStore(selectHouses);
-  const { currentMonth, currentYear, firstDayOfMonth, period } =
-    getCurrentDateParams();
+  const { currentMonth, currentYear, firstDayOfMonth } = getCurrentDateParams();
   const currentDate = `${currentYear}р. ${currentMonth}`;
   const accountTypes = Object.values(AccountTypes);
   const isLoading = false;
@@ -31,12 +36,21 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     fetchHouses(Number(streetId));
   }, [fetchHouses, streetId]);
 
+  useEffect(() => {
+    const invalidFields = Object.keys(errors);
+    if (invalidFields.length) {
+      validateAddSubscriberAccountForm(errors);
+    }
+  }, [isSubmitting, errors]);
+
   const toggleCheckedStatus = () => {
     setChecked((prevState) => !prevState);
   };
 
   const handleFormSubmit: SubmitHandler<ISubscriberAccount> = (data) => {
-    console.log(data);
+    const filteredAddSubscriberAccountData =
+      filterAddSubscriberAccountData(data);
+    console.log(filteredAddSubscriberAccountData);
   };
 
   return {
@@ -50,8 +64,6 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     firstDayOfMonth,
     accountTypes,
     apartmentTypes,
-    individualHeating,
-    period,
     isLoading,
     checked,
     onCheckboxChange: toggleCheckedStatus,

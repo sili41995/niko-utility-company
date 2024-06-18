@@ -3,9 +3,7 @@ import {
   ApartmentTypes,
   Func,
   IOnPageBtnClickProps,
-  IndividualHeating,
   OnBtnClickFunc,
-  Period,
 } from './types';
 import {
   SubmitHandler,
@@ -96,8 +94,6 @@ export interface IUseAddSubscriberAccountForm {
   firstDayOfMonth: string;
   accountTypes: string[];
   apartmentTypes: ApartmentTypes;
-  individualHeating: IndividualHeating;
-  period: Period;
   isLoading: boolean;
   checked: boolean;
   onCheckboxChange: Func;
