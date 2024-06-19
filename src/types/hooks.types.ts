@@ -1,10 +1,5 @@
 import { SetURLSearchParams } from 'react-router-dom';
-import {
-  ApartmentTypes,
-  Func,
-  IOnPageBtnClickProps,
-  OnBtnClickFunc,
-} from './types';
+import { Func, IOnPageBtnClickProps, OnBtnClickFunc } from './types';
 import {
   SubmitHandler,
   UseFormHandleSubmit,
@@ -85,14 +80,14 @@ export interface IUseGeneralSettingsForm {
 export interface IUseAddSubscriberAccountForm {
   streets: SelectData;
   houses: SelectData;
+  accountTypes: SelectData;
+  apartmentTypes: SelectData;
   handleSubmit: UseFormHandleSubmit<ISubscriberAccount, undefined>;
   handleFormSubmit: SubmitHandler<ISubscriberAccount>;
   register: UseFormRegister<ISubscriberAccount>;
   streetDefaultValue: number;
   currentDate: string;
   firstDayOfMonth: string;
-  accountTypes: string[];
-  apartmentTypes: ApartmentTypes;
   isLoading: boolean;
   checked: boolean;
   onCheckboxChange: Func;

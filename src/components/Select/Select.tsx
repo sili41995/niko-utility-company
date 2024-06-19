@@ -1,18 +1,31 @@
 import { FC } from 'react';
 import { IProps } from './Select.types';
+import { Option, SelectWrap, StyledSelect, Title } from './Select.styled';
 
-const Select: FC<IProps> = ({ settings, label, data, defaultValue }) => {
+const Select: FC<IProps> = ({
+  settings,
+  label,
+  data,
+  defaultValue,
+  width,
+  formType,
+}) => {
   return (
-    <label>
-      <span>{label}</span>
-      <select {...settings} defaultValue={defaultValue}>
+    <SelectWrap>
+      <Title>{label}</Title>
+      <StyledSelect
+        {...settings}
+        defaultValue={defaultValue}
+        width={width}
+        formType={formType}
+      >
         {data.map(({ value, title }) => (
-          <option value={value} key={value}>
+          <Option value={value} key={value}>
             {title}
-          </option>
+          </Option>
         ))}
-      </select>
-    </label>
+      </StyledSelect>
+    </SelectWrap>
   );
 };
 

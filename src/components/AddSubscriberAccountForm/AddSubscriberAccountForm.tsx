@@ -5,6 +5,20 @@ import { InputTypes, regExp } from '@/constants';
 import {
   PersonParameters,
   SubscriberAccountContainer,
+  AddressWrap,
+  TypesWrap,
+  ServicesWrap,
+  Form,
+  CurrentPeriod,
+  Accent,
+  ServiceTitleWrap,
+  SectionTitle,
+  ServicesList,
+  ServicesListTitle,
+  ServicesListTitleWrap,
+  ServiceName,
+  ServiceListItem,
+  PersonParametersWrap,
 } from './AddSubscriberAccountForm.styled';
 import Checkbox from '../Checkbox';
 import SubmitFormBtn from '../SubmitFormBtn';
@@ -28,26 +42,23 @@ const AddSubscriberAccountForm: FC = () => {
   } = useAddSubscriberAccountForm();
   // давай продолжим со стилей
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)}>
-      <p>
-        Поточний період: <span>{currentDate}</span>
-      </p>
-      <SubscriberAccountContainer>
-        {/* <Select
-          label='_____'
-          settings={_____}
-          data={____}
-        /> */}
+    <Form onSubmit={handleSubmit(handleFormSubmit)}>
+      <CurrentPeriod>
+        Поточний період: <Accent>{currentDate}</Accent>
+      </CurrentPeriod>
+      <AddressWrap>
         <Select
           label='Вулиця:'
           settings={{ ...register('street', { required: true }) }}
           defaultValue={streetDefaultValue}
           data={streets}
+          width={550}
         />
         <Select
           label='Будинок:'
           settings={{ ...register('house', { required: true }) }}
           data={houses}
+          width={550}
         />
         <Input
           settings={{ ...register('apartment', { required: true }) }}
@@ -57,6 +68,8 @@ const AddSubscriberAccountForm: FC = () => {
           horizontal={true}
           width={550}
         />
+      </AddressWrap>
+      <SubscriberAccountContainer>
         <Input
           settings={{ ...register('subscriberAccount', { required: true }) }}
           label='Абон. рахунок №:'
@@ -83,26 +96,20 @@ const AddSubscriberAccountForm: FC = () => {
           horizontal={true}
           width={550}
         />
-        <label>
-          <span>Тип рахунку:</span>
-          <select {...register('accountType', { required: true })}>
-            {accountTypes.map((type) => (
-              <option value={type} key={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>Тип приміщення:</span>
-          <select {...register('isLivingApartment', { required: true })}>
-            {apartmentTypes.map(({ title, value }) => (
-              <option value={value} key={title}>
-                {title}
-              </option>
-            ))}
-          </select>
-        </label>
+      </SubscriberAccountContainer>
+      <TypesWrap>
+        <Select
+          label='Тип рахунку:'
+          settings={{ ...register('accountType', { required: true }) }}
+          data={accountTypes}
+          width={550}
+        />
+        <Select
+          label='Тип приміщення:'
+          settings={{ ...register('isLivingApartment', { required: true }) }}
+          data={apartmentTypes}
+          width={550}
+        />
         <Input
           settings={{ ...register('residents', { required: true }) }}
           label='Мешканців:'
@@ -111,112 +118,124 @@ const AddSubscriberAccountForm: FC = () => {
           horizontal={true}
           width={550}
         />
-      </SubscriberAccountContainer>
-      <div>
-        <p>Послуги:</p>
-        <Input
-          settings={{ ...register('period', { required: true }) }}
-          label='Послуги надаються з:'
-          type={InputTypes.date}
-          horizontal={true}
-          width={550}
-        />
-      </div>
-      <div>
-        <p>- Вивезення побутових відходів (б/с)</p>
-        <Checkbox
-          settings={{
-            ...register('isRemovalHouseholdWaste'),
-          }}
-          checked={checked}
-          onChange={onCheckboxChange}
-        />
-      </div>
-      <PersonParameters>
-        <Input
-          settings={{ ...register('utr', { required: true }) }}
-          label='ІПН:'
-          placeholder='ІПН'
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{ ...register('passport', { required: true }) }}
-          label='Паспорт:'
-          placeholder='Паспорт'
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{ ...register('surname', { required: true }) }}
-          label='Прізвище:'
-          placeholder='Прізвище'
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{ ...register('name', { required: true }) }}
-          label="Ім'я:"
-          placeholder="Ім'я"
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{ ...register('middleName', { required: true }) }}
-          label='По-батькові:'
-          placeholder='По-батькові'
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{
-            ...register('phone', { required: true, pattern: regExp.phone }),
-          }}
-          label='Телефон:'
-          placeholder='Телефон'
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{
-            ...register('additionalPhone', {
-              required: true,
-              pattern: regExp.phone,
-            }),
-          }}
-          label='Телефон додатковий:'
-          placeholder='Телефон додатковий'
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{
-            ...register('email', { pattern: regExp.email }),
-          }}
-          label='Email:'
-          placeholder='Email'
-          type={InputTypes.text}
-          horizontal={true}
-          width={550}
-        />
-        <Input
-          settings={{ ...register('birthday') }}
-          label='День народження:'
-          placeholder='День народження'
-          type={InputTypes.date}
-          horizontal={true}
-          width={550}
-        />
-      </PersonParameters>
+      </TypesWrap>
+      <ServicesWrap>
+        <ServiceTitleWrap>
+          <SectionTitle>Послуги:</SectionTitle>
+          <Input
+            settings={{ ...register('period', { required: true }) }}
+            label='Послуги надаються з:'
+            type={InputTypes.date}
+            horizontal={true}
+            width={550}
+          />
+        </ServiceTitleWrap>
+        <ServicesList>
+          <ServicesListTitleWrap>
+            <ServicesListTitle>
+              Поводження з побутовими відходами:
+            </ServicesListTitle>
+          </ServicesListTitleWrap>
+          <ServiceListItem>
+            <ServiceName>Вивезення побутових відходів (б/с)</ServiceName>
+            <Checkbox
+              settings={{
+                ...register('isRemovalHouseholdWaste'),
+              }}
+              checked={checked}
+              onChange={onCheckboxChange}
+            />
+          </ServiceListItem>
+        </ServicesList>
+      </ServicesWrap>
+      <PersonParametersWrap>
+        <SectionTitle>Послуги:</SectionTitle>
+        <PersonParameters>
+          <Input
+            settings={{ ...register('utr', { required: true }) }}
+            label='ІПН:'
+            placeholder='ІПН'
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{ ...register('passport', { required: true }) }}
+            label='Паспорт:'
+            placeholder='Паспорт'
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{ ...register('surname', { required: true }) }}
+            label='Прізвище:'
+            placeholder='Прізвище'
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{ ...register('name', { required: true }) }}
+            label="Ім'я:"
+            placeholder="Ім'я"
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{ ...register('middleName', { required: true }) }}
+            label='По-батькові:'
+            placeholder='По-батькові'
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{
+              ...register('phone', { required: true, pattern: regExp.phone }),
+            }}
+            label='Телефон:'
+            placeholder='Телефон'
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{
+              ...register('additionalPhone', {
+                required: true,
+                pattern: regExp.phone,
+              }),
+            }}
+            label='Телефон додатковий:'
+            placeholder='Телефон додатковий'
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{
+              ...register('email', { pattern: regExp.email }),
+            }}
+            label='Email:'
+            placeholder='Email'
+            type={InputTypes.text}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{ ...register('birthday') }}
+            label='День народження:'
+            placeholder='День народження'
+            type={InputTypes.date}
+            horizontal={true}
+            width={550}
+          />
+        </PersonParameters>
+      </PersonParametersWrap>
       <SubmitFormBtn title='Зберегти' disabled={isLoading} />
-    </form>
+    </Form>
   );
 };
 

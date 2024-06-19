@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
-  const [checked, setChecked] = useState<boolean>(false);
+  const [checked, setChecked] = useState<boolean>(true);
   const {
     register,
     handleSubmit,
@@ -34,6 +34,10 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const housesSelectData: SelectData = houses.map(({ id, number }) => ({
     title: number,
     value: String(id),
+  }));
+  const accountTypesSelectData: SelectData = accountTypes.map((type) => ({
+    title: type,
+    value: type,
   }));
 
   useEffect(() => {
@@ -64,14 +68,14 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   return {
     streets: streetsSelectData,
     houses: housesSelectData,
+    accountTypes: accountTypesSelectData,
+    apartmentTypes,
     register,
     handleSubmit,
     handleFormSubmit,
     streetDefaultValue,
     currentDate,
     firstDayOfMonth,
-    accountTypes,
-    apartmentTypes,
     isLoading,
     checked,
     onCheckboxChange: toggleCheckedStatus,
