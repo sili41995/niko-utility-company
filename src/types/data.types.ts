@@ -1,21 +1,5 @@
 import { AccountTypes, ServiceCategories } from '@/constants';
 
-export interface ISubscriber {
-  subscriberAccount: string;
-  accountType: string;
-  location: string;
-  street: string;
-  houseNumber: number;
-  apartmentNumber: number;
-  typeOfRoom: string;
-  parameters: string[];
-  services: string;
-  accountBalance: number;
-  consumers: number;
-}
-
-export type Subscribers = ISubscriber[];
-
 export interface IDocument {
   documentType: number;
   number: string;
@@ -111,7 +95,8 @@ export interface IHouse {
 export type Houses = IHouse[];
 
 export interface ISubscriberAccount {
-  [key: string]: string | Date | boolean | undefined;
+  [key: string]: number | string | Date | boolean | undefined;
+  id: number;
   street: string;
   house: string;
   apartment: string;
@@ -128,11 +113,25 @@ export interface ISubscriberAccount {
   surname: string;
   name: string;
   middleName: string;
+  isEligibleForBenefit: boolean;
   phone: string;
   additionalPhone: string;
   email?: string;
   birthday?: Date;
+  comment?: string;
 }
+
+export type NewSubscriberAccount = Omit<ISubscriberAccount, 'id'>;
+
+export type IsRemovalHouseholdWaste = Pick<
+  ISubscriberAccount,
+  'isRemovalHouseholdWaste'
+>;
+
+export type IsEligibleForBenefit = Pick<
+  ISubscriberAccount,
+  'isEligibleForBenefit'
+>;
 
 export type Street = Pick<ISubscriberAccount, 'street'>;
 
@@ -169,6 +168,8 @@ export type Phone = Pick<ISubscriberAccount, 'phone'>;
 export type AdditionalPhone = Pick<ISubscriberAccount, 'additionalPhone'>;
 
 export type SubscriberAccountEmail = Pick<ISubscriberAccount, 'email'>;
+
+export type SubscriberAccounts = ISubscriberAccount[];
 
 export interface ISelectData {
   value: string;

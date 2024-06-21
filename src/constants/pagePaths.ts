@@ -3,7 +3,7 @@ const enum PagePaths {
   signInPath = '/signin',
   houses = '/houses',
   enterprises = '/enterprises',
-  subscribers = '/subscribers',
+  subscriberAccounts = '/subscriber-accounts',
   counters = '/counters',
   accounting = '/accounting',
   oneOffJobs = '/one-off-jobs',

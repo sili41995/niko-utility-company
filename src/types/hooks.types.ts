@@ -1,5 +1,10 @@
 import { SetURLSearchParams } from 'react-router-dom';
-import { Func, IOnPageBtnClickProps, OnBtnClickFunc } from './types';
+import {
+  Func,
+  IOnPageBtnClickProps,
+  InputChangeFunc,
+  OnBtnClickFunc,
+} from './types';
 import {
   SubmitHandler,
   UseFormHandleSubmit,
@@ -89,8 +94,9 @@ export interface IUseAddSubscriberAccountForm {
   currentDate: string;
   firstDayOfMonth: string;
   isLoading: boolean;
-  checked: boolean;
-  onCheckboxChange: Func;
+  isRemovalHouseholdWaste: boolean;
+  isEligibleForBenefit: boolean;
+  onCheckboxChange: InputChangeFunc;
 }
 
 export interface IUseStreetsData {

@@ -18,6 +18,8 @@ import showMiddleNameError from './showMiddleNameError';
 import showPhoneError from './showPhoneError';
 import showAdditionalPhoneError from './showAdditionalPhoneError';
 import showSubscriberAccountEmailError from './showSubscriberAccountEmailError';
+import showIsEligibleForBenefitError from './showIsEligibleForBenefitError';
+import showIsRemovalHouseholdWasteError from './showIsRemovalHouseholdWasteError';
 
 const validateAddSubscriberAccountForm = (
   errors: FieldErrors<ISubscriberAccount>
@@ -40,6 +42,8 @@ const validateAddSubscriberAccountForm = (
   showPhoneError(errors);
   showAdditionalPhoneError(errors);
   showSubscriberAccountEmailError(errors);
+  showIsEligibleForBenefitError(errors);
+  showIsRemovalHouseholdWasteError(errors);
 };
 
 export default validateAddSubscriberAccountForm;

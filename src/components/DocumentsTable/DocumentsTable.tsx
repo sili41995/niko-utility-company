@@ -2,13 +2,15 @@ import { FC } from 'react';
 import {
   StyledTable,
   TableBody,
-  TableBodyRow,
-  TableData,
   TableHead,
   TableHeadRow,
   TableHeader,
-} from '@/components/SubscribersTable/SubscribersTable.styled';
+} from '@/components/SubscriberAccountsTable/SubscriberAccountsTable.styled';
 import { documents } from '@/data/documents';
+import {
+  TableBodyRow,
+  TableData,
+} from '../SubscriberAccountsTableRow/SubscriberAccountsTableRow.styled';
 
 const DocumentsTable: FC = () => {
   return (

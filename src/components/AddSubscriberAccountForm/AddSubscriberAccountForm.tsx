@@ -1,7 +1,7 @@
 import { useAddSubscriberAccountForm } from '@/hooks';
 import { FC } from 'react';
 import Input from '../Input';
-import { InputTypes, regExp } from '@/constants';
+import { CheckboxNames, InputTypes, regExp } from '@/constants';
 import {
   PersonParameters,
   SubscriberAccountContainer,
@@ -19,6 +19,8 @@ import {
   ServiceName,
   ServiceListItem,
   PersonParametersWrap,
+  CheckboxWrap,
+  CheckboxName,
 } from './AddSubscriberAccountForm.styled';
 import Checkbox from '../Checkbox';
 import SubmitFormBtn from '../SubmitFormBtn';
@@ -37,7 +39,8 @@ const AddSubscriberAccountForm: FC = () => {
     isLoading,
     handleFormSubmit,
     handleSubmit,
-    checked,
+    isRemovalHouseholdWaste,
+    isEligibleForBenefit,
     onCheckboxChange,
   } = useAddSubscriberAccountForm();
   // давай продолжим со стилей
@@ -142,8 +145,9 @@ const AddSubscriberAccountForm: FC = () => {
               settings={{
                 ...register('isRemovalHouseholdWaste'),
               }}
-              checked={checked}
+              checked={isRemovalHouseholdWaste}
               onChange={onCheckboxChange}
+              name={CheckboxNames.isRemovalHouseholdWaste}
             />
           </ServiceListItem>
         </ServicesList>
@@ -191,6 +195,17 @@ const AddSubscriberAccountForm: FC = () => {
             horizontal={true}
             width={550}
           />
+          <CheckboxWrap>
+            <CheckboxName>Має право на пільгу</CheckboxName>
+            <Checkbox
+              settings={{
+                ...register('isEligibleForBenefit'),
+              }}
+              checked={isEligibleForBenefit}
+              onChange={onCheckboxChange}
+              name={CheckboxNames.isEligibleForBenefit}
+            />
+          </CheckboxWrap>
           <Input
             settings={{
               ...register('phone', { required: true, pattern: regExp.phone }),
@@ -229,6 +244,14 @@ const AddSubscriberAccountForm: FC = () => {
             label='День народження:'
             placeholder='День народження'
             type={InputTypes.date}
+            horizontal={true}
+            width={550}
+          />
+          <Input
+            settings={{ ...register('comment') }}
+            label='Коментар:'
+            placeholder='Коментар'
+            type={InputTypes.text}
             horizontal={true}
             width={550}
           />

@@ -8,7 +8,7 @@ const filterAddSubscriberAccountData = (
   const keys = Object.keys(data);
 
   keys.forEach((key) => {
-    const isEmptyValue = !data[key];
+    const isEmptyValue = data[key] === '';
 
     if (isEmptyValue) {
       filteredData[key] = undefined;

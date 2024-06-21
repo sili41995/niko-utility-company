@@ -10,6 +10,8 @@ import { IStreetsState } from '@/types/streetsStore.types';
 import streetsStore from './streets/streets.store';
 import { IHousesState } from '@/types/housesStore.types';
 import housesStore from './houses/streets.store';
+import { ISubscriberAccountsState } from '@/types/subscriberAccountsStore.types';
+import subscriberAccountsStore from './subscriberAccounts/subscriberAccounts.store';
 
 export const useAuthStore = create<IAuthState>()(
   devtools(
@@ -32,4 +34,8 @@ export const useStreetsStore = create<IStreetsState>()(
 
 export const useHousesStore = create<IHousesState>()(
   devtools(housesStore.store, housesStore.params)
+);
+
+export const useSubscriberAccountsStore = create<ISubscriberAccountsState>()(
+  devtools(subscriberAccountsStore.store, subscriberAccountsStore.params)
 );

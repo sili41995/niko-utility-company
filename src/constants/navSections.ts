@@ -4,7 +4,7 @@ import PagePaths from './pagePaths';
 const navSections: NavSections = [
   {
     title: 'Абонентські рахунки',
-    path: PagePaths.subscribers,
+    path: PagePaths.subscriberAccounts,
     desc: 'Тип приміщення, характеристики, послуги. Стан рахунку, шнформація про споживачів',
   },
   {

@@ -101,3 +101,16 @@ export const PersonParameters = styled.div`
   gap: ${({ theme }) => theme.spacing()};
   margin-top: ${({ theme }) => theme.spacing(4)};
 `;
+
+export const CheckboxWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const CheckboxName = styled.p`
+  color: ${({ theme }) => theme.colors.tableData};
+  font-family: ${({ theme }) => theme.fontFamily.primary};
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
+`;

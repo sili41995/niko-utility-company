@@ -14,7 +14,7 @@ const enum Messages {
   passReqErr = 'Поле Пароль має бути заповнене',
   passMinLengthErr = `Мінімальна довжина паролю - ${AuthParams.passMinLength} символів`,
   passMaxLengthErr = `Максимальна довжина паролю - ${AuthParams.passMaxLength} символів`,
-  userAddSuccess = 'Користувача успішно додано',
+  userAddSuccess = 'Користувач успішно доданий',
   dataUpdateSuccess = 'Дані успішно оновлені',
   mfiReqErr = 'Поле МФО має бути заповнене',
   mfiLengthErr = `Довжина МФО має бути ${GeneralParams.mfiLength} символів`,
@@ -38,6 +38,10 @@ const enum Messages {
   middleNameReqErr = 'Поле По-батькові має бути заповнене',
   phoneReqErr = 'Поле Телефон має бути заповнене',
   additionalPhoneReqErr = 'Поле Телефон додатковий має бути заповнене',
+  emptySubscriberAccountsList = 'Список абонентських рахнків пустий',
+  subscriberAccountAddSuccess = 'Абонентський рахунок успішно доданий',
+  isEligibleForBenefitReqErr = 'Поле Має право на пільгу має бути заповнене',
+  isRemovalHouseholdWasteReqErr = 'Поле Вивезення побутових відходів має бути заповнене',
 }
 
 export default Messages;

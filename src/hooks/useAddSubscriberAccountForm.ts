@@ -1,16 +1,34 @@
-import { AccountTypes, apartmentTypes } from '@/constants';
+import {
+  AccountTypes,
+  CheckboxNames,
+  Messages,
+  apartmentTypes,
+} from '@/constants';
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
-import { useHousesStore, useStreetsStore } from '@/store/store';
+import {
+  useHousesStore,
+  useStreetsStore,
+  useSubscriberAccountsStore,
+} from '@/store/store';
 import { selectStreets } from '@/store/streets/selectors';
+import { selectAddSubscriberAccount } from '@/store/subscriberAccounts/selectors';
 import { ISubscriberAccount, SelectData } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
-import { filterAddSubscriberAccountData, getCurrentDateParams } from '@/utils';
+import { InputChangeEvent } from '@/types/types';
+import {
+  filterAddSubscriberAccountData,
+  getCurrentDateParams,
+  toasts,
+} from '@/utils';
 import { validateAddSubscriberAccountForm } from '@/validators';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
-  const [checked, setChecked] = useState<boolean>(true);
+  const [isRemovalHouseholdWaste, setIsRemovalHouseholdWaste] =
+    useState<boolean>(true);
+  const [isEligibleForBenefit, setIsEligibleForBenefit] =
+    useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -21,6 +39,9 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const streetId = watch('street');
   const fetchHouses = useHousesStore(selectFetchHouses);
   const houses = useHousesStore(selectHouses);
+  const addSubscriberAccount = useSubscriberAccountsStore(
+    selectAddSubscriberAccount
+  );
   const { currentMonth, currentYear, firstDayOfMonth } = getCurrentDateParams();
   const currentDate = `${currentYear}р. ${currentMonth}`;
   const accountTypes = Object.values(AccountTypes);
@@ -55,14 +76,35 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     }
   }, [isSubmitting, errors]);
 
-  const toggleCheckedStatus = () => {
-    setChecked((prevState) => !prevState);
+  const toggleCheckedStatus = (e: InputChangeEvent) => {
+    const { name: eventName } = e.currentTarget;
+    const isEligibleForBenefitEvent =
+      eventName === CheckboxNames.isEligibleForBenefit;
+    const isRemovalHouseholdWasteEvent =
+      eventName === CheckboxNames.isRemovalHouseholdWaste;
+
+    if (isEligibleForBenefitEvent) {
+      setIsEligibleForBenefit((prevState) => !prevState);
+    }
+
+    if (isRemovalHouseholdWasteEvent) {
+      setIsRemovalHouseholdWaste((prevState) => !prevState);
+    }
   };
 
-  const handleFormSubmit: SubmitHandler<ISubscriberAccount> = (data) => {
+  const handleFormSubmit: SubmitHandler<ISubscriberAccount> = async (data) => {
     const filteredAddSubscriberAccountData =
       filterAddSubscriberAccountData(data);
-    console.log(filteredAddSubscriberAccountData);
+    // console.log(filteredAddSubscriberAccountData);
+
+    try {
+      await addSubscriberAccount(filteredAddSubscriberAccountData);
+      toasts.successToast(Messages.subscriberAccountAddSuccess);
+    } catch (error) {
+      if (error instanceof Error) {
+        toasts.errorToast(error.message);
+      }
+    }
   };
 
   return {
@@ -77,7 +119,8 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     currentDate,
     firstDayOfMonth,
     isLoading,
-    checked,
+    isEligibleForBenefit,
+    isRemovalHouseholdWaste,
     onCheckboxChange: toggleCheckedStatus,
   };
 };
