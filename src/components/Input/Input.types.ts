@@ -14,9 +14,11 @@ export interface IProps {
   min?: number;
   horizontal?: boolean;
   width?: number;
+  offBorderRadius?: boolean;
 }
 
 export interface IStyledInputProps {
+  offBorderRadius: boolean;
   formType?: FormTypes;
   width?: number;
 }

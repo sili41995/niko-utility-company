@@ -23,7 +23,8 @@ export const StyledInput = styled.input<IStyledInputProps>`
   height: ${({ formType }) => setInputHeight(formType)}px;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
+  border-radius: ${({ theme, offBorderRadius }) =>
+    offBorderRadius ? 0 : theme.borderRadius.secondary}px;
   padding: ${({ formType }) => setInputPadding(formType)};
   font-family: Inter;
   color: ${({ theme }) => theme.colors.primaryFont};
@@ -32,12 +33,12 @@ export const StyledInput = styled.input<IStyledInputProps>`
   letter-spacing: 0.04em;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
 
-  &:focus {
+  &:is(:hover, :focus) {
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary};
   }
 
-  &:focus + svg {
+  &:is(:hover, :focus) + svg {
     transition: color ${({ theme }) => theme.transitionDurationAndFunc};
     color: ${({ theme }) => theme.colors.primary};
   }

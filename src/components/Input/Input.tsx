@@ -15,6 +15,7 @@ const Input: FC<IProps> = ({
   min = 0,
   horizontal = false,
   width,
+  offBorderRadius = false,
 }) => {
   const input = (
     <StyledInput
@@ -26,6 +27,7 @@ const Input: FC<IProps> = ({
       step={step}
       min={min}
       width={width}
+      offBorderRadius={offBorderRadius}
     />
   );
 

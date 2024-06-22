@@ -9,23 +9,32 @@ const Select: FC<IProps> = ({
   defaultValue,
   width,
   formType,
+  horizontal = false,
+  offBorderRadius = false,
 }) => {
-  return (
-    <SelectWrap>
+  const styledSelect = (
+    <StyledSelect
+      {...settings}
+      defaultValue={defaultValue}
+      width={width}
+      formType={formType}
+      offBorderRadius={offBorderRadius}
+    >
+      {data.map(({ value, title }) => (
+        <Option value={value} key={value}>
+          {title}
+        </Option>
+      ))}
+    </StyledSelect>
+  );
+
+  return label ? (
+    <SelectWrap horizontal={horizontal}>
       <Title>{label}</Title>
-      <StyledSelect
-        {...settings}
-        defaultValue={defaultValue}
-        width={width}
-        formType={formType}
-      >
-        {data.map(({ value, title }) => (
-          <Option value={value} key={value}>
-            {title}
-          </Option>
-        ))}
-      </StyledSelect>
+      {styledSelect}
     </SelectWrap>
+  ) : (
+    styledSelect
   );
 };
 

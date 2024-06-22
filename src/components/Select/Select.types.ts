@@ -8,9 +8,16 @@ export interface IProps {
   defaultValue?: number;
   width: number;
   formType?: FormTypes;
+  horizontal?: boolean;
+  offBorderRadius?: boolean;
 }
 
 export interface IStyledProps {
   formType?: FormTypes;
   width: number;
+  offBorderRadius: boolean;
+}
+
+export interface IStyledSelectWrapProps {
+  horizontal: boolean;
 }

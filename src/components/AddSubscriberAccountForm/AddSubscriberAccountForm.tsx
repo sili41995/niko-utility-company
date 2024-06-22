@@ -56,12 +56,14 @@ const AddSubscriberAccountForm: FC = () => {
           defaultValue={streetDefaultValue}
           data={streets}
           width={550}
+          horizontal={true}
         />
         <Select
           label='Будинок:'
           settings={{ ...register('houseId', { required: true }) }}
           data={houses}
           width={550}
+          horizontal={true}
         />
         <Input
           settings={{ ...register('apartment', { required: true }) }}
@@ -106,12 +108,14 @@ const AddSubscriberAccountForm: FC = () => {
           settings={{ ...register('accountType', { required: true }) }}
           data={accountTypes}
           width={550}
+          horizontal={true}
         />
         <Select
           label='Тип приміщення:'
           settings={{ ...register('isLivingApartment', { required: true }) }}
           data={apartmentTypes}
           width={550}
+          horizontal={true}
         />
         <Input
           settings={{ ...register('residents', { required: true }) }}
