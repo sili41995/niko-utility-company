@@ -18,11 +18,21 @@ export interface ISubscriberAccountsInitialState {
   error: null | string;
 }
 
+export interface IFetchSubscriberAccountsOperationProps {
+  set: SetSubscriberAccountsStateFunc;
+  data: IFetchSubscriberAccountsFilters;
+}
+
+export interface IFetchSubscriberAccountsFilters {
+  page: number;
+  limit: number;
+}
+
 export interface ISubscriberAccountsState
   extends ISubscriberAccountsInitialState {
-  fetchSubscriberAccounts: () => Promise<
-    IFetchSubscriberAccountsRes | undefined
-  >;
+  fetchSubscriberAccounts: (
+    data: IFetchSubscriberAccountsFilters
+  ) => Promise<IFetchSubscriberAccountsRes | undefined>;
   addSubscriberAccount: (
     data: NewSubscriberAccount
   ) => Promise<ISubscriberAccount | undefined>;
@@ -33,10 +43,6 @@ export type GetSubscriberAccountsStateFunc =
 
 export type SetSubscriberAccountsStateFunc =
   SetStateFunc<ISubscriberAccountsState>;
-
-export interface IFetchSubscriberAccountsOperationProps {
-  set: SetSubscriberAccountsStateFunc;
-}
 
 export interface IAddSubscriberAccountProps {
   set: SetSubscriberAccountsStateFunc;

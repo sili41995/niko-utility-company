@@ -79,6 +79,7 @@ export interface IGetCurrentDateParams {
   currentMonth: string;
   currentYear: string;
   firstDayOfMonth: string;
+  currentDate: string;
 }
 
 export interface IApartmentType {

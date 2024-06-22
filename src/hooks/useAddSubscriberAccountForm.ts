@@ -1,7 +1,9 @@
 import {
   AccountTypes,
   CheckboxNames,
+  GeneralParams,
   Messages,
+  SearchParamsKeys,
   apartmentTypes,
 } from '@/constants';
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
@@ -11,55 +13,55 @@ import {
   useSubscriberAccountsStore,
 } from '@/store/store';
 import { selectStreets } from '@/store/streets/selectors';
-import { selectAddSubscriberAccount } from '@/store/subscriberAccounts/selectors';
-import { ISubscriberAccountFormData, SelectData } from '@/types/data.types';
+import {
+  selectAddSubscriberAccount,
+  selectFetchSubscriberAccounts,
+  selectIsLoading,
+} from '@/store/subscriberAccounts/selectors';
+import { ISubscriberAccountFormData } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { InputChangeEvent } from '@/types/types';
 import {
   filterAddSubscriberAccountData,
   getCurrentDateParams,
+  getSubscriberAccountSelectData,
   toasts,
 } from '@/utils';
 import { validateAddSubscriberAccountForm } from '@/validators';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import useSetSearchParams from './useSetSearchParams';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const [isRemovalHouseholdWaste, setIsRemovalHouseholdWaste] =
     useState<boolean>(true);
   const [isEligibleForBenefit, setIsEligibleForBenefit] =
     useState<boolean>(false);
+  const { searchParams } = useSetSearchParams();
   const {
     register,
     handleSubmit,
     watch,
     formState: { isSubmitting, errors },
   } = useForm<ISubscriberAccountFormData>();
-  const streets = useStreetsStore(selectStreets);
   const streetId = watch('streetId');
+  const fetchSubscriberAccounts = useSubscriberAccountsStore(
+    selectFetchSubscriberAccounts
+  );
   const fetchHouses = useHousesStore(selectFetchHouses);
-  const houses = useHousesStore(selectHouses);
   const addSubscriberAccount = useSubscriberAccountsStore(
     selectAddSubscriberAccount
   );
-  const { currentMonth, currentYear, firstDayOfMonth } = getCurrentDateParams();
-  const currentDate = `${currentYear}р. ${currentMonth}`;
+  const page = Number(searchParams.get(SearchParamsKeys.page) ?? '1');
+  const limit = Number(GeneralParams.recordLimit);
+  const { currentDate, firstDayOfMonth } = getCurrentDateParams();
+  const isLoading = useSubscriberAccountsStore(selectIsLoading);
+  const streets = useStreetsStore(selectStreets);
+  const houses = useHousesStore(selectHouses);
   const accountTypes = Object.values(AccountTypes);
-  const isLoading = false;
-  //  const isLoading = false;
   const streetDefaultValue = streets[0]?.id;
-  const streetsSelectData: SelectData = streets.map(({ name, type, id }) => ({
-    title: `${type} ${name}`,
-    value: String(id),
-  }));
-  const housesSelectData: SelectData = houses.map(({ id, number }) => ({
-    title: number,
-    value: String(id),
-  }));
-  const accountTypesSelectData: SelectData = accountTypes.map((type) => ({
-    title: type,
-    value: type,
-  }));
+  const { accountTypesSelectData, housesSelectData, streetsSelectData } =
+    getSubscriberAccountSelectData({ accountTypes, houses, streets });
 
   useEffect(() => {
     if (!streetId) {
@@ -101,6 +103,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
 
     try {
       await addSubscriberAccount(filteredAddSubscriberAccountData);
+      await fetchSubscriberAccounts({ page, limit });
       toasts.successToast(Messages.subscriberAccountAddSuccess);
     } catch (error) {
       if (error instanceof Error) {

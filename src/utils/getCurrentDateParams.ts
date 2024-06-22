@@ -5,12 +5,18 @@ import { uk } from 'date-fns/locale';
 
 const getCurrentDateParams = (): IGetCurrentDateParams => {
   setDefaultOptions({ locale: uk });
-  const currentDate = new Date();
-  const currentMonth = format(currentDate, DateFormats.fullMonth);
-  const currentYear = format(currentDate, DateFormats.fullYear);
-  const firstDayOfMonth = format(currentDate, DateFormats.fullDate);
+  const date = new Date();
+  const currentMonth = format(date, DateFormats.fullMonth);
+  const currentYear = format(date, DateFormats.fullYear);
+  const firstDayOfMonth = format(date, DateFormats.fullDate);
+  const currentDate = `${currentYear}р. ${currentMonth}`;
 
-  return { currentMonth, currentYear, firstDayOfMonth };
+  return {
+    currentMonth,
+    currentYear,
+    firstDayOfMonth,
+    currentDate,
+  };
 };
 
 export default getCurrentDateParams;

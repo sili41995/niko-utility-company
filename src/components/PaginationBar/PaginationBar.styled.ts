@@ -5,6 +5,7 @@ import { IStyledProps } from './PaginationBar.types';
 
 export const List = styled.ul`
   display: flex;
+  margin-left: auto;
 `;
 
 export const Item = styled.li<IStyledProps>`

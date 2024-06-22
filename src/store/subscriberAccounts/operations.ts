@@ -9,10 +9,13 @@ import {
 
 const fetchSubscriberAccountsOperation = async ({
   set,
+  data,
 }: IFetchSubscriberAccountsOperationProps): Promise<
   IFetchSubscriberAccountsRes | undefined
 > => {
-  const response = await subscriberAccountsService.fetchSubscriberAccounts();
+  const response = await subscriberAccountsService.fetchSubscriberAccounts(
+    data
+  );
   set({
     items: response.data,
     count: response.count,
@@ -23,13 +26,8 @@ const fetchSubscriberAccountsOperation = async ({
 
 const addSubscriberAccountOperation = async ({
   data,
-  set,
-  get,
 }: IAddSubscriberAccountProps): Promise<ISubscriberAccount | undefined> => {
-  const { items: subscriberAccounts } = get();
-
   const response = await subscriberAccountsService.addSubscriberAccount(data);
-  set({ items: [...subscriberAccounts, response] });
   return response;
 };
 

@@ -43,7 +43,7 @@ const AddSubscriberAccountForm: FC = () => {
     isEligibleForBenefit,
     onCheckboxChange,
   } = useAddSubscriberAccountForm();
-  // давай продолжим со стилей
+
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <CurrentPeriod>

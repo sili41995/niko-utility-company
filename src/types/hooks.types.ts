@@ -136,4 +136,5 @@ export interface IUseSubscriberAccountsPage {
   error: string | null;
   setModalWinState: Func;
   showModalWin: boolean;
+  isLoading: boolean;
 }

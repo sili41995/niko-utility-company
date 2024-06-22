@@ -1,4 +1,7 @@
-import { IFetchSubscriberAccountsRes } from '@/types/subscriberAccountsStore.types';
+import {
+  IFetchSubscriberAccountsFilters,
+  IFetchSubscriberAccountsRes,
+} from '@/types/subscriberAccountsStore.types';
 import HttpService from './http.service';
 import { ISubscriberAccount, NewSubscriberAccount } from '@/types/data.types';
 
@@ -7,9 +10,12 @@ class SubscriberAccountsService extends HttpService {
     super();
   }
 
-  async fetchSubscriberAccounts(): Promise<IFetchSubscriberAccountsRes> {
+  async fetchSubscriberAccounts({
+    limit,
+    page,
+  }: IFetchSubscriberAccountsFilters): Promise<IFetchSubscriberAccountsRes> {
     const response = await this.get<IFetchSubscriberAccountsRes>({
-      url: 'subscriber-accounts',
+      url: `subscriber-accounts?page=${page}&limit=${limit}`,
     });
 
     return response.data;

@@ -20,6 +20,7 @@ const SubscriberAccountsPage: FC = () => {
     error,
     setModalWinState,
     showModalWin,
+    isLoading,
   } = useSubscriberAccountsPage();
 
   return (
@@ -33,7 +34,11 @@ const SubscriberAccountsPage: FC = () => {
               <>
                 <SubscriberAccountsTable />
                 {totalCount && (
-                  <Pagination count={count} totalCount={totalCount} />
+                  <Pagination
+                    count={count}
+                    totalCount={totalCount}
+                    isLoading={isLoading}
+                  />
                 )}
               </>
             ) : (

@@ -9,9 +9,12 @@ import {
 } from '@/store/subscriberAccounts/selectors';
 import { IUseSubscriberAccountsPage } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
+import useSetSearchParams from './useSetSearchParams';
+import { GeneralParams, SearchParamsKeys } from '@/constants';
 
 const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
+  const { searchParams } = useSetSearchParams();
   const subscriberAccounts = useSubscriberAccountsStore(
     selectSubscriberAccounts
   );
@@ -27,10 +30,12 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     isLoaded && totalCount && !!~totalCount
   );
   const error = useSubscriberAccountsStore(selectError);
+  const page = Number(searchParams.get(SearchParamsKeys.page) ?? '1');
+  const limit = Number(GeneralParams.recordLimit);
 
   useEffect(() => {
-    fetchSubscriberAccounts();
-  }, [fetchSubscriberAccounts]);
+    fetchSubscriberAccounts({ page, limit });
+  }, [fetchSubscriberAccounts, limit, page]);
 
   const setModalWinState = () => {
     setShowModalWin((prevState) => !prevState);
@@ -44,6 +49,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     error,
     setModalWinState,
     showModalWin,
+    isLoading,
   };
 };
 

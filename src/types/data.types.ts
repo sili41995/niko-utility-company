@@ -203,3 +203,15 @@ export interface ISelectData {
 }
 
 export type SelectData = ISelectData[];
+
+export interface IGetSubscriberAccountSelectDataProps {
+  streets: Streets;
+  houses: Houses;
+  accountTypes: AccountTypes[];
+}
+
+export interface IGetSubscriberAccountSelectData {
+  streetsSelectData: SelectData;
+  housesSelectData: SelectData;
+  accountTypesSelectData: SelectData;
+}
