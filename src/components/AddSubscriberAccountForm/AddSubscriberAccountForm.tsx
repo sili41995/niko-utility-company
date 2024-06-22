@@ -25,7 +25,6 @@ import {
 import Checkbox from '../Checkbox';
 import SubmitFormBtn from '../SubmitFormBtn';
 import Select from '../Select';
-import { getAccountTypesData } from '@/utils';
 
 const AddSubscriberAccountForm: FC = () => {
   const {
@@ -42,8 +41,8 @@ const AddSubscriberAccountForm: FC = () => {
     houses,
     streetDefaultValue,
     streets,
+    accountTypes,
   } = useAddSubscriberAccountForm();
-  const accountTypes = getAccountTypesData();
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>

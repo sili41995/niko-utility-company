@@ -30,11 +30,12 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     isLoaded && totalCount && !!~totalCount
   );
   const error = useSubscriberAccountsStore(selectError);
-  const page = Number(searchParams.get(SearchParamsKeys.page) ?? '1');
+  const page = searchParams.get(SearchParamsKeys.page);
   const limit = Number(GeneralParams.recordLimit);
 
   useEffect(() => {
-    fetchSubscriberAccounts({ page, limit });
+    const targetPage = page ? Number(page) : undefined;
+    fetchSubscriberAccounts({ page: targetPage, limit });
   }, [fetchSubscriberAccounts, limit, page]);
 
   const setModalWinState = () => {

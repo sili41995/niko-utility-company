@@ -21,6 +21,7 @@ import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { InputChangeEvent } from '@/types/types';
 import {
   filterAddSubscriberAccountData,
+  getAccountTypesData,
   getCurrentDateParams,
   getSubscriberAccountSelectData,
   toasts,
@@ -62,6 +63,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     streets,
   });
   const streetDefaultValue = streets[0]?.id;
+  const accountTypes = getAccountTypesData();
 
   useEffect(() => {
     if (!streetId) {
@@ -126,6 +128,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     houses: housesData,
     streets: streetsData,
     streetDefaultValue,
+    accountTypes,
   };
 };
 

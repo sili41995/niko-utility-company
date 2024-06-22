@@ -13,6 +13,10 @@ const fetchSubscriberAccountsOperation = async ({
 }: IFetchSubscriberAccountsOperationProps): Promise<
   IFetchSubscriberAccountsRes | undefined
 > => {
+  if (!data.page) {
+    set({ isLoaded: false });
+  }
+
   const response = await subscriberAccountsService.fetchSubscriberAccounts(
     data
   );

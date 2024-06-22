@@ -96,6 +96,7 @@ export interface IUseAddSubscriberAccountForm {
   houses: SelectData;
   streets: SelectData;
   streetDefaultValue: number;
+  accountTypes: SelectData;
 }
 
 export interface IUseStreetsData {

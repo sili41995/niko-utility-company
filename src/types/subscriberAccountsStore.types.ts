@@ -24,7 +24,7 @@ export interface IFetchSubscriberAccountsOperationProps {
 }
 
 export interface IFetchSubscriberAccountsFilters {
-  page: number;
+  page?: number;
   limit: number;
 }
 
