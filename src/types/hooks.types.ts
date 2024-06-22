@@ -83,14 +83,10 @@ export interface IUseGeneralSettingsForm {
 }
 
 export interface IUseAddSubscriberAccountForm {
-  streets: SelectData;
-  houses: SelectData;
-  accountTypes: SelectData;
   apartmentTypes: SelectData;
   handleSubmit: UseFormHandleSubmit<ISubscriberAccountFormData, undefined>;
   handleFormSubmit: SubmitHandler<ISubscriberAccountFormData>;
   register: UseFormRegister<ISubscriberAccountFormData>;
-  streetDefaultValue: number;
   currentDate: string;
   firstDayOfMonth: string;
   isLoading: boolean;
@@ -137,4 +133,11 @@ export interface IUseSubscriberAccountsPage {
   setModalWinState: Func;
   showModalWin: boolean;
   isLoading: boolean;
+}
+
+export interface IUseSubscriberAccountsData {
+  accountTypes: SelectData;
+  houses: SelectData;
+  streets: SelectData;
+  streetDefaultValue: number;
 }

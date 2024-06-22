@@ -1,18 +1,12 @@
 import {
-  AccountTypes,
   CheckboxNames,
   GeneralParams,
   Messages,
   SearchParamsKeys,
   apartmentTypes,
 } from '@/constants';
-import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
-import {
-  useHousesStore,
-  useStreetsStore,
-  useSubscriberAccountsStore,
-} from '@/store/store';
-import { selectStreets } from '@/store/streets/selectors';
+import { selectFetchHouses } from '@/store/houses/selectors';
+import { useHousesStore, useSubscriberAccountsStore } from '@/store/store';
 import {
   selectAddSubscriberAccount,
   selectFetchSubscriberAccounts,
@@ -24,7 +18,6 @@ import { InputChangeEvent } from '@/types/types';
 import {
   filterAddSubscriberAccountData,
   getCurrentDateParams,
-  getSubscriberAccountSelectData,
   toasts,
 } from '@/utils';
 import { validateAddSubscriberAccountForm } from '@/validators';
@@ -56,12 +49,6 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const limit = Number(GeneralParams.recordLimit);
   const { currentDate, firstDayOfMonth } = getCurrentDateParams();
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
-  const streets = useStreetsStore(selectStreets);
-  const houses = useHousesStore(selectHouses);
-  const accountTypes = Object.values(AccountTypes);
-  const streetDefaultValue = streets[0]?.id;
-  const { accountTypesSelectData, housesSelectData, streetsSelectData } =
-    getSubscriberAccountSelectData({ accountTypes, houses, streets });
 
   useEffect(() => {
     if (!streetId) {
@@ -113,14 +100,10 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   };
 
   return {
-    streets: streetsSelectData,
-    houses: housesSelectData,
-    accountTypes: accountTypesSelectData,
     apartmentTypes,
     register,
     handleSubmit,
     handleFormSubmit,
-    streetDefaultValue,
     currentDate,
     firstDayOfMonth,
     isLoading,

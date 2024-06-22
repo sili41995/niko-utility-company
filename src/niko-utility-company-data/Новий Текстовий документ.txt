@@ -1,0 +1,4 @@
+SELECT * FROM pg_collation WHERE collname LIKE '%uk%';
+
+ALTER TABLE "Street"
+  ALTER COLUMN name TYPE TEXT COLLATE "uk-UA-x-icu";

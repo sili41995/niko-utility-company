@@ -1,0 +1,2 @@
+id,name,login,email,password,token,fullAccess,houses,subscribers,accounting,documents,counters,oneOffJobs,settings
+1,superadmin,superadmin,superadmin@mail.com,$2a$10$lr7rG.AQ.drIJLUENBMyW.GegyVLqx84vGhRUt04uP2RE4zQQo2m.,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE5MDU1MTIxLCJleHAiOjE3MTk2NTk5MjF9.vbrtpJld-48qzDZ5RUvDXlHmJ7m7rzQqywUxfucVxfw,f,f,f,f,f,f,f,f

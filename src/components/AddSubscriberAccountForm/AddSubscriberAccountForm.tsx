@@ -1,4 +1,7 @@
-import { useAddSubscriberAccountForm } from '@/hooks';
+import {
+  useAddSubscriberAccountForm,
+  useSubscriberAccountsData,
+} from '@/hooks';
 import { FC } from 'react';
 import Input from '../Input';
 import { CheckboxNames, InputTypes, regExp } from '@/constants';
@@ -29,12 +32,8 @@ import Select from '../Select';
 const AddSubscriberAccountForm: FC = () => {
   const {
     register,
-    streets,
-    houses,
-    streetDefaultValue,
     currentDate,
     firstDayOfMonth,
-    accountTypes,
     apartmentTypes,
     isLoading,
     handleFormSubmit,
@@ -43,6 +42,8 @@ const AddSubscriberAccountForm: FC = () => {
     isEligibleForBenefit,
     onCheckboxChange,
   } = useAddSubscriberAccountForm();
+  const { accountTypes, houses, streetDefaultValue, streets } =
+    useSubscriberAccountsData();
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
