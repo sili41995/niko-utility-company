@@ -1,7 +1,4 @@
-import {
-  useAddSubscriberAccountForm,
-  useSubscriberAccountsData,
-} from '@/hooks';
+import { useAddSubscriberAccountForm } from '@/hooks';
 import { FC } from 'react';
 import Input from '../Input';
 import { CheckboxNames, InputTypes, regExp } from '@/constants';
@@ -28,6 +25,7 @@ import {
 import Checkbox from '../Checkbox';
 import SubmitFormBtn from '../SubmitFormBtn';
 import Select from '../Select';
+import { getAccountTypesData } from '@/utils';
 
 const AddSubscriberAccountForm: FC = () => {
   const {
@@ -41,9 +39,11 @@ const AddSubscriberAccountForm: FC = () => {
     isRemovalHouseholdWaste,
     isEligibleForBenefit,
     onCheckboxChange,
+    houses,
+    streetDefaultValue,
+    streets,
   } = useAddSubscriberAccountForm();
-  const { accountTypes, houses, streetDefaultValue, streets } =
-    useSubscriberAccountsData();
+  const accountTypes = getAccountTypesData();
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>

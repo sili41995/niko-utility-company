@@ -93,6 +93,9 @@ export interface IUseAddSubscriberAccountForm {
   isRemovalHouseholdWaste: boolean;
   isEligibleForBenefit: boolean;
   onCheckboxChange: InputChangeFunc;
+  houses: SelectData;
+  streets: SelectData;
+  streetDefaultValue: number;
 }
 
 export interface IUseStreetsData {
@@ -133,11 +136,4 @@ export interface IUseSubscriberAccountsPage {
   setModalWinState: Func;
   showModalWin: boolean;
   isLoading: boolean;
-}
-
-export interface IUseSubscriberAccountsData {
-  accountTypes: SelectData;
-  houses: SelectData;
-  streets: SelectData;
-  streetDefaultValue: number;
 }

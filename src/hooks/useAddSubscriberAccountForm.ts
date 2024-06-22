@@ -5,8 +5,12 @@ import {
   SearchParamsKeys,
   apartmentTypes,
 } from '@/constants';
-import { selectFetchHouses } from '@/store/houses/selectors';
-import { useHousesStore, useSubscriberAccountsStore } from '@/store/store';
+import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
+import {
+  useHousesStore,
+  useStreetsStore,
+  useSubscriberAccountsStore,
+} from '@/store/store';
 import {
   selectAddSubscriberAccount,
   selectFetchSubscriberAccounts,
@@ -18,12 +22,14 @@ import { InputChangeEvent } from '@/types/types';
 import {
   filterAddSubscriberAccountData,
   getCurrentDateParams,
+  getSubscriberAccountSelectData,
   toasts,
 } from '@/utils';
 import { validateAddSubscriberAccountForm } from '@/validators';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import useSetSearchParams from './useSetSearchParams';
+import { selectStreets } from '@/store/streets/selectors';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const [isRemovalHouseholdWaste, setIsRemovalHouseholdWaste] =
@@ -49,6 +55,13 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const limit = Number(GeneralParams.recordLimit);
   const { currentDate, firstDayOfMonth } = getCurrentDateParams();
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
+  const streets = useStreetsStore(selectStreets);
+  const houses = useHousesStore(selectHouses);
+  const { housesData, streetsData } = getSubscriberAccountSelectData({
+    houses,
+    streets,
+  });
+  const streetDefaultValue = streets[0]?.id;
 
   useEffect(() => {
     if (!streetId) {
@@ -110,6 +123,9 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     isEligibleForBenefit,
     isRemovalHouseholdWaste,
     onCheckboxChange: toggleCheckedStatus,
+    houses: housesData,
+    streets: streetsData,
+    streetDefaultValue,
   };
 };
 

@@ -6,7 +6,6 @@ import {
 const getSubscriberAccountSelectData = ({
   streets,
   houses,
-  accountTypes,
 }: IGetSubscriberAccountDataProps): IGetSubscriberAccountData => {
   const streetsData = streets.map(({ name, type, id }) => ({
     title: `${type} ${name}`,
@@ -16,12 +15,8 @@ const getSubscriberAccountSelectData = ({
     title: number,
     value: String(id),
   }));
-  const accountTypesData = accountTypes.map((type) => ({
-    title: type,
-    value: type,
-  }));
 
-  return { streetsData, housesData, accountTypesData };
+  return { streetsData, housesData };
 };
 
 export default getSubscriberAccountSelectData;

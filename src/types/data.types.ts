@@ -207,11 +207,9 @@ export type SelectData = ISelectData[];
 export interface IGetSubscriberAccountDataProps {
   streets: Streets;
   houses: Houses;
-  accountTypes: AccountTypes[];
 }
 
 export interface IGetSubscriberAccountData {
   streetsData: SelectData;
   housesData: SelectData;
-  accountTypesData: SelectData;
 }
