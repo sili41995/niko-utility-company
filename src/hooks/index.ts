@@ -9,3 +9,4 @@ export { default as useGeneralSettings } from './useGeneralSettings';
 export { default as useHeader } from './useHeader';
 export { default as useModalWin } from './useModalWin';
 export { default as useUsersSettings } from './useUsersSettings';
+export { default as useSubscriberAccountsPage } from './useSubscriberAccountsPage';

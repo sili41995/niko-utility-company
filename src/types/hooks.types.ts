@@ -127,3 +127,13 @@ export interface IUseUsersSettings {
   toggleShowAddUserForm: Func;
   error: string | null;
 }
+
+export interface IUseSubscriberAccountsPage {
+  isLoadingData: boolean;
+  showSubscriberAccountsTable: boolean;
+  count: number;
+  totalCount: number | null;
+  error: string | null;
+  setModalWinState: Func;
+  showModalWin: boolean;
+}

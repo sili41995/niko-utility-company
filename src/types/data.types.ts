@@ -98,14 +98,16 @@ export type Houses = IHouse[];
 export interface ISubscriberAccount {
   id: number;
   streetId: number;
+  street: IStreet;
   houseId: number;
+  house: IHouse;
   apartment: string;
   subscriberAccount: string;
   contract: string;
   contractDate: Date;
   accountType: AccountTypes;
   isLivingApartment: boolean;
-  residents: string;
+  residents: number;
   period: Date;
   isRemovalHouseholdWaste: boolean;
   utr: string;
@@ -130,15 +132,22 @@ export interface ISubscriberAccountFormData
     | 'isLivingApartment'
     | 'contractDate'
     | 'period'
+    | 'residents'
+    | 'street'
+    | 'house'
   > {
   streetId: string;
   houseId: string;
   isLivingApartment: BooleanValue;
   contractDate: string;
   period: string;
+  residents: string;
 }
 
-export interface INewSubscriberAccount extends Omit<ISubscriberAccount, 'id'> {}
+export type NewSubscriberAccount = Omit<
+  ISubscriberAccount,
+  'id' | 'street' | 'house'
+>;
 
 export type IsRemovalHouseholdWaste = Pick<
   ISubscriberAccount,

@@ -12,18 +12,22 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     apartment,
     isLivingApartment,
     residents,
+    street,
+    house,
   } = subscriberAccount;
 
   const apartmentType = apartmentTypes.find(
     ({ value }) => value === String(isLivingApartment)
   )?.title;
 
+  const fullStreetName = `${street.type} ${street.name}`;
+
   return (
     <TableBodyRow>
       <TableData>{subscriberAccountNumber}</TableData>
       <TableData>{accountType}</TableData>
-      <TableData>street</TableData>
-      <TableData>house</TableData>
+      <TableData>{fullStreetName}</TableData>
+      <TableData>{house.number}</TableData>
       <TableData>{apartment}</TableData>
       <TableData>{apartmentType}</TableData>
       <TableData>тариф</TableData>

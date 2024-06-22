@@ -1,11 +1,11 @@
 import {
-  INewSubscriberAccount,
+  NewSubscriberAccount,
   ISubscriberAccountFormData,
 } from '@/types/data.types';
 
 const filterAddSubscriberAccountData = (
   data: ISubscriberAccountFormData
-): INewSubscriberAccount => {
+): NewSubscriberAccount => {
   const {
     houseId,
     streetId,
@@ -15,12 +15,14 @@ const filterAddSubscriberAccountData = (
     comment,
     contractDate,
     period,
+    residents,
   } = data;
 
   return {
     ...data,
     houseId: Number(houseId),
     streetId: Number(streetId),
+    residents: Number(residents),
     isLivingApartment: isLivingApartment === 'true' ? true : false,
     contractDate: new Date(contractDate),
     period: new Date(period),
