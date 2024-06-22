@@ -7,8 +7,8 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
   const {
     subscriberAccount: subscriberAccountNumber,
     accountType,
-    street,
-    house,
+    // street,
+    // house,
     apartment,
     isLivingApartment,
     residents,
@@ -22,8 +22,8 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     <TableBodyRow>
       <TableData>{subscriberAccountNumber}</TableData>
       <TableData>{accountType}</TableData>
-      <TableData>{street}</TableData>
-      <TableData>{house}</TableData>
+      <TableData>street</TableData>
+      <TableData>house</TableData>
       <TableData>{apartment}</TableData>
       <TableData>{apartmentType}</TableData>
       <TableData>тариф</TableData>

@@ -13,7 +13,7 @@ import {
 import {
   Credentials,
   IGeneralSettings,
-  ISubscriberAccount,
+  ISubscriberAccountFormData,
   NewUser,
   SelectData,
 } from './data.types';
@@ -87,9 +87,9 @@ export interface IUseAddSubscriberAccountForm {
   houses: SelectData;
   accountTypes: SelectData;
   apartmentTypes: SelectData;
-  handleSubmit: UseFormHandleSubmit<ISubscriberAccount, undefined>;
-  handleFormSubmit: SubmitHandler<ISubscriberAccount>;
-  register: UseFormRegister<ISubscriberAccount>;
+  handleSubmit: UseFormHandleSubmit<ISubscriberAccountFormData, undefined>;
+  handleFormSubmit: SubmitHandler<ISubscriberAccountFormData>;
+  register: UseFormRegister<ISubscriberAccountFormData>;
   streetDefaultValue: number;
   currentDate: string;
   firstDayOfMonth: string;

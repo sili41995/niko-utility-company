@@ -3,8 +3,8 @@ import { House } from '@/types/data.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showHouseError = (errors: FieldErrors<House>): void => {
-  errors.house && toasts.errorToast(Messages.houseReqErr);
+const showHouseIdError = (errors: FieldErrors<House>): void => {
+  errors.houseId && toasts.errorToast(Messages.houseReqErr);
 };
 
-export default showHouseError;
+export default showHouseIdError;

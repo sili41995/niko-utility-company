@@ -1,6 +1,6 @@
 import { IFetchSubscriberAccountsRes } from '@/types/subscriberAccountsStore.types';
 import HttpService from './http.service';
-import { ISubscriberAccount, NewSubscriberAccount } from '@/types/data.types';
+import { ISubscriberAccount, INewSubscriberAccount } from '@/types/data.types';
 
 class SubscriberAccountsService extends HttpService {
   constructor() {
@@ -16,12 +16,14 @@ class SubscriberAccountsService extends HttpService {
   }
 
   async addSubscriberAccount(
-    data: NewSubscriberAccount
+    data: INewSubscriberAccount
   ): Promise<ISubscriberAccount> {
-    const response = await this.post<ISubscriberAccount, NewSubscriberAccount>({
-      url: 'subscriber-accounts',
-      data,
-    });
+    const response = await this.post<ISubscriberAccount, INewSubscriberAccount>(
+      {
+        url: 'subscriber-accounts',
+        data,
+      }
+    );
 
     return response.data;
   }

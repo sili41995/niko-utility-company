@@ -52,14 +52,14 @@ const AddSubscriberAccountForm: FC = () => {
       <AddressWrap>
         <Select
           label='Вулиця:'
-          settings={{ ...register('street', { required: true }) }}
+          settings={{ ...register('streetId', { required: true }) }}
           defaultValue={streetDefaultValue}
           data={streets}
           width={550}
         />
         <Select
           label='Будинок:'
-          settings={{ ...register('house', { required: true }) }}
+          settings={{ ...register('houseId', { required: true }) }}
           data={houses}
           width={550}
         />

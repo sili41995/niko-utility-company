@@ -12,7 +12,7 @@ import {
 } from '@/store/store';
 import { selectStreets } from '@/store/streets/selectors';
 import { selectAddSubscriberAccount } from '@/store/subscriberAccounts/selectors';
-import { ISubscriberAccount, SelectData } from '@/types/data.types';
+import { ISubscriberAccountFormData, SelectData } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { InputChangeEvent } from '@/types/types';
 import {
@@ -34,9 +34,9 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     handleSubmit,
     watch,
     formState: { isSubmitting, errors },
-  } = useForm<ISubscriberAccount>();
+  } = useForm<ISubscriberAccountFormData>();
   const streets = useStreetsStore(selectStreets);
-  const streetId = watch('street');
+  const streetId = watch('streetId');
   const fetchHouses = useHousesStore(selectFetchHouses);
   const houses = useHousesStore(selectHouses);
   const addSubscriberAccount = useSubscriberAccountsStore(
@@ -92,7 +92,9 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     }
   };
 
-  const handleFormSubmit: SubmitHandler<ISubscriberAccount> = async (data) => {
+  const handleFormSubmit: SubmitHandler<ISubscriberAccountFormData> = async (
+    data
+  ) => {
     const filteredAddSubscriberAccountData =
       filterAddSubscriberAccountData(data);
     // console.log(filteredAddSubscriberAccountData);

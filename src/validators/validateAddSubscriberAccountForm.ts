@@ -1,7 +1,6 @@
 import { ISubscriberAccount } from '@/types/data.types';
 import { FieldErrors } from 'react-hook-form';
-import showStreetError from './showIsLivingApartmentError';
-import showHouseError from './showHouseError';
+import showHouseIdError from './showHouseIdError';
 import showApartmentError from './showApartmentError';
 import showSubscriberAccountError from './showSubscriberAccountError';
 import showContractError from './showContractError';
@@ -20,12 +19,13 @@ import showAdditionalPhoneError from './showAdditionalPhoneError';
 import showSubscriberAccountEmailError from './showSubscriberAccountEmailError';
 import showIsEligibleForBenefitError from './showIsEligibleForBenefitError';
 import showIsRemovalHouseholdWasteError from './showIsRemovalHouseholdWasteError';
+import showStreetIdError from './showStreetIdError';
 
 const validateAddSubscriberAccountForm = (
   errors: FieldErrors<ISubscriberAccount>
 ): void => {
-  showStreetError(errors);
-  showHouseError(errors);
+  showStreetIdError(errors);
+  showHouseIdError(errors);
   showApartmentError(errors);
   showSubscriberAccountError(errors);
   showContractError(errors);

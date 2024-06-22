@@ -7,7 +7,7 @@ import {
   IFetchSubscriberAccountsRes,
 } from '@/types/subscriberAccountsStore.types';
 import { fetchSubscriberAccounts, addSubscriberAccount } from './operations';
-import { ISubscriberAccount, NewSubscriberAccount } from '@/types/data.types';
+import { ISubscriberAccount, INewSubscriberAccount } from '@/types/data.types';
 
 const subscriberAccountsSlice = (
   set: SetSubscriberAccountsStateFunc,
@@ -23,7 +23,7 @@ const subscriberAccountsSlice = (
       get,
     }),
   addSubscriberAccount: async (
-    data: NewSubscriberAccount
+    data: INewSubscriberAccount
   ): Promise<ISubscriberAccount | undefined> =>
     await addSubscriberAccount({
       data,

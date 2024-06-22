@@ -1,4 +1,5 @@
 import { AccountTypes, ServiceCategories } from '@/constants';
+import { BooleanValue } from './types';
 
 export interface IDocument {
   documentType: number;
@@ -95,10 +96,9 @@ export interface IHouse {
 export type Houses = IHouse[];
 
 export interface ISubscriberAccount {
-  [key: string]: number | string | Date | boolean | undefined;
   id: number;
-  street: string;
-  house: string;
+  streetId: number;
+  houseId: number;
   apartment: string;
   subscriberAccount: string;
   contract: string;
@@ -106,7 +106,7 @@ export interface ISubscriberAccount {
   accountType: AccountTypes;
   isLivingApartment: boolean;
   residents: string;
-  period: string;
+  period: Date;
   isRemovalHouseholdWaste: boolean;
   utr: string;
   passport: string;
@@ -121,7 +121,24 @@ export interface ISubscriberAccount {
   comment?: string;
 }
 
-export type NewSubscriberAccount = Omit<ISubscriberAccount, 'id'>;
+export interface ISubscriberAccountFormData
+  extends Omit<
+    ISubscriberAccount,
+    | 'id'
+    | 'streetId'
+    | 'houseId'
+    | 'isLivingApartment'
+    | 'contractDate'
+    | 'period'
+  > {
+  streetId: string;
+  houseId: string;
+  isLivingApartment: BooleanValue;
+  contractDate: string;
+  period: string;
+}
+
+export interface INewSubscriberAccount extends Omit<ISubscriberAccount, 'id'> {}
 
 export type IsRemovalHouseholdWaste = Pick<
   ISubscriberAccount,
@@ -133,9 +150,9 @@ export type IsEligibleForBenefit = Pick<
   'isEligibleForBenefit'
 >;
 
-export type Street = Pick<ISubscriberAccount, 'street'>;
+export type Street = Pick<ISubscriberAccount, 'streetId'>;
 
-export type House = Pick<ISubscriberAccount, 'house'>;
+export type House = Pick<ISubscriberAccount, 'houseId'>;
 
 export type Apartment = Pick<ISubscriberAccount, 'apartment'>;
 
