@@ -5,5 +5,5 @@ export const Message = styled.p`
   color: ${({ theme }) => theme.colors.redIcon};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;

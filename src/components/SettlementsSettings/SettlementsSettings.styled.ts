@@ -21,5 +21,5 @@ export const Locality = styled.p`
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;

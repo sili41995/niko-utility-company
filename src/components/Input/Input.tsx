@@ -23,7 +23,6 @@ const Input: FC<IProps> = ({
     <StyledInput
       type={type}
       formType={formType}
-      {...settings}
       placeholder={placeholder}
       defaultValue={defaultValue}
       step={step}
@@ -32,6 +31,7 @@ const Input: FC<IProps> = ({
       offBorderRadius={offBorderRadius}
       name={name}
       onChange={onChange}
+      {...settings}
     />
   );
 

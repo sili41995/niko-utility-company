@@ -13,7 +13,7 @@ export const Title = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 20px;
-  font-weight: 500;
+  font-weight: ${({ theme }) => theme.fontWeight.other};
   line-height: 1.2;
   text-align: center;
 `;

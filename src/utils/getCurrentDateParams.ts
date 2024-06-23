@@ -1,14 +1,18 @@
 import { DateFormats } from '@/constants';
 import { IGetCurrentDateParams } from '@/types/types';
-import { format, setDefaultOptions } from 'date-fns';
+import { setDefaultOptions } from 'date-fns';
 import { uk } from 'date-fns/locale';
+import formatDate from './formatDate';
 
 const getCurrentDateParams = (): IGetCurrentDateParams => {
   setDefaultOptions({ locale: uk });
   const date = new Date();
-  const currentMonth = format(date, DateFormats.fullMonth);
-  const currentYear = format(date, DateFormats.fullYear);
-  const firstDayOfMonth = format(date, DateFormats.fullDate);
+  const currentMonth = formatDate({ date, dateFormat: DateFormats.fullMonth });
+  const currentYear = formatDate({ date, dateFormat: DateFormats.fullYear });
+  const firstDayOfMonth = formatDate({
+    date,
+    dateFormat: DateFormats.monthStart,
+  });
   const currentDate = `${currentYear}р. ${currentMonth}`;
 
   return {

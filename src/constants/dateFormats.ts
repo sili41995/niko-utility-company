@@ -1,8 +1,8 @@
 const enum DateFormats {
   fullMonth = 'LLLL',
   fullYear = 'yyyy',
-  period = '01.MM.yyyy',
-  fullDate = 'yyyy-MM-01',
+  monthStart = 'yyyy-MM-01',
+  period = 'dd.MM.yyyy',
 }
 
 export default DateFormats;

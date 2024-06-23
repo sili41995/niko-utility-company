@@ -2,10 +2,33 @@ import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
 import 'react-toastify/dist/ReactToastify.css';
+import { theme } from '@/constants';
+import { robotoRegular, robotoBold, robotoMedium } from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
     styles={css`
+      @font-face {
+        font-family: ${theme.fontFamily.primary};
+        src: local(${theme.fontFamily.primary}),
+          url(${robotoBold}) format('truetype');
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.primary};
+        src: local(${theme.fontFamily.primary}),
+          url(${robotoMedium}) format('truetype');
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.primary};
+        src: local(${theme.fontFamily.primary}),
+          url(${robotoRegular}) format('truetype');
+        font-weight: 400;
+      }
+
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
           'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',

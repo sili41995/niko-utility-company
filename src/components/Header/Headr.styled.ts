@@ -49,7 +49,7 @@ export const Title = styled.p`
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 22px;
   color: ${({ theme }) => theme.colors.white};
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
   text-transform: uppercase;
 `;
 
@@ -57,7 +57,7 @@ export const Name = styled.p`
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 16px;
   color: ${({ theme }) => theme.colors.white};
-  font-weight: 500;
+  font-weight: ${({ theme }) => theme.fontWeight.other};
   line-height: 1.2;
 `;
 

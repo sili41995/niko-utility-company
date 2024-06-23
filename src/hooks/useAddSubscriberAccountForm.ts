@@ -47,6 +47,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     handleSubmit,
     watch,
     formState: { isSubmitting, errors },
+    reset,
   } = useForm<ISubscriberAccountFormData>();
   const streetId = watch('streetId');
   const fetchSubscriberAccounts = useSubscriberAccountsStore(
@@ -76,6 +77,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   }, [fetchHouses, streetId]);
 
   useEffect(() => {
+    console.log(errors);
     const invalidFields = Object.keys(errors);
     if (invalidFields.length) {
       validateAddSubscriberAccountForm(errors);
@@ -118,6 +120,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
         type,
       });
       toasts.successToast(Messages.subscriberAccountAddSuccess);
+      reset();
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);

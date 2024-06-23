@@ -46,7 +46,7 @@ export const Button = styled.button`
   color: ${({ theme }): string => theme.colors.tableHeader};
   font-family: ${({ theme }): string => theme.fontFamily.primary};
   font-size: ${({ theme }): number => theme.fontSize.primary}px;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeight.other};
   transition: box-shadow
     ${({ theme }): string => theme.transitionDurationAndFunc};
 

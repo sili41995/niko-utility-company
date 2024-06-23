@@ -25,14 +25,14 @@ export const Name = styled.span`
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;
 
 export const Login = styled.span`
   color: ${({ theme }) => theme.colors.addBntIcon};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;
 
 export const AccessList = styled.ul`

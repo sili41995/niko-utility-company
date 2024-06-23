@@ -45,7 +45,7 @@ export const TittleWrap = styled.span<IStyledProps>`
 
 export const Title = styled.span`
   color: ${({ theme }) => theme.colors.white};
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
   font-size: 16px;
   line-height: 1.5;
   text-align: center;

@@ -107,3 +107,8 @@ export interface IGetDefaultAccountTypesValueProps {
   accountTypes: SelectData;
   type: string;
 }
+
+export interface IFormatDateProps {
+  date: Date;
+  dateFormat: string;
+}

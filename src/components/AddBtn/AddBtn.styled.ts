@@ -18,6 +18,6 @@ export const BtnTitle = styled.span`
   color: ${({ theme }) => theme.colors.navSectionDesc};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;

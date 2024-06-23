@@ -45,6 +45,8 @@ interface ITheme {
   };
   fontWeight: {
     primary: number;
+    secondary: number;
+    other: number;
   };
   fontSize: {
     primary: number;
@@ -70,6 +72,7 @@ interface ITheme {
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
+  trimText: string;
 }
 
 const theme: ITheme = {
@@ -113,10 +116,12 @@ const theme: ITheme = {
     // authFormBG: '#fcfcfc',
   },
   fontFamily: {
-    primary: 'Manrope',
+    primary: 'Roboto',
   },
   fontWeight: {
     primary: 400,
+    secondary: 700,
+    other: 500,
   },
   fontSize: {
     primary: 16,
@@ -143,6 +148,8 @@ const theme: ITheme = {
   },
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
+  trimText:
+    'word-wrap: break-word; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;',
 };
 
 export default theme;

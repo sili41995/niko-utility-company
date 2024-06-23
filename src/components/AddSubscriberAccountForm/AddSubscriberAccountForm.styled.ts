@@ -19,7 +19,7 @@ export const CurrentPeriod = styled.p`
 
 export const Accent = styled.span`
   color: ${({ theme }) => theme.colors.accent};
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;
 
 export const AddressWrap = styled.div`
@@ -57,7 +57,7 @@ export const SectionTitle = styled.p`
   color: ${({ theme }) => theme.colors.tableData};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;
 
 export const ServicesList = styled.div`

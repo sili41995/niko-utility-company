@@ -28,7 +28,7 @@ export const StyledInput = styled.input<IStyledInputProps>`
   padding: ${({ formType }) => setInputPadding(formType)};
   font-family: Inter;
   color: ${({ theme }) => theme.colors.primaryFont};
-  font-weight: 500;
+  font-weight: ${({ theme }) => theme.fontWeight.other};
   font-size: ${({ formType }) => setInputFontSize(formType)}px;
   letter-spacing: 0.04em;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
