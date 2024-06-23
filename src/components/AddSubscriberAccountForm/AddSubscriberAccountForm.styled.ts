@@ -11,7 +11,7 @@ export const Form = styled.form`
 `;
 
 export const CurrentPeriod = styled.p`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
@@ -54,7 +54,7 @@ export const ServiceTitleWrap = styled.div`
 `;
 
 export const SectionTitle = styled.p`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.secondary};
@@ -70,7 +70,7 @@ export const ServicesListTitleWrap = styled.div`
 `;
 
 export const ServicesListTitle = styled.p`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
@@ -85,7 +85,7 @@ export const ServiceListItem = styled.div`
 `;
 
 export const ServiceName = styled.p`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
@@ -109,7 +109,7 @@ export const CheckboxWrap = styled.div`
 `;
 
 export const CheckboxName = styled.p`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};

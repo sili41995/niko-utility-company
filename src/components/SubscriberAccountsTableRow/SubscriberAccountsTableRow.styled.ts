@@ -10,7 +10,7 @@ export const TableBodyRow = styled.tr`
 
 export const TableData = styled.td<IStyledTableDataProps>`
   padding: ${({ theme }) => theme.spacing()};
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 12px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};

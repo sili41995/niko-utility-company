@@ -5,6 +5,7 @@ const regExp: IRegExp = {
   phone: /^\+?[\d -]+$/,
   currentAccount: /^UA\d{27}$/,
   mfi: /^\d{6}$/,
+  login: /^\S+$/,
 };
 
 export default regExp;

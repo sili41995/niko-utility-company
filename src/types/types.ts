@@ -78,6 +78,7 @@ export interface IRegExp {
   phone: RegExp;
   currentAccount: RegExp;
   mfi: RegExp;
+  login: RegExp;
 }
 
 export interface IGetCurrentDateParams {

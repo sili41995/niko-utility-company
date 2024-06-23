@@ -12,7 +12,7 @@ export const SelectWrap = styled.label<IStyledSelectWrapProps>`
 
 export const Title = styled.span`
   flex-shrink: 0;
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
@@ -27,7 +27,7 @@ export const StyledSelect = styled.select<IStyledProps>`
     offBorderRadius ? 0 : theme.borderRadius.secondary}px;
   padding: ${({ formType }) => setInputPadding(formType)};
   font-family: Inter;
-  color: ${({ theme }) => theme.colors.primaryFont};
+  color: ${({ theme }) => theme.colors.black};
   font-weight: ${({ theme }) => theme.fontWeight.other};
   font-size: ${({ formType }) => setInputFontSize(formType)}px;
   letter-spacing: 0.04em;

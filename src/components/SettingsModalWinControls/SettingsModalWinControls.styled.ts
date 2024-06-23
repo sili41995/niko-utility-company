@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
-  background-color: ${({ theme }) => theme.colors.headerBG};
+  background-color: ${({ theme }) => theme.colors.darkBlue};
   padding-top: ${({ theme }) => theme.spacing(4)};
   padding-bottom: ${({ theme }) => theme.spacing(4)};
 `;

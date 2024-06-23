@@ -58,7 +58,7 @@ export const DescWrap = styled.span`
 `;
 
 export const Desc = styled.span`
-  color: ${({ theme }) => theme.colors.navSectionDesc};
+  color: ${({ theme }) => theme.colors.black};
   font-weight: ${({ theme }) => theme.fontWeight.primary};
   font-size: 16px;
   line-height: 1.5;

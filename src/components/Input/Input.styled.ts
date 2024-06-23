@@ -8,6 +8,7 @@ import { setInputFontSize, setInputHeight, setInputPadding } from '@/utils';
 
 export const Container = styled.span`
   position: relative;
+
   & > svg {
     position: absolute;
     z-index: 10;
@@ -27,7 +28,7 @@ export const StyledInput = styled.input<IStyledInputProps>`
     offBorderRadius ? 0 : theme.borderRadius.secondary}px;
   padding: ${({ formType }) => setInputPadding(formType)};
   font-family: Inter;
-  color: ${({ theme }) => theme.colors.primaryFont};
+  color: ${({ theme }) => theme.colors.black};
   font-weight: ${({ theme }) => theme.fontWeight.other};
   font-size: ${({ formType }) => setInputFontSize(formType)}px;
   letter-spacing: 0.04em;
@@ -54,7 +55,7 @@ export const InputWrap = styled.label<IStyledInputWrapProps>`
 
 export const Label = styled.span<IStyledLabelProps>`
   flex-shrink: 0;
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme, accent }) =>

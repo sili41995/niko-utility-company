@@ -10,7 +10,7 @@ export const StyledTextArea = styled.input<IStyledProps>`
   border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
   padding: ${({ formType }) => setInputPadding(formType)};
   font-family: Inter;
-  color: ${({ theme }) => theme.colors.primaryFont};
+  color: ${({ theme }) => theme.colors.black};
   font-weight: ${({ theme }) => theme.fontWeight.other};
   font-size: ${({ formType }) => setInputFontSize(formType)}px;
   letter-spacing: 0.04em;
@@ -29,7 +29,7 @@ export const TextAreaWrap = styled.label`
 `;
 
 export const Label = styled.span`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};

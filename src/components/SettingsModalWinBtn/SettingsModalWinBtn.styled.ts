@@ -5,7 +5,7 @@ export const Container = styled.label`
   cursor: pointer;
 
   &:is(:hover, :focus, :has(input:checked)) {
-    background-color: ${({ theme }) => theme.colors.checkedSettingsBtn};
+    background-color: ${({ theme }) => theme.colors.grey};
   }
 
   & > input {

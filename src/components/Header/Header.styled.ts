@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const StyledHeader = styled.header`
-  background-color: ${({ theme }) => theme.colors.headerBG};
+  background-color: ${({ theme }) => theme.colors.darkBlue};
   padding-top: ${({ theme }) => theme.padding.container}px;
   padding-bottom: ${({ theme }) => theme.padding.container}px;
 `;
@@ -82,7 +82,7 @@ export const SettingsBtn = styled.button`
 
   &:is(:hover, :focus) {
     background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.headerBG};
+    color: ${({ theme }) => theme.colors.darkBlue};
   }
 `;
 

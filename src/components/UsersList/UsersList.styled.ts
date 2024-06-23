@@ -15,21 +15,21 @@ export const TitleWrap = styled.div`
 `;
 
 export const Title = styled.p`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;
 
 export const Name = styled.span`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;
 
 export const Login = styled.span`
-  color: ${({ theme }) => theme.colors.addBntIcon};
+  color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.secondary};
@@ -53,7 +53,7 @@ export const AccessWrap = styled.div`
 `;
 
 export const AccessName = styled.p`
-  color: ${({ theme }) => theme.colors.tableData};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};

@@ -15,7 +15,7 @@ import {
   StyledHeader,
   Title,
   TitleWrap,
-} from './Headr.styled';
+} from './Header.styled';
 import Container from '../Container';
 import SettingsModalWin from '../SettingsModalWin';
 import { useHeader } from '@/hooks';

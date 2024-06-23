@@ -43,7 +43,7 @@ export const Button = styled.button`
   background-color: ${({ theme }): string => theme.colors.white};
   border: none;
   border-color: transparent;
-  color: ${({ theme }): string => theme.colors.tableHeader};
+  color: ${({ theme }): string => theme.colors.accent};
   font-family: ${({ theme }): string => theme.fontFamily.primary};
   font-size: ${({ theme }): number => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.other};
@@ -51,7 +51,7 @@ export const Button = styled.button`
     ${({ theme }): string => theme.transitionDurationAndFunc};
 
   &.${ClassNames.active} {
-    background-color: ${({ theme }): string => theme.colors.tableHeader};
+    background-color: ${({ theme }): string => theme.colors.accent};
     color: ${({ theme }): string => theme.colors.white};
   }
 

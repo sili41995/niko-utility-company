@@ -6,6 +6,7 @@ const enum Messages {
   signInSuccess = 'Привіт!',
   addUser = 'Додати користувача',
   loginReqErr = 'Поле Логін має бути заповнене',
+  loginRegExpErr = 'Поле Логін не повинно містити пробілів',
   fullNameReqErr = 'Поле ПІБ має бути заповнене',
   emailReqErr = 'Поле Email має бути заповнене',
   emailRegExpErr = 'Поле Email повинно містити літери, цифри, крапку та символ @',

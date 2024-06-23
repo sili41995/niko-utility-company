@@ -6,39 +6,23 @@ interface ITheme {
   colors: {
     black: string;
     otherFont: string;
-    headerBG: string;
+    darkBlue: string;
     body: string;
     border: string;
-    housesSection: string;
-    subscribersSection: string;
+    subscriberAccountsSection: string;
     accountingSection: string;
     documentsSection: string;
-    tableData: string;
-    checkedSettingsBtn: string;
+    grey: string;
     servicesTitle: string;
-    addBntIcon: string;
-    addBtnIconAccent: string;
     serviceBG: string;
     primary: string;
-    primaryFont: string;
     secondary: string;
-    error: string;
-    // secondaryFont: string;
-    // primary: string;
-    // other: string;
     accent: string;
-    // green: string;
     white: string;
-    navSectionDesc: string;
     tableHeader: string;
-    grey: string;
-    // lightgrey: string;
-    // blueBtn: string;
-    // redBtn: string;
-    redIcon: string;
+    red: string;
     green: string;
     greenAccent: string;
-    authFormBG: string;
   };
   fontFamily: {
     primary: string;
@@ -78,42 +62,24 @@ interface ITheme {
 const theme: ITheme = {
   colors: {
     black: '#000000',
-    otherFont: '#555555',
-    headerBG: '#001A35',
+    red: '#d3232f',
+    white: '#FFFFFF',
     body: '#e5e5e5',
-    housesSection: '#ba5b50',
-    subscribersSection: '#ee9646',
-    accountingSection: '#3CB371',
-    documentsSection: '#994499',
-    navSectionDesc: '#343a40',
-    tableHeader: '#0051a3',
-    tableData: ' #212529',
-    checkedSettingsBtn: ' rgb(133, 135, 150)',
-    servicesTitle: '#dddfeb',
-    addBntIcon: '#007bff',
-    addBtnIconAccent: '#0056b3',
-    serviceBG: '#eeeeee',
-    authFormBG: '#fcfcfc',
     primary: '#3456FF',
     secondary: '#4d5ae5',
-    primaryFont: '#000000',
-    border: 'rgba(137, 137, 137, 0.43)',
-    // secondaryFont: '#7c7c7c',
-    // primary: '#3470ff',
-    // other: '#38b6ff',
-    // primaryFont: '#141414',
     accent: '#0b44cd',
-    greenAccent: '#00FF00',
-    white: '#FFFFFF',
-    grey: '#555759',
-    // lightgrey: '#d3d3d3',
-    // blueBtn: '#7fd1ff',
-    // redBtn: '#ff9192',
-    redIcon: '#d3232f',
-    error: '#C12F1C',
-    // greenBtn: '#89f2a6',
+    otherFont: '#555555',
+    border: 'rgba(137, 137, 137, 0.43)',
     green: '#00c938',
-    // authFormBG: '#fcfcfc',
+    greenAccent: '#00FF00',
+    grey: '#858796',
+    accountingSection: '#3CB371',
+    subscriberAccountsSection: '#ee9646',
+    documentsSection: '#994499',
+    darkBlue: '#001A35',
+    tableHeader: '#0051a3',
+    servicesTitle: '#dddfeb',
+    serviceBG: '#eeeeee',
   },
   fontFamily: {
     primary: 'Roboto',
@@ -127,7 +93,6 @@ const theme: ITheme = {
     primary: 16,
     secondary: 18,
     other: 20,
-    // subtitle: 25,
     title: 36,
   },
   padding: {

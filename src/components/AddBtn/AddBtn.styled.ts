@@ -15,7 +15,7 @@ export const Button = styled.button`
 `;
 
 export const BtnTitle = styled.span`
-  color: ${({ theme }) => theme.colors.navSectionDesc};
+  color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.secondary};

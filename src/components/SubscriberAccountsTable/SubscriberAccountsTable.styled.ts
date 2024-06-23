@@ -3,6 +3,7 @@ import { IStyledTableHeaderProps } from './SubscriberAccountsTable.types';
 
 export const StyledTable = styled.table`
   width: 100%;
+  border-spacing: 1px;
 `;
 
 export const TableHead = styled.thead``;
