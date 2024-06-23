@@ -20,6 +20,7 @@ const SubscriberAccountsTable: FC = () => {
       <TableHead>
         <TableHeadRow>
           <TableHeader>Аб. рахунок</TableHeader>
+          <TableHeader>ПІБ</TableHeader>
           <TableHeader>Тип рахунку</TableHeader>
           <TableHeader>Вулиця</TableHeader>
           <TableHeader>Буд.</TableHeader>
@@ -28,6 +29,8 @@ const SubscriberAccountsTable: FC = () => {
           <TableHeader>Послуги</TableHeader>
           <TableHeader>Стан рахунку</TableHeader>
           <TableHeader>Споживачі</TableHeader>
+          <TableHeader>Пільговик</TableHeader>
+          <TableHeader>Коментар</TableHeader>
         </TableHeadRow>
       </TableHead>
       <TableBody>

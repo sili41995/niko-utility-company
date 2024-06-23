@@ -22,7 +22,9 @@ const SubscriberAccountsPage: FC = () => {
     setModalWinState,
     showModalWin,
     isLoading,
+    filteredCount,
   } = useSubscriberAccountsPage();
+  const showPagination = totalCount && filteredCount;
 
   return (
     <>
@@ -35,11 +37,12 @@ const SubscriberAccountsPage: FC = () => {
               <>
                 <Filter />
                 <SubscriberAccountsTable />
-                {totalCount && (
+                {showPagination && (
                   <Pagination
                     count={count}
                     totalCount={totalCount}
                     isLoading={isLoading}
+                    filteredCount={filteredCount}
                   />
                 )}
               </>

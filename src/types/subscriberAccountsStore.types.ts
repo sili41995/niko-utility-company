@@ -8,11 +8,13 @@ import { GetStateFunc, SetStateFunc } from './store.types';
 export interface IFetchSubscriberAccountsRes {
   data: SubscriberAccounts;
   count: number;
+  filteredCount: number;
 }
 
 export interface ISubscriberAccountsInitialState {
   items: SubscriberAccounts;
   count: null | number;
+  filteredCount: null | number;
   isLoading: boolean;
   isLoaded: boolean;
   error: null | string;

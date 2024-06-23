@@ -4,6 +4,7 @@ import { useFilterSearchParams, useSetSearchParams } from '@/hooks';
 import getDefaultAccountTypesValue from '@/utils/getDefaultAccountTypesValue';
 import { getFilterAccountTypes } from '@/utils';
 import { IUseFilter } from '@/types/hooks.types';
+import { SearchParamsKeys } from '@/constants';
 
 const useFilter = (): IUseFilter => {
   const { updateSearchParams } = useSetSearchParams();
@@ -18,6 +19,7 @@ const useFilter = (): IUseFilter => {
   const onFilterChange = (e: InputChangeEvent | SelectChangeEvent): void => {
     const { value, name: key } = e.target;
     updateSearchParams({ key, value });
+    updateSearchParams({ key: SearchParamsKeys.page, value: '' });
   };
 
   return {

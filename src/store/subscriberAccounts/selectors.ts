@@ -6,7 +6,11 @@ export const selectIsLoading = (state: ISubscriberAccountsState) =>
 export const selectSubscriberAccounts = (state: ISubscriberAccountsState) =>
   state.items;
 
-export const selectCount = (state: ISubscriberAccountsState) => state.count;
+export const selectTotalCount = (state: ISubscriberAccountsState) =>
+  state.count;
+
+export const selectFilteredCount = (state: ISubscriberAccountsState) =>
+  state.filteredCount;
 
 export const selectIsLoaded = (state: ISubscriberAccountsState) =>
   state.isLoaded;

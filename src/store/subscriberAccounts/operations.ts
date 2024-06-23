@@ -23,6 +23,7 @@ const fetchSubscriberAccountsOperation = async ({
   set({
     items: response.data,
     count: response.count,
+    filteredCount: response.filteredCount,
     isLoaded: true,
   });
   return response;

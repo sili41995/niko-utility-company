@@ -12,17 +12,23 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     residents,
     street,
     house,
+    surname,
+    name,
+    middleName,
+    comment,
+    isEligibleForBenefit,
   } = subscriberAccount;
 
   const apartmentType = apartmentTypes.find(
     ({ value }) => value === String(isLivingApartment)
   )?.title;
-
+  const fullName = `${surname} ${name} ${middleName}`;
   const fullStreetName = `${street.type} ${street.name}`;
 
   return (
     <TableBodyRow>
       <TableData>{subscriberAccountNumber}</TableData>
+      <TableData>{fullName}</TableData>
       <TableData>{accountType}</TableData>
       <TableData>{fullStreetName}</TableData>
       <TableData>{house.number}</TableData>
@@ -31,6 +37,10 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
       <TableData>тариф</TableData>
       <TableData>тариф</TableData>
       <TableData>{residents}</TableData>
+      <TableData>
+        <input type='checkbox' checked={isEligibleForBenefit} />
+      </TableData>
+      <TableData>{comment}</TableData>
     </TableBodyRow>
   );
 };

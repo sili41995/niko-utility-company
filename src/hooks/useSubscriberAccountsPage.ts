@@ -1,11 +1,12 @@
 import { useSubscriberAccountsStore } from '@/store/store';
 import {
-  selectCount,
+  selectTotalCount,
   selectError,
   selectFetchSubscriberAccounts,
   selectIsLoaded,
   selectIsLoading,
   selectSubscriberAccounts,
+  selectFilteredCount,
 } from '@/store/subscriberAccounts/selectors';
 import { IUseSubscriberAccountsPage } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
@@ -17,7 +18,8 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     selectSubscriberAccounts
   );
   const count = subscriberAccounts.length;
-  const totalCount = useSubscriberAccountsStore(selectCount);
+  const totalCount = useSubscriberAccountsStore(selectTotalCount);
+  const filteredCount = useSubscriberAccountsStore(selectFilteredCount);
   const fetchSubscriberAccounts = useSubscriberAccountsStore(
     selectFetchSubscriberAccounts
   );
@@ -75,6 +77,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     showSubscriberAccountsTable,
     count,
     totalCount,
+    filteredCount,
     error,
     setModalWinState,
     showModalWin,

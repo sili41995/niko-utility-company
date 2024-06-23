@@ -6,7 +6,12 @@ import { Container } from './Pagination.styled';
 import { IProps } from './Pagination.types';
 import PaginationBar from '../PaginationBar';
 
-const Pagination: FC<IProps> = ({ totalCount, count, isLoading }) => {
+const Pagination: FC<IProps> = ({
+  totalCount,
+  count,
+  isLoading,
+  filteredCount,
+}) => {
   const { searchParams } = useSetSearchParams();
   const currentPage = Number(searchParams.get(SearchParamsKeys.page) ?? 1);
   const start = (currentPage - 1) * GeneralParams.recordLimit + 1;
@@ -16,9 +21,14 @@ const Pagination: FC<IProps> = ({ totalCount, count, isLoading }) => {
   return (
     <Container>
       {!isLoading && (
-        <PaginationTitle start={start} end={end} totalCount={totalCount} />
+        <PaginationTitle
+          start={start}
+          end={end}
+          totalCount={totalCount}
+          filteredCount={filteredCount}
+        />
       )}
-      {showPaginationBar && <PaginationBar totalCount={totalCount} />}
+      {showPaginationBar && <PaginationBar totalCount={filteredCount} />}
     </Container>
   );
 };

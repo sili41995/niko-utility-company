@@ -135,6 +135,7 @@ export interface IUseSubscriberAccountsPage {
   showSubscriberAccountsTable: boolean;
   count: number;
   totalCount: number | null;
+  filteredCount: number | null;
   error: string | null;
   setModalWinState: Func;
   showModalWin: boolean;
