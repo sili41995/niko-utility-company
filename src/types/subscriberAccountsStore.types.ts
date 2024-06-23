@@ -26,6 +26,13 @@ export interface IFetchSubscriberAccountsOperationProps {
 export interface IFetchSubscriberAccountsFilters {
   page?: number;
   limit: number;
+  surname: string;
+  name: string;
+  account: string;
+  type: string;
+  street: string;
+  house: string;
+  apartment: string;
 }
 
 export interface ISubscriberAccountsState

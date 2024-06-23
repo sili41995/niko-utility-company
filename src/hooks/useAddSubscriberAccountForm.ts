@@ -1,10 +1,4 @@
-import {
-  CheckboxNames,
-  GeneralParams,
-  Messages,
-  SearchParamsKeys,
-  apartmentTypes,
-} from '@/constants';
+import { CheckboxNames, Messages, apartmentTypes } from '@/constants';
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
 import {
   useHousesStore,
@@ -29,15 +23,25 @@ import {
 import { validateAddSubscriberAccountForm } from '@/validators';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import useSetSearchParams from './useSetSearchParams';
 import { selectStreets } from '@/store/streets/selectors';
+import useFilterSearchParams from './useFilterSearchParams';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const [isRemovalHouseholdWaste, setIsRemovalHouseholdWaste] =
     useState<boolean>(true);
   const [isEligibleForBenefit, setIsEligibleForBenefit] =
     useState<boolean>(false);
-  const { searchParams } = useSetSearchParams();
+  const {
+    account,
+    apartment,
+    house,
+    limit,
+    name,
+    page,
+    street,
+    surname,
+    type,
+  } = useFilterSearchParams();
   const {
     register,
     handleSubmit,
@@ -52,8 +56,6 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const addSubscriberAccount = useSubscriberAccountsStore(
     selectAddSubscriberAccount
   );
-  const page = Number(searchParams.get(SearchParamsKeys.page) ?? '1');
-  const limit = Number(GeneralParams.recordLimit);
   const { currentDate, firstDayOfMonth } = getCurrentDateParams();
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
   const streets = useStreetsStore(selectStreets);
@@ -101,11 +103,20 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   ) => {
     const filteredAddSubscriberAccountData =
       filterAddSubscriberAccountData(data);
-    // console.log(filteredAddSubscriberAccountData);
 
     try {
       await addSubscriberAccount(filteredAddSubscriberAccountData);
-      await fetchSubscriberAccounts({ page, limit });
+      await fetchSubscriberAccounts({
+        page,
+        limit,
+        account,
+        apartment,
+        house,
+        name,
+        street,
+        surname,
+        type,
+      });
       toasts.successToast(Messages.subscriberAccountAddSuccess);
     } catch (error) {
       if (error instanceof Error) {

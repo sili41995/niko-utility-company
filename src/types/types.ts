@@ -1,5 +1,6 @@
 import { Messages, PagePaths } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
+import { SelectData } from './data.types';
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
@@ -7,7 +8,11 @@ export type DivClickEvent = MouseEvent<HTMLDivElement>;
 
 export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 
+export type SelectChangeEvent = ChangeEvent<HTMLSelectElement>;
+
 export type InputChangeFunc = (e: InputChangeEvent) => void;
+
+export type SelectChangeFunc = (e: SelectChangeEvent) => void;
 
 export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
@@ -97,3 +102,8 @@ export interface IIndividualHeating {
 export type IndividualHeating = IIndividualHeating[];
 
 export type BooleanValue = 'true' | 'false';
+
+export interface IGetDefaultAccountTypesValueProps {
+  accountTypes: SelectData;
+  type: string;
+}

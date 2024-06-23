@@ -2,8 +2,10 @@ import { SetURLSearchParams } from 'react-router-dom';
 import {
   Func,
   IOnPageBtnClickProps,
+  InputChangeEvent,
   InputChangeFunc,
   OnBtnClickFunc,
+  SelectChangeEvent,
 } from './types';
 import {
   SubmitHandler,
@@ -137,4 +139,28 @@ export interface IUseSubscriberAccountsPage {
   setModalWinState: Func;
   showModalWin: boolean;
   isLoading: boolean;
+}
+
+export interface IUseFilter {
+  onFilterChange: (e: InputChangeEvent | SelectChangeEvent) => void;
+  surname: string;
+  name: string;
+  account: string;
+  accountTypes: SelectData;
+  defaultAccountTypesValue: string | undefined;
+  street: string;
+  house: string;
+  apartment: string;
+}
+
+export interface IUseFilterSearchParams {
+  page: number;
+  limit: number;
+  surname: string;
+  name: string;
+  account: string;
+  type: string;
+  street: string;
+  house: string;
+  apartment: string;
 }

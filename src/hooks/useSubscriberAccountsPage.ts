@@ -9,12 +9,10 @@ import {
 } from '@/store/subscriberAccounts/selectors';
 import { IUseSubscriberAccountsPage } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
-import useSetSearchParams from './useSetSearchParams';
-import { GeneralParams, SearchParamsKeys } from '@/constants';
+import useFilterSearchParams from './useFilterSearchParams';
 
 const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
-  const { searchParams } = useSetSearchParams();
   const subscriberAccounts = useSubscriberAccountsStore(
     selectSubscriberAccounts
   );
@@ -30,13 +28,43 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     isLoaded && totalCount && !!~totalCount
   );
   const error = useSubscriberAccountsStore(selectError);
-  const page = searchParams.get(SearchParamsKeys.page);
-  const limit = Number(GeneralParams.recordLimit);
+  const {
+    account,
+    apartment,
+    house,
+    limit,
+    name,
+    page,
+    street,
+    surname,
+    type,
+  } = useFilterSearchParams();
 
   useEffect(() => {
     const targetPage = page ? Number(page) : undefined;
-    fetchSubscriberAccounts({ page: targetPage, limit });
-  }, [fetchSubscriberAccounts, limit, page]);
+    fetchSubscriberAccounts({
+      page: targetPage,
+      limit,
+      surname,
+      name,
+      account,
+      type,
+      street,
+      house,
+      apartment,
+    });
+  }, [
+    account,
+    apartment,
+    fetchSubscriberAccounts,
+    house,
+    limit,
+    name,
+    page,
+    street,
+    surname,
+    type,
+  ]);
 
   const setModalWinState = () => {
     setShowModalWin((prevState) => !prevState);

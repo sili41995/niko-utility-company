@@ -20,3 +20,4 @@ export { default as getCurrentDateParams } from './getCurrentDateParams';
 export { default as filterAddSubscriberAccountData } from './filterAddSubscriberAccountData';
 export { default as getSubscriberAccountSelectData } from './getSubscriberAccountSelectData';
 export { default as getAccountTypesData } from './getAccountTypesData';
+export { default as getFilterAccountTypes } from './getFilterAccountTypes';

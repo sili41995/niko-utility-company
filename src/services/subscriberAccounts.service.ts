@@ -13,9 +13,16 @@ class SubscriberAccountsService extends HttpService {
   async fetchSubscriberAccounts({
     limit,
     page = 1,
+    surname,
+    name,
+    account,
+    type,
+    street,
+    house,
+    apartment,
   }: IFetchSubscriberAccountsFilters): Promise<IFetchSubscriberAccountsRes> {
     const response = await this.get<IFetchSubscriberAccountsRes>({
-      url: `subscriber-accounts?page=${page}&limit=${limit}`,
+      url: `subscriber-accounts?page=${page}&limit=${limit}&surname=${surname}&name=${name}&account=${account}&type=${type}&street=${street}&house=${house}&apartment=${apartment}`,
     });
 
     return response.data;

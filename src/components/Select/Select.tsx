@@ -11,6 +11,8 @@ const Select: FC<IProps> = ({
   formType,
   horizontal = false,
   offBorderRadius = false,
+  name,
+  onChange,
 }) => {
   const styledSelect = (
     <StyledSelect
@@ -19,6 +21,8 @@ const Select: FC<IProps> = ({
       width={width}
       formType={formType}
       offBorderRadius={offBorderRadius}
+      name={name}
+      onChange={onChange}
     >
       {data.map(({ value, title }) => (
         <Option value={value} key={value}>

@@ -1,17 +1,22 @@
 import { FC } from 'react';
 import Input from '../Input';
-import { FormTypes, InputTypes } from '@/constants';
+import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
 import Select from '../Select';
-import { getAccountTypesData } from '@/utils';
-import { Container } from './Filter.styled';
-import { SelectData } from '@/types/data.types';
+import { useFilter } from '@/hooks';
+import { Container } from './Filter.styled.ts';
 
 const Filter: FC = () => {
-  const accountTypes = getAccountTypesData();
-  const fullAccountTypes: SelectData = [
-    { title: 'Всі', value: '' },
-    ...accountTypes,
-  ];
+  const {
+    onFilterChange,
+    surname,
+    name,
+    account,
+    accountTypes,
+    defaultAccountTypesValue,
+    street,
+    house,
+    apartment,
+  } = useFilter();
 
   return (
     <Container>
@@ -20,12 +25,18 @@ const Filter: FC = () => {
         type={InputTypes.text}
         formType={FormTypes.filter}
         offBorderRadius={true}
+        name={SearchParamsKeys.surname}
+        onChange={onFilterChange}
+        defaultValue={surname}
       />
       <Input
         label="Ім'я"
         type={InputTypes.text}
         formType={FormTypes.filter}
         offBorderRadius={true}
+        name={SearchParamsKeys.name}
+        onChange={onFilterChange}
+        defaultValue={name}
       />
       <Input
         label='Абон. рахунок №'
@@ -33,13 +44,19 @@ const Filter: FC = () => {
         width={180}
         formType={FormTypes.filter}
         offBorderRadius={true}
+        name={SearchParamsKeys.account}
+        onChange={onFilterChange}
+        defaultValue={account}
       />
       <Select
         label='Тип рахунку'
-        data={fullAccountTypes}
+        data={accountTypes}
         width={200}
         formType={FormTypes.filter}
         offBorderRadius={true}
+        name={SearchParamsKeys.type}
+        onChange={onFilterChange}
+        defaultValue={defaultAccountTypesValue}
       />
       <Input
         label='Вулиця'
@@ -47,6 +64,9 @@ const Filter: FC = () => {
         width={180}
         formType={FormTypes.filter}
         offBorderRadius={true}
+        name={SearchParamsKeys.street}
+        onChange={onFilterChange}
+        defaultValue={street}
       />
       <Input
         label='Будинок'
@@ -54,6 +74,9 @@ const Filter: FC = () => {
         width={100}
         formType={FormTypes.filter}
         offBorderRadius={true}
+        name={SearchParamsKeys.house}
+        onChange={onFilterChange}
+        defaultValue={house}
       />
       <Input
         label='Квартра'
@@ -61,6 +84,9 @@ const Filter: FC = () => {
         width={100}
         formType={FormTypes.filter}
         offBorderRadius={true}
+        name={SearchParamsKeys.apartment}
+        onChange={onFilterChange}
+        defaultValue={apartment}
       />
     </Container>
   );

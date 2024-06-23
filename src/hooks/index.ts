@@ -10,3 +10,5 @@ export { default as useHeader } from './useHeader';
 export { default as useModalWin } from './useModalWin';
 export { default as useUsersSettings } from './useUsersSettings';
 export { default as useSubscriberAccountsPage } from './useSubscriberAccountsPage';
+export { default as useFilter } from './useFilter';
+export { default as useFilterSearchParams } from './useFilterSearchParams';

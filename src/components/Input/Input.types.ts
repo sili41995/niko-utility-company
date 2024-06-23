@@ -1,4 +1,5 @@
-import { FormTypes, InputTypes } from '@/constants';
+import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
+import { InputChangeFunc } from '@/types/types';
 import { ReactNode } from 'react';
 
 export interface IProps {
@@ -15,6 +16,8 @@ export interface IProps {
   horizontal?: boolean;
   width?: number;
   offBorderRadius?: boolean;
+  name?: SearchParamsKeys;
+  onChange?: InputChangeFunc;
 }
 
 export interface IStyledInputProps {
