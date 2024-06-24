@@ -4,6 +4,7 @@ import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
 import Select from '../Select';
 import { useFilter } from '@/hooks';
 import { Container } from './Filter.styled.ts';
+import ClearFilterBtn from '../ClearFilterBtn';
 
 const Filter: FC = () => {
   const {
@@ -16,7 +17,16 @@ const Filter: FC = () => {
     street,
     house,
     apartment,
+    // clearAccountFilter,
+    // clearApartmentFilter,
+    // clearHouseFilter,
+    // clearNameFilter,
+    // clearStreetFilter,
+    clearSurnameFilter,
+    // clearTypeFilter,
+    surnameInputRef,
   } = useFilter();
+  const showClearSurnameFilterBtn = Boolean(surname);
 
   return (
     <Container>
@@ -28,6 +38,13 @@ const Filter: FC = () => {
         name={SearchParamsKeys.surname}
         onChange={onFilterChange}
         defaultValue={surname}
+        inputRef={surnameInputRef}
+        btn={
+          <ClearFilterBtn
+            onClick={clearSurnameFilter}
+            show={showClearSurnameFilterBtn}
+          />
+        }
       />
       <Input
         label="Ім'я"

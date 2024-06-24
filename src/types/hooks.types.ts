@@ -19,6 +19,7 @@ import {
   NewUser,
   SelectData,
 } from './data.types';
+import { RefObject } from 'react';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -152,6 +153,14 @@ export interface IUseFilter {
   street: string;
   house: string;
   apartment: string;
+  clearSurnameFilter: OnBtnClickFunc;
+  clearNameFilter: OnBtnClickFunc;
+  clearAccountFilter: OnBtnClickFunc;
+  clearTypeFilter: OnBtnClickFunc;
+  clearStreetFilter: OnBtnClickFunc;
+  clearHouseFilter: OnBtnClickFunc;
+  clearApartmentFilter: OnBtnClickFunc;
+  surnameInputRef: RefObject<HTMLInputElement>;
 }
 
 export interface IUseFilterSearchParams {

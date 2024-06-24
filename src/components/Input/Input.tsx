@@ -18,6 +18,9 @@ const Input: FC<IProps> = ({
   offBorderRadius = false,
   name,
   onChange,
+  btn,
+  value,
+  inputRef,
 }) => {
   const input = (
     <StyledInput
@@ -25,24 +28,28 @@ const Input: FC<IProps> = ({
       formType={formType}
       placeholder={placeholder}
       defaultValue={defaultValue}
+      value={value}
       step={step}
       min={min}
       width={width}
       offBorderRadius={offBorderRadius}
       name={name}
       onChange={onChange}
+      ref={inputRef}
       {...settings}
     />
   );
 
-  const styledInput = icon ? (
-    <Container>
-      {input}
-      {icon}
-    </Container>
-  ) : (
-    input
-  );
+  const styledInput =
+    icon || btn ? (
+      <Container>
+        {input}
+        {icon && icon}
+        {btn && btn}
+      </Container>
+    ) : (
+      input
+    );
 
   return label ? (
     <InputWrap horizontal={horizontal}>

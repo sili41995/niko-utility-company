@@ -42,6 +42,7 @@ const enum Messages {
   additionalPhoneReqErr = 'Поле Телефон додатковий має бути заповнене',
   additionalPhoneRegExpErr = 'Телефон додатковий повинен містити  цифри, а також може містити символи +, - та пробіли',
   emptySubscriberAccountsList = 'Список абонентських рахнків пустий',
+  emptyFilteredSubscriberAccountsList = 'Жоден з абонентських рахунків не відповідає пошуковому запиту',
   subscriberAccountAddSuccess = 'Абонентський рахунок успішно доданий',
   isEligibleForBenefitReqErr = 'Поле Має право на пільгу має бути заповнене',
   isRemovalHouseholdWasteReqErr = 'Поле Вивезення побутових відходів має бути заповнене',

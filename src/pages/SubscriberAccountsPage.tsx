@@ -24,7 +24,8 @@ const SubscriberAccountsPage: FC = () => {
     isLoading,
     filteredCount,
   } = useSubscriberAccountsPage();
-  const showPagination = totalCount && filteredCount;
+  const showPagination = filteredCount && totalCount;
+  const isEmptyFilteredList = Boolean(totalCount && !filteredCount);
 
   return (
     <>
@@ -36,13 +37,22 @@ const SubscriberAccountsPage: FC = () => {
             {showSubscriberAccountsTable ? (
               <>
                 <Filter />
-                <SubscriberAccountsTable />
-                {showPagination && (
-                  <Pagination
-                    count={count}
-                    totalCount={totalCount}
-                    isLoading={isLoading}
-                    filteredCount={filteredCount}
+                {!isEmptyFilteredList && (
+                  <>
+                    <SubscriberAccountsTable />
+                    {showPagination && (
+                      <Pagination
+                        count={count}
+                        totalCount={totalCount}
+                        isLoading={isLoading}
+                        filteredCount={filteredCount}
+                      />
+                    )}
+                  </>
+                )}
+                {isEmptyFilteredList && (
+                  <DefaultMessage
+                    message={Messages.emptyFilteredSubscriberAccountsList}
                   />
                 )}
               </>

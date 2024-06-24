@@ -17,6 +17,14 @@ export const Container = styled.span`
     transform: translateY(-50%);
     color: ${({ theme }) => theme.colors.grey};
   }
+
+  & > button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+  }
 `;
 
 export const StyledInput = styled.input<IStyledInputProps>`

@@ -1,6 +1,6 @@
 import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
 import { InputChangeFunc } from '@/types/types';
-import { ReactNode } from 'react';
+import { ReactNode, RefObject } from 'react';
 
 export interface IProps {
   settings?: object;
@@ -10,6 +10,7 @@ export interface IProps {
   formType?: FormTypes;
   label?: string;
   defaultValue?: string;
+  value?: string;
   accent?: boolean;
   step?: number;
   min?: number;
@@ -18,6 +19,8 @@ export interface IProps {
   offBorderRadius?: boolean;
   name?: SearchParamsKeys;
   onChange?: InputChangeFunc;
+  btn?: ReactNode;
+  inputRef?: RefObject<HTMLInputElement>;
 }
 
 export interface IStyledInputProps {
