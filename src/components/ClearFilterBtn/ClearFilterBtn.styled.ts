@@ -10,6 +10,7 @@ export const Button = styled.button<IStyledProps>`
   transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
 
   & > svg {
+    display: block;
     color: ${({ theme }) => theme.colors.black};
     transition: color ${({ theme }) => theme.transitionDurationAndFunc};
   }

@@ -17,16 +17,25 @@ const Filter: FC = () => {
     street,
     house,
     apartment,
-    // clearAccountFilter,
-    // clearApartmentFilter,
-    // clearHouseFilter,
-    // clearNameFilter,
-    // clearStreetFilter,
+    clearAccountFilter,
+    clearApartmentFilter,
+    clearHouseFilter,
+    clearNameFilter,
+    clearStreetFilter,
     clearSurnameFilter,
-    // clearTypeFilter,
     surnameInputRef,
+    nameInputRef,
+    accountInputRef,
+    streetInputRef,
+    houseInputRef,
+    apartmentInputRef,
+    showClearSurnameFilterBtn,
+    showClearNameFilterBtn,
+    showClearAccountFilterBtn,
+    showClearStreetFilterBtn,
+    showClearHouseFilterBtn,
+    showClearApartmentFilterBtn,
   } = useFilter();
-  const showClearSurnameFilterBtn = Boolean(surname);
 
   return (
     <Container>
@@ -34,7 +43,7 @@ const Filter: FC = () => {
         label='Прізвище'
         type={InputTypes.text}
         formType={FormTypes.filter}
-        offBorderRadius={true}
+        offBorderRadius
         name={SearchParamsKeys.surname}
         onChange={onFilterChange}
         defaultValue={surname}
@@ -50,27 +59,41 @@ const Filter: FC = () => {
         label="Ім'я"
         type={InputTypes.text}
         formType={FormTypes.filter}
-        offBorderRadius={true}
+        offBorderRadius
         name={SearchParamsKeys.name}
         onChange={onFilterChange}
         defaultValue={name}
+        inputRef={nameInputRef}
+        btn={
+          <ClearFilterBtn
+            onClick={clearNameFilter}
+            show={showClearNameFilterBtn}
+          />
+        }
       />
       <Input
         label='Абон. рахунок №'
         type={InputTypes.text}
         width={180}
         formType={FormTypes.filter}
-        offBorderRadius={true}
+        offBorderRadius
         name={SearchParamsKeys.account}
         onChange={onFilterChange}
         defaultValue={account}
+        inputRef={accountInputRef}
+        btn={
+          <ClearFilterBtn
+            onClick={clearAccountFilter}
+            show={showClearAccountFilterBtn}
+          />
+        }
       />
       <Select
         label='Тип рахунку'
         data={accountTypes}
         width={200}
         formType={FormTypes.filter}
-        offBorderRadius={true}
+        offBorderRadius
         name={SearchParamsKeys.type}
         onChange={onFilterChange}
         defaultValue={defaultAccountTypesValue}
@@ -80,30 +103,51 @@ const Filter: FC = () => {
         type={InputTypes.text}
         width={180}
         formType={FormTypes.filter}
-        offBorderRadius={true}
+        offBorderRadius
         name={SearchParamsKeys.street}
         onChange={onFilterChange}
         defaultValue={street}
+        inputRef={streetInputRef}
+        btn={
+          <ClearFilterBtn
+            onClick={clearStreetFilter}
+            show={showClearStreetFilterBtn}
+          />
+        }
       />
       <Input
         label='Будинок'
         type={InputTypes.text}
         width={100}
         formType={FormTypes.filter}
-        offBorderRadius={true}
+        offBorderRadius
         name={SearchParamsKeys.house}
         onChange={onFilterChange}
         defaultValue={house}
+        inputRef={houseInputRef}
+        btn={
+          <ClearFilterBtn
+            onClick={clearHouseFilter}
+            show={showClearHouseFilterBtn}
+          />
+        }
       />
       <Input
         label='Квартра'
         type={InputTypes.text}
         width={100}
         formType={FormTypes.filter}
-        offBorderRadius={true}
+        offBorderRadius
         name={SearchParamsKeys.apartment}
         onChange={onFilterChange}
         defaultValue={apartment}
+        inputRef={apartmentInputRef}
+        btn={
+          <ClearFilterBtn
+            onClick={clearApartmentFilter}
+            show={showClearApartmentFilterBtn}
+          />
+        }
       />
     </Container>
   );

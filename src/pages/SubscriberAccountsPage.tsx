@@ -23,9 +23,9 @@ const SubscriberAccountsPage: FC = () => {
     showModalWin,
     isLoading,
     filteredCount,
+    isEmptyFilteredList,
   } = useSubscriberAccountsPage();
   const showPagination = filteredCount && totalCount;
-  const isEmptyFilteredList = Boolean(totalCount && !filteredCount);
 
   return (
     <>

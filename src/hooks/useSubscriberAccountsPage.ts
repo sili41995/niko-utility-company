@@ -41,6 +41,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     surname,
     type,
   } = useFilterSearchParams();
+  const isEmptyFilteredList = Boolean(totalCount && !filteredCount);
 
   useEffect(() => {
     const targetPage = page ? Number(page) : undefined;
@@ -82,6 +83,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     setModalWinState,
     showModalWin,
     isLoading,
+    isEmptyFilteredList,
   };
 };
 

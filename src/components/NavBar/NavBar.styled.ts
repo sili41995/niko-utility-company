@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   top: 280px;
   left: 16px;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(5)};
 
-  & > a,
-  & > button {
+  & > :is(a, button) {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -56,21 +56,21 @@ const AddSubscriberAccountForm: FC = () => {
           defaultValue={streetDefaultValue}
           data={streets}
           width={550}
-          horizontal={true}
+          horizontal
         />
         <Select
           label='Будинок:'
           settings={{ ...register('houseId', { required: true }) }}
           data={houses}
           width={550}
-          horizontal={true}
+          horizontal
         />
         <Input
           settings={{ ...register('apartment', { required: true }) }}
           label='№ квартири:'
           placeholder='№ квартири'
           type={InputTypes.text}
-          horizontal={true}
+          horizontal
           width={550}
         />
       </AddressWrap>
@@ -80,8 +80,8 @@ const AddSubscriberAccountForm: FC = () => {
           label='Абон. рахунок №:'
           placeholder='Абон. рахунок №'
           type={InputTypes.text}
-          accent={true}
-          horizontal={true}
+          accent
+          horizontal
           width={550}
         />
         <Input
@@ -89,8 +89,8 @@ const AddSubscriberAccountForm: FC = () => {
           label='Договір №:'
           placeholder='Договір №'
           type={InputTypes.text}
-          accent={true}
-          horizontal={true}
+          accent
+          horizontal
           width={550}
         />
         <Input
@@ -98,7 +98,7 @@ const AddSubscriberAccountForm: FC = () => {
           label='від'
           type={InputTypes.date}
           defaultValue={firstDayOfMonth}
-          horizontal={true}
+          horizontal
           width={550}
         />
       </SubscriberAccountContainer>
@@ -108,21 +108,21 @@ const AddSubscriberAccountForm: FC = () => {
           settings={{ ...register('accountType', { required: true }) }}
           data={accountTypes}
           width={550}
-          horizontal={true}
+          horizontal
         />
         <Select
           label='Тип приміщення:'
           settings={{ ...register('isLivingApartment', { required: true }) }}
           data={apartmentTypes}
           width={550}
-          horizontal={true}
+          horizontal
         />
         <Input
           settings={{ ...register('residents', { required: true }) }}
           label='Мешканців:'
           placeholder='Мешканців'
           type={InputTypes.number}
-          horizontal={true}
+          horizontal
           width={550}
         />
       </TypesWrap>
@@ -133,7 +133,7 @@ const AddSubscriberAccountForm: FC = () => {
             settings={{ ...register('period', { required: true }) }}
             label='Послуги надаються з:'
             type={InputTypes.date}
-            horizontal={true}
+            horizontal
             width={550}
           />
         </ServiceTitleWrap>
@@ -164,7 +164,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='ІПН:'
             placeholder='ІПН'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -172,7 +172,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='Паспорт:'
             placeholder='Паспорт'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -180,7 +180,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='Прізвище:'
             placeholder='Прізвище'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -188,7 +188,7 @@ const AddSubscriberAccountForm: FC = () => {
             label="Ім'я:"
             placeholder="Ім'я"
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -196,7 +196,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='По-батькові:'
             placeholder='По-батькові'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <CheckboxWrap>
@@ -217,7 +217,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='Телефон:'
             placeholder='Телефон'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -230,7 +230,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='Телефон додатковий:'
             placeholder='Телефон додатковий'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -240,7 +240,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='Email:'
             placeholder='Email'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -248,7 +248,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='День народження:'
             placeholder='День народження'
             type={InputTypes.date}
-            horizontal={true}
+            horizontal
             width={550}
           />
           <Input
@@ -256,7 +256,7 @@ const AddSubscriberAccountForm: FC = () => {
             label='Коментар:'
             placeholder='Коментар'
             type={InputTypes.text}
-            horizontal={true}
+            horizontal
             width={550}
           />
         </PersonParameters>

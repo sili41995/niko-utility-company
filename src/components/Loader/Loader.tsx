@@ -13,7 +13,7 @@ const Loader = () => (
       alignItems: 'center',
       flexGrow: '1',
     }}
-    visible={true}
+    visible
   />
 );
 

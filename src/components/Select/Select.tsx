@@ -16,13 +16,13 @@ const Select: FC<IProps> = ({
 }) => {
   const styledSelect = (
     <StyledSelect
-      {...settings}
       defaultValue={defaultValue}
       width={width}
       formType={formType}
       offBorderRadius={offBorderRadius}
       name={name}
       onChange={onChange}
+      {...settings}
     >
       {data.map(({ value, title }) => (
         <Option value={value} key={value}>

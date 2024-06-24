@@ -141,6 +141,7 @@ export interface IUseSubscriberAccountsPage {
   setModalWinState: Func;
   showModalWin: boolean;
   isLoading: boolean;
+  isEmptyFilteredList: boolean;
 }
 
 export interface IUseFilter {
@@ -156,11 +157,21 @@ export interface IUseFilter {
   clearSurnameFilter: OnBtnClickFunc;
   clearNameFilter: OnBtnClickFunc;
   clearAccountFilter: OnBtnClickFunc;
-  clearTypeFilter: OnBtnClickFunc;
   clearStreetFilter: OnBtnClickFunc;
   clearHouseFilter: OnBtnClickFunc;
   clearApartmentFilter: OnBtnClickFunc;
   surnameInputRef: RefObject<HTMLInputElement>;
+  nameInputRef: RefObject<HTMLInputElement>;
+  accountInputRef: RefObject<HTMLInputElement>;
+  streetInputRef: RefObject<HTMLInputElement>;
+  houseInputRef: RefObject<HTMLInputElement>;
+  apartmentInputRef: RefObject<HTMLInputElement>;
+  showClearSurnameFilterBtn: boolean;
+  showClearNameFilterBtn: boolean;
+  showClearAccountFilterBtn: boolean;
+  showClearStreetFilterBtn: boolean;
+  showClearHouseFilterBtn: boolean;
+  showClearApartmentFilterBtn: boolean;
 }
 
 export interface IUseFilterSearchParams {
