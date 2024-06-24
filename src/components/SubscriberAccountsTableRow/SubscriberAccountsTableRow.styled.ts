@@ -5,6 +5,7 @@ import {
 } from './SubscriberAccountsTableRow.types';
 
 export const TableBodyRow = styled.tr`
+  position: relative;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -24,4 +25,29 @@ export const TableDataText = styled.span<IStyledTableDataTextProps>`
   align-items: center;
   justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
   ${({ theme, trimText }) => (trimText ? theme.trimText : false)}
+`;
+
+export const EditRowBtnCell = styled.td`
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  transform: translateY(-50%);
+`;
+
+export const EditRowBtn = styled.button`
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  & > svg {
+    color: ${({ theme }) => theme.colors.primary};
+    transition: color ${({ theme }) => theme.transitionDurationAndFunc},
+      transform ${({ theme }) => theme.transitionDurationAndFunc};
+    pointer-events: none;
+  }
+
+  &:is(:hover, :focus) > svg {
+    color: ${({ theme }) => theme.colors.accent};
+    transform: scale(1.3);
+  }
 `;
