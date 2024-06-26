@@ -26,10 +26,6 @@ const App: FC = () => {
   const refreshUser = useAuthStore(selectRefreshUser);
 
   useEffect(() => {
-    if (!token) {
-      return;
-    }
-
     refreshUser();
   }, [refreshUser, token]);
 
