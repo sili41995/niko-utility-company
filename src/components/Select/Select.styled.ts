@@ -26,7 +26,7 @@ export const StyledSelect = styled.select<IStyledProps>`
   border-radius: ${({ theme, offBorderRadius }) =>
     offBorderRadius ? 0 : theme.borderRadius.secondary}px;
   padding: ${({ formType }) => setInputPadding(formType)};
-  font-family: Inter;
+  font-family: ${({ theme }): string => theme.fontFamily.primary};
   color: ${({ theme }) => theme.colors.black};
   font-weight: ${({ theme }) => theme.fontWeight.other};
   font-size: ${({ formType }) => setInputFontSize(formType)}px;

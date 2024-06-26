@@ -11,7 +11,7 @@ export const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius.primary}px;
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
-  font-family: Inter;
+  font-family: ${({ theme }): string => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary};
   font-weight: ${({ theme }) => theme.fontWeight.other};
   line-height: 1.5;

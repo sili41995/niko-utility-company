@@ -42,4 +42,9 @@ export const Link = styled.a`
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
   font-style: normal;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    color: ${({ theme }) => theme.colors.accent};
+  }
 `;

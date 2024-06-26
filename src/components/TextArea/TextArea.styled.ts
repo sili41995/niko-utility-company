@@ -9,7 +9,7 @@ export const StyledTextArea = styled.input<IStyledProps>`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
   padding: ${({ formType }) => setInputPadding(formType)};
-  font-family: Inter;
+  font-family: ${({ theme }): string => theme.fontFamily.primary};
   color: ${({ theme }) => theme.colors.black};
   font-weight: ${({ theme }) => theme.fontWeight.other};
   font-size: ${({ formType }) => setInputFontSize(formType)}px;

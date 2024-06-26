@@ -1,4 +1,6 @@
 import { Messages } from '@/constants';
+import { useUsersStore } from '@/store/store';
+import { selectAddUser, selectIsLoading } from '@/store/users/selectors';
 import { NewUser } from '@/types/data.types';
 import { IUseAddUserForm } from '@/types/hooks.types';
 import { toasts } from '@/utils';
@@ -7,9 +9,8 @@ import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 const useAddUserForm = (): IUseAddUserForm => {
-  // const isLoading = useAuthStore(selectIsLoading);
-  const isLoading = false;
-  //   const addUser = useAuthStore(selectAddUser);
+  const isLoading = useUsersStore(selectIsLoading);
+  const addUser = useUsersStore(selectAddUser);
   const {
     register,
     formState: { errors, isSubmitting },
@@ -26,7 +27,7 @@ const useAddUserForm = (): IUseAddUserForm => {
   const handleFormSubmit: SubmitHandler<NewUser> = async (data) => {
     console.log(data);
     try {
-      // await signIn(data);
+      await addUser(data);
       toasts.successToast(Messages.userAddSuccess);
     } catch (error) {
       if (error instanceof Error) {
