@@ -5,7 +5,9 @@ import {
   IAddSubscriberAccountProps,
   IFetchSubscriberAccountsOperationProps,
   IFetchSubscriberAccountsRes,
+  IUpdateSubscriberAccountByIdProps,
 } from '@/types/subscriberAccountsStore.types';
+import getUpdatedSubscriberAccounts from '@/utils/getUpdatedSubscriberAccounts';
 
 const fetchSubscriberAccountsOperation = async ({
   set,
@@ -36,10 +38,34 @@ const addSubscriberAccountOperation = async ({
   return response;
 };
 
+const updateSubscriberAccountByIdOperation = async ({
+  data,
+  get,
+  set,
+}: IUpdateSubscriberAccountByIdProps): Promise<
+  ISubscriberAccount | undefined
+> => {
+  const { items: subscriberAccounts } = get();
+
+  const response = await subscriberAccountsService.updateSubscriberAccountById(
+    data
+  );
+  const updatedSubscriberAccounts = getUpdatedSubscriberAccounts({
+    subscriberAccounts,
+    updatedSubscriberAccount: response,
+  });
+
+  set({ items: updatedSubscriberAccounts });
+
+  return response;
+};
+
 export const fetchSubscriberAccounts = operationWrapper(
   fetchSubscriberAccountsOperation
 );
-
 export const addSubscriberAccount = operationWrapper(
   addSubscriberAccountOperation
+);
+export const updateSubscriberAccountById = operationWrapper(
+  updateSubscriberAccountByIdOperation
 );

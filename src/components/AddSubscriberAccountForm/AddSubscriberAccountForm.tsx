@@ -246,7 +246,6 @@ const AddSubscriberAccountForm: FC = () => {
           <Input
             settings={{ ...register('birthday') }}
             label='День народження:'
-            placeholder='День народження'
             type={InputTypes.date}
             horizontal
             width={550}

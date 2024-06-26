@@ -21,6 +21,7 @@ const Input: FC<IProps> = ({
   btn,
   value,
   inputRef,
+  disabled = false,
 }) => {
   const input = (
     <StyledInput
@@ -36,6 +37,7 @@ const Input: FC<IProps> = ({
       name={name}
       onChange={onChange}
       ref={inputRef}
+      disabled={disabled}
       {...settings}
     />
   );

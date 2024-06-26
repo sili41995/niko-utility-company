@@ -43,9 +43,10 @@ const enum Messages {
   additionalPhoneRegExpErr = 'Телефон додатковий повинен містити  цифри, а також може містити символи +, - та пробіли',
   emptySubscriberAccountsList = 'Список абонентських рахнків пустий',
   emptyFilteredSubscriberAccountsList = 'Жоден з абонентських рахунків не відповідає пошуковому запиту',
-  subscriberAccountAddSuccess = 'Абонентський рахунок успішно доданий',
+  subscriberAccountAddSuccess = 'Абонентський рахунок успішно додано',
   isEligibleForBenefitReqErr = 'Поле Має право на пільгу має бути заповнене',
   isRemovalHouseholdWasteReqErr = 'Поле Вивезення побутових відходів має бути заповнене',
+  subscriberAccountUpdateSuccess = 'Абонентський рахунок успішно оновлено',
 }
 
 export default Messages;

@@ -23,3 +23,7 @@ export const selectFetchSubscriberAccounts = (
 
 export const selectAddSubscriberAccount = (state: ISubscriberAccountsState) =>
   state.addSubscriberAccount;
+
+export const selectUpdateSubscriberAccountById = (
+  state: ISubscriberAccountsState
+) => state.updateSubscriberAccountById;

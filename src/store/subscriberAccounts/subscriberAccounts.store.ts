@@ -6,9 +6,14 @@ import {
   SetSubscriberAccountsStateFunc,
   IFetchSubscriberAccountsRes,
   IFetchSubscriberAccountsFilters,
+  IUpdateSubscriberAccountByIdData,
 } from '@/types/subscriberAccountsStore.types';
-import { fetchSubscriberAccounts, addSubscriberAccount } from './operations';
-import { ISubscriberAccount, NewSubscriberAccount } from '@/types/data.types';
+import {
+  fetchSubscriberAccounts,
+  addSubscriberAccount,
+  updateSubscriberAccountById,
+} from './operations';
+import { ISubscriberAccount, INewSubscriberAccount } from '@/types/data.types';
 
 const subscriberAccountsSlice = (
   set: SetSubscriberAccountsStateFunc,
@@ -24,11 +29,19 @@ const subscriberAccountsSlice = (
       get,
     }),
   addSubscriberAccount: async (
-    data: NewSubscriberAccount
+    data: INewSubscriberAccount
   ): Promise<ISubscriberAccount | undefined> =>
     await addSubscriberAccount({
       data,
       set: setState({ set, name: 'addSubscriberAccount' }),
+      get,
+    }),
+  updateSubscriberAccountById: async (
+    data: IUpdateSubscriberAccountByIdData
+  ): Promise<ISubscriberAccount | undefined> =>
+    await updateSubscriberAccountById({
+      data,
+      set: setState({ set, name: 'updateSubscriberAccountById' }),
       get,
     }),
 });

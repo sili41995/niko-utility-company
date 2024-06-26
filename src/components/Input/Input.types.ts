@@ -21,6 +21,7 @@ export interface IProps {
   onChange?: InputChangeFunc;
   btn?: ReactNode;
   inputRef?: RefObject<HTMLInputElement>;
+  disabled?: boolean;
 }
 
 export interface IStyledInputProps {

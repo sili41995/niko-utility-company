@@ -37,7 +37,7 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
   const fullStreetName = `${street.type} ${street.name}`;
   const periodDate = formatDate({
     date: period,
-    dateFormat: DateFormats.period,
+    dateFormat: DateFormats.date,
   });
 
   const toggleEditAccount = () => {

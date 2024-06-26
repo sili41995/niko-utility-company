@@ -1,11 +1,11 @@
 import {
-  NewSubscriberAccount,
-  ISubscriberAccountFormData,
+  INewSubscriberAccount,
+  IAddSubscriberAccountFormData,
 } from '@/types/data.types';
 
 const filterAddSubscriberAccountData = (
-  data: ISubscriberAccountFormData
-): NewSubscriberAccount => {
+  data: IAddSubscriberAccountFormData
+): INewSubscriberAccount => {
   const {
     houseId,
     streetId,
@@ -27,7 +27,7 @@ const filterAddSubscriberAccountData = (
     contractDate: new Date(contractDate),
     period: new Date(period),
     email: email ? email : undefined,
-    birthday: birthday ? birthday : undefined,
+    birthday: birthday ? new Date(birthday) : undefined,
     comment: comment ? comment : undefined,
   };
 };

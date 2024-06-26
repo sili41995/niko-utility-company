@@ -1,7 +1,6 @@
-import { useAddSubscriberAccountForm } from '@/hooks';
 import { FC } from 'react';
 import Input from '../Input';
-import { CheckboxNames, InputTypes, regExp } from '@/constants';
+import { CheckboxNames, InputTypes, apartmentTypes, regExp } from '@/constants';
 import {
   PersonParameters,
   SubscriberAccountContainer,
@@ -25,24 +24,40 @@ import {
 import Checkbox from '../Checkbox';
 import SubmitFormBtn from '../SubmitFormBtn';
 import Select from '../Select';
+import { IProps } from './EditSubscriberAccountForm.types';
+import { useEditSubscriberAccountForm } from '@/hooks';
 
-const EditSubscriberAccountForm: FC = () => {
+const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   const {
-    register,
-    currentDate,
-    firstDayOfMonth,
-    apartmentTypes,
-    isLoading,
-    handleFormSubmit,
     handleSubmit,
-    isRemovalHouseholdWaste,
-    isEligibleForBenefit,
+    handleFormSubmit,
+    currentDate,
+    register,
+    fullStreetName,
+    house,
+    apartment,
+    subscriberAccountValue,
+    contract,
+    contractDateValue,
+    accountType,
+    apartmentType,
+    residents,
+    period,
+    isRemovalHouseHoldWaste,
     onCheckboxChange,
-    houses,
-    streetDefaultValue,
-    streets,
-    accountTypes,
-  } = useAddSubscriberAccountForm();
+    utr,
+    passport,
+    surname,
+    name,
+    middleName,
+    isEligibleForBenefit,
+    phone,
+    additionalPhone,
+    email,
+    birthday,
+    comment,
+    isLoading,
+  } = useEditSubscriberAccountForm(subscriberAccount);
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -50,80 +65,88 @@ const EditSubscriberAccountForm: FC = () => {
         Поточний період: <Accent>{currentDate}</Accent>
       </CurrentPeriod>
       <AddressWrap>
-        <Select
+        <Input
+          settings={{ ...register('street') }}
           label='Вулиця:'
-          settings={{ ...register('streetId', { required: true }) }}
-          defaultValue={streetDefaultValue}
-          data={streets}
+          type={InputTypes.text}
+          value={fullStreetName}
           width={550}
           horizontal
-        />
-        <Select
-          label='Будинок:'
-          settings={{ ...register('houseId', { required: true }) }}
-          data={houses}
-          width={550}
-          horizontal
+          disabled
         />
         <Input
-          settings={{ ...register('apartment', { required: true }) }}
-          label='№ квартири:'
-          placeholder='№ квартири'
+          settings={{ ...register('house') }}
+          label='Будинок:'
           type={InputTypes.text}
-          horizontal
+          value={house}
           width={550}
+          horizontal
+          disabled
+        />
+        <Input
+          settings={{ ...register('apartment') }}
+          label='№ квартири:'
+          type={InputTypes.text}
+          value={apartment}
+          width={550}
+          horizontal
+          disabled
         />
       </AddressWrap>
       <SubscriberAccountContainer>
         <Input
-          settings={{ ...register('subscriberAccount', { required: true }) }}
+          settings={{ ...register('subscriberAccount') }}
           label='Абон. рахунок №:'
-          placeholder='Абон. рахунок №'
           type={InputTypes.text}
-          accent
-          horizontal
+          value={subscriberAccountValue}
           width={550}
+          horizontal
+          disabled
         />
         <Input
-          settings={{ ...register('contract', { required: true }) }}
+          settings={{ ...register('contract') }}
           label='Договір №:'
-          placeholder='Договір №'
           type={InputTypes.text}
-          accent
-          horizontal
+          value={contract}
           width={550}
+          horizontal
+          disabled
         />
         <Input
-          settings={{ ...register('contractDate', { required: true }) }}
+          settings={{ ...register('contractDate') }}
           label='від'
-          type={InputTypes.date}
-          defaultValue={firstDayOfMonth}
-          horizontal
+          type={InputTypes.text}
+          value={contractDateValue}
           width={550}
+          horizontal
+          disabled
         />
       </SubscriberAccountContainer>
       <TypesWrap>
-        <Select
+        <Input
+          settings={{ ...register('accountType') }}
           label='Тип рахунку:'
-          settings={{ ...register('accountType', { required: true }) }}
-          data={accountTypes}
+          type={InputTypes.text}
+          value={accountType}
           width={550}
           horizontal
+          disabled
         />
         <Select
           label='Тип приміщення:'
           settings={{ ...register('isLivingApartment', { required: true }) }}
           data={apartmentTypes}
+          defaultValue={apartmentType}
           width={550}
           horizontal
         />
         <Input
           settings={{ ...register('residents', { required: true }) }}
           label='Мешканців:'
-          placeholder='Мешканців'
           type={InputTypes.number}
-          horizontal
+          defaultValue={String(residents)}
           width={550}
+          horizontal
         />
       </TypesWrap>
       <ServicesWrap>
@@ -133,8 +156,9 @@ const EditSubscriberAccountForm: FC = () => {
             settings={{ ...register('period', { required: true }) }}
             label='Послуги надаються з:'
             type={InputTypes.date}
-            horizontal
+            defaultValue={period}
             width={550}
+            horizontal
           />
         </ServiceTitleWrap>
         <ServicesList>
@@ -149,7 +173,7 @@ const EditSubscriberAccountForm: FC = () => {
               settings={{
                 ...register('isRemovalHouseholdWaste'),
               }}
-              checked={isRemovalHouseholdWaste}
+              checked={isRemovalHouseHoldWaste}
               onChange={onCheckboxChange}
               name={CheckboxNames.isRemovalHouseholdWaste}
             />
@@ -160,44 +184,49 @@ const EditSubscriberAccountForm: FC = () => {
         <SectionTitle>Послуги:</SectionTitle>
         <PersonParameters>
           <Input
-            settings={{ ...register('utr', { required: true }) }}
+            settings={{ ...register('utr') }}
             label='ІПН:'
-            placeholder='ІПН'
             type={InputTypes.text}
-            horizontal
+            defaultValue={utr}
             width={550}
+            horizontal
+            disabled
           />
           <Input
-            settings={{ ...register('passport', { required: true }) }}
+            settings={{ ...register('passport') }}
             label='Паспорт:'
-            placeholder='Паспорт'
             type={InputTypes.text}
-            horizontal
+            defaultValue={passport}
             width={550}
+            horizontal
+            disabled
           />
           <Input
-            settings={{ ...register('surname', { required: true }) }}
+            settings={{ ...register('surname') }}
             label='Прізвище:'
-            placeholder='Прізвище'
             type={InputTypes.text}
-            horizontal
+            defaultValue={surname}
             width={550}
+            horizontal
+            disabled
           />
           <Input
-            settings={{ ...register('name', { required: true }) }}
+            settings={{ ...register('name') }}
             label="Ім'я:"
-            placeholder="Ім'я"
             type={InputTypes.text}
-            horizontal
+            defaultValue={name}
             width={550}
+            horizontal
+            disabled
           />
           <Input
-            settings={{ ...register('middleName', { required: true }) }}
+            settings={{ ...register('middleName') }}
             label='По-батькові:'
-            placeholder='По-батькові'
             type={InputTypes.text}
-            horizontal
+            defaultValue={middleName}
             width={550}
+            horizontal
+            disabled
           />
           <CheckboxWrap>
             <CheckboxName>Має право на пільгу</CheckboxName>
@@ -215,10 +244,10 @@ const EditSubscriberAccountForm: FC = () => {
               ...register('phone', { required: true, pattern: regExp.phone }),
             }}
             label='Телефон:'
-            placeholder='Телефон'
             type={InputTypes.text}
-            horizontal
+            defaultValue={phone}
             width={550}
+            horizontal
           />
           <Input
             settings={{
@@ -228,10 +257,10 @@ const EditSubscriberAccountForm: FC = () => {
               }),
             }}
             label='Телефон додатковий:'
-            placeholder='Телефон додатковий'
             type={InputTypes.text}
-            horizontal
+            defaultValue={additionalPhone}
             width={550}
+            horizontal
           />
           <Input
             settings={{
@@ -240,24 +269,26 @@ const EditSubscriberAccountForm: FC = () => {
             label='Email:'
             placeholder='Email'
             type={InputTypes.text}
-            horizontal
+            defaultValue={email}
             width={550}
+            horizontal
           />
           <Input
             settings={{ ...register('birthday') }}
             label='День народження:'
-            placeholder='День народження'
             type={InputTypes.date}
-            horizontal
+            defaultValue={birthday}
             width={550}
+            horizontal
           />
           <Input
             settings={{ ...register('comment') }}
             label='Коментар:'
             placeholder='Коментар'
             type={InputTypes.text}
-            horizontal
+            defaultValue={comment}
             width={550}
+            horizontal
           />
         </PersonParameters>
       </PersonParametersWrap>

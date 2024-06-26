@@ -9,10 +9,12 @@ const EditSubscriberAccountModalWin: FC<IProps> = ({
   setModalWinState,
   subscriberAccount,
 }) => {
+  const title = `Редагування Абонентського рахунку ${subscriberAccount.subscriberAccount}:`;
+
   return (
     <ModalWin setModalWinState={setModalWinState}>
       <Container>
-        <FormDataTitle title='Редагування Абонентського рахунку:' />
+        <FormDataTitle title={title} />
         <EditSubscriberAccountForm subscriberAccount={subscriberAccount} />
       </Container>
     </ModalWin>

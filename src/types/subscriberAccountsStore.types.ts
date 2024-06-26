@@ -1,7 +1,8 @@
 import {
   ISubscriberAccount,
-  NewSubscriberAccount,
+  INewSubscriberAccount,
   SubscriberAccounts,
+  IEditSubscriberAccountData,
 } from './data.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
 
@@ -43,7 +44,10 @@ export interface ISubscriberAccountsState
     data: IFetchSubscriberAccountsFilters
   ) => Promise<IFetchSubscriberAccountsRes | undefined>;
   addSubscriberAccount: (
-    data: NewSubscriberAccount
+    data: INewSubscriberAccount
+  ) => Promise<ISubscriberAccount | undefined>;
+  updateSubscriberAccountById: (
+    data: IUpdateSubscriberAccountByIdData
   ) => Promise<ISubscriberAccount | undefined>;
 }
 
@@ -56,5 +60,16 @@ export type SetSubscriberAccountsStateFunc =
 export interface IAddSubscriberAccountProps {
   set: SetSubscriberAccountsStateFunc;
   get: GetSubscriberAccountsStateFunc;
-  data: NewSubscriberAccount;
+  data: INewSubscriberAccount;
+}
+
+export interface IUpdateSubscriberAccountByIdData {
+  data: IEditSubscriberAccountData;
+  id: number;
+}
+
+export interface IUpdateSubscriberAccountByIdProps {
+  set: SetSubscriberAccountsStateFunc;
+  get: GetSubscriberAccountsStateFunc;
+  data: IUpdateSubscriberAccountByIdData;
 }

@@ -118,12 +118,12 @@ export interface ISubscriberAccount {
   isEligibleForBenefit: boolean;
   phone: string;
   additionalPhone: string;
-  email?: string;
-  birthday?: Date;
-  comment?: string;
+  email: string | null;
+  birthday: Date | null;
+  comment: string | null;
 }
 
-export interface ISubscriberAccountFormData
+export interface IAddSubscriberAccountFormData
   extends Omit<
     ISubscriberAccount,
     | 'id'
@@ -135,6 +135,7 @@ export interface ISubscriberAccountFormData
     | 'residents'
     | 'street'
     | 'house'
+    | 'birthday'
   > {
   streetId: string;
   houseId: string;
@@ -142,12 +143,40 @@ export interface ISubscriberAccountFormData
   contractDate: string;
   period: string;
   residents: string;
+  birthday: string;
 }
 
-export type NewSubscriberAccount = Omit<
-  ISubscriberAccount,
-  'id' | 'street' | 'house'
->;
+export interface IEditSubscriberAccountFormData
+  extends IAddSubscriberAccountFormData {
+  street: string;
+  house: string;
+}
+
+export interface IEditSubscriberAccountData
+  extends Pick<
+    ISubscriberAccount,
+    | 'additionalPhone'
+    | 'isEligibleForBenefit'
+    | 'isLivingApartment'
+    | 'isRemovalHouseholdWaste'
+    | 'period'
+    | 'phone'
+    | 'residents'
+  > {
+  comment?: string;
+  birthday?: Date;
+  email?: string;
+}
+
+export interface INewSubscriberAccount
+  extends Omit<
+    ISubscriberAccount,
+    'id' | 'street' | 'house' | 'email' | 'birthday' | 'comment'
+  > {
+  email?: string;
+  birthday?: Date;
+  comment?: string;
+}
 
 export type IsRemovalHouseholdWaste = Pick<
   ISubscriberAccount,
@@ -212,4 +241,9 @@ export interface IGetSubscriberAccountDataProps {
 export interface IGetSubscriberAccountData {
   streetsData: SelectData;
   housesData: SelectData;
+}
+
+export interface IGetUpdatedSubscriberAccountsProps {
+  subscriberAccounts: SubscriberAccounts;
+  updatedSubscriberAccount: ISubscriberAccount;
 }

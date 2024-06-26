@@ -1,5 +1,6 @@
 import { SetURLSearchParams } from 'react-router-dom';
 import {
+  BooleanValue,
   Func,
   IOnPageBtnClickProps,
   InputChangeEvent,
@@ -15,11 +16,13 @@ import {
 import {
   Credentials,
   IGeneralSettings,
-  ISubscriberAccountFormData,
+  IAddSubscriberAccountFormData,
   NewUser,
   SelectData,
+  IEditSubscriberAccountFormData,
 } from './data.types';
 import { RefObject } from 'react';
+import { AccountTypes } from '@/constants';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -87,9 +90,9 @@ export interface IUseGeneralSettingsForm {
 
 export interface IUseAddSubscriberAccountForm {
   apartmentTypes: SelectData;
-  handleSubmit: UseFormHandleSubmit<ISubscriberAccountFormData, undefined>;
-  handleFormSubmit: SubmitHandler<ISubscriberAccountFormData>;
-  register: UseFormRegister<ISubscriberAccountFormData>;
+  handleSubmit: UseFormHandleSubmit<IAddSubscriberAccountFormData, undefined>;
+  handleFormSubmit: SubmitHandler<IAddSubscriberAccountFormData>;
+  register: UseFormRegister<IAddSubscriberAccountFormData>;
   currentDate: string;
   firstDayOfMonth: string;
   isLoading: boolean;
@@ -184,4 +187,35 @@ export interface IUseFilterSearchParams {
   street: string;
   house: string;
   apartment: string;
+}
+
+export interface IUseEditSubscriberAccountForm {
+  handleSubmit: UseFormHandleSubmit<IEditSubscriberAccountFormData, undefined>;
+  handleFormSubmit: SubmitHandler<IEditSubscriberAccountFormData>;
+  register: UseFormRegister<IEditSubscriberAccountFormData>;
+  currentDate: string;
+  fullStreetName: string;
+  house: string;
+  apartment: string;
+  apartmentType: BooleanValue;
+  period: string;
+  subscriberAccountValue: string;
+  contract: string;
+  contractDateValue: string;
+  accountType: AccountTypes;
+  birthday: string;
+  residents: number;
+  isRemovalHouseHoldWaste: boolean;
+  onCheckboxChange: InputChangeFunc;
+  email: string;
+  comment: string;
+  utr: string;
+  passport: string;
+  surname: string;
+  name: string;
+  middleName: string;
+  isEligibleForBenefit: boolean;
+  phone: string;
+  additionalPhone: string;
+  isLoading: boolean;
 }

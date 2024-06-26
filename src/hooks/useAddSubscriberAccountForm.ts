@@ -10,7 +10,7 @@ import {
   selectFetchSubscriberAccounts,
   selectIsLoading,
 } from '@/store/subscriberAccounts/selectors';
-import { ISubscriberAccountFormData } from '@/types/data.types';
+import { IAddSubscriberAccountFormData } from '@/types/data.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { InputChangeEvent } from '@/types/types';
 import {
@@ -48,7 +48,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     watch,
     formState: { isSubmitting, errors },
     reset,
-  } = useForm<ISubscriberAccountFormData>();
+  } = useForm<IAddSubscriberAccountFormData>();
   const streetId = watch('streetId');
   const fetchSubscriberAccounts = useSubscriberAccountsStore(
     selectFetchSubscriberAccounts
@@ -77,8 +77,8 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   }, [fetchHouses, streetId]);
 
   useEffect(() => {
-    console.log(errors);
     const invalidFields = Object.keys(errors);
+
     if (invalidFields.length) {
       validateAddSubscriberAccountForm(errors);
     }
@@ -100,7 +100,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     }
   };
 
-  const handleFormSubmit: SubmitHandler<ISubscriberAccountFormData> = async (
+  const handleFormSubmit: SubmitHandler<IAddSubscriberAccountFormData> = async (
     data
   ) => {
     const filteredAddSubscriberAccountData =

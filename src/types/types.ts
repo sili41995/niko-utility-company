@@ -110,6 +110,6 @@ export interface IGetDefaultAccountTypesValueProps {
 }
 
 export interface IFormatDateProps {
-  date: Date;
+  date: Date | string;
   dateFormat: string;
 }

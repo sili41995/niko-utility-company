@@ -12,3 +12,4 @@ export { default as useUsersSettings } from './useUsersSettings';
 export { default as useSubscriberAccountsPage } from './useSubscriberAccountsPage';
 export { default as useFilter } from './useFilter';
 export { default as useFilterSearchParams } from './useFilterSearchParams';
+export { default as useEditSubscriberAccountForm } from './useEditSubscriberAccountForm';
