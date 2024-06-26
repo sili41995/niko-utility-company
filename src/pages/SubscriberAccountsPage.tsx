@@ -11,7 +11,6 @@ import Loader from '@/components/Loader';
 import ErrorMessage from '@/components/ErrorMessage';
 import { useSubscriberAccountsPage } from '@/hooks';
 import Filter from '@/components/Filter';
-import PageTitle from '@/components/PageTitle';
 
 const SubscriberAccountsPage: FC = () => {
   const {
@@ -30,7 +29,6 @@ const SubscriberAccountsPage: FC = () => {
 
   return (
     <>
-      <PageTitle title='Абонентські рахунки' />
       {isLoadingData ? (
         <Loader />
       ) : (

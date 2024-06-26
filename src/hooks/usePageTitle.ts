@@ -1,8 +1,8 @@
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 const usePageTitle = () => {
-  const location = useLocation();
-  console.log(location);
+  //   const location = useLocation();
+  //   console.log(location);
 };
 
 export default usePageTitle;
