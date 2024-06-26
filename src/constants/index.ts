@@ -21,4 +21,3 @@ export { default as AccountTypes } from './accountTypes';
 export { default as apartmentTypes } from './apartmentTypes';
 export { default as DateFormats } from './dateFormats';
 export { default as CheckboxNames } from './checkboxNames';
-export { default as PageTitles } from './pageTitles';
