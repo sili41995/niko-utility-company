@@ -17,7 +17,7 @@ const initialState: IAuthInitialState = {
   },
   token: null,
   isLoggedIn: false,
-  isRefreshing: true,
+  isRefreshing: false,
   isLoading: false,
   error: null,
 };
