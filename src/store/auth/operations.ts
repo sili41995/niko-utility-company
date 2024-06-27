@@ -17,6 +17,7 @@ const signInOperation = async ({
   set({
     token: result.token,
   });
+
   return result;
 };
 
@@ -32,6 +33,7 @@ const refreshUserOperation = async ({
       token,
       isLoggedIn: true,
     });
+
     return result;
   } catch (error) {
     if (error instanceof AxiosError) {

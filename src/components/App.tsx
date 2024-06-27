@@ -26,8 +26,16 @@ const App: FC = () => {
   const refreshUser = useAuthStore(selectRefreshUser);
 
   useEffect(() => {
-    refreshUser();
+    const refresh = async () => {
+      await refreshUser();
+    };
+
+    token && refresh();
   }, [refreshUser, token]);
+
+  useEffect(() => {
+    console.log(isRefreshing);
+  });
 
   return isRefreshing ? (
     <Loader />

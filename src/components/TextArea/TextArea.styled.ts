@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { setInputFontSize, setInputPadding } from '@/utils';
 import { IStyledProps } from './TextArea.types';
 
-export const StyledTextArea = styled.input<IStyledProps>`
+export const StyledTextArea = styled.textarea<IStyledProps>`
   width: 100%;
   height: 110px;
   background-color: transparent;
@@ -15,6 +15,7 @@ export const StyledTextArea = styled.input<IStyledProps>`
   font-size: ${({ formType }) => setInputFontSize(formType)}px;
   letter-spacing: 0.04em;
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
+  resize: none;
 
   &:focus {
     outline: none;
