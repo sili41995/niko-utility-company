@@ -18,6 +18,7 @@ const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const SubscriberAccountsPage = lazy(
   () => import('@/pages/SubscriberAccountsPage')
 );
+const AccountingPage = lazy(() => import('@/pages/AccountingPage'));
 const DocumentsPage = lazy(() => import('@/pages/DocumentsPage'));
 
 const App: FC = () => {
@@ -57,6 +58,10 @@ const App: FC = () => {
         <Route
           path={PagePaths.subscriberAccounts}
           element={<PrivateRoute element={<SubscriberAccountsPage />} />}
+        />
+        <Route
+          path={PagePaths.accounting}
+          element={<PrivateRoute element={<AccountingPage />} />}
         />
         <Route
           path={PagePaths.documents}
