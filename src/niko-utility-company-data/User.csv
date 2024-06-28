@@ -1,2 +1,4 @@
 id,name,login,email,password,token,fullAccess,houses,subscribers,accounting,documents,counters,oneOffJobs,settings
 1,superadmin,superadmin,superadmin@mail.com,$2a$10$lr7rG.AQ.drIJLUENBMyW.GegyVLqx84vGhRUt04uP2RE4zQQo2m.,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE5MDU1MTIxLCJleHAiOjE3MTk2NTk5MjF9.vbrtpJld-48qzDZ5RUvDXlHmJ7m7rzQqywUxfucVxfw,f,f,f,f,f,f,f,f
+2,admin,admin,admin@gmail.com,$2a$10$6l5R1YLdtULh/M2y18FCUOQUl5eNTiPmUvca2jjH520qwqMhsyqiu,,f,f,f,f,f,f,f,f
+3,admin,admin1,admin@gmail.com,$2a$10$rPOl19G4Cg4P.o7Qf1TYB.6OCRPt4EHZfNN8.1sgu6sa1tJH0Llvm,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzE5NTY1MDk2LCJleHAiOjE3MjAxNjk4OTZ9.9HrS57EPTWfcAwgvUoqklmqAEEhX69rjBN6NB8MwFcc,f,f,f,f,f,f,f,f

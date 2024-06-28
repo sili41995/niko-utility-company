@@ -3,7 +3,7 @@ import operationWrapper from '@/store/subscriberAccounts/operationWrapper';
 import { ISubscriberAccount } from '@/types/data.types';
 import {
   IAddSubscriberAccountProps,
-  IFetchSubscriberAccountsOperationProps,
+  IFetchSubscriberAccountsProps,
   IFetchSubscriberAccountsRes,
   IUpdateSubscriberAccountByIdProps,
 } from '@/types/subscriberAccountsStore.types';
@@ -12,7 +12,7 @@ import getUpdatedSubscriberAccounts from '@/utils/getUpdatedSubscriberAccounts';
 const fetchSubscriberAccountsOperation = async ({
   set,
   data,
-}: IFetchSubscriberAccountsOperationProps): Promise<
+}: IFetchSubscriberAccountsProps): Promise<
   IFetchSubscriberAccountsRes | undefined
 > => {
   if (!data.page) {

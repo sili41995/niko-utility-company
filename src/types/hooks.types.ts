@@ -219,3 +219,18 @@ export interface IUseEditSubscriberAccountForm {
   additionalPhone: string;
   isLoading: boolean;
 }
+
+export interface IUseUser {
+  name: string;
+  login: string;
+  fullAccess: boolean;
+  isCurrentUser: boolean;
+  houses: boolean;
+  subscribers: boolean;
+  accounting: boolean;
+  documents: boolean;
+  counters: boolean;
+  oneOffJobs: boolean;
+  settings: boolean;
+  onInputChange: InputChangeFunc;
+}

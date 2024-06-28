@@ -16,7 +16,7 @@ const initialState: IAuthInitialState = {
     subscribers: null,
   },
   token: null,
-  isLoggedIn: false,
+  isLoggedIn: true,
   isRefreshing: false,
   isLoading: false,
   error: null,

@@ -10,7 +10,6 @@ export const Button = styled.button`
   border-color: transparent;
   border-radius: ${({ theme }) => theme.borderRadius.primary}px;
   color: ${({ theme }) => theme.colors.white};
-  text-align: center;
   font-family: ${({ theme }): string => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary};
   font-weight: ${({ theme }) => theme.fontWeight.other};
@@ -23,6 +22,6 @@ export const Button = styled.button`
   }
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.accent};
   }
 `;

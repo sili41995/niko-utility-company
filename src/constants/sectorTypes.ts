@@ -1,5 +1,5 @@
 const enum SectorTypes {
-  multiApartment = 'multiApartmentmultiApartment',
+  multiApartment = 'multiApartment',
   private = 'private',
   other = 'other',
 }

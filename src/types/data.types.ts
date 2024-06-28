@@ -240,3 +240,20 @@ export interface IGetUpdatedSubscriberAccountsProps {
   subscriberAccounts: SubscriberAccounts;
   updatedSubscriberAccount: ISubscriberAccount;
 }
+
+export interface ITariff {
+  id: number;
+  tariff: number;
+  sector: SectorTypes;
+  start: Date;
+}
+
+export type Tariffs = ITariff[];
+
+export type NewTariff = Omit<ITariff, 'id'>;
+
+export interface IGetCurrentTariffs {
+  privateSectorTariff: ITariff | undefined;
+  multiApartmentSectorTariff: ITariff | undefined;
+  otherSectorTariff: ITariff | undefined;
+}

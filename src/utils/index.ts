@@ -24,3 +24,4 @@ export { default as getFilterAccountTypes } from './getFilterAccountTypes';
 export { default as formatDate } from './formatDate';
 export { default as getFilteredSEditSubscriberAccountFormData } from './getFilteredSEditSubscriberAccountFormData';
 export { default as getSubscriberAccountSector } from './getSubscriberAccountSector';
+export { default as getCurrentTariffs } from './getCurrentTariffs';

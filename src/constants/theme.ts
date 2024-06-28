@@ -16,7 +16,6 @@ interface ITheme {
     servicesTitle: string;
     serviceBG: string;
     primary: string;
-    secondary: string;
     accent: string;
     white: string;
     tableHeader: string;
@@ -66,8 +65,7 @@ const theme: ITheme = {
     white: '#FFFFFF',
     body: '#e5e5e5',
     primary: '#3456FF',
-    secondary: '#4d5ae5',
-    accent: '#0b44cd',
+    accent: '#4d5ae5',
     otherFont: '#555555',
     border: 'rgba(137, 137, 137, 0.43)',
     green: '#00c938',

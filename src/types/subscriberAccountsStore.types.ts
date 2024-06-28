@@ -21,7 +21,7 @@ export interface ISubscriberAccountsInitialState {
   error: null | string;
 }
 
-export interface IFetchSubscriberAccountsOperationProps {
+export interface IFetchSubscriberAccountsProps {
   set: SetSubscriberAccountsStateFunc;
   data: IFetchSubscriberAccountsFilters;
 }

@@ -14,3 +14,4 @@ export { default as useFilter } from './useFilter';
 export { default as useFilterSearchParams } from './useFilterSearchParams';
 export { default as useEditSubscriberAccountForm } from './useEditSubscriberAccountForm';
 export { default as usePageTitle } from './usePageTitle';
+export { default as useUser } from './useUser';

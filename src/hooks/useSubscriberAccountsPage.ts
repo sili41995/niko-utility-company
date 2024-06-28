@@ -11,7 +11,6 @@ import {
 import { IUseSubscriberAccountsPage } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
 import useFilterSearchParams from './useFilterSearchParams';
-// import usePageTitle from './usePageTitle';
 
 const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
@@ -43,7 +42,6 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     type,
   } = useFilterSearchParams();
   const isEmptyFilteredList = Boolean(totalCount && !filteredCount);
-  // usePageTitle();
 
   useEffect(() => {
     const targetPage = page ? Number(page) : undefined;
