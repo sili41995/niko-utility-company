@@ -10,7 +10,7 @@ const getSubscriberAccountSector = (
   if (isLegalEntity) {
     return SectorTypes.other;
   } else if (apartment) {
-    return SectorTypes.multiFamily;
+    return SectorTypes.multiApartment;
   } else {
     return SectorTypes.private;
   }

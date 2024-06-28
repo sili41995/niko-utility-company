@@ -1,4 +1,4 @@
 id,subscriberAccount,email,contract,contractDate,isLivingApartment,residents,period,isRemovalHouseholdWaste,utr,passport,surname,name,middleName,phone,additionalPhone,accountType,apartment,comment,isEligibleForBenefit,houseId,streetId,birthday,sector
-1,00001,,00001-c,2024-06-01,t,1,2024-06-27,t,0123456789,0123456789,С,Олександр,В,+380664804354,380664804354,Фізична особа,1,,f,2,1,,multiFamily
+1,00001,,00001-c,2024-06-01,t,1,2024-06-27,t,0123456789,0123456789,С,Олександр,В,+380664804354,380664804354,Фізична особа,1,,f,2,1,,multiApartment
 3,00003,,00003-c,2024-06-01,t,1,2024-06-27,t,0123456789,0123456789,Т,Олександр,В,+380664804354,380664804354,Юридична особа,1,,t,2,1,,other
 2,00002,,00002-с,2024-06-01,t,1,2024-06-27,t,0123456789,0123456789,П,Олександр,В,+380664804354,380664804354,Фізична особа,,"тут дуже довгий коментпр, який треба правильно стилізувати",f,2,1,,private
