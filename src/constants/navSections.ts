@@ -12,11 +12,6 @@ const navSections: NavSections = [
     path: PagePaths.accounting,
     desc: 'Нарахування, тарифи. Оплата і коригування. Звіти',
   },
-  {
-    title: 'Документи',
-    path: PagePaths.documents,
-    desc: 'Документообіг по підприємству',
-  },
 ];
 
 export default navSections;

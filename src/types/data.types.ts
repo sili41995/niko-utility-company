@@ -1,14 +1,5 @@
-import { AccountTypes, ServiceCategories } from '@/constants';
+import { AccountTypes, SectorTypes, ServiceCategories } from '@/constants';
 import { BooleanValue } from './types';
-
-export interface IDocument {
-  documentType: number;
-  number: string;
-  date: string;
-  name: string;
-}
-
-export type Documents = IDocument[];
 
 export interface IService {
   id: number;
@@ -101,7 +92,7 @@ export interface ISubscriberAccount {
   street: IStreet;
   houseId: number;
   house: IHouse;
-  apartment: string;
+  apartment?: string;
   subscriberAccount: string;
   contract: string;
   contractDate: Date;
@@ -118,6 +109,7 @@ export interface ISubscriberAccount {
   isEligibleForBenefit: boolean;
   phone: string;
   additionalPhone: string;
+  sector: SectorTypes;
   email: string | null;
   birthday: Date | null;
   comment: string | null;
@@ -136,6 +128,7 @@ export interface IAddSubscriberAccountFormData
     | 'street'
     | 'house'
     | 'birthday'
+    | 'sector'
   > {
   streetId: string;
   houseId: string;

@@ -3,7 +3,6 @@ const enum PagePaths {
   signInPath = '/signin',
   subscriberAccounts = '/subscriber-accounts',
   accounting = '/accounting',
-  documents = '/documents',
   dashboard = '/dashboard',
 }
 

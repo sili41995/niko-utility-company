@@ -2,6 +2,7 @@ import {
   INewSubscriberAccount,
   IAddSubscriberAccountFormData,
 } from '@/types/data.types';
+import getSubscriberAccountSector from './getSubscriberAccountSector';
 
 const filterAddSubscriberAccountData = (
   data: IAddSubscriberAccountFormData
@@ -16,10 +17,13 @@ const filterAddSubscriberAccountData = (
     contractDate,
     period,
     residents,
+    apartment,
   } = data;
+  const sector = getSubscriberAccountSector(data);
 
   return {
     ...data,
+    apartment: apartment !== '' ? apartment : undefined,
     houseId: Number(houseId),
     streetId: Number(streetId),
     residents: Number(residents),
@@ -29,6 +33,7 @@ const filterAddSubscriberAccountData = (
     email: email ? email : undefined,
     birthday: birthday ? new Date(birthday) : undefined,
     comment: comment ? comment : undefined,
+    sector,
   };
 };
 

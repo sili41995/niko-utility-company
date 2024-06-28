@@ -127,7 +127,7 @@ const useEditSubscriberAccountForm = (
     handleSubmit,
     handleFormSubmit,
     register,
-    apartment,
+    apartment: apartment ?? '',
     currentDate,
     fullStreetName,
     house: house.number,

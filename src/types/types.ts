@@ -29,10 +29,8 @@ export interface INavSection {
 export type NavSections = INavSection[];
 
 export interface IPathes {
-  [key: string]: string;
   [PagePaths.subscriberAccounts]: string;
   [PagePaths.accounting]: string;
-  [PagePaths.documents]: string;
 }
 
 export interface IOnPageBtnClickProps {

@@ -66,7 +66,7 @@ const AddSubscriberAccountForm: FC = () => {
           horizontal
         />
         <Input
-          settings={{ ...register('apartment', { required: true }) }}
+          settings={{ ...register('apartment') }}
           label='№ квартири:'
           placeholder='№ квартири'
           type={InputTypes.text}
