@@ -11,7 +11,6 @@ export interface ITariffsInitialState {
 
 export interface ITariffsState extends ITariffsInitialState {
   fetchTariffs: () => Promise<Tariffs | undefined>;
-  fetchCurrentTariffs: () => Promise<Tariffs | undefined>;
   addTariff: (data: NewTariff) => Promise<ITariff | undefined>;
 }
 

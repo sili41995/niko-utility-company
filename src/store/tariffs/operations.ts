@@ -19,18 +19,6 @@ const fetchTariffsOperation = async ({
   return response;
 };
 
-const fetchCurrentTariffsOperation = async ({
-  set,
-}: IFetchTariffsProps): Promise<Tariffs | undefined> => {
-  const response = await tariffsService.fetchCurrentTariffs();
-
-  set({
-    items: response,
-    isLoaded: true,
-  });
-  return response;
-};
-
 const addTariffOperation = async ({
   data,
   get,
@@ -46,7 +34,4 @@ const addTariffOperation = async ({
 };
 
 export const fetchTariffs = operationWrapper(fetchTariffsOperation);
-export const fetchCurrentTariffs = operationWrapper(
-  fetchCurrentTariffsOperation
-);
 export const addTariff = operationWrapper(addTariffOperation);

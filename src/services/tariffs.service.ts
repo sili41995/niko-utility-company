@@ -14,14 +14,6 @@ class TariffsService extends HttpService {
     return response.data;
   }
 
-  async fetchCurrentTariffs(): Promise<Tariffs> {
-    const response = await this.get<Tariffs>({
-      url: 'tariffs/current',
-    });
-
-    return response.data;
-  }
-
   async addTariff(data: NewTariff): Promise<ITariff> {
     const response = await this.post<ITariff, NewTariff>({
       url: 'tariffs',
