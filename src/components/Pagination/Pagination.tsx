@@ -16,7 +16,7 @@ const Pagination: FC<IProps> = ({
   const currentPage = Number(searchParams.get(SearchParamsKeys.page) ?? 1);
   const start = (currentPage - 1) * GeneralParams.recordLimit + 1;
   const end = (currentPage - 1) * GeneralParams.recordLimit + count;
-  const showPaginationBar = totalCount > count;
+  const showPaginationBar = filteredCount > count;
 
   return (
     <Container>

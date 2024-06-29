@@ -7,11 +7,11 @@ import {
 import { useFilterSearchParams, useSetSearchParams } from '@/hooks';
 import getDefaultAccountTypesValue from '@/utils/getDefaultAccountTypesValue';
 import { getFilterAccountTypes, makeBlur } from '@/utils';
-import { IUseFilter } from '@/types/hooks.types';
+import { IUseSubscriberAccountsFilter } from '@/types/hooks.types';
 import { SearchParamsKeys } from '@/constants';
 import { useRef } from 'react';
 
-const useFilter = (): IUseFilter => {
+const useSubscriberAccountsFilter = (): IUseSubscriberAccountsFilter => {
   const { updateSearchParams } = useSetSearchParams();
   const { account, apartment, house, name, street, surname, type } =
     useFilterSearchParams();
@@ -124,4 +124,4 @@ const useFilter = (): IUseFilter => {
   };
 };
 
-export default useFilter;
+export default useSubscriberAccountsFilter;

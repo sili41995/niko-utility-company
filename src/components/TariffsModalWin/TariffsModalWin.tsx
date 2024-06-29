@@ -14,9 +14,7 @@ import {
   selectIsLoading,
 } from '@/store/tariffs/selectors';
 
-const TariffsModalWin: FC<IProps> = ({
-  setModalWinState,
-}) => {
+const TariffsModalWin: FC<IProps> = ({ setModalWinState }) => {
   const isLoaded = useTariffsStore(selectIsLoaded);
   const isLoading = useTariffsStore(selectIsLoading);
   const isLoadingData = !isLoaded && isLoading;
@@ -30,15 +28,12 @@ const TariffsModalWin: FC<IProps> = ({
   return (
     <ModalWin setModalWinState={setModalWinState}>
       <Container>
-        <AddDataTitle title='Тарифи на послуги:' />
         {isLoadingData ? (
           <Loader />
         ) : (
           <>
-            {!error && (
-              <TariffsList
-              />
-            )}
+            <AddDataTitle title='Тарифи на послуги:' />
+            {!error && <TariffsList />}
             {error && <ErrorMessage error={error} />}
           </>
         )}

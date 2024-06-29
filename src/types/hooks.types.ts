@@ -149,7 +149,7 @@ export interface IUseSubscriberAccountsPage {
   isEmptyFilteredList: boolean;
 }
 
-export interface IUseFilter {
+export interface IUseSubscriberAccountsFilter {
   onFilterChange: (e: InputChangeEvent | SelectChangeEvent) => void;
   surname: string;
   name: string;
@@ -179,7 +179,7 @@ export interface IUseFilter {
   showClearApartmentFilterBtn: boolean;
 }
 
-export interface IUseFilterSearchParams {
+export interface IUseSubscriberAccountsFilterSearchParams {
   page: number;
   limit: number;
   surname: string;
@@ -189,6 +189,8 @@ export interface IUseFilterSearchParams {
   street: string;
   house: string;
   apartment: string;
+  comment: string;
+  document: string;
 }
 
 export interface IUseEditSubscriberAccountForm {
@@ -266,4 +268,27 @@ export interface IUseAddTariffForm {
   handleSubmit: UseFormHandleSubmit<INewTariffFormData, undefined>;
   handleFormSubmit: SubmitHandler<INewTariffFormData>;
   register: UseFormRegister<INewTariffFormData>;
+}
+
+export interface IUseDocumentsPage {
+  isLoadingData: boolean;
+  showDocumentsTable: boolean;
+  isEmptyFilteredList: boolean;
+  count: number;
+  totalCount: number | null;
+  isLoading: boolean;
+  filteredCount: number | null;
+  error: string | null;
+}
+
+export interface IUseDocumentsFilter {
+  onFilterChange: InputChangeFunc;
+  document: string;
+  comment: string;
+  documentInputRef: RefObject<HTMLInputElement>;
+  commentInputRef: RefObject<HTMLInputElement>;
+  clearDocumentFilter: OnBtnClickFunc;
+  clearCommentFilter: OnBtnClickFunc;
+  showClearDocumentFilterBtn: boolean;
+  showClearCommentFilterBtn: boolean;
 }

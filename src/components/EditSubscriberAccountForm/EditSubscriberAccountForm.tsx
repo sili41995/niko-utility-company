@@ -280,15 +280,22 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             width={550}
             horizontal
           />
-          {/* <Input
+          <Input
+            settings={{ ...register('document') }}
+            label='Документ:'
+            placeholder='Документ'
+            type={InputTypes.text}
+            width={550}
+            horizontal
+          />
+          <Input
             settings={{ ...register('comment') }}
             label='Коментар:'
             placeholder='Коментар'
             type={InputTypes.text}
-            defaultValue={comment}
             width={550}
             horizontal
-          /> */}
+          />
         </PersonParameters>
       </PersonParametersWrap>
       <SubmitFormBtn title='Зберегти' disabled={isLoading} />

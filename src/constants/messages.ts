@@ -33,6 +33,8 @@ const enum Messages {
   isRemovalHouseholdWasteReqErr = 'Поле Вивезення побутових відходів має бути заповнене',
   subscriberAccountUpdateSuccess = 'Абонентський рахунок успішно оновлено',
   tariffAddSuccess = 'Тариф успішно доданий',
+  emptyDocumentsList = 'Список документів пустий',
+  emptyFilteredDocumentsList = 'Жоден з документів не відповідає пошуковому запиту',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

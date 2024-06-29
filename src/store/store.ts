@@ -14,6 +14,8 @@ import { ISubscriberAccountsState } from '@/types/subscriberAccountsStore.types'
 import subscriberAccountsStore from './subscriberAccounts/subscriberAccounts.store';
 import { ITariffsState } from '@/types/tariffsStore.types';
 import tariffsStore from './tariffs/tariffs.store';
+import documentsStore from './documents/subscriberAccounts.store';
+import { IDocumentsState } from '@/types/documentsStore.types';
 
 export const useAuthStore = create<IAuthState>()(
   devtools(
@@ -44,4 +46,8 @@ export const useSubscriberAccountsStore = create<ISubscriberAccountsState>()(
 
 export const useTariffsStore = create<ITariffsState>()(
   devtools(tariffsStore.store, tariffsStore.params)
+);
+
+export const useDocumentsStore = create<IDocumentsState>()(
+  devtools(documentsStore.store, documentsStore.params)
 );

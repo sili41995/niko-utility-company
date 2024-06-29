@@ -2,11 +2,11 @@ import { FC } from 'react';
 import Input from '../Input';
 import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
 import Select from '../Select';
-import { useFilter } from '@/hooks';
-import { Container } from './Filter.styled.ts';
+import { useSubscriberAccountsFilter } from '@/hooks';
+import { Container } from './SubscriberAccountsFilter.styled.ts';
 import ClearFilterBtn from '../ClearFilterBtn';
 
-const Filter: FC = () => {
+const SubscriberAccountsFilter: FC = () => {
   const {
     onFilterChange,
     surname,
@@ -35,7 +35,7 @@ const Filter: FC = () => {
     showClearStreetFilterBtn,
     showClearHouseFilterBtn,
     showClearApartmentFilterBtn,
-  } = useFilter();
+  } = useSubscriberAccountsFilter();
 
   return (
     <Container>
@@ -153,4 +153,4 @@ const Filter: FC = () => {
   );
 };
 
-export default Filter;
+export default SubscriberAccountsFilter;

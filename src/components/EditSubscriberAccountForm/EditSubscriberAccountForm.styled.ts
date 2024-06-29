@@ -4,6 +4,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: ${({ theme }) => theme.spacing(6)};
 
   & > button {
     margin-top: ${({ theme }) => theme.spacing(6)};

@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin-top: ${({ theme }) => theme.spacing(6)};
+`;
 
 export const TitleWrap = styled.div`
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};

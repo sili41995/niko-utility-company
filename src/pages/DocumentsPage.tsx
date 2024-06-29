@@ -2,22 +2,66 @@ import Container from '@/components/Container';
 import Section from '@/components/Section';
 import { FC } from 'react';
 import DocumentsTable from '@/components/DocumentsTable';
-// import Pagination from '@/components/Pagination';
-// import { GeneralParams } from '@/constants';
+import Loader from '@/components/Loader';
+import DocumentsFilter from '@/components/DocumentsFilter';
+import Pagination from '@/components/Pagination';
+import DefaultMessage from '@/components/DefaultMessage';
+import { Messages } from '@/constants';
+import ErrorMessage from '@/components/ErrorMessage';
+import NavBar from '@/components/NavBar';
+import { useDocumentsPage } from '@/hooks';
 
 const DocumentsPage: FC = () => {
-  // const count = Number(GeneralParams.recordLimit);
-  // const totalCount = 200;
-  //  const count = ;
-  //  const totalCount = ;
+  const {
+    isLoadingData,
+    showDocumentsTable,
+    isEmptyFilteredList,
+    count,
+    totalCount,
+    isLoading,
+    filteredCount,
+    error,
+  } = useDocumentsPage();
+  const showPagination = filteredCount && totalCount;
 
   return (
-    <Section paddingBottom={24} paddingTop={24}>
-      <Container>
-        <DocumentsTable />
-        {/* <Pagination count={count} totalCount={totalCount} /> */}
-      </Container>
-    </Section>
+    <>
+      {isLoadingData ? (
+        <Loader />
+      ) : (
+        <Section paddingBottom={24} paddingTop={24}>
+          <Container>
+            {showDocumentsTable ? (
+              <>
+                <DocumentsFilter />
+                {!isEmptyFilteredList && (
+                  <>
+                    <DocumentsTable />
+                    {showPagination && (
+                      <Pagination
+                        count={count}
+                        totalCount={totalCount}
+                        isLoading={isLoading}
+                        filteredCount={filteredCount}
+                      />
+                    )}
+                  </>
+                )}
+                {isEmptyFilteredList && (
+                  <DefaultMessage
+                    message={Messages.emptyFilteredDocumentsList}
+                  />
+                )}
+              </>
+            ) : (
+              <DefaultMessage message={Messages.emptyDocumentsList} />
+            )}
+            {error && <ErrorMessage error={error} />}
+          </Container>
+        </Section>
+      )}
+      <NavBar />
+    </>
   );
 };
 

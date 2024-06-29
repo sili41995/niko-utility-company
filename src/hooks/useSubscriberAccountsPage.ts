@@ -26,9 +26,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
   const isLoaded = useSubscriberAccountsStore(selectIsLoaded);
   const isLoadingData = !isLoaded && isLoading;
-  const showSubscriberAccountsTable = Boolean(
-    isLoaded && totalCount && !!~totalCount
-  );
+  const showSubscriberAccountsTable = Boolean(isLoaded && totalCount);
   const error = useSubscriberAccountsStore(selectError);
   const {
     account,

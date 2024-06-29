@@ -16,9 +16,13 @@ const getFilteredSEditSubscriberAccountFormData = (
     period,
     phone,
     residents,
+    comment,
+    document,
   } = data;
 
   return {
+    comment,
+    document,
     isLivingApartment: isLivingApartment === 'true' ? true : false,
     residents: Number(residents),
     period: new Date(period),

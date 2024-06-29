@@ -10,7 +10,7 @@ import DefaultMessage from '@/components/DefaultMessage';
 import Loader from '@/components/Loader';
 import ErrorMessage from '@/components/ErrorMessage';
 import { useSubscriberAccountsPage } from '@/hooks';
-import Filter from '@/components/Filter';
+import SubscriberAccountsFilter from '@/components/SubscriberAccountsFilter';
 
 const SubscriberAccountsPage: FC = () => {
   const {
@@ -36,7 +36,7 @@ const SubscriberAccountsPage: FC = () => {
           <Container>
             {showSubscriberAccountsTable ? (
               <>
-                <Filter />
+                <SubscriberAccountsFilter />
                 {!isEmptyFilteredList && (
                   <>
                     <SubscriberAccountsTable />

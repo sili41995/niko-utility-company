@@ -7,6 +7,8 @@ const enum SearchParamsKeys {
   street = 'street',
   house = 'house',
   apartment = 'apartment',
+  comment = 'comment',
+  document = 'document',
 }
 
 export default SearchParamsKeys;

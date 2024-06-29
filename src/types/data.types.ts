@@ -257,3 +257,11 @@ export interface INewTariffFormData
   tariff: string;
   start: string;
 }
+
+export interface IDocument {
+  id: number;
+  document: string;
+  comment: string;
+}
+
+export type Documents = IDocument[];
