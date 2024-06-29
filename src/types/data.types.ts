@@ -226,21 +226,6 @@ export interface ISelectData {
 
 export type SelectData = ISelectData[];
 
-export interface IGetSubscriberAccountDataProps {
-  streets: Streets;
-  houses: Houses;
-}
-
-export interface IGetSubscriberAccountData {
-  streetsData: SelectData;
-  housesData: SelectData;
-}
-
-export interface IGetUpdatedSubscriberAccountsProps {
-  subscriberAccounts: SubscriberAccounts;
-  updatedSubscriberAccount: ISubscriberAccount;
-}
-
 export interface ITariff {
   id: number;
   tariff: number;
@@ -248,12 +233,16 @@ export interface ITariff {
   start: Date;
 }
 
+export type Tariff = Pick<ITariff, 'tariff'>;
+
+export type Start = Pick<ITariff, 'start'>;
+
 export type Tariffs = ITariff[];
 
 export type NewTariff = Omit<ITariff, 'id'>;
 
-export interface IGetCurrentTariffs {
-  privateSectorTariff: ITariff | undefined;
-  multiApartmentSectorTariff: ITariff | undefined;
-  otherSectorTariff: ITariff | undefined;
+export interface INewTariffFormData
+  extends Omit<NewTariff, 'tariff' | 'start' | 'sector'> {
+  tariff: string;
+  start: string;
 }

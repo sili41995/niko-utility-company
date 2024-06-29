@@ -1,7 +1,5 @@
-import {
-  IGetUpdatedSubscriberAccountsProps,
-  SubscriberAccounts,
-} from '@/types/data.types';
+import { SubscriberAccounts } from '@/types/data.types';
+import { IGetUpdatedSubscriberAccountsProps } from '@/types/types';
 
 const getUpdatedSubscriberAccounts = ({
   subscriberAccounts,

@@ -54,7 +54,7 @@ const AddUserForm: FC = () => {
         formType={FormTypes.addUser}
         icon={<FaEnvelope size={IconSizes.secondary} />}
       />
-      <AuthFormBtn title='Здерегти' disabled={isLoading} />
+      <AuthFormBtn title='Зберегти' disabled={isLoading} />
     </Form>
   );
 };

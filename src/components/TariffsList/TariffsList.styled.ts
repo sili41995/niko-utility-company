@@ -31,7 +31,30 @@ export const TariffWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.serviceBG};
 `;
 
+export const ControlsWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(5)};
+`;
+
 export const EditBtn = styled.button`
+  align-self: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  & > svg {
+    display: block;
+    color: ${({ theme }) => theme.colors.primary};
+    transition: ${({ theme }) => theme.transitionDurationAndFunc};
+  }
+
+  &:is(:hover, :focus) > svg {
+    color: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
+export const ShowHistoryBtn = styled.button`
   align-self: center;
   padding: 0;
   border: none;

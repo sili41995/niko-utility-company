@@ -8,8 +8,13 @@ import {
   TitleWrap,
 } from './AddDataModalForm.styled';
 
-const AddDataModalForm: FC<IProps> = ({ title, children, onCloseBtnClick }) => (
-  <Container>
+const AddDataModalForm: FC<IProps> = ({
+  title,
+  children,
+  onCloseBtnClick,
+  marginTop,
+}) => (
+  <Container marginTop={marginTop}>
     <TitleWrap>
       <Title>{title}</Title>
       <CloseBtn onClick={onCloseBtnClick} />

@@ -1,6 +1,7 @@
 const enum FormTypes {
   auth = 'auth',
   addUser = 'addUser',
+  addTariff = 'addTariff',
   filter = 'filter',
 }
 

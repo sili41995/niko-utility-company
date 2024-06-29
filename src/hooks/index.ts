@@ -15,3 +15,5 @@ export { default as useFilterSearchParams } from './useFilterSearchParams';
 export { default as useEditSubscriberAccountForm } from './useEditSubscriberAccountForm';
 export { default as usePageTitle } from './usePageTitle';
 export { default as useUser } from './useUser';
+export { default as useTariffsList } from './useTariffsList';
+export { default as useAddTariffForm } from './useAddTariffForm';

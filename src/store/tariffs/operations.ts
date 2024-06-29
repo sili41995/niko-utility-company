@@ -32,8 +32,14 @@ const fetchCurrentTariffsOperation = async ({
 
 const addTariffOperation = async ({
   data,
+  get,
+  set,
 }: IAddTariffProps): Promise<ITariff | undefined> => {
+  const { items: tariffs } = get();
+
   const response = await tariffsService.addTariff(data);
+  set({ items: [...tariffs, response] });
+
   return response;
 };
 

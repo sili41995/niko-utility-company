@@ -20,6 +20,8 @@ import {
   NewUser,
   SelectData,
   IEditSubscriberAccountFormData,
+  INewTariffFormData,
+  Tariffs,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -233,4 +235,36 @@ export interface IUseUser {
   oneOffJobs: boolean;
   settings: boolean;
   onInputChange: InputChangeFunc;
+}
+
+export interface IUseTariffsList {
+  showAddPrivateSectorTariffForm: boolean;
+  showPrivateSectorTariffsHistory: boolean;
+  showAddMultiApartmentSectorTariffForm: boolean;
+  showMultiApartmentSectorTariffsHistory: boolean;
+  showAddOtherSectorTariffForm: boolean;
+  showOtherSectorTariffsHistory: boolean;
+  multiApartmentSectorTariffValue: number;
+  multiApartmentSectorTariffStartDate: string;
+  privateSectorTariffValue: number;
+  privateSectorTariffStartDate: string;
+  otherSectorTariffStartDate: string;
+  otherSectorTariffValue: number;
+  toggleShowAddPrivateSectorTariffForm: OnBtnClickFunc;
+  toggleShowPrivateSectorTariffsHistory: OnBtnClickFunc;
+  toggleShowAddMultiApartmentSectorTariffForm: OnBtnClickFunc;
+  toggleShowMultiApartmentSectorTariffsHistory: OnBtnClickFunc;
+  toggleShowAddOtherSectorTariffForm: OnBtnClickFunc;
+  toggleShowOtherSectorTariffsHistory: OnBtnClickFunc;
+  multiApartmentSectorTariffs: Tariffs;
+  privateSectorTariffs: Tariffs;
+  otherSectorTariffs: Tariffs;
+}
+
+export interface IUseAddTariffForm {
+  tariffLabel: string;
+  isLoading: boolean;
+  handleSubmit: UseFormHandleSubmit<INewTariffFormData, undefined>;
+  handleFormSubmit: SubmitHandler<INewTariffFormData>;
+  register: UseFormRegister<INewTariffFormData>;
 }

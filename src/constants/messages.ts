@@ -4,18 +4,6 @@ import GeneralParams from './generalParams';
 const enum Messages {
   greetings = 'Ласкаво просимо!',
   signInSuccess = 'Привіт!',
-  addUser = 'Додати користувача',
-  loginReqErr = 'Поле Логін має бути заповнене',
-  loginRegExpErr = 'Поле Логін не повинно містити пробілів',
-  fullNameReqErr = 'Поле ПІБ має бути заповнене',
-  emailReqErr = 'Поле Email має бути заповнене',
-  emailRegExpErr = 'Поле Email повинно містити літери, цифри, крапку та символ @',
-  helpPhoneReqErr = 'Поле Телефони для довідок має бути заповнене',
-  helpPhoneRegExpErr = 'Телефони для довідок повинен містити  цифри, а також може містити символи +, - та пробіли',
-  passReqErr = 'Поле Пароль має бути заповнене',
-  passMinLengthErr = `Мінімальна довжина паролю - ${AuthParams.passMinLength} символів`,
-  passMaxLengthErr = `Максимальна довжина паролю - ${AuthParams.passMaxLength} символів`,
-  userAddSuccess = 'Користувач успішно доданий',
   dataUpdateSuccess = 'Дані успішно оновлені',
   mfiReqErr = 'Поле МФО має бути заповнене',
   mfiLengthErr = `Довжина МФО має бути ${GeneralParams.mfiLength} символів`,
@@ -24,6 +12,8 @@ const enum Messages {
   generalSettingsUpdateSuccess = 'Загальні налаштування успішно оновлені',
   streetReqErr = 'Поле Вулиця має бути заповнене',
   houseReqErr = 'Поле Будинок має бути заповнене',
+  tariffReqErr = 'Поле Тариф має бути заповнене',
+  startReqErr = 'Поле Початок дії має бути заповнене',
   apartmentReqErr = 'Поле № квартири має бути заповнене',
   subscriberAccountReqErr = 'Поле Абон. рахунок № має бути заповнене',
   contractReqErr = 'Поле Договір № має бути заповнене',
@@ -34,11 +24,6 @@ const enum Messages {
   periodReqErr = 'Поле Послуги надаються з має бути заповнене',
   utrReqErr = 'Поле ІПН має бути заповнене',
   passportReqErr = 'Поле Паспорт має бути заповнене',
-  surnameReqErr = 'Поле Прізвище має бути заповнене',
-  nameReqErr = "Поле Ім'я має бути заповнене",
-  middleNameReqErr = 'Поле По-батькові має бути заповнене',
-  phoneReqErr = 'Поле Телефон має бути заповнене',
-  phoneRegExpErr = 'Телефон повинен містити  цифри, а також може містити символи +, - та пробіли',
   additionalPhoneReqErr = 'Поле Телефон додатковий має бути заповнене',
   additionalPhoneRegExpErr = 'Телефон додатковий повинен містити  цифри, а також може містити символи +, - та пробіли',
   emptySubscriberAccountsList = 'Список абонентських рахнків пустий',
@@ -47,6 +32,30 @@ const enum Messages {
   isEligibleForBenefitReqErr = 'Поле Має право на пільгу має бути заповнене',
   isRemovalHouseholdWasteReqErr = 'Поле Вивезення побутових відходів має бути заповнене',
   subscriberAccountUpdateSuccess = 'Абонентський рахунок успішно оновлено',
+  tariffAddSuccess = 'Тариф успішно доданий',
+  //user
+  addUser = 'Додати користувача',
+  userAddSuccess = 'Користувач успішно доданий',
+  // password
+  passReqErr = 'Поле Пароль має бути заповнене',
+  passMinLengthErr = `Мінімальна довжина паролю - ${AuthParams.passMinLength} символів`,
+  passMaxLengthErr = `Максимальна довжина паролю - ${AuthParams.passMaxLength} символів`,
+  //login
+  loginReqErr = 'Поле Логін має бути заповнене',
+  loginRegExpErr = 'Поле Логін не повинно містити пробілів',
+  //email
+  emailReqErr = 'Поле Email має бути заповнене',
+  emailRegExpErr = 'Поле Email повинно містити літери, цифри, крапку та символ @',
+  //phone
+  helpPhoneReqErr = 'Поле Телефони для довідок має бути заповнене',
+  helpPhoneRegExpErr = 'Телефони для довідок повинен містити  цифри, а також може містити символи +, - та пробіли',
+  phoneReqErr = 'Поле Телефон має бути заповнене',
+  phoneRegExpErr = 'Телефон повинен містити  цифри, а також може містити символи +, - та пробіли',
+  //name
+  fullNameReqErr = 'Поле ПІБ має бути заповнене',
+  surnameReqErr = 'Поле Прізвище має бути заповнене',
+  nameReqErr = "Поле Ім'я має бути заповнене",
+  middleNameReqErr = 'Поле По-батькові має бути заповнене',
 }
 
 export default Messages;

@@ -16,7 +16,6 @@ import {
 
 const TariffsModalWin: FC<IProps> = ({
   setModalWinState,
-  onAddPrivateSectorTariffBtnClick,
 }) => {
   const isLoaded = useTariffsStore(selectIsLoaded);
   const isLoading = useTariffsStore(selectIsLoading);
@@ -38,9 +37,6 @@ const TariffsModalWin: FC<IProps> = ({
           <>
             {!error && (
               <TariffsList
-                onAddPrivateSectorTariffBtnClick={
-                  onAddPrivateSectorTariffBtnClick
-                }
               />
             )}
             {error && <ErrorMessage error={error} />}

@@ -5,25 +5,13 @@ import {
   SectionsList,
   SectionsListItem,
 } from './AccountingSections.styled';
-import ModalWin from '../ModalWin';
 
 const AccountingSections: FC = () => {
   const [showTariffsModalWin, setShowTariffsModalWin] =
     useState<boolean>(false);
-  const [showPrivateSectorTariffModalWin, setShowPrivateSectorTariffModalWin] =
-    useState<boolean>(false);
 
   const setTariffsModalWinState = () => {
     setShowTariffsModalWin((prevState) => !prevState);
-  };
-
-  const setPrivateSectorTariffModalWinState = () => {
-    setShowPrivateSectorTariffModalWin((prevState) => !prevState);
-  };
-
-  const onAddPrivateSectorTariffBtnClick = () => {
-    setTariffsModalWinState();
-    setPrivateSectorTariffModalWinState();
   };
 
   return (
@@ -36,15 +24,7 @@ const AccountingSections: FC = () => {
         </SectionsListItem>
       </SectionsList>
       {showTariffsModalWin && (
-        <TariffsModalWin
-          onAddPrivateSectorTariffBtnClick={onAddPrivateSectorTariffBtnClick}
-          setModalWinState={setTariffsModalWinState}
-        />
-      )}
-      {showPrivateSectorTariffModalWin && (
-        <ModalWin setModalWinState={setPrivateSectorTariffModalWinState}>
-          <div>showAddPrivateSectorTariff</div>
-        </ModalWin>
+        <TariffsModalWin setModalWinState={setTariffsModalWinState} />
       )}
     </>
   );

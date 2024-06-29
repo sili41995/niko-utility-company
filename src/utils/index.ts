@@ -3,7 +3,6 @@ export { default as setNavSectionTitleWrapBGColor } from './setNavSectionTitleWr
 export { default as getNavSectionDesc } from './getNavSectionDesc';
 export { default as getPageNumbers } from './getPageNumbers';
 export { default as getPaginationBarSettings } from './getPaginationBarSettings';
-export { default as groupServicesByCategory } from './groupServicesByCategory';
 export { default as setModalFormBGColor } from './setModalFormBGColor';
 export { default as setModalFormBorderRadius } from './setModalFormBorderRadius';
 export { default as setModalFormBoxShadow } from './setModalFormBoxShadow';
@@ -25,3 +24,5 @@ export { default as formatDate } from './formatDate';
 export { default as getFilteredSEditSubscriberAccountFormData } from './getFilteredSEditSubscriberAccountFormData';
 export { default as getSubscriberAccountSector } from './getSubscriberAccountSector';
 export { default as getCurrentTariffs } from './getCurrentTariffs';
+export { default as getUpdatedTariffData } from './getUpdatedTariffData';
+export { default as filterTariffsBySector } from './filterTariffsBySector';

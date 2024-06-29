@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
+import { IStyledProps } from './AddDataModalForm.types';
 
-export const Container = styled.div`
+export const Container = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.serviceBG};
-  margin-top: ${({ theme }) => theme.spacing(6)};
+  margin-top: ${({ marginTop, theme }) =>
+    marginTop ? `${marginTop}px` : theme.spacing(6)};
 `;
 
 export const TitleWrap = styled.div`

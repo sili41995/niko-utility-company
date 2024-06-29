@@ -12,42 +12,39 @@ import {
   Units,
   TariffWrap,
   EditBtn,
+  ControlsWrap,
+  ShowHistoryBtn,
 } from './TariffsList.styled';
-import { MdEditNote } from 'react-icons/md';
-import { DateFormats, IconSizes } from '@/constants';
-import { useTariffsStore } from '@/store/store';
-import { selectTariffs } from '@/store/tariffs/selectors';
-import { formatDate, getCurrentTariffs } from '@/utils';
-import { IProps } from './TariffsList.types';
+import { MdEditNote, MdListAlt } from 'react-icons/md';
+import AddDataModalForm from '../AddDataModalForm';
+import { IconSizes, SectorTypes } from '@/constants';
+import { useTariffsList } from '@/hooks';
+import AddTariffForm from '../AddTariffForm';
 
-const TariffsList: FC<IProps> = ({ onAddPrivateSectorTariffBtnClick }) => {
-  const tariffs = useTariffsStore(selectTariffs);
-  const { multiApartmentSectorTariff, otherSectorTariff, privateSectorTariff } =
-    getCurrentTariffs(tariffs);
+const TariffsList: FC = () => {
   const {
-    start: multiApartmentSectorTariffStart = new Date(),
-    tariff: multiApartmentSectorTariffValue,
-  } = multiApartmentSectorTariff || {};
-  const multiApartmentSectorTariffStartDate = formatDate({
-    date: multiApartmentSectorTariffStart,
-    dateFormat: DateFormats.date,
-  });
-  const {
-    start: otherSectorTariffStart = new Date(),
-    tariff: otherSectorTariffValue,
-  } = otherSectorTariff || {};
-  const otherSectorTariffStartDate = formatDate({
-    date: otherSectorTariffStart,
-    dateFormat: DateFormats.date,
-  });
-  const {
-    start: privateSectorTariffStart = new Date(),
-    tariff: privateSectorTariffValue,
-  } = privateSectorTariff || {};
-  const privateSectorTariffStartDate = formatDate({
-    date: privateSectorTariffStart,
-    dateFormat: DateFormats.date,
-  });
+    multiApartmentSectorTariffStartDate,
+    multiApartmentSectorTariffValue,
+    otherSectorTariffStartDate,
+    otherSectorTariffValue,
+    privateSectorTariffStartDate,
+    privateSectorTariffValue,
+    showAddMultiApartmentSectorTariffForm,
+    showAddOtherSectorTariffForm,
+    showAddPrivateSectorTariffForm,
+    showMultiApartmentSectorTariffsHistory,
+    showOtherSectorTariffsHistory,
+    showPrivateSectorTariffsHistory,
+    toggleShowAddMultiApartmentSectorTariffForm,
+    toggleShowAddOtherSectorTariffForm,
+    toggleShowAddPrivateSectorTariffForm,
+    toggleShowMultiApartmentSectorTariffsHistory,
+    toggleShowOtherSectorTariffsHistory,
+    toggleShowPrivateSectorTariffsHistory,
+    multiApartmentSectorTariffs,
+    privateSectorTariffs,
+    otherSectorTariffs,
+  } = useTariffsList();
 
   return (
     <Container>
@@ -57,9 +54,22 @@ const TariffsList: FC<IProps> = ({ onAddPrivateSectorTariffBtnClick }) => {
       <List>
         <ListItem>
           <TariffWrap>
-            <EditBtn type='button' onClick={onAddPrivateSectorTariffBtnClick}>
-              <MdEditNote size={IconSizes.primary} />
-            </EditBtn>
+            <ControlsWrap>
+              <EditBtn
+                type='button'
+                onClick={toggleShowAddMultiApartmentSectorTariffForm}
+                disabled={showAddMultiApartmentSectorTariffForm}
+              >
+                <MdEditNote size={IconSizes.primary} />
+              </EditBtn>
+              <ShowHistoryBtn
+                type='button'
+                onClick={toggleShowMultiApartmentSectorTariffsHistory}
+                disabled={showMultiApartmentSectorTariffsHistory}
+              >
+                <MdListAlt size={IconSizes.primary} />
+              </ShowHistoryBtn>
+            </ControlsWrap>
             <Data>
               <ServiceWrap>
                 <Text>Вивезення побутових відходів (б/с)</Text>
@@ -74,12 +84,40 @@ const TariffsList: FC<IProps> = ({ onAddPrivateSectorTariffBtnClick }) => {
               </PriceWrap>
             </Data>
           </TariffWrap>
+          {showAddMultiApartmentSectorTariffForm && (
+            <AddDataModalForm
+              title='Додати новий тариф (б/с)'
+              onCloseBtnClick={toggleShowAddMultiApartmentSectorTariffForm}
+              marginTop={1}
+            >
+              <AddTariffForm sector={SectorTypes.multiApartment} />
+            </AddDataModalForm>
+          )}
+          {/* {showMultiApartmentSectorTariffsHistory && (
+            <TariffsHistoryList
+              tariffs={multiApartmentSectorTariffs}
+              onCloseBtnClick={toggleShowMultiApartmentSectorTariffsHistory}
+            />
+          )} */}
         </ListItem>
         <ListItem>
           <TariffWrap>
-            <EditBtn type='button'>
-              <MdEditNote size={IconSizes.primary} />
-            </EditBtn>
+            <ControlsWrap>
+              <EditBtn
+                type='button'
+                onClick={toggleShowAddPrivateSectorTariffForm}
+                disabled={showAddPrivateSectorTariffForm}
+              >
+                <MdEditNote size={IconSizes.primary} />
+              </EditBtn>
+              <ShowHistoryBtn
+                type='button'
+                onClick={toggleShowPrivateSectorTariffsHistory}
+                disabled={showPrivateSectorTariffsHistory}
+              >
+                <MdListAlt size={IconSizes.primary} />
+              </ShowHistoryBtn>
+            </ControlsWrap>
             <Data>
               <ServiceWrap>
                 <Text>Вивезення побутових відходів (п/с)</Text>
@@ -93,12 +131,40 @@ const TariffsList: FC<IProps> = ({ onAddPrivateSectorTariffBtnClick }) => {
               </PriceWrap>
             </Data>
           </TariffWrap>
+          {showAddPrivateSectorTariffForm && (
+            <AddDataModalForm
+              title='Додати новий тариф (п/с)'
+              onCloseBtnClick={toggleShowAddPrivateSectorTariffForm}
+              marginTop={1}
+            >
+              <AddTariffForm sector={SectorTypes.private} />
+            </AddDataModalForm>
+          )}
+          {/* {showPrivateSectorTariffsHistory && (
+            <TariffsHistoryList
+              tariffs={privateSectorTariffs}
+              onCloseBtnClick={toggleShowPrivateSectorTariffsHistory}
+            />
+          )} */}
         </ListItem>
         <ListItem>
           <TariffWrap>
-            <EditBtn type='button'>
-              <MdEditNote size={IconSizes.primary} />
-            </EditBtn>
+            <ControlsWrap>
+              <EditBtn
+                type='button'
+                onClick={toggleShowAddOtherSectorTariffForm}
+                disabled={showAddOtherSectorTariffForm}
+              >
+                <MdEditNote size={IconSizes.primary} />
+              </EditBtn>
+              <ShowHistoryBtn
+                type='button'
+                onClick={toggleShowOtherSectorTariffsHistory}
+                disabled={showOtherSectorTariffsHistory}
+              >
+                <MdListAlt size={IconSizes.primary} />
+              </ShowHistoryBtn>
+            </ControlsWrap>
             <Data>
               <ServiceWrap>
                 <Text>Вивезення побутових відходів (за 1м3)</Text>
@@ -110,6 +176,21 @@ const TariffsList: FC<IProps> = ({ onAddPrivateSectorTariffBtnClick }) => {
               </PriceWrap>
             </Data>
           </TariffWrap>
+          {showAddOtherSectorTariffForm && (
+            <AddDataModalForm
+              title='Додати новий тариф'
+              onCloseBtnClick={toggleShowAddOtherSectorTariffForm}
+              marginTop={1}
+            >
+              <AddTariffForm sector={SectorTypes.other} />
+            </AddDataModalForm>
+          )}
+          {/* {showOtherSectorTariffsHistory && (
+            <TariffsHistoryList
+              tariffs={otherSectorTariffs}
+              onCloseBtnClick={toggleShowOtherSectorTariffsHistory}
+            />
+          )} */}
         </ListItem>
       </List>
     </Container>

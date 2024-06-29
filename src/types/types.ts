@@ -1,6 +1,15 @@
-import { Messages, PagePaths } from '@/constants';
+import { Messages, PagePaths, SectorTypes } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
-import { SelectData } from './data.types';
+import {
+  Houses,
+  INewTariffFormData,
+  ISubscriberAccount,
+  ITariff,
+  SelectData,
+  Streets,
+  SubscriberAccounts,
+  Tariffs,
+} from './data.types';
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
@@ -106,4 +115,35 @@ export interface IGetDefaultAccountTypesValueProps {
 export interface IFormatDateProps {
   date: Date | string;
   dateFormat: string;
+}
+
+export interface IGetSubscriberAccountDataProps {
+  streets: Streets;
+  houses: Houses;
+}
+
+export interface IGetSubscriberAccountData {
+  streetsData: SelectData;
+  housesData: SelectData;
+}
+
+export interface IGetUpdatedSubscriberAccountsProps {
+  subscriberAccounts: SubscriberAccounts;
+  updatedSubscriberAccount: ISubscriberAccount;
+}
+
+export interface IGetCurrentTariffs {
+  privateSectorTariff: ITariff | undefined;
+  multiApartmentSectorTariff: ITariff | undefined;
+  otherSectorTariff: ITariff | undefined;
+}
+
+export interface IGetUpdatedTariffDataProps {
+  data: INewTariffFormData;
+  sector: SectorTypes;
+}
+
+export interface IFilterTariffsBySectorProps {
+  tariffs: Tariffs;
+  sector: SectorTypes;
 }

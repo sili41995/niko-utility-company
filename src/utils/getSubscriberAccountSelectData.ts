@@ -1,7 +1,7 @@
 import {
   IGetSubscriberAccountDataProps,
   IGetSubscriberAccountData,
-} from '@/types/data.types';
+} from '@/types/types';
 
 const getSubscriberAccountSelectData = ({
   streets,

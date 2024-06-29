@@ -30,6 +30,7 @@ const addUserOperation = async ({
 
   const response = await usersService.addUser(data);
   set({ items: [...users, response] });
+
   return response;
 };
 
@@ -39,7 +40,7 @@ const changeAccessStatusOperation = async ({
   get,
 }: IChangeAccessStatusProps): Promise<UserData | undefined> => {
   const { items: users } = get();
-  
+
   const response = await usersService.changeAccessStatus(data);
   const updatedUsers = getUpdatedUsers({
     users,
