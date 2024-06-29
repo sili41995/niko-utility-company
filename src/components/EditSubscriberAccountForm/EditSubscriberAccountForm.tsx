@@ -281,7 +281,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             horizontal
           />
           <Input
-            settings={{ ...register('document') }}
+            settings={{ ...register('document', { required: true }) }}
             label='Документ:'
             placeholder='Документ'
             type={InputTypes.text}
@@ -289,7 +289,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             horizontal
           />
           <Input
-            settings={{ ...register('comment') }}
+            settings={{ ...register('comment', { required: true }) }}
             label='Коментар:'
             placeholder='Коментар'
             type={InputTypes.text}

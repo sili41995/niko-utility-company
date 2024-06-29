@@ -112,6 +112,7 @@ export interface ISubscriberAccount {
   sector: SectorTypes;
   email: string | null;
   birthday: Date | null;
+  documents: Documents;
 }
 
 export type InitialSubscriberAccountFormData = Omit<
@@ -154,6 +155,10 @@ export interface IEditSubscriberAccountFormData
   document: string;
   comment: string;
 }
+
+export type Document = Pick<IEditSubscriberAccountFormData, 'document'>;
+
+export type Comment = Pick<IEditSubscriberAccountFormData, 'comment'>;
 
 export interface IEditSubscriberAccountData
   extends Pick<
@@ -262,6 +267,7 @@ export interface IDocument {
   id: number;
   document: string;
   comment: string;
+  createdAt: Date;
 }
 
 export type Documents = IDocument[];

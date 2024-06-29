@@ -1,36 +1,32 @@
 import { FC } from 'react';
 import {
   StyledTable,
+  TableBody,
   TableHead,
   TableHeadRow,
   TableHeader,
-} from '@/components/SubscriberAccountsTable/SubscriberAccountsTable.styled';
+} from './DocumentsTable.styled';
+import { useDocumentsStore } from '@/store/store';
+import { selectDocuments } from '@/store/documents/selectors';
+import DocumentsTableRow from '../DocumentsTableRow';
 
 const DocumentsTable: FC = () => {
-  //   const documents = [];
+  const documents = useDocumentsStore(selectDocuments);
 
   return (
     <StyledTable>
       <TableHead>
         <TableHeadRow>
-          <TableHeader>-</TableHeader>
-          <TableHeader>Тип документу</TableHeader>
-          <TableHeader>№</TableHeader>
-          <TableHeader>Дата</TableHeader>
-          <TableHeader>Назва</TableHeader>
+          <TableHeader width={300}>Документ</TableHeader>
+          <TableHeader width={300}>Дата створення</TableHeader>
+          <TableHeader>Коментар</TableHeader>
         </TableHeadRow>
       </TableHead>
-      {/* <TableBody>
-        {documents.map(({ documentType, number, date, name }, index) => (
-          <TableBodyRow key={index}>
-            <TableData>-</TableData>
-            <TableData>{documentType}</TableData>
-            <TableData>{number}</TableData>
-            <TableData>{date}</TableData>
-            <TableData>{name}</TableData>
-          </TableBodyRow>
+      <TableBody>
+        {documents.map((document) => (
+          <DocumentsTableRow key={document.id} document={document} />
         ))}
-      </TableBody> */}
+      </TableBody>
     </StyledTable>
   );
 };

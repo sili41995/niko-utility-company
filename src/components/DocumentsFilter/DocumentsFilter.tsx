@@ -28,7 +28,7 @@ const DocumentsFilter: FC = () => {
         onChange={onFilterChange}
         defaultValue={document}
         inputRef={documentInputRef}
-        width={250}
+        width={300}
         offBorderRadius
         btn={
           <ClearFilterBtn
@@ -45,7 +45,7 @@ const DocumentsFilter: FC = () => {
         onChange={onFilterChange}
         defaultValue={comment}
         inputRef={commentInputRef}
-        width={250}
+        width={300}
         offBorderRadius
         btn={
           <ClearFilterBtn

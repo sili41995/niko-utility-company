@@ -35,6 +35,8 @@ const enum Messages {
   tariffAddSuccess = 'Тариф успішно доданий',
   emptyDocumentsList = 'Список документів пустий',
   emptyFilteredDocumentsList = 'Жоден з документів не відповідає пошуковому запиту',
+  documentReqErr = 'Поле Документ має бути заповнене',
+  commentReqErr = 'Поле Коментар має бути заповнене',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

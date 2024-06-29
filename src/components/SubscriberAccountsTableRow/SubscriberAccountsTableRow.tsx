@@ -28,12 +28,14 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     middleName,
     isEligibleForBenefit,
     period,
+    documents,
   } = subscriberAccount;
   const apartmentType = apartmentTypes.find(
     ({ value }) => value === String(isLivingApartment)
   )?.title;
   const fullName = `${surname} ${name} ${middleName}`;
   const fullStreetName = `${street.type} ${street.name}`;
+  const { comment, document } = documents[0] ?? {};
   const periodDate = formatDate({
     date: period,
     dateFormat: DateFormats.date,
@@ -69,8 +71,9 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
             />
           </TableDataText>
         </TableData>
+        <TableData center>{document}</TableData>
         <TableData>
-          <TableDataText trimText>коментар</TableDataText>
+          <TableDataText trimText>{comment}</TableDataText>
         </TableData>
         <EditRowBtnCell>
           <EditRowBtn onClick={toggleEditAccount}>

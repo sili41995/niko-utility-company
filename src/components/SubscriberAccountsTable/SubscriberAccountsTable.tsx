@@ -30,6 +30,7 @@ const SubscriberAccountsTable: FC = () => {
           <TableHeader>Стан рахунку</TableHeader>
           <TableHeader>Споживачі</TableHeader>
           <TableHeader>Пільговик</TableHeader>
+          <TableHeader>Документ</TableHeader>
           <TableHeader>Коментар</TableHeader>
         </TableHeadRow>
       </TableHead>
