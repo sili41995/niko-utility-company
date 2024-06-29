@@ -13,7 +13,6 @@ const filterAddSubscriberAccountData = (
     isLivingApartment,
     email,
     birthday,
-    comment,
     contractDate,
     period,
     residents,
@@ -32,7 +31,6 @@ const filterAddSubscriberAccountData = (
     period: new Date(period),
     email: email ? email : undefined,
     birthday: birthday ? new Date(birthday) : undefined,
-    comment: comment ? comment : undefined,
     sector,
   };
 };

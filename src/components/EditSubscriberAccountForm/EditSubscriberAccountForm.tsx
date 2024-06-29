@@ -55,7 +55,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     additionalPhone,
     email,
     birthday,
-    comment,
     isLoading,
   } = useEditSubscriberAccountForm(subscriberAccount);
 
@@ -281,7 +280,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             width={550}
             horizontal
           />
-          <Input
+          {/* <Input
             settings={{ ...register('comment') }}
             label='Коментар:'
             placeholder='Коментар'
@@ -289,7 +288,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             defaultValue={comment}
             width={550}
             horizontal
-          />
+          /> */}
         </PersonParameters>
       </PersonParametersWrap>
       <SubmitFormBtn title='Зберегти' disabled={isLoading} />

@@ -19,6 +19,7 @@ const SubscriberAccountsPage = lazy(
   () => import('@/pages/SubscriberAccountsPage')
 );
 const AccountingPage = lazy(() => import('@/pages/AccountingPage'));
+const DocumentsPage = lazy(() => import('@/pages/DocumentsPage'));
 
 const App: FC = () => {
   const isRefreshing = useAuthStore(selectIsRefreshing);
@@ -57,6 +58,10 @@ const App: FC = () => {
         <Route
           path={PagePaths.accounting}
           element={<PrivateRoute element={<AccountingPage />} />}
+        />
+        <Route
+          path={PagePaths.documents}
+          element={<PrivateRoute element={<DocumentsPage />} />}
         />
         <Route path='*' element={<PublicRoute element={<NotFoundPage />} />} />
       </Route>

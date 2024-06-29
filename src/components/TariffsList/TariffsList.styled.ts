@@ -96,7 +96,7 @@ export const Units = styled.span`
   font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;
 
-export const PriceWrap = styled.div`
+export const PeriodWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

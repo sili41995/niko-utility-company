@@ -9,7 +9,6 @@ const getFilteredSEditSubscriberAccountFormData = (
   const {
     additionalPhone,
     birthday,
-    comment,
     email,
     isEligibleForBenefit,
     isLivingApartment,
@@ -28,7 +27,6 @@ const getFilteredSEditSubscriberAccountFormData = (
     phone,
     additionalPhone,
     birthday: birthday ? new Date(birthday) : undefined,
-    comment: comment ? comment : undefined,
     email: email ? email : undefined,
   };
 };

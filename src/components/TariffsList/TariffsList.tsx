@@ -3,7 +3,7 @@ import {
   Container,
   List,
   ListItem,
-  PriceWrap,
+  PeriodWrap,
   ServiceWrap,
   Data,
   Text,
@@ -20,6 +20,7 @@ import AddDataModalForm from '../AddDataModalForm';
 import { IconSizes, SectorTypes } from '@/constants';
 import { useTariffsList } from '@/hooks';
 import AddTariffForm from '../AddTariffForm';
+import TariffsHistoryList from '../TariffsHistoryList';
 
 const TariffsList: FC = () => {
   const {
@@ -78,10 +79,10 @@ const TariffsList: FC = () => {
                   <Units>грн./мешк., Норма</Units>
                 </Text>
               </ServiceWrap>
-              <PriceWrap>
+              <PeriodWrap>
                 <Text>Діє з</Text>
                 <Text>{multiApartmentSectorTariffStartDate}</Text>
-              </PriceWrap>
+              </PeriodWrap>
             </Data>
           </TariffWrap>
           {showAddMultiApartmentSectorTariffForm && (
@@ -90,15 +91,18 @@ const TariffsList: FC = () => {
               onCloseBtnClick={toggleShowAddMultiApartmentSectorTariffForm}
               marginTop={1}
             >
-              <AddTariffForm sector={SectorTypes.multiApartment} />
+              <AddTariffForm
+                sector={SectorTypes.multiApartment}
+                tariff={multiApartmentSectorTariffValue}
+              />
             </AddDataModalForm>
           )}
-          {/* {showMultiApartmentSectorTariffsHistory && (
+          {showMultiApartmentSectorTariffsHistory && (
             <TariffsHistoryList
               tariffs={multiApartmentSectorTariffs}
               onCloseBtnClick={toggleShowMultiApartmentSectorTariffsHistory}
             />
-          )} */}
+          )}
         </ListItem>
         <ListItem>
           <TariffWrap>
@@ -125,10 +129,10 @@ const TariffsList: FC = () => {
                   {privateSectorTariffValue} <Units>грн./мешк., Норма</Units>
                 </Text>
               </ServiceWrap>
-              <PriceWrap>
+              <PeriodWrap>
                 <Text>Діє з</Text>
                 <Text>{privateSectorTariffStartDate}</Text>
-              </PriceWrap>
+              </PeriodWrap>
             </Data>
           </TariffWrap>
           {showAddPrivateSectorTariffForm && (
@@ -137,15 +141,18 @@ const TariffsList: FC = () => {
               onCloseBtnClick={toggleShowAddPrivateSectorTariffForm}
               marginTop={1}
             >
-              <AddTariffForm sector={SectorTypes.private} />
+              <AddTariffForm
+                sector={SectorTypes.private}
+                tariff={privateSectorTariffValue}
+              />
             </AddDataModalForm>
           )}
-          {/* {showPrivateSectorTariffsHistory && (
+          {showPrivateSectorTariffsHistory && (
             <TariffsHistoryList
               tariffs={privateSectorTariffs}
               onCloseBtnClick={toggleShowPrivateSectorTariffsHistory}
             />
-          )} */}
+          )}
         </ListItem>
         <ListItem>
           <TariffWrap>
@@ -170,10 +177,10 @@ const TariffsList: FC = () => {
                 <Text>Вивезення побутових відходів (за 1м3)</Text>
                 <Text>{otherSectorTariffValue} грн.</Text>
               </ServiceWrap>
-              <PriceWrap>
+              <PeriodWrap>
                 <Text>Діє з</Text>
                 <Text>{otherSectorTariffStartDate}</Text>
-              </PriceWrap>
+              </PeriodWrap>
             </Data>
           </TariffWrap>
           {showAddOtherSectorTariffForm && (
@@ -182,15 +189,18 @@ const TariffsList: FC = () => {
               onCloseBtnClick={toggleShowAddOtherSectorTariffForm}
               marginTop={1}
             >
-              <AddTariffForm sector={SectorTypes.other} />
+              <AddTariffForm
+                sector={SectorTypes.other}
+                tariff={otherSectorTariffValue}
+              />
             </AddDataModalForm>
           )}
-          {/* {showOtherSectorTariffsHistory && (
+          {showOtherSectorTariffsHistory && (
             <TariffsHistoryList
               tariffs={otherSectorTariffs}
               onCloseBtnClick={toggleShowOtherSectorTariffsHistory}
             />
-          )} */}
+          )}
         </ListItem>
       </List>
     </Container>

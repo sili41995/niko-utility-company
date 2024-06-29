@@ -6,6 +6,7 @@ interface ITheme {
   colors: {
     black: string;
     otherFont: string;
+    blue: string;
     darkBlue: string;
     body: string;
     border: string;
@@ -66,6 +67,7 @@ const theme: ITheme = {
     body: '#e5e5e5',
     primary: '#3456FF',
     accent: '#4d5ae5',
+    blue: '#7fd1ff',
     otherFont: '#555555',
     border: 'rgba(137, 137, 137, 0.43)',
     green: '#00c938',

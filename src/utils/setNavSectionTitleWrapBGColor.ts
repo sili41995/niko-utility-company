@@ -8,6 +8,9 @@ const setNavSectionTitleWrapBGColor = (path: string): string => {
     case PagePaths.accounting:
       return theme.colors.accountingSection;
 
+    case PagePaths.documents:
+      return theme.colors.documentsSection;
+
     default:
       return theme.colors.grey;
   }

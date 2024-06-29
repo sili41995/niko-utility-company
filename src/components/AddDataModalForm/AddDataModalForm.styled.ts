@@ -35,8 +35,3 @@ export const Title = styled.p`
 export const FormWrap = styled.div`
   padding: ${({ theme }) => theme.spacing(4)};
 `;
-
-// export const Title = styled.h2`
-//   text-transform: uppercase;
-
-// `;

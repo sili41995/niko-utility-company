@@ -26,3 +26,5 @@ export { default as getSubscriberAccountSector } from './getSubscriberAccountSec
 export { default as getCurrentTariffs } from './getCurrentTariffs';
 export { default as getUpdatedTariffData } from './getUpdatedTariffData';
 export { default as filterTariffsBySector } from './filterTariffsBySector';
+export { default as getTariffUnits } from './getTariffUnits';
+export { default as sortTariffs } from './sortTariffs';

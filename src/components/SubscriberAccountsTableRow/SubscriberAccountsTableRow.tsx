@@ -26,7 +26,6 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     surname,
     name,
     middleName,
-    comment,
     isEligibleForBenefit,
     period,
   } = subscriberAccount;
@@ -71,7 +70,7 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
           </TableDataText>
         </TableData>
         <TableData>
-          <TableDataText trimText>{comment}</TableDataText>
+          <TableDataText trimText>коментар</TableDataText>
         </TableData>
         <EditRowBtnCell>
           <EditRowBtn onClick={toggleEditAccount}>

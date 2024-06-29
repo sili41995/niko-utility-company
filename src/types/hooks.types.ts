@@ -210,7 +210,6 @@ export interface IUseEditSubscriberAccountForm {
   isRemovalHouseHoldWaste: boolean;
   onCheckboxChange: InputChangeFunc;
   email: string;
-  comment: string;
   utr: string;
   passport: string;
   surname: string;

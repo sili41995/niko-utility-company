@@ -3,21 +3,19 @@ import { useTariffsStore } from '@/store/store';
 import { selectAddTariff, selectIsLoading } from '@/store/tariffs/selectors';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { INewTariffFormData } from '@/types/data.types';
-import { getUpdatedTariffData, toasts } from '@/utils';
+import { getTariffUnits, getUpdatedTariffData, toasts } from '@/utils';
 import validateAddTariffForm from '@/validators/validateAddTariffForm';
 import { Messages, SectorTypes } from '@/constants';
 
 const useAddTariffForm = (sector: SectorTypes) => {
-  const tariffUnity =
-    sector === SectorTypes.other ? 'грн./м.кв.' : 'грн./мешк.';
-  const tariffLabel = `Тариф (${tariffUnity}):`;
+  const tariffUnits = getTariffUnits(sector);
+  const tariffLabel = `Тариф (${tariffUnits}):`;
   const isLoading = useTariffsStore(selectIsLoading);
   const addTariff = useTariffsStore(selectAddTariff);
   const {
     register,
     formState: { errors, isSubmitting },
     handleSubmit,
-    reset,
   } = useForm<INewTariffFormData>();
 
   useEffect(() => {
@@ -33,7 +31,6 @@ const useAddTariffForm = (sector: SectorTypes) => {
     try {
       await addTariff(updatedData);
       toasts.successToast(Messages.tariffAddSuccess);
-      reset();
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);
@@ -41,7 +38,13 @@ const useAddTariffForm = (sector: SectorTypes) => {
     }
   };
 
-  return { tariffLabel, isLoading, register, handleSubmit, handleFormSubmit };
+  return {
+    tariffLabel,
+    isLoading,
+    register,
+    handleSubmit,
+    handleFormSubmit,
+  };
 };
 
 export default useAddTariffForm;

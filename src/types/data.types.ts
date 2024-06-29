@@ -112,24 +112,25 @@ export interface ISubscriberAccount {
   sector: SectorTypes;
   email: string | null;
   birthday: Date | null;
-  comment: string | null;
 }
 
+export type InitialSubscriberAccountFormData = Omit<
+  ISubscriberAccount,
+  | 'id'
+  | 'streetId'
+  | 'houseId'
+  | 'isLivingApartment'
+  | 'contractDate'
+  | 'period'
+  | 'residents'
+  | 'street'
+  | 'house'
+  | 'birthday'
+  | 'sector'
+>;
+
 export interface IAddSubscriberAccountFormData
-  extends Omit<
-    ISubscriberAccount,
-    | 'id'
-    | 'streetId'
-    | 'houseId'
-    | 'isLivingApartment'
-    | 'contractDate'
-    | 'period'
-    | 'residents'
-    | 'street'
-    | 'house'
-    | 'birthday'
-    | 'sector'
-  > {
+  extends InitialSubscriberAccountFormData {
   streetId: string;
   houseId: string;
   isLivingApartment: BooleanValue;
@@ -140,9 +141,18 @@ export interface IAddSubscriberAccountFormData
 }
 
 export interface IEditSubscriberAccountFormData
-  extends IAddSubscriberAccountFormData {
+  extends InitialSubscriberAccountFormData {
   street: string;
+  streetId: string;
   house: string;
+  houseId: string;
+  isLivingApartment: BooleanValue;
+  contractDate: string;
+  period: string;
+  residents: string;
+  birthday: string;
+  document: string;
+  comment: string;
 }
 
 export interface IEditSubscriberAccountData
@@ -156,7 +166,8 @@ export interface IEditSubscriberAccountData
     | 'phone'
     | 'residents'
   > {
-  comment?: string;
+  document: string;
+  comment: string;
   birthday?: Date;
   email?: string;
 }
@@ -164,7 +175,7 @@ export interface IEditSubscriberAccountData
 export interface INewSubscriberAccount
   extends Omit<
     ISubscriberAccount,
-    'id' | 'street' | 'house' | 'email' | 'birthday' | 'comment'
+    'id' | 'street' | 'house' | 'email' | 'birthday'
   > {
   email?: string;
   birthday?: Date;

@@ -5,19 +5,15 @@ import { IGetCurrentTariffs } from '@/types/types';
 const getCurrentTariffs = (tariffs: Tariffs): IGetCurrentTariffs => {
   const date = new Date();
 
-  const sortedTariffs = [...tariffs].sort((prevTariff, nextTariff) =>
-    String(nextTariff.start).localeCompare(String(prevTariff.start))
-  );
-
-  const privateSectorTariff = sortedTariffs.find(
+  const privateSectorTariff = tariffs.find(
     ({ start, sector }) =>
       sector === SectorTypes.private && new Date(start) <= new Date(date)
   );
-  const multiApartmentSectorTariff = sortedTariffs.find(
+  const multiApartmentSectorTariff = tariffs.find(
     ({ start, sector }) =>
       sector === SectorTypes.multiApartment && new Date(start) <= new Date(date)
   );
-  const otherSectorTariff = sortedTariffs.find(
+  const otherSectorTariff = tariffs.find(
     ({ start, sector }) =>
       sector === SectorTypes.other && new Date(start) <= new Date(date)
   );

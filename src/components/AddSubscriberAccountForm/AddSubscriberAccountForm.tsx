@@ -250,14 +250,14 @@ const AddSubscriberAccountForm: FC = () => {
             horizontal
             width={550}
           />
-          <Input
+          {/* <Input
             settings={{ ...register('comment') }}
             label='Коментар:'
             placeholder='Коментар'
             type={InputTypes.text}
             horizontal
             width={550}
-          />
+          /> */}
         </PersonParameters>
       </PersonParametersWrap>
       <SubmitFormBtn title='Зберегти' disabled={isLoading} />

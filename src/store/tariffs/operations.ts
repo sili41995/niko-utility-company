@@ -5,6 +5,7 @@ import {
   IAddTariffProps,
   IFetchTariffsProps,
 } from '@/types/tariffsStore.types';
+import { sortTariffs } from '@/utils';
 
 const fetchTariffsOperation = async ({
   set,
@@ -38,7 +39,8 @@ const addTariffOperation = async ({
   const { items: tariffs } = get();
 
   const response = await tariffsService.addTariff(data);
-  set({ items: [...tariffs, response] });
+  const sortedTariffs = sortTariffs([...tariffs, response]);
+  set({ items: sortedTariffs });
 
   return response;
 };

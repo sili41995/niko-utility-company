@@ -6,7 +6,7 @@ import Input from '../Input';
 import { Form } from './AddTariffForm.styled';
 import { useAddTariffForm } from '@/hooks';
 
-const AddTariffForm: FC<IProps> = ({ sector }) => {
+const AddTariffForm: FC<IProps> = ({ sector, tariff }) => {
   const { tariffLabel, isLoading, register, handleSubmit, handleFormSubmit } =
     useAddTariffForm(sector);
 
@@ -16,6 +16,7 @@ const AddTariffForm: FC<IProps> = ({ sector }) => {
         settings={{
           ...register('tariff', { required: true }),
         }}
+        defaultValue={String(tariff)}
         type={InputTypes.number}
         label={tariffLabel}
         placeholder='Тариф'
