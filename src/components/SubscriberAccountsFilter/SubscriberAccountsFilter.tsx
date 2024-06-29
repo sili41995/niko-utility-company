@@ -91,7 +91,7 @@ const SubscriberAccountsFilter: FC = () => {
       <Select
         label='Тип рахунку'
         data={accountTypes}
-        width={200}
+        width={210}
         formType={FormTypes.filter}
         offBorderRadius
         name={SearchParamsKeys.type}
