@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import SettingsSectionTitle from '../SettingsSectionTitle';
 import AddBtn from '../AddBtn';
-import { Container, Title } from './UsersSettings.styled';
+import { Container, ContentWrap } from './UsersSettings.styled';
 import UsersList from '../UsersList';
 import AddUserForm from '../AddUserForm';
 import AddDataModalForm from '../AddDataModalForm';
@@ -12,20 +12,19 @@ import { useUsersSettings } from '@/hooks';
 const UsersSettings: FC = () => {
   const {
     isLoadingData,
-    isLoaded,
     onAddBntClick,
     showAddUserForm,
     toggleShowAddUserForm,
     error,
   } = useUsersSettings();
 
-  return isLoadingData ? (
-    <Loader />
-  ) : (
-    <>
-      <Container>
-        <SettingsSectionTitle title='Користувачі' />
-        {isLoaded && (
+  return (
+    <Container>
+      <SettingsSectionTitle title='Користувачі' />
+      <ContentWrap>
+        {isLoadingData ? (
+          <Loader />
+        ) : (
           <>
             <AddBtn
               title='Новий користувач'
@@ -40,13 +39,12 @@ const UsersSettings: FC = () => {
                 <AddUserForm />
               </AddDataModalForm>
             )}
-            <Title>Користувачі:</Title>
             <UsersList />
           </>
         )}
-        {error && <ErrorMessage error={error} />}
-      </Container>
-    </>
+      </ContentWrap>
+      {error && <ErrorMessage error={error} />}
+    </Container>
   );
 };
 

@@ -105,7 +105,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   ) => {
     const filteredAddSubscriberAccountData =
       filterAddSubscriberAccountData(data);
-    console.log(filteredAddSubscriberAccountData);
+
     try {
       await addSubscriberAccount(filteredAddSubscriberAccountData);
       await fetchSubscriberAccounts({

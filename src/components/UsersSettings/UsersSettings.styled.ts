@@ -2,11 +2,10 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div``;
 
-export const Title = styled.p`
+export const ContentWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(6)};
   margin-top: ${({ theme }) => theme.spacing(6)};
-  color: ${({ theme }) => theme.colors.black};
-  font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: ${({ theme }) => theme.fontWeight.secondary};
-  line-height: 1.2;
 `;

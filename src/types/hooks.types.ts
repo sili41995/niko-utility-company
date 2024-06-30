@@ -25,7 +25,6 @@ import {
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
-import { PricesRequestFunc } from './pricesStore.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -112,7 +111,6 @@ export interface IUseStreetsData {
   isLoadingData: boolean;
   housesError: string | null;
   streetsError: string | null;
-  isError: boolean;
 }
 
 export interface IUseGeneralSettings {
@@ -130,7 +128,6 @@ export interface IUseHeader {
 
 export interface IUseUsersSettings {
   isLoadingData: boolean;
-  isLoaded: boolean;
   onAddBntClick: OnBtnClickFunc;
   showAddUserForm: boolean;
   toggleShowAddUserForm: Func;
@@ -298,6 +295,6 @@ export interface IUseCalculatePrices {
   currentDate: string;
   lastPricesCalculate: string;
   isLoading: boolean;
-  calculatePrices: PricesRequestFunc;
+  calculatePrices: () => Promise<void>;
   error: string | null;
 }

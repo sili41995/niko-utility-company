@@ -6,6 +6,10 @@ import {
 } from './data.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
 
+export interface IPricesInfo {
+  lastCalculate: Date;
+}
+
 export interface IFetchSubscriberAccountsRes {
   data: SubscriberAccounts;
   count: number;
@@ -16,6 +20,7 @@ export interface ISubscriberAccountsInitialState {
   items: SubscriberAccounts;
   count: null | number;
   filteredCount: null | number;
+  lastCalculate: null | Date;
   isLoading: boolean;
   isLoaded: boolean;
   error: null | string;
@@ -49,6 +54,8 @@ export interface ISubscriberAccountsState
   updateSubscriberAccountById: (
     data: IUpdateSubscriberAccountByIdData
   ) => Promise<ISubscriberAccount | undefined>;
+  fetchPrices: () => Promise<IPricesInfo | undefined>;
+  calculatePrices: () => Promise<IPricesInfo | undefined>;
 }
 
 export type GetSubscriberAccountsStateFunc =
@@ -72,4 +79,8 @@ export interface IUpdateSubscriberAccountByIdProps {
   set: SetSubscriberAccountsStateFunc;
   get: GetSubscriberAccountsStateFunc;
   data: IUpdateSubscriberAccountByIdData;
+}
+
+export interface IPricesOPerationsProps {
+  set: SetSubscriberAccountsStateFunc;
 }

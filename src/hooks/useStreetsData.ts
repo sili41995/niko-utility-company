@@ -24,13 +24,12 @@ const useStreetsData = (): IUseStreetsData => {
   const isLoadingData = isLoadingHousesData || isLoadingStreetsData;
   const streetsError = useStreetsStore(selectStreetsError);
   const housesError = useHousesStore(selectError);
-  const isError = Boolean(housesError || streetsError);
 
   useEffect(() => {
     fetchStreets();
   }, [fetchStreets]);
 
-  return { isLoadingData, housesError, streetsError, isError };
+  return { isLoadingData, housesError, streetsError };
 };
 
 export default useStreetsData;

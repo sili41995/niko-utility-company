@@ -16,8 +16,6 @@ import { ITariffsState } from '@/types/tariffsStore.types';
 import tariffsStore from './tariffs/tariffs.store';
 import documentsStore from './documents/documents.store';
 import { IDocumentsState } from '@/types/documentsStore.types';
-import pricesStore from './prices/prices.store';
-import { IPricesState } from '@/types/pricesStore.types';
 
 export const useAuthStore = create<IAuthState>()(
   devtools(
@@ -52,8 +50,4 @@ export const useTariffsStore = create<ITariffsState>()(
 
 export const useDocumentsStore = create<IDocumentsState>()(
   devtools(documentsStore.store, documentsStore.params)
-);
-
-export const usePricesStore = create<IPricesState>()(
-  devtools(pricesStore.store, pricesStore.params)
 );

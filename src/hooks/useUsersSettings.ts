@@ -33,7 +33,6 @@ const useUsersSettings = (): IUseUsersSettings => {
 
   return {
     isLoadingData,
-    isLoaded,
     onAddBntClick,
     showAddUserForm,
     toggleShowAddUserForm,

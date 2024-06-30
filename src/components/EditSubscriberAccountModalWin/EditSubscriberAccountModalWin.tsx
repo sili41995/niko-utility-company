@@ -2,7 +2,7 @@ import { FC } from 'react';
 import ModalWin from '../ModalWin';
 import { IProps } from './EditSubscriberAccountModalWin.types';
 import FormDataTitle from '../FormDataTitle';
-import { Container } from './EditSubscriberAccountModalWin.styled';
+import { Container, ContentWrap } from './EditSubscriberAccountModalWin.styled';
 import EditSubscriberAccountForm from '../EditSubscriberAccountForm';
 
 const EditSubscriberAccountModalWin: FC<IProps> = ({
@@ -15,7 +15,9 @@ const EditSubscriberAccountModalWin: FC<IProps> = ({
     <ModalWin setModalWinState={setModalWinState}>
       <Container>
         <FormDataTitle title={title} />
-        <EditSubscriberAccountForm subscriberAccount={subscriberAccount} />
+        <ContentWrap>
+          <EditSubscriberAccountForm subscriberAccount={subscriberAccount} />
+        </ContentWrap>
       </Container>
     </ModalWin>
   );

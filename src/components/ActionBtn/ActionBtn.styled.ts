@@ -3,11 +3,12 @@ import styled from '@emotion/styled';
 export const Button = styled.button`
   min-width: 170px;
   height: 60px;
+  padding: 0;
   padding-left: ${({ theme }) => theme.spacing(8)};
   padding-right: ${({ theme }) => theme.spacing(8)};
   align-self: center;
   background-color: ${({ theme }) => theme.colors.primary};
-  border-color: transparent;
+  border: none;
   border-radius: ${({ theme }) => theme.borderRadius.primary}px;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }): string => theme.fontFamily.primary};

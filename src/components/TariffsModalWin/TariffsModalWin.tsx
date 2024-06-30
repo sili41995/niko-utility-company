@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import ModalWin from '../ModalWin';
 import { IProps } from './Tariffs.types';
-import { Container } from './TariffsModalWin.styled';
+import { Container, ContentWrap } from './TariffsModalWin.styled';
 import FormDataTitle from '../FormDataTitle';
 import ErrorMessage from '../ErrorMessage';
 import Loader from '../Loader';
@@ -28,15 +28,11 @@ const TariffsModalWin: FC<IProps> = ({ setModalWinState }) => {
   return (
     <ModalWin setModalWinState={setModalWinState}>
       <Container>
-        {isLoadingData ? (
-          <Loader />
-        ) : (
-          <>
-            <FormDataTitle title='Тарифи на послуги:' />
-            {!error && <TariffsList />}
-            {error && <ErrorMessage error={error} />}
-          </>
-        )}
+        <FormDataTitle title='Тарифи на послуги:' />
+        <ContentWrap>
+          {isLoadingData ? <Loader /> : <TariffsList />}
+        </ContentWrap>
+        {error && <ErrorMessage error={error} />}
       </Container>
     </ModalWin>
   );

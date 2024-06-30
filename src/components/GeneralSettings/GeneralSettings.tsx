@@ -3,19 +3,19 @@ import SettingsSectionTitle from '../SettingsSectionTitle';
 import GeneralSettingsForm from '../GeneralSettingsForm';
 
 import Loader from '../Loader';
-import { Container } from './GeneralSettings.styled';
+import { Container, ContentWrap } from './GeneralSettings.styled';
 import ErrorMessage from '../ErrorMessage';
 import { useGeneralSettings } from '@/hooks';
 
 const GeneralSettings: FC = () => {
   const { isLoadingData, id, error } = useGeneralSettings();
 
-  return isLoadingData ? (
-    <Loader />
-  ) : (
+  return (
     <Container>
       <SettingsSectionTitle title='Загальні налаштування:' />
-      {id && <GeneralSettingsForm id={id} />}
+      <ContentWrap>
+        {isLoadingData ? <Loader /> : id && <GeneralSettingsForm id={id} />}
+      </ContentWrap>
       {error && <ErrorMessage error={error} />}
     </Container>
   );

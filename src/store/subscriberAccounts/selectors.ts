@@ -27,3 +27,12 @@ export const selectAddSubscriberAccount = (state: ISubscriberAccountsState) =>
 export const selectUpdateSubscriberAccountById = (
   state: ISubscriberAccountsState
 ) => state.updateSubscriberAccountById;
+
+export const selectCalculatePrices = (state: ISubscriberAccountsState) =>
+  state.calculatePrices;
+
+export const selectLastCalculate = (state: ISubscriberAccountsState) =>
+  state.lastCalculate;
+
+export const selectFetchPrices = (state: ISubscriberAccountsState) =>
+  state.fetchPrices;

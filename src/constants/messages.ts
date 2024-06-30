@@ -5,6 +5,7 @@ const enum Messages {
   greetings = 'Ласкаво просимо!',
   signInSuccess = 'Привіт!',
   dataUpdateSuccess = 'Дані успішно оновлені',
+  calculatePricesSuccess = 'Перерахунок виконаний успішно',
   mfiReqErr = 'Поле МФО має бути заповнене',
   mfiLengthErr = `Довжина МФО має бути ${GeneralParams.mfiLength} символів`,
   currentAccountReqErr = 'Поле Розрахунковий рахунок має бути заповнене',
