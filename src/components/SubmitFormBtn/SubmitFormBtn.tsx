@@ -4,13 +4,13 @@ import Loader from '../Loader';
 import { AriaLabels, BtnTypes } from '@/constants';
 import { Button } from './SubmitFormBtn.styled';
 
-const SubmitFormBtn: FC<IProps> = ({ title, disabled }) => (
+const SubmitFormBtn: FC<IProps> = ({ title, isLoading }) => (
   <Button
-    disabled={disabled}
+    disabled={isLoading}
     type={BtnTypes.submit}
-    aria-label={AriaLabels.authBtn}
+    aria-label={AriaLabels.submit}
   >
-    {disabled ? <Loader /> : title}
+    {isLoading ? <Loader /> : title}
   </Button>
 );
 

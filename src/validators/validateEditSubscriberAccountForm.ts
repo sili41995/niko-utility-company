@@ -9,7 +9,7 @@ import showIsEligibleForBenefitError from './showIsEligibleForBenefitError';
 import showIsRemovalHouseholdWasteError from './showIsRemovalHouseholdWasteError';
 import showSubscriberAccountEmailError from './showSubscriberAccountEmailError';
 import showDocumentError from './showDocumentError';
-import showCommentError from './showСщььутеError copy';
+import showCommentError from './showCommentError';
 
 const validateEditSubscriberAccountForm = (
   errors: FieldErrors<ISubscriberAccount>

@@ -59,7 +59,7 @@ const GeneralSettingsForm: FC<IProps> = ({ id }) => {
         label={InputLabels.adsInPayments}
         defaultValue={adsInPayments}
       />
-      <SubmitFormBtn disabled={isLoading} title='Зберегти' />
+      <SubmitFormBtn isLoading={isLoading} title='Зберегти' />
     </Form>
   );
 };

@@ -260,7 +260,7 @@ const AddSubscriberAccountForm: FC = () => {
           /> */}
         </PersonParameters>
       </PersonParametersWrap>
-      <SubmitFormBtn title='Зберегти' disabled={isLoading} />
+      <SubmitFormBtn title='Зберегти' isLoading={isLoading} />
     </Form>
   );
 };

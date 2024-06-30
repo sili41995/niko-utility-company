@@ -41,7 +41,7 @@ const SignInForm: FC = () => {
           formType={FormTypes.auth}
           icon={<FaLock size={IconSizes.secondary} />}
         />
-        <AuthFormBtn title='Sign in' disabled={isLoading} />
+        <AuthFormBtn title='Sign in' isLoading={isLoading} />
       </Form>
     </>
   );

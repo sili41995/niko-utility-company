@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import ModalWin from '../ModalWin';
 import { IProps } from './Tariffs.types';
 import { Container } from './TariffsModalWin.styled';
-import AddDataTitle from '../FormDataTitle';
+import FormDataTitle from '../FormDataTitle';
 import ErrorMessage from '../ErrorMessage';
 import Loader from '../Loader';
 import TariffsList from '../TariffsList';
@@ -32,7 +32,7 @@ const TariffsModalWin: FC<IProps> = ({ setModalWinState }) => {
           <Loader />
         ) : (
           <>
-            <AddDataTitle title='Тарифи на послуги:' />
+            <FormDataTitle title='Тарифи на послуги:' />
             {!error && <TariffsList />}
             {error && <ErrorMessage error={error} />}
           </>

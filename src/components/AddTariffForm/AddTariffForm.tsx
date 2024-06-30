@@ -34,7 +34,7 @@ const AddTariffForm: FC<IProps> = ({ sector, tariff }) => {
         width={500}
         horizontal
       />
-      <SubmitFormBtn title='Зберегти' disabled={isLoading} />
+      <SubmitFormBtn title='Зберегти' isLoading={isLoading} />
     </Form>
   );
 };

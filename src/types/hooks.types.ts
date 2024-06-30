@@ -25,6 +25,7 @@ import {
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
+import { PricesRequestFunc } from './pricesStore.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -291,4 +292,12 @@ export interface IUseDocumentsFilter {
   clearCommentFilter: OnBtnClickFunc;
   showClearDocumentFilterBtn: boolean;
   showClearCommentFilterBtn: boolean;
+}
+
+export interface IUseCalculatePrices {
+  currentDate: string;
+  lastPricesCalculate: string;
+  isLoading: boolean;
+  calculatePrices: PricesRequestFunc;
+  error: string | null;
 }

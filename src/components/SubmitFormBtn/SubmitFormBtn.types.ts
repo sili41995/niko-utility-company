@@ -1,4 +1,4 @@
 export interface IProps {
   title: string;
-  disabled: boolean;
+  isLoading: boolean;
 }
