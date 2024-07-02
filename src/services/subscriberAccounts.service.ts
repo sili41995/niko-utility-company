@@ -7,9 +7,9 @@ import {
 import HttpService from './http.service';
 import {
   ISubscriberAccount,
-  INewSubscriberAccount,
+  INewSubscriberAccountData,
   IEditSubscriberAccountData,
-} from '@/types/data.types';
+} from '@/types/subscriberAccount.types';
 
 class SubscriberAccountsService extends HttpService {
   constructor() {
@@ -35,14 +35,15 @@ class SubscriberAccountsService extends HttpService {
   }
 
   async addSubscriberAccount(
-    data: INewSubscriberAccount
+    data: INewSubscriberAccountData
   ): Promise<ISubscriberAccount> {
-    const response = await this.post<ISubscriberAccount, INewSubscriberAccount>(
-      {
-        url: 'subscriber-accounts',
-        data,
-      }
-    );
+    const response = await this.post<
+      ISubscriberAccount,
+      INewSubscriberAccountData
+    >({
+      url: 'subscriber-accounts',
+      data,
+    });
 
     return response.data;
   }

@@ -1,4 +1,4 @@
-import { ISubscriberAccount } from '@/types/data.types';
+import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import { FieldErrors } from 'react-hook-form';
 import showIsLivingApartmentError from './showIsLivingApartmentError';
 import showResidentsError from './showResidentsError';

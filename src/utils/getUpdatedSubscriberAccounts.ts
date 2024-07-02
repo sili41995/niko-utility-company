@@ -1,4 +1,4 @@
-import { SubscriberAccounts } from '@/types/data.types';
+import { SubscriberAccounts } from '@/types/subscriberAccount.types';
 import { IGetUpdatedSubscriberAccountsProps } from '@/types/types';
 
 const getUpdatedSubscriberAccounts = ({

@@ -1,4 +1,5 @@
-id,subscriberAccount,email,contract,contractDate,isLivingApartment,residents,period,isRemovalHouseholdWaste,utr,passport,surname,name,middleName,phone,additionalPhone,accountType,apartment,isEligibleForBenefit,houseId,streetId,birthday,sector,lastCalculate,price
-2,00002,,00002-c,2024-06-01,t,2,2024-06-30,t,0123456789,0123456789,Т,Олександр,В,+380664804354,0664804354,Фізична особа,1,f,2,1,,multiApartment,2024-06-30 11:00:01.237,62
-1,00001,sili41995@gmail.com,00001-c,2024-06-01,t,3,2024-06-30,t,0123456789,0123456789,С,Олександр,В,+3800664804354,0664804354,Фізична особа,,t,2,1,,private,2024-06-30 11:00:01.237,90
-3,00003,,00003-c,2024-06-01,t,1,2024-06-28,t,0123456789,0123456789,П,Олександр,В,+380664804354,0664804354,Юридична особа,3,f,2,1,,other,2024-06-30 11:00:01.237,32
+id,subscriberAccount,contract,contractDate,isLivingApartment,residents,period,isRemovalHouseholdWaste,accountType,apartment,isEligibleForBenefit,houseId,streetId,sector,lastCalculate,price
+2,00002,00002-c,2024-06-01,t,2,2024-06-30,t,Фізична особа,1,f,2,1,multiApartment,2024-06-30 11:50:44.96,62
+1,00001,00001-c,2024-06-01,t,3,2024-06-30,t,Фізична особа,,t,2,1,private,2024-06-30 11:50:44.96,90
+3,00003,00003-c,2024-06-01,t,1,2024-06-28,t,Юридична особа,3,f,2,1,other,2024-06-30 11:50:44.96,32
+4,00004,00004-c,2024-07-01,f,2,2024-07-01,t,Юридична особа,,f,2,1,other,,0

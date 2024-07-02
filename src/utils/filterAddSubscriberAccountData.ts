@@ -1,12 +1,12 @@
 import {
-  INewSubscriberAccount,
+  INewSubscriberAccountData,
   IAddSubscriberAccountFormData,
-} from '@/types/data.types';
+} from '@/types/subscriberAccount.types';
 import getSubscriberAccountSector from './getSubscriberAccountSector';
 
 const filterAddSubscriberAccountData = (
   data: IAddSubscriberAccountFormData
-): INewSubscriberAccount => {
+): INewSubscriberAccountData => {
   const {
     houseId,
     streetId,
@@ -17,11 +17,22 @@ const filterAddSubscriberAccountData = (
     period,
     residents,
     apartment,
+    phone,
+    additionalPhone,
+    middleName,
+    name,
+    surname,
+    passport,
+    utr,
+    accountType,
+    contract,
+    isEligibleForBenefit,
+    isRemovalHouseholdWaste,
+    subscriberAccount,
   } = data;
   const sector = getSubscriberAccountSector(data);
 
   return {
-    ...data,
     apartment: apartment !== '' ? apartment : undefined,
     houseId: Number(houseId),
     streetId: Number(streetId),
@@ -29,9 +40,23 @@ const filterAddSubscriberAccountData = (
     isLivingApartment: isLivingApartment === 'true' ? true : false,
     contractDate: new Date(contractDate),
     period: new Date(period),
-    email: email ? email : undefined,
-    birthday: birthday ? new Date(birthday) : undefined,
     sector,
+    accountType,
+    contract,
+    isEligibleForBenefit,
+    isRemovalHouseholdWaste,
+    subscriberAccount,
+    owner: {
+      phone,
+      additionalPhone,
+      email: email ? email : undefined,
+      birthday: birthday ? new Date(birthday) : undefined,
+      middleName,
+      name,
+      surname,
+      passport,
+      utr,
+    },
   };
 };
 

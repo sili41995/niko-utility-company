@@ -1,7 +1,7 @@
 import {
   IEditSubscriberAccountData,
   IEditSubscriberAccountFormData,
-} from '@/types/data.types';
+} from '@/types/subscriberAccount.types';
 
 const getFilteredSEditSubscriberAccountFormData = (
   data: IEditSubscriberAccountFormData
@@ -23,15 +23,17 @@ const getFilteredSEditSubscriberAccountFormData = (
   return {
     comment,
     document,
+    isEligibleForBenefit,
     isLivingApartment: isLivingApartment === 'true' ? true : false,
     residents: Number(residents),
-    period: new Date(period),
     isRemovalHouseholdWaste,
-    isEligibleForBenefit,
-    phone,
-    additionalPhone,
-    birthday: birthday ? new Date(birthday) : undefined,
-    email: email ? email : undefined,
+    period: new Date(period),
+    owner: {
+      phone,
+      additionalPhone,
+      birthday: birthday ? new Date(birthday) : undefined,
+      email: email ? email : undefined,
+    },
   };
 };
 

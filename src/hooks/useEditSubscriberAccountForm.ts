@@ -1,6 +1,8 @@
-import { ISubscriberAccount } from '@/types/data.types';
+import {
+  IEditSubscriberAccountFormData,
+  ISubscriberAccount,
+} from '@/types/subscriberAccount.types';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { IEditSubscriberAccountFormData } from '@/types/data.types';
 import {
   formatDate,
   getCurrentDateParams,
@@ -51,16 +53,18 @@ const useEditSubscriberAccountForm = (
     isLivingApartment,
     residents,
     period,
-    utr,
-    passport,
-    surname,
-    name,
-    phone,
-    additionalPhone,
-    email,
-    middleName,
-    birthday,
     id,
+    owner: {
+      utr,
+      passport,
+      surname,
+      name,
+      phone,
+      additionalPhone,
+      email,
+      middleName,
+      birthday,
+    },
   } = subscriberAccount;
 
   const { currentDate } = getCurrentDateParams();
@@ -101,7 +105,12 @@ const useEditSubscriberAccountForm = (
       toasts.successToast(Messages.subscriberAccountUpdateSuccess);
     } catch (error) {
       if (error instanceof Error) {
-        toasts.errorToast(error.message);
+        const isDuplicateDocumentErr =
+          error.message.toLowerCase() === 'document already use';
+        const errorMessage = isDuplicateDocumentErr
+          ? Messages.duplicateDocumentErr
+          : error.message;
+        toasts.errorToast(errorMessage);
       }
     }
   };

@@ -23,16 +23,15 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     residents,
     street,
     house,
-    surname,
-    name,
-    middleName,
     isEligibleForBenefit,
     period,
     documents,
+    owner: { surname, name, middleName },
   } = subscriberAccount;
   const apartmentType = apartmentTypes.find(
     ({ value }) => value === String(isLivingApartment)
   )?.title;
+  const apartmentValue = apartment ?? '-';
   const fullName = `${surname} ${name} ${middleName}`;
   const fullStreetName = `${street.type} ${street.name}`;
   const { comment, document } = documents[0] ?? {};
@@ -57,7 +56,7 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
           <TableDataText trimText>{fullStreetName}</TableDataText>
         </TableData>
         <TableData center>{house.number}</TableData>
-        <TableData center>{apartment}</TableData>
+        <TableData center>{apartmentValue}</TableData>
         <TableData center>{apartmentType}</TableData>
         <TableData center>{periodDate}</TableData>
         <TableData center>тариф</TableData>

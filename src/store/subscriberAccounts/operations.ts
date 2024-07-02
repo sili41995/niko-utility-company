@@ -1,6 +1,6 @@
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
 import operationWrapper from '@/store/subscriberAccounts/operationWrapper';
-import { ISubscriberAccount } from '@/types/data.types';
+import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import {
   IAddSubscriberAccountProps,
   IFetchSubscriberAccountsProps,

@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { MiddleName } from '@/types/data.types';
+import { MiddleName } from '@/types/subscriberAccount.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

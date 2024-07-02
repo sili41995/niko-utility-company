@@ -1,5 +1,5 @@
 import { AccountTypes, SectorTypes } from '@/constants';
-import { IAddSubscriberAccountFormData } from '@/types/data.types';
+import { IAddSubscriberAccountFormData } from '@/types/subscriberAccount.types';
 
 const getSubscriberAccountSector = (
   subscriberAccount: IAddSubscriberAccountFormData

@@ -10,7 +10,7 @@ import {
   selectFetchSubscriberAccounts,
   selectIsLoading,
 } from '@/store/subscriberAccounts/selectors';
-import { IAddSubscriberAccountFormData } from '@/types/data.types';
+import { IAddSubscriberAccountFormData } from '@/types/subscriberAccount.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { InputChangeEvent } from '@/types/types';
 import {

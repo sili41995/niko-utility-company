@@ -1,4 +1,4 @@
-import { ISubscriberAccount } from '@/types/data.types';
+import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 
 export interface IProps {
   subscriberAccount: ISubscriberAccount;

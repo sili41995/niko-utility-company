@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { Residents } from '@/types/data.types';
+import { Residents } from '@/types/subscriberAccount.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

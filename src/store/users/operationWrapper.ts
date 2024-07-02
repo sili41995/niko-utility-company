@@ -1,7 +1,6 @@
 import { GetUsersStateFunc, SetUsersStateFunc } from '@/types/usersStore.types';
 import initialState from './initialState';
 import { AxiosError } from 'axios';
-import { toasts } from '@/utils';
 
 const operationWrapper = <T, K>(
   operation: (data: {
@@ -23,7 +22,6 @@ const operationWrapper = <T, K>(
       if (error instanceof AxiosError) {
         const message = error.response?.data.message;
         data.set({ error: message });
-        toasts.errorToast(message);
         throw new Error(message);
       }
     } finally {

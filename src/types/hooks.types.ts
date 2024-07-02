@@ -16,15 +16,17 @@ import {
 import {
   Credentials,
   IGeneralSettings,
-  IAddSubscriberAccountFormData,
   NewUser,
   SelectData,
-  IEditSubscriberAccountFormData,
   INewTariffFormData,
   Tariffs,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
+import {
+  IAddSubscriberAccountFormData,
+  IEditSubscriberAccountFormData,
+} from './subscriberAccount.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;

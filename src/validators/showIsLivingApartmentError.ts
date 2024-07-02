@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { IsLivingApartment } from '@/types/data.types';
+import { IsLivingApartment } from '@/types/subscriberAccount.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { AccountType } from '@/types/data.types';
+import { AccountType } from '@/types/subscriberAccount.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

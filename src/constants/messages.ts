@@ -61,6 +61,7 @@ const enum Messages {
   surnameReqErr = 'Поле Прізвище має бути заповнене',
   nameReqErr = "Поле Ім'я має бути заповнене",
   middleNameReqErr = 'Поле По-батькові має бути заповнене',
+  duplicateDocumentErr = 'Такий документ вже існує',
 }
 
 export default Messages;

@@ -3,13 +3,15 @@ import { ChangeEvent, MouseEvent } from 'react';
 import {
   Houses,
   INewTariffFormData,
-  ISubscriberAccount,
   ITariff,
   SelectData,
   Streets,
-  SubscriberAccounts,
   Tariffs,
 } from './data.types';
+import {
+  ISubscriberAccount,
+  SubscriberAccounts,
+} from './subscriberAccount.types';
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
@@ -37,7 +39,7 @@ export interface INavSection {
 
 export type NavSections = INavSection[];
 
-export interface IPathes {
+export interface IPaths {
   [PagePaths.subscriberAccounts]: string;
   [PagePaths.accounting]: string;
 }

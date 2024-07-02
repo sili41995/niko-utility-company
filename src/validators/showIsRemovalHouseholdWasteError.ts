@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { IsRemovalHouseholdWaste } from '@/types/data.types';
+import { IsRemovalHouseholdWaste } from '@/types/subscriberAccount.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
