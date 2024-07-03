@@ -38,6 +38,9 @@ const enum Messages {
   emptyFilteredDocumentsList = 'Жоден з документів не відповідає пошуковому запиту',
   documentReqErr = 'Поле Документ має бути заповнене',
   commentReqErr = 'Поле Коментар має бути заповнене',
+  periodAddSuccess = 'Період успішно доданий',
+  duplicateDocumentErr = 'Такий документ вже існує',
+  duplicatePeriodErr = 'Період вже існує',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',
@@ -61,7 +64,6 @@ const enum Messages {
   surnameReqErr = 'Поле Прізвище має бути заповнене',
   nameReqErr = "Поле Ім'я має бути заповнене",
   middleNameReqErr = 'Поле По-батькові має бути заповнене',
-  duplicateDocumentErr = 'Такий документ вже існує',
 }
 
 export default Messages;

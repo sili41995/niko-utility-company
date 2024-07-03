@@ -121,3 +121,9 @@ export interface IDocument {
 }
 
 export type Documents = IDocument[];
+
+export interface IPeriod {
+  id: number;
+  isCurrentPeriod: boolean;
+  start: Date;
+}

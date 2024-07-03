@@ -1,2 +1,6 @@
-id,utr,passport,surname,name,middleName,phone,additionalPhone,email,birthday,subscriberAccountId
-1,0123456789,0123456789,А,Олександр,В,+380664804354,380664804354,,,4
+id,subscriberAccount,contract,contractDate,isLivingApartment,residents,period,isRemovalHouseholdWaste,accountType,apartment,isEligibleForBenefit,houseId,streetId,sector,lastCalculate,price
+2,00002,00002-c,2024-06-01,t,2,2024-06-30,t,Фізична особа,1,f,2,1,multiApartment,2024-06-30 11:50:44.96,62
+1,00001,00001-c,2024-06-01,t,3,2024-06-30,t,Фізична особа,,t,2,1,private,2024-06-30 11:50:44.96,90
+3,00003,00003-c,2024-06-01,t,1,2024-06-28,t,Юридична особа,3,f,2,1,other,2024-06-30 11:50:44.96,32
+4,00004,00004-c,2024-07-01,f,2,2024-07-01,t,Юридична особа,,f,2,1,other,,0
+5,00005,00005-c,2024-07-01,t,2,2024-07-01,t,Фізична особа,2,t,2,1,multiApartment,,0
