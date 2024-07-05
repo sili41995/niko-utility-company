@@ -20,6 +20,7 @@ export const CurrentPeriod = styled.p`
 export const Accent = styled.span`
   color: ${({ theme }) => theme.colors.accent};
   font-weight: ${({ theme }) => theme.fontWeight.secondary};
+  text-transform: capitalize;
 `;
 
 export const AddressWrap = styled.div`

@@ -29,7 +29,7 @@ import Select from '../Select';
 const AddSubscriberAccountForm: FC = () => {
   const {
     register,
-    currentDate,
+    currentPeriod,
     firstDayOfMonth,
     apartmentTypes,
     isLoading,
@@ -47,7 +47,7 @@ const AddSubscriberAccountForm: FC = () => {
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <CurrentPeriod>
-        Поточний період: <Accent>{currentDate}</Accent>
+        Поточний період: <Accent>{currentPeriod}</Accent>
       </CurrentPeriod>
       <AddressWrap>
         <Select

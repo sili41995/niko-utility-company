@@ -5,6 +5,7 @@ const enum DateFormats {
   date = 'dd.MM.yyyy',
   validDate = 'yyyy-MM-dd',
   fullDate = 'dd.MM.yyyy HH:mm',
+  period = 'yyyyр. LLLL',
 }
 
 export default DateFormats;

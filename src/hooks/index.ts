@@ -20,3 +20,5 @@ export { default as useAddTariffForm } from './useAddTariffForm';
 export { default as useDocumentsPage } from './useDocumentsPage';
 export { default as useDocumentsFilter } from './useDocumentsFilter';
 export { default as useCalculatePrices } from './useCalculatePrices';
+export { default as useAddPeriod } from './useAddPeriod';
+export { default as useCurrentPeriod } from './useCurrentPeriod';

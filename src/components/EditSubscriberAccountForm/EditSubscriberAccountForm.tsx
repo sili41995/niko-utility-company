@@ -31,7 +31,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   const {
     handleSubmit,
     handleFormSubmit,
-    currentDate,
+    currentPeriod,
     register,
     fullStreetName,
     house,
@@ -61,7 +61,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <CurrentPeriod>
-        Поточний період: <Accent>{currentDate}</Accent>
+        Поточний період: <Accent>{currentPeriod}</Accent>
       </CurrentPeriod>
       <AddressWrap>
         <Input

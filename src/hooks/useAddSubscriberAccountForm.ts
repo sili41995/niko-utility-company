@@ -25,6 +25,7 @@ import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { selectStreets } from '@/store/streets/selectors';
 import useFilterSearchParams from './useFilterSearchParams';
+import useCurrentPeriod from './useCurrentPeriod';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const [isRemovalHouseholdWaste, setIsRemovalHouseholdWaste] =
@@ -57,7 +58,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const addSubscriberAccount = useSubscriberAccountsStore(
     selectAddSubscriberAccount
   );
-  const { currentDate, firstDayOfMonth } = getCurrentDateParams();
+  const { firstDayOfMonth } = getCurrentDateParams();
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
   const streets = useStreetsStore(selectStreets);
   const houses = useHousesStore(selectHouses);
@@ -67,6 +68,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   });
   const streetDefaultValue = streets[0]?.id;
   const accountTypes = getAccountTypesData();
+  const currentPeriod = useCurrentPeriod();
 
   useEffect(() => {
     if (!streetId) {
@@ -133,7 +135,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     register,
     handleSubmit,
     handleFormSubmit,
-    currentDate,
+    currentPeriod,
     firstDayOfMonth,
     isLoading,
     isEligibleForBenefit,

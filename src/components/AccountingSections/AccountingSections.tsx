@@ -6,18 +6,15 @@ import {
   SectionsListItem,
 } from './AccountingSections.styled';
 import CalculatePricesModalWin from '../CalculatePricesModalWin';
-import { usePeriodsStore } from '@/store/store';
-import { selectAddPeriod } from '@/store/periods/selectors';
-import { BtnClickEvent } from '@/types/types';
-import { makeBlur, toasts } from '@/utils';
-import { Messages } from '@/constants';
+import AddPeriodModalWin from '../AddPeriodModalWin';
 
 const AccountingSections: FC = () => {
+  const [showAddPeriodModalWin, setShowAddPeriodModalWin] =
+    useState<boolean>(false);
   const [showTariffsModalWin, setShowTariffsModalWin] =
     useState<boolean>(false);
   const [showCalculatePricesModalWin, setShowCalculatePricesModalWin] =
     useState<boolean>(false);
-  const addPeriod = usePeriodsStore(selectAddPeriod);
 
   const setTariffsModalWinState = () => {
     setShowTariffsModalWin((prevState) => !prevState);
@@ -27,29 +24,15 @@ const AccountingSections: FC = () => {
     setShowCalculatePricesModalWin((prevState) => !prevState);
   };
 
-  const onAddPeriodBtnClick = async (e: BtnClickEvent) => {
-    makeBlur(e.currentTarget);
-
-    try {
-      await addPeriod();
-      toasts.successToast(Messages.periodAddSuccess);
-    } catch (error) {
-      if (error instanceof Error) {
-        const isDuplicatePeriodErr =
-          error.message.toLowerCase() === 'period already use';
-        const errorMessage = isDuplicatePeriodErr
-          ? Messages.duplicatePeriodErr
-          : error.message;
-        toasts.errorToast(errorMessage);
-      }
-    }
+  const setAddPeriodModalWinState = () => {
+    setShowAddPeriodModalWin((prevState) => !prevState);
   };
 
   return (
     <>
       <SectionsList>
         <SectionsListItem>
-          <SectionBtn type='button' onClick={onAddPeriodBtnClick}>
+          <SectionBtn type='button' onClick={setAddPeriodModalWinState}>
             Новий період
           </SectionBtn>
         </SectionsListItem>
@@ -71,6 +54,9 @@ const AccountingSections: FC = () => {
         <CalculatePricesModalWin
           setModalWinState={setCalculatePricesModalWinState}
         />
+      )}
+      {showAddPeriodModalWin && (
+        <AddPeriodModalWin setModalWinState={setAddPeriodModalWinState} />
       )}
     </>
   );

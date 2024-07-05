@@ -1,16 +1,21 @@
-import { useSubscriberAccountsStore } from '@/store/store';
+import { usePeriodsStore, useSubscriberAccountsStore } from '@/store/store';
 import {
   selectTotalCount,
   selectError,
   selectFetchSubscriberAccounts,
-  selectIsLoaded,
-  selectIsLoading,
+  selectIsLoaded as selectIsLoadedSubscriberAccounts,
+  selectIsLoading as selectIsLoadingSubscriberAccounts,
   selectSubscriberAccounts,
   selectFilteredCount,
 } from '@/store/subscriberAccounts/selectors';
 import { IUseSubscriberAccountsPage } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
 import useFilterSearchParams from './useFilterSearchParams';
+import {
+  selectFetchCurrentPeriod,
+  selectIsLoaded as selectIsLoadedPeriods,
+  selectIsLoading as selectIsLoadingPeriods,
+} from '@/store/periods/selectors';
 
 const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
@@ -23,11 +28,24 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const fetchSubscriberAccounts = useSubscriberAccountsStore(
     selectFetchSubscriberAccounts
   );
-  const isLoading = useSubscriberAccountsStore(selectIsLoading);
-  const isLoaded = useSubscriberAccountsStore(selectIsLoaded);
-  const isLoadingData = !isLoaded && isLoading;
-  const showSubscriberAccountsTable = Boolean(isLoaded && totalCount);
+  const isLoadingSubscriberAccounts = useSubscriberAccountsStore(
+    selectIsLoadingSubscriberAccounts
+  );
+  const isLoadedSubscriberAccounts = useSubscriberAccountsStore(
+    selectIsLoadedSubscriberAccounts
+  );
+  const isLoadingSubscriberAccountsData =
+    !isLoadedSubscriberAccounts && isLoadingSubscriberAccounts;
+  const isLoadingPeriods = usePeriodsStore(selectIsLoadingPeriods);
+  const isLoadedPeriods = usePeriodsStore(selectIsLoadedPeriods);
+  const isLoadingCurrentPeriodData = !isLoadedPeriods && isLoadingPeriods;
+  const isLoadingData =
+    isLoadingSubscriberAccountsData || isLoadingCurrentPeriodData;
+  const showSubscriberAccountsTable = Boolean(
+    isLoadedSubscriberAccounts && totalCount
+  );
   const error = useSubscriberAccountsStore(selectError);
+  const fetchCurrentPeriod = usePeriodsStore(selectFetchCurrentPeriod);
   const {
     account,
     apartment,
@@ -67,6 +85,10 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     type,
   ]);
 
+  useEffect(() => {
+    fetchCurrentPeriod();
+  }, [fetchCurrentPeriod]);
+
   const setModalWinState = () => {
     setShowModalWin((prevState) => !prevState);
   };
@@ -80,7 +102,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     error,
     setModalWinState,
     showModalWin,
-    isLoading,
+    isLoading: isLoadingSubscriberAccountsData,
     isEmptyFilteredList,
   };
 };

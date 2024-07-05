@@ -5,7 +5,6 @@ import {
 import { SubmitHandler, useForm } from 'react-hook-form';
 import {
   formatDate,
-  getCurrentDateParams,
   getFilteredSEditSubscriberAccountFormData,
   toasts,
 } from '@/utils';
@@ -24,6 +23,7 @@ import {
 import { useEffect, useState } from 'react';
 import { IUseEditSubscriberAccountForm } from '@/types/hooks.types';
 import { validateEditSubscriberAccountForm } from '@/validators';
+import useCurrentPeriod from './useCurrentPeriod';
 
 const useEditSubscriberAccountForm = (
   subscriberAccount: ISubscriberAccount
@@ -66,8 +66,6 @@ const useEditSubscriberAccountForm = (
       birthday,
     },
   } = subscriberAccount;
-
-  const { currentDate } = getCurrentDateParams();
   const fullStreetName = `${street.type} ${street.name}`;
   const contractDateValue = formatDate({
     date: contractDate,
@@ -86,6 +84,7 @@ const useEditSubscriberAccountForm = (
         dateFormat: DateFormats.validDate,
       })
     : '';
+  const currentPeriod = useCurrentPeriod();
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);
@@ -136,7 +135,7 @@ const useEditSubscriberAccountForm = (
     handleFormSubmit,
     register,
     apartment: apartment ?? '',
-    currentDate,
+    currentPeriod,
     fullStreetName,
     house: house.number,
     apartmentType,
