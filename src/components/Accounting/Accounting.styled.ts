@@ -8,4 +8,5 @@ export const Container = styled.div`
 export const StatisticsWrap = styled.div`
   flex-grow: 1;
   background-color: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.spacing(4)};
 `;

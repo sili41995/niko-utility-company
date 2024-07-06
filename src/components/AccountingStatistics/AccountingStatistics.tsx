@@ -1,0 +1,77 @@
+import { FC } from 'react';
+import {
+  List,
+  ListItem,
+  StatisticsItem,
+  Title,
+  Value,
+} from './AccountingStatistics.styled';
+
+const AccountingStatistics: FC = () => {
+  return (
+    <List>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Всього а/р:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Всього мешканців:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Сальдо початок:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Нараховано:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Пеня:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Коригування:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Оплати:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Пільги:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Субсидії:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+      <ListItem>
+        <StatisticsItem>
+          <Title>Сальдо кінець:</Title>
+          <Value>0000</Value>
+        </StatisticsItem>
+      </ListItem>
+    </List>
+  );
+};
+
+export default AccountingStatistics;
