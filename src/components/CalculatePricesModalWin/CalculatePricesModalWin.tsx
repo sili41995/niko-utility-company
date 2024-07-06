@@ -16,7 +16,7 @@ import Loader from '../Loader';
 
 const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
   const {
-    currentDate,
+    currentPeriod,
     lastPricesCalculate,
     isLoading,
     calculatePrices,
@@ -33,7 +33,7 @@ const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
           ) : (
             <>
               <Text>
-                Поточний період: <Accent>{currentDate}</Accent>
+                Поточний період: <Accent>{currentPeriod}</Accent>
               </Text>
               <Text>
                 Останнє нарахування: <Date>{lastPricesCalculate}</Date>

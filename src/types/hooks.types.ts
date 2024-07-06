@@ -294,7 +294,7 @@ export interface IUseDocumentsFilter {
 }
 
 export interface IUseCalculatePrices {
-  currentDate: string;
+  currentPeriod: string;
   lastPricesCalculate: string;
   isLoading: boolean;
   calculatePrices: () => Promise<void>;

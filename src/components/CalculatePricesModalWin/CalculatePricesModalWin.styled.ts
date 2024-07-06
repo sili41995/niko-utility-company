@@ -24,6 +24,7 @@ export const Text = styled.p`
 export const Accent = styled.span`
   color: ${({ theme }) => theme.colors.accent};
   font-weight: ${({ theme }) => theme.fontWeight.secondary};
+  text-transform: capitalize;
 `;
 
 export const Date = styled.span`

@@ -86,13 +86,6 @@ export interface IRegExp {
   login: RegExp;
 }
 
-export interface IGetCurrentDateParams {
-  currentMonth: string;
-  currentYear: string;
-  firstDayOfMonth: string;
-  currentDate: string;
-}
-
 export interface IApartmentType {
   title: string;
   value: BooleanValue;

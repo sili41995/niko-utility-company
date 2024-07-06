@@ -1,4 +1,4 @@
-import { formatDate, getCurrentDateParams, toasts } from '@/utils';
+import { formatDate, toasts } from '@/utils';
 import { useSubscriberAccountsStore } from '@/store/store';
 import {
   selectError,
@@ -10,6 +10,7 @@ import {
 import { DateFormats, Messages } from '@/constants';
 import { IUseCalculatePrices } from '@/types/hooks.types';
 import { useEffect } from 'react';
+import useCurrentPeriod from './useCurrentPeriod';
 
 const useCalculatePrices = (): IUseCalculatePrices => {
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
@@ -17,13 +18,13 @@ const useCalculatePrices = (): IUseCalculatePrices => {
   const calculatePrices = useSubscriberAccountsStore(selectCalculatePrices);
   const lastCalculate = useSubscriberAccountsStore(selectLastCalculate);
   const fetchPrices = useSubscriberAccountsStore(selectFetchPrices);
+  const currentPeriod = useCurrentPeriod();
   const lastPricesCalculate = lastCalculate
     ? formatDate({
         date: lastCalculate,
         dateFormat: DateFormats.fullDate,
       })
     : '-';
-  const { currentDate } = getCurrentDateParams();
 
   const calculate = async (): Promise<void> => {
     try {
@@ -41,7 +42,7 @@ const useCalculatePrices = (): IUseCalculatePrices => {
   }, [fetchPrices]);
 
   return {
-    currentDate,
+    currentPeriod,
     lastPricesCalculate,
     isLoading,
     calculatePrices: calculate,

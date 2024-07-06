@@ -1,4 +1,9 @@
-import { CheckboxNames, Messages, apartmentTypes } from '@/constants';
+import {
+  CheckboxNames,
+  DateFormats,
+  Messages,
+  apartmentTypes,
+} from '@/constants';
 import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
 import {
   useHousesStore,
@@ -15,8 +20,8 @@ import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { InputChangeEvent } from '@/types/types';
 import {
   filterAddSubscriberAccountData,
+  formatDate,
   getAccountTypesData,
-  getCurrentDateParams,
   getSubscriberAccountSelectData,
   toasts,
 } from '@/utils';
@@ -58,7 +63,10 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const addSubscriberAccount = useSubscriberAccountsStore(
     selectAddSubscriberAccount
   );
-  const { firstDayOfMonth } = getCurrentDateParams();
+  const firstDayOfMonth = formatDate({
+    date: new Date(),
+    dateFormat: DateFormats.monthStart,
+  });
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
   const streets = useStreetsStore(selectStreets);
   const houses = useHousesStore(selectHouses);
