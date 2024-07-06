@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import {
+  ExtendedInfo,
   List,
   ListItem,
   StatisticsItem,
@@ -23,10 +24,13 @@ const AccountingStatistics: FC = () => {
         </StatisticsItem>
       </ListItem>
       <ListItem>
-        <StatisticsItem>
-          <Title>Сальдо початок:</Title>
+        <ExtendedInfo>
+          <StatisticsItem>
+            <Title>Сальдо початок:</Title>
+            <Value>0000</Value>
+          </StatisticsItem>
           <Value>0000</Value>
-        </StatisticsItem>
+        </ExtendedInfo>
       </ListItem>
       <ListItem>
         <StatisticsItem>
@@ -65,10 +69,13 @@ const AccountingStatistics: FC = () => {
         </StatisticsItem>
       </ListItem>
       <ListItem>
-        <StatisticsItem>
-          <Title>Сальдо кінець:</Title>
-          <Value>0000</Value>
-        </StatisticsItem>
+        <ExtendedInfo>
+          <StatisticsItem>
+            <Title>Сальдо кінець:</Title>
+            <Value>0000</Value>
+          </StatisticsItem>
+          <Value>00000000</Value>
+        </ExtendedInfo>
       </ListItem>
     </List>
   );

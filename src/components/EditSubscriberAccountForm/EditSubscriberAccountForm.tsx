@@ -8,8 +8,6 @@ import {
   TypesWrap,
   ServicesWrap,
   Form,
-  CurrentPeriod,
-  Accent,
   ServiceTitleWrap,
   SectionTitle,
   ServicesList,
@@ -26,12 +24,12 @@ import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Select from '@/components/Select';
 import { IProps } from './EditSubscriberAccountForm.types';
 import { useEditSubscriberAccountForm } from '@/hooks';
+import CurrentPeriod from '../CurrentPeriod';
 
 const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   const {
     handleSubmit,
     handleFormSubmit,
-    currentPeriod,
     register,
     fullStreetName,
     house,
@@ -60,9 +58,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
-      <CurrentPeriod>
-        Поточний період: <Accent>{currentPeriod}</Accent>
-      </CurrentPeriod>
+      <CurrentPeriod />
       <AddressWrap>
         <Input
           settings={{ ...register('street') }}

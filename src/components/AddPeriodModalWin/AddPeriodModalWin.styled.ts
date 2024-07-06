@@ -20,9 +20,3 @@ export const Text = styled.p`
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;
-
-export const Accent = styled.span`
-  color: ${({ theme }) => theme.colors.accent};
-  font-weight: ${({ theme }) => theme.fontWeight.secondary};
-  text-transform: capitalize;
-`;

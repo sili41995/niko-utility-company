@@ -3,7 +3,6 @@ import { IProps } from './CalculatePricesModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import {
-  Accent,
   Container,
   Date,
   Text,
@@ -13,15 +12,11 @@ import ActionBtn from '@/components/ActionBtn';
 import ErrorMessage from '@/components/ErrorMessage';
 import { useCalculatePrices } from '@/hooks';
 import Loader from '@/components/Loader';
+import CurrentPeriod from '../CurrentPeriod';
 
 const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const {
-    currentPeriod,
-    lastPricesCalculate,
-    isLoading,
-    calculatePrices,
-    error,
-  } = useCalculatePrices();
+  const { lastPricesCalculate, isLoading, calculatePrices, error } =
+    useCalculatePrices();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -32,9 +27,7 @@ const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
             <Loader />
           ) : (
             <>
-              <Text>
-                Поточний період: <Accent>{currentPeriod}</Accent>
-              </Text>
+              <CurrentPeriod />
               <Text>
                 Останнє нарахування: <Date>{lastPricesCalculate}</Date>
               </Text>

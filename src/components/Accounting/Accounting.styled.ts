@@ -6,7 +6,11 @@ export const Container = styled.div`
 `;
 
 export const StatisticsWrap = styled.div`
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)};
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing(4)};
+  border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
 `;

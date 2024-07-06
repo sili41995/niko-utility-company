@@ -1,13 +1,10 @@
 import { FC } from 'react';
 import TariffsModalWin from '@/components/TariffsModalWin';
-import {
-  SectionBtn,
-  SectionsList,
-  SectionsListItem,
-} from './AccountingSections.styled';
+import { SectionsList, SectionsListItem } from './AccountingSections.styled';
 import CalculatePricesModalWin from '@/components/CalculatePricesModalWin';
 import AddPeriodModalWin from '@/components/AddPeriodModalWin';
 import { useAccountingSections } from '@/hooks';
+import AccountingSectionsBtn from '../AccountingSectionsBtn';
 // import PayAbankModalWin from '@/components./PayAbankModalWin';
 // import PayOshchadbankModalWin from '@/components/PayOshchadbankModalWin';
 // import PayPrivateModalWin from '@/components/PayPrivateModalWin';
@@ -50,73 +47,76 @@ const AccountingSections: FC = () => {
     <>
       <SectionsList>
         <SectionsListItem>
-          <SectionBtn type='button' onClick={setAddPeriodModalWinState}>
-            Новий період
-          </SectionBtn>
+          <AccountingSectionsBtn
+            onClick={setAddPeriodModalWinState}
+            title='Новий період'
+          />
         </SectionsListItem>
         <SectionsListItem>
-          <SectionBtn type='button' onClick={setCalculatePricesModalWinState}>
-            Розрахунок
-          </SectionBtn>
+          <AccountingSectionsBtn
+            onClick={setCalculatePricesModalWinState}
+            title='Розрахунок'
+          />
         </SectionsListItem>
         {/* <SectionsListItem>
-          <SectionBtn
-            type='button'
+            <AccountingSectionsBtn
             onClick={setAccrualsAdjustmentModalWinState}
-          >
-            Коригування нарахувань
-          </SectionBtn>
+            title='Коригування нарахувань'
+          />
         </SectionsListItem> */}
         {/* <SectionsListItem>
-          <SectionBtn
-            type='button'
+            <AccountingSectionsBtn
             onClick={setPaymentsAdjustmentModalWinState}
-          >
-            Коригування оплат
-          </SectionBtn>
+            title='Коригування оплат'
+          />
         </SectionsListItem> */}
         {/* <SectionsListItem>
-          <SectionBtn type='button' onClick={setPaymentsModalWinState}>
-            Оплати (стрічка)
-          </SectionBtn>
+            <AccountingSectionsBtn
+            onClick={setPaymentsModalWinState}
+            title='Оплати (стрічка)'
+          />
         </SectionsListItem> */}
         {/* <SectionsListItem>
-          <SectionBtn
-            type='button'
+                    <AccountingSectionsBtn
             onClick={setBenefitsAdjustmentModalWinState}
-          >
-            Коригування пільг
-          </SectionBtn>
+            title='Коригування пільг'
+          />
         </SectionsListItem> */}
         <SectionsListItem>
-          <SectionBtn type='button' onClick={setTariffsModalWinState}>
-            Тарифи
-          </SectionBtn>
+          <AccountingSectionsBtn
+            onClick={setTariffsModalWinState}
+            title='Тарифи'
+          />
         </SectionsListItem>
         {/* <SectionsListItem>
-          <SectionBtn type='button' onClick={setAccountsMessageModalWinState}>
-            Рахунки-повідомлення
-          </SectionBtn>
+        <AccountingSectionsBtn
+            onClick={setAccountsMessageModalWinState}
+            title='Рахунки-повідомлення'
+          />
         </SectionsListItem> */}
         {/* <SectionsListItem>
-          <SectionBtn type='button' onClick={setPayPostageModalWinState}>
-            Оплати Пошта
-          </SectionBtn>
+        <AccountingSectionsBtn
+            onClick={setPayPostageModalWinState}
+            title='Оплати Пошта'
+          />
         </SectionsListItem> */}
         {/* <SectionsListItem>
-          <SectionBtn type='button' onClick={setPayPrivateModalWinState}>
-            Оплати Приватбанк
-          </SectionBtn>
+                    <AccountingSectionsBtn
+            onClick={setPayPrivateModalWinState}
+            title='Оплати Приватбанк'
+          />
         </SectionsListItem> */}
         {/* <SectionsListItem>
-          <SectionBtn type='button' onClick={setPayOshchadbankModalWinState}>
-            Оплати Ощадбанк
-          </SectionBtn>
+                            <AccountingSectionsBtn
+            onClick={setPayOshchadbankModalWinState}
+            title='Оплати Ощадбанк'
+          />
         </SectionsListItem> */}
         {/* <SectionsListItem>
-          <SectionBtn type='button' onClick={setPayAbankModalWinState}>
-            Оплати Абанк
-          </SectionBtn>
+                            <AccountingSectionsBtn
+            onClick={setPayAbankModalWinState}
+            title='Оплати Абанк'
+          />
         </SectionsListItem> */}
       </SectionsList>
       {showTariffsModalWin && (

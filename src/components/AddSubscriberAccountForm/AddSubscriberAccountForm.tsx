@@ -9,8 +9,6 @@ import {
   TypesWrap,
   ServicesWrap,
   Form,
-  CurrentPeriod,
-  Accent,
   ServiceTitleWrap,
   SectionTitle,
   ServicesList,
@@ -25,11 +23,11 @@ import {
 import Checkbox from '@/components/Checkbox';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Select from '@/components/Select';
+import CurrentPeriod from '../CurrentPeriod';
 
 const AddSubscriberAccountForm: FC = () => {
   const {
     register,
-    currentPeriod,
     firstDayOfMonth,
     apartmentTypes,
     isLoading,
@@ -46,9 +44,7 @@ const AddSubscriberAccountForm: FC = () => {
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
-      <CurrentPeriod>
-        Поточний період: <Accent>{currentPeriod}</Accent>
-      </CurrentPeriod>
+      <CurrentPeriod />
       <AddressWrap>
         <Select
           label='Вулиця:'

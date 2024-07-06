@@ -1,25 +1,18 @@
-import { DateFormats, Messages } from '@/constants';
+import { Messages } from '@/constants';
 import {
   selectAddPeriod,
-  selectCurrentPeriod,
   selectError,
   selectIsLoading,
 } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
 import { IUseAddPeriod } from '@/types/hooks.types';
 import { BtnClickEvent } from '@/types/types';
-import { formatDate, makeBlur, toasts } from '@/utils';
+import { makeBlur, toasts } from '@/utils';
 
 const useAddPeriod = (): IUseAddPeriod => {
   const addPeriod = usePeriodsStore(selectAddPeriod);
   const isLoading = usePeriodsStore(selectIsLoading);
   const error = usePeriodsStore(selectError);
-  const { start = new Date() } = usePeriodsStore(selectCurrentPeriod) || {};
-
-  const currentPeriodDate = formatDate({
-    date: start,
-    dateFormat: DateFormats.period,
-  });
 
   const addNewPeriod = async () => {
     try {
@@ -41,7 +34,7 @@ const useAddPeriod = (): IUseAddPeriod => {
     makeBlur(e.currentTarget);
     addNewPeriod();
   };
-  return { currentPeriodDate, isLoading, error, onAddPeriodBtnClick };
+  return { isLoading, error, onAddPeriodBtnClick };
 };
 
 export default useAddPeriod;

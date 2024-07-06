@@ -4,48 +4,31 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  & > button {
-    margin-top: ${({ theme }) => theme.spacing(6)};
-  }
-`;
-
-export const CurrentPeriod = styled.p`
-  color: ${({ theme }) => theme.colors.black};
-  font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: ${({ theme }) => theme.fontWeight.primary};
-`;
-
-export const Accent = styled.span`
-  color: ${({ theme }) => theme.colors.accent};
-  font-weight: ${({ theme }) => theme.fontWeight.secondary};
-  text-transform: capitalize;
+  gap: ${({ theme }) => theme.spacing(6)};
 `;
 
 export const AddressWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
-  margin-top: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const SubscriberAccountContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
-  margin-top: ${({ theme }) => theme.spacing(4)};
 `;
 
 export const TypesWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
-  margin-top: ${({ theme }) => theme.spacing(4)};
 `;
 
 export const ServicesWrap = styled.div`
-  margin-top: ${({ theme }) => theme.spacing(6)};
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing()};
 `;
 
 export const ServiceTitleWrap = styled.div`
@@ -61,9 +44,7 @@ export const SectionTitle = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.secondary};
 `;
 
-export const ServicesList = styled.div`
-  margin-top: ${({ theme }) => theme.spacing(4)};
-`;
+export const ServicesList = styled.div``;
 
 export const ServicesListTitleWrap = styled.div`
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};
@@ -92,15 +73,12 @@ export const ServiceName = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.primary};
 `;
 
-export const PersonParametersWrap = styled.div`
-  margin-top: ${({ theme }) => theme.spacing(6)};
-`;
+export const PersonParametersWrap = styled.div``;
 
 export const PersonParameters = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
-  margin-top: ${({ theme }) => theme.spacing(4)};
 `;
 
 export const CheckboxWrap = styled.div`

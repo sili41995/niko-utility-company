@@ -97,7 +97,6 @@ export interface IUseAddSubscriberAccountForm {
   handleSubmit: UseFormHandleSubmit<IAddSubscriberAccountFormData, undefined>;
   handleFormSubmit: SubmitHandler<IAddSubscriberAccountFormData>;
   register: UseFormRegister<IAddSubscriberAccountFormData>;
-  currentPeriod: string;
   firstDayOfMonth: string;
   isLoading: boolean;
   isRemovalHouseholdWaste: boolean;
@@ -197,7 +196,6 @@ export interface IUseEditSubscriberAccountForm {
   handleSubmit: UseFormHandleSubmit<IEditSubscriberAccountFormData, undefined>;
   handleFormSubmit: SubmitHandler<IEditSubscriberAccountFormData>;
   register: UseFormRegister<IEditSubscriberAccountFormData>;
-  currentPeriod: string;
   fullStreetName: string;
   house: string;
   apartment: string;
@@ -294,7 +292,6 @@ export interface IUseDocumentsFilter {
 }
 
 export interface IUseCalculatePrices {
-  currentPeriod: string;
   lastPricesCalculate: string;
   isLoading: boolean;
   calculatePrices: () => Promise<void>;
@@ -302,7 +299,6 @@ export interface IUseCalculatePrices {
 }
 
 export interface IUseAddPeriod {
-  currentPeriodDate: string;
   isLoading: boolean;
   error: string | null;
   onAddPeriodBtnClick: OnBtnClickFunc;

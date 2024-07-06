@@ -28,5 +28,12 @@ export const Value = styled.p`
   color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
-  font-weight: ${({ theme }) => theme.fontWeight.secondary};
+  font-weight: ${({ theme }) => theme.fontWeight.other};
+`;
+
+export const ExtendedInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 600px;
 `;

@@ -10,7 +10,6 @@ import {
 import { DateFormats, Messages } from '@/constants';
 import { IUseCalculatePrices } from '@/types/hooks.types';
 import { useEffect } from 'react';
-import useCurrentPeriod from './useCurrentPeriod';
 
 const useCalculatePrices = (): IUseCalculatePrices => {
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
@@ -18,7 +17,6 @@ const useCalculatePrices = (): IUseCalculatePrices => {
   const calculatePrices = useSubscriberAccountsStore(selectCalculatePrices);
   const lastCalculate = useSubscriberAccountsStore(selectLastCalculate);
   const fetchPrices = useSubscriberAccountsStore(selectFetchPrices);
-  const currentPeriod = useCurrentPeriod();
   const lastPricesCalculate = lastCalculate
     ? formatDate({
         date: lastCalculate,
@@ -42,7 +40,6 @@ const useCalculatePrices = (): IUseCalculatePrices => {
   }, [fetchPrices]);
 
   return {
-    currentPeriod,
     lastPricesCalculate,
     isLoading,
     calculatePrices: calculate,

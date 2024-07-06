@@ -23,7 +23,6 @@ import {
 import { useEffect, useState } from 'react';
 import { IUseEditSubscriberAccountForm } from '@/types/hooks.types';
 import { validateEditSubscriberAccountForm } from '@/validators';
-import useCurrentPeriod from './useCurrentPeriod';
 
 const useEditSubscriberAccountForm = (
   subscriberAccount: ISubscriberAccount
@@ -84,7 +83,6 @@ const useEditSubscriberAccountForm = (
         dateFormat: DateFormats.validDate,
       })
     : '';
-  const currentPeriod = useCurrentPeriod();
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);
@@ -135,7 +133,6 @@ const useEditSubscriberAccountForm = (
     handleFormSubmit,
     register,
     apartment: apartment ?? '',
-    currentPeriod,
     fullStreetName,
     house: house.number,
     apartmentType,
