@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import Input from '../Input';
+import Input from '@/components/Input';
 import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
-import Select from '../Select';
+import Select from '@/components/Select';
 import { useSubscriberAccountsFilter } from '@/hooks';
 import { Container } from './SubscriberAccountsFilter.styled.ts';
-import ClearFilterBtn from '../ClearFilterBtn';
+import ClearFilterBtn from '@/components/ClearFilterBtn';
 
 const SubscriberAccountsFilter: FC = () => {
   const {

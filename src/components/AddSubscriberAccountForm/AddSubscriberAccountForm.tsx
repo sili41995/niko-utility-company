@@ -1,6 +1,6 @@
 import { useAddSubscriberAccountForm } from '@/hooks';
 import { FC } from 'react';
-import Input from '../Input';
+import Input from '@/components/Input';
 import { CheckboxNames, InputTypes, regExp } from '@/constants';
 import {
   PersonParameters,
@@ -22,9 +22,9 @@ import {
   CheckboxWrap,
   CheckboxName,
 } from './AddSubscriberAccountForm.styled';
-import Checkbox from '../Checkbox';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Select from '../Select';
+import Checkbox from '@/components/Checkbox';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
+import Select from '@/components/Select';
 
 const AddSubscriberAccountForm: FC = () => {
   const {

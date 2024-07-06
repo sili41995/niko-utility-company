@@ -8,7 +8,7 @@ import {
 } from './DocumentsTable.styled';
 import { useDocumentsStore } from '@/store/store';
 import { selectDocuments } from '@/store/documents/selectors';
-import DocumentsTableRow from '../DocumentsTableRow';
+import DocumentsTableRow from '@/components/DocumentsTableRow';
 
 const DocumentsTable: FC = () => {
   const documents = useDocumentsStore(selectDocuments);

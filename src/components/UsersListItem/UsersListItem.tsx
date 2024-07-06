@@ -11,7 +11,7 @@ import {
   Login,
   AccessName,
 } from './UsersListItem.styled';
-import Checkbox from '../Checkbox';
+import Checkbox from '@/components/Checkbox';
 import { AccessKeys } from '@/constants';
 import { useUser } from '@/hooks';
 

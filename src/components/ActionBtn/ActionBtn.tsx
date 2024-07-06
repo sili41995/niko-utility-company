@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './ActionBtn.types';
-import Loader from '../Loader';
+import Loader from '@/components/Loader';
 import { BtnTypes } from '@/constants';
 import { Button } from './ActionBtn.styled';
 

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Input from '../Input';
+import Input from '@/components/Input';
 import { CheckboxNames, InputTypes, apartmentTypes, regExp } from '@/constants';
 import {
   PersonParameters,
@@ -21,9 +21,9 @@ import {
   CheckboxWrap,
   CheckboxName,
 } from './EditSubscriberAccountForm.styled';
-import Checkbox from '../Checkbox';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Select from '../Select';
+import Checkbox from '@/components/Checkbox';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
+import Select from '@/components/Select';
 import { IProps } from './EditSubscriberAccountForm.types';
 import { useEditSubscriberAccountForm } from '@/hooks';
 

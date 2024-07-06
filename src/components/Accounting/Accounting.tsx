@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import AccountingSections from '../AccountingSections';
+import AccountingSections from '@/components/AccountingSections';
 import { Container, StatisticsWrap } from './Accounting.styled';
 
 const Accounting: FC = () => {

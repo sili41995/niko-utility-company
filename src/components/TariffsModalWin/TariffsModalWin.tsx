@@ -1,11 +1,11 @@
 import { FC, useEffect } from 'react';
-import ModalWin from '../ModalWin';
+import ModalWin from '@/components/ModalWin';
 import { IProps } from './Tariffs.types';
 import { Container, ContentWrap } from './TariffsModalWin.styled';
-import FormDataTitle from '../FormDataTitle';
-import ErrorMessage from '../ErrorMessage';
-import Loader from '../Loader';
-import TariffsList from '../TariffsList';
+import FormDataTitle from '@/components/FormDataTitle';
+import ErrorMessage from '@/components/ErrorMessage';
+import Loader from '@/components/Loader';
+import TariffsList from '@/components/TariffsList';
 import { useTariffsStore } from '@/store/store';
 import {
   selectError,

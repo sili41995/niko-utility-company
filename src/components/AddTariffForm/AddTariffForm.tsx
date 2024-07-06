@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { IProps } from './AddTariffForm.types';
 import { FormTypes, InputTypes } from '@/constants';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Input from '../Input';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
+import Input from '@/components/Input';
 import { Form } from './AddTariffForm.styled';
 import { useAddTariffForm } from '@/hooks';
 

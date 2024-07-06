@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { List } from './UsersList.styled';
 import { useUsersStore } from '@/store/store';
 import { selectUsers } from '@/store/users/selectors';
-import UsersListItem from '../UsersListItem';
+import UsersListItem from '@/components/UsersListItem';
 
 const UsersList: FC = () => {
   const users = useUsersStore(selectUsers);

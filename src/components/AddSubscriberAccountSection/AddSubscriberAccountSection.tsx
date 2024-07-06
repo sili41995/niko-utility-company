@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import Loader from '../Loader';
-import ErrorMessage from '../ErrorMessage';
-import AddSubscriberAccountForm from '../AddSubscriberAccountForm';
+import Loader from '@/components/Loader';
+import ErrorMessage from '@/components/ErrorMessage';
+import AddSubscriberAccountForm from '@/components/AddSubscriberAccountForm';
 import { useStreetsData } from '@/hooks';
 import { Container, ContentWrap } from './AddSubscriberAccountSection.styled';
-import FormDataTitle from '../FormDataTitle';
+import FormDataTitle from '@/components/FormDataTitle';
 
 const AddSubscriberAccountSection: FC = () => {
   const { isLoadingData, housesError, streetsError } = useStreetsData();

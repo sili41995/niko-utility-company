@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import ModalWin from '../ModalWin';
+import ModalWin from '@/components/ModalWin';
 import { IProps } from './EditSubscriberAccountModalWin.types';
-import FormDataTitle from '../FormDataTitle';
+import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentWrap } from './EditSubscriberAccountModalWin.styled';
-import EditSubscriberAccountForm from '../EditSubscriberAccountForm';
+import EditSubscriberAccountForm from '@/components/EditSubscriberAccountForm';
 
 const EditSubscriberAccountModalWin: FC<IProps> = ({
   setModalWinState,

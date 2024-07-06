@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import Input from '../Input';
+import Input from '@/components/Input';
 import { InputLabels, InputTypes, regExp } from '@/constants';
 import { Form } from './GeneralSettingsForm.styled';
-import TextArea from '../TextArea';
+import TextArea from '@/components/TextArea';
 import { useGeneralSettingsForm } from '@/hooks';
-import SubmitFormBtn from '../SubmitFormBtn';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
 import { IProps } from './GeneralSettingsForm.types';
 
 const GeneralSettingsForm: FC<IProps> = ({ id }) => {

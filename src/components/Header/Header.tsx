@@ -16,8 +16,8 @@ import {
   Title,
   TitleWrap,
 } from './Header.styled';
-import Container from '../Container';
-import SettingsModalWin from '../SettingsModalWin';
+import Container from '@/components/Container';
+import SettingsModalWin from '@/components/SettingsModalWin';
 import { useHeader } from '@/hooks';
 
 const Header: FC = () => {

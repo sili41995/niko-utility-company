@@ -6,7 +6,7 @@ import {
 } from '@/types/generalSettingsStore.types';
 import initialState from './initialState';
 import { IGeneralSettings } from '@/types/data.types';
-import setState from '../setState';
+import setState from '@/store/setState';
 import { fetchGeneralSettings, updateGeneralSettings } from './operations';
 
 const generalSettingsSlice = (

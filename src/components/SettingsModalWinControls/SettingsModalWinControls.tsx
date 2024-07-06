@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import SettingsModalWinBtn from '../SettingsModalWinBtn';
+import SettingsModalWinBtn from '@/components/SettingsModalWinBtn';
 import { InputTypes, SettingsCategories } from '@/constants';
 import { IProps } from './SettingsModalWinControls.types';
 import { Container, Form, Title } from './SettingsModalWinControls.styled';

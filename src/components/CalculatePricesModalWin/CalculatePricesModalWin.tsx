@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './CalculatePricesModalWin.types';
-import ModalWin from '../ModalWin';
-import FormDataTitle from '../FormDataTitle';
+import ModalWin from '@/components/ModalWin';
+import FormDataTitle from '@/components/FormDataTitle';
 import {
   Accent,
   Container,
@@ -9,10 +9,10 @@ import {
   Text,
   ContentWrap,
 } from './CalculatePricesModalWin.styled';
-import ActionBtn from '../ActionBtn';
-import ErrorMessage from '../ErrorMessage';
+import ActionBtn from '@/components/ActionBtn';
+import ErrorMessage from '@/components/ErrorMessage';
 import { useCalculatePrices } from '@/hooks';
-import Loader from '../Loader';
+import Loader from '@/components/Loader';
 
 const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
   const {

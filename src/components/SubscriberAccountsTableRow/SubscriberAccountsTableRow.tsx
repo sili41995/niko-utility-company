@@ -11,7 +11,7 @@ import {
 import { DateFormats, IconSizes, apartmentTypes } from '@/constants';
 import { formatDate } from '@/utils';
 import { MdEditNote } from 'react-icons/md';
-import EditSubscriberAccountModalWin from '../EditSubscriberAccountModalWin';
+import EditSubscriberAccountModalWin from '@/components/EditSubscriberAccountModalWin';
 
 const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
   const [editAccount, setEditAccount] = useState<boolean>(false);

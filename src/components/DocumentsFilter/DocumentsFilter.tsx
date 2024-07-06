@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import Input from '../Input';
+import Input from '@/components/Input';
 import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
 import { useDocumentsFilter } from '@/hooks';
 import { Container } from './DocumentsFilter.styled.ts';
-import ClearFilterBtn from '../ClearFilterBtn';
+import ClearFilterBtn from '@/components/ClearFilterBtn';
 
 const DocumentsFilter: FC = () => {
   const {

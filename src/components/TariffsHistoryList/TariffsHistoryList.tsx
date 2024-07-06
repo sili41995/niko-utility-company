@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './TariffsHistoryList.types';
-import CloseBtn from '../CloseBtn';
+import CloseBtn from '@/components/CloseBtn';
 import {
   Container,
   List,

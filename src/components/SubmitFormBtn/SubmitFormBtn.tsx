@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './SubmitFormBtn.types';
-import Loader from '../Loader';
+import Loader from '@/components/Loader';
 import { AriaLabels, BtnTypes } from '@/constants';
 import { Button } from './SubmitFormBtn.styled';
 

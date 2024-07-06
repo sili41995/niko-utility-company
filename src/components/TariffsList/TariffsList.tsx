@@ -16,11 +16,11 @@ import {
   ShowHistoryBtn,
 } from './TariffsList.styled';
 import { MdEditNote, MdListAlt } from 'react-icons/md';
-import AddDataModalForm from '../AddDataModalForm';
+import AddDataModalForm from '@/components/AddDataModalForm';
 import { IconSizes, SectorTypes } from '@/constants';
 import { useTariffsList } from '@/hooks';
-import AddTariffForm from '../AddTariffForm';
-import TariffsHistoryList from '../TariffsHistoryList';
+import AddTariffForm from '@/components/AddTariffForm';
+import TariffsHistoryList from '@/components/TariffsHistoryList';
 
 const TariffsList: FC = () => {
   const {

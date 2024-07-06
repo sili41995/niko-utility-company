@@ -1,6 +1,6 @@
 import { usePaginationBar } from '@/hooks';
 import { FC } from 'react';
-import PaginationBarBtn from '../PaginationBarBtn';
+import PaginationBarBtn from '@/components/PaginationBarBtn';
 import { Button, Item, List, TemplateItem } from './PaginationBar.styled';
 import { IProps } from './PaginationBar.types';
 

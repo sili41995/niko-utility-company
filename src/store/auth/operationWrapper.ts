@@ -1,4 +1,4 @@
-import initialState from '../users/initialState';
+import initialState from './initialState';
 import { AxiosError } from 'axios';
 import { SetAuthStateFunc } from '@/types/authStore.types';
 

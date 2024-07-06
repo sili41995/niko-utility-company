@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import SettingsSectionTitle from '../SettingsSectionTitle';
-import GeneralSettingsForm from '../GeneralSettingsForm';
+import SettingsSectionTitle from '@/components/SettingsSectionTitle';
+import GeneralSettingsForm from '@/components/GeneralSettingsForm';
 
-import Loader from '../Loader';
+import Loader from '@/components/Loader';
 import { Container, ContentWrap } from './GeneralSettings.styled';
-import ErrorMessage from '../ErrorMessage';
+import ErrorMessage from '@/components/ErrorMessage';
 import { useGeneralSettings } from '@/hooks';
 
 const GeneralSettings: FC = () => {

@@ -1,22 +1,22 @@
 import { FC } from 'react';
-import TariffsModalWin from '../TariffsModalWin';
+import TariffsModalWin from '@/components/TariffsModalWin';
 import {
   SectionBtn,
   SectionsList,
   SectionsListItem,
 } from './AccountingSections.styled';
-import CalculatePricesModalWin from '../CalculatePricesModalWin';
-import AddPeriodModalWin from '../AddPeriodModalWin';
+import CalculatePricesModalWin from '@/components/CalculatePricesModalWin';
+import AddPeriodModalWin from '@/components/AddPeriodModalWin';
 import { useAccountingSections } from '@/hooks';
-// import PayAbankModalWin from '../PayAbankModalWin';
-// import PayOshchadbankModalWin from '../PayOshchadbankModalWin';
-// import PayPrivateModalWin from '../PayPrivateModalWin';
-// import PayPostageModalWin from '../PayPostageModalWin';
-// import AccountsMessageModalWin from '../AccountsMessageModalWin';
-// import BenefitsAdjustmentModalWin from '../BenefitsAdjustmentModalWin';
-// import PaymentsModalWin from '../PaymentsModalWin';
-// import PaymentsAdjustmentModalWin from '../PaymentsAdjustmentModalWin';
-// import AccrualsAdjustmentModalWin from '../AccrualsAdjustmentModalWin';
+// import PayAbankModalWin from '@/components./PayAbankModalWin';
+// import PayOshchadbankModalWin from '@/components/PayOshchadbankModalWin';
+// import PayPrivateModalWin from '@/components/PayPrivateModalWin';
+// import PayPostageModalWin from '@/components/PayPostageModalWin';
+// import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
+// import BenefitsAdjustmentModalWin from '@/components/BenefitsAdjustmentModalWin';
+// import PaymentsModalWin from '@/components/PaymentsModalWin';
+// import PaymentsAdjustmentModalWin from '@/components/PaymentsAdjustmentModalWin';
+// import AccrualsAdjustmentModalWin from '@/components/AccrualsAdjustmentModalWin';
 
 const AccountingSections: FC = () => {
   const {

@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import ModalWin from '../ModalWin';
+import ModalWin from '@/components/ModalWin';
 import { IProps } from './AddSubscriberAccountModalWin.types';
-import AddSubscriberAccountSection from '../AddSubscriberAccountSection';
+import AddSubscriberAccountSection from '@/components/AddSubscriberAccountSection';
 
 const AddSubscriberAccountModalWin: FC<IProps> = ({ setModalWinState }) => {
   return (

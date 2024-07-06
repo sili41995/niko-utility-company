@@ -8,7 +8,7 @@ import {
 } from './SubscriberAccountsTable.styled';
 import { useSubscriberAccountsStore } from '@/store/store';
 import { selectSubscriberAccounts } from '@/store/subscriberAccounts/selectors';
-import SubscriberAccountsTableRow from '../SubscriberAccountsTableRow';
+import SubscriberAccountsTableRow from '@/components/SubscriberAccountsTableRow';
 
 const SubscriberAccountsTable: FC = () => {
   const subscriberAccounts = useSubscriberAccountsStore(

@@ -1,13 +1,13 @@
 import { FC, useState } from 'react';
-import ModalWin from '../ModalWin';
+import ModalWin from '@/components/ModalWin';
 import { IProps } from './SettingsModalWin.types';
-import SettingsModalWinControls from '../SettingsModalWinControls';
+import SettingsModalWinControls from '@/components/SettingsModalWinControls';
 import { SettingsCategories } from '@/constants';
 import { InputChangeEvent } from '@/types/types';
 import { Container, SettingsContainer } from './SettingsModalWin.styled';
-import SettlementsSettings from '../SettlementsSettings';
-import UsersSettings from '../UsersSettings';
-import GeneralSettings from '../GeneralSettings';
+import SettlementsSettings from '@/components/SettlementsSettings';
+import UsersSettings from '@/components/UsersSettings';
+import GeneralSettings from '@/components/GeneralSettings';
 
 const SettingsModalWin: FC<IProps> = ({ setModalWinState }) => {
   const [category, setCategory] = useState<string>(

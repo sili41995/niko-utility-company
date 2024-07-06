@@ -4,7 +4,7 @@ import { useSetSearchParams } from '@/hooks';
 import { GeneralParams, SearchParamsKeys } from '@/constants';
 import { Container } from './Pagination.styled';
 import { IProps } from './Pagination.types';
-import PaginationBar from '../PaginationBar';
+import PaginationBar from '@/components/PaginationBar';
 
 const Pagination: FC<IProps> = ({
   totalCount,

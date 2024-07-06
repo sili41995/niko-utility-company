@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import SettingsSectionTitle from '../SettingsSectionTitle';
-import AddBtn from '../AddBtn';
+import SettingsSectionTitle from '@/components/SettingsSectionTitle';
+import AddBtn from '@/components/AddBtn';
 import { Container, ContentWrap } from './UsersSettings.styled';
-import UsersList from '../UsersList';
-import AddUserForm from '../AddUserForm';
-import AddDataModalForm from '../AddDataModalForm';
-import Loader from '../Loader';
-import ErrorMessage from '../ErrorMessage';
+import UsersList from '@/components/UsersList';
+import AddUserForm from '@/components/AddUserForm';
+import AddDataModalForm from '@/components/AddDataModalForm';
+import Loader from '@/components/Loader';
+import ErrorMessage from '@/components/ErrorMessage';
 import { useUsersSettings } from '@/hooks';
 
 const UsersSettings: FC = () => {

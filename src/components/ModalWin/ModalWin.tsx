@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { createPortal } from 'react-dom';
 import { IProps } from './ModalWin.types';
 import { Backdrop, Container, Section } from './ModalWin.styled';
-import CloseBtn from '../CloseBtn';
+import CloseBtn from '@/components/CloseBtn';
 import { useModalWin } from '@/hooks';
 
 const ModalWin: FC<IProps> = ({ setModalWinState, children }) => {

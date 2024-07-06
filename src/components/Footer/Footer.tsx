@@ -10,7 +10,7 @@ import {
   StyledFooter,
   Title,
 } from './Footer.styled';
-import Container from '../Container';
+import Container from '@/components/Container';
 
 const Footer: FC = () => (
   <StyledFooter>
