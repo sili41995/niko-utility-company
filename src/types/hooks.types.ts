@@ -307,3 +307,30 @@ export interface IUseAddPeriod {
   error: string | null;
   onAddPeriodBtnClick: OnBtnClickFunc;
 }
+
+export interface IUseAccountingSections {
+  setAddPeriodModalWinState: Func;
+  setCalculatePricesModalWinState: Func;
+  setAccrualsAdjustmentModalWinState: Func;
+  setPaymentsAdjustmentModalWinState: Func;
+  setPaymentsModalWinState: Func;
+  setBenefitsAdjustmentModalWinState: Func;
+  setTariffsModalWinState: Func;
+  setAccountsMessageModalWinState: Func;
+  setPayPostageModalWinState: Func;
+  setPayPrivateModalWinState: Func;
+  setPayOshchadbankModalWinState: Func;
+  setPayAbankModalWinState: Func;
+  showTariffsModalWin: boolean;
+  showCalculatePricesModalWin: boolean;
+  showAddPeriodModalWin: boolean;
+  showAccrualsAdjustmentModalWin: boolean;
+  showPaymentsAdjustmentModalWin: boolean;
+  showPaymentsModalWin: boolean;
+  showBenefitsAdjustmentModalWin: boolean;
+  showAccountsMessageModalWin: boolean;
+  showPayPostageModalWin: boolean;
+  showPayPrivateModalWin: boolean;
+  showPayOshchadbankModalWin: boolean;
+  showPayOAbankModalWin: boolean;
+}

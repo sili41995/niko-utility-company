@@ -23,3 +23,4 @@ export { default as useCalculatePrices } from './useCalculatePrices';
 export { default as useAddPeriod } from './useAddPeriod';
 export { default as useCurrentPeriod } from './useCurrentPeriod';
 export { default as useCurrentPeriodData } from './useCurrentPeriodData';
+export { default as useAccountingSections } from './useAccountingSections';

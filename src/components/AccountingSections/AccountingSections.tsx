@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import TariffsModalWin from '../TariffsModalWin';
 import {
   SectionBtn,
@@ -7,26 +7,35 @@ import {
 } from './AccountingSections.styled';
 import CalculatePricesModalWin from '../CalculatePricesModalWin';
 import AddPeriodModalWin from '../AddPeriodModalWin';
+import { useAccountingSections } from '@/hooks';
 
 const AccountingSections: FC = () => {
-  const [showAddPeriodModalWin, setShowAddPeriodModalWin] =
-    useState<boolean>(false);
-  const [showTariffsModalWin, setShowTariffsModalWin] =
-    useState<boolean>(false);
-  const [showCalculatePricesModalWin, setShowCalculatePricesModalWin] =
-    useState<boolean>(false);
-
-  const setTariffsModalWinState = () => {
-    setShowTariffsModalWin((prevState) => !prevState);
-  };
-
-  const setCalculatePricesModalWinState = () => {
-    setShowCalculatePricesModalWin((prevState) => !prevState);
-  };
-
-  const setAddPeriodModalWinState = () => {
-    setShowAddPeriodModalWin((prevState) => !prevState);
-  };
+  const {
+    setAddPeriodModalWinState,
+    setCalculatePricesModalWinState,
+    setAccrualsAdjustmentModalWinState,
+    setPaymentsAdjustmentModalWinState,
+    setPaymentsModalWinState,
+    setBenefitsAdjustmentModalWinState,
+    setTariffsModalWinState,
+    setAccountsMessageModalWinState,
+    setPayPostageModalWinState,
+    setPayPrivateModalWinState,
+    setPayOshchadbankModalWinState,
+    setPayAbankModalWinState,
+    showTariffsModalWin,
+    showCalculatePricesModalWin,
+    showAddPeriodModalWin,
+    showAccrualsAdjustmentModalWin,
+    showPaymentsAdjustmentModalWin,
+    showPaymentsModalWin,
+    showBenefitsAdjustmentModalWin,
+    showAccountsMessageModalWin,
+    showPayPostageModalWin,
+    showPayPrivateModalWin,
+    showPayOshchadbankModalWin,
+    showPayOAbankModalWin,
+  } = useAccountingSections();
 
   return (
     <>
@@ -37,13 +46,67 @@ const AccountingSections: FC = () => {
           </SectionBtn>
         </SectionsListItem>
         <SectionsListItem>
+          <SectionBtn type='button' onClick={setCalculatePricesModalWinState}>
+            Розрахунок
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn
+            type='button'
+            onClick={setAccrualsAdjustmentModalWinState}
+          >
+            Коригування нарахувань
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn
+            type='button'
+            onClick={setPaymentsAdjustmentModalWinState}
+          >
+            Коригування оплат
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn type='button' onClick={setPaymentsModalWinState}>
+            Оплати (стрічка)
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn
+            type='button'
+            onClick={setBenefitsAdjustmentModalWinState}
+          >
+            Коригування пільг
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
           <SectionBtn type='button' onClick={setTariffsModalWinState}>
             Тарифи
           </SectionBtn>
         </SectionsListItem>
         <SectionsListItem>
-          <SectionBtn type='button' onClick={setCalculatePricesModalWinState}>
-            Розрахунок
+          <SectionBtn type='button' onClick={setAccountsMessageModalWinState}>
+            Рахунки-повідомлення
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn type='button' onClick={setPayPostageModalWinState}>
+            Оплати Пошта
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn type='button' onClick={setPayPrivateModalWinState}>
+            Оплати Приватбанк
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn type='button' onClick={setPayOshchadbankModalWinState}>
+            Оплати Ощадбанк
+          </SectionBtn>
+        </SectionsListItem>
+        <SectionsListItem>
+          <SectionBtn type='button' onClick={setPayAbankModalWinState}>
+            Оплати Абанк
           </SectionBtn>
         </SectionsListItem>
       </SectionsList>
@@ -57,6 +120,43 @@ const AccountingSections: FC = () => {
       )}
       {showAddPeriodModalWin && (
         <AddPeriodModalWin setModalWinState={setAddPeriodModalWinState} />
+      )}
+      {showAccrualsAdjustmentModalWin && (
+        <AccrualsAdjustmentModalWin
+          setModalWinState={setAccrualsAdjustmentModalWinState}
+        />
+      )}
+      {showPaymentsAdjustmentModalWin && (
+        <PaymentsAdjustmentModalWin
+          setModalWinState={setPaymentsAdjustmentModalWinState}
+        />
+      )}
+      {showPaymentsModalWin && (
+        <PaymentsModalWin setModalWinState={setPaymentsModalWinState} />
+      )}
+      {showBenefitsAdjustmentModalWin && (
+        <BenefitsAdjustmentModalWin
+          setModalWinState={setBenefitsAdjustmentModalWinState}
+        />
+      )}
+      {showAccountsMessageModalWin && (
+        <AccountsMessageModalWin
+          setModalWinState={setAccountsMessageModalWinState}
+        />
+      )}
+      {showPayPostageModalWin && (
+        <PayPostageModalWin setModalWinState={setPayPostageModalWinState} />
+      )}
+      {showPayPrivateModalWin && (
+        <PayPrivateModalWin setModalWinState={setPayPrivateModalWinState} />
+      )}
+      {showPayOshchadbankModalWin && (
+        <PayOshchadbankModalWin
+          setModalWinState={setPayOshchadbankModalWinState}
+        />
+      )}
+      {showPayOAbankModalWin && (
+        <PayAbankModalWin setModalWinState={setPayAbankModalWinState} />
       )}
     </>
   );
