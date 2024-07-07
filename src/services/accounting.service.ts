@@ -1,13 +1,13 @@
 import HttpService from './http.service';
-import { IPeriod } from '@/types/data.types';
+import { IPeriod, Periods } from '@/types/data.types';
 
 class AccountingService extends HttpService {
   constructor() {
     super();
   }
 
-  async fetchCurrentPeriod(): Promise<IPeriod> {
-    const response = await this.get<IPeriod>({
+  async fetchPeriods(): Promise<Periods> {
+    const response = await this.get<Periods>({
       url: 'accounting/periods',
     });
 

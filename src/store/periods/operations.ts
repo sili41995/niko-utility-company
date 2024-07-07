@@ -1,14 +1,18 @@
 import accountingService from '@/services/accounting.service';
 import operationWrapper from '@/store/periods/operationWrapper';
-import { IPeriod } from '@/types/data.types';
-import { IFetchCurrentPeriodProps } from '@/types/periodsStore.types';
+import { IPeriod, Periods } from '@/types/data.types';
+import {
+  IFetchPeriodsProps,
+  IAddPeriodProps,
+} from '@/types/periodsStore.types';
+import { updatePeriods } from '@/utils';
 
-const fetchCurrentPeriodOperation = async ({
+const fetchPeriodsOperation = async ({
   set,
-}: IFetchCurrentPeriodProps): Promise<IPeriod | undefined> => {
-  const response = await accountingService.fetchCurrentPeriod();
+}: IFetchPeriodsProps): Promise<Periods | undefined> => {
+  const response = await accountingService.fetchPeriods();
   set({
-    currentPeriod: response,
+    items: response,
     isLoaded: true,
   });
   return response;
@@ -16,13 +20,17 @@ const fetchCurrentPeriodOperation = async ({
 
 const addPeriodOperation = async ({
   set,
-}: IFetchCurrentPeriodProps): Promise<IPeriod | undefined> => {
+  get,
+}: IAddPeriodProps): Promise<IPeriod | undefined> => {
+  const { items: periods } = get();
+
   const response = await accountingService.addPeriod();
+  const updatedPeriods = updatePeriods({ periods, newPeriod: response });
   set({
-    currentPeriod: response,
+    items: updatedPeriods,
   });
   return response;
 };
 
-export const fetchCurrentPeriod = operationWrapper(fetchCurrentPeriodOperation);
+export const fetchPeriods = operationWrapper(fetchPeriodsOperation);
 export const addPeriod = operationWrapper(addPeriodOperation);

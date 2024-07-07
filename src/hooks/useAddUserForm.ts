@@ -25,7 +25,6 @@ const useAddUserForm = (): IUseAddUserForm => {
   }, [isSubmitting, errors]);
 
   const handleFormSubmit: SubmitHandler<NewUser> = async (data) => {
-    console.log(data);
     try {
       await addUser(data);
       toasts.successToast(Messages.userAddSuccess);

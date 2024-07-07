@@ -2,14 +2,12 @@ import { IPeriodsState } from '@/types/periodsStore.types';
 
 export const selectIsLoading = (state: IPeriodsState) => state.isLoading;
 
-export const selectCurrentPeriod = (state: IPeriodsState) =>
-  state.currentPeriod;
+export const selectPeriods = (state: IPeriodsState) => state.items;
 
 export const selectIsLoaded = (state: IPeriodsState) => state.isLoaded;
 
 export const selectError = (state: IPeriodsState) => state.error;
 
-export const selectFetchCurrentPeriod = (state: IPeriodsState) =>
-  state.fetchCurrentPeriod;
+export const selectFetchPeriods = (state: IPeriodsState) => state.fetchPeriods;
 
 export const selectAddPeriod = (state: IPeriodsState) => state.addPeriod;

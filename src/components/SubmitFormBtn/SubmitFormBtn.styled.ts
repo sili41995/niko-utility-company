@@ -11,15 +11,17 @@ export const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius.primary}px;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }): string => theme.fontFamily.primary};
-  font-size: ${({ theme }) => theme.fontSize.primary};
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.other};
   line-height: 1.5;
   letter-spacing: 0.64px;
   transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
+
   & svg {
     height: 40px;
     fill: ${({ theme }) => theme.colors.white};
   }
+
   &:hover,
   &:focus {
     background-color: ${({ theme }) => theme.colors.accent};

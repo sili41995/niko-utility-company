@@ -23,7 +23,7 @@ import {
 import Checkbox from '@/components/Checkbox';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Select from '@/components/Select';
-import CurrentPeriod from '../CurrentPeriod';
+import PeriodTitle from '../PeriodTitle';
 
 const AddSubscriberAccountForm: FC = () => {
   const {
@@ -44,7 +44,7 @@ const AddSubscriberAccountForm: FC = () => {
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
-      <CurrentPeriod />
+      <PeriodTitle />
       <AddressWrap>
         <Select
           label='Вулиця:'
@@ -246,14 +246,6 @@ const AddSubscriberAccountForm: FC = () => {
             horizontal
             width={550}
           />
-          {/* <Input
-            settings={{ ...register('comment') }}
-            label='Коментар:'
-            placeholder='Коментар'
-            type={InputTypes.text}
-            horizontal
-            width={550}
-          /> */}
         </PersonParameters>
       </PersonParametersWrap>
       <SubmitFormBtn title='Зберегти' isLoading={isLoading} />

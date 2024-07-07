@@ -27,3 +27,5 @@ export { default as getUpdatedTariffData } from './getUpdatedTariffData';
 export { default as filterTariffsBySector } from './filterTariffsBySector';
 export { default as getTariffUnits } from './getTariffUnits';
 export { default as sortTariffs } from './sortTariffs';
+export { default as updatePeriods } from './updatePeriods';
+export { default as getPeriodDate } from './getPeriodDate';

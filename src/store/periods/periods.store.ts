@@ -5,17 +5,17 @@ import {
   IPeriodsState,
   SetPeriodsStateFunc,
 } from '@/types/periodsStore.types';
-import { fetchCurrentPeriod, addPeriod } from './operations';
-import { IPeriod } from '@/types/data.types';
+import { fetchPeriods, addPeriod } from './operations';
+import { IPeriod, Periods } from '@/types/data.types';
 
 const periodsSlice = (
   set: SetPeriodsStateFunc,
   get: GetPeriodsStateFunc
 ): IPeriodsState => ({
   ...initialState,
-  fetchCurrentPeriod: async (): Promise<IPeriod | undefined> =>
-    await fetchCurrentPeriod({
-      set: setState({ set, name: 'fetchCurrentPeriod' }),
+  fetchPeriods: async (): Promise<Periods | undefined> =>
+    await fetchPeriods({
+      set: setState({ set, name: 'fetchPeriods' }),
       data: undefined,
       get,
     }),

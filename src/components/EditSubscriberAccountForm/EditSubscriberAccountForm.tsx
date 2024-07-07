@@ -24,7 +24,7 @@ import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Select from '@/components/Select';
 import { IProps } from './EditSubscriberAccountForm.types';
 import { useEditSubscriberAccountForm } from '@/hooks';
-import CurrentPeriod from '../CurrentPeriod';
+import PeriodTitle from '../PeriodTitle';
 
 const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   const {
@@ -58,7 +58,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
-      <CurrentPeriod />
+      <PeriodTitle />
       <AddressWrap>
         <Input
           settings={{ ...register('street') }}

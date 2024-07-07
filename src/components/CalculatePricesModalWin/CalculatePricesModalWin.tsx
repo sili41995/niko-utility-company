@@ -12,7 +12,7 @@ import ActionBtn from '@/components/ActionBtn';
 import ErrorMessage from '@/components/ErrorMessage';
 import { useCalculatePrices } from '@/hooks';
 import Loader from '@/components/Loader';
-import CurrentPeriod from '../CurrentPeriod';
+import PeriodTitle from '../PeriodTitle';
 
 const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
   const { lastPricesCalculate, isLoading, calculatePrices, error } =
@@ -27,7 +27,7 @@ const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
             <Loader />
           ) : (
             <>
-              <CurrentPeriod />
+              <PeriodTitle />
               <Text>
                 Останнє нарахування: <Date>{lastPricesCalculate}</Date>
               </Text>

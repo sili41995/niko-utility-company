@@ -13,7 +13,6 @@ export { default as useSubscriberAccountsPage } from './useSubscriberAccountsPag
 export { default as useSubscriberAccountsFilter } from './useSubscriberAccountsFilter';
 export { default as useFilterSearchParams } from './useFilterSearchParams';
 export { default as useEditSubscriberAccountForm } from './useEditSubscriberAccountForm';
-export { default as usePageTitle } from './usePageTitle';
 export { default as useUser } from './useUser';
 export { default as useTariffsList } from './useTariffsList';
 export { default as useAddTariffForm } from './useAddTariffForm';
@@ -22,5 +21,6 @@ export { default as useDocumentsFilter } from './useDocumentsFilter';
 export { default as useCalculatePrices } from './useCalculatePrices';
 export { default as useAddPeriod } from './useAddPeriod';
 export { default as useCurrentPeriod } from './useCurrentPeriod';
-export { default as useCurrentPeriodData } from './useCurrentPeriodData';
+export { default as useCurrentPeriodData } from './usePeriodsData';
 export { default as useAccountingSections } from './useAccountingSections';
+export { default as useTargetPeriod } from './useTargetPeriod';

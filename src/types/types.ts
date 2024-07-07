@@ -3,7 +3,9 @@ import { ChangeEvent, MouseEvent } from 'react';
 import {
   Houses,
   INewTariffFormData,
+  IPeriod,
   ITariff,
+  Periods,
   SelectData,
   Streets,
   Tariffs,
@@ -141,4 +143,9 @@ export interface IGetUpdatedTariffDataProps {
 export interface IFilterTariffsBySectorProps {
   tariffs: Tariffs;
   sector: SectorTypes;
+}
+
+export interface IUpdatePeriodsProps {
+  periods: Periods;
+  newPeriod: IPeriod;
 }

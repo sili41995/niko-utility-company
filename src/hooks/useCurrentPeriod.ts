@@ -1,14 +1,12 @@
-import { DateFormats } from '@/constants';
-import { selectCurrentPeriod } from '@/store/periods/selectors';
+import { selectPeriods } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
-import { formatDate } from '@/utils';
+import { getPeriodDate } from '@/utils';
 
 const useCurrentPeriod = (): string => {
-  const { start = new Date() } = usePeriodsStore(selectCurrentPeriod) || {};
-  const currentPeriodDate = formatDate({
-    date: start,
-    dateFormat: DateFormats.period,
-  });
+  const periods = usePeriodsStore(selectPeriods);
+
+  const currentPeriod = periods.find(({ isCurrentPeriod }) => isCurrentPeriod);
+  const currentPeriodDate = getPeriodDate(currentPeriod);
 
   return currentPeriodDate;
 };

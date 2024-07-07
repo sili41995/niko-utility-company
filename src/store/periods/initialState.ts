@@ -1,7 +1,7 @@
 import { IPeriodsInitialState } from '@/types/periodsStore.types';
 
 const initialState: IPeriodsInitialState = {
-  currentPeriod: null,
+  items: [],
   isLoading: false,
   isLoaded: false,
   error: null,

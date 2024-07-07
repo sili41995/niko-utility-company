@@ -127,3 +127,5 @@ export interface IPeriod {
   isCurrentPeriod: boolean;
   start: Date;
 }
+
+export type Periods = IPeriod[];

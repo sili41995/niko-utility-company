@@ -11,7 +11,7 @@ import {
 import { IUseSubscriberAccountsPage } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
 import useFilterSearchParams from './useFilterSearchParams';
-import useIsLoadingCurrentPeriodData from './useCurrentPeriodData';
+import usePeriodsData from './usePeriodsData';
 
 const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const [showModalWin, setShowModalWin] = useState<boolean>(false);
@@ -27,9 +27,8 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
   const isLoaded = useSubscriberAccountsStore(selectIsLoaded);
   const isLoadingSubscriberAccountsData = !isLoaded && isLoading;
-  const isLoadingCurrentPeriodData = useIsLoadingCurrentPeriodData();
-  const isLoadingData =
-    isLoadingSubscriberAccountsData || isLoadingCurrentPeriodData;
+  const isLoadingPeriodsData = usePeriodsData();
+  const isLoadingData = isLoadingSubscriberAccountsData || isLoadingPeriodsData;
   const showSubscriberAccountsTable = Boolean(isLoaded && totalCount);
   const error = useSubscriberAccountsStore(selectError);
 

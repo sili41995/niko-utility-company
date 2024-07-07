@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './CurrentPeriod.types';
+import { IStyledProps } from './PeriodTitle.types';
 
 export const Text = styled.p<IStyledProps>`
-  width: 100%;
   color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme, isTitle }) =>

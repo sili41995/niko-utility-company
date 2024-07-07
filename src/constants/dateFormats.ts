@@ -1,4 +1,5 @@
 const enum DateFormats {
+  monthNumber = 'LL',
   fullMonth = 'LLLL',
   fullYear = 'yyyy',
   monthStart = 'yyyy-MM-01',

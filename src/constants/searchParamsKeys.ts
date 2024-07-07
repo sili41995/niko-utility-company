@@ -9,6 +9,7 @@ const enum SearchParamsKeys {
   apartment = 'apartment',
   comment = 'comment',
   document = 'document',
+  month = 'month',
 }
 
 export default SearchParamsKeys;

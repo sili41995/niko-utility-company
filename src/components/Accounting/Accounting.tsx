@@ -2,14 +2,14 @@ import { FC } from 'react';
 import AccountingSections from '@/components/AccountingSections';
 import { Container, StatisticsWrap } from './Accounting.styled';
 import AccountingStatistics from '@/components/AccountingStatistics';
-import CurrentPeriod from '../CurrentPeriod';
+import AccountingTitle from '../AccountingTitle';
 
 const Accounting: FC = () => {
   return (
     <Container>
       <AccountingSections />
       <StatisticsWrap>
-        <CurrentPeriod isTitle />
+        <AccountingTitle />
         <AccountingStatistics />
       </StatisticsWrap>
     </Container>

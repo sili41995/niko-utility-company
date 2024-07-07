@@ -7,7 +7,7 @@ import ActionBtn from '@/components/ActionBtn';
 import ErrorMessage from '@/components/ErrorMessage';
 import { useAddPeriod } from '@/hooks';
 import Loader from '@/components/Loader';
-import CurrentPeriod from '../CurrentPeriod';
+import PeriodTitle from '../PeriodTitle';
 
 const AddPeriodModalWin: FC<IProps> = ({ setModalWinState }) => {
   const { isLoading, error, onAddPeriodBtnClick } = useAddPeriod();
@@ -21,7 +21,7 @@ const AddPeriodModalWin: FC<IProps> = ({ setModalWinState }) => {
             <Loader />
           ) : (
             <>
-              <CurrentPeriod />
+              <PeriodTitle />
               <Text>Ви дійсно хочете додати новий період?</Text>
               <ActionBtn
                 title='Додати'
