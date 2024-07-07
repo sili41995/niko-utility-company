@@ -1,12 +1,14 @@
 import { selectPeriods } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
-import { IPeriod } from '@/types/data.types';
+import { getPeriodDate } from '@/utils';
 
-const useCurrentPeriod = (): IPeriod | undefined => {
+const useCurrentPeriodDate = (): string => {
   const periods = usePeriodsStore(selectPeriods);
-  const currentPeriod = periods.find(({ isCurrentPeriod }) => isCurrentPeriod);
 
-  return currentPeriod;
+  const currentPeriod = periods.find(({ isCurrentPeriod }) => isCurrentPeriod);
+  const currentPeriodDate = getPeriodDate(currentPeriod);
+
+  return currentPeriodDate;
 };
 
-export default useCurrentPeriod;
+export default useCurrentPeriodDate;

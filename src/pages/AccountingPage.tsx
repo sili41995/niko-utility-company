@@ -2,13 +2,11 @@ import Accounting from '@/components/Accounting';
 import Container from '@/components/Container';
 import Loader from '@/components/Loader';
 import Section from '@/components/Section';
-import { useCurrentPeriodData } from '@/hooks';
-import { FC, useEffect } from 'react';
+import { usePeriodsData } from '@/hooks';
+import { FC } from 'react';
 
 const AccountingPage: FC = () => {
-  const isLoadingData = useCurrentPeriodData();
-
-  useEffect(() => {}, []);
+  const isLoadingData = usePeriodsData();
 
   return isLoadingData ? (
     <Loader />

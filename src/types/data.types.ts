@@ -122,10 +122,13 @@ export interface IDocument {
 
 export type Documents = IDocument[];
 
+export interface IStatistics {}
+
 export interface IPeriod {
   id: number;
   isCurrentPeriod: boolean;
   start: Date;
+  statistics: IStatistics;
 }
 
 export type Periods = IPeriod[];
