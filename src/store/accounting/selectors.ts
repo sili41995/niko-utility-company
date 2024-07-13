@@ -11,3 +11,6 @@ export const selectCalculatePrices = (state: IAccountingState) =>
   state.calculatePrices;
 
 export const selectFetchPrices = (state: IAccountingState) => state.fetchPrices;
+
+export const selectAddAccrualAdjustment = (state: IAccountingState) =>
+  state.addAccrualAdjustment;

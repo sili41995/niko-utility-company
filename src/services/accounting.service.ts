@@ -1,6 +1,11 @@
 import { IPricesInfo } from '@/types/accountingStore.types';
 import HttpService from './http.service';
-import { IPeriod, Periods } from '@/types/data.types';
+import {
+  AccrualAdjustmentData,
+  IAccrualAdjustment,
+  IPeriod,
+  Periods,
+} from '@/types/data.types';
 
 class AccountingService extends HttpService {
   constructor() {
@@ -35,6 +40,19 @@ class AccountingService extends HttpService {
     const response = await this.patch<IPricesInfo, undefined>({
       url: 'accounting/prices',
     });
+
+    return response.data;
+  }
+
+  async addAccrualAdjustment(
+    data: AccrualAdjustmentData
+  ): Promise<IAccrualAdjustment> {
+    const response = await this.post<IAccrualAdjustment, AccrualAdjustmentData>(
+      {
+        url: 'accounting/prices',
+        data,
+      }
+    );
 
     return response.data;
   }

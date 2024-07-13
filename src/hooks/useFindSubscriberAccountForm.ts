@@ -8,6 +8,7 @@ import {
 import validateFindSubscriberAccountForm from '@/validators/validateFindSubscriberAccountForm';
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
 import { IUseFindSubscriberAccountForm } from '@/types/hooks.types';
+import { AxiosError } from 'axios';
 
 const useFindSubscriberAccountForm = (
   setSubscriberAccount: SetSubscriberAccountFunc
@@ -41,12 +42,13 @@ const useFindSubscriberAccountForm = (
 
       setSubscriberAccount(result);
     } catch (error) {
-      if (error instanceof Error) {
+      if (error instanceof AxiosError) {
+        const message = error.response?.data.message;
         const isNotFoundErr =
-          error.message.toLowerCase() === 'subscriber account not Found';
+          message.toLowerCase() === 'subscriber account was not found';
         const errorMessage = isNotFoundErr
           ? Messages.subscriberAccountNotFoundErr
-          : error.message;
+          : message;
         setError(errorMessage);
       }
     } finally {

@@ -10,10 +10,12 @@ import {
 } from './AccrualsAdjustmentForm.styled';
 import SubmitFormBtn from '../SubmitFormBtn';
 import Input from '../Input';
-import { DateFormats, InputTypes } from '@/constants';
-import { formatDate, toasts } from '@/utils';
+import { DateFormats, InputTypes, Messages } from '@/constants';
+import { formatDate, getAccrualAdjustmentData, toasts } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { AccrualsAdjustmentData } from '@/types/data.types';
+import { IAccrualAdjustmentFormData } from '@/types/data.types';
+import { useAccountingStore } from '@/store/store';
+import { selectAddAccrualAdjustment } from '@/store/accounting/selectors';
 
 const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -21,9 +23,11 @@ const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<AccrualsAdjustmentData>();
+  } = useForm<IAccrualAdjustmentFormData>();
+  const addAccrualAdjustment = useAccountingStore(selectAddAccrualAdjustment);
 
   const {
+    id,
     street,
     house,
     apartment,
@@ -36,7 +40,7 @@ const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
 
   const currentDate = formatDate({
     date: new Date(),
-    dateFormat: DateFormats.monthStart,
+    dateFormat: DateFormats.validDate,
   });
 
   useEffect(() => {
@@ -47,13 +51,15 @@ const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
     }
   }, [isSubmitting, errors]);
 
-  const handleFormSubmit: SubmitHandler<AccrualsAdjustmentData> = async (
+  const handleFormSubmit: SubmitHandler<IAccrualAdjustmentFormData> = async (
     data
   ) => {
+    const accrualAdjustmentData = getAccrualAdjustmentData({ data, id });
+
     try {
       setIsLoading(true);
-
-      console.log(data);
+      await addAccrualAdjustment(accrualAdjustmentData);
+      toasts.successToast(Messages.addAccrualAdjustmentSuccess);
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);

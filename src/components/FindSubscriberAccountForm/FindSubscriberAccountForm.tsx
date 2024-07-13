@@ -12,16 +12,18 @@ const FindSubscriberAccountForm: FC<IProps> = ({ setSubscriberAccount }) => {
     useFindSubscriberAccountForm(setSubscriberAccount);
 
   return (
-    <Form onSubmit={handleSubmit(handleFormSubmit)}>
-      <Input
-        settings={{ ...register('subscriberAccount', { required: true }) }}
-        label='Абонентський рахунок:'
-        type={InputTypes.text}
-        placeholder='Абонентський рахунок'
-      />
+    <>
+      <Form onSubmit={handleSubmit(handleFormSubmit)}>
+        <Input
+          settings={{ ...register('subscriberAccount', { required: true }) }}
+          label='Абонентський рахунок:'
+          type={InputTypes.text}
+          placeholder='Абонентський рахунок'
+        />
+        <SubmitFormBtn title='Знайти' isLoading={isLoading} />
+      </Form>
       {error && <ErrorMessage error={error} />}
-      <SubmitFormBtn title='Знайти' isLoading={isLoading} />
-    </Form>
+    </>
   );
 };
 

@@ -29,3 +29,4 @@ export { default as getTariffUnits } from './getTariffUnits';
 export { default as sortTariffs } from './sortTariffs';
 export { default as updatePeriods } from './updatePeriods';
 export { default as getPeriodDate } from './getPeriodDate';
+export { default as getAccrualAdjustmentData } from './getAccrualAdjustmentData';

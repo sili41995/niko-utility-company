@@ -42,6 +42,7 @@ const enum Messages {
   duplicateDocumentErr = 'Такий документ вже існує',
   duplicatePeriodErr = 'Період вже існує',
   subscriberAccountNotFoundErr = 'Абонентський рахунок не знайдено',
+  addAccrualAdjustmentSuccess = 'Коригування нарахувань успішно додано',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

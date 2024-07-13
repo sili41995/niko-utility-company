@@ -134,16 +134,22 @@ export interface IPeriod {
 
 export type Periods = IPeriod[];
 
-export interface IAccrualsAdjustment {
+export interface IAccrualAdjustment {
   id: number;
   price: number;
   date: Date;
   comment: string;
   subscriberAccountId: number;
-  subscriberAccount?: ISubscriberAccount;
+  subscriberAccount: ISubscriberAccount;
 }
 
-export type AccrualsAdjustmentData = Pick<
-  IAccrualsAdjustment,
-  'price' | 'date' | 'comment'
+export type AccrualAdjustmentData = Pick<
+  IAccrualAdjustment,
+  'price' | 'date' | 'comment' | 'subscriberAccountId'
 >;
+
+export interface IAccrualAdjustmentFormData
+  extends Pick<IAccrualAdjustment, 'comment'> {
+  date: string;
+  price: string;
+}
