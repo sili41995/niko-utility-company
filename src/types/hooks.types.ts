@@ -20,6 +20,7 @@ import {
   SelectData,
   INewTariffFormData,
   Tariffs,
+  IAccrualAdjustmentFormData,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -356,4 +357,14 @@ export interface IUseSubscriberAccountsTableRow {
   comment: string;
   toggleEditAccount: Func;
   editAccount: boolean;
+}
+
+export interface IUseAccrualsAdjustmentForm {
+  address: string;
+  subscriberAccountInfo: string;
+  handleSubmit: UseFormHandleSubmit<IAccrualAdjustmentFormData, undefined>;
+  handleFormSubmit: SubmitHandler<IAccrualAdjustmentFormData>;
+  register: UseFormRegister<IAccrualAdjustmentFormData>;
+  currentDate: string;
+  isLoading: boolean;
 }
