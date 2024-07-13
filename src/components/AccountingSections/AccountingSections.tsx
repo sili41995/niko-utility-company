@@ -11,7 +11,7 @@ import AccountingSectionsBtn from '@/components/AccountingSectionsBtn';
 // import PayPostageModalWin from '@/components/PayPostageModalWin';
 // import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
 // import BenefitsAdjustmentModalWin from '@/components/BenefitsAdjustmentModalWin';
-// import PaymentsModalWin from '@/components/PaymentsModalWin';
+import PaymentsModalWin from '@/components/PaymentsModalWin';
 // import PaymentsAdjustmentModalWin from '@/components/PaymentsAdjustmentModalWin';
 import AccrualsAdjustmentModalWin from '@/components/AccrualsAdjustmentModalWin';
 
@@ -21,7 +21,7 @@ const AccountingSections: FC = () => {
     setCalculatePricesModalWinState,
     setAccrualsAdjustmentModalWinState,
     // setPaymentsAdjustmentModalWinState,
-    // setPaymentsModalWinState,
+    setPaymentsModalWinState,
     // setBenefitsAdjustmentModalWinState,
     setTariffsModalWinState,
     // setAccountsMessageModalWinState,
@@ -34,7 +34,7 @@ const AccountingSections: FC = () => {
     showAddPeriodModalWin,
     showAccrualsAdjustmentModalWin,
     // showPaymentsAdjustmentModalWin,
-    // showPaymentsModalWin,
+    showPaymentsModalWin,
     // showBenefitsAdjustmentModalWin,
     // showAccountsMessageModalWin,
     // showPayPostageModalWin,
@@ -70,12 +70,12 @@ const AccountingSections: FC = () => {
             title='Коригування оплат'
           />
         </SectionsListItem> */}
-        {/* <SectionsListItem>
-            <AccountingSectionsBtn
+        <SectionsListItem>
+          <AccountingSectionsBtn
             onClick={setPaymentsModalWinState}
             title='Оплати (стрічка)'
           />
-        </SectionsListItem> */}
+        </SectionsListItem>
         {/* <SectionsListItem>
                     <AccountingSectionsBtn
             onClick={setBenefitsAdjustmentModalWinState}
@@ -140,9 +140,9 @@ const AccountingSections: FC = () => {
           setModalWinState={setPaymentsAdjustmentModalWinState}
         />
       )} */}
-      {/* {showPaymentsModalWin && (
+      {showPaymentsModalWin && (
         <PaymentsModalWin setModalWinState={setPaymentsModalWinState} />
-      )} */}
+      )}
       {/* {showBenefitsAdjustmentModalWin && (
         <BenefitsAdjustmentModalWin
           setModalWinState={setBenefitsAdjustmentModalWinState}

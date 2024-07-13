@@ -153,3 +153,9 @@ export interface IAccrualAdjustmentFormData
   date: string;
   price: string;
 }
+
+export type Price = Pick<IAccrualAdjustment, 'price'>;
+
+export type AccrualAdjustmentComment = Pick<IAccrualAdjustment, 'comment'>;
+
+export type AccrualAdjustmentDate = Pick<IAccrualAdjustment, 'date'>;

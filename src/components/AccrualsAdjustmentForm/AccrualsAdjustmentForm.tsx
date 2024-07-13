@@ -16,6 +16,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { IAccrualAdjustmentFormData } from '@/types/data.types';
 import { useAccountingStore } from '@/store/store';
 import { selectAddAccrualAdjustment } from '@/store/accounting/selectors';
+import { validateAccrualsAdjustmentForm } from '@/validators';
 
 const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -47,7 +48,7 @@ const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
     const invalidFields = Object.keys(errors);
 
     if (invalidFields.length) {
-      // validateAccrualsAdjustmentForm(errors);
+      validateAccrualsAdjustmentForm(errors);
     }
   }, [isSubmitting, errors]);
 

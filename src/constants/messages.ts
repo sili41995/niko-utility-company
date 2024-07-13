@@ -43,6 +43,7 @@ const enum Messages {
   duplicatePeriodErr = 'Період вже існує',
   subscriberAccountNotFoundErr = 'Абонентський рахунок не знайдено',
   addAccrualAdjustmentSuccess = 'Коригування нарахувань успішно додано',
+  priceReqErr = 'Поле Сума має бути заповнене',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',
