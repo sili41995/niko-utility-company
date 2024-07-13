@@ -4,7 +4,7 @@ import { SectionsList, SectionsListItem } from './AccountingSections.styled';
 import CalculatePricesModalWin from '@/components/CalculatePricesModalWin';
 import AddPeriodModalWin from '@/components/AddPeriodModalWin';
 import { useAccountingSections } from '@/hooks';
-import AccountingSectionsBtn from '../AccountingSectionsBtn';
+import AccountingSectionsBtn from '@/components/AccountingSectionsBtn';
 // import PayAbankModalWin from '@/components./PayAbankModalWin';
 // import PayOshchadbankModalWin from '@/components/PayOshchadbankModalWin';
 // import PayPrivateModalWin from '@/components/PayPrivateModalWin';
@@ -13,13 +13,13 @@ import AccountingSectionsBtn from '../AccountingSectionsBtn';
 // import BenefitsAdjustmentModalWin from '@/components/BenefitsAdjustmentModalWin';
 // import PaymentsModalWin from '@/components/PaymentsModalWin';
 // import PaymentsAdjustmentModalWin from '@/components/PaymentsAdjustmentModalWin';
-// import AccrualsAdjustmentModalWin from '@/components/AccrualsAdjustmentModalWin';
+import AccrualsAdjustmentModalWin from '@/components/AccrualsAdjustmentModalWin';
 
 const AccountingSections: FC = () => {
   const {
     setAddPeriodModalWinState,
     setCalculatePricesModalWinState,
-    // setAccrualsAdjustmentModalWinState,
+    setAccrualsAdjustmentModalWinState,
     // setPaymentsAdjustmentModalWinState,
     // setPaymentsModalWinState,
     // setBenefitsAdjustmentModalWinState,
@@ -32,7 +32,7 @@ const AccountingSections: FC = () => {
     showTariffsModalWin,
     showCalculatePricesModalWin,
     showAddPeriodModalWin,
-    // showAccrualsAdjustmentModalWin,
+    showAccrualsAdjustmentModalWin,
     // showPaymentsAdjustmentModalWin,
     // showPaymentsModalWin,
     // showBenefitsAdjustmentModalWin,
@@ -58,12 +58,12 @@ const AccountingSections: FC = () => {
             title='Розрахунок'
           />
         </SectionsListItem>
-        {/* <SectionsListItem>
-            <AccountingSectionsBtn
+        <SectionsListItem>
+          <AccountingSectionsBtn
             onClick={setAccrualsAdjustmentModalWinState}
             title='Коригування нарахувань'
           />
-        </SectionsListItem> */}
+        </SectionsListItem>
         {/* <SectionsListItem>
             <AccountingSectionsBtn
             onClick={setPaymentsAdjustmentModalWinState}
@@ -130,11 +130,11 @@ const AccountingSections: FC = () => {
       {showAddPeriodModalWin && (
         <AddPeriodModalWin setModalWinState={setAddPeriodModalWinState} />
       )}
-      {/* {showAccrualsAdjustmentModalWin && (
+      {showAccrualsAdjustmentModalWin && (
         <AccrualsAdjustmentModalWin
           setModalWinState={setAccrualsAdjustmentModalWinState}
         />
-      )} */}
+      )}
       {/* {showPaymentsAdjustmentModalWin && (
         <PaymentsAdjustmentModalWin
           setModalWinState={setPaymentsAdjustmentModalWinState}

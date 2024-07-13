@@ -26,6 +26,7 @@ import { AccountTypes } from '@/constants';
 import {
   IAddSubscriberAccountFormData,
   IEditSubscriberAccountFormData,
+  SubscriberAccount,
 } from './subscriberAccount.types';
 
 export interface IUpdateSearchParamsProps {
@@ -329,4 +330,12 @@ export interface IUseAccountingSections {
   showPayPrivateModalWin: boolean;
   showPayOshchadbankModalWin: boolean;
   showPayOAbankModalWin: boolean;
+}
+
+export interface IUseFindSubscriberAccountForm {
+  handleSubmit: UseFormHandleSubmit<SubscriberAccount, undefined>;
+  handleFormSubmit: SubmitHandler<SubscriberAccount>;
+  register: UseFormRegister<SubscriberAccount>;
+  error: string | null;
+  isLoading: boolean;
 }

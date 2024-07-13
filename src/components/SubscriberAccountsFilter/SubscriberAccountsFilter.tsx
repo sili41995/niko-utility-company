@@ -72,7 +72,7 @@ const SubscriberAccountsFilter: FC = () => {
         }
       />
       <Input
-        label='Абон. рахунок №'
+        label='Абонентський рахунок'
         type={InputTypes.text}
         width={180}
         formType={FormTypes.filter}

@@ -5,7 +5,7 @@ import { DateFormats, SearchParamsKeys } from '@/constants';
 import { IPeriod } from '@/types/data.types';
 import { formatDate } from '@/utils';
 
-const useTargetPeriod = (): IPeriod | undefined => {
+const useTargetPeriod = (): IPeriod => {
   const periods = usePeriodsStore(selectPeriods);
   const { searchParams } = useSetSearchParams();
   const targetMonth = searchParams.get(SearchParamsKeys.month) ?? '';
@@ -17,9 +17,10 @@ const useTargetPeriod = (): IPeriod | undefined => {
     });
 
     return periodMonth === targetMonth;
-  });
+  })!;
+  const currentPeriod = periods.find(({ isCurrentPeriod }) => isCurrentPeriod)!;
 
-  return targetPeriod;
+  return targetMonth ? targetPeriod : currentPeriod;
 };
 
 export default useTargetPeriod;

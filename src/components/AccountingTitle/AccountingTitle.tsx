@@ -6,10 +6,10 @@ import {
   TitleWrap,
   PeriodsListWrap,
 } from './AccountingTitle.styled';
-import PeriodTitle from '../PeriodTitle';
+import PeriodTitle from '@/components/PeriodTitle';
 import { IoIosArrowDown } from 'react-icons/io';
 import { IconSizes } from '@/constants';
-import PeriodsList from '../PeriodsList';
+import PeriodsList from '@/components/PeriodsList';
 import { useTargetPeriod } from '@/hooks';
 
 const AccountingTitle: FC = () => {

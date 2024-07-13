@@ -34,6 +34,16 @@ class SubscriberAccountsService extends HttpService {
     return response.data;
   }
 
+  async fetchSubscriberAccountByNumber(
+    subscriberAccount: string
+  ): Promise<ISubscriberAccount> {
+    const response = await this.get<ISubscriberAccount>({
+      url: `subscriber-accounts/${subscriberAccount}`,
+    });
+
+    return response.data;
+  }
+
   async addSubscriberAccount(
     data: INewSubscriberAccountData
   ): Promise<ISubscriberAccount> {

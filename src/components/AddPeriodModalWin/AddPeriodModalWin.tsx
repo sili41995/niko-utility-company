@@ -7,7 +7,7 @@ import ActionBtn from '@/components/ActionBtn';
 import ErrorMessage from '@/components/ErrorMessage';
 import { useAddPeriod } from '@/hooks';
 import Loader from '@/components/Loader';
-import PeriodTitle from '../PeriodTitle';
+import PeriodTitle from '@/components/PeriodTitle';
 
 const AddPeriodModalWin: FC<IProps> = ({ setModalWinState }) => {
   const { isLoading, error, onAddPeriodBtnClick } = useAddPeriod();

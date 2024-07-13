@@ -23,7 +23,7 @@ import {
 import Checkbox from '@/components/Checkbox';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Select from '@/components/Select';
-import PeriodTitle from '../PeriodTitle';
+import PeriodTitle from '@/components/PeriodTitle';
 
 const AddSubscriberAccountForm: FC = () => {
   const {
@@ -73,8 +73,8 @@ const AddSubscriberAccountForm: FC = () => {
       <SubscriberAccountContainer>
         <Input
           settings={{ ...register('subscriberAccount', { required: true }) }}
-          label='Абон. рахунок №:'
-          placeholder='Абон. рахунок №'
+          label='Абонентський рахунок:'
+          placeholder='Абонентський рахунок'
           type={InputTypes.text}
           accent
           horizontal

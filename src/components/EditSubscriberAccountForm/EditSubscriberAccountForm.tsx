@@ -24,7 +24,7 @@ import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Select from '@/components/Select';
 import { IProps } from './EditSubscriberAccountForm.types';
 import { useEditSubscriberAccountForm } from '@/hooks';
-import PeriodTitle from '../PeriodTitle';
+import PeriodTitle from '@/components/PeriodTitle';
 
 const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   const {
@@ -91,7 +91,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
       <SubscriberAccountContainer>
         <Input
           settings={{ ...register('subscriberAccount') }}
-          label='Абон. рахунок №:'
+          label='Абонентський рахунок:'
           type={InputTypes.text}
           value={subscriberAccountValue}
           width={550}

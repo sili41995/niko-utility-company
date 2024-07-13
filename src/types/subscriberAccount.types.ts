@@ -160,3 +160,5 @@ export type IsEligibleForBenefit = Pick<
   ISubscriberAccount,
   'isEligibleForBenefit'
 >;
+
+export type SetSubscriberAccountFunc = (data: ISubscriberAccount) => void;

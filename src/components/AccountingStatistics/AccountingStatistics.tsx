@@ -7,12 +7,10 @@ import {
   Title,
   Value,
 } from './AccountingStatistics.styled';
-import { useCurrentPeriod, useTargetPeriod } from '@/hooks';
+// import { useTargetPeriod } from '@/hooks';
 
 const AccountingStatistics: FC = () => {
-  const targetPeriod = useTargetPeriod();
-  const currentPeriod = useCurrentPeriod();
-  console.log(targetPeriod ? targetPeriod : currentPeriod);
+  // const targetPeriod = useTargetPeriod();
 
   return (
     <List>

@@ -16,7 +16,7 @@ const enum Messages {
   tariffReqErr = 'Поле Тариф має бути заповнене',
   startReqErr = 'Поле Початок дії має бути заповнене',
   apartmentReqErr = 'Поле № квартири має бути заповнене',
-  subscriberAccountReqErr = 'Поле Абон. рахунок № має бути заповнене',
+  subscriberAccountReqErr = 'Поле Абонентський рахунок має бути заповнене',
   contractReqErr = 'Поле Договір № має бути заповнене',
   contractDateReqErr = 'Поле Від має бути заповнене',
   accountTypeReqErr = 'Поле Тип рахунку має бути заповнене',
@@ -41,6 +41,7 @@ const enum Messages {
   periodAddSuccess = 'Період успішно доданий',
   duplicateDocumentErr = 'Такий документ вже існує',
   duplicatePeriodErr = 'Період вже існує',
+  subscriberAccountNotFoundErr = 'Абонентський рахунок не знайдено',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',
