@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { IProps } from './PayPrivateModalWin.types';
+import { IProps } from './PayPrivatbankModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
-import { Container } from './PayPrivateModalWin.styled';
+import { Container } from './PayPrivatbankModalWin.styled';
 
-const PayPrivateModalWin: FC<IProps> = ({ setModalWinState }) => {
+const PayPrivatbankModalWin: FC<IProps> = ({ setModalWinState }) => {
   return (
     <ModalWin setModalWinState={setModalWinState}>
       <Container>
@@ -14,4 +14,4 @@ const PayPrivateModalWin: FC<IProps> = ({ setModalWinState }) => {
   );
 };
 
-export default PayPrivateModalWin;
+export default PayPrivatbankModalWin;

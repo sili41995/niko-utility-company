@@ -315,7 +315,7 @@ export interface IUseAccountingSections {
   setTariffsModalWinState: Func;
   setAccountsMessageModalWinState: Func;
   setPayPostageModalWinState: Func;
-  setPayPrivateModalWinState: Func;
+  setPayPrivatbankModalWinState: Func;
   setPayOshchadbankModalWinState: Func;
   setPayAbankModalWinState: Func;
   showTariffsModalWin: boolean;
@@ -327,7 +327,7 @@ export interface IUseAccountingSections {
   showBenefitsAdjustmentModalWin: boolean;
   showAccountsMessageModalWin: boolean;
   showPayPostageModalWin: boolean;
-  showPayPrivateModalWin: boolean;
+  showPayPrivatbankModalWin: boolean;
   showPayOshchadbankModalWin: boolean;
   showPayOAbankModalWin: boolean;
 }

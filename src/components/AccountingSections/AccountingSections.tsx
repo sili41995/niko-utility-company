@@ -7,7 +7,7 @@ import { useAccountingSections } from '@/hooks';
 import AccountingSectionsBtn from '@/components/AccountingSectionsBtn';
 // import PayAbankModalWin from '@/components./PayAbankModalWin';
 // import PayOshchadbankModalWin from '@/components/PayOshchadbankModalWin';
-// import PayPrivateModalWin from '@/components/PayPrivateModalWin';
+// import PayPrivatbankModalWin from '@/components/PayPrivatbankModalWin';
 // import PayPostageModalWin from '@/components/PayPostageModalWin';
 // import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
 // import BenefitsAdjustmentModalWin from '@/components/BenefitsAdjustmentModalWin';
@@ -26,7 +26,7 @@ const AccountingSections: FC = () => {
     setTariffsModalWinState,
     // setAccountsMessageModalWinState,
     // setPayPostageModalWinState,
-    // setPayPrivateModalWinState,
+    // setPayPrivatbankModalWinState,
     // setPayOshchadbankModalWinState,
     // setPayAbankModalWinState,
     showTariffsModalWin,
@@ -38,7 +38,7 @@ const AccountingSections: FC = () => {
     // showBenefitsAdjustmentModalWin,
     // showAccountsMessageModalWin,
     // showPayPostageModalWin,
-    // showPayPrivateModalWin,
+    // showPayPrivatbankModalWin,
     // showPayOshchadbankModalWin,
     // showPayOAbankModalWin,
   } = useAccountingSections();
@@ -102,7 +102,7 @@ const AccountingSections: FC = () => {
         </SectionsListItem> */}
         {/* <SectionsListItem>
                     <AccountingSectionsBtn
-            onClick={setPayPrivateModalWinState}
+            onClick={setPayPrivatbankModalWinState}
             title='Оплати Приватбанк'
           />
         </SectionsListItem> */}
@@ -156,8 +156,8 @@ const AccountingSections: FC = () => {
       {/* {showPayPostageModalWin && (
         <PayPostageModalWin setModalWinState={setPayPostageModalWinState} />
       )} */}
-      {/* {showPayPrivateModalWin && (
-        <PayPrivateModalWin setModalWinState={setPayPrivateModalWinState} />
+      {/* {showPayPrivatbankModalWin && (
+        <PayPrivatbankModalWin setModalWinState={setPayPrivatbankModalWinState} />
       )} */}
       {/* {showPayOshchadbankModalWin && (
         <PayOshchadbankModalWin

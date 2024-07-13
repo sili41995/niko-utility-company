@@ -20,7 +20,7 @@ const useAccountingSections = (): IUseAccountingSections => {
     useState<boolean>(false);
   const [showPayPostageModalWin, setShowPayPostageModalWin] =
     useState<boolean>(false);
-  const [showPayPrivateModalWin, setShowPayPrivateModalWin] =
+  const [showPayPrivatbankModalWin, setShowPayPrivatbankModalWin] =
     useState<boolean>(false);
   const [showPayOshchadbankModalWin, setShowPayOshchadbankModalWin] =
     useState<boolean>(false);
@@ -63,8 +63,8 @@ const useAccountingSections = (): IUseAccountingSections => {
     setShowPayPostageModalWin((prevState) => !prevState);
   };
 
-  const setPayPrivateModalWinState = () => {
-    setShowPayPrivateModalWin((prevState) => !prevState);
+  const setPayPrivatbankModalWinState = () => {
+    setShowPayPrivatbankModalWin((prevState) => !prevState);
   };
 
   const setPayOshchadbankModalWinState = () => {
@@ -85,7 +85,7 @@ const useAccountingSections = (): IUseAccountingSections => {
     setTariffsModalWinState,
     setAccountsMessageModalWinState,
     setPayPostageModalWinState,
-    setPayPrivateModalWinState,
+    setPayPrivatbankModalWinState,
     setPayOshchadbankModalWinState,
     setPayAbankModalWinState,
     showTariffsModalWin,
@@ -97,7 +97,7 @@ const useAccountingSections = (): IUseAccountingSections => {
     showBenefitsAdjustmentModalWin,
     showAccountsMessageModalWin,
     showPayPostageModalWin,
-    showPayPrivateModalWin,
+    showPayPrivatbankModalWin,
     showPayOshchadbankModalWin,
     showPayOAbankModalWin,
   };
