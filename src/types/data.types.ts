@@ -1,4 +1,5 @@
 import { SectorTypes, ServiceCategories } from '@/constants';
+import { ISubscriberAccount } from './subscriberAccount.types';
 
 export interface IService {
   id: number;
@@ -132,3 +133,17 @@ export interface IPeriod {
 }
 
 export type Periods = IPeriod[];
+
+export interface IAccrualsAdjustment {
+  id: number;
+  price: number;
+  date: Date;
+  comment: string;
+  subscriberAccountId: number;
+  subscriberAccount?: ISubscriberAccount;
+}
+
+export type AccrualsAdjustmentData = Pick<
+  IAccrualsAdjustment,
+  'price' | 'date' | 'comment'
+>;

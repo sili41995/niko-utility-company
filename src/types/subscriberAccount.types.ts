@@ -42,6 +42,7 @@ export interface ISubscriberAccount {
   isRemovalHouseholdWaste: boolean;
   isEligibleForBenefit: boolean;
   sector: SectorTypes;
+  balance: number;
   documents: Documents;
   streetId: number;
   street: IStreet;
@@ -62,6 +63,7 @@ export type InitialSubscriberAccountFormData = Omit<
   | 'street'
   | 'house'
   | 'sector'
+  | 'balance'
 >;
 
 export interface ISubscriberAccountData
@@ -106,7 +108,7 @@ export interface IEditSubscriberAccountData
 
 export type NewSubscriberAccountData = Omit<
   ISubscriberAccount,
-  'id' | 'street' | 'house' | 'email' | 'owner' | 'documents'
+  'id' | 'street' | 'house' | 'email' | 'owner' | 'documents' | 'balance'
 >;
 
 export interface INewSubscriberAccountData extends NewSubscriberAccountData {

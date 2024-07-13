@@ -4,7 +4,6 @@ const initialState: ISubscriberAccountsInitialState = {
   items: [],
   count: null,
   filteredCount: null,
-  lastCalculate: null,
   isLoading: false,
   isLoaded: false,
   error: null,

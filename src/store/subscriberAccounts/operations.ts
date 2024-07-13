@@ -6,8 +6,6 @@ import {
   IFetchSubscriberAccountsProps,
   IFetchSubscriberAccountsRes,
   IUpdateSubscriberAccountByIdProps,
-  IPricesOPerationsProps,
-  IPricesInfo,
 } from '@/types/subscriberAccountsStore.types';
 import getUpdatedSubscriberAccounts from '@/utils/getUpdatedSubscriberAccounts';
 
@@ -62,30 +60,6 @@ const updateSubscriberAccountByIdOperation = async ({
   return response;
 };
 
-const calculatePricesOperation = async ({
-  set,
-}: IPricesOPerationsProps): Promise<IPricesInfo | undefined> => {
-  const response = await subscriberAccountsService.calculatePrices();
-
-  set({
-    lastCalculate: response.lastCalculate,
-  });
-
-  return response;
-};
-
-const fetchPricesOperation = async ({
-  set,
-}: IPricesOPerationsProps): Promise<IPricesInfo | undefined> => {
-  const response = await subscriberAccountsService.fetchPrices();
-
-  set({
-    lastCalculate: response.lastCalculate,
-  });
-
-  return response;
-};
-
 export const fetchSubscriberAccounts = operationWrapper(
   fetchSubscriberAccountsOperation
 );
@@ -95,5 +69,3 @@ export const addSubscriberAccount = operationWrapper(
 export const updateSubscriberAccountById = operationWrapper(
   updateSubscriberAccountByIdOperation
 );
-export const calculatePrices = operationWrapper(calculatePricesOperation);
-export const fetchPrices = operationWrapper(fetchPricesOperation);

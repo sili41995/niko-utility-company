@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { IProps } from './SubscriberAccountsTableRow.types';
 import {
   Checkbox,
@@ -8,41 +8,29 @@ import {
   EditRowBtn,
   EditRowBtnCell,
 } from './SubscriberAccountsTableRow.styled';
-import { DateFormats, IconSizes, apartmentTypes } from '@/constants';
-import { formatDate } from '@/utils';
 import { MdEditNote } from 'react-icons/md';
 import EditSubscriberAccountModalWin from '@/components/EditSubscriberAccountModalWin';
+import { IconSizes } from '@/constants';
+import { useSubscriberAccountsTableRow } from '@/hooks';
 
 const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
-  const [editAccount, setEditAccount] = useState<boolean>(false);
   const {
-    subscriberAccount: subscriberAccountNumber,
+    subscriberAccountNumber,
+    fullName,
     accountType,
-    apartment,
-    isLivingApartment,
-    residents,
-    street,
+    fullStreetName,
     house,
-    isEligibleForBenefit,
+    apartment,
+    apartmentType,
     period,
-    documents,
-    owner: { surname, name, middleName },
-  } = subscriberAccount;
-  const apartmentType = apartmentTypes.find(
-    ({ value }) => value === String(isLivingApartment)
-  )?.title;
-  const apartmentValue = apartment ?? '-';
-  const fullName = `${surname} ${name} ${middleName}`;
-  const fullStreetName = `${street.type} ${street.name}`;
-  const { comment, document } = documents[0] ?? {};
-  const periodDate = formatDate({
-    date: period,
-    dateFormat: DateFormats.date,
-  });
-
-  const toggleEditAccount = () => {
-    setEditAccount((prevState) => !prevState);
-  };
+    balance,
+    residents,
+    isEligibleForBenefit,
+    document,
+    comment,
+    toggleEditAccount,
+    editAccount,
+  } = useSubscriberAccountsTableRow(subscriberAccount);
 
   return (
     <>
@@ -55,11 +43,11 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
         <TableData>
           <TableDataText trimText>{fullStreetName}</TableDataText>
         </TableData>
-        <TableData center>{house.number}</TableData>
-        <TableData center>{apartmentValue}</TableData>
+        <TableData center>{house}</TableData>
+        <TableData center>{apartment}</TableData>
         <TableData center>{apartmentType}</TableData>
-        <TableData center>{periodDate}</TableData>
-        <TableData center>тариф</TableData>
+        <TableData center>{period}</TableData>
+        <TableData center>{balance}</TableData>
         <TableData center>{residents}</TableData>
         <TableData>
           <TableDataText center>

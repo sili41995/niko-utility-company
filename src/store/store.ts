@@ -18,6 +18,8 @@ import documentsStore from './documents/documents.store';
 import { IDocumentsState } from '@/types/documentsStore.types';
 import periodsStore from './periods/periods.store';
 import { IPeriodsState } from '@/types/periodsStore.types';
+import { IAccountingState } from '@/types/accountingStore.types';
+import accountingStore from './accounting/accounting.store';
 
 export const useAuthStore = create<IAuthState>()(
   devtools(
@@ -56,4 +58,8 @@ export const useDocumentsStore = create<IDocumentsState>()(
 
 export const usePeriodsStore = create<IPeriodsState>()(
   devtools(periodsStore.store, periodsStore.params)
+);
+
+export const useAccountingStore = create<IAccountingState>()(
+  devtools(accountingStore.store, accountingStore.params)
 );

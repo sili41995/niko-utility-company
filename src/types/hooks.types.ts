@@ -339,3 +339,21 @@ export interface IUseFindSubscriberAccountForm {
   error: string | null;
   isLoading: boolean;
 }
+
+export interface IUseSubscriberAccountsTableRow {
+  subscriberAccountNumber: string;
+  fullName: string;
+  accountType: AccountTypes;
+  fullStreetName: string;
+  house: string;
+  apartment: string;
+  apartmentType: string | undefined;
+  period: string;
+  balance: number;
+  residents: number;
+  isEligibleForBenefit: boolean;
+  document: string;
+  comment: string;
+  toggleEditAccount: Func;
+  editAccount: boolean;
+}

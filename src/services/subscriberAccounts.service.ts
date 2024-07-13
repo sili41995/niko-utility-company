@@ -1,7 +1,6 @@
 import {
   IFetchSubscriberAccountsFilters,
   IFetchSubscriberAccountsRes,
-  IPricesInfo,
   IUpdateSubscriberAccountByIdData,
 } from '@/types/subscriberAccountsStore.types';
 import HttpService from './http.service';
@@ -68,22 +67,6 @@ class SubscriberAccountsService extends HttpService {
     >({
       url: `subscriber-accounts/${id}`,
       data,
-    });
-
-    return response.data;
-  }
-
-  async fetchPrices(): Promise<IPricesInfo> {
-    const response = await this.get<IPricesInfo>({
-      url: 'subscriber-accounts/prices',
-    });
-
-    return response.data;
-  }
-
-  async calculatePrices(): Promise<IPricesInfo> {
-    const response = await this.patch<IPricesInfo, undefined>({
-      url: 'subscriber-accounts/prices',
     });
 
     return response.data;

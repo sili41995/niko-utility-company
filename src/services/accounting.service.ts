@@ -1,3 +1,4 @@
+import { IPricesInfo } from '@/types/accountingStore.types';
 import HttpService from './http.service';
 import { IPeriod, Periods } from '@/types/data.types';
 
@@ -17,6 +18,22 @@ class AccountingService extends HttpService {
   async addPeriod(): Promise<IPeriod> {
     const response = await this.post<IPeriod, undefined>({
       url: 'accounting/periods',
+    });
+
+    return response.data;
+  }
+
+  async fetchPrices(): Promise<IPricesInfo> {
+    const response = await this.get<IPricesInfo>({
+      url: 'accounting/prices',
+    });
+
+    return response.data;
+  }
+
+  async calculatePrices(): Promise<IPricesInfo> {
+    const response = await this.patch<IPricesInfo, undefined>({
+      url: 'accounting/prices',
     });
 
     return response.data;

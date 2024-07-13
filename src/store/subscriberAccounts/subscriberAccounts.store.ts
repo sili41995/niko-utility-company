@@ -7,14 +7,11 @@ import {
   IFetchSubscriberAccountsRes,
   IFetchSubscriberAccountsFilters,
   IUpdateSubscriberAccountByIdData,
-  IPricesInfo,
 } from '@/types/subscriberAccountsStore.types';
 import {
   fetchSubscriberAccounts,
   addSubscriberAccount,
   updateSubscriberAccountById,
-  calculatePrices,
-  fetchPrices,
 } from './operations';
 import {
   ISubscriberAccount,
@@ -48,18 +45,6 @@ const subscriberAccountsSlice = (
     await updateSubscriberAccountById({
       data,
       set: setState({ set, name: 'updateSubscriberAccountById' }),
-      get,
-    }),
-  fetchPrices: async (): Promise<IPricesInfo | undefined> =>
-    await fetchPrices({
-      set: setState({ set, name: 'fetchPrices' }),
-      data: undefined,
-      get,
-    }),
-  calculatePrices: async (): Promise<IPricesInfo | undefined> =>
-    await calculatePrices({
-      set: setState({ set, name: 'calculatePrices' }),
-      data: undefined,
       get,
     }),
 });

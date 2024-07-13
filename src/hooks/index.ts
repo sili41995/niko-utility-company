@@ -26,3 +26,4 @@ export { default as useAccountingSections } from './useAccountingSections';
 export { default as useTargetPeriod } from './useTargetPeriod';
 export { default as useCurrentPeriod } from './useCurrentPeriod';
 export { default as useFindSubscriberAccountForm } from './useFindSubscriberAccountForm';
+export { default as useSubscriberAccountsTableRow } from './useSubscriberAccountsTableRow';

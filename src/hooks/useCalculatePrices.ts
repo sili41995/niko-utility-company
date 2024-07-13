@@ -1,22 +1,22 @@
 import { formatDate, toasts } from '@/utils';
-import { useSubscriberAccountsStore } from '@/store/store';
+import { useAccountingStore } from '@/store/store';
 import {
   selectError,
   selectIsLoading,
   selectCalculatePrices,
   selectLastCalculate,
   selectFetchPrices,
-} from '@/store/subscriberAccounts/selectors';
+} from '@/store/accounting/selectors';
 import { DateFormats, Messages } from '@/constants';
 import { IUseCalculatePrices } from '@/types/hooks.types';
 import { useEffect } from 'react';
 
 const useCalculatePrices = (): IUseCalculatePrices => {
-  const isLoading = useSubscriberAccountsStore(selectIsLoading);
-  const error = useSubscriberAccountsStore(selectError);
-  const calculatePrices = useSubscriberAccountsStore(selectCalculatePrices);
-  const lastCalculate = useSubscriberAccountsStore(selectLastCalculate);
-  const fetchPrices = useSubscriberAccountsStore(selectFetchPrices);
+  const isLoading = useAccountingStore(selectIsLoading);
+  const error = useAccountingStore(selectError);
+  const calculatePrices = useAccountingStore(selectCalculatePrices);
+  const lastCalculate = useAccountingStore(selectLastCalculate);
+  const fetchPrices = useAccountingStore(selectFetchPrices);
   const lastPricesCalculate = lastCalculate
     ? formatDate({
         date: lastCalculate,
