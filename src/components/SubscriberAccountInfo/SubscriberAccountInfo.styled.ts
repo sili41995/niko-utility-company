@@ -35,10 +35,12 @@ export const ResetBtn = styled.button`
 
   & > svg {
     color: ${({ theme }) => theme.colors.black};
-    transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: color ${({ theme }) => theme.transitionDurationAndFunc},
+      transform ${({ theme }) => theme.transitionDurationAndFunc};
   }
 
   &:is(:hover, :focus) > svg {
     color: ${({ theme }) => theme.colors.accent};
+    transform: rotate(180deg);
   }
 `;
