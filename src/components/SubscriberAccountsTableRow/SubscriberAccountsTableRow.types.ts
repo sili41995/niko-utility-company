@@ -11,4 +11,6 @@ export interface IStyledTableDataTextProps {
 
 export interface IStyledTableDataProps {
   center?: boolean;
+  isBalance?: boolean;
+  isDebt?: boolean;
 }

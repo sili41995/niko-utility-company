@@ -3,4 +3,6 @@ export interface IProps {
   totalCount: number;
   filteredCount: number;
   isLoading: boolean;
+  quantity: number;
+  showTitle?: boolean;
 }

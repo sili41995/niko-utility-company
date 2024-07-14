@@ -1,5 +1,6 @@
 export interface IProps {
   totalCount: number;
+  quantity: number;
   step?: number;
 }
 

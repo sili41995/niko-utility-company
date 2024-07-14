@@ -29,3 +29,5 @@ export { default as useFindSubscriberAccountForm } from './useFindSubscriberAcco
 export { default as useSubscriberAccountsTableRow } from './useSubscriberAccountsTableRow';
 export { default as useAccrualsAdjustmentForm } from './useAccrualsAdjustmentForm';
 export { default as useAddPaymentForm } from './useAddPaymentForm';
+export { default as usePaymentsModalWin } from './usePaymentsModalWin';
+export { default as usePaymentsSection } from './usePaymentsSection';

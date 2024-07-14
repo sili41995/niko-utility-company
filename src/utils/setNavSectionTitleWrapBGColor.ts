@@ -12,7 +12,7 @@ const setNavSectionTitleWrapBGColor = (path: string): string => {
       return theme.colors.documentsSection;
 
     default:
-      return theme.colors.grey;
+      return theme.colors.darkGrey;
   }
 };
 

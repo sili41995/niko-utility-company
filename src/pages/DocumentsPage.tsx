@@ -6,7 +6,7 @@ import Loader from '@/components/Loader';
 import DocumentsFilter from '@/components/DocumentsFilter';
 import Pagination from '@/components/Pagination';
 import DefaultMessage from '@/components/DefaultMessage';
-import { Messages } from '@/constants';
+import { GeneralParams, Messages } from '@/constants';
 import ErrorMessage from '@/components/ErrorMessage';
 import NavBar from '@/components/NavBar';
 import { useDocumentsPage } from '@/hooks';
@@ -43,6 +43,7 @@ const DocumentsPage: FC = () => {
                         totalCount={totalCount}
                         isLoading={isLoading}
                         filteredCount={filteredCount}
+                        quantity={Number(GeneralParams.recordLimit)}
                       />
                     )}
                   </>

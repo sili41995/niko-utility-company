@@ -133,7 +133,7 @@ const SubscriberAccountsFilter: FC = () => {
         }
       />
       <Input
-        label='Квартра'
+        label='Квартира'
         type={InputTypes.text}
         width={100}
         formType={FormTypes.filter}

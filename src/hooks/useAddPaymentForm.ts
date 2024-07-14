@@ -6,7 +6,7 @@ import {
   toasts,
 } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { DateFormats, Messages } from '@/constants';
+import { DateFormats, GeneralParams, Messages } from '@/constants';
 import { INewPaymentFormData } from '@/types/data.types';
 import { validatePaymentForm } from '@/validators';
 import getNewPaymentData from '@/utils/getNewPaymentData';
@@ -27,7 +27,7 @@ const useAddPaymentForm = (
   const isLoading = usePaymentsStore(selectIsLoading);
   const addPayment = usePaymentsStore(selectAddPayment);
   const fetchPayments = usePaymentsStore(selectFetchPayments);
-  const { limit, page } = useFilterSearchParams();
+  const { page } = useFilterSearchParams();
   const {
     register,
     handleSubmit,
@@ -60,7 +60,7 @@ const useAddPaymentForm = (
       await addPayment(newPaymentData);
       await fetchPayments({
         page,
-        limit,
+        limit: Number(GeneralParams.paymentsRecordLimit),
       });
       toasts.successToast(Messages.paymentAddSuccess);
       reset();

@@ -6,4 +6,5 @@ export interface IProps {
 
 export interface IStyledTableDataProps {
   center?: boolean;
+  capitalize?: boolean;
 }

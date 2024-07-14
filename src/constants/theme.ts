@@ -13,9 +13,9 @@ interface ITheme {
     subscriberAccountsSection: string;
     accountingSection: string;
     documentsSection: string;
+    darkGrey: string;
     grey: string;
-    servicesTitle: string;
-    serviceBG: string;
+    lightGrey: string;
     primary: string;
     accent: string;
     white: string;
@@ -72,14 +72,14 @@ const theme: ITheme = {
     border: 'rgba(137, 137, 137, 0.43)',
     green: '#00c938',
     greenAccent: '#00FF00',
-    grey: '#858796',
+    darkGrey: '#858796',
     accountingSection: '#3CB371',
     subscriberAccountsSection: '#ee9646',
     documentsSection: '#994499',
     darkBlue: '#001A35',
     tableHeader: '#0051a3',
-    servicesTitle: '#dddfeb',
-    serviceBG: '#eeeeee',
+    grey: '#dddfeb',
+    lightGrey: '#eeeeee',
   },
   fontFamily: {
     primary: 'Roboto',

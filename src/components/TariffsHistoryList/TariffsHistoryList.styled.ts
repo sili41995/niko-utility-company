@@ -40,7 +40,7 @@ export const TariffWrap = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};
-  background-color: ${({ theme }) => theme.colors.serviceBG};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
 export const PriceWrap = styled.div`

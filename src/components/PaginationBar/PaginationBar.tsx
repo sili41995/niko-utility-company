@@ -4,7 +4,7 @@ import PaginationBarBtn from '@/components/PaginationBarBtn';
 import { Button, Item, List, TemplateItem } from './PaginationBar.styled';
 import { IProps } from './PaginationBar.types';
 
-const PaginationBar: FC<IProps> = ({ totalCount }) => {
+const PaginationBar: FC<IProps> = ({ totalCount, quantity }) => {
   const {
     isBackNavBtnDisable,
     onPrevPageBtnClick,
@@ -23,7 +23,7 @@ const PaginationBar: FC<IProps> = ({ totalCount }) => {
     isNextNavBtnDisable,
     onNextPageBtnClick,
     step,
-  } = usePaginationBar({ totalCount });
+  } = usePaginationBar({ totalCount, quantity });
 
   return (
     <List>

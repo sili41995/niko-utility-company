@@ -2,7 +2,7 @@ import Container from '@/components/Container';
 import Section from '@/components/Section';
 import { FC } from 'react';
 import SubscriberAccountsTable from '@/components/SubscriberAccountsTable';
-import { Messages } from '@/constants';
+import { GeneralParams, Messages } from '@/constants';
 import Pagination from '@/components/Pagination';
 import NavBar from '@/components/NavBar';
 import AddSubscriberAccountModalWin from '@/components/AddSubscriberAccountModalWin';
@@ -25,7 +25,7 @@ const SubscriberAccountsPage: FC = () => {
     filteredCount,
     isEmptyFilteredList,
   } = useSubscriberAccountsPage();
-  const showPagination = filteredCount && totalCount;
+  const showPagination = filteredCount && totalCount ;
 
   return (
     <>
@@ -46,6 +46,7 @@ const SubscriberAccountsPage: FC = () => {
                         totalCount={totalCount}
                         isLoading={isLoading}
                         filteredCount={filteredCount}
+                        quantity={Number(GeneralParams.recordLimit)}
                       />
                     )}
                   </>

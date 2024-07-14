@@ -11,10 +11,16 @@ export const TableBodyRow = styled.tr`
 
 export const TableData = styled.td<IStyledTableDataProps>`
   padding: ${({ theme }) => theme.spacing()};
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme, isBalance, isDebt }) =>
+    isBalance
+      ? isDebt
+        ? theme.colors.red
+        : theme.colors.green
+      : theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: 12px;
-  font-weight: ${({ theme }) => theme.fontWeight.primary};
+  font-weight: ${({ theme, isBalance }) =>
+    isBalance ? theme.fontWeight.secondary : theme.fontWeight.primary};
   text-align: ${({ center }) => (center ? 'center' : 'left')};
 `;
 

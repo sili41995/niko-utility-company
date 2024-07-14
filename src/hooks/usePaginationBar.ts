@@ -1,4 +1,4 @@
-import { GeneralParams, SearchParamsKeys } from '@/constants';
+import { SearchParamsKeys } from '@/constants';
 import useSetSearchParams from './useSetSearchParams';
 import { getPageNumbers, getPaginationBarSettings, makeBlur } from '@/utils';
 import { BtnClickEvent, IOnPageBtnClickProps } from '@/types/types';
@@ -7,9 +7,9 @@ import { IUsePaginationBar, IUsePaginationBarProps } from '@/types/hooks.types';
 const usePaginationBar = ({
   totalCount,
   step = 1,
+  quantity,
 }: IUsePaginationBarProps): IUsePaginationBar => {
   const { updateSearchParams, searchParams } = useSetSearchParams();
-  const quantity = Number(GeneralParams.recordLimit);
   const pageQuantity = Math.ceil(totalCount / quantity);
   const pageNumbers = getPageNumbers(pageQuantity);
   const currentPage = Number(searchParams.get(SearchParamsKeys.page) ?? 1);

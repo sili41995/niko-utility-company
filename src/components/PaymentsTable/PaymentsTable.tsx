@@ -17,7 +17,6 @@ const PaymentsTable: FC = () => {
     <StyledTable>
       <TableHead>
         <TableHeadRow>
-          {/* <TableHeader width={130}>Вулиця</TableHeader> */}
           <TableHeader>Аб. рахунок</TableHeader>
           <TableHeader>Дата</TableHeader>
           <TableHeader>Період</TableHeader>

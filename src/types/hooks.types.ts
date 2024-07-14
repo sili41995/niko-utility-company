@@ -28,6 +28,8 @@ import { AccountTypes } from '@/constants';
 import {
   IAddSubscriberAccountFormData,
   IEditSubscriberAccountFormData,
+  ISubscriberAccount,
+  SetSubscriberAccountFunc,
   SubscriberAccount,
 } from './subscriberAccount.types';
 
@@ -44,6 +46,7 @@ export interface IUseSetSearchParams {
 
 export interface IUsePaginationBarProps {
   totalCount: number;
+  quantity: number;
   step?: number;
 }
 
@@ -358,6 +361,7 @@ export interface IUseSubscriberAccountsTableRow {
   comment: string;
   toggleEditAccount: Func;
   editAccount: boolean;
+  isDebt: boolean;
 }
 
 export interface IUseAccrualsAdjustmentForm {
@@ -379,4 +383,18 @@ export interface IUseAddPaymentForm {
   paymentSources: SelectData;
   currentDate: string;
   isLoading: boolean;
+}
+
+export interface IUsePaymentsModalWin {
+  subscriberAccount: ISubscriberAccount | null;
+  setSubscriberAccount: SetSubscriberAccountFunc;
+}
+
+export interface IUsePaymentsSection {
+  isLoaded: boolean;
+  isLoading: boolean;
+  showPagination: boolean;
+  totalCount: number | null;
+  count: number;
+  showPaymentsTable: boolean;
 }

@@ -30,6 +30,7 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     comment,
     toggleEditAccount,
     editAccount,
+    isDebt,
   } = useSubscriberAccountsTableRow(subscriberAccount);
 
   return (
@@ -47,7 +48,9 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
         <TableData center>{apartment}</TableData>
         <TableData center>{apartmentType}</TableData>
         <TableData center>{period}</TableData>
-        <TableData center>{balance}</TableData>
+        <TableData isDebt={isDebt} center isBalance>
+          {balance}
+        </TableData>
         <TableData center>{residents}</TableData>
         <TableData>
           <TableDataText center>

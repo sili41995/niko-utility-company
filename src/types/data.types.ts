@@ -165,6 +165,7 @@ export interface IPayment {
   amount: number;
   source: PaymentSources;
   date: Date;
+  period: IPeriod;
   subscriberAccountId: number;
   subscriberAccount: ISubscriberAccount;
 }

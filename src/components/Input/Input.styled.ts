@@ -15,7 +15,7 @@ export const Container = styled.span`
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.darkGrey};
   }
 
   & > button {

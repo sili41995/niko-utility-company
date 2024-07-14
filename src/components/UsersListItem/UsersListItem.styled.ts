@@ -4,7 +4,7 @@ export const ListItem = styled.li``;
 
 export const TitleWrap = styled.div`
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};
-  background-color: ${({ theme }) => theme.colors.servicesTitle};
+  background-color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Title = styled.p`
@@ -42,7 +42,7 @@ export const AccessWrap = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};
-  background-color: ${({ theme }) => theme.colors.serviceBG};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
 export const AccessName = styled.p`

@@ -33,6 +33,7 @@ const useSubscriberAccountsTableRow = (
     date: period,
     dateFormat: DateFormats.date,
   });
+  const isDebt = balance > 0;
 
   const toggleEditAccount = () => {
     setEditAccount((prevState) => !prevState);
@@ -47,13 +48,14 @@ const useSubscriberAccountsTableRow = (
     apartment: apartmentValue,
     apartmentType,
     period: periodDate,
-    balance,
+    balance: Math.abs(balance),
     residents,
     isEligibleForBenefit,
     document,
     comment,
     toggleEditAccount,
     editAccount,
+    isDebt,
   };
 };
 

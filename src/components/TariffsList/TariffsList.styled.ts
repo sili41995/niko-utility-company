@@ -4,7 +4,7 @@ export const Container = styled.div``;
 
 export const TitleWrap = styled.div`
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};
-  background-color: ${({ theme }) => theme.colors.servicesTitle};
+  background-color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Title = styled.p`
@@ -28,7 +28,7 @@ export const TariffWrap = styled.div`
   align-self: start;
   gap: ${({ theme }) => theme.spacing(5)};
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(4)}`};
-  background-color: ${({ theme }) => theme.colors.serviceBG};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
 export const ControlsWrap = styled.div`

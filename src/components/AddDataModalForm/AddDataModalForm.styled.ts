@@ -4,7 +4,7 @@ import { IStyledProps } from './AddDataModalForm.types';
 export const Container = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.serviceBG};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
   margin-top: ${({ marginTop, theme }) =>
     marginTop ? `${marginTop}px` : theme.spacing(6)};
 `;

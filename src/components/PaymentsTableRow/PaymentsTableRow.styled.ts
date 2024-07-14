@@ -9,7 +9,8 @@ export const TableData = styled.td<IStyledTableDataProps>`
   padding: ${({ theme }) => theme.spacing()};
   color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
   text-align: ${({ center }) => (center ? 'center' : 'left')};
+  text-transform: ${({ capitalize }) => (capitalize ? 'capitalize' : 'none')};
 `;
