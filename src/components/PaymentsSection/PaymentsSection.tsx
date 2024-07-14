@@ -8,7 +8,10 @@ import { GeneralParams } from '@/constants';
 import Pagination from '../Pagination';
 import { usePaymentsSection } from '@/hooks';
 
-const PaymentsSection: FC<IProps> = ({ subscriberAccount }) => {
+const PaymentsSection: FC<IProps> = ({
+  subscriberAccount,
+  resetSubscriberAccount,
+}) => {
   const {
     isLoaded,
     isLoading,
@@ -21,7 +24,10 @@ const PaymentsSection: FC<IProps> = ({ subscriberAccount }) => {
 
   return (
     <Container>
-      <AddPaymentForm subscriberAccount={subscriberAccount} />
+      <AddPaymentForm
+        subscriberAccount={subscriberAccount}
+        resetSubscriberAccount={resetSubscriberAccount}
+      />
       {isLoaded ? (
         showPaymentsTable && (
           <TableWrap>

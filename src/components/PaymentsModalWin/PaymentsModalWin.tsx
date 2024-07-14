@@ -8,7 +8,8 @@ import PaymentsSection from '../PaymentsSection';
 import { usePaymentsModalWin } from '@/hooks';
 
 const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const { subscriberAccount, setSubscriberAccount } = usePaymentsModalWin();
+  const { subscriberAccount, setSubscriberAccount, resetSubscriberAccount } =
+    usePaymentsModalWin();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -16,7 +17,10 @@ const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {
         <FormDataTitle title='Оплати (стрічка):' />
         <ContentContainer>
           {subscriberAccount ? (
-            <PaymentsSection subscriberAccount={subscriberAccount} />
+            <PaymentsSection
+              subscriberAccount={subscriberAccount}
+              resetSubscriberAccount={resetSubscriberAccount}
+            />
           ) : (
             <FindSubscriberAccountForm
               setSubscriberAccount={setSubscriberAccount}

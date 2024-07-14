@@ -8,7 +8,10 @@ import Input from '../Input';
 import { InputTypes } from '@/constants';
 import { useAddPaymentForm } from '@/hooks';
 
-const AddPaymentForm: FC<IProps> = ({ subscriberAccount }) => {
+const AddPaymentForm: FC<IProps> = ({
+  subscriberAccount,
+  resetSubscriberAccount,
+}) => {
   const {
     address,
     subscriberAccountInfo,
@@ -25,6 +28,7 @@ const AddPaymentForm: FC<IProps> = ({ subscriberAccount }) => {
       <SubscriberAccountInfo
         address={address}
         subscriberAccountInfo={subscriberAccountInfo}
+        resetSubscriberAccount={resetSubscriberAccount}
       />
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <InputsWrap>

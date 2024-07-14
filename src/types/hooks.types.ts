@@ -388,6 +388,7 @@ export interface IUseAddPaymentForm {
 export interface IUsePaymentsModalWin {
   subscriberAccount: ISubscriberAccount | null;
   setSubscriberAccount: SetSubscriberAccountFunc;
+  resetSubscriberAccount: OnBtnClickFunc;
 }
 
 export interface IUsePaymentsSection {

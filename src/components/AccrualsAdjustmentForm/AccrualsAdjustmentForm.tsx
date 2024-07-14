@@ -7,7 +7,10 @@ import { InputTypes } from '@/constants';
 import { useAccrualsAdjustmentForm } from '@/hooks';
 import SubscriberAccountInfo from '../SubscriberAccountInfo';
 
-const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
+const AccrualsAdjustmentForm: FC<IProps> = ({
+  subscriberAccount,
+  resetSubscriberAccount,
+}) => {
   const {
     address,
     subscriberAccountInfo,
@@ -23,6 +26,7 @@ const AccrualsAdjustmentForm: FC<IProps> = ({ subscriberAccount }) => {
       <SubscriberAccountInfo
         address={address}
         subscriberAccountInfo={subscriberAccountInfo}
+        resetSubscriberAccount={resetSubscriberAccount}
       />
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
