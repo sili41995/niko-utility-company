@@ -1,4 +1,4 @@
-import { SectorTypes, ServiceCategories } from '@/constants';
+import { SectorTypes, ServiceCategories, PaymentSources } from '@/constants';
 import { ISubscriberAccount } from './subscriberAccount.types';
 
 export interface IService {
@@ -159,3 +159,30 @@ export type Price = Pick<IAccrualAdjustment, 'price'>;
 export type AccrualAdjustmentComment = Pick<IAccrualAdjustment, 'comment'>;
 
 export type AccrualAdjustmentDate = Pick<IAccrualAdjustment, 'date'>;
+
+export interface IPayment {
+  id: number;
+  amount: number;
+  source: PaymentSources;
+  date: Date;
+  subscriberAccountId: number;
+  subscriberAccount: ISubscriberAccount;
+}
+
+export type Payments = IPayment[];
+
+export type NewPaymentData = Pick<
+  IPayment,
+  'amount' | 'source' | 'date' | 'subscriberAccountId'
+>;
+
+export interface INewPaymentFormData extends Pick<IPayment, 'source'> {
+  amount: string;
+  date: string;
+}
+
+export type Amount = Pick<IPayment, 'amount'>;
+
+export type PaymentSource = Pick<IPayment, 'source'>;
+
+export type PaymentDate = Pick<IPayment, 'date'>;

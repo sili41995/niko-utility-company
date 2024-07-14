@@ -5,7 +5,7 @@ import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './PaymentsModalWin.styled';
 import FindSubscriberAccountForm from '../FindSubscriberAccountForm';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
-import PaymentForm from '../PaymentForm';
+import AddPaymentForm from '../AddPaymentForm';
 
 const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {
   const [data, setData] = useState<ISubscriberAccount | null>(null);
@@ -19,7 +19,7 @@ const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {
       <Container>
         <FormDataTitle title='Оплати (стрічка):' />
         <ContentContainer>
-          {data && <PaymentForm subscriberAccount={data} />}
+          {data && <AddPaymentForm subscriberAccount={data} />}
           <FindSubscriberAccountForm
             setSubscriberAccount={setSubscriberAccount}
           />

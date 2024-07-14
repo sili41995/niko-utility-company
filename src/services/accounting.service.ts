@@ -3,9 +3,15 @@ import HttpService from './http.service';
 import {
   AccrualAdjustmentData,
   IAccrualAdjustment,
+  IPayment,
   IPeriod,
+  NewPaymentData,
   Periods,
 } from '@/types/data.types';
+import {
+  IFetchPaymentsFilters,
+  IFetchPaymentsRes,
+} from '@/types/paymentsStore.types';
 
 class AccountingService extends HttpService {
   constructor() {
@@ -53,6 +59,26 @@ class AccountingService extends HttpService {
         data,
       }
     );
+
+    return response.data;
+  }
+
+  async fetchPayments({
+    limit,
+    page = 1,
+  }: IFetchPaymentsFilters): Promise<IFetchPaymentsRes> {
+    const response = await this.get<IFetchPaymentsRes>({
+      url: `accounting/payments?page=${page}&limit=${limit}`,
+    });
+
+    return response.data;
+  }
+
+  async addPayment(data: NewPaymentData): Promise<IPayment> {
+    const response = await this.post<IPayment, NewPaymentData>({
+      url: 'accounting/payments',
+      data,
+    });
 
     return response.data;
   }

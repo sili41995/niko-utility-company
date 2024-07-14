@@ -44,6 +44,9 @@ const enum Messages {
   subscriberAccountNotFoundErr = 'Абонентський рахунок не знайдено',
   addAccrualAdjustmentSuccess = 'Коригування нарахувань успішно додано',
   priceReqErr = 'Поле Сума має бути заповнене',
+  sourceReqErr = 'Поле Спосіб оплати має бути заповнене',
+  dateReqErr = 'Поле Дата має бути заповнене',
+  paymentAddSuccess = 'Оплата успішно додана',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

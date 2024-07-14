@@ -21,6 +21,7 @@ import {
   INewTariffFormData,
   Tariffs,
   IAccrualAdjustmentFormData,
+  INewPaymentFormData,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -365,6 +366,17 @@ export interface IUseAccrualsAdjustmentForm {
   handleSubmit: UseFormHandleSubmit<IAccrualAdjustmentFormData, undefined>;
   handleFormSubmit: SubmitHandler<IAccrualAdjustmentFormData>;
   register: UseFormRegister<IAccrualAdjustmentFormData>;
+  currentDate: string;
+  isLoading: boolean;
+}
+
+export interface IUseAddPaymentForm {
+  address: string;
+  subscriberAccountInfo: string;
+  handleSubmit: UseFormHandleSubmit<INewPaymentFormData, undefined>;
+  handleFormSubmit: SubmitHandler<INewPaymentFormData>;
+  register: UseFormRegister<INewPaymentFormData>;
+  paymentSources: SelectData;
   currentDate: string;
   isLoading: boolean;
 }

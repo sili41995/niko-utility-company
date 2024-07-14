@@ -28,3 +28,4 @@ export { default as useCurrentPeriod } from './useCurrentPeriod';
 export { default as useFindSubscriberAccountForm } from './useFindSubscriberAccountForm';
 export { default as useSubscriberAccountsTableRow } from './useSubscriberAccountsTableRow';
 export { default as useAccrualsAdjustmentForm } from './useAccrualsAdjustmentForm';
+export { default as useAddPaymentForm } from './useAddPaymentForm';

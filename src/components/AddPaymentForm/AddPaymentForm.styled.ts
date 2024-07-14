@@ -13,3 +13,8 @@ export const Form = styled.form`
   justify-content: center;
   gap: ${({ theme }) => theme.spacing(6)};
 `;
+
+export const InputsWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;

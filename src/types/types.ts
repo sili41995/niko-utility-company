@@ -3,6 +3,7 @@ import { ChangeEvent, MouseEvent } from 'react';
 import {
   Houses,
   IAccrualAdjustmentFormData,
+  INewPaymentFormData,
   INewTariffFormData,
   IPeriod,
   ITariff,
@@ -153,5 +154,10 @@ export interface IUpdatePeriodsProps {
 
 export interface IGetAccrualAdjustmentDataProps {
   data: IAccrualAdjustmentFormData;
+  id: number;
+}
+
+export interface IGetNewPaymentDataProps {
+  data: INewPaymentFormData;
   id: number;
 }
