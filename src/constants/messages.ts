@@ -47,6 +47,8 @@ const enum Messages {
   sourceReqErr = 'Поле Спосіб оплати має бути заповнене',
   dateReqErr = 'Поле Дата має бути заповнене',
   paymentAddSuccess = 'Оплата успішно додана',
+  fetchInvoicesSuccess = 'Рахунки-повідомлення успішно сформовані',
+  fileNotFoundErr = 'Файл не знайдено',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

@@ -9,7 +9,7 @@ import AccountingSectionsBtn from '@/components/AccountingSectionsBtn';
 // import PayOshchadbankModalWin from '@/components/PayOshchadbankModalWin';
 // import PayPrivatbankModalWin from '@/components/PayPrivatbankModalWin';
 // import PayPostageModalWin from '@/components/PayPostageModalWin';
-// import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
+import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
 // import BenefitsAdjustmentModalWin from '@/components/BenefitsAdjustmentModalWin';
 import PaymentsModalWin from '@/components/PaymentsModalWin';
 // import PaymentsAdjustmentModalWin from '@/components/PaymentsAdjustmentModalWin';
@@ -24,7 +24,7 @@ const AccountingSections: FC = () => {
     setPaymentsModalWinState,
     // setBenefitsAdjustmentModalWinState,
     setTariffsModalWinState,
-    // setAccountsMessageModalWinState,
+    setAccountsMessageModalWinState,
     // setPayPostageModalWinState,
     // setPayPrivatbankModalWinState,
     // setPayOshchadbankModalWinState,
@@ -36,7 +36,7 @@ const AccountingSections: FC = () => {
     // showPaymentsAdjustmentModalWin,
     showPaymentsModalWin,
     // showBenefitsAdjustmentModalWin,
-    // showAccountsMessageModalWin,
+    showAccountsMessageModalWin,
     // showPayPostageModalWin,
     // showPayPrivatbankModalWin,
     // showPayOshchadbankModalWin,
@@ -88,12 +88,12 @@ const AccountingSections: FC = () => {
             title='Тарифи'
           />
         </SectionsListItem>
-        {/* <SectionsListItem>
-        <AccountingSectionsBtn
+        <SectionsListItem>
+          <AccountingSectionsBtn
             onClick={setAccountsMessageModalWinState}
             title='Рахунки-повідомлення'
           />
-        </SectionsListItem> */}
+        </SectionsListItem>
         {/* <SectionsListItem>
         <AccountingSectionsBtn
             onClick={setPayPostageModalWinState}
@@ -148,11 +148,11 @@ const AccountingSections: FC = () => {
           setModalWinState={setBenefitsAdjustmentModalWinState}
         />
       )} */}
-      {/* {showAccountsMessageModalWin && (
+      {showAccountsMessageModalWin && (
         <AccountsMessageModalWin
           setModalWinState={setAccountsMessageModalWinState}
         />
-      )} */}
+      )}
       {/* {showPayPostageModalWin && (
         <PayPostageModalWin setModalWinState={setPayPostageModalWinState} />
       )} */}
