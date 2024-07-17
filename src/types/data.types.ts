@@ -123,7 +123,21 @@ export interface IDocument {
 
 export type Documents = IDocument[];
 
-export interface IStatistics {}
+export interface IStatistics {
+  id: number;
+  subscriberAccounts: number;
+  residents: number;
+  balanceStart: number;
+  accrued: number;
+  penalty: number;
+  adjustment: number;
+  payments: number;
+  benefits: number;
+  subsidies: number;
+  balanceEnd: number;
+  periodId: number;
+  period: IPeriod;
+}
 
 export interface IPeriod {
   id: number;

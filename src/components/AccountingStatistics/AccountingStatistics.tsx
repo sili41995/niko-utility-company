@@ -7,30 +7,43 @@ import {
   Title,
   Value,
 } from './AccountingStatistics.styled';
-// import { useTargetPeriod } from '@/hooks';
+import { useTargetPeriod } from '@/hooks';
 
 const AccountingStatistics: FC = () => {
-  // const targetPeriod = useTargetPeriod();
+  const targetPeriod = useTargetPeriod();
+  const { statistics } = targetPeriod ?? {};
+  const {
+    subscriberAccounts,
+    residents,
+    balanceStart,
+    balanceEnd,
+    benefits,
+    accrued,
+    penalty,
+    adjustment,
+    payments,
+    subsidies,
+  } = statistics ?? {};
 
   return (
     <List>
       <ListItem>
         <StatisticsItem>
           <Title>Всього а/р:</Title>
-          <Value>0000</Value>
+          <Value>{subscriberAccounts}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Всього мешканців:</Title>
-          <Value>0000</Value>
+          <Value>{residents}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <ExtendedInfo>
           <StatisticsItem>
             <Title>Сальдо початок:</Title>
-            <Value>0000</Value>
+            <Value>{balanceStart}</Value>
           </StatisticsItem>
           <Value>0000</Value>
         </ExtendedInfo>
@@ -38,44 +51,44 @@ const AccountingStatistics: FC = () => {
       <ListItem>
         <StatisticsItem>
           <Title>Нараховано:</Title>
-          <Value>0000</Value>
+          <Value>{accrued}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Пеня:</Title>
-          <Value>0000</Value>
+          <Value>{penalty}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Коригування:</Title>
-          <Value>0000</Value>
+          <Value>{adjustment}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Оплати:</Title>
-          <Value>0000</Value>
+          <Value>{payments}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Пільги:</Title>
-          <Value>0000</Value>
+          <Value>{benefits}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Субсидії:</Title>
-          <Value>0000</Value>
+          <Value>{subsidies}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <ExtendedInfo>
           <StatisticsItem>
             <Title>Сальдо кінець:</Title>
-            <Value>0000</Value>
+            <Value>{balanceEnd}</Value>
           </StatisticsItem>
           <Value>00000000</Value>
         </ExtendedInfo>

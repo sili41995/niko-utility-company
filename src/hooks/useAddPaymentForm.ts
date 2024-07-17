@@ -10,7 +10,7 @@ import { DateFormats, GeneralParams, Messages } from '@/constants';
 import { INewPaymentFormData } from '@/types/data.types';
 import { validatePaymentForm } from '@/validators';
 import getNewPaymentData from '@/utils/getNewPaymentData';
-import { usePaymentsStore } from '@/store/store';
+import { usePaymentsStore, usePeriodsStore } from '@/store/store';
 import {
   selectAddPayment,
   selectFetchPayments,
@@ -20,6 +20,7 @@ import { useFilterSearchParams } from '@/hooks';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import { useEffect } from 'react';
 import { IUseAddPaymentForm } from '@/types/hooks.types';
+import { selectFetchPeriods } from '@/store/periods/selectors';
 
 const useAddPaymentForm = (
   subscriberAccount: ISubscriberAccount
@@ -27,6 +28,7 @@ const useAddPaymentForm = (
   const isLoading = usePaymentsStore(selectIsLoading);
   const addPayment = usePaymentsStore(selectAddPayment);
   const fetchPayments = usePaymentsStore(selectFetchPayments);
+  const fetchPeriods = usePeriodsStore(selectFetchPeriods);
   const { page } = useFilterSearchParams();
   const {
     register,
@@ -58,7 +60,8 @@ const useAddPaymentForm = (
 
     try {
       await addPayment(newPaymentData);
-      await fetchPayments({
+      fetchPeriods();
+      fetchPayments({
         page,
         limit: Number(GeneralParams.paymentsRecordLimit),
       });
