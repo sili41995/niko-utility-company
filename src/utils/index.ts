@@ -34,4 +34,4 @@ export { default as getSubscriberAccountAddress } from './getSubscriberAccountAd
 export { default as getSubscriberAccountInfo } from './getSubscriberAccountInfo';
 export { default as getPaymentSourcesSelectData } from './getPaymentSourcesSelectData';
 export { default as getPaymentSource } from './getPaymentSource';
-export { default as saveInvoicesToPdf } from './saveInvoicesToPdf';
+export { default as saveFileToPdf } from './saveFileToPdf';

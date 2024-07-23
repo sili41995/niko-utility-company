@@ -1,4 +1,4 @@
 id,name,login,email,password,token,fullAccess,houses,subscribers,accounting,documents,counters,oneOffJobs,settings
 2,admin,admin,admin@gmail.com,$2a$10$6l5R1YLdtULh/M2y18FCUOQUl5eNTiPmUvca2jjH520qwqMhsyqiu,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzE5Nzg3MzUyLCJleHAiOjE3MjAzOTIxNTJ9.GKvOU90CVmwUXEPRQLP9foEJK_3pT6aFIODn47lx-wQ,f,f,f,f,f,f,f,f
-1,superadmin,superadmin,superadmin@mail.com,$2a$10$lr7rG.AQ.drIJLUENBMyW.GegyVLqx84vGhRUt04uP2RE4zQQo2m.,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIwOTcyMTY5LCJleHAiOjE3MjE1NzY5Njl9.JPg70tvB4OVFV15OTSTzk0l0itprAwtCh7nZFB859I4,f,f,f,f,f,f,f,f
-3,admin,admin1,admin@gmail.com,$2a$10$rPOl19G4Cg4P.o7Qf1TYB.6OCRPt4EHZfNN8.1sgu6sa1tJH0Llvm,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzIxMTM4MDkyLCJleHAiOjE3MjE3NDI4OTJ9.SukDyn1e6rnCh5t0n-L2Hoc7v4-SvkGB0fyLN9qdLzI,f,f,f,f,f,f,f,f
+3,admin,admin1,admin@gmail.com,$2a$10$rPOl19G4Cg4P.o7Qf1TYB.6OCRPt4EHZfNN8.1sgu6sa1tJH0Llvm,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzIxMzAwNTE3LCJleHAiOjE3MjE5MDUzMTd9.XAo8GgF6m1SchQo-fOcAtmJHnQvY7Jk58ALLK5qRHl8,f,f,f,f,f,f,f,f
+1,superadmin,superadmin,superadmin@mail.com,$2a$10$lr7rG.AQ.drIJLUENBMyW.GegyVLqx84vGhRUt04uP2RE4zQQo2m.,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIxNTc5NzY5LCJleHAiOjE3MjIxODQ1Njl9.Rsnw7Pn473y5tvQz5cGGUQGn8YUKQI0sMC1D3Lj--t8,f,f,f,f,f,f,f,f

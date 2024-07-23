@@ -1,4 +1,4 @@
-const saveInvoicesToPdf = (data: BlobPart): void => {
+const saveFileToPdf = (data: BlobPart): void => {
   const url = window.URL.createObjectURL(new Blob([data]));
   const link = document.createElement('a');
   link.href = url;
@@ -9,4 +9,4 @@ const saveInvoicesToPdf = (data: BlobPart): void => {
   link.parentNode?.removeChild(link);
 };
 
-export default saveInvoicesToPdf;
+export default saveFileToPdf;

@@ -6,7 +6,7 @@ import { Container, ContentContainer } from './AccountsMessageModalWin.styled';
 import PeriodTitle from '../PeriodTitle';
 import ActionBtn from '../ActionBtn';
 import { BtnClickEvent } from '@/types/types';
-import { makeBlur, saveInvoicesToPdf, toasts } from '@/utils';
+import { makeBlur, saveFileToPdf, toasts } from '@/utils';
 import accountingService from '@/services/accounting.service';
 import { Messages } from '@/constants';
 import { AxiosError } from 'axios';
@@ -19,7 +19,7 @@ const PayPostageModalWin: FC<IProps> = ({ setModalWinState }) => {
 
     try {
       const result = await accountingService.fetchInvoices();
-      saveInvoicesToPdf(result);
+      saveFileToPdf(result);
       toasts.successToast(Messages.fetchInvoicesSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {

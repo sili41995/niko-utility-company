@@ -1,2 +1,3 @@
 id,amount,source,date,subscriberAccountId,periodId
-21,400,privatbank,2024-07-14,4,11
+2,400,cash,2024-07-17,5,15
+3,1000,cash,2024-07-17,5,15
