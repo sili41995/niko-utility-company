@@ -6,7 +6,7 @@ import {
   Text,
   TextWrap,
 } from './SubscriberAccountInfo.styled';
-import PeriodTitle from '../PeriodTitle';
+import PeriodTitle from '@/components/PeriodTitle';
 import { IProps } from './SubscriberAccountInfo.types';
 import { GrUpdate } from 'react-icons/gr';
 import { BtnTypes, IconSizes } from '@/constants';

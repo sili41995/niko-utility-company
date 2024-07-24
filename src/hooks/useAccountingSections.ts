@@ -24,7 +24,7 @@ const useAccountingSections = (): IUseAccountingSections => {
     useState<boolean>(false);
   const [showPayOshchadbankModalWin, setShowPayOshchadbankModalWin] =
     useState<boolean>(false);
-  const [showPayOAbankModalWin, setShowPayAbankModalWin] =
+  const [showPayAbankModalWin, setShowPayAbankModalWin] =
     useState<boolean>(false);
 
   const setTariffsModalWinState = () => {
@@ -99,7 +99,7 @@ const useAccountingSections = (): IUseAccountingSections => {
     showPayPostageModalWin,
     showPayPrivatbankModalWin,
     showPayOshchadbankModalWin,
-    showPayOAbankModalWin,
+    showPayAbankModalWin,
   };
 };
 

@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { IProps } from './AccrualsAdjustmentForm.types';
 import { Container, Form } from './AccrualsAdjustmentForm.styled';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Input from '../Input';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
+import Input from '@/components/Input';
 import { InputTypes } from '@/constants';
 import { useAccrualsAdjustmentForm } from '@/hooks';
-import SubscriberAccountInfo from '../SubscriberAccountInfo';
+import SubscriberAccountInfo from '@/components/SubscriberAccountInfo';
 
 const AccrualsAdjustmentForm: FC<IProps> = ({
   subscriberAccount,

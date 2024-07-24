@@ -3,8 +3,8 @@ import { IProps } from './PaymentsModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './PaymentsModalWin.styled';
-import FindSubscriberAccountForm from '../FindSubscriberAccountForm';
-import PaymentsSection from '../PaymentsSection';
+import FindSubscriberAccountForm from '@/components/FindSubscriberAccountForm';
+import PaymentsSection from '@/components/PaymentsSection';
 import { usePaymentsModalWin } from '@/hooks';
 
 const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {

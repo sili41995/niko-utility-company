@@ -3,8 +3,8 @@ import { IProps } from './AccountsMessageModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './AccountsMessageModalWin.styled';
-import PeriodTitle from '../PeriodTitle';
-import ActionBtn from '../ActionBtn';
+import PeriodTitle from '@/components/PeriodTitle';
+import ActionBtn from '@/components/ActionBtn';
 import { useAccountsMessageModalWin } from '@/hooks';
 
 const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {

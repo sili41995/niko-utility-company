@@ -33,3 +33,6 @@ export { default as usePaymentsModalWin } from './usePaymentsModalWin';
 export { default as usePaymentsSection } from './usePaymentsSection';
 export { default as useAccountsMessageModalWin } from './useAccountsMessageModalWin';
 export { default as usePayPostageModalWin } from './usePayPostageModalWin';
+export { default as usePayPrivatbankModalWin } from './usePayPrivatbankModalWin';
+export { default as usePayOshchadbankModalWin } from './usePayOshchadbankModalWin';
+export { default as usePayAbankModalWin } from './usePayAbankModalWin';

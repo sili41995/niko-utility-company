@@ -334,7 +334,7 @@ export interface IUseAccountingSections {
   showPayPostageModalWin: boolean;
   showPayPrivatbankModalWin: boolean;
   showPayOshchadbankModalWin: boolean;
-  showPayOAbankModalWin: boolean;
+  showPayAbankModalWin: boolean;
 }
 
 export interface IUseFindSubscriberAccountForm {

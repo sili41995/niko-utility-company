@@ -3,8 +3,8 @@ import { IProps } from './PayPostageModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './PayPostageModalWin.styled';
-import PeriodTitle from '../PeriodTitle';
-import ActionBtn from '../ActionBtn';
+import PeriodTitle from '@/components/PeriodTitle';
+import ActionBtn from '@/components/ActionBtn';
 import { usePayPostageModalWin } from '@/hooks';
 
 const PayPostageModalWin: FC<IProps> = ({ setModalWinState }) => {

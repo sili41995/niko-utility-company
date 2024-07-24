@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import SubscriberAccountInfo from '../SubscriberAccountInfo';
+import SubscriberAccountInfo from '@/components/SubscriberAccountInfo';
 import { IProps } from './AddPaymentForm.types';
 import { Container, Form, InputsWrap } from './AddPaymentForm.styled';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Select from '../Select';
-import Input from '../Input';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
+import Select from '@/components/Select';
+import Input from '@/components/Input';
 import { InputTypes } from '@/constants';
 import { useAddPaymentForm } from '@/hooks';
 

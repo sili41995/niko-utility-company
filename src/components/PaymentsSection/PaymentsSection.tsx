@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import AddPaymentForm from '../AddPaymentForm';
-import PaymentsTable from '../PaymentsTable';
-import Loader from '../Loader';
+import AddPaymentForm from '@/components/AddPaymentForm';
+import PaymentsTable from '@/components/PaymentsTable';
+import Loader from '@/components/Loader';
 import { Container, TableWrap } from './PaymentsSection.styled';
 import { IProps } from './PaymentsSection.types';
 import { GeneralParams } from '@/constants';
-import Pagination from '../Pagination';
+import Pagination from '@/components/Pagination';
 import { usePaymentsSection } from '@/hooks';
 
 const PaymentsSection: FC<IProps> = ({

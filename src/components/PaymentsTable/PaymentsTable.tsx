@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableHeadRow,
 } from './PaymentsTable.styled';
-import PaymentsTableRow from '../PaymentsTableRow';
+import PaymentsTableRow from '@/components/PaymentsTableRow';
 
 const PaymentsTable: FC = () => {
   const payments = usePaymentsStore(selectPayments);

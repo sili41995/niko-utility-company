@@ -6,15 +6,15 @@ import { AxiosError } from 'axios';
 import { useState } from 'react';
 import { IUseFetchFile } from '@/types/hooks.types';
 
-const usePayPostageModalWin = (): IUseFetchFile => {
+const usePayOshchadbankModalWin = (): IUseFetchFile => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchPayments = async () => {
     setIsLoading(true);
 
     try {
-      const result = await accountingService.fetchPaymentsBySourcePostage();
-      saveFileToCsv({ data: result, fileName: 'payments-postage.xlsx' });
+      const result = await accountingService.fetchPaymentsBySourceOshchadbank();
+      saveFileToCsv({ data: result, fileName: 'payments-oshchadbank.xlsx' });
       toasts.successToast(Messages.fetchPaymentsSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {
@@ -35,4 +35,4 @@ const usePayPostageModalWin = (): IUseFetchFile => {
   return { isLoading, onActionBtnClick };
 };
 
-export default usePayPostageModalWin;
+export default usePayOshchadbankModalWin;
