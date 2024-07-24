@@ -1,43 +1,14 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { IProps } from './AccountsMessageModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './AccountsMessageModalWin.styled';
 import PeriodTitle from '../PeriodTitle';
 import ActionBtn from '../ActionBtn';
-import { BtnClickEvent } from '@/types/types';
-import { makeBlur, saveFileToPdf, toasts } from '@/utils';
-import accountingService from '@/services/accounting.service';
-import { Messages } from '@/constants';
-import { AxiosError } from 'axios';
+import { useAccountsMessageModalWin } from '@/hooks';
 
-const PayPostageModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  const fetchInvoices = async () => {
-    setIsLoading(true);
-
-    try {
-      const result = await accountingService.fetchInvoices();
-      saveFileToPdf(result);
-      toasts.successToast(Messages.fetchInvoicesSuccess);
-    } catch (error) {
-      if (error instanceof AxiosError) {
-        const message = error.response?.data.message;
-        const isNotFoundErr = message.toLowerCase() === 'file was not found';
-        const errorMessage = isNotFoundErr ? Messages.fileNotFoundErr : message;
-        toasts.errorToast(errorMessage);
-      }
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const onActionBtnClick = (e: BtnClickEvent) => {
-    makeBlur(e.currentTarget);
-
-    fetchInvoices();
-  };
+const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
+  const { isLoading, onActionBtnClick } = useAccountsMessageModalWin();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -56,4 +27,4 @@ const PayPostageModalWin: FC<IProps> = ({ setModalWinState }) => {
   );
 };
 
-export default PayPostageModalWin;
+export default AccountsMessageModalWin;

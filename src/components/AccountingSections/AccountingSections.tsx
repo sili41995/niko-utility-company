@@ -8,7 +8,7 @@ import AccountingSectionsBtn from '@/components/AccountingSectionsBtn';
 // import PayAbankModalWin from '@/components./PayAbankModalWin';
 // import PayOshchadbankModalWin from '@/components/PayOshchadbankModalWin';
 // import PayPrivatbankModalWin from '@/components/PayPrivatbankModalWin';
-// import PayPostageModalWin from '@/components/PayPostageModalWin';
+import PayPostageModalWin from '@/components/PayPostageModalWin';
 import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
 // import BenefitsAdjustmentModalWin from '@/components/BenefitsAdjustmentModalWin';
 import PaymentsModalWin from '@/components/PaymentsModalWin';
@@ -25,7 +25,7 @@ const AccountingSections: FC = () => {
     // setBenefitsAdjustmentModalWinState,
     setTariffsModalWinState,
     setAccountsMessageModalWinState,
-    // setPayPostageModalWinState,
+    setPayPostageModalWinState,
     // setPayPrivatbankModalWinState,
     // setPayOshchadbankModalWinState,
     // setPayAbankModalWinState,
@@ -37,10 +37,10 @@ const AccountingSections: FC = () => {
     showPaymentsModalWin,
     // showBenefitsAdjustmentModalWin,
     showAccountsMessageModalWin,
-    // showPayPostageModalWin,
+    showPayPostageModalWin,
     // showPayPrivatbankModalWin,
     // showPayOshchadbankModalWin,
-    // showPayOAbankModalWin,
+    // showPayAbankModalWin,
   } = useAccountingSections();
 
   return (
@@ -94,12 +94,12 @@ const AccountingSections: FC = () => {
             title='Рахунки-повідомлення'
           />
         </SectionsListItem>
-        {/* <SectionsListItem>
-        <AccountingSectionsBtn
+        <SectionsListItem>
+          <AccountingSectionsBtn
             onClick={setPayPostageModalWinState}
             title='Оплати Пошта'
           />
-        </SectionsListItem> */}
+        </SectionsListItem>
         {/* <SectionsListItem>
                     <AccountingSectionsBtn
             onClick={setPayPrivatbankModalWinState}
@@ -153,9 +153,9 @@ const AccountingSections: FC = () => {
           setModalWinState={setAccountsMessageModalWinState}
         />
       )}
-      {/* {showPayPostageModalWin && (
+      {showPayPostageModalWin && (
         <PayPostageModalWin setModalWinState={setPayPostageModalWinState} />
-      )} */}
+      )}
       {/* {showPayPrivatbankModalWin && (
         <PayPrivatbankModalWin setModalWinState={setPayPrivatbankModalWinState} />
       )} */}

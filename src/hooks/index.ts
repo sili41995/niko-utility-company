@@ -31,3 +31,5 @@ export { default as useAccrualsAdjustmentForm } from './useAccrualsAdjustmentFor
 export { default as useAddPaymentForm } from './useAddPaymentForm';
 export { default as usePaymentsModalWin } from './usePaymentsModalWin';
 export { default as usePaymentsSection } from './usePaymentsSection';
+export { default as useAccountsMessageModalWin } from './useAccountsMessageModalWin';
+export { default as usePayPostageModalWin } from './usePayPostageModalWin';

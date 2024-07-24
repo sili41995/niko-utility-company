@@ -161,3 +161,8 @@ export interface IGetNewPaymentDataProps {
   data: INewPaymentFormData;
   id: number;
 }
+
+export interface ISaveFileProps {
+  data: BlobPart;
+  fileName: string;
+}

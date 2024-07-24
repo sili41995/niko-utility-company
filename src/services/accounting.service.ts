@@ -91,6 +91,38 @@ class AccountingService extends HttpService {
 
     return response.data;
   }
+
+  async fetchPaymentsBySourcePostage(): Promise<string> {
+    const response = await this.get<string>({
+      url: 'accounting/payments/postage',
+    });
+
+    return response.data;
+  }
+
+  async fetchPaymentsBySourcePrivatbank(): Promise<string> {
+    const response = await this.get<string>({
+      url: 'accounting/payments/privatbank',
+    });
+
+    return response.data;
+  }
+
+  async fetchPaymentsBySourceOshchadbank(): Promise<string> {
+    const response = await this.get<string>({
+      url: 'accounting/payments/oshchadbank',
+    });
+
+    return response.data;
+  }
+
+  async fetchPaymentsBySourceAbank(): Promise<string> {
+    const response = await this.get<string>({
+      url: 'accounting/payments/abank',
+    });
+
+    return response.data;
+  }
 }
 
 const accountingService = new AccountingService();

@@ -399,3 +399,8 @@ export interface IUsePaymentsSection {
   count: number;
   showPaymentsTable: boolean;
 }
+
+export interface IUseFetchFile {
+  isLoading: boolean;
+  onActionBtnClick: OnBtnClickFunc;
+}
