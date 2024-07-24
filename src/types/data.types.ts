@@ -131,7 +131,6 @@ export interface IStatistics {
   accrued: number;
   penalty: number;
   adjustment: number;
-  payments: number;
   benefits: number;
   subsidies: number;
   balanceEnd: number;

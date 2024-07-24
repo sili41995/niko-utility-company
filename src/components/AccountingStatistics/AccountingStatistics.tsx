@@ -21,7 +21,6 @@ const AccountingStatistics: FC = () => {
     accrued,
     penalty,
     adjustment,
-    payments,
     subsidies,
   } = statistics ?? {};
 
@@ -45,7 +44,7 @@ const AccountingStatistics: FC = () => {
             <Title>Сальдо початок:</Title>
             <Value>{balanceStart}</Value>
           </StatisticsItem>
-          <Value>0000</Value>
+          <Value>тут буде число</Value>
         </ExtendedInfo>
       </ListItem>
       <ListItem>
@@ -69,7 +68,7 @@ const AccountingStatistics: FC = () => {
       <ListItem>
         <StatisticsItem>
           <Title>Оплати:</Title>
-          <Value>{payments}</Value>
+          <Value>тут буде число</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
@@ -90,7 +89,7 @@ const AccountingStatistics: FC = () => {
             <Title>Сальдо кінець:</Title>
             <Value>{balanceEnd}</Value>
           </StatisticsItem>
-          <Value>00000000</Value>
+          <Value>тут буде число</Value>
         </ExtendedInfo>
       </ListItem>
     </List>
