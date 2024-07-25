@@ -36,6 +36,7 @@ interface ITheme {
     primary: number;
     secondary: number;
     other: number;
+    subtitle: number;
     title: number;
   };
   padding: {
@@ -93,6 +94,7 @@ const theme: ITheme = {
     primary: 16,
     secondary: 18,
     other: 20,
+    subtitle: 24,
     title: 36,
   },
   padding: {

@@ -404,3 +404,32 @@ export interface IUseFetchFile {
   isLoading: boolean;
   onActionBtnClick: OnBtnClickFunc;
 }
+
+export interface IUseAccountingReports {
+  showCalcByStreetsModalWin: boolean;
+  showCalcByHousesModalWin: boolean;
+  showCalcBySubscribersDebtModalWin: boolean;
+  showPersonalAccountStatementsModalWin: boolean;
+  showPersonalAccountPaymentsModalWin: boolean;
+  showAccrualAdjustmentsModalWin: boolean;
+  showAccrualAdjustmentsTotalsModalWin: boolean;
+  showAccrualsModalWin: boolean;
+  showAccrualsTotalsModalWin: boolean;
+  showPaymentsModalWin: boolean;
+  showPaymentsAdjustmentsModalWin: boolean;
+  showPaymentsTotalsModalWin: boolean;
+  showPaymentsTotalsByDatesModalWin: boolean;
+  setCalcByStreetsModalWinState: Func;
+  setCalcByHousesModalWinState: Func;
+  setCalcBySubscribersDebtModalWinState: Func;
+  setPersonalAccountStatementsModalWinState: Func;
+  setPersonalAccountPaymentsModalWinState: Func;
+  setAccrualAdjustmentsModalWinState: Func;
+  setAccrualAdjustmentsTotalsModalWinState: Func;
+  setAccrualsModalWinState: Func;
+  setAccrualsTotalsModalWinState: Func;
+  setPaymentsModalWinState: Func;
+  setPaymentsAdjustmentsModalWinState: Func;
+  setPaymentsTotalsModalWinState: Func;
+  setPaymentsTotalsByDatesModalWinState: Func;
+}
