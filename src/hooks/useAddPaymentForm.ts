@@ -20,15 +20,15 @@ import { useFilterSearchParams } from '@/hooks';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import { useEffect } from 'react';
 import { IUseAddPaymentForm } from '@/types/hooks.types';
-import { selectFetchPeriods } from '@/store/periods/selectors';
+import { selectAddLocalPayment } from '@/store/periods/selectors';
 
 const useAddPaymentForm = (
   subscriberAccount: ISubscriberAccount
 ): IUseAddPaymentForm => {
   const isLoading = usePaymentsStore(selectIsLoading);
   const addPayment = usePaymentsStore(selectAddPayment);
+  const addLocalPayment = usePeriodsStore(selectAddLocalPayment);
   const fetchPayments = usePaymentsStore(selectFetchPayments);
-  const fetchPeriods = usePeriodsStore(selectFetchPeriods);
   const { page } = useFilterSearchParams();
   const {
     register,
@@ -59,8 +59,8 @@ const useAddPaymentForm = (
     });
 
     try {
-      await addPayment(newPaymentData);
-      fetchPeriods();
+      const result = await addPayment(newPaymentData);
+      result && addLocalPayment(result);
       fetchPayments({
         page,
         limit: Number(GeneralParams.paymentsRecordLimit),

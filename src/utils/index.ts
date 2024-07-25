@@ -39,3 +39,4 @@ export { default as saveFileToCsv } from './saveFileToCsv';
 export { default as csvToArray } from './csvToArray';
 export { default as getArrayBuffer } from './getArrayBuffer';
 export { default as writeXlsxFile } from './writeXlsxFile';
+export { default as getUpdatedPeriods } from './getUpdatedPeriods';

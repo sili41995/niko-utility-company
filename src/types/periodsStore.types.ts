@@ -1,4 +1,4 @@
-import { IPeriod, Periods } from './data.types';
+import { IPayment, IPeriod, Periods } from './data.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
 
 export interface IPeriodsInitialState {
@@ -11,6 +11,7 @@ export interface IPeriodsInitialState {
 export interface IPeriodsState extends IPeriodsInitialState {
   fetchPeriods: () => Promise<Periods | undefined>;
   addPeriod: () => Promise<IPeriod | undefined>;
+  addLocalPayment: (data: IPayment) => IPeriod | undefined;
 }
 
 export type GetPeriodsStateFunc = GetStateFunc<IPeriodsState>;
@@ -24,4 +25,10 @@ export interface IFetchPeriodsProps {
 export interface IAddPeriodProps {
   set: SetPeriodsStateFunc;
   get: GetPeriodsStateFunc;
+}
+
+export interface IAddPaymentProps {
+  set: SetPeriodsStateFunc;
+  get: GetPeriodsStateFunc;
+  data: IPayment;
 }

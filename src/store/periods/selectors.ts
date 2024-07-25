@@ -11,3 +11,6 @@ export const selectError = (state: IPeriodsState) => state.error;
 export const selectFetchPeriods = (state: IPeriodsState) => state.fetchPeriods;
 
 export const selectAddPeriod = (state: IPeriodsState) => state.addPeriod;
+
+export const selectAddLocalPayment = (state: IPeriodsState) =>
+  state.addLocalPayment;

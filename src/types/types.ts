@@ -166,3 +166,8 @@ export interface ISaveFileProps {
   data: BlobPart;
   fileName: string;
 }
+
+export interface IGetUpdatedPeriodsProps {
+  periods: Periods;
+  updatedPeriod: IPeriod;
+}

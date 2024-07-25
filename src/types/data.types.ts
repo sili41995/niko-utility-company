@@ -143,6 +143,7 @@ export interface IPeriod {
   isCurrentPeriod: boolean;
   start: Date;
   statistics: IStatistics;
+  payments: Payments;
 }
 
 export type Periods = IPeriod[];

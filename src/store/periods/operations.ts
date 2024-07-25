@@ -4,8 +4,9 @@ import { IPeriod, Periods } from '@/types/data.types';
 import {
   IFetchPeriodsProps,
   IAddPeriodProps,
+  IAddPaymentProps,
 } from '@/types/periodsStore.types';
-import { updatePeriods } from '@/utils';
+import { getUpdatedPeriods, updatePeriods } from '@/utils';
 
 const fetchPeriodsOperation = async ({
   set,
@@ -32,5 +33,24 @@ const addPeriodOperation = async ({
   return response;
 };
 
+const addLocalPaymentOperation = ({ set, data, get }: IAddPaymentProps) => {
+  const { items: periods } = get();
+  const currentPeriod = periods.find(({ isCurrentPeriod }) => isCurrentPeriod)!;
+  const updatedCurrentPeriod = {
+    ...currentPeriod,
+    payments: [...currentPeriod.payments, data],
+  };
+
+  const updatedPeriods = getUpdatedPeriods({
+    periods,
+    updatedPeriod: updatedCurrentPeriod,
+  });
+
+  set({ items: updatedPeriods });
+
+  return updatedCurrentPeriod;
+};
+
 export const fetchPeriods = operationWrapper(fetchPeriodsOperation);
 export const addPeriod = operationWrapper(addPeriodOperation);
+export const addLocalPayment = addLocalPaymentOperation;

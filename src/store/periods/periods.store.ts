@@ -5,8 +5,8 @@ import {
   IPeriodsState,
   SetPeriodsStateFunc,
 } from '@/types/periodsStore.types';
-import { fetchPeriods, addPeriod } from './operations';
-import { IPeriod, Periods } from '@/types/data.types';
+import { fetchPeriods, addPeriod, addLocalPayment } from './operations';
+import { IPayment, IPeriod, Periods } from '@/types/data.types';
 
 const periodsSlice = (
   set: SetPeriodsStateFunc,
@@ -23,6 +23,12 @@ const periodsSlice = (
     await addPeriod({
       set: setState({ set, name: 'addPeriod' }),
       data: undefined,
+      get,
+    }),
+  addLocalPayment: (data: IPayment): IPeriod | undefined =>
+    addLocalPayment({
+      set: setState({ set, name: 'addLocalPayment' }),
+      data,
       get,
     }),
 });

@@ -11,7 +11,7 @@ import { useTargetPeriod } from '@/hooks';
 
 const AccountingStatistics: FC = () => {
   const targetPeriod = useTargetPeriod();
-  const { statistics } = targetPeriod ?? {};
+  const { statistics, payments } = targetPeriod ?? {};
   const {
     subscriberAccounts,
     residents,
@@ -23,6 +23,7 @@ const AccountingStatistics: FC = () => {
     adjustment,
     subsidies,
   } = statistics ?? {};
+  const paymentsValue = payments?.reduce((acc, { amount }) => acc + amount, 0);
 
   return (
     <List>
@@ -68,7 +69,7 @@ const AccountingStatistics: FC = () => {
       <ListItem>
         <StatisticsItem>
           <Title>Оплати:</Title>
-          <Value>тут буде число</Value>
+          <Value>{paymentsValue}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
