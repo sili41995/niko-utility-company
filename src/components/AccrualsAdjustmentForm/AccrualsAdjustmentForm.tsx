@@ -32,7 +32,8 @@ const AccrualsAdjustmentForm: FC<IProps> = ({
         <Input
           settings={{ ...register('price', { required: true }) }}
           label='Сума, грн:'
-          type={InputTypes.text}
+          type={InputTypes.number}
+          step={0.01}
           placeholder='Сума'
         />
         <Input

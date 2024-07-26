@@ -35,7 +35,8 @@ const AddPaymentForm: FC<IProps> = ({
           <Input
             settings={{ ...register('amount', { required: true }) }}
             label='Сума, грн:'
-            type={InputTypes.text}
+            type={InputTypes.number}
+            step={0.01}
             placeholder='Сума'
             width={250}
           />

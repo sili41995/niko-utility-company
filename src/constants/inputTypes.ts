@@ -5,6 +5,7 @@ const enum InputTypes {
   password = 'password',
   date = 'date',
   number = 'number',
+  month = 'month',
 }
 
 export default InputTypes;

@@ -3,6 +3,18 @@ import { Container, List, ListItem, Title } from './AccountingReports.styled';
 import useAccountingReports from '@/hooks/useAccountingReports';
 import ReportBtn from '../ReportBtn';
 import CalcByStreetsModalWin from '../CalcByStreetsModalWin';
+import CalcByHousesModalWin from '../CalcByHousesModalWin';
+import CalcBySubscribersDebtModalWin from '../CalcBySubscribersDebtModalWin';
+import PersonalAccountStatementsModalWin from '../PersonalAccountStatementsModalWin';
+import PersonalAccountPaymentsModalWin from '../PersonalAccountPaymentsModalWin';
+import AccrualAdjustmentsModalWin from '../AccrualAdjustmentsModalWin';
+import AccrualAdjustmentsTotalsModalWin from '../AccrualAdjustmentsTotalsModalWin';
+import AccrualsModalWin from '../AccrualsModalWin';
+import AccrualsTotalsModalWin from '../AccrualsTotalsModalWin';
+import ReportsPaymentsModalWin from '../ReportsPaymentsModalWin';
+import ReportsPaymentsAdjustmentsModalWin from '../ReportsPaymentsAdjustmentsModalWin';
+import ReportsPaymentsTotalsModalWin from '../ReportsPaymentsTotalsModalWin';
+import ReportsPaymentsTotalsByDatesModalWin from '../ReportsPaymentsTotalsByDatesModalWin';
 
 const AccountingReports: FC = () => {
   const {
@@ -147,7 +159,7 @@ const AccountingReports: FC = () => {
         />
       )}
       {showAccrualsModalWin && (
-        <AccrualsModalModalWin setModalWinState={setAccrualsModalWinState} />
+        <AccrualsModalWin setModalWinState={setAccrualsModalWinState} />
       )}
       {showAccrualsTotalsModalWin && (
         <AccrualsTotalsModalWin
@@ -155,25 +167,25 @@ const AccountingReports: FC = () => {
         />
       )}
       {showPaymentsModalWin && (
-        <PaymentsModalWin setModalWinState={setPaymentsModalWinState} />
+        <ReportsPaymentsModalWin setModalWinState={setPaymentsModalWinState} />
       )}
       {showPaymentsAdjustmentsModalWin && (
-        <PaymentsAdjustmentsModalWin
+        <ReportsPaymentsAdjustmentsModalWin
           setModalWinState={setPaymentsAdjustmentsModalWinState}
         />
       )}
       {showPaymentsAdjustmentsModalWin && (
-        <PaymentsAdjustmentsModalWin
+        <ReportsPaymentsAdjustmentsModalWin
           setModalWinState={setPaymentsAdjustmentsModalWinState}
         />
       )}
       {showPaymentsTotalsModalWin && (
-        <PaymentsTotalsModalWin
+        <ReportsPaymentsTotalsModalWin
           setModalWinState={setPaymentsTotalsModalWinState}
         />
       )}
       {showPaymentsTotalsByDatesModalWin && (
-        <PaymentsTotalsByDatesModalWin
+        <ReportsPaymentsTotalsByDatesModalWin
           setModalWinState={setPaymentsTotalsByDatesModalWinState}
         />
       )}

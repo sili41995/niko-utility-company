@@ -50,6 +50,8 @@ const enum Messages {
   fetchInvoicesSuccess = 'Рахунки-повідомлення успішно сформовані',
   fetchPaymentsSuccess = 'Оплати успішно сформовані',
   fileNotFoundErr = 'Файл не знайдено',
+  dateFromReqErr = 'Поле З має бути заповнене',
+  dateToReqErr = 'Поле По має бути заповнене',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

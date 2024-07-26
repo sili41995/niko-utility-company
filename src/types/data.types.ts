@@ -201,3 +201,17 @@ export type Amount = Pick<IPayment, 'amount'>;
 export type PaymentSource = Pick<IPayment, 'source'>;
 
 export type PaymentDate = Pick<IPayment, 'date'>;
+
+export interface ITimePeriod {
+  from: Date;
+  to: Date;
+}
+
+export interface ITimePeriodFormData {
+  from: string;
+  to: string;
+}
+
+export type DateFrom = Pick<ITimePeriodFormData, 'from'>;
+
+export type DateTo = Pick<ITimePeriodFormData, 'to'>;
