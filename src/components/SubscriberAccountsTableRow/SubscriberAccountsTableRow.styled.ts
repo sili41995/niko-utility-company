@@ -33,14 +33,14 @@ export const TableDataText = styled.span<IStyledTableDataTextProps>`
   ${({ theme, trimText }) => (trimText ? theme.trimText : false)}
 `;
 
-export const EditRowBtnCell = styled.td`
+export const BtnCell = styled.td`
   position: absolute;
   top: 50%;
   right: -24px;
   transform: translateY(-50%);
 `;
 
-export const EditRowBtn = styled.button`
+export const ShowInfoBtn = styled.button`
   padding: 0;
   border: none;
   background-color: transparent;

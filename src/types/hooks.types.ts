@@ -22,6 +22,7 @@ import {
   Tariffs,
   IAccrualAdjustmentFormData,
   INewPaymentFormData,
+  ITimePeriod,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -359,8 +360,8 @@ export interface IUseSubscriberAccountsTableRow {
   isEligibleForBenefit: boolean;
   document: string;
   comment: string;
-  toggleEditAccount: Func;
-  editAccount: boolean;
+  toggleShowInfo: Func;
+  showInfo: boolean;
   isDebt: boolean;
 }
 
@@ -432,4 +433,11 @@ export interface IUseAccountingReports {
   setPaymentsAdjustmentsModalWinState: Func;
   setPaymentsTotalsModalWinState: Func;
   setPaymentsTotalsByDatesModalWinState: Func;
+}
+
+export interface IUseCalcByStreetsForm {
+  isLoading: boolean;
+  handleSubmit: UseFormHandleSubmit<ITimePeriod, undefined>;
+  handleFormSubmit: SubmitHandler<ITimePeriod>;
+  register: UseFormRegister<ITimePeriod>;
 }

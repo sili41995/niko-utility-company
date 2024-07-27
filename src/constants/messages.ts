@@ -52,6 +52,7 @@ const enum Messages {
   fileNotFoundErr = 'Файл не знайдено',
   dateFromReqErr = 'Поле З має бути заповнене',
   dateToReqErr = 'Поле По має бути заповнене',
+  fetchReportsSuccess = 'Звіт успішно сформовано',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

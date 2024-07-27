@@ -5,13 +5,13 @@ import {
   TableDataText,
   TableBodyRow,
   TableData,
-  EditRowBtn,
-  EditRowBtnCell,
+  BtnCell,
+  ShowInfoBtn,
 } from './SubscriberAccountsTableRow.styled';
-import { MdEditNote } from 'react-icons/md';
-import EditSubscriberAccountModalWin from '@/components/EditSubscriberAccountModalWin';
+import { MdInfoOutline } from 'react-icons/md';
 import { IconSizes } from '@/constants';
 import { useSubscriberAccountsTableRow } from '@/hooks';
+import SubscriberAccountInfoModalWin from '../SubscriberAccountInfoModalWin';
 
 const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
   const {
@@ -28,9 +28,9 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     isEligibleForBenefit,
     document,
     comment,
-    toggleEditAccount,
-    editAccount,
     isDebt,
+    showInfo,
+    toggleShowInfo,
   } = useSubscriberAccountsTableRow(subscriberAccount);
 
   return (
@@ -65,15 +65,15 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
         <TableData>
           <TableDataText trimText>{comment}</TableDataText>
         </TableData>
-        <EditRowBtnCell>
-          <EditRowBtn onClick={toggleEditAccount}>
-            <MdEditNote size={IconSizes.other} />
-          </EditRowBtn>
-        </EditRowBtnCell>
+        <BtnCell>
+          <ShowInfoBtn onClick={toggleShowInfo}>
+            <MdInfoOutline size={IconSizes.other} />
+          </ShowInfoBtn>
+        </BtnCell>
       </TableBodyRow>
-      {editAccount && (
-        <EditSubscriberAccountModalWin
-          setModalWinState={toggleEditAccount}
+      {showInfo && (
+        <SubscriberAccountInfoModalWin
+          setModalWinState={toggleShowInfo}
           subscriberAccount={subscriberAccount}
         />
       )}

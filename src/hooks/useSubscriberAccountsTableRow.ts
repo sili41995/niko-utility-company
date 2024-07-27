@@ -7,7 +7,7 @@ import { useState } from 'react';
 const useSubscriberAccountsTableRow = (
   subscriberAccount: ISubscriberAccount
 ): IUseSubscriberAccountsTableRow => {
-  const [editAccount, setEditAccount] = useState<boolean>(false);
+  const [showInfo, setShowInfo] = useState<boolean>(false);
   const {
     subscriberAccount: subscriberAccountNumber,
     accountType,
@@ -35,8 +35,8 @@ const useSubscriberAccountsTableRow = (
   });
   const isDebt = balance > 0;
 
-  const toggleEditAccount = () => {
-    setEditAccount((prevState) => !prevState);
+  const toggleShowInfo = () => {
+    setShowInfo((prevState) => !prevState);
   };
 
   return {
@@ -53,8 +53,8 @@ const useSubscriberAccountsTableRow = (
     isEligibleForBenefit,
     document,
     comment,
-    toggleEditAccount,
-    editAccount,
+    showInfo,
+    toggleShowInfo,
     isDebt,
   };
 };

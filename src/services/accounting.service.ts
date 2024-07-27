@@ -5,6 +5,7 @@ import {
   IAccrualAdjustment,
   IPayment,
   IPeriod,
+  ITimePeriod,
   NewPaymentData,
   Periods,
 } from '@/types/data.types';
@@ -119,6 +120,15 @@ class AccountingService extends HttpService {
   async fetchPaymentsBySourceAbank(): Promise<string> {
     const response = await this.get<string>({
       url: 'accounting/payments/abank',
+    });
+
+    return response.data;
+  }
+
+  async fetchReportsByStreets({ from, to }: ITimePeriod): Promise<BlobPart> {
+    const response = await this.get<BlobPart>({
+      url: `accounting/reports/streets?from=${from}&to=${to}`,
+      responseType: 'blob',
     });
 
     return response.data;

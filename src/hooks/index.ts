@@ -36,3 +36,4 @@ export { default as usePayPostageModalWin } from './usePayPostageModalWin';
 export { default as usePayPrivatbankModalWin } from './usePayPrivatbankModalWin';
 export { default as usePayOshchadbankModalWin } from './usePayOshchadbankModalWin';
 export { default as usePayAbankModalWin } from './usePayAbankModalWin';
+export { default as useCalcByStreetsForm } from './useCalcByStreetsForm';
