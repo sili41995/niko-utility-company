@@ -3,12 +3,13 @@ import ModalWin from '@/components/ModalWin';
 import { IProps } from './SubscriberAccountInfoModalWin.types';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentWrap } from './SubscriberAccountInfoModalWin.styled';
-import { SubscriberAccountInfoCategories } from '@/constants';
+import { Messages, SubscriberAccountInfoCategories } from '@/constants';
 import { InputChangeEvent } from '@/types/types';
 import SubscriberAccountInfoModalWinControls from '@/components/SubscriberAccountInfoModalWinControls';
 import EditSubscriberAccountForm from '@/components/EditSubscriberAccountForm';
 import PaymentsTable from '@/components/PaymentsTable';
 import PricesTable from '@/components/PricesTable';
+import DefaultMessage from '../DefaultMessage';
 
 const SubscriberAccountInfoModalWin: FC<IProps> = ({
   setModalWinState,
@@ -27,6 +28,9 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
     category === SubscriberAccountInfoCategories.payments;
   const isEditingCategory =
     category === SubscriberAccountInfoCategories.editing;
+  const { priceAdjustments, payments } = subscriberAccount;
+  const showPricesTable = Boolean(priceAdjustments.length);
+  const showPaymentsTable = Boolean(payments.length);
 
   const title = `Абонентський рахунок ${subscriberAccount.subscriberAccount}:`;
 
@@ -51,12 +55,18 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
             isEditingCategory={isEditingCategory}
             onChange={onInputChange}
           />
-          {isPriceAdjustmentsCategory && (
-            <PricesTable prices={subscriberAccount.priceAdjustments} />
-          )}
-          {isPaymentsCategory && (
-            <PaymentsTable payments={subscriberAccount.payments} />
-          )}
+          {isPriceAdjustmentsCategory &&
+            (showPricesTable ? (
+              <PricesTable prices={priceAdjustments} />
+            ) : (
+              <DefaultMessage message={Messages.emptyPricesList} />
+            ))}
+          {isPaymentsCategory &&
+            (showPaymentsTable ? (
+              <PaymentsTable payments={payments} />
+            ) : (
+              <DefaultMessage message={Messages.emptyPaymentsList} />
+            ))}
           {isEditingCategory && (
             <EditSubscriberAccountForm subscriberAccount={subscriberAccount} />
           )}
