@@ -13,7 +13,7 @@ const PricesTable: FC<IProps> = ({ prices }) => (
   <StyledTable>
     <TableHead>
       <TableHeadRow>
-        <TableHeader>Дата</TableHeader>
+        <TableHeader>Період</TableHeader>
         <TableHeader>Сума</TableHeader>
         <TableHeader>Примітки</TableHeader>
       </TableHeadRow>
