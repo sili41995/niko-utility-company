@@ -3,13 +3,12 @@ import ModalWin from '@/components/ModalWin';
 import { IProps } from './SubscriberAccountInfoModalWin.types';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentWrap } from './SubscriberAccountInfoModalWin.styled';
-import { Messages, SubscriberAccountInfoCategories } from '@/constants';
+import { SubscriberAccountInfoCategories } from '@/constants';
 import { InputChangeEvent } from '@/types/types';
 import SubscriberAccountInfoModalWinControls from '@/components/SubscriberAccountInfoModalWinControls';
 import EditSubscriberAccountForm from '@/components/EditSubscriberAccountForm';
-import PaymentsTable from '@/components/PaymentsTable';
-import PricesTable from '@/components/PricesTable';
-import DefaultMessage from '../DefaultMessage';
+import PaymentsCategory from '@/components/PaymentsCategory';
+import PriceAdjustmentsCategory from '@/components/PriceAdjustmentsCategory';
 
 const SubscriberAccountInfoModalWin: FC<IProps> = ({
   setModalWinState,
@@ -29,8 +28,6 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
   const isEditingCategory =
     category === SubscriberAccountInfoCategories.editing;
   const { priceAdjustments, payments } = subscriberAccount;
-  const showPricesTable = Boolean(priceAdjustments.length);
-  const showPaymentsTable = Boolean(payments.length);
 
   const title = `Абонентський рахунок ${subscriberAccount.subscriberAccount}:`;
 
@@ -55,18 +52,10 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
             isEditingCategory={isEditingCategory}
             onChange={onInputChange}
           />
-          {isPriceAdjustmentsCategory &&
-            (showPricesTable ? (
-              <PricesTable prices={priceAdjustments} />
-            ) : (
-              <DefaultMessage message={Messages.emptyPricesList} />
-            ))}
-          {isPaymentsCategory &&
-            (showPaymentsTable ? (
-              <PaymentsTable payments={payments} />
-            ) : (
-              <DefaultMessage message={Messages.emptyPaymentsList} />
-            ))}
+          {isPriceAdjustmentsCategory && (
+            <PriceAdjustmentsCategory priceAdjustments={priceAdjustments} />
+          )}
+          {isPaymentsCategory && <PaymentsCategory payments={payments} />}
           {isEditingCategory && (
             <EditSubscriberAccountForm subscriberAccount={subscriberAccount} />
           )}
