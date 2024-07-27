@@ -18,15 +18,14 @@ const useAccountingReports = (): IUseAccountingReports => {
     showPersonalAccountPaymentsModalWin,
     setShowPersonalAccountPaymentsModalWin,
   ] = useState<boolean>(false);
-  const [showAccrualAdjustmentsModalWin, setShowAccrualAdjustmentsModalWin] =
+  const [showPriceAdjustmentsModalWin, setShowPriceAdjustmentsModalWin] =
     useState<boolean>(false);
   const [
-    showAccrualAdjustmentsTotalsModalWin,
-    setShowAccrualAdjustmentsTotalsModalWin,
+    showPriceAdjustmentsTotalsModalWin,
+    setShowPriceAdjustmentsTotalsModalWin,
   ] = useState<boolean>(false);
-  const [showAccrualsModalWin, setShowAccrualsModalWin] =
-    useState<boolean>(false);
-  const [showAccrualsTotalsModalWin, setShowAccrualsTotalsModalWin] =
+  const [showPricesModalWin, setShowPricesModalWin] = useState<boolean>(false);
+  const [showPricesTotalsModalWin, setShowPricesTotalsModalWin] =
     useState<boolean>(false);
   const [showPaymentsModalWin, setShowPaymentsModalWin] =
     useState<boolean>(false);
@@ -54,17 +53,17 @@ const useAccountingReports = (): IUseAccountingReports => {
   const setPersonalAccountPaymentsModalWinState = () => {
     setShowPersonalAccountPaymentsModalWin((prevState) => !prevState);
   };
-  const setAccrualAdjustmentsModalWinState = () => {
-    setShowAccrualAdjustmentsModalWin((prevState) => !prevState);
+  const setPriceAdjustmentsModalWinState = () => {
+    setShowPriceAdjustmentsModalWin((prevState) => !prevState);
   };
-  const setAccrualAdjustmentsTotalsModalWinState = () => {
-    setShowAccrualAdjustmentsTotalsModalWin((prevState) => !prevState);
+  const setPriceAdjustmentsTotalsModalWinState = () => {
+    setShowPriceAdjustmentsTotalsModalWin((prevState) => !prevState);
   };
-  const setAccrualsModalWinState = () => {
-    setShowAccrualsModalWin((prevState) => !prevState);
+  const setPricesModalWinState = () => {
+    setShowPricesModalWin((prevState) => !prevState);
   };
-  const setAccrualsTotalsModalWinState = () => {
-    setShowAccrualsTotalsModalWin((prevState) => !prevState);
+  const setPricesTotalsModalWinState = () => {
+    setShowPricesTotalsModalWin((prevState) => !prevState);
   };
   const setPaymentsModalWinState = () => {
     setShowPaymentsModalWin((prevState) => !prevState);
@@ -85,10 +84,10 @@ const useAccountingReports = (): IUseAccountingReports => {
     showCalcBySubscribersDebtModalWin,
     showPersonalAccountStatementsModalWin,
     showPersonalAccountPaymentsModalWin,
-    showAccrualAdjustmentsModalWin,
-    showAccrualAdjustmentsTotalsModalWin,
-    showAccrualsModalWin,
-    showAccrualsTotalsModalWin,
+    showPriceAdjustmentsModalWin,
+    showPriceAdjustmentsTotalsModalWin,
+    showPricesModalWin,
+    showPricesTotalsModalWin,
     showPaymentsModalWin,
     showPaymentsAdjustmentsModalWin,
     showPaymentsTotalsModalWin,
@@ -98,10 +97,10 @@ const useAccountingReports = (): IUseAccountingReports => {
     setCalcBySubscribersDebtModalWinState,
     setPersonalAccountStatementsModalWinState,
     setPersonalAccountPaymentsModalWinState,
-    setAccrualAdjustmentsModalWinState,
-    setAccrualAdjustmentsTotalsModalWinState,
-    setAccrualsModalWinState,
-    setAccrualsTotalsModalWinState,
+    setPriceAdjustmentsModalWinState,
+    setPriceAdjustmentsTotalsModalWinState,
+    setPricesModalWinState,
+    setPricesTotalsModalWinState,
     setPaymentsModalWinState,
     setPaymentsAdjustmentsModalWinState,
     setPaymentsTotalsModalWinState,

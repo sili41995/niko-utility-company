@@ -1,27 +1,27 @@
 import { FC } from 'react';
 import { Container, List, ListItem, Title } from './AccountingReports.styled';
 import useAccountingReports from '@/hooks/useAccountingReports';
-import ReportBtn from '../ReportBtn';
-import CalcByStreetsModalWin from '../CalcByStreetsModalWin';
-import CalcByHousesModalWin from '../CalcByHousesModalWin';
-import CalcBySubscribersDebtModalWin from '../CalcBySubscribersDebtModalWin';
-import PersonalAccountStatementsModalWin from '../PersonalAccountStatementsModalWin';
-import PersonalAccountPaymentsModalWin from '../PersonalAccountPaymentsModalWin';
-import AccrualAdjustmentsModalWin from '../AccrualAdjustmentsModalWin';
-import AccrualAdjustmentsTotalsModalWin from '../AccrualAdjustmentsTotalsModalWin';
-import AccrualsModalWin from '../AccrualsModalWin';
-import AccrualsTotalsModalWin from '../AccrualsTotalsModalWin';
-import ReportsPaymentsModalWin from '../ReportsPaymentsModalWin';
-import ReportsPaymentsAdjustmentsModalWin from '../ReportsPaymentsAdjustmentsModalWin';
-import ReportsPaymentsTotalsModalWin from '../ReportsPaymentsTotalsModalWin';
-import ReportsPaymentsTotalsByDatesModalWin from '../ReportsPaymentsTotalsByDatesModalWin';
+import ReportBtn from '@/components/ReportBtn';
+import CalcByStreetsModalWin from '@/components/CalcByStreetsModalWin';
+import CalcByHousesModalWin from '@/components/CalcByHousesModalWin';
+import CalcBySubscribersDebtModalWin from '@/components/CalcBySubscribersDebtModalWin';
+import PersonalAccountStatementsModalWin from '@/components/PersonalAccountStatementsModalWin';
+import PersonalAccountPaymentsModalWin from '@/components/PersonalAccountPaymentsModalWin';
+import PriceAdjustmentsModalWin from '@/components/PriceAdjustmentsModalWin';
+import PriceAdjustmentsTotalsModalWin from '@/components/PriceAdjustmentsTotalsModalWin';
+import PricesModalWin from '@/components/PricesModalWin';
+import PricesTotalsModalWin from '@/components/PricesTotalsModalWin';
+import ReportsPaymentsModalWin from '@/components/ReportsPaymentsModalWin';
+import ReportsPaymentsAdjustmentsModalWin from '@/components/ReportsPaymentsAdjustmentsModalWin';
+import ReportsPaymentsTotalsModalWin from '@/components/ReportsPaymentsTotalsModalWin';
+import ReportsPaymentsTotalsByDatesModalWin from '@/components/ReportsPaymentsTotalsByDatesModalWin';
 
 const AccountingReports: FC = () => {
   const {
-    setAccrualAdjustmentsModalWinState,
-    setAccrualAdjustmentsTotalsModalWinState,
-    setAccrualsModalWinState,
-    setAccrualsTotalsModalWinState,
+    setPriceAdjustmentsModalWinState,
+    setPriceAdjustmentsTotalsModalWinState,
+    setPricesModalWinState,
+    setPricesTotalsModalWinState,
     setCalcByHousesModalWinState,
     setCalcByStreetsModalWinState,
     setCalcBySubscribersDebtModalWinState,
@@ -31,10 +31,10 @@ const AccountingReports: FC = () => {
     setPaymentsTotalsModalWinState,
     setPersonalAccountPaymentsModalWinState,
     setPersonalAccountStatementsModalWinState,
-    showAccrualAdjustmentsModalWin,
-    showAccrualAdjustmentsTotalsModalWin,
-    showAccrualsModalWin,
-    showAccrualsTotalsModalWin,
+    showPriceAdjustmentsModalWin,
+    showPriceAdjustmentsTotalsModalWin,
+    showPricesModalWin,
+    showPricesTotalsModalWin,
     showCalcByHousesModalWin,
     showCalcByStreetsModalWin,
     showCalcBySubscribersDebtModalWin,
@@ -83,22 +83,22 @@ const AccountingReports: FC = () => {
           </ListItem>
           <ListItem>
             <ReportBtn
-              onClick={setAccrualAdjustmentsModalWinState}
+              onClick={setPriceAdjustmentsModalWinState}
               title='Коригування по нарахуванням'
             />
           </ListItem>
           <ListItem>
             <ReportBtn
-              onClick={setAccrualAdjustmentsTotalsModalWinState}
+              onClick={setPriceAdjustmentsTotalsModalWinState}
               title='Коригування по нарахуванням (підсумки)'
             />
           </ListItem>
           <ListItem>
-            <ReportBtn onClick={setAccrualsModalWinState} title='Нарахування' />
+            <ReportBtn onClick={setPricesModalWinState} title='Нарахування' />
           </ListItem>
           <ListItem>
             <ReportBtn
-              onClick={setAccrualsTotalsModalWinState}
+              onClick={setPricesTotalsModalWinState}
               title='Нарахування (підсумки)'
             />
           </ListItem>
@@ -148,23 +148,21 @@ const AccountingReports: FC = () => {
           setModalWinState={setPersonalAccountPaymentsModalWinState}
         />
       )}
-      {showAccrualAdjustmentsModalWin && (
-        <AccrualAdjustmentsModalWin
-          setModalWinState={setAccrualAdjustmentsModalWinState}
+      {showPriceAdjustmentsModalWin && (
+        <PriceAdjustmentsModalWin
+          setModalWinState={setPriceAdjustmentsModalWinState}
         />
       )}
-      {showAccrualAdjustmentsTotalsModalWin && (
-        <AccrualAdjustmentsTotalsModalWin
-          setModalWinState={setAccrualAdjustmentsTotalsModalWinState}
+      {showPriceAdjustmentsTotalsModalWin && (
+        <PriceAdjustmentsTotalsModalWin
+          setModalWinState={setPriceAdjustmentsTotalsModalWinState}
         />
       )}
-      {showAccrualsModalWin && (
-        <AccrualsModalWin setModalWinState={setAccrualsModalWinState} />
+      {showPricesModalWin && (
+        <PricesModalWin setModalWinState={setPricesModalWinState} />
       )}
-      {showAccrualsTotalsModalWin && (
-        <AccrualsTotalsModalWin
-          setModalWinState={setAccrualsTotalsModalWinState}
-        />
+      {showPricesTotalsModalWin && (
+        <PricesTotalsModalWin setModalWinState={setPricesTotalsModalWinState} />
       )}
       {showPaymentsModalWin && (
         <ReportsPaymentsModalWin setModalWinState={setPaymentsModalWinState} />

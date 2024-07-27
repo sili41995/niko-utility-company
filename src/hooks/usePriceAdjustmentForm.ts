@@ -1,30 +1,30 @@
 import { useEffect, useState } from 'react';
 import {
   formatDate,
-  getAccrualAdjustmentData,
+  getPriceAdjustmentData,
   getSubscriberAccountAddress,
   getSubscriberAccountInfo,
   toasts,
 } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { IAccrualAdjustmentFormData } from '@/types/data.types';
+import { IPriceAdjustmentFormData } from '@/types/data.types';
 import { useAccountingStore } from '@/store/store';
-import { selectAddAccrualAdjustment } from '@/store/accounting/selectors';
-import { validateAccrualsAdjustmentForm } from '@/validators';
+import { selectAddPriceAdjustment } from '@/store/accounting/selectors';
+import { validatePriceAdjustmentForm } from '@/validators';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import { DateFormats, Messages } from '@/constants';
-import { IUseAccrualsAdjustmentForm } from '@/types/hooks.types';
+import { IUsePriceAdjustmentForm } from '@/types/hooks.types';
 
-const useAccrualsAdjustmentForm = (
+const usePriceAdjustmentForm = (
   subscriberAccount: ISubscriberAccount
-): IUseAccrualsAdjustmentForm => {
+): IUsePriceAdjustmentForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<IAccrualAdjustmentFormData>();
-  const addAccrualAdjustment = useAccountingStore(selectAddAccrualAdjustment);
+  } = useForm<IPriceAdjustmentFormData>();
+  const addPriceAdjustment = useAccountingStore(selectAddPriceAdjustment);
 
   const address = getSubscriberAccountAddress(subscriberAccount);
   const subscriberAccountInfo = getSubscriberAccountInfo(subscriberAccount);
@@ -38,22 +38,22 @@ const useAccrualsAdjustmentForm = (
     const invalidFields = Object.keys(errors);
 
     if (invalidFields.length) {
-      validateAccrualsAdjustmentForm(errors);
+      validatePriceAdjustmentForm(errors);
     }
   }, [isSubmitting, errors]);
 
-  const handleFormSubmit: SubmitHandler<IAccrualAdjustmentFormData> = async (
+  const handleFormSubmit: SubmitHandler<IPriceAdjustmentFormData> = async (
     data
   ) => {
-    const accrualAdjustmentData = getAccrualAdjustmentData({
+    const priceAdjustmentData = getPriceAdjustmentData({
       data,
       id: subscriberAccount.id,
     });
 
     try {
       setIsLoading(true);
-      await addAccrualAdjustment(accrualAdjustmentData);
-      toasts.successToast(Messages.addAccrualAdjustmentSuccess);
+      await addPriceAdjustment(priceAdjustmentData);
+      toasts.successToast(Messages.addPriceAdjustmentSuccess);
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);
@@ -74,4 +74,4 @@ const useAccrualsAdjustmentForm = (
   };
 };
 
-export default useAccrualsAdjustmentForm;
+export default usePriceAdjustmentForm;

@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { IProps } from './AccrualsAdjustmentForm.types';
-import { Container, Form } from './AccrualsAdjustmentForm.styled';
+import { IProps } from './PriceAdjustmentForm.types';
+import { Container, Form } from './PriceAdjustmentForm.styled';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Input from '@/components/Input';
 import { InputTypes } from '@/constants';
-import { useAccrualsAdjustmentForm } from '@/hooks';
+import { usePriceAdjustmentForm } from '@/hooks';
 import SubscriberAccountInfo from '@/components/SubscriberAccountInfo';
 
-const AccrualsAdjustmentForm: FC<IProps> = ({
+const PriceAdjustmentForm: FC<IProps> = ({
   subscriberAccount,
   resetSubscriberAccount,
 }) => {
@@ -19,7 +19,7 @@ const AccrualsAdjustmentForm: FC<IProps> = ({
     register,
     currentDate,
     isLoading,
-  } = useAccrualsAdjustmentForm(subscriberAccount);
+  } = usePriceAdjustmentForm(subscriberAccount);
 
   return (
     <Container>
@@ -53,4 +53,4 @@ const AccrualsAdjustmentForm: FC<IProps> = ({
   );
 };
 
-export default AccrualsAdjustmentForm;
+export default PriceAdjustmentForm;

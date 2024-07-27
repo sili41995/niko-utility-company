@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { InputTypes, SubscriberAccountInfoCategories } from '@/constants';
 import { IProps } from './SubscriberAccountInfoModalWinControls.types';
 import { Form } from './SubscriberAccountInfoModalWinControls.styled';
-import SubscriberAccountInfoModalWinBtn from '../SubscriberAccountInfoModalWinBtn';
+import SubscriberAccountInfoModalWinBtn from '@/components/SubscriberAccountInfoModalWinBtn';
 
 const SubscriberAccountInfoModalWinControls: FC<IProps> = ({
-  isAccrualsCategory,
-  isAdjustmentCategory,
+  isPricesCategory,
+  isPriceAdjustmentsCategory,
   isBalanceCategory,
   isEditingCategory,
   isPaymentsCategory,
@@ -22,19 +22,19 @@ const SubscriberAccountInfoModalWinControls: FC<IProps> = ({
       title='Стан рахунку'
     />
     <SubscriberAccountInfoModalWinBtn
-      checked={isAccrualsCategory}
+      checked={isPricesCategory}
       name={SubscriberAccountInfoCategories.name}
       onChange={onChange}
       type={InputTypes.radio}
-      value={SubscriberAccountInfoCategories.accruals}
+      value={SubscriberAccountInfoCategories.prices}
       title='Нарахування'
     />
     <SubscriberAccountInfoModalWinBtn
-      checked={isAdjustmentCategory}
+      checked={isPriceAdjustmentsCategory}
       name={SubscriberAccountInfoCategories.name}
       onChange={onChange}
       type={InputTypes.radio}
-      value={SubscriberAccountInfoCategories.adjustment}
+      value={SubscriberAccountInfoCategories.priceAdjustments}
       title='Коригування
 '
     />

@@ -148,7 +148,7 @@ export interface IPeriod {
 
 export type Periods = IPeriod[];
 
-export interface IAccrualAdjustment {
+export interface IPriceAdjustment {
   id: number;
   price: number;
   date: Date;
@@ -157,31 +157,33 @@ export interface IAccrualAdjustment {
   subscriberAccount: ISubscriberAccount;
 }
 
-export type AccrualAdjustmentData = Pick<
-  IAccrualAdjustment,
+export type PriceAdjustments = IPriceAdjustment[];
+
+export type PriceAdjustmentData = Pick<
+  IPriceAdjustment,
   'price' | 'date' | 'comment' | 'subscriberAccountId'
 >;
 
-export interface IAccrualAdjustmentFormData
-  extends Pick<IAccrualAdjustment, 'comment'> {
+export interface IPriceAdjustmentFormData
+  extends Pick<IPriceAdjustment, 'comment'> {
   date: string;
   price: string;
 }
 
-export type Price = Pick<IAccrualAdjustment, 'price'>;
+export type Price = Pick<IPriceAdjustment, 'price'>;
 
-export type AccrualAdjustmentComment = Pick<IAccrualAdjustment, 'comment'>;
+export type PriceAdjustmentComment = Pick<IPriceAdjustment, 'comment'>;
 
-export type AccrualAdjustmentDate = Pick<IAccrualAdjustment, 'date'>;
+export type PriceAdjustmentDate = Pick<IPriceAdjustment, 'date'>;
 
 export interface IPayment {
   id: number;
   amount: number;
   source: PaymentSources;
   date: Date;
-  period: IPeriod;
+  period?: IPeriod;
   subscriberAccountId: number;
-  subscriberAccount: ISubscriberAccount;
+  subscriberAccount?: ISubscriberAccount;
 }
 
 export type Payments = IPayment[];

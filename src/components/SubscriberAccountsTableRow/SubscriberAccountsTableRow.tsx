@@ -11,7 +11,7 @@ import {
 import { MdInfoOutline } from 'react-icons/md';
 import { IconSizes } from '@/constants';
 import { useSubscriberAccountsTableRow } from '@/hooks';
-import SubscriberAccountInfoModalWin from '../SubscriberAccountInfoModalWin';
+import SubscriberAccountInfoModalWin from '@/components/SubscriberAccountInfoModalWin';
 
 const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
   const {

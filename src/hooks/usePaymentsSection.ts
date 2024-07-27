@@ -33,6 +33,7 @@ const usePaymentsSection = (): IUsePaymentsSection => {
     totalCount,
     count,
     showPaymentsTable,
+    payments,
   };
 };
 

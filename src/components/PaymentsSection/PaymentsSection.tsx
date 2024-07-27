@@ -19,6 +19,7 @@ const PaymentsSection: FC<IProps> = ({
     totalCount,
     count,
     showPaymentsTable,
+    payments,
   } = usePaymentsSection();
   const showPaginationBar = showPagination && totalCount;
 
@@ -31,7 +32,7 @@ const PaymentsSection: FC<IProps> = ({
       {isLoaded ? (
         showPaymentsTable && (
           <TableWrap>
-            <PaymentsTable />
+            <PaymentsTable payments={payments} fullInfo />
             {showPaginationBar && (
               <Pagination
                 totalCount={totalCount}

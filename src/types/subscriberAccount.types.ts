@@ -1,4 +1,10 @@
-import { Documents, IHouse, IStreet } from './data.types';
+import {
+  PriceAdjustments,
+  Documents,
+  IHouse,
+  IStreet,
+  Payments,
+} from './data.types';
 import { BooleanValue } from './types';
 import { AccountTypes, SectorTypes } from '@/constants';
 
@@ -49,6 +55,8 @@ export interface ISubscriberAccount {
   houseId: number;
   house: IHouse;
   owner: IOwner;
+  payments: Payments;
+  priceAdjustments: PriceAdjustments;
 }
 
 export type InitialSubscriberAccountFormData = Omit<
@@ -108,7 +116,15 @@ export interface IEditSubscriberAccountData
 
 export type NewSubscriberAccountData = Omit<
   ISubscriberAccount,
-  'id' | 'street' | 'house' | 'email' | 'owner' | 'documents' | 'balance'
+  | 'id'
+  | 'street'
+  | 'house'
+  | 'email'
+  | 'owner'
+  | 'documents'
+  | 'balance'
+  | 'payments'
+  | 'priceAdjustments'
 >;
 
 export interface INewSubscriberAccountData extends NewSubscriberAccountData {

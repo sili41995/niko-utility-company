@@ -6,12 +6,8 @@ import {
   IAccountingState,
   IPricesInfo,
 } from '@/types/accountingStore.types';
-import {
-  calculatePrices,
-  fetchPrices,
-  addAccrualAdjustment,
-} from './operations';
-import { AccrualAdjustmentData, IAccrualAdjustment } from '@/types/data.types';
+import { calculatePrices, fetchPrices, addPriceAdjustment } from './operations';
+import { PriceAdjustmentData, IPriceAdjustment } from '@/types/data.types';
 
 const accountingSlice = (
   set: SetAccountingStateFunc,
@@ -30,11 +26,11 @@ const accountingSlice = (
       data: undefined,
       get,
     }),
-  addAccrualAdjustment: async (
-    data: AccrualAdjustmentData
-  ): Promise<IAccrualAdjustment | undefined> =>
-    await addAccrualAdjustment({
-      set: setState({ set, name: 'addAccrualAdjustment' }),
+  addPriceAdjustment: async (
+    data: PriceAdjustmentData
+  ): Promise<IPriceAdjustment | undefined> =>
+    await addPriceAdjustment({
+      set: setState({ set, name: 'addPriceAdjustment' }),
       data,
       get,
     }),

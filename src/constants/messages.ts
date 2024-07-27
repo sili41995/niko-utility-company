@@ -42,7 +42,7 @@ const enum Messages {
   duplicateDocumentErr = 'Такий документ вже існує',
   duplicatePeriodErr = 'Період вже існує',
   subscriberAccountNotFoundErr = 'Абонентський рахунок не знайдено',
-  addAccrualAdjustmentSuccess = 'Коригування нарахувань успішно додано',
+  addPriceAdjustmentSuccess = 'Коригування нарахувань успішно додано',
   priceReqErr = 'Поле Сума має бути заповнене',
   sourceReqErr = 'Поле Спосіб оплати має бути заповнене',
   dateReqErr = 'Поле Дата має бути заповнене',

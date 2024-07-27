@@ -4,23 +4,26 @@ import { TableBodyRow, TableData } from './PaymentsTableRow.styled';
 import { formatDate, getPaymentSource } from '@/utils';
 import { DateFormats } from '@/constants';
 
-const PaymentsTableRow: FC<IProps> = ({ payment }) => {
+const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
   const { subscriberAccount, date, amount, source, period } = payment;
-  const { subscriberAccount: subscriberAccountNumber } = subscriberAccount;
+  const { subscriberAccount: subscriberAccountNumber } =
+    subscriberAccount ?? {};
   const paymentDate = formatDate({ date, dateFormat: DateFormats.date });
   const paymentSource = getPaymentSource(source);
   const periodDate = formatDate({
-    date: period.start,
+    date: period?.start ?? new Date(),
     dateFormat: DateFormats.period,
   });
 
   return (
     <TableBodyRow>
-      <TableData>{subscriberAccountNumber}</TableData>
+      {fullInfo && <TableData>{subscriberAccountNumber}</TableData>}
       <TableData center>{paymentDate}</TableData>
-      <TableData center capitalize>
-        {periodDate}
-      </TableData>
+      {fullInfo && (
+        <TableData center capitalize>
+          {periodDate}
+        </TableData>
+      )}
       <TableData center>{amount}</TableData>
       <TableData center>{paymentSource}</TableData>
       <TableData></TableData>

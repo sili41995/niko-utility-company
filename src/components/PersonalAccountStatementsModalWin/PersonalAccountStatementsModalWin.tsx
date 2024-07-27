@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './PersonalAccountStatementsModalWin.types';
-import ModalWin from '../ModalWin';
-import FormDataTitle from '../FormDataTitle';
+import ModalWin from '@/components/ModalWin';
+import FormDataTitle from '@/components/FormDataTitle';
 import { Container } from './PersonalAccountStatementsModalWin.styled';
 
 const PersonalAccountStatementsModalWin: FC<IProps> = ({

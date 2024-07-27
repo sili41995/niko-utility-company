@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const Container = styled.label`
   padding: ${({ theme }) => theme.spacing(2)};
+  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
   cursor: pointer;
 
   &:is(:hover, :focus, :has(input:checked)) {

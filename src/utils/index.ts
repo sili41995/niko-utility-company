@@ -29,7 +29,7 @@ export { default as getTariffUnits } from './getTariffUnits';
 export { default as sortTariffs } from './sortTariffs';
 export { default as updatePeriods } from './updatePeriods';
 export { default as getPeriodDate } from './getPeriodDate';
-export { default as getAccrualAdjustmentData } from './getAccrualAdjustmentData';
+export { default as getPriceAdjustmentData } from './getPriceAdjustmentData';
 export { default as getSubscriberAccountAddress } from './getSubscriberAccountAddress';
 export { default as getSubscriberAccountInfo } from './getSubscriberAccountInfo';
 export { default as getPaymentSourcesSelectData } from './getPaymentSourcesSelectData';

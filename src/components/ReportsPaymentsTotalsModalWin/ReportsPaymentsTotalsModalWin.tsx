@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './ReportsPaymentsTotalsModalWin.types';
-import ModalWin from '../ModalWin';
-import FormDataTitle from '../FormDataTitle';
+import ModalWin from '@/components/ModalWin';
+import FormDataTitle from '@/components/FormDataTitle';
 import { Container } from './ReportsPaymentsTotalsModalWin.styled';
 
 const ReportsPaymentsTotalsModalWin: FC<IProps> = ({ setModalWinState }) => {

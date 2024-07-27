@@ -1,18 +1,15 @@
 import { FC, useState } from 'react';
-import { IProps } from './AccrualsAdjustmentModalWin.types';
+import { IProps } from './PriceAdjustmentModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
-import {
-  Container,
-  ContentContainer,
-} from './AccrualsAdjustmentModalWin.styled';
+import { Container, ContentContainer } from './PriceAdjustmentModalWin.styled';
 import FindSubscriberAccountForm from '@/components/FindSubscriberAccountForm';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
-import AccrualsAdjustmentForm from '@/components/AccrualsAdjustmentForm';
+import PriceAdjustmentForm from '@/components/PriceAdjustmentForm';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
 
-const AccrualsAdjustmentModalWin: FC<IProps> = ({ setModalWinState }) => {
+const PriceAdjustmentModalWin: FC<IProps> = ({ setModalWinState }) => {
   const [data, setData] = useState<ISubscriberAccount | null>(null);
 
   const setSubscriberAccount = (data: ISubscriberAccount): void => {
@@ -30,7 +27,7 @@ const AccrualsAdjustmentModalWin: FC<IProps> = ({ setModalWinState }) => {
         <FormDataTitle title='Коригування нарахувань:' />
         <ContentContainer>
           {data ? (
-            <AccrualsAdjustmentForm
+            <PriceAdjustmentForm
               subscriberAccount={data}
               resetSubscriberAccount={resetSubscriberAccount}
             />
@@ -45,4 +42,4 @@ const AccrualsAdjustmentModalWin: FC<IProps> = ({ setModalWinState }) => {
   );
 };
 
-export default AccrualsAdjustmentModalWin;
+export default PriceAdjustmentModalWin;

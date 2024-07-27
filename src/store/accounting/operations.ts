@@ -1,11 +1,11 @@
 import accountingService from '@/services/accounting.service';
 import operationWrapper from '@/store/accounting/operationWrapper';
 import {
-  IAddAccrualAdjustmentOperationProps,
+  IAddPriceAdjustmentOperationProps,
   IPricesInfo,
 } from '@/types/accountingStore.types';
 import { IPricesOperationsProps } from '@/types/accountingStore.types';
-import { IAccrualAdjustment } from '@/types/data.types';
+import { IPriceAdjustment } from '@/types/data.types';
 
 const calculatePricesOperation = async ({
   set,
@@ -31,18 +31,16 @@ const fetchPricesOperation = async ({
   return response;
 };
 
-const addAccrualAdjustmentOperation = async ({
+const addPriceAdjustmentOperation = async ({
   data,
-}: IAddAccrualAdjustmentOperationProps): Promise<
-  IAccrualAdjustment | undefined
+}: IAddPriceAdjustmentOperationProps): Promise<
+  IPriceAdjustment | undefined
 > => {
-  const response = await accountingService.addAccrualAdjustment(data);
+  const response = await accountingService.addPriceAdjustment(data);
 
   return response;
 };
 
 export const calculatePrices = operationWrapper(calculatePricesOperation);
 export const fetchPrices = operationWrapper(fetchPricesOperation);
-export const addAccrualAdjustment = operationWrapper(
-  addAccrualAdjustmentOperation
-);
+export const addPriceAdjustment = operationWrapper(addPriceAdjustmentOperation);

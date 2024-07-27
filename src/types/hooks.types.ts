@@ -20,9 +20,10 @@ import {
   SelectData,
   INewTariffFormData,
   Tariffs,
-  IAccrualAdjustmentFormData,
+  IPriceAdjustmentFormData,
   INewPaymentFormData,
   ITimePeriod,
+  Payments,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -314,7 +315,7 @@ export interface IUseAddPeriod {
 export interface IUseAccountingSections {
   setAddPeriodModalWinState: Func;
   setCalculatePricesModalWinState: Func;
-  setAccrualsAdjustmentModalWinState: Func;
+  setPriceAdjustmentModalWinState: Func;
   setPaymentsAdjustmentModalWinState: Func;
   setPaymentsModalWinState: Func;
   setBenefitsAdjustmentModalWinState: Func;
@@ -327,7 +328,7 @@ export interface IUseAccountingSections {
   showTariffsModalWin: boolean;
   showCalculatePricesModalWin: boolean;
   showAddPeriodModalWin: boolean;
-  showAccrualsAdjustmentModalWin: boolean;
+  showPriceAdjustmentModalWin: boolean;
   showPaymentsAdjustmentModalWin: boolean;
   showPaymentsModalWin: boolean;
   showBenefitsAdjustmentModalWin: boolean;
@@ -365,12 +366,12 @@ export interface IUseSubscriberAccountsTableRow {
   isDebt: boolean;
 }
 
-export interface IUseAccrualsAdjustmentForm {
+export interface IUsePriceAdjustmentForm {
   address: string;
   subscriberAccountInfo: string;
-  handleSubmit: UseFormHandleSubmit<IAccrualAdjustmentFormData, undefined>;
-  handleFormSubmit: SubmitHandler<IAccrualAdjustmentFormData>;
-  register: UseFormRegister<IAccrualAdjustmentFormData>;
+  handleSubmit: UseFormHandleSubmit<IPriceAdjustmentFormData, undefined>;
+  handleFormSubmit: SubmitHandler<IPriceAdjustmentFormData>;
+  register: UseFormRegister<IPriceAdjustmentFormData>;
   currentDate: string;
   isLoading: boolean;
 }
@@ -399,6 +400,7 @@ export interface IUsePaymentsSection {
   totalCount: number | null;
   count: number;
   showPaymentsTable: boolean;
+  payments: Payments;
 }
 
 export interface IUseFetchFile {
@@ -412,10 +414,10 @@ export interface IUseAccountingReports {
   showCalcBySubscribersDebtModalWin: boolean;
   showPersonalAccountStatementsModalWin: boolean;
   showPersonalAccountPaymentsModalWin: boolean;
-  showAccrualAdjustmentsModalWin: boolean;
-  showAccrualAdjustmentsTotalsModalWin: boolean;
-  showAccrualsModalWin: boolean;
-  showAccrualsTotalsModalWin: boolean;
+  showPriceAdjustmentsModalWin: boolean;
+  showPriceAdjustmentsTotalsModalWin: boolean;
+  showPricesModalWin: boolean;
+  showPricesTotalsModalWin: boolean;
   showPaymentsModalWin: boolean;
   showPaymentsAdjustmentsModalWin: boolean;
   showPaymentsTotalsModalWin: boolean;
@@ -425,10 +427,10 @@ export interface IUseAccountingReports {
   setCalcBySubscribersDebtModalWinState: Func;
   setPersonalAccountStatementsModalWinState: Func;
   setPersonalAccountPaymentsModalWinState: Func;
-  setAccrualAdjustmentsModalWinState: Func;
-  setAccrualAdjustmentsTotalsModalWinState: Func;
-  setAccrualsModalWinState: Func;
-  setAccrualsTotalsModalWinState: Func;
+  setPriceAdjustmentsModalWinState: Func;
+  setPriceAdjustmentsTotalsModalWinState: Func;
+  setPricesModalWinState: Func;
+  setPricesTotalsModalWinState: Func;
   setPaymentsModalWinState: Func;
   setPaymentsAdjustmentsModalWinState: Func;
   setPaymentsTotalsModalWinState: Func;

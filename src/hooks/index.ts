@@ -27,7 +27,7 @@ export { default as useTargetPeriod } from './useTargetPeriod';
 export { default as useCurrentPeriod } from './useCurrentPeriod';
 export { default as useFindSubscriberAccountForm } from './useFindSubscriberAccountForm';
 export { default as useSubscriberAccountsTableRow } from './useSubscriberAccountsTableRow';
-export { default as useAccrualsAdjustmentForm } from './useAccrualsAdjustmentForm';
+export { default as usePriceAdjustmentForm } from './usePriceAdjustmentForm';
 export { default as useAddPaymentForm } from './useAddPaymentForm';
 export { default as usePaymentsModalWin } from './usePaymentsModalWin';
 export { default as usePaymentsSection } from './usePaymentsSection';

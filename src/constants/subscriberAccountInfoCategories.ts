@@ -1,8 +1,8 @@
 const enum SubscriberAccountInfoCategories {
   name = 'subscriberAccountInfoCategories',
   balance = 'balance',
-  accruals = 'accruals',
-  adjustment = 'adjustment',
+  prices = 'prices',
+  priceAdjustments = 'priceAdjustments',
   payments = 'payments',
   editing = 'editing',
 }

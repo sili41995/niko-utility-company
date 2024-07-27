@@ -2,7 +2,7 @@ import { Messages, PagePaths, SectorTypes } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 import {
   Houses,
-  IAccrualAdjustmentFormData,
+  IPriceAdjustmentFormData,
   INewPaymentFormData,
   INewTariffFormData,
   IPeriod,
@@ -152,8 +152,8 @@ export interface IUpdatePeriodsProps {
   newPeriod: IPeriod;
 }
 
-export interface IGetAccrualAdjustmentDataProps {
-  data: IAccrualAdjustmentFormData;
+export interface IGetPriceAdjustmentDataProps {
+  data: IPriceAdjustmentFormData;
   id: number;
 }
 

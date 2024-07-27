@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { IProps } from './AccrualsTotalsModalWin.types';
-import ModalWin from '../ModalWin';
-import FormDataTitle from '../FormDataTitle';
-import { Container } from './AccrualsTotalsModalWin.styled';
+import { IProps } from './PricesTotalsModalWin.types';
+import ModalWin from '@/components/ModalWin';
+import FormDataTitle from '@/components/FormDataTitle';
+import { Container } from './PricesTotalsModalWin.styled';
 
-const AccrualsTotalsModalWin: FC<IProps> = ({ setModalWinState }) => {
+const PricesTotalsModalWin: FC<IProps> = ({ setModalWinState }) => {
   // const { isLoading, onActionBtnClick } = usePayPostageModalWin();
 
   return (
@@ -24,4 +24,4 @@ const AccrualsTotalsModalWin: FC<IProps> = ({ setModalWinState }) => {
   );
 };
 
-export default AccrualsTotalsModalWin;
+export default PricesTotalsModalWin;

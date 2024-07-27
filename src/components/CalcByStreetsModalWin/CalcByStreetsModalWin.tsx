@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { IProps } from './CalcByStreetsModalWin.types';
-import ModalWin from '../ModalWin';
-import FormDataTitle from '../FormDataTitle';
+import ModalWin from '@/components/ModalWin';
+import FormDataTitle from '@/components/FormDataTitle';
 import { Container, Form, InputsWrap } from './CalcByStreetsModalWin.styled';
-import Input from '../Input';
+import Input from '@/components/Input';
 import { InputTypes } from '@/constants';
-import SubmitFormBtn from '../SubmitFormBtn';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
 import { useCalcByStreetsForm } from '@/hooks';
 
 const CalcByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {

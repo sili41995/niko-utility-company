@@ -1,4 +1,4 @@
-import { AccrualAdjustmentData, IAccrualAdjustment } from './data.types';
+import { PriceAdjustmentData, IPriceAdjustment } from './data.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
 
 export interface IPricesInfo {
@@ -14,9 +14,9 @@ export interface IAccountingInitialState {
 export interface IAccountingState extends IAccountingInitialState {
   fetchPrices: () => Promise<IPricesInfo | undefined>;
   calculatePrices: () => Promise<IPricesInfo | undefined>;
-  addAccrualAdjustment: (
-    data: AccrualAdjustmentData
-  ) => Promise<IAccrualAdjustment | undefined>;
+  addPriceAdjustment: (
+    data: PriceAdjustmentData
+  ) => Promise<IPriceAdjustment | undefined>;
 }
 
 export type GetAccountingStateFunc = GetStateFunc<IAccountingState>;
@@ -27,8 +27,8 @@ export interface IPricesOperationsProps {
   set: SetAccountingStateFunc;
 }
 
-export interface IAddAccrualAdjustmentOperationProps {
+export interface IAddPriceAdjustmentOperationProps {
   set: SetAccountingStateFunc;
-  data: AccrualAdjustmentData;
+  data: PriceAdjustmentData;
   get: GetAccountingStateFunc;
 }
