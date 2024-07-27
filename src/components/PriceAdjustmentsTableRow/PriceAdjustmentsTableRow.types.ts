@@ -1,10 +1,9 @@
-import { IPrice } from '@/types/data.types';
+import { IPriceAdjustment } from '@/types/data.types';
 
 export interface IProps {
-  price: IPrice;
+  priceAdjustment: IPriceAdjustment;
 }
 
 export interface IStyledTableDataProps {
   center?: boolean;
-  capitalize?: boolean;
 }

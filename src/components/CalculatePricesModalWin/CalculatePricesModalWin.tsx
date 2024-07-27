@@ -15,8 +15,7 @@ import Loader from '@/components/Loader';
 import PeriodTitle from '@/components/PeriodTitle';
 
 const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const { lastPricesCalculate, isLoading, calculatePrices, error } =
-    useCalculatePrices();
+  const { isLoading, calculatePrices, error } = useCalculatePrices();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -29,7 +28,8 @@ const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
             <>
               <PeriodTitle />
               <Text>
-                Останнє нарахування: <Date>{lastPricesCalculate}</Date>
+                {/* Останнє нарахування: <Date>{lastPricesCalculate}</Date> */}
+                Останнє нарахування: <Date>-</Date>
               </Text>
               <ActionBtn
                 title='Перерахувати'

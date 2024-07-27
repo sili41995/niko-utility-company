@@ -53,8 +53,9 @@ const enum Messages {
   dateFromReqErr = 'Поле З має бути заповнене',
   dateToReqErr = 'Поле По має бути заповнене',
   fetchReportsSuccess = 'Звіт успішно сформовано',
-  emptyPricesList = 'Список коригувань пустий',
+  emptyPriceAdjustmentsList = 'Список коригувань пустий',
   emptyPaymentsList = 'Список оплат пустий',
+  emptyPricesList = 'Список нарахувань пустий',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

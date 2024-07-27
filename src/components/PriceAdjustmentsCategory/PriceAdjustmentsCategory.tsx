@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PricesTable from '@/components/PricesTable';
+import PriceAdjustmentsTable from '@/components/PriceAdjustmentsTable';
 import DefaultMessage from '@/components/DefaultMessage';
 import { Messages } from '@/constants';
 import { IProps } from './PriceAdjustmentsCategory.types';
@@ -8,9 +8,9 @@ const PriceAdjustmentsCategory: FC<IProps> = ({ priceAdjustments }) => {
   const showPricesTable = Boolean(priceAdjustments.length);
 
   return showPricesTable ? (
-    <PricesTable prices={priceAdjustments} />
+    <PriceAdjustmentsTable priceAdjustments={priceAdjustments} />
   ) : (
-    <DefaultMessage message={Messages.emptyPricesList} />
+    <DefaultMessage message={Messages.emptyPriceAdjustmentsList} />
   );
 };
 

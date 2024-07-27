@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IStyledTableDataProps } from './PricesTableRow.types';
+import { IStyledTableDataProps } from './PriceAdjustmentsTableRow.types';
 
 export const TableBodyRow = styled.tr`
   background-color: ${({ theme }) => theme.colors.white};
@@ -12,5 +12,4 @@ export const TableData = styled.td<IStyledTableDataProps>`
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};
   text-align: ${({ center }) => (center ? 'center' : 'left')};
-  text-transform: ${({ capitalize }) => (capitalize ? 'capitalize' : 'none')};
 `;

@@ -10,26 +10,33 @@ import PeriodTitle from '@/components/PeriodTitle';
 import { IProps } from './SubscriberAccountInfo.types';
 import { GrUpdate } from 'react-icons/gr';
 import { BtnTypes, IconSizes } from '@/constants';
+import { getSubscriberAccountAddress, getSubscriberAccountInfo } from '@/utils';
 
 const SubscriberAccountInfo: FC<IProps> = ({
-  address,
-  subscriberAccountInfo,
+  subscriberAccount,
   resetSubscriberAccount,
-}) => (
-  <Container>
-    <PeriodTitle />
-    <Text>
-      Адреса: <Accent>{address}</Accent>
-    </Text>
-    <TextWrap>
+}) => {
+  const address = getSubscriberAccountAddress(subscriberAccount);
+  const subscriberAccountInfo = getSubscriberAccountInfo(subscriberAccount);
+
+  return (
+    <Container>
+      <PeriodTitle />
       <Text>
-        Абонентський рахунок: <Accent>{subscriberAccountInfo}</Accent>
+        Адреса: <Accent>{address}</Accent>
       </Text>
-      <ResetBtn type={BtnTypes.button} onClick={resetSubscriberAccount}>
-        <GrUpdate size={IconSizes.primary} />
-      </ResetBtn>
-    </TextWrap>
-  </Container>
-);
+      <TextWrap>
+        <Text>
+          Абонентський рахунок: <Accent>{subscriberAccountInfo}</Accent>
+        </Text>
+        {resetSubscriberAccount && (
+          <ResetBtn type={BtnTypes.button} onClick={resetSubscriberAccount}>
+            <GrUpdate size={IconSizes.primary} />
+          </ResetBtn>
+        )}
+      </TextWrap>
+    </Container>
+  );
+};
 
 export default SubscriberAccountInfo;

@@ -13,8 +13,6 @@ const AddPaymentForm: FC<IProps> = ({
   resetSubscriberAccount,
 }) => {
   const {
-    address,
-    subscriberAccountInfo,
     handleSubmit,
     handleFormSubmit,
     register,
@@ -26,8 +24,7 @@ const AddPaymentForm: FC<IProps> = ({
   return (
     <Container>
       <SubscriberAccountInfo
-        address={address}
-        subscriberAccountInfo={subscriberAccountInfo}
+        subscriberAccount={subscriberAccount}
         resetSubscriberAccount={resetSubscriberAccount}
       />
       <Form onSubmit={handleSubmit(handleFormSubmit)}>

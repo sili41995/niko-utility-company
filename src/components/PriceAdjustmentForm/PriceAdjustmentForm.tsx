@@ -11,21 +11,13 @@ const PriceAdjustmentForm: FC<IProps> = ({
   subscriberAccount,
   resetSubscriberAccount,
 }) => {
-  const {
-    address,
-    subscriberAccountInfo,
-    handleSubmit,
-    handleFormSubmit,
-    register,
-    currentDate,
-    isLoading,
-  } = usePriceAdjustmentForm(subscriberAccount);
+  const { handleSubmit, handleFormSubmit, register, currentDate, isLoading } =
+    usePriceAdjustmentForm(subscriberAccount);
 
   return (
     <Container>
       <SubscriberAccountInfo
-        address={address}
-        subscriberAccountInfo={subscriberAccountInfo}
+        subscriberAccount={subscriberAccount}
         resetSubscriberAccount={resetSubscriberAccount}
       />
       <Form onSubmit={handleSubmit(handleFormSubmit)}>

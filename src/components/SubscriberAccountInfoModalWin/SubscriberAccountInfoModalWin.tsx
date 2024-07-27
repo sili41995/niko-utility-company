@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import ModalWin from '@/components/ModalWin';
 import { IProps } from './SubscriberAccountInfoModalWin.types';
 import FormDataTitle from '@/components/FormDataTitle';
@@ -9,6 +9,8 @@ import SubscriberAccountInfoModalWinControls from '@/components/SubscriberAccoun
 import EditSubscriberAccountForm from '@/components/EditSubscriberAccountForm';
 import PaymentsCategory from '@/components/PaymentsCategory';
 import PriceAdjustmentsCategory from '@/components/PriceAdjustmentsCategory';
+import PricesCategory from '../PricesCategory';
+import SubscriberAccountInfo from '../SubscriberAccountInfo';
 
 const SubscriberAccountInfoModalWin: FC<IProps> = ({
   setModalWinState,
@@ -27,7 +29,7 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
     category === SubscriberAccountInfoCategories.payments;
   const isEditingCategory =
     category === SubscriberAccountInfoCategories.editing;
-  const { priceAdjustments, payments } = subscriberAccount;
+  const { priceAdjustments, payments, prices } = subscriberAccount;
 
   const title = `Абонентський рахунок ${subscriberAccount.subscriberAccount}:`;
 
@@ -35,15 +37,12 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
     setCategory(e.currentTarget.value);
   };
 
-  useEffect(() => {
-    console.log(subscriberAccount);
-  });
-
   return (
     <ModalWin setModalWinState={setModalWinState}>
       <Container>
         <FormDataTitle title={title} />
         <ContentWrap>
+          <SubscriberAccountInfo subscriberAccount={subscriberAccount} />
           <SubscriberAccountInfoModalWinControls
             isBalanceCategory={isBalanceCategory}
             isPricesCategory={isPricesCategory}
@@ -52,6 +51,7 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
             isEditingCategory={isEditingCategory}
             onChange={onInputChange}
           />
+          {isPricesCategory && <PricesCategory prices={prices} />}
           {isPriceAdjustmentsCategory && (
             <PriceAdjustmentsCategory priceAdjustments={priceAdjustments} />
           )}

@@ -1,10 +1,4 @@
-import {
-  formatDate,
-  getPaymentSourcesSelectData,
-  getSubscriberAccountAddress,
-  getSubscriberAccountInfo,
-  toasts,
-} from '@/utils';
+import { formatDate, getPaymentSourcesSelectData, toasts } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { DateFormats, GeneralParams, Messages } from '@/constants';
 import { INewPaymentFormData } from '@/types/data.types';
@@ -36,8 +30,6 @@ const useAddPaymentForm = (
     reset,
     formState: { isSubmitting, errors },
   } = useForm<INewPaymentFormData>();
-  const address = getSubscriberAccountAddress(subscriberAccount);
-  const subscriberAccountInfo = getSubscriberAccountInfo(subscriberAccount);
   const paymentSources = getPaymentSourcesSelectData();
   const currentDate = formatDate({
     date: new Date(),
@@ -75,8 +67,6 @@ const useAddPaymentForm = (
   };
 
   return {
-    address,
-    subscriberAccountInfo,
     handleSubmit,
     handleFormSubmit,
     register,

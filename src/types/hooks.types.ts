@@ -367,8 +367,6 @@ export interface IUseSubscriberAccountsTableRow {
 }
 
 export interface IUsePriceAdjustmentForm {
-  address: string;
-  subscriberAccountInfo: string;
   handleSubmit: UseFormHandleSubmit<IPriceAdjustmentFormData, undefined>;
   handleFormSubmit: SubmitHandler<IPriceAdjustmentFormData>;
   register: UseFormRegister<IPriceAdjustmentFormData>;
@@ -377,8 +375,6 @@ export interface IUsePriceAdjustmentForm {
 }
 
 export interface IUseAddPaymentForm {
-  address: string;
-  subscriberAccountInfo: string;
   handleSubmit: UseFormHandleSubmit<INewPaymentFormData, undefined>;
   handleFormSubmit: SubmitHandler<INewPaymentFormData>;
   register: UseFormRegister<INewPaymentFormData>;

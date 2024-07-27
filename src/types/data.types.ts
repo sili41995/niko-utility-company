@@ -212,3 +212,16 @@ export interface ITimePeriod {
 export type DateFrom = Pick<ITimePeriod, 'from'>;
 
 export type DateTo = Pick<ITimePeriod, 'to'>;
+
+export interface IPrice {
+  id: number;
+  amount: number;
+  date: Date;
+  residents: number;
+  tariff: number;
+  subscriberAccountId: number;
+  periodId: number;
+  period: IPeriod;
+}
+
+export type Prices = IPrice[];

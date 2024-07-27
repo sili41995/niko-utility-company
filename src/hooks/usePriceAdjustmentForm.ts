@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-  formatDate,
-  getPriceAdjustmentData,
-  getSubscriberAccountAddress,
-  getSubscriberAccountInfo,
-  toasts,
-} from '@/utils';
+import { formatDate, getPriceAdjustmentData, toasts } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IPriceAdjustmentFormData } from '@/types/data.types';
 import { useAccountingStore } from '@/store/store';
@@ -25,9 +19,6 @@ const usePriceAdjustmentForm = (
     formState: { isSubmitting, errors },
   } = useForm<IPriceAdjustmentFormData>();
   const addPriceAdjustment = useAccountingStore(selectAddPriceAdjustment);
-
-  const address = getSubscriberAccountAddress(subscriberAccount);
-  const subscriberAccountInfo = getSubscriberAccountInfo(subscriberAccount);
 
   const currentDate = formatDate({
     date: new Date(),
@@ -64,8 +55,6 @@ const usePriceAdjustmentForm = (
   };
 
   return {
-    address,
-    subscriberAccountInfo,
     handleSubmit,
     handleFormSubmit,
     register,
