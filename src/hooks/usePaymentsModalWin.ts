@@ -1,22 +1,50 @@
 import { useEffect, useState } from 'react';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import { useSetSearchParams } from '@/hooks';
-import { SearchParamsKeys } from '@/constants';
+import { Messages, SearchParamsKeys } from '@/constants';
 import { IUsePaymentsModalWin } from '@/types/hooks.types';
-import { BtnClickEvent } from '@/types/types';
-import { makeBlur } from '@/utils';
+import { InputChangeEvent } from '@/types/types';
+import debounce from 'debounce';
+import subscriberAccountsService from '@/services/subscriberAccounts.service';
+import { AxiosError } from 'axios';
+import { toasts } from '@/utils';
 
 const usePaymentsModalWin = (): IUsePaymentsModalWin => {
   const { updateSearchParams } = useSetSearchParams();
   const [data, setData] = useState<ISubscriberAccount | null>(null);
 
-  const setSubscriberAccount = (data: ISubscriberAccount): void => {
+  const setSubscriberAccount = (data: ISubscriberAccount | null): void => {
     setData(data);
   };
 
-  const resetSubscriberAccount = (e: BtnClickEvent): void => {
-    makeBlur(e.currentTarget);
-    setData(null);
+  const onSubscriberAccountInputChange = async (e: InputChangeEvent) => {
+    const { value: subscriberAccount } = e.target;
+    const shouldSearch = subscriberAccount.length >= 5;
+
+    if (!shouldSearch) {
+      return;
+    }
+
+    setSubscriberAccount(null);
+
+    try {
+      const result =
+        await subscriberAccountsService.fetchSubscriberAccountByNumber(
+          subscriberAccount
+        );
+      toasts.successToast(Messages.subscriberAccountFetchSuccess);
+      setSubscriberAccount(result);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        const message = error.response?.data.message;
+        const isNotFoundErr =
+          message.toLowerCase() === 'subscriber account was not found';
+        const errorMessage = isNotFoundErr
+          ? Messages.subscriberAccountNotFoundErr
+          : message;
+        toasts.errorToast(errorMessage);
+      }
+    }
   };
 
   useEffect(() => {
@@ -28,8 +56,10 @@ const usePaymentsModalWin = (): IUsePaymentsModalWin => {
 
   return {
     subscriberAccount: data,
-    setSubscriberAccount,
-    resetSubscriberAccount,
+    onSubscriberAccountInputChange: debounce(
+      onSubscriberAccountInputChange,
+      300
+    ),
   };
 };
 

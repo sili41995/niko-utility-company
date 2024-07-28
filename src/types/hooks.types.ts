@@ -31,7 +31,6 @@ import {
   IAddSubscriberAccountFormData,
   IEditSubscriberAccountFormData,
   ISubscriberAccount,
-  SetSubscriberAccountFunc,
   SubscriberAccount,
 } from './subscriberAccount.types';
 
@@ -381,12 +380,12 @@ export interface IUseAddPaymentForm {
   paymentSources: SelectData;
   currentDate: string;
   isLoading: boolean;
+  disabledSubmitBtn: boolean;
 }
 
 export interface IUsePaymentsModalWin {
   subscriberAccount: ISubscriberAccount | null;
-  setSubscriberAccount: SetSubscriberAccountFunc;
-  resetSubscriberAccount: OnBtnClickFunc;
+  onSubscriberAccountInputChange: InputChangeFunc;
 }
 
 export interface IUsePaymentsSection {

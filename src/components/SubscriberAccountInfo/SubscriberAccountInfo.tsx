@@ -16,8 +16,12 @@ const SubscriberAccountInfo: FC<IProps> = ({
   subscriberAccount,
   resetSubscriberAccount,
 }) => {
-  const address = getSubscriberAccountAddress(subscriberAccount);
-  const subscriberAccountInfo = getSubscriberAccountInfo(subscriberAccount);
+  const address = subscriberAccount
+    ? getSubscriberAccountAddress(subscriberAccount)
+    : '-';
+  const subscriberAccountInfo = subscriberAccount
+    ? getSubscriberAccountInfo(subscriberAccount)
+    : '-';
 
   return (
     <Container>

@@ -33,6 +33,7 @@ const enum Messages {
   isEligibleForBenefitReqErr = 'Поле Має право на пільгу має бути заповнене',
   isRemovalHouseholdWasteReqErr = 'Поле Вивезення побутових відходів має бути заповнене',
   subscriberAccountUpdateSuccess = 'Абонентський рахунок успішно оновлено',
+  subscriberAccountFetchSuccess = 'Абонентський рахунок успішно знайдено',
   tariffAddSuccess = 'Тариф успішно доданий',
   emptyDocumentsList = 'Список документів пустий',
   emptyFilteredDocumentsList = 'Жоден з документів не відповідає пошуковому запиту',

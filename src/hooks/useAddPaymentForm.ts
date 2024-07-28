@@ -17,7 +17,7 @@ import { IUseAddPaymentForm } from '@/types/hooks.types';
 import { selectAddLocalPayment } from '@/store/periods/selectors';
 
 const useAddPaymentForm = (
-  subscriberAccount: ISubscriberAccount
+  subscriberAccount: ISubscriberAccount | null
 ): IUseAddPaymentForm => {
   const isLoading = usePaymentsStore(selectIsLoading);
   const addPayment = usePaymentsStore(selectAddPayment);
@@ -27,7 +27,6 @@ const useAddPaymentForm = (
   const {
     register,
     handleSubmit,
-    reset,
     formState: { isSubmitting, errors },
   } = useForm<INewPaymentFormData>();
   const paymentSources = getPaymentSourcesSelectData();
@@ -35,6 +34,7 @@ const useAddPaymentForm = (
     date: new Date(),
     dateFormat: DateFormats.validDate,
   });
+  const disabledSubmitBtn = Boolean(!subscriberAccount);
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);
@@ -45,6 +45,10 @@ const useAddPaymentForm = (
   }, [isSubmitting, errors]);
 
   const handleFormSubmit: SubmitHandler<INewPaymentFormData> = async (data) => {
+    if (!subscriberAccount) {
+      return;
+    }
+
     const newPaymentData = getNewPaymentData({
       data,
       id: subscriberAccount.id,
@@ -58,7 +62,6 @@ const useAddPaymentForm = (
         limit: Number(GeneralParams.paymentsRecordLimit),
       });
       toasts.successToast(Messages.paymentAddSuccess);
-      reset();
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);
@@ -73,6 +76,7 @@ const useAddPaymentForm = (
     paymentSources,
     currentDate,
     isLoading,
+    disabledSubmitBtn,
   };
 };
 

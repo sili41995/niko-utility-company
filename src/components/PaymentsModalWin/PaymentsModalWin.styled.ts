@@ -6,5 +6,8 @@ export const Container = styled.div`
 `;
 
 export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)};
   margin-top: ${({ theme }) => theme.spacing(6)};
 `;

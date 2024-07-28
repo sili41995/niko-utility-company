@@ -23,6 +23,7 @@ interface ITheme {
     red: string;
     green: string;
     greenAccent: string;
+    disabledBtn: string;
   };
   fontFamily: {
     primary: string;
@@ -81,6 +82,7 @@ const theme: ITheme = {
     tableHeader: '#0051a3',
     grey: '#dddfeb',
     lightGrey: '#eeeeee',
+    disabledBtn: '#7088ff',
   },
   fontFamily: {
     primary: 'Roboto',
