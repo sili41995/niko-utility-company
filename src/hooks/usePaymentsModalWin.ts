@@ -21,11 +21,13 @@ const usePaymentsModalWin = (): IUsePaymentsModalWin => {
     const { value: subscriberAccount } = e.target;
     const shouldSearch = subscriberAccount.length >= 5;
 
+    if (data) {
+      setSubscriberAccount(null);
+    }
+
     if (!shouldSearch) {
       return;
     }
-
-    setSubscriberAccount(null);
 
     try {
       const result =
