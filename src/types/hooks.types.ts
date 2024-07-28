@@ -442,5 +442,6 @@ export interface IUseCalcByStreetsForm {
 export interface IUseAttachFile {
   file: File | null;
   onInputChange: InputChangeFunc;
+  resetFile: OnBtnClickFunc;
   targetFileExtension: string;
 }

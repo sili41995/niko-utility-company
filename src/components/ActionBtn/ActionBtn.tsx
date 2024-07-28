@@ -4,8 +4,18 @@ import Loader from '@/components/Loader';
 import { BtnTypes } from '@/constants';
 import { Button } from './ActionBtn.styled';
 
-const ActionBtn: FC<IProps> = ({ title, isLoading, onBtnClick }) => (
-  <Button disabled={isLoading} type={BtnTypes.button} onClick={onBtnClick}>
+const ActionBtn: FC<IProps> = ({
+  title,
+  isLoading,
+  onBtnClick,
+  disabled = false,
+}) => (
+  <Button
+    disabled={isLoading || disabled}
+    type={BtnTypes.button}
+    onClick={onBtnClick}
+    disabledBnt={disabled}
+  >
     {isLoading ? <Loader /> : title}
   </Button>
 );

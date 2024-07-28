@@ -11,7 +11,7 @@ import { BtnClickEvent, InputChangeEvent } from '@/types/types';
 import accountingService from '@/services/accounting.service';
 import { makeBlur, saveFileToCsv, toasts } from '@/utils';
 import { AxiosError } from 'axios';
-import UploadPaymentsPostageFile from '../UploadPaymentsPostageFile/UploadPaymentsPostageFile';
+import UploadPaymentsPostageFile from '../UploadPaymentsPostageFile';
 
 const PayPostageModalWin: FC<IProps> = ({ setModalWinState }) => {
   const [category, setCategory] = useState<string>(

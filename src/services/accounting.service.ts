@@ -8,6 +8,7 @@ import {
   ITimePeriod,
   NewPaymentData,
   Periods,
+  NewPayments,
 } from '@/types/data.types';
 import {
   IFetchPaymentsFilters,
@@ -76,6 +77,15 @@ class AccountingService extends HttpService {
   async addPayment(data: NewPaymentData): Promise<IPayment> {
     const response = await this.post<IPayment, NewPaymentData>({
       url: 'accounting/payments',
+      data,
+    });
+
+    return response.data;
+  }
+
+  async addPayments(data: NewPayments): Promise<number> {
+    const response = await this.post<number, NewPayments>({
+      url: 'accounting/payments/multiple',
       data,
     });
 

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { IStyledProps } from './ActionBtn.types';
 
-export const Button = styled.button`
+export const Button = styled.button<IStyledProps>`
   min-width: 170px;
   height: 60px;
   padding: 0;
@@ -26,5 +27,10 @@ export const Button = styled.button`
   &:hover,
   &:focus {
     background-color: ${({ theme }) => theme.colors.accent};
+  }
+
+  &:disabled {
+    background-color: ${({ theme, disabledBnt }) =>
+      disabledBnt && theme.colors.disabledBtn};
   }
 `;

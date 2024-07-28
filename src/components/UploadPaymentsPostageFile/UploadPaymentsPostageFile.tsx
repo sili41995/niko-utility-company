@@ -1,37 +1,58 @@
-import { InputTypes, Messages } from '@/constants';
+import { Messages } from '@/constants';
 import { useAttachCsvFile } from '@/hooks';
+import accountingService from '@/services/accounting.service';
+import { BtnClickEvent } from '@/types/types';
 import {
   convertStringsToPaymentsPostage,
+  makeBlur,
   readPaymentsDataFromCsv,
   toasts,
 } from '@/utils';
-import { FC, useEffect } from 'react';
+import { FC, useState } from 'react';
+import ActionBtn from '../ActionBtn';
+import AttachFileInput from '../AttachFileInput';
 
 const UploadPaymentsPostageFile: FC = () => {
-  const { file, onInputChange, targetFileExtension } = useAttachCsvFile();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { file, onInputChange, targetFileExtension, resetFile } =
+    useAttachCsvFile();
+  const disabledActionBtn = Boolean(!file);
 
-  useEffect(() => {
-    const uploadPayments = async (file: File) => {
-      try {
-        const strings = await readPaymentsDataFromCsv(file);
-        const payments = await convertStringsToPaymentsPostage(strings);
-        console.log(payments);
-      } catch (error) {
-        toasts.errorToast(Messages.invalidDataErr);
-      }
-    };
+  const uploadPayments = async (file: File) => {
+    setIsLoading(true);
 
+    try {
+      const strings = await readPaymentsDataFromCsv(file);
+      const payments = await convertStringsToPaymentsPostage(strings);
+      await accountingService.addPayments(payments);
+      toasts.successToast(Messages.paymentsAddSuccess);
+    } catch (error) {
+      toasts.errorToast(Messages.invalidDataErr);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const onUploadPaymentsBtnClick = (e: BtnClickEvent): void => {
+    makeBlur(e.currentTarget);
     file && uploadPayments(file);
-  }, [file]);
+  };
 
   return (
-    <form>
-      <input
-        type={InputTypes.file}
-        accept={`.${targetFileExtension}`}
-        onChange={onInputChange}
+    <>
+      <AttachFileInput
+        targetFileExtension={targetFileExtension}
+        onInputChange={onInputChange}
+        file={file}
+        resetFile={resetFile}
       />
-    </form>
+      <ActionBtn
+        title='Завантажити'
+        isLoading={isLoading}
+        onBtnClick={onUploadPaymentsBtnClick}
+        disabled={disabledActionBtn}
+      />
+    </>
   );
 };
 

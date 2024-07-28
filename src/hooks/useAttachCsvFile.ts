@@ -1,7 +1,7 @@
 import { Messages } from '@/constants';
 import { IUseAttachFile } from '@/types/hooks.types';
-import { InputChangeEvent } from '@/types/types';
-import { toasts } from '@/utils';
+import { BtnClickEvent, InputChangeEvent } from '@/types/types';
+import { makeBlur, toasts } from '@/utils';
 import { useState } from 'react';
 
 const useAttachCsvFile = (): IUseAttachFile => {
@@ -25,7 +25,12 @@ const useAttachCsvFile = (): IUseAttachFile => {
     }
   };
 
-  return { file, onInputChange, targetFileExtension };
+  const resetFile = (e: BtnClickEvent): void => {
+    makeBlur(e.currentTarget);
+    setFile(null);
+  };
+
+  return { file, onInputChange, resetFile, targetFileExtension };
 };
 
 export default useAttachCsvFile;

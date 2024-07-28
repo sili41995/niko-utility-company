@@ -48,6 +48,7 @@ const enum Messages {
   sourceReqErr = 'Поле Спосіб оплати має бути заповнене',
   dateReqErr = 'Поле Дата має бути заповнене',
   paymentAddSuccess = 'Оплата успішно додана',
+  paymentsAddSuccess = 'Оплати успішно додані',
   fetchInvoicesSuccess = 'Рахунки-повідомлення успішно сформовані',
   fetchPaymentsSuccess = 'Оплати успішно сформовані',
   fileNotFoundErr = 'Файл не знайдено',
@@ -57,7 +58,7 @@ const enum Messages {
   emptyPriceAdjustmentsList = 'Список коригувань пустий',
   emptyPaymentsList = 'Список оплат пустий',
   emptyPricesList = 'Список нарахувань пустий',
-  csvFileExtensionErr = 'виберіть файл з розширенням .csv',
+  csvFileExtensionErr = 'Виберіть файл з розширенням .csv',
   invalidDataErr = 'Невалідні дані',
   //user
   addUser = 'Додати користувача',
