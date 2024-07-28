@@ -1,8 +1,9 @@
-import { InputTypes } from '@/constants';
+import { InputTypes, Messages } from '@/constants';
 import { useAttachCsvFile } from '@/hooks';
 import {
   convertStringsToPaymentsPostage,
   readPaymentsDataFromCsv,
+  toasts,
 } from '@/utils';
 import { FC, useEffect } from 'react';
 
@@ -13,9 +14,10 @@ const UploadPaymentsPostageFile: FC = () => {
     const uploadPayments = async (file: File) => {
       try {
         const strings = await readPaymentsDataFromCsv(file);
-        const payments = convertStringsToPaymentsPostage(strings);
+        const payments = await convertStringsToPaymentsPostage(strings);
+        console.log(payments);
       } catch (error) {
-        console.log(error);
+        toasts.errorToast(Messages.invalidDataErr);
       }
     };
 
