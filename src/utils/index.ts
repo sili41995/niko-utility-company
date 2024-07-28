@@ -40,3 +40,5 @@ export { default as csvToArray } from './csvToArray';
 export { default as getArrayBuffer } from './getArrayBuffer';
 export { default as writeXlsxFile } from './writeXlsxFile';
 export { default as getUpdatedPeriods } from './getUpdatedPeriods';
+export { default as readPaymentsDataFromCsv } from './readPaymentsDataFromCsv';
+export { default as convertStringsToPaymentsPostage } from './convertStringsToPaymentsPostage';

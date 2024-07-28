@@ -6,6 +6,7 @@ const enum InputTypes {
   date = 'date',
   number = 'number',
   month = 'month',
+  file = 'file',
 }
 
 export default InputTypes;

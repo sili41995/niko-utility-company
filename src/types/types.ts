@@ -171,3 +171,5 @@ export interface IGetUpdatedPeriodsProps {
   periods: Periods;
   updatedPeriod: IPeriod;
 }
+
+export type PaymentsDataFromCsv = string[][];

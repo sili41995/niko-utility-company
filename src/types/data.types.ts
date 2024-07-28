@@ -193,6 +193,8 @@ export type NewPaymentData = Pick<
   'amount' | 'source' | 'date' | 'subscriberAccountId'
 >;
 
+export type NewPayments = NewPaymentData[];
+
 export interface INewPaymentFormData extends Pick<IPayment, 'source'> {
   amount: string;
   date: string;

@@ -25,3 +25,4 @@ export { default as SectorTypes } from './sectorTypes';
 export { default as TranslatedPaymentSources } from './translatedPaymentSources';
 export { default as PaymentSources } from './paymentSources';
 export { default as SubscriberAccountInfoCategories } from './subscriberAccountInfoCategories';
+export { default as PaymentsFilesCategories } from './paymentsFilesCategories';

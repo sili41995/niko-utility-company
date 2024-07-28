@@ -438,3 +438,9 @@ export interface IUseCalcByStreetsForm {
   handleFormSubmit: SubmitHandler<ITimePeriod>;
   register: UseFormRegister<ITimePeriod>;
 }
+
+export interface IUseAttachFile {
+  file: File | null;
+  onInputChange: InputChangeFunc;
+  targetFileExtension: string;
+}
