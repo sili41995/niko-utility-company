@@ -1,4 +1,4 @@
-import { Messages, PagePaths, SectorTypes } from '@/constants';
+import { Messages, PagePaths, PaymentSources, SectorTypes } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 import {
   Houses,
@@ -173,3 +173,8 @@ export interface IGetUpdatedPeriodsProps {
 }
 
 export type PaymentsDataFromCsv = string[][];
+
+export interface IConvertStringsToPaymentsBankProps {
+  data: PaymentsDataFromCsv;
+  source: PaymentSources;
+}

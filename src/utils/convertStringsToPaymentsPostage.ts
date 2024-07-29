@@ -12,7 +12,6 @@ const convertStringsToPaymentsPostage = (
     const date = item[0]
       .split('.')
       .reduceRight((acc, item) => `${acc}-${item}`);
-    console.log(date);
 
     return {
       amount: Number(item[6]),

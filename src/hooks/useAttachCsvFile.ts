@@ -8,7 +8,7 @@ const useAttachCsvFile = (): IUseAttachFile => {
   const [file, setFile] = useState<File | null>(null);
   const targetFileExtension = 'csv';
 
-  const onInputChange = (e: InputChangeEvent) => {
+  const onAttachFileInputChange = (e: InputChangeEvent) => {
     const { files } = e.target;
 
     if (!files?.length) {
@@ -30,7 +30,7 @@ const useAttachCsvFile = (): IUseAttachFile => {
     setFile(null);
   };
 
-  return { file, onInputChange, resetFile, targetFileExtension };
+  return { file, onAttachFileInputChange, resetFile, targetFileExtension };
 };
 
 export default useAttachCsvFile;

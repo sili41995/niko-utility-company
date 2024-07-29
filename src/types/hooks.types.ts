@@ -441,7 +441,21 @@ export interface IUseCalcByStreetsForm {
 
 export interface IUseAttachFile {
   file: File | null;
-  onInputChange: InputChangeFunc;
+  onAttachFileInputChange: InputChangeFunc;
   resetFile: OnBtnClickFunc;
   targetFileExtension: string;
+}
+
+export interface IUseUploadPaymentsFile {
+  targetFileExtension: string;
+  onAttachFileInputChange: InputChangeFunc;
+  file: File | null;
+  resetFile: OnBtnClickFunc;
+  isUpload: boolean;
+  onUploadPaymentsBtnClick: OnBtnClickFunc;
+}
+
+export interface IUseDownloadPaymentsFile {
+  isDownload: boolean;
+  onDownloadPaymentsBtnClick: OnBtnClickFunc;
 }

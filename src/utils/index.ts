@@ -42,3 +42,4 @@ export { default as writeXlsxFile } from './writeXlsxFile';
 export { default as getUpdatedPeriods } from './getUpdatedPeriods';
 export { default as readPaymentsDataFromCsv } from './readPaymentsDataFromCsv';
 export { default as convertStringsToPaymentsPostage } from './convertStringsToPaymentsPostage';
+export { default as convertStringsToPaymentsBank } from './convertStringsToPaymentsBank';

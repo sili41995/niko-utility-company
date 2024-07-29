@@ -1,16 +1,16 @@
+import { Messages } from '@/constants';
+import accountingService from '@/services/accounting.service';
+import { IUseDownloadPaymentsFile } from '@/types/hooks.types';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur, saveFileToCsv, toasts } from '@/utils';
-import accountingService from '@/services/accounting.service';
-import { Messages } from '@/constants';
 import { AxiosError } from 'axios';
 import { useState } from 'react';
-import { IUseFetchFile } from '@/types/hooks.types';
 
-const usePayPrivatbankModalWin = (): IUseFetchFile => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+const useDownloadPaymentsPrivatbankFile = (): IUseDownloadPaymentsFile => {
+  const [isDownload, setIsDownload] = useState<boolean>(false);
 
-  const fetchPayments = async () => {
-    setIsLoading(true);
+  const downloadPayments = async () => {
+    setIsDownload(true);
 
     try {
       const result = await accountingService.fetchPaymentsBySourcePrivatbank();
@@ -22,17 +22,17 @@ const usePayPrivatbankModalWin = (): IUseFetchFile => {
         toasts.errorToast(message);
       }
     } finally {
-      setIsLoading(false);
+      setIsDownload(false);
     }
   };
 
-  const onActionBtnClick = (e: BtnClickEvent) => {
+  const onDownloadPaymentsBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    fetchPayments();
+    downloadPayments();
   };
 
-  return { isLoading, onActionBtnClick };
+  return { isDownload, onDownloadPaymentsBtnClick };
 };
 
-export default usePayPrivatbankModalWin;
+export default useDownloadPaymentsPrivatbankFile;
