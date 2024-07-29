@@ -9,7 +9,7 @@ const useSubscriberAccountsTableRow = (
 ): IUseSubscriberAccountsTableRow => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
   const {
-    subscriberAccount: subscriberAccountNumber,
+    number,
     accountType,
     apartment,
     isLivingApartment,
@@ -19,7 +19,6 @@ const useSubscriberAccountsTableRow = (
     isEligibleForBenefit,
     period,
     documents,
-    balance,
     owner: { surname, name, middleName },
   } = subscriberAccount;
   const apartmentType = apartmentTypes.find(
@@ -28,19 +27,20 @@ const useSubscriberAccountsTableRow = (
   const apartmentValue = apartment ?? '-';
   const fullName = `${surname} ${name} ${middleName}`;
   const fullStreetName = `${street.type} ${street.name}`;
-  const { comment, document } = documents[0] ?? {};
+  const { comment, name: documentName } = documents[0] ?? {};
   const periodDate = formatDate({
     date: period,
     dateFormat: DateFormats.date,
   });
-  const isDebt = balance > 0;
+  // const isDebt = balance > 0;
+  const isDebt = false;
 
   const toggleShowInfo = () => {
     setShowInfo((prevState) => !prevState);
   };
 
   return {
-    subscriberAccountNumber,
+    number,
     fullName,
     accountType,
     fullStreetName,
@@ -48,10 +48,9 @@ const useSubscriberAccountsTableRow = (
     apartment: apartmentValue,
     apartmentType,
     period: periodDate,
-    balance: Math.abs(balance),
     residents,
     isEligibleForBenefit,
-    document,
+    documentName,
     comment,
     showInfo,
     toggleShowInfo,

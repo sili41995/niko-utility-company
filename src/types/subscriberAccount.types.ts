@@ -39,7 +39,7 @@ export interface IUpdatableOwnerData
 export interface ISubscriberAccount {
   id: number;
   apartment?: string;
-  subscriberAccount: string;
+  number: string;
   contract: string;
   contractDate: Date;
   accountType: AccountTypes;
@@ -49,7 +49,6 @@ export interface ISubscriberAccount {
   isRemovalHouseholdWaste: boolean;
   isEligibleForBenefit: boolean;
   sector: SectorTypes;
-  balance: number;
   documents: Documents;
   streetId: number;
   street: IStreet;
@@ -140,7 +139,7 @@ export type House = Pick<ISubscriberAccount, 'houseId'>;
 
 export type Apartment = Pick<ISubscriberAccount, 'apartment'>;
 
-export type SubscriberAccount = Pick<ISubscriberAccount, 'subscriberAccount'>;
+export type SubscriberAccountNumber = Pick<ISubscriberAccount, 'number'>;
 
 export type Contract = Pick<ISubscriberAccount, 'contract'>;
 

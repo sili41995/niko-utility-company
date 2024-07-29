@@ -1,13 +1,12 @@
 import { Messages } from '@/constants';
-import { SubscriberAccount } from '@/types/subscriberAccount.types';
+import { SubscriberAccountNumber } from '@/types/subscriberAccount.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
 const showSubscriberAccountError = (
-  errors: FieldErrors<SubscriberAccount>
+  errors: FieldErrors<SubscriberAccountNumber>
 ): void => {
-  errors.subscriberAccount &&
-    toasts.errorToast(Messages.subscriberAccountReqErr);
+  errors.number && toasts.errorToast(Messages.subscriberAccountReqErr);
 };
 
 export default showSubscriberAccountError;

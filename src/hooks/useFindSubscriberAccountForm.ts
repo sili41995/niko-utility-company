@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import {
   SetSubscriberAccountFunc,
-  SubscriberAccount,
+  SubscriberAccountNumber,
 } from '@/types/subscriberAccount.types';
 import validateFindSubscriberAccountForm from '@/validators/validateFindSubscriberAccountForm';
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
@@ -19,7 +19,7 @@ const useFindSubscriberAccountForm = (
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<SubscriberAccount>();
+  } = useForm<SubscriberAccountNumber>();
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);
@@ -29,16 +29,14 @@ const useFindSubscriberAccountForm = (
     }
   }, [isSubmitting, errors]);
 
-  const handleFormSubmit: SubmitHandler<SubscriberAccount> = async ({
-    subscriberAccount,
+  const handleFormSubmit: SubmitHandler<SubscriberAccountNumber> = async ({
+    number,
   }) => {
     try {
       setIsLoading(true);
 
       const result =
-        await subscriberAccountsService.fetchSubscriberAccountByNumber(
-          subscriberAccount
-        );
+        await subscriberAccountsService.fetchSubscriberAccountByNumber(number);
 
       setSubscriberAccount(result);
     } catch (error) {

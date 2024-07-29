@@ -20,24 +20,24 @@ class SubscriberAccountsService extends HttpService {
     page = 1,
     surname,
     name,
-    account,
+    number,
     type,
     street,
     house,
     apartment,
   }: IFetchSubscriberAccountsFilters): Promise<IFetchSubscriberAccountsRes> {
     const response = await this.get<IFetchSubscriberAccountsRes>({
-      url: `subscriber-accounts?page=${page}&limit=${limit}&surname=${surname}&name=${name}&account=${account}&type=${type}&street=${street}&house=${house}&apartment=${apartment}`,
+      url: `subscriber-accounts?page=${page}&limit=${limit}&surname=${surname}&name=${name}&number=${number}&type=${type}&street=${street}&house=${house}&apartment=${apartment}`,
     });
 
     return response.data;
   }
 
   async fetchSubscriberAccountByNumber(
-    subscriberAccount: string
+    number: string
   ): Promise<ISubscriberAccount> {
     const response = await this.get<ISubscriberAccount>({
-      url: `subscriber-accounts/${subscriberAccount}`,
+      url: `subscriber-accounts/${number}`,
     });
 
     return response.data;

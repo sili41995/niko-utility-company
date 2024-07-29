@@ -8,7 +8,7 @@ const useFilterSearchParams = (): IUseSubscriberAccountsFilterSearchParams => {
   const limit = Number(GeneralParams.recordLimit);
   const surname = searchParams.get(SearchParamsKeys.surname) ?? '';
   const name = searchParams.get(SearchParamsKeys.name) ?? '';
-  const account = searchParams.get(SearchParamsKeys.account) ?? '';
+  const number = searchParams.get(SearchParamsKeys.number) ?? '';
   const type = searchParams.get(SearchParamsKeys.type) ?? '';
   const street = searchParams.get(SearchParamsKeys.street) ?? '';
   const house = searchParams.get(SearchParamsKeys.house) ?? '';
@@ -21,7 +21,7 @@ const useFilterSearchParams = (): IUseSubscriberAccountsFilterSearchParams => {
     limit,
     surname,
     name,
-    account,
+    number,
     type,
     street,
     house,

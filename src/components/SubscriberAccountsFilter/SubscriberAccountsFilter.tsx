@@ -11,7 +11,7 @@ const SubscriberAccountsFilter: FC = () => {
     onFilterChange,
     surname,
     name,
-    account,
+    number,
     accountTypes,
     defaultAccountTypesValue,
     street,
@@ -77,9 +77,9 @@ const SubscriberAccountsFilter: FC = () => {
         width={180}
         formType={FormTypes.filter}
         offBorderRadius
-        name={SearchParamsKeys.account}
+        name={SearchParamsKeys.number}
         onChange={onFilterChange}
-        defaultValue={account}
+        defaultValue={number}
         inputRef={accountInputRef}
         btn={
           <ClearFilterBtn

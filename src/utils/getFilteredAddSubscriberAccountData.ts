@@ -28,7 +28,7 @@ const getFilteredAddSubscriberAccountData = (
     contract,
     isEligibleForBenefit,
     isRemovalHouseholdWaste,
-    subscriberAccount,
+    number,
   } = data;
   const sector = getSubscriberAccountSector(data);
 
@@ -45,7 +45,7 @@ const getFilteredAddSubscriberAccountData = (
     contract,
     isEligibleForBenefit,
     isRemovalHouseholdWaste,
-    subscriberAccount,
+    number,
     owner: {
       phone,
       additionalPhone,

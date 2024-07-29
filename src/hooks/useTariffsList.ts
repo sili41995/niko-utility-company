@@ -34,7 +34,7 @@ const useTariffsList = (): IUseTariffsList => {
     getCurrentTariffs(tariffs);
   const {
     start: multiApartmentSectorTariffStart = new Date(),
-    tariff: multiApartmentSectorTariffValue = 0,
+    price: multiApartmentSectorTariffValue = 0,
   } = multiApartmentSectorTariff || {};
   const multiApartmentSectorTariffStartDate = formatDate({
     date: multiApartmentSectorTariffStart,
@@ -42,7 +42,7 @@ const useTariffsList = (): IUseTariffsList => {
   });
   const {
     start: otherSectorTariffStart = new Date(),
-    tariff: otherSectorTariffValue = 0,
+    price: otherSectorTariffValue = 0,
   } = otherSectorTariff || {};
   const otherSectorTariffStartDate = formatDate({
     date: otherSectorTariffStart,
@@ -50,7 +50,7 @@ const useTariffsList = (): IUseTariffsList => {
   });
   const {
     start: privateSectorTariffStart = new Date(),
-    tariff: privateSectorTariffValue = 0,
+    price: privateSectorTariffValue = 0,
   } = privateSectorTariff || {};
   const privateSectorTariffStartDate = formatDate({
     date: privateSectorTariffStart,

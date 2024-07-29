@@ -72,7 +72,7 @@ const AddSubscriberAccountForm: FC = () => {
       </AddressWrap>
       <SubscriberAccountContainer>
         <Input
-          settings={{ ...register('subscriberAccount', { required: true }) }}
+          settings={{ ...register('number', { required: true }) }}
           label='Абонентський рахунок:'
           placeholder='Абонентський рахунок'
           type={InputTypes.text}

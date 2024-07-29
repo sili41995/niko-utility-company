@@ -9,7 +9,7 @@ import { DateFormats } from '@/constants';
 import { formatDate } from '@/utils';
 
 const DocumentsTableRow: FC<IProps> = ({ document }) => {
-  const { comment, document: documentName, createdAt } = document;
+  const { comment, name, createdAt } = document;
   const createdDate = formatDate({
     date: createdAt,
     dateFormat: DateFormats.date,
@@ -18,7 +18,7 @@ const DocumentsTableRow: FC<IProps> = ({ document }) => {
   return (
     <>
       <TableBodyRow>
-        <TableData>{documentName}</TableData>
+        <TableData>{name}</TableData>
         <TableData>{createdDate}</TableData>
         <TableData>
           <TableDataText trimText>{comment}</TableDataText>

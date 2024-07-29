@@ -31,7 +31,7 @@ import {
   IAddSubscriberAccountFormData,
   IEditSubscriberAccountFormData,
   ISubscriberAccount,
-  SubscriberAccount,
+  SubscriberAccountNumber,
 } from './subscriberAccount.types';
 
 export interface IUpdateSearchParamsProps {
@@ -159,7 +159,7 @@ export interface IUseSubscriberAccountsFilter {
   onFilterChange: (e: InputChangeEvent | SelectChangeEvent) => void;
   surname: string;
   name: string;
-  account: string;
+  number: string;
   accountTypes: SelectData;
   defaultAccountTypesValue: string | undefined;
   street: string;
@@ -190,7 +190,7 @@ export interface IUseSubscriberAccountsFilterSearchParams {
   limit: number;
   surname: string;
   name: string;
-  account: string;
+  number: string;
   type: string;
   street: string;
   house: string;
@@ -208,7 +208,7 @@ export interface IUseEditSubscriberAccountForm {
   apartment: string;
   apartmentType: BooleanValue;
   period: string;
-  subscriberAccountValue: string;
+  number: string;
   contract: string;
   contractDateValue: string;
   accountType: AccountTypes;
@@ -339,15 +339,15 @@ export interface IUseAccountingSections {
 }
 
 export interface IUseFindSubscriberAccountForm {
-  handleSubmit: UseFormHandleSubmit<SubscriberAccount, undefined>;
-  handleFormSubmit: SubmitHandler<SubscriberAccount>;
-  register: UseFormRegister<SubscriberAccount>;
+  handleSubmit: UseFormHandleSubmit<SubscriberAccountNumber, undefined>;
+  handleFormSubmit: SubmitHandler<SubscriberAccountNumber>;
+  register: UseFormRegister<SubscriberAccountNumber>;
   error: string | null;
   isLoading: boolean;
 }
 
 export interface IUseSubscriberAccountsTableRow {
-  subscriberAccountNumber: string;
+  number: string;
   fullName: string;
   accountType: AccountTypes;
   fullStreetName: string;
@@ -355,10 +355,9 @@ export interface IUseSubscriberAccountsTableRow {
   apartment: string;
   apartmentType: string | undefined;
   period: string;
-  balance: number;
   residents: number;
   isEligibleForBenefit: boolean;
-  document: string;
+  documentName: string;
   comment: string;
   toggleShowInfo: Func;
   showInfo: boolean;

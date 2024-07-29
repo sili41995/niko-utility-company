@@ -16,7 +16,7 @@ class DocumentsService extends HttpService {
     document,
   }: IFetchDocumentsFilters): Promise<IFetchDocumentsRes> {
     const response = await this.get<IFetchDocumentsRes>({
-      url: `documents?page=${page}&limit=${limit}&document=${document}&comment=${comment}`,
+      url: `documents?page=${page}&limit=${limit}&name=${document}&comment=${comment}`,
     });
 
     return response.data;

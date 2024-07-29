@@ -26,7 +26,7 @@ const TariffsHistoryList: FC<IProps> = ({ tariffs, onCloseBtnClick }) => {
         <CloseBtn onClick={onCloseBtnClick} />
       </TitleWrap>
       <List>
-        {tariffs.map(({ id, start, tariff }) => {
+        {tariffs.map(({ id, start, price }) => {
           const startDate = formatDate({
             date: start,
             dateFormat: DateFormats.date,
@@ -38,7 +38,7 @@ const TariffsHistoryList: FC<IProps> = ({ tariffs, onCloseBtnClick }) => {
                 <PriceWrap>
                   <Text>Тариф</Text>
                   <Text>
-                    {tariff} <Units>{tariffUnits}</Units>
+                    {price} <Units>{tariffUnits}</Units>
                   </Text>
                 </PriceWrap>
                 <PeriodWrap>

@@ -16,7 +16,7 @@ import { useRef } from 'react';
 
 const useSubscriberAccountsFilter = (): IUseSubscriberAccountsFilter => {
   const { updateSearchParams } = useSetSearchParams();
-  const { account, apartment, house, name, street, surname, type } =
+  const { number, apartment, house, name, street, surname, type } =
     useFilterSearchParams();
   const accountTypes = getFilterAccountTypes();
   const defaultAccountTypesValue = getDefaultAccountTypesValue({
@@ -31,7 +31,7 @@ const useSubscriberAccountsFilter = (): IUseSubscriberAccountsFilter => {
   const apartmentInputRef = useRef<HTMLInputElement>(null);
   const showClearSurnameFilterBtn = Boolean(surname);
   const showClearNameFilterBtn = Boolean(name);
-  const showClearAccountFilterBtn = Boolean(account);
+  const showClearAccountFilterBtn = Boolean(number);
   const showClearStreetFilterBtn = Boolean(street);
   const showClearHouseFilterBtn = Boolean(house);
   const showClearApartmentFilterBtn = Boolean(apartment);
@@ -66,7 +66,7 @@ const useSubscriberAccountsFilter = (): IUseSubscriberAccountsFilter => {
     }
 
     makeBlur(e.currentTarget);
-    updateSearchParams({ key: SearchParamsKeys.account, value: '' });
+    updateSearchParams({ key: SearchParamsKeys.number, value: '' });
   };
 
   const clearStreetFilter = (e: BtnClickEvent) => {
@@ -100,7 +100,7 @@ const useSubscriberAccountsFilter = (): IUseSubscriberAccountsFilter => {
     onFilterChange: debounce(onFilterChange, 300),
     surname,
     name,
-    account,
+    number,
     accountTypes,
     defaultAccountTypesValue,
     street,

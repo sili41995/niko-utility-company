@@ -6,8 +6,7 @@ import { DateFormats } from '@/constants';
 
 const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
   const { subscriberAccount, date, amount, source, period } = payment;
-  const { subscriberAccount: subscriberAccountNumber } =
-    subscriberAccount ?? {};
+  const { number } = subscriberAccount ?? {};
   const paymentDate = formatDate({ date, dateFormat: DateFormats.date });
   const paymentSource = getPaymentSource(source);
   const periodDate = formatDate({
@@ -17,7 +16,7 @@ const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
 
   return (
     <TableBodyRow>
-      {fullInfo && <TableData>{subscriberAccountNumber}</TableData>}
+      {fullInfo && <TableData>{number}</TableData>}
       <TableData center>{paymentDate}</TableData>
       {fullInfo && (
         <TableData center capitalize>

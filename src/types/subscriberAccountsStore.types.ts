@@ -31,7 +31,7 @@ export interface IFetchSubscriberAccountsFilters {
   limit: number;
   surname: string;
   name: string;
-  account: string;
+  number: string;
   type: string;
   street: string;
   house: string;

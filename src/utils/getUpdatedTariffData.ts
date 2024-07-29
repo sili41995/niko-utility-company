@@ -8,7 +8,7 @@ const getUpdatedTariffData = ({
   ...data,
   sector,
   start: new Date(data.start),
-  tariff: Number(data.tariff),
+  price: Number(data.tariff),
 });
 
 export default getUpdatedTariffData;

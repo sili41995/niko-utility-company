@@ -31,7 +31,7 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
     category === SubscriberAccountInfoCategories.editing;
   const { priceAdjustments, payments, prices } = subscriberAccount;
 
-  const title = `Абонентський рахунок ${subscriberAccount.subscriberAccount}:`;
+  const title = `Абонентський рахунок ${subscriberAccount.number}:`;
 
   const onInputChange = (e: InputChangeEvent): void => {
     setCategory(e.currentTarget.value);

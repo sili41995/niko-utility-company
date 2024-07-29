@@ -36,17 +36,8 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     useState<boolean>(true);
   const [isEligibleForBenefit, setIsEligibleForBenefit] =
     useState<boolean>(false);
-  const {
-    account,
-    apartment,
-    house,
-    limit,
-    name,
-    page,
-    street,
-    surname,
-    type,
-  } = useFilterSearchParams();
+  const { number, apartment, house, limit, name, page, street, surname, type } =
+    useFilterSearchParams();
   const {
     register,
     handleSubmit,
@@ -119,7 +110,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
       await fetchSubscriberAccounts({
         page,
         limit,
-        account,
+        number,
         apartment,
         house,
         name,

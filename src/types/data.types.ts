@@ -95,12 +95,12 @@ export type SelectData = ISelectData[];
 
 export interface ITariff {
   id: number;
-  tariff: number;
+  price: number;
   sector: SectorTypes;
   start: Date;
 }
 
-export type Tariff = Pick<ITariff, 'tariff'>;
+export type TariffPrice = Pick<ITariff, 'price'>;
 
 export type Start = Pick<ITariff, 'start'>;
 
@@ -116,7 +116,7 @@ export interface INewTariffFormData
 
 export interface IDocument {
   id: number;
-  document: string;
+  name: string;
   comment: string;
   createdAt: Date;
 }

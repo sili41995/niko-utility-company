@@ -32,17 +32,8 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const showSubscriberAccountsTable = Boolean(isLoaded && totalCount);
   const error = useSubscriberAccountsStore(selectError);
 
-  const {
-    account,
-    apartment,
-    house,
-    limit,
-    name,
-    page,
-    street,
-    surname,
-    type,
-  } = useFilterSearchParams();
+  const { number, apartment, house, limit, name, page, street, surname, type } =
+    useFilterSearchParams();
   const isEmptyFilteredList = Boolean(totalCount && !filteredCount);
 
   useEffect(() => {
@@ -52,14 +43,14 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
       limit,
       surname,
       name,
-      account,
+      number,
       type,
       street,
       house,
       apartment,
     });
   }, [
-    account,
+    number,
     apartment,
     fetchSubscriberAccounts,
     house,

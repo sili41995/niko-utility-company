@@ -15,7 +15,7 @@ import SubscriberAccountInfoModalWin from '@/components/SubscriberAccountInfoMod
 
 const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
   const {
-    subscriberAccountNumber,
+    number,
     fullName,
     accountType,
     fullStreetName,
@@ -23,10 +23,9 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
     apartment,
     apartmentType,
     period,
-    balance,
     residents,
     isEligibleForBenefit,
-    document,
+    documentName,
     comment,
     isDebt,
     showInfo,
@@ -36,7 +35,7 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
   return (
     <>
       <TableBodyRow>
-        <TableData>{subscriberAccountNumber}</TableData>
+        <TableData>{number}</TableData>
         <TableData>
           <TableDataText trimText>{fullName}</TableDataText>
         </TableData>
@@ -49,7 +48,7 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
         <TableData center>{apartmentType}</TableData>
         <TableData center>{period}</TableData>
         <TableData isDebt={isDebt} center isBalance>
-          {balance}
+          Balance
         </TableData>
         <TableData center>{residents}</TableData>
         <TableData>
@@ -61,7 +60,7 @@ const SubscriberAccountsTableRow: FC<IProps> = ({ subscriberAccount }) => {
             />
           </TableDataText>
         </TableData>
-        <TableData center>{document}</TableData>
+        <TableData center>{documentName}</TableData>
         <TableData>
           <TableDataText trimText>{comment}</TableDataText>
         </TableData>

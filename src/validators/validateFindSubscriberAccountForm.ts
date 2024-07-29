@@ -1,9 +1,9 @@
-import { SubscriberAccount } from '@/types/subscriberAccount.types';
+import { SubscriberAccountNumber } from '@/types/subscriberAccount.types';
 import { FieldErrors } from 'react-hook-form';
 import showSubscriberAccountError from './showSubscriberAccountError';
 
 const validateFindSubscriberAccountForm = (
-  errors: FieldErrors<SubscriberAccount>
+  errors: FieldErrors<SubscriberAccountNumber>
 ): void => {
   showSubscriberAccountError(errors);
 };

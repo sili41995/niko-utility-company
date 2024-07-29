@@ -1,9 +1,9 @@
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 
 const getSubscriberAccountInfo = ({
-  subscriberAccount,
-  owner,
+  number,
+  owner: { name, surname, middleName },
 }: ISubscriberAccount): string =>
-  `${subscriberAccount} - ${owner.surname} ${owner.name} ${owner.middleName}`;
+  `${number} - ${surname} ${name} ${middleName}`;
 
 export default getSubscriberAccountInfo;

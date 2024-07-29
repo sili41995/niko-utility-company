@@ -15,7 +15,7 @@ const FindSubscriberAccountForm: FC<IProps> = ({ setSubscriberAccount }) => {
     <>
       <Form onSubmit={handleSubmit(handleFormSubmit)}>
         <Input
-          settings={{ ...register('subscriberAccount', { required: true }) }}
+          settings={{ ...register('number', { required: true }) }}
           label='Абонентський рахунок:'
           type={InputTypes.text}
           placeholder='Абонентський рахунок'

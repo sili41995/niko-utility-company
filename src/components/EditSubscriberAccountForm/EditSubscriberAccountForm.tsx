@@ -33,7 +33,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     fullStreetName,
     house,
     apartment,
-    subscriberAccountValue,
     contract,
     contractDateValue,
     accountType,
@@ -53,6 +52,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     email,
     birthday,
     isLoading,
+    number,
   } = useEditSubscriberAccountForm(subscriberAccount);
 
   return (
@@ -88,10 +88,10 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
       </AddressWrap>
       <SubscriberAccountContainer>
         <Input
-          settings={{ ...register('subscriberAccount') }}
+          settings={{ ...register('number') }}
           label='Абонентський рахунок:'
           type={InputTypes.text}
-          value={subscriberAccountValue}
+          value={number}
           width={550}
           horizontal
           disabled
