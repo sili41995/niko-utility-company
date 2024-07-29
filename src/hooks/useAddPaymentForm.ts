@@ -1,9 +1,13 @@
-import { formatDate, getPaymentSourcesSelectData, toasts } from '@/utils';
+import {
+  formatDate,
+  getPaymentSourcesSelectData,
+  toasts,
+  getNewPaymentData,
+} from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { DateFormats, GeneralParams, Messages } from '@/constants';
 import { INewPaymentFormData } from '@/types/data.types';
 import { validatePaymentForm } from '@/validators';
-import getNewPaymentData from '@/utils/getNewPaymentData';
 import { usePaymentsStore, usePeriodsStore } from '@/store/store';
 import {
   selectAddPayment,

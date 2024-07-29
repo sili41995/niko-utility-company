@@ -14,7 +14,7 @@ const useDownloadPaymentsPostageFile = (): IUseDownloadPaymentsFile => {
 
     try {
       const result = await accountingService.fetchPaymentsBySourcePostage();
-      saveFileToCsv({ data: result, fileName: 'payments-postage.xlsx' });
+      saveFileToCsv({ data: result, fileName: 'payments-postage.csv' });
       toasts.successToast(Messages.fetchPaymentsSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {

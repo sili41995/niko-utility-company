@@ -5,8 +5,11 @@ import {
   SelectChangeEvent,
 } from '@/types/types';
 import { useFilterSearchParams, useSetSearchParams } from '@/hooks';
-import getDefaultAccountTypesValue from '@/utils/getDefaultAccountTypesValue';
-import { getFilterAccountTypes, makeBlur } from '@/utils';
+import {
+  getFilterAccountTypes,
+  makeBlur,
+  getDefaultAccountTypesValue,
+} from '@/utils';
 import { IUseSubscriberAccountsFilter } from '@/types/hooks.types';
 import { SearchParamsKeys } from '@/constants';
 import { useRef } from 'react';

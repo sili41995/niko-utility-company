@@ -14,7 +14,7 @@ const useDownloadPaymentsOshchadbankFile = (): IUseDownloadPaymentsFile => {
 
     try {
       const result = await accountingService.fetchPaymentsBySourceOshchadbank();
-      saveFileToCsv({ data: result, fileName: 'payments-oshchadbank.xlsx' });
+      saveFileToCsv({ data: result, fileName: 'payments-oshchadbank.csv' });
       toasts.successToast(Messages.fetchPaymentsSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {

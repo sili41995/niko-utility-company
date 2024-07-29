@@ -1,5 +1,5 @@
 import { ClassNames } from '@/constants';
-import setBtnDisplayProp from '@/utils/setBtnDisplayProp';
+import { setBtnDisplayProp } from '@/utils';
 import styled from '@emotion/styled';
 import { IStyledProps } from './PaginationBar.types';
 

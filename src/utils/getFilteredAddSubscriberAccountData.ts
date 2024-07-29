@@ -4,7 +4,7 @@ import {
 } from '@/types/subscriberAccount.types';
 import getSubscriberAccountSector from './getSubscriberAccountSector';
 
-const filterAddSubscriberAccountData = (
+const getFilteredAddSubscriberAccountData = (
   data: IAddSubscriberAccountFormData
 ): INewSubscriberAccountData => {
   const {
@@ -60,4 +60,4 @@ const filterAddSubscriberAccountData = (
   };
 };
 
-export default filterAddSubscriberAccountData;
+export default getFilteredAddSubscriberAccountData;

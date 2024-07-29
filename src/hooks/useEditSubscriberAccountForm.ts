@@ -5,7 +5,7 @@ import {
 import { SubmitHandler, useForm } from 'react-hook-form';
 import {
   formatDate,
-  getFilteredSEditSubscriberAccountFormData,
+  getFilteredEditSubscriberAccountFormData,
   toasts,
 } from '@/utils';
 import { InputChangeEvent } from '@/types/types';
@@ -95,7 +95,7 @@ const useEditSubscriberAccountForm = (
   const handleFormSubmit: SubmitHandler<
     IEditSubscriberAccountFormData
   > = async (data) => {
-    const filteredData = getFilteredSEditSubscriberAccountFormData(data);
+    const filteredData = getFilteredEditSubscriberAccountFormData(data);
 
     try {
       await updateSubscriberAccountById({ data: filteredData, id });

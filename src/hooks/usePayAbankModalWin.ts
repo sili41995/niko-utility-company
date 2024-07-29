@@ -1,5 +1,5 @@
 import { BtnClickEvent } from '@/types/types';
-import { makeBlur, saveFileToCsv, toasts } from '@/utils';
+import { makeBlur, toasts, saveFileToCsv } from '@/utils';
 import accountingService from '@/services/accounting.service';
 import { Messages } from '@/constants';
 import { AxiosError } from 'axios';
@@ -14,7 +14,7 @@ const usePayAbankModalWin = (): IUseFetchFile => {
 
     try {
       const result = await accountingService.fetchPaymentsBySourceAbank();
-      saveFileToCsv({ data: result, fileName: 'payments-abank.xlsx' });
+      saveFileToCsv({ data: result, fileName: 'payments-abank.csv' });
       toasts.successToast(Messages.fetchPaymentsSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {

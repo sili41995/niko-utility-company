@@ -19,7 +19,7 @@ import { IAddSubscriberAccountFormData } from '@/types/subscriberAccount.types';
 import { IUseAddSubscriberAccountForm } from '@/types/hooks.types';
 import { InputChangeEvent } from '@/types/types';
 import {
-  filterAddSubscriberAccountData,
+  getFilteredAddSubscriberAccountData,
   formatDate,
   getAccountTypesData,
   getSubscriberAccountSelectData,
@@ -112,7 +112,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     data
   ) => {
     const filteredAddSubscriberAccountData =
-      filterAddSubscriberAccountData(data);
+      getFilteredAddSubscriberAccountData(data);
 
     try {
       await addSubscriberAccount(filteredAddSubscriberAccountData);

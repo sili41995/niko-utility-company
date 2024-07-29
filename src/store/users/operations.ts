@@ -7,8 +7,7 @@ import {
   IChangeAccessStatusProps,
   IFetchUsersOperationProps,
 } from '@/types/usersStore.types';
-import { toasts } from '@/utils';
-import getUpdatedUsers from '@/utils/getUpdatedUsers';
+import { toasts, getUpdatedUsers } from '@/utils';
 
 const fetchUsersOperation = async ({
   set,

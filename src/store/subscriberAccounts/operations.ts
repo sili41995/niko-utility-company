@@ -7,7 +7,7 @@ import {
   IFetchSubscriberAccountsRes,
   IUpdateSubscriberAccountByIdProps,
 } from '@/types/subscriberAccountsStore.types';
-import getUpdatedSubscriberAccounts from '@/utils/getUpdatedSubscriberAccounts';
+import { getUpdatedSubscriberAccounts } from '@/utils';
 
 const fetchSubscriberAccountsOperation = async ({
   set,
