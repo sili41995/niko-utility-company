@@ -6,7 +6,7 @@ import AddPeriodModalWin from '@/components/AddPeriodModalWin';
 import { useAccountingSections } from '@/hooks';
 import AccountingSectionsBtn from '@/components/AccountingSectionsBtn';
 import PayAbankModalWin from '@/components/PayAbankModalWin';
-import PayOshchadbankModalWin from '@/components/PayOshchadbankModalWin';
+import PaymentsFilesOshchadbankModalWin from '@/components/PaymentsFilesOshchadbankModalWin';
 import PaymentsFilesPrivatbankModalWin from '@/components/PaymentsFilesPrivatbankModalWin';
 import PaymentsFilesPostageModalWin from '@/components/PaymentsFilesPostageModalWin';
 import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
@@ -136,7 +136,7 @@ const AccountingSections: FC = () => {
         />
       )}
       {showPayOshchadbankModalWin && (
-        <PayOshchadbankModalWin
+        <PaymentsFilesOshchadbankModalWin
           setModalWinState={setPayOshchadbankModalWinState}
         />
       )}
