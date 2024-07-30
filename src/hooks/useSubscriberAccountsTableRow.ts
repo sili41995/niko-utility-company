@@ -1,7 +1,7 @@
 import { DateFormats, apartmentTypes } from '@/constants';
 import { IUseSubscriberAccountsTableRow } from '@/types/hooks.types';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
-import { formatDate, getSubscriberAccountBalance } from '@/utils';
+import { formatDate, getCurrentPeriodSubscriberAccountBalance } from '@/utils';
 import { useState } from 'react';
 
 const useSubscriberAccountsTableRow = (
@@ -32,7 +32,8 @@ const useSubscriberAccountsTableRow = (
     date: period,
     dateFormat: DateFormats.date,
   });
-  const { balance, isDebt } = getSubscriberAccountBalance(subscriberAccount);
+  const { balance, isDebt } =
+    getCurrentPeriodSubscriberAccountBalance(subscriberAccount);
 
   const toggleShowInfo = () => {
     setShowInfo((prevState) => !prevState);

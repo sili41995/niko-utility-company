@@ -45,4 +45,4 @@ export { default as sortTariffs } from './sortTariffs';
 export { default as getUpdatedUsers } from './getUpdatedUsers';
 export { default as getUpdatedSubscriberAccounts } from './getUpdatedSubscriberAccounts';
 export { default as getDefaultAccountTypesValue } from './getDefaultAccountTypesValue';
-export { default as getSubscriberAccountBalance } from './getSubscriberAccountBalance';
+export { default as getCurrentPeriodSubscriberAccountBalance } from './getCurrentPeriodSubscriberAccountBalance';

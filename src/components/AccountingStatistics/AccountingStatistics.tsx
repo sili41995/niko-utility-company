@@ -11,18 +11,7 @@ import { useTargetPeriod } from '@/hooks';
 
 const AccountingStatistics: FC = () => {
   const targetPeriod = useTargetPeriod();
-  const { statistics, payments } = targetPeriod ?? {};
-  const {
-    subscriberAccounts,
-    residents,
-    balanceStart,
-    balanceEnd,
-    benefits,
-    accrued,
-    penalty,
-    adjustment,
-    subsidies,
-  } = statistics ?? {};
+  const { payments } = targetPeriod ?? {};
   const paymentsValue = payments?.reduce((acc, { amount }) => acc + amount, 0);
 
   return (
@@ -30,20 +19,20 @@ const AccountingStatistics: FC = () => {
       <ListItem>
         <StatisticsItem>
           <Title>Всього а/р:</Title>
-          <Value>{subscriberAccounts}</Value>
+          <Value>{'subscriberAccounts'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Всього мешканців:</Title>
-          <Value>{residents}</Value>
+          <Value>{'residents'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <ExtendedInfo>
           <StatisticsItem>
             <Title>Сальдо початок:</Title>
-            <Value>{balanceStart}</Value>
+            <Value>{'balanceStart'}</Value>
           </StatisticsItem>
           <Value>тут буде число</Value>
         </ExtendedInfo>
@@ -51,19 +40,19 @@ const AccountingStatistics: FC = () => {
       <ListItem>
         <StatisticsItem>
           <Title>Нараховано:</Title>
-          <Value>{accrued}</Value>
+          <Value>{'accrued'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Пеня:</Title>
-          <Value>{penalty}</Value>
+          <Value>{'penalty'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Коригування:</Title>
-          <Value>{adjustment}</Value>
+          <Value>{'adjustment'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
@@ -75,20 +64,20 @@ const AccountingStatistics: FC = () => {
       <ListItem>
         <StatisticsItem>
           <Title>Пільги:</Title>
-          <Value>{benefits}</Value>
+          <Value>{'benefits'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <StatisticsItem>
           <Title>Субсидії:</Title>
-          <Value>{subsidies}</Value>
+          <Value>{'subsidies'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>
         <ExtendedInfo>
           <StatisticsItem>
             <Title>Сальдо кінець:</Title>
-            <Value>{balanceEnd}</Value>
+            <Value>{'balanceEnd'}</Value>
           </StatisticsItem>
           <Value>тут буде число</Value>
         </ExtendedInfo>

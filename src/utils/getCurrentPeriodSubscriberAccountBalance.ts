@@ -1,7 +1,7 @@
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import { IGetSubscriberAccountBalance } from '@/types/types';
 
-const getSubscriberAccountBalance = (
+const getCurrentPeriodSubscriberAccountBalance = (
   subscriberAccount: ISubscriberAccount
 ): IGetSubscriberAccountBalance => {
   const { balances, payments, prices, priceAdjustments } = subscriberAccount;
@@ -24,4 +24,4 @@ const getSubscriberAccountBalance = (
   return { balance: Math.abs(Number(totalBalance.toFixed(2))), isDebt };
 };
 
-export default getSubscriberAccountBalance;
+export default getCurrentPeriodSubscriberAccountBalance;
