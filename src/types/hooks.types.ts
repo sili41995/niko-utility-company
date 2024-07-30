@@ -362,6 +362,7 @@ export interface IUseSubscriberAccountsTableRow {
   toggleShowInfo: Func;
   showInfo: boolean;
   isDebt: boolean;
+  balance: number;
 }
 
 export interface IUsePriceAdjustmentForm {

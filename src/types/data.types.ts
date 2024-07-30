@@ -155,6 +155,8 @@ export interface IPriceAdjustment {
   comment: string;
   subscriberAccountId: number;
   subscriberAccount: ISubscriberAccount;
+  periodId: number;
+  period: IPeriod;
 }
 
 export type PriceAdjustments = IPriceAdjustment[];
@@ -227,3 +229,13 @@ export interface IPrice {
 }
 
 export type Prices = IPrice[];
+
+export interface IBalance {
+  id: number;
+  amount: number;
+  createdAt: Date;
+  periodId: number;
+  subscriberAccountId: number;
+}
+
+export type Balances = IBalance[];

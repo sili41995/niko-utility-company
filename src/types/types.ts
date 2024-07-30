@@ -178,3 +178,8 @@ export interface IConvertStringsToPaymentsBankProps {
   data: PaymentsDataFromCsv;
   source: PaymentSources;
 }
+
+export interface IGetSubscriberAccountBalance {
+  balance: number;
+  isDebt: boolean;
+}
