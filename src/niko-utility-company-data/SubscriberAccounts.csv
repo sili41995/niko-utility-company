@@ -1,8 +1,3 @@
 id,contract,contractDate,isLivingApartment,residents,period,isRemovalHouseholdWaste,accountType,apartment,isEligibleForBenefit,houseId,streetId,sector,number
-14,00010-c,2024-07-01,t,1,2024-07-15,t,Фізична особа,3,f,3,1,multiApartment,00010
-9,00009-c,2024-07-01,t,0,2024-07-08,t,Фізична особа,,f,2,1,private,00009
-4,00004-c,2024-07-01,f,2,2024-07-01,t,Юридична особа,,f,2,1,other,00004
-6,-c,2024-07-01,t,2,2024-07-15,t,Фізична особа,,f,77,2,private,00006
-5,00005-c,2024-07-01,t,1,2024-08-01,t,Фізична особа,2,t,2,1,multiApartment,00005
-7,00007-c,2024-07-01,t,1,2024-07-17,t,Фізична особа,55,f,85,2,multiApartment,00007
-8,00008-c,2024-07-01,t,3,2024-07-10,t,Фізична особа,,f,74,1,private,00008
+1,00001-c,2024-07-01,t,2,2024-07-29,t,Фізична особа,1,f,2,1,multiApartment,00001
+2,00002-c,2024-07-01,t,3,2024-07-09,t,Фізична особа,,f,2,1,private,00002

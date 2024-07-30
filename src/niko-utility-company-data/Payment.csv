@@ -1,8 +1,5 @@
 id,amount,source,date,subscriberAccountId,periodId
-2,400,cash,2024-07-17,5,15
-3,1000,cash,2024-07-17,5,15
-4,400,postage,2024-07-22,7,15
-5,500,postage,2024-05-22,7,10
-6,200,abank,2024-07-24,8,15
-7,300,oshchadbank,2024-07-24,8,15
-8,700,privatbank,2024-07-24,8,15
+1,100,cash,2024-07-30,1,15
+2,200,privatbank,2024-07-30,1,15
+3,300,oshchadbank,2024-07-29,1,15
+4,3,postage,2024-07-30,1,15
