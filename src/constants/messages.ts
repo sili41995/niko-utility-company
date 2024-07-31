@@ -60,6 +60,7 @@ const enum Messages {
   emptyPricesList = 'Список нарахувань пустий',
   csvFileExtensionErr = 'Виберіть файл з розширенням .csv',
   invalidDataErr = 'Невалідні дані',
+  emptyBalancesList = 'Стан рахунку відсутній',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

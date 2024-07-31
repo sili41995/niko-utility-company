@@ -7,18 +7,18 @@ import SubscriberAccountInfoModalWinBtn from '@/components/SubscriberAccountInfo
 const SubscriberAccountInfoModalWinControls: FC<IProps> = ({
   isPricesCategory,
   isPriceAdjustmentsCategory,
-  isBalanceCategory,
+  isBalancesCategory,
   isEditingCategory,
   isPaymentsCategory,
   onChange,
 }) => (
   <Form>
     <SubscriberAccountInfoModalWinBtn
-      checked={isBalanceCategory}
+      checked={isBalancesCategory}
       name={SubscriberAccountInfoCategories.name}
       onChange={onChange}
       type={InputTypes.radio}
-      value={SubscriberAccountInfoCategories.balance}
+      value={SubscriberAccountInfoCategories.balances}
       title='Стан рахунку'
     />
     <SubscriberAccountInfoModalWinBtn

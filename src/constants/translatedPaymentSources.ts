@@ -4,7 +4,7 @@ enum TranslatedPaymentSources {
   oshchadbank = 'Ощадбанк',
   postage = 'Пошта',
   ukrsibbank = 'УкрСибБанк',
-  benefitCompensation = 'Компенсація пільг',
+  benefits = 'Компенсація пільг',
   adjustment = 'Коригування',
   aval = 'Аваль',
   ukrgasbank = 'Укргаз',

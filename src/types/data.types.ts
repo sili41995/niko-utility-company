@@ -168,6 +168,7 @@ export interface IPayment {
   source: PaymentSources;
   date: Date;
   period?: IPeriod;
+  periodId: number;
   subscriberAccountId: number;
   subscriberAccount?: ISubscriberAccount;
 }
@@ -219,6 +220,7 @@ export interface IBalance {
   amount: number;
   createdAt: Date;
   periodId: number;
+  period: IPeriod;
   subscriberAccountId: number;
 }
 

@@ -183,3 +183,11 @@ export interface IGetSubscriberAccountBalance {
   balance: number;
   isDebt: boolean;
 }
+
+export interface IPeriodId {
+  periodId: number;
+}
+
+export interface IAmount {
+  amount: number;
+}

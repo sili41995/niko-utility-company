@@ -11,17 +11,18 @@ import PaymentsCategory from '@/components/PaymentsCategory';
 import PriceAdjustmentsCategory from '@/components/PriceAdjustmentsCategory';
 import PricesCategory from '../PricesCategory';
 import SubscriberAccountInfo from '../SubscriberAccountInfo';
+import BalancesCategory from '../BalancesCategory';
 
 const SubscriberAccountInfoModalWin: FC<IProps> = ({
   setModalWinState,
   subscriberAccount,
 }) => {
   const [category, setCategory] = useState<string>(
-    () => SubscriberAccountInfoCategories.balance
+    () => SubscriberAccountInfoCategories.balances
   );
 
-  const isBalanceCategory =
-    category === SubscriberAccountInfoCategories.balance;
+  const isBalancesCategory =
+    category === SubscriberAccountInfoCategories.balances;
   const isPricesCategory = category === SubscriberAccountInfoCategories.prices;
   const isPriceAdjustmentsCategory =
     category === SubscriberAccountInfoCategories.priceAdjustments;
@@ -44,13 +45,16 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
         <ContentWrap>
           <SubscriberAccountInfo subscriberAccount={subscriberAccount} />
           <SubscriberAccountInfoModalWinControls
-            isBalanceCategory={isBalanceCategory}
+            isBalancesCategory={isBalancesCategory}
             isPricesCategory={isPricesCategory}
             isPriceAdjustmentsCategory={isPriceAdjustmentsCategory}
             isPaymentsCategory={isPaymentsCategory}
             isEditingCategory={isEditingCategory}
             onChange={onInputChange}
           />
+          {isBalancesCategory && (
+            <BalancesCategory subscriberAccount={subscriberAccount} />
+          )}
           {isPricesCategory && <PricesCategory prices={prices} />}
           {isPriceAdjustmentsCategory && (
             <PriceAdjustmentsCategory priceAdjustments={priceAdjustments} />
