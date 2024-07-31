@@ -1,18 +1,13 @@
-import {
-  IBalance,
-  Payments,
-  PriceAdjustments,
-  Prices,
-} from '@/types/data.types';
+import { IPeriod } from '@/types/data.types';
+import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 
 export interface IProps {
-  balance: IBalance;
-  prices: Prices;
-  priceAdjustments: PriceAdjustments;
-  payments: Payments;
+  period: IPeriod;
+  subscriberAccount: ISubscriberAccount;
 }
 
 export interface IStyledTableDataProps {
   center?: boolean;
   capitalize?: boolean;
+  isDebt?: boolean;
 }

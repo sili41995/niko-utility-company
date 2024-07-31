@@ -7,7 +7,12 @@ export const TableBodyRow = styled.tr`
 
 export const TableData = styled.td<IStyledTableDataProps>`
   padding: ${({ theme }) => theme.spacing()};
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme, isDebt }) =>
+    isDebt === undefined
+      ? theme.colors.black
+      : isDebt
+      ? theme.colors.red
+      : theme.colors.green};
   font-family: ${({ theme }) => theme.fontFamily.primary};
   font-size: ${({ theme }) => theme.fontSize.primary}px;
   font-weight: ${({ theme }) => theme.fontWeight.primary};

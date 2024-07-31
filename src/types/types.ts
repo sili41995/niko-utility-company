@@ -179,7 +179,11 @@ export interface IConvertStringsToPaymentsBankProps {
   source: PaymentSources;
 }
 
-export interface IGetSubscriberAccountBalance {
+export interface IGetSubscriberAccountBalanceByPeriod {
+  totalPrices: number;
+  totalPriceAdjustments: number;
+  totalBenefits: number;
+  totalPayments: number;
   balance: number;
   isDebt: boolean;
 }

@@ -26,10 +26,8 @@ const BalancesTable: FC<IProps> = ({ subscriberAccount }) => (
       {subscriberAccount.balances.map((balance) => (
         <BalancesTableRow
           key={balance.id}
-          balance={balance}
-          prices={subscriberAccount.prices}
-          priceAdjustments={subscriberAccount.priceAdjustments}
-          payments={subscriberAccount.payments}
+          period={balance.period}
+          subscriberAccount={subscriberAccount}
         />
       ))}
     </TableBody>

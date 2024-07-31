@@ -1,7 +1,7 @@
 import { DateFormats, apartmentTypes } from '@/constants';
 import { IUseSubscriberAccountsTableRow } from '@/types/hooks.types';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
-import { formatDate, getCurrentPeriodSubscriberAccountBalance } from '@/utils';
+import { formatDate, getSubscriberAccountBalanceByPeriod } from '@/utils';
 import { useState } from 'react';
 
 const useSubscriberAccountsTableRow = (
@@ -19,6 +19,7 @@ const useSubscriberAccountsTableRow = (
     isEligibleForBenefit,
     period,
     documents,
+    balances,
     owner: { surname, name, middleName },
   } = subscriberAccount;
   const apartmentType = apartmentTypes.find(
@@ -32,8 +33,13 @@ const useSubscriberAccountsTableRow = (
     date: period,
     dateFormat: DateFormats.date,
   });
-  const { balance, isDebt } =
-    getCurrentPeriodSubscriberAccountBalance(subscriberAccount);
+  const { period: currentPeriod } = balances.find(
+    ({ period }) => period.isCurrentPeriod
+  )!;
+  const { balance, isDebt } = getSubscriberAccountBalanceByPeriod({
+    period: currentPeriod,
+    subscriberAccount,
+  });
 
   const toggleShowInfo = () => {
     setShowInfo((prevState) => !prevState);
