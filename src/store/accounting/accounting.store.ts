@@ -14,7 +14,7 @@ const accountingSlice = (
   get: GetAccountingStateFunc
 ): IAccountingState => ({
   ...initialState,
-  fetchPrices: async (): Promise<IPricesInfo | undefined> =>
+  fetchPrices: async (): Promise<IPricesInfo | null | undefined> =>
     await fetchPrices({
       set: setState({ set, name: 'fetchPrices' }),
       data: undefined,

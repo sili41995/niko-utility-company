@@ -13,7 +13,6 @@ export { default as useSubscriberAccountsPage } from './useSubscriberAccountsPag
 export { default as useSubscriberAccountsFilter } from './useSubscriberAccountsFilter';
 export { default as useFilterSearchParams } from './useFilterSearchParams';
 export { default as useEditSubscriberAccountForm } from './useEditSubscriberAccountForm';
-export { default as useUser } from './useUser';
 export { default as useTariffsList } from './useTariffsList';
 export { default as useAddTariffForm } from './useAddTariffForm';
 export { default as useDocumentsPage } from './useDocumentsPage';

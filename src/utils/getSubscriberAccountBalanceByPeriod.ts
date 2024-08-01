@@ -20,7 +20,13 @@ const getSubscriberAccountBalanceByPeriod = ({
   const amountIncrementFunc = (acc: number, { amount }: IAmount) =>
     acc + amount;
 
-  const totalPrices = prices.filter(filterFunc).reduce(amountIncrementFunc, 0);
+  const totalPrices = prices
+    .filter(filterFunc)
+    .reduce(
+      (acc: number, { tariff: { price }, residents }) =>
+        acc + residents * price,
+      0
+    );
   const totalPriceAdjustments = priceAdjustments
     .filter(filterFunc)
     .reduce((acc, { price }) => acc + price, 0);
@@ -47,7 +53,7 @@ const getSubscriberAccountBalanceByPeriod = ({
     totalBenefits -
     totalPayments;
 
-  const balance = Number(totalBalance.toFixed(2));
+  const balance = Math.abs(Number(totalBalance.toFixed(2)));
   const isDebt = totalBalance > 0;
 
   return {

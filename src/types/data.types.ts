@@ -17,14 +17,6 @@ export interface IUser {
   email: string;
   password: string;
   token: string | null;
-  fullAccess: boolean;
-  houses: boolean;
-  subscribers: boolean;
-  accounting: boolean;
-  documents: boolean;
-  counters: boolean;
-  oneOffJobs: boolean;
-  settings: boolean;
 }
 
 export type NewUser = Pick<IUser, 'login' | 'name' | 'password' | 'email'>;
@@ -204,10 +196,10 @@ export type DateTo = Pick<ITimePeriod, 'to'>;
 
 export interface IPrice {
   id: number;
-  amount: number;
   date: Date;
   residents: number;
-  tariff: number;
+  tariffId: number;
+  tariff: ITariff;
   subscriberAccountId: number;
   periodId: number;
   period: IPeriod;

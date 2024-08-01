@@ -7,14 +7,6 @@ export interface IUserState {
   name: null | string;
   login: null | string;
   email: null | string;
-  fullAccess: null | boolean;
-  houses: null | boolean;
-  subscribers: null | boolean;
-  accounting: null | boolean;
-  documents: null | boolean;
-  counters: null | boolean;
-  oneOffJobs: null | boolean;
-  settings: null | boolean;
 }
 
 export type SignInRes = Pick<IUser, 'token'>;

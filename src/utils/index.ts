@@ -42,7 +42,6 @@ export { default as convertStringsToPaymentsBank } from './convertStringsToPayme
 export { default as updatePeriods } from './updatePeriods';
 export { default as getUpdatedPeriods } from './getUpdatedPeriods';
 export { default as sortTariffs } from './sortTariffs';
-export { default as getUpdatedUsers } from './getUpdatedUsers';
 export { default as getUpdatedSubscriberAccounts } from './getUpdatedSubscriberAccounts';
 export { default as getDefaultAccountTypesValue } from './getDefaultAccountTypesValue';
 export { default as getSubscriberAccountBalanceByPeriod } from './getSubscriberAccountBalanceByPeriod';

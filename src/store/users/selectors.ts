@@ -11,6 +11,3 @@ export const selectError = (state: IUsersState) => state.error;
 export const selectAddUser = (state: IUsersState) => state.addUser;
 
 export const selectFetchUsers = (state: IUsersState) => state.fetchUsers;
-
-export const selectChangeAccessStatus = (state: IUsersState) =>
-  state.changeAccessStatus;

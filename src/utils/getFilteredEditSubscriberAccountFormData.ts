@@ -17,12 +17,12 @@ const getFilteredSEditSubscriberAccountFormData = (
     phone,
     residents,
     comment,
-    document,
+    name,
   } = data;
 
   return {
     comment,
-    document,
+    name,
     isEligibleForBenefit,
     isLivingApartment: isLivingApartment === 'true' ? true : false,
     residents: Number(residents),

@@ -21,11 +21,11 @@ const calculatePricesOperation = async ({
 
 const fetchPricesOperation = async ({
   set,
-}: IPricesOperationsProps): Promise<IPricesInfo | undefined> => {
+}: IPricesOperationsProps): Promise<IPricesInfo | null | undefined> => {
   const response = await accountingService.fetchPrices();
 
   set({
-    lastCalculate: response.lastCalculate,
+    lastCalculate: response?.lastCalculate,
   });
 
   return response;

@@ -92,11 +92,11 @@ export interface IAddSubscriberAccountFormData extends ISubscriberAccountData {}
 export interface IEditSubscriberAccountFormData extends ISubscriberAccountData {
   street: string;
   house: string;
-  document: string;
+  name: string;
   comment: string;
 }
 
-export type Document = Pick<IEditSubscriberAccountFormData, 'document'>;
+export type DocumentName = Pick<IEditSubscriberAccountFormData, 'name'>;
 
 export type Comment = Pick<IEditSubscriberAccountFormData, 'comment'>;
 
@@ -111,7 +111,7 @@ export type EditableSubscriberAccountData = Pick<
 
 export interface IEditSubscriberAccountData
   extends EditableSubscriberAccountData {
-  document: string;
+  name: string;
   comment: string;
   owner: IUpdatableOwnerData;
 }

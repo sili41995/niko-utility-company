@@ -12,7 +12,7 @@ export interface IAccountingInitialState {
 }
 
 export interface IAccountingState extends IAccountingInitialState {
-  fetchPrices: () => Promise<IPricesInfo | undefined>;
+  fetchPrices: () => Promise<IPricesInfo | null | undefined>;
   calculatePrices: () => Promise<IPricesInfo | undefined>;
   addPriceAdjustment: (
     data: PriceAdjustmentData

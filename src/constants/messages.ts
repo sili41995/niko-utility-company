@@ -37,7 +37,7 @@ const enum Messages {
   tariffAddSuccess = 'Тариф успішно доданий',
   emptyDocumentsList = 'Список документів пустий',
   emptyFilteredDocumentsList = 'Жоден з документів не відповідає пошуковому запиту',
-  documentReqErr = 'Поле Документ має бути заповнене',
+  documentNameReqErr = 'Поле Документ має бути заповнене',
   commentReqErr = 'Поле Коментар має бути заповнене',
   periodAddSuccess = 'Період успішно доданий',
   duplicateDocumentErr = 'Такий документ вже існує',

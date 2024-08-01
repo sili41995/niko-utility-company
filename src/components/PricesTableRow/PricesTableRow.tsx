@@ -6,13 +6,18 @@ import { DateFormats } from '@/constants';
 import { getDaysInMonth } from 'date-fns';
 
 const PricesTableRow: FC<IProps> = ({ price }) => {
-  const { period, amount, residents, tariff } = price;
+  const {
+    period,
+    residents,
+    tariff: { price: tariffPrice },
+  } = price;
   const periodDate = formatDate({
     date: period.start,
     dateFormat: DateFormats.period,
   });
   const daysInMonth = getDaysInMonth(period.start);
-  const comment = `Мешканців: ${residents}; Днів: ${daysInMonth}; Тариф: ${tariff} грн.`;
+  const comment = `Мешканців: ${residents}; Днів: ${daysInMonth}; Тариф: ${tariffPrice} грн.`;
+  const amount = residents * tariffPrice;
 
   return (
     <TableBodyRow>

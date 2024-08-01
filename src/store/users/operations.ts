@@ -1,13 +1,10 @@
-import { Messages } from '@/constants';
 import usersService from '@/services/users.service';
 import operationWrapper from '@/store/users/operationWrapper';
 import { UserData, Users } from '@/types/data.types';
 import {
   IAddUserProps,
-  IChangeAccessStatusProps,
   IFetchUsersOperationProps,
 } from '@/types/usersStore.types';
-import { toasts, getUpdatedUsers } from '@/utils';
 
 const fetchUsersOperation = async ({
   set,
@@ -33,23 +30,5 @@ const addUserOperation = async ({
   return response;
 };
 
-const changeAccessStatusOperation = async ({
-  data,
-  set,
-  get,
-}: IChangeAccessStatusProps): Promise<UserData | undefined> => {
-  const { items: users } = get();
-
-  const response = await usersService.changeAccessStatus(data);
-  const updatedUsers = getUpdatedUsers({
-    users,
-    updatedUser: response,
-  });
-  set({ items: updatedUsers });
-  toasts.successToast(Messages.dataUpdateSuccess);
-  return response;
-};
-
 export const fetchUsers = operationWrapper(fetchUsersOperation);
 export const addUser = operationWrapper(addUserOperation);
-export const changeAccessStatus = operationWrapper(changeAccessStatusOperation);

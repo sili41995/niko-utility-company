@@ -15,7 +15,6 @@ export { default as BtnTypes } from './btnTypes';
 export { default as Messages } from './messages';
 export { default as AuthParams } from './authParams';
 export { default as regExp } from './regExp';
-export { default as AccessKeys } from './accessKeys';
 export { default as InputLabels } from './inputLabels';
 export { default as AccountTypes } from './accountTypes';
 export { default as apartmentTypes } from './apartmentTypes';

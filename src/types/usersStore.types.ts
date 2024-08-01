@@ -22,26 +22,7 @@ export interface IAddUserProps {
   data: NewUser;
 }
 
-export interface IAccessData {
-  [key: string]: boolean;
-}
-
-export interface IChangeAccessStatusData {
-  id: number;
-  data: IAccessData;
-  accessKey: string;
-}
-
-export interface IChangeAccessStatusProps {
-  set: SetUsersStateFunc;
-  get: GetUsersStateFunc;
-  data: IChangeAccessStatusData;
-}
-
 export interface IUsersState extends IUsersInitialState {
   fetchUsers: () => Promise<Users | undefined>;
   addUser: (data: NewUser) => Promise<UserData | undefined>;
-  changeAccessStatus: (
-    data: IChangeAccessStatusData
-  ) => Promise<UserData | undefined>;
 }

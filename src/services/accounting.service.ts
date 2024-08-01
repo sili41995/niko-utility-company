@@ -36,8 +36,8 @@ class AccountingService extends HttpService {
     return response.data;
   }
 
-  async fetchPrices(): Promise<IPricesInfo> {
-    const response = await this.get<IPricesInfo>({
+  async fetchPrices(): Promise<IPricesInfo | null> {
+    const response = await this.get<IPricesInfo | null>({
       url: 'accounting/prices',
     });
 

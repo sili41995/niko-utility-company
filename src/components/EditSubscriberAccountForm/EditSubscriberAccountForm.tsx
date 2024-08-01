@@ -275,7 +275,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             horizontal
           />
           <Input
-            settings={{ ...register('document', { required: true }) }}
+            settings={{ ...register('name', { required: true }) }}
             label='Документ:'
             placeholder='Документ'
             type={InputTypes.text}
