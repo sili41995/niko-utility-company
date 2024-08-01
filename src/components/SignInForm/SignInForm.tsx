@@ -24,7 +24,7 @@ const SignInForm: FC = () => {
         <Input
           settings={{ ...register('login', { required: true }) }}
           type={InputTypes.text}
-          placeholder='Login'
+          placeholder='Логін'
           formType={FormTypes.auth}
           icon={<FaUser size={IconSizes.secondary} />}
         />
@@ -37,11 +37,11 @@ const SignInForm: FC = () => {
             }),
           }}
           type={InputTypes.password}
-          placeholder='Password'
+          placeholder='Пароль'
           formType={FormTypes.auth}
           icon={<FaLock size={IconSizes.secondary} />}
         />
-        <AuthFormBtn title='Sign in' isLoading={isLoading} />
+        <AuthFormBtn title='Увійти' isLoading={isLoading} />
       </Form>
     </>
   );
