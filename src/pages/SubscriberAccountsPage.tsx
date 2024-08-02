@@ -8,7 +8,6 @@ import NavBar from '@/components/NavBar';
 import AddSubscriberAccountModalWin from '@/components/AddSubscriberAccountModalWin';
 import DefaultMessage from '@/components/DefaultMessage';
 import Loader from '@/components/Loader';
-import ErrorMessage from '@/components/ErrorMessage';
 import { useSubscriberAccountsPage } from '@/hooks';
 import SubscriberAccountsFilter from '@/components/SubscriberAccountsFilter';
 
@@ -18,14 +17,13 @@ const SubscriberAccountsPage: FC = () => {
     showSubscriberAccountsTable,
     count,
     totalCount,
-    error,
     setModalWinState,
     showModalWin,
     isLoading,
     filteredCount,
     isEmptyFilteredList,
   } = useSubscriberAccountsPage();
-  const showPagination = filteredCount && totalCount ;
+  const showPagination = filteredCount && totalCount;
 
   return (
     <>
@@ -60,7 +58,6 @@ const SubscriberAccountsPage: FC = () => {
             ) : (
               <DefaultMessage message={Messages.emptySubscriberAccountsList} />
             )}
-            {error && <ErrorMessage error={error} />}
           </Container>
         </Section>
       )}

@@ -1,9 +1,5 @@
 import { Messages } from '@/constants';
-import {
-  selectAddPeriod,
-  selectError,
-  selectIsLoading,
-} from '@/store/periods/selectors';
+import { selectAddPeriod, selectIsLoading } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
 import { IUseAddPeriod } from '@/types/hooks.types';
 import { BtnClickEvent } from '@/types/types';
@@ -12,7 +8,6 @@ import { makeBlur, toasts } from '@/utils';
 const useAddPeriod = (): IUseAddPeriod => {
   const addPeriod = usePeriodsStore(selectAddPeriod);
   const isLoading = usePeriodsStore(selectIsLoading);
-  const error = usePeriodsStore(selectError);
 
   const addNewPeriod = async () => {
     try {
@@ -34,7 +29,7 @@ const useAddPeriod = (): IUseAddPeriod => {
     makeBlur(e.currentTarget);
     addNewPeriod();
   };
-  return { isLoading, error, onAddPeriodBtnClick };
+  return { isLoading, onAddPeriodBtnClick };
 };
 
 export default useAddPeriod;

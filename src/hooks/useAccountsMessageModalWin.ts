@@ -18,10 +18,7 @@ const useAccountsMessageModalWin = (): IUseFetchFile => {
       toasts.successToast(Messages.fetchInvoicesSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {
-        const message = error.response?.data.message;
-        const isNotFoundErr = message.toLowerCase() === 'file was not found';
-        const errorMessage = isNotFoundErr ? Messages.fileNotFoundErr : message;
-        toasts.errorToast(errorMessage);
+        toasts.errorToast(error.message);
       }
     } finally {
       setIsLoading(false);

@@ -17,7 +17,7 @@ import {
 } from './TariffsList.styled';
 import { MdEditNote, MdListAlt } from 'react-icons/md';
 import AddDataModalForm from '@/components/AddDataModalForm';
-import { IconSizes, SectorTypes } from '@/constants';
+import { GeneralParams, IconSizes, SectorTypes } from '@/constants';
 import { useTariffsList } from '@/hooks';
 import AddTariffForm from '@/components/AddTariffForm';
 import TariffsHistoryList from '@/components/TariffsHistoryList';
@@ -25,11 +25,11 @@ import TariffsHistoryList from '@/components/TariffsHistoryList';
 const TariffsList: FC = () => {
   const {
     multiApartmentSectorTariffStartDate,
-    multiApartmentSectorTariffValue,
+    multiApartmentSectorTariff,
     otherSectorTariffStartDate,
-    otherSectorTariffValue,
+    otherSectorTariff,
     privateSectorTariffStartDate,
-    privateSectorTariffValue,
+    privateSectorTariff,
     showAddMultiApartmentSectorTariffForm,
     showAddOtherSectorTariffForm,
     showAddPrivateSectorTariffForm,
@@ -46,6 +46,16 @@ const TariffsList: FC = () => {
     privateSectorTariffs,
     otherSectorTariffs,
   } = useTariffsList();
+
+  const multiApartmentSectorTariffValue = multiApartmentSectorTariff
+    ? multiApartmentSectorTariff
+    : GeneralParams.missingValue;
+  const privateSectorTariffValue = privateSectorTariff
+    ? privateSectorTariff
+    : GeneralParams.missingValue;
+  const otherSectorTariffValue = otherSectorTariff
+    ? otherSectorTariff
+    : GeneralParams.missingValue;
 
   return (
     <Container>
@@ -93,7 +103,7 @@ const TariffsList: FC = () => {
             >
               <AddTariffForm
                 sector={SectorTypes.multiApartment}
-                tariff={multiApartmentSectorTariffValue}
+                tariff={multiApartmentSectorTariff}
               />
             </AddDataModalForm>
           )}
@@ -143,7 +153,7 @@ const TariffsList: FC = () => {
             >
               <AddTariffForm
                 sector={SectorTypes.private}
-                tariff={privateSectorTariffValue}
+                tariff={privateSectorTariff}
               />
             </AddDataModalForm>
           )}
@@ -175,7 +185,9 @@ const TariffsList: FC = () => {
             <Data>
               <ServiceWrap>
                 <Text>Вивезення побутових відходів (за 1м3)</Text>
-                <Text>{otherSectorTariffValue} грн.</Text>
+                <Text>
+                  {otherSectorTariffValue} <Units>грн.</Units>
+                </Text>
               </ServiceWrap>
               <PeriodWrap>
                 <Text>Діє з</Text>
@@ -191,7 +203,7 @@ const TariffsList: FC = () => {
             >
               <AddTariffForm
                 sector={SectorTypes.other}
-                tariff={otherSectorTariffValue}
+                tariff={otherSectorTariff}
               />
             </AddDataModalForm>
           )}

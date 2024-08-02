@@ -9,12 +9,12 @@ import validateFindSubscriberAccountForm from '@/validators/validateFindSubscrib
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
 import { IUseFindSubscriberAccountForm } from '@/types/hooks.types';
 import { AxiosError } from 'axios';
+import { toasts } from '@/utils';
 
 const useFindSubscriberAccountForm = (
   setSubscriberAccount: SetSubscriberAccountFunc
 ): IUseFindSubscriberAccountForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -47,14 +47,14 @@ const useFindSubscriberAccountForm = (
         const errorMessage = isNotFoundErr
           ? Messages.subscriberAccountNotFoundErr
           : message;
-        setError(errorMessage);
+        toasts.errorToast(errorMessage);
       }
     } finally {
       setIsLoading(false);
     }
   };
 
-  return { handleSubmit, handleFormSubmit, register, error, isLoading };
+  return { handleSubmit, handleFormSubmit, register, isLoading };
 };
 
 export default useFindSubscriberAccountForm;

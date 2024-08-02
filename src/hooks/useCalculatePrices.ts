@@ -1,7 +1,6 @@
 import { formatDate, toasts } from '@/utils';
 import { useAccountingStore } from '@/store/store';
 import {
-  selectError,
   selectIsLoading,
   selectCalculatePrices,
   selectLastCalculate,
@@ -13,7 +12,6 @@ import { useEffect } from 'react';
 
 const useCalculatePrices = (): IUseCalculatePrices => {
   const isLoading = useAccountingStore(selectIsLoading);
-  const error = useAccountingStore(selectError);
   const calculatePrices = useAccountingStore(selectCalculatePrices);
   const lastCalculate = useAccountingStore(selectLastCalculate);
   const fetchPrices = useAccountingStore(selectFetchPrices);
@@ -43,7 +41,6 @@ const useCalculatePrices = (): IUseCalculatePrices => {
     lastPricesCalculate,
     isLoading,
     calculatePrices: calculate,
-    error,
   };
 };
 

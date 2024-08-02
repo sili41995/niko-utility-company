@@ -1,7 +1,6 @@
 import { useSubscriberAccountsStore } from '@/store/store';
 import {
   selectTotalCount,
-  selectError,
   selectFetchSubscriberAccounts,
   selectIsLoaded,
   selectIsLoading,
@@ -30,7 +29,6 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const isLoadingPeriodsData = usePeriodsData();
   const isLoadingData = isLoadingSubscriberAccountsData || isLoadingPeriodsData;
   const showSubscriberAccountsTable = Boolean(isLoaded && totalCount);
-  const error = useSubscriberAccountsStore(selectError);
 
   const { number, apartment, house, limit, name, page, street, surname, type } =
     useFilterSearchParams();
@@ -72,7 +70,6 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     count,
     totalCount,
     filteredCount,
-    error,
     setModalWinState,
     showModalWin,
     isLoading: isLoadingSubscriberAccountsData,

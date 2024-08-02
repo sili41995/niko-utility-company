@@ -58,6 +58,7 @@ const enum Messages {
   emptyPriceAdjustmentsList = 'Список коригувань пустий',
   emptyPaymentsList = 'Список оплат пустий',
   emptyPricesList = 'Список нарахувань пустий',
+  emptyTariffsList = 'Список тарифів пустий',
   csvFileExtensionErr = 'Виберіть файл з розширенням .csv',
   invalidDataErr = 'Невалідні дані',
   emptyBalancesList = 'Стан рахунку відсутній',

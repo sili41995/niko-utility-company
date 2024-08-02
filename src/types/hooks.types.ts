@@ -148,7 +148,6 @@ export interface IUseSubscriberAccountsPage {
   count: number;
   totalCount: number | null;
   filteredCount: number | null;
-  error: string | null;
   setModalWinState: Func;
   showModalWin: boolean;
   isLoading: boolean;
@@ -250,12 +249,12 @@ export interface IUseTariffsList {
   showMultiApartmentSectorTariffsHistory: boolean;
   showAddOtherSectorTariffForm: boolean;
   showOtherSectorTariffsHistory: boolean;
-  multiApartmentSectorTariffValue: number;
+  multiApartmentSectorTariff: number;
   multiApartmentSectorTariffStartDate: string;
-  privateSectorTariffValue: number;
+  privateSectorTariff: number;
   privateSectorTariffStartDate: string;
   otherSectorTariffStartDate: string;
-  otherSectorTariffValue: number;
+  otherSectorTariff: number;
   toggleShowAddPrivateSectorTariffForm: OnBtnClickFunc;
   toggleShowPrivateSectorTariffsHistory: OnBtnClickFunc;
   toggleShowAddMultiApartmentSectorTariffForm: OnBtnClickFunc;
@@ -302,19 +301,17 @@ export interface IUseCalculatePrices {
   lastPricesCalculate: string;
   isLoading: boolean;
   calculatePrices: () => Promise<void>;
-  error: string | null;
 }
 
 export interface IUseAddPeriod {
   isLoading: boolean;
-  error: string | null;
   onAddPeriodBtnClick: OnBtnClickFunc;
 }
 
 export interface IUseAccountingSections {
   setAddPeriodModalWinState: Func;
   setCalculatePricesModalWinState: Func;
-  setPriceAdjustmentModalWinState: Func;
+  setPriceAdjustmentsModalWinState: Func;
   setPaymentsAdjustmentModalWinState: Func;
   setPaymentsModalWinState: Func;
   setBenefitsAdjustmentModalWinState: Func;
@@ -327,7 +324,7 @@ export interface IUseAccountingSections {
   showTariffsModalWin: boolean;
   showCalculatePricesModalWin: boolean;
   showAddPeriodModalWin: boolean;
-  showPriceAdjustmentModalWin: boolean;
+  showPriceAdjustmentsModalWin: boolean;
   showPaymentsAdjustmentModalWin: boolean;
   showPaymentsModalWin: boolean;
   showBenefitsAdjustmentModalWin: boolean;
@@ -342,7 +339,6 @@ export interface IUseFindSubscriberAccountForm {
   handleSubmit: UseFormHandleSubmit<SubscriberAccountNumber, undefined>;
   handleFormSubmit: SubmitHandler<SubscriberAccountNumber>;
   register: UseFormRegister<SubscriberAccountNumber>;
-  error: string | null;
   isLoading: boolean;
 }
 

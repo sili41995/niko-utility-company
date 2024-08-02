@@ -9,13 +9,12 @@ import {
   ContentWrap,
 } from './CalculatePricesModalWin.styled';
 import ActionBtn from '@/components/ActionBtn';
-import ErrorMessage from '@/components/ErrorMessage';
 import { useCalculatePrices } from '@/hooks';
 import Loader from '@/components/Loader';
 import PeriodTitle from '@/components/PeriodTitle';
 
 const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const { isLoading, calculatePrices, error, lastPricesCalculate } =
+  const { isLoading, calculatePrices, lastPricesCalculate } =
     useCalculatePrices();
 
   return (
@@ -39,7 +38,6 @@ const CalculatePricesModalWin: FC<IProps> = ({ setModalWinState }) => {
             </>
           )}
         </ContentWrap>
-        {error && <ErrorMessage error={error} />}
       </Container>
     </ModalWin>
   );

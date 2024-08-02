@@ -1,4 +1,4 @@
-import { DateFormats, SectorTypes } from '@/constants';
+import { DateFormats, GeneralParams, SectorTypes } from '@/constants';
 import { useTariffsStore } from '@/store/store';
 import { selectTariffs } from '@/store/tariffs/selectors';
 import {
@@ -33,29 +33,33 @@ const useTariffsList = (): IUseTariffsList => {
   const { multiApartmentSectorTariff, otherSectorTariff, privateSectorTariff } =
     getCurrentTariffs(tariffs);
   const {
-    start: multiApartmentSectorTariffStart = new Date(),
+    start: multiApartmentSectorTariffStart,
     price: multiApartmentSectorTariffValue = 0,
   } = multiApartmentSectorTariff || {};
-  const multiApartmentSectorTariffStartDate = formatDate({
-    date: multiApartmentSectorTariffStart,
-    dateFormat: DateFormats.date,
-  });
+  const multiApartmentSectorTariffStartDate = multiApartmentSectorTariffStart
+    ? formatDate({
+        date: multiApartmentSectorTariffStart,
+        dateFormat: DateFormats.date,
+      })
+    : GeneralParams.missingValue;
+  const { start: otherSectorTariffStart, price: otherSectorTariffValue = 0 } =
+    otherSectorTariff || {};
+  const otherSectorTariffStartDate = otherSectorTariffStart
+    ? formatDate({
+        date: otherSectorTariffStart,
+        dateFormat: DateFormats.date,
+      })
+    : GeneralParams.missingValue;
   const {
-    start: otherSectorTariffStart = new Date(),
-    price: otherSectorTariffValue = 0,
-  } = otherSectorTariff || {};
-  const otherSectorTariffStartDate = formatDate({
-    date: otherSectorTariffStart,
-    dateFormat: DateFormats.date,
-  });
-  const {
-    start: privateSectorTariffStart = new Date(),
+    start: privateSectorTariffStart,
     price: privateSectorTariffValue = 0,
   } = privateSectorTariff || {};
-  const privateSectorTariffStartDate = formatDate({
-    date: privateSectorTariffStart,
-    dateFormat: DateFormats.date,
-  });
+  const privateSectorTariffStartDate = privateSectorTariffStart
+    ? formatDate({
+        date: privateSectorTariffStart,
+        dateFormat: DateFormats.date,
+      })
+    : GeneralParams.missingValue;
   const multiApartmentSectorTariffs = filterTariffsBySector({
     tariffs,
     sector: SectorTypes.multiApartment,
@@ -130,12 +134,12 @@ const useTariffsList = (): IUseTariffsList => {
     showMultiApartmentSectorTariffsHistory,
     showAddOtherSectorTariffForm,
     showOtherSectorTariffsHistory,
-    multiApartmentSectorTariffValue,
+    multiApartmentSectorTariff: multiApartmentSectorTariffValue,
     multiApartmentSectorTariffStartDate,
-    privateSectorTariffValue,
+    privateSectorTariff: privateSectorTariffValue,
     privateSectorTariffStartDate,
     otherSectorTariffStartDate,
-    otherSectorTariffValue,
+    otherSectorTariff: otherSectorTariffValue,
     toggleShowAddPrivateSectorTariffForm,
     toggleShowPrivateSectorTariffsHistory,
     toggleShowAddMultiApartmentSectorTariffForm,

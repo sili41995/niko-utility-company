@@ -7,7 +7,7 @@ import CalcByHousesModalWin from '@/components/CalcByHousesModalWin';
 import CalcBySubscribersDebtModalWin from '@/components/CalcBySubscribersDebtModalWin';
 import PersonalAccountStatementsModalWin from '@/components/PersonalAccountStatementsModalWin';
 import PersonalAccountPaymentsModalWin from '@/components/PersonalAccountPaymentsModalWin';
-import PriceAdjustmentsModalWin from '@/components/PriceAdjustmentsModalWin';
+import ReportsPriceAdjustmentsModalWin from '@/components/ReportsPriceAdjustmentsModalWin';
 import PriceAdjustmentsTotalsModalWin from '@/components/PriceAdjustmentsTotalsModalWin';
 import PricesModalWin from '@/components/PricesModalWin';
 import PricesTotalsModalWin from '@/components/PricesTotalsModalWin';
@@ -149,7 +149,7 @@ const AccountingReports: FC = () => {
         />
       )}
       {showPriceAdjustmentsModalWin && (
-        <PriceAdjustmentsModalWin
+        <ReportsPriceAdjustmentsModalWin
           setModalWinState={setPriceAdjustmentsModalWinState}
         />
       )}
