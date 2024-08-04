@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import TariffsModalWin from '@/components/TariffsModalWin';
 import { SectionsList, SectionsListItem } from './AccountingSections.styled';
-import CalculatePricesModalWin from '@/components/CalculatePricesModalWin';
+import PricesModalWin from '@/components/PricesModalWin';
 import AddPeriodModalWin from '@/components/AddPeriodModalWin';
 import { useAccountingSections } from '@/hooks';
 import AccountingSectionsBtn from '@/components/AccountingSectionsBtn';
@@ -16,7 +16,7 @@ import PriceAdjustmentsModalWin from '@/components/PriceAdjustmentsModalWin';
 const AccountingSections: FC = () => {
   const {
     setAddPeriodModalWinState,
-    setCalculatePricesModalWinState,
+    setPricesModalWinState,
     setPriceAdjustmentsModalWinState,
     setPaymentsModalWinState,
     setTariffsModalWinState,
@@ -26,7 +26,7 @@ const AccountingSections: FC = () => {
     setPayOshchadbankModalWinState,
     setPayAbankModalWinState,
     showTariffsModalWin,
-    showCalculatePricesModalWin,
+    showPricesModalWin,
     showAddPeriodModalWin,
     showPriceAdjustmentsModalWin,
     showPaymentsModalWin,
@@ -48,7 +48,7 @@ const AccountingSections: FC = () => {
         </SectionsListItem>
         <SectionsListItem>
           <AccountingSectionsBtn
-            onClick={setCalculatePricesModalWinState}
+            onClick={setPricesModalWinState}
             title='Розрахунок'
           />
         </SectionsListItem>
@@ -104,10 +104,8 @@ const AccountingSections: FC = () => {
       {showTariffsModalWin && (
         <TariffsModalWin setModalWinState={setTariffsModalWinState} />
       )}
-      {showCalculatePricesModalWin && (
-        <CalculatePricesModalWin
-          setModalWinState={setCalculatePricesModalWinState}
-        />
+      {showPricesModalWin && (
+        <PricesModalWin setModalWinState={setPricesModalWinState} />
       )}
       {showAddPeriodModalWin && (
         <AddPeriodModalWin setModalWinState={setAddPeriodModalWinState} />

@@ -310,7 +310,7 @@ export interface IUseAddPeriod {
 
 export interface IUseAccountingSections {
   setAddPeriodModalWinState: Func;
-  setCalculatePricesModalWinState: Func;
+  setPricesModalWinState: Func;
   setPriceAdjustmentsModalWinState: Func;
   setPaymentsAdjustmentModalWinState: Func;
   setPaymentsModalWinState: Func;
@@ -322,7 +322,7 @@ export interface IUseAccountingSections {
   setPayOshchadbankModalWinState: Func;
   setPayAbankModalWinState: Func;
   showTariffsModalWin: boolean;
-  showCalculatePricesModalWin: boolean;
+  showPricesModalWin: boolean;
   showAddPeriodModalWin: boolean;
   showPriceAdjustmentsModalWin: boolean;
   showPaymentsAdjustmentModalWin: boolean;
@@ -400,32 +400,32 @@ export interface IUseFetchFile {
 }
 
 export interface IUseAccountingReports {
-  showCalcByStreetsModalWin: boolean;
-  showCalcByHousesModalWin: boolean;
-  showCalcBySubscribersDebtModalWin: boolean;
-  showPersonalAccountStatementsModalWin: boolean;
-  showPersonalAccountPaymentsModalWin: boolean;
-  showPriceAdjustmentsModalWin: boolean;
-  showPriceAdjustmentsTotalsModalWin: boolean;
-  showPricesModalWin: boolean;
-  showPricesTotalsModalWin: boolean;
-  showPaymentsModalWin: boolean;
-  showPaymentsAdjustmentsModalWin: boolean;
-  showPaymentsTotalsModalWin: boolean;
-  showPaymentsTotalsByDatesModalWin: boolean;
-  setCalcByStreetsModalWinState: Func;
-  setCalcByHousesModalWinState: Func;
-  setCalcBySubscribersDebtModalWinState: Func;
-  setPersonalAccountStatementsModalWinState: Func;
-  setPersonalAccountPaymentsModalWinState: Func;
-  setPriceAdjustmentsModalWinState: Func;
-  setPriceAdjustmentsTotalsModalWinState: Func;
-  setPricesModalWinState: Func;
-  setPricesTotalsModalWinState: Func;
-  setPaymentsModalWinState: Func;
-  setPaymentsAdjustmentsModalWinState: Func;
-  setPaymentsTotalsModalWinState: Func;
-  setPaymentsTotalsByDatesModalWinState: Func;
+  showReportsByStreetsModalWin: boolean;
+  showReportsByHousesModalWin: boolean;
+  showReportsBySubscribersModalWin: boolean;
+  showStatementsBySubscriberAccountModalWin: boolean;
+  showPaymentsBySubscriberAccountModalWin: boolean;
+  showPriceAdjustmentsReportsModalWin: boolean;
+  showPriceAdjustmentsReportsTotalModalWin: boolean;
+  showPricesReportsModalWin: boolean;
+  showPricesReportsTotalModalWin: boolean;
+  showPaymentsReportsModalWin: boolean;
+  showPaymentsAdjustmentsReportsModalWin: boolean;
+  showPaymentsReportsTotalModalWin: boolean;
+  showPaymentsReportsTotalByDateModalWin: boolean;
+  setReportsByStreetsModalWinState: Func;
+  setReportsByHousesModalWinState: Func;
+  setReportsBySubscribersModalWinState: Func;
+  setStatementsBySubscriberAccountModalWinState: Func;
+  setPaymentsBySubscriberAccountModalWinState: Func;
+  setPriceAdjustmentsReportsModalWinState: Func;
+  setPriceAdjustmentsReportsTotalModalWinState: Func;
+  setPricesReportsModalWinState: Func;
+  setPricesReportsTotalModalWinState: Func;
+  setPaymentsReportsModalWinState: Func;
+  setPaymentsAdjustmentsReportsModalWinState: Func;
+  setPaymentsReportsTotalModalWinState: Func;
+  setPaymentsReportsTotalByDateModalWinState: Func;
 }
 
 export interface IUseCalcByStreetsForm {

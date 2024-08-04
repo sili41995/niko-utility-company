@@ -6,8 +6,7 @@ const useAccountingSections = (): IUseAccountingSections => {
     useState<boolean>(false);
   const [showTariffsModalWin, setShowTariffsModalWin] =
     useState<boolean>(false);
-  const [showCalculatePricesModalWin, setShowCalculatePricesModalWin] =
-    useState<boolean>(false);
+  const [showPricesModalWin, setShowPricesModalWin] = useState<boolean>(false);
   const [showPriceAdjustmentsModalWin, setShowPriceAdjustmentsModalWin] =
     useState<boolean>(false);
   const [showPaymentsAdjustmentModalWin, setShowPaymentsAdjustmentModalWin] =
@@ -31,8 +30,8 @@ const useAccountingSections = (): IUseAccountingSections => {
     setShowTariffsModalWin((prevState) => !prevState);
   };
 
-  const setCalculatePricesModalWinState = () => {
-    setShowCalculatePricesModalWin((prevState) => !prevState);
+  const setPricesModalWinState = () => {
+    setShowPricesModalWin((prevState) => !prevState);
   };
 
   const setAddPeriodModalWinState = () => {
@@ -77,7 +76,7 @@ const useAccountingSections = (): IUseAccountingSections => {
 
   return {
     setAddPeriodModalWinState,
-    setCalculatePricesModalWinState,
+    setPricesModalWinState,
     setPriceAdjustmentsModalWinState,
     setPaymentsAdjustmentModalWinState,
     setPaymentsModalWinState,
@@ -89,7 +88,7 @@ const useAccountingSections = (): IUseAccountingSections => {
     setPayOshchadbankModalWinState,
     setPayAbankModalWinState,
     showTariffsModalWin,
-    showCalculatePricesModalWin,
+    showPricesModalWin,
     showAddPeriodModalWin,
     showPriceAdjustmentsModalWin,
     showPaymentsAdjustmentModalWin,

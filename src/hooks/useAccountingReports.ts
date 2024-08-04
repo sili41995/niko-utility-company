@@ -2,109 +2,116 @@ import { IUseAccountingReports } from '@/types/hooks.types';
 import { useState } from 'react';
 
 const useAccountingReports = (): IUseAccountingReports => {
-  const [showCalcByStreetsModalWin, setShowCalcByStreetsModalWin] =
+  const [showReportsByStreetsModalWin, setShowReportsByStreetsModalWin] =
     useState<boolean>(false);
-  const [showCalcByHousesModalWin, setShowCalcByHousesModalWin] =
+  const [showReportsByHousesModalWin, setShowReportsByHousesModalWin] =
     useState<boolean>(false);
   const [
-    showCalcBySubscribersDebtModalWin,
-    setShowCalcBySubscribersDebtModalWin,
+    showReportsBySubscribersModalWin,
+    setShowReportsBySubscribersModalWin,
   ] = useState<boolean>(false);
   const [
-    showPersonalAccountStatementsModalWin,
-    setShowPersonalAccountStatementsModalWin,
+    showStatementsBySubscriberAccountModalWin,
+    setShowStatementsBySubscriberAccountModalWin,
   ] = useState<boolean>(false);
   const [
-    showPersonalAccountPaymentsModalWin,
-    setShowPersonalAccountPaymentsModalWin,
+    showPaymentsBySubscriberAccountModalWin,
+    setShowPaymentsBySubscriberAccountModalWin,
   ] = useState<boolean>(false);
-  const [showPriceAdjustmentsModalWin, setShowPriceAdjustmentsModalWin] =
+  const [
+    showPriceAdjustmentsReportsModalWin,
+    setShowPriceAdjustmentsReportsModalWin,
+  ] = useState<boolean>(false);
+  const [
+    showPriceAdjustmentsReportsTotalModalWin,
+    setShowPriceAdjustmentsReportsTotalModalWin,
+  ] = useState<boolean>(false);
+  const [showPricesReportsModalWin, setShowPricesReportsModalWin] =
+    useState<boolean>(false);
+  const [showPricesReportsTotalModalWin, setShowPricesReportsTotalModalWin] =
+    useState<boolean>(false);
+  const [showPaymentsReportsModalWin, setShowPaymentsReportsModalWin] =
     useState<boolean>(false);
   const [
-    showPriceAdjustmentsTotalsModalWin,
-    setShowPriceAdjustmentsTotalsModalWin,
+    showPaymentsAdjustmentsReportsModalWin,
+    setShowPaymentsAdjustmentsReportsModalWin,
   ] = useState<boolean>(false);
-  const [showPricesModalWin, setShowPricesModalWin] = useState<boolean>(false);
-  const [showPricesTotalsModalWin, setShowPricesTotalsModalWin] =
-    useState<boolean>(false);
-  const [showPaymentsModalWin, setShowPaymentsModalWin] =
-    useState<boolean>(false);
-  const [showPaymentsAdjustmentsModalWin, setShowPaymentsAdjustmentsModalWin] =
-    useState<boolean>(false);
-  const [showPaymentsTotalsModalWin, setShowPaymentsTotalsModalWin] =
-    useState<boolean>(false);
   const [
-    showPaymentsTotalsByDatesModalWin,
-    setShowPaymentsTotalsByDatesModalWin,
+    showPaymentsReportsTotalModalWin,
+    setShowPaymentsReportsTotalModalWin,
+  ] = useState<boolean>(false);
+  const [
+    showPaymentsReportsTotalByDateModalWin,
+    setShowPaymentsReportsTotalByDateModalWin,
   ] = useState<boolean>(false);
 
-  const setCalcByStreetsModalWinState = () => {
-    setShowCalcByStreetsModalWin((prevState) => !prevState);
+  const setReportsByStreetsModalWinState = () => {
+    setShowReportsByStreetsModalWin((prevState) => !prevState);
   };
-  const setCalcByHousesModalWinState = () => {
-    setShowCalcByHousesModalWin((prevState) => !prevState);
+  const setReportsByHousesModalWinState = () => {
+    setShowReportsByHousesModalWin((prevState) => !prevState);
   };
-  const setCalcBySubscribersDebtModalWinState = () => {
-    setShowCalcBySubscribersDebtModalWin((prevState) => !prevState);
+  const setReportsBySubscribersModalWinState = () => {
+    setShowReportsBySubscribersModalWin((prevState) => !prevState);
   };
-  const setPersonalAccountStatementsModalWinState = () => {
-    setShowPersonalAccountStatementsModalWin((prevState) => !prevState);
+  const setStatementsBySubscriberAccountModalWinState = () => {
+    setShowStatementsBySubscriberAccountModalWin((prevState) => !prevState);
   };
-  const setPersonalAccountPaymentsModalWinState = () => {
-    setShowPersonalAccountPaymentsModalWin((prevState) => !prevState);
+  const setPaymentsBySubscriberAccountModalWinState = () => {
+    setShowPaymentsBySubscriberAccountModalWin((prevState) => !prevState);
   };
-  const setPriceAdjustmentsModalWinState = () => {
-    setShowPriceAdjustmentsModalWin((prevState) => !prevState);
+  const setPriceAdjustmentsReportsModalWinState = () => {
+    setShowPriceAdjustmentsReportsModalWin((prevState) => !prevState);
   };
-  const setPriceAdjustmentsTotalsModalWinState = () => {
-    setShowPriceAdjustmentsTotalsModalWin((prevState) => !prevState);
+  const setPriceAdjustmentsReportsTotalModalWinState = () => {
+    setShowPriceAdjustmentsReportsTotalModalWin((prevState) => !prevState);
   };
-  const setPricesModalWinState = () => {
-    setShowPricesModalWin((prevState) => !prevState);
+  const setPricesReportsModalWinState = () => {
+    setShowPricesReportsModalWin((prevState) => !prevState);
   };
-  const setPricesTotalsModalWinState = () => {
-    setShowPricesTotalsModalWin((prevState) => !prevState);
+  const setPricesReportsTotalModalWinState = () => {
+    setShowPricesReportsTotalModalWin((prevState) => !prevState);
   };
-  const setPaymentsModalWinState = () => {
-    setShowPaymentsModalWin((prevState) => !prevState);
+  const setPaymentsReportsModalWinState = () => {
+    setShowPaymentsReportsModalWin((prevState) => !prevState);
   };
-  const setPaymentsAdjustmentsModalWinState = () => {
-    setShowPaymentsAdjustmentsModalWin((prevState) => !prevState);
+  const setPaymentsAdjustmentsReportsModalWinState = () => {
+    setShowPaymentsAdjustmentsReportsModalWin((prevState) => !prevState);
   };
-  const setPaymentsTotalsModalWinState = () => {
-    setShowPaymentsTotalsModalWin((prevState) => !prevState);
+  const setPaymentsReportsTotalModalWinState = () => {
+    setShowPaymentsReportsTotalModalWin((prevState) => !prevState);
   };
-  const setPaymentsTotalsByDatesModalWinState = () => {
-    setShowPaymentsTotalsByDatesModalWin((prevState) => !prevState);
+  const setPaymentsReportsTotalByDateModalWinState = () => {
+    setShowPaymentsReportsTotalByDateModalWin((prevState) => !prevState);
   };
 
   return {
-    showCalcByStreetsModalWin,
-    showCalcByHousesModalWin,
-    showCalcBySubscribersDebtModalWin,
-    showPersonalAccountStatementsModalWin,
-    showPersonalAccountPaymentsModalWin,
-    showPriceAdjustmentsModalWin,
-    showPriceAdjustmentsTotalsModalWin,
-    showPricesModalWin,
-    showPricesTotalsModalWin,
-    showPaymentsModalWin,
-    showPaymentsAdjustmentsModalWin,
-    showPaymentsTotalsModalWin,
-    showPaymentsTotalsByDatesModalWin,
-    setCalcByStreetsModalWinState,
-    setCalcByHousesModalWinState,
-    setCalcBySubscribersDebtModalWinState,
-    setPersonalAccountStatementsModalWinState,
-    setPersonalAccountPaymentsModalWinState,
-    setPriceAdjustmentsModalWinState,
-    setPriceAdjustmentsTotalsModalWinState,
-    setPricesModalWinState,
-    setPricesTotalsModalWinState,
-    setPaymentsModalWinState,
-    setPaymentsAdjustmentsModalWinState,
-    setPaymentsTotalsModalWinState,
-    setPaymentsTotalsByDatesModalWinState,
+    showReportsByStreetsModalWin,
+    showReportsByHousesModalWin,
+    showReportsBySubscribersModalWin,
+    showStatementsBySubscriberAccountModalWin,
+    showPaymentsBySubscriberAccountModalWin,
+    showPriceAdjustmentsReportsModalWin,
+    showPriceAdjustmentsReportsTotalModalWin,
+    showPricesReportsModalWin,
+    showPricesReportsTotalModalWin,
+    showPaymentsReportsModalWin,
+    showPaymentsAdjustmentsReportsModalWin,
+    showPaymentsReportsTotalModalWin,
+    showPaymentsReportsTotalByDateModalWin,
+    setReportsByStreetsModalWinState,
+    setReportsByHousesModalWinState,
+    setReportsBySubscribersModalWinState,
+    setStatementsBySubscriberAccountModalWinState,
+    setPaymentsBySubscriberAccountModalWinState,
+    setPriceAdjustmentsReportsModalWinState,
+    setPriceAdjustmentsReportsTotalModalWinState,
+    setPricesReportsModalWinState,
+    setPricesReportsTotalModalWinState,
+    setPaymentsReportsModalWinState,
+    setPaymentsAdjustmentsReportsModalWinState,
+    setPaymentsReportsTotalModalWinState,
+    setPaymentsReportsTotalByDateModalWinState,
   };
 };
 
