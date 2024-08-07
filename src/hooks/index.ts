@@ -39,3 +39,4 @@ export { default as useDownloadPaymentsPostageFile } from './useDownloadPayments
 export { default as useUploadPaymentsBankFile } from './useUploadPaymentsBankFile';
 export { default as useDownloadPaymentsPrivatbankFile } from './useDownloadPaymentsPrivatbankFile';
 export { default as useDownloadPaymentsOshchadbankFile } from './useDownloadPaymentsOshchadbankFile';
+export { default as usePeriodsRange } from './usePeriodsRange';

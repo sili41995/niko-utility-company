@@ -7,6 +7,7 @@ import accountingService from '@/services/accounting.service';
 import { saveFileToPdf, toasts } from '@/utils';
 import { Messages } from '@/constants';
 import { AxiosError } from 'axios';
+import usePeriodsRange from './usePeriodsRange';
 
 const useCalcByStreetsForm = (): IUseCalcByStreetsForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -15,6 +16,7 @@ const useCalcByStreetsForm = (): IUseCalcByStreetsForm => {
     handleSubmit,
     formState: { isSubmitting, errors },
   } = useForm<ITimePeriod>();
+  const { maxMonthDate, nimMonthDate } = usePeriodsRange();
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);
@@ -40,7 +42,14 @@ const useCalcByStreetsForm = (): IUseCalcByStreetsForm => {
     }
   };
 
-  return { handleSubmit, register, handleFormSubmit, isLoading };
+  return {
+    handleSubmit,
+    register,
+    handleFormSubmit,
+    isLoading,
+    maxMonthDate,
+    nimMonthDate,
+  };
 };
 
 export default useCalcByStreetsForm;

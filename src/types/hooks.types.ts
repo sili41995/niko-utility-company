@@ -433,6 +433,8 @@ export interface IUseCalcByStreetsForm {
   handleSubmit: UseFormHandleSubmit<ITimePeriod, undefined>;
   handleFormSubmit: SubmitHandler<ITimePeriod>;
   register: UseFormRegister<ITimePeriod>;
+  maxMonthDate: string;
+  nimMonthDate: string;
 }
 
 export interface IUseAttachFile {
@@ -454,4 +456,9 @@ export interface IUseUploadPaymentsFile {
 export interface IUseDownloadPaymentsFile {
   isDownload: boolean;
   onDownloadPaymentsBtnClick: OnBtnClickFunc;
+}
+
+export interface IUsePeriodsRange {
+  nimMonthDate: string;
+  maxMonthDate: string;
 }

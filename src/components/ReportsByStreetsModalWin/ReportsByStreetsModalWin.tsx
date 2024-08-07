@@ -9,8 +9,14 @@ import SubmitFormBtn from '@/components/SubmitFormBtn';
 import { useCalcByStreetsForm } from '@/hooks';
 
 const ReportsByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const { handleSubmit, register, handleFormSubmit, isLoading } =
-    useCalcByStreetsForm();
+  const {
+    handleSubmit,
+    register,
+    handleFormSubmit,
+    isLoading,
+    maxMonthDate,
+    nimMonthDate,
+  } = useCalcByStreetsForm();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -22,12 +28,16 @@ const ReportsByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {
               settings={{ ...register('from', { required: true }) }}
               label='З:'
               type={InputTypes.month}
+              min={nimMonthDate}
+              max={maxMonthDate}
               width={350}
             />
             <Input
               settings={{ ...register('to', { required: true }) }}
               label='По:'
               type={InputTypes.month}
+              min={nimMonthDate}
+              max={maxMonthDate}
               width={350}
             />
           </InputsWrap>

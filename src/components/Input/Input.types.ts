@@ -13,7 +13,8 @@ export interface IProps {
   value?: string;
   accent?: boolean;
   step?: number;
-  min?: number;
+  min?: number | string;
+  max?: number | string;
   horizontal?: boolean;
   width?: number;
   offBorderRadius?: boolean;

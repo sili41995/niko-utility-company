@@ -13,6 +13,7 @@ const Input: FC<IProps> = ({
   accent = false,
   step,
   min = 0,
+  max,
   horizontal = false,
   width,
   offBorderRadius = false,
@@ -32,6 +33,7 @@ const Input: FC<IProps> = ({
       value={value}
       step={step}
       min={min}
+      max={max}
       width={width}
       offBorderRadius={offBorderRadius}
       name={name}
