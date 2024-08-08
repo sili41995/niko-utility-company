@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   & > label :is(input, select) {
     flex-grow: 1;
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.whiteBG};
   }
 
   & > label:first-of-type :is(input, select) {

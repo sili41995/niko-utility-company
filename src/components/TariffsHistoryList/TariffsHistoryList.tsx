@@ -15,7 +15,7 @@ import {
 } from './TariffsHistoryList.styled';
 import { formatDate, getTariffUnits } from '@/utils';
 import { DateFormats, Messages } from '@/constants';
-import DefaultMessage from '../DefaultMessage';
+import DefaultMessage from '@/components/DefaultMessage';
 
 const TariffsHistoryList: FC<IProps> = ({ tariffs, onCloseBtnClick }) => {
   const showTariffsList = Boolean(tariffs.length);

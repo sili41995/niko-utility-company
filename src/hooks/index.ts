@@ -32,7 +32,7 @@ export { default as usePaymentsModalWin } from './usePaymentsModalWin';
 export { default as usePaymentsSection } from './usePaymentsSection';
 export { default as useAccountsMessageModalWin } from './useAccountsMessageModalWin';
 export { default as usePayAbankModalWin } from './usePayAbankModalWin';
-export { default as useCalcByStreetsForm } from './useCalcByStreetsForm';
+export { default as useReportsByStreetsForm } from './useReportsByStreetsForm';
 export { default as useAttachCsvFile } from './useAttachCsvFile';
 export { default as useUploadPaymentsPostageFile } from './useUploadPaymentsPostageFile';
 export { default as useDownloadPaymentsPostageFile } from './useDownloadPaymentsPostageFile';
@@ -40,3 +40,4 @@ export { default as useUploadPaymentsBankFile } from './useUploadPaymentsBankFil
 export { default as useDownloadPaymentsPrivatbankFile } from './useDownloadPaymentsPrivatbankFile';
 export { default as useDownloadPaymentsOshchadbankFile } from './useDownloadPaymentsOshchadbankFile';
 export { default as usePeriodsRange } from './usePeriodsRange';
+export { default as useReportsByHousesForm } from './useReportsByHousesForm';

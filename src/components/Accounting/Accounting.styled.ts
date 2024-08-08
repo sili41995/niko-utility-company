@@ -10,7 +10,7 @@ export const StatisticsWrap = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.whiteBG};
   padding: ${({ theme }) => theme.spacing(4)};
   border-radius: ${({ theme }) => theme.borderRadius.secondary}px;
 `;

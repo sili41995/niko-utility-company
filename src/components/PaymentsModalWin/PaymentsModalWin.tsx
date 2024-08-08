@@ -5,9 +5,9 @@ import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './PaymentsModalWin.styled';
 import AllPaymentsTable from '@/components/AllPaymentsTable';
 import { usePaymentsModalWin } from '@/hooks';
-import AddPaymentForm from '../AddPaymentForm';
-import SubscriberAccountInfo from '../SubscriberAccountInfo';
-import Input from '../Input';
+import AddPaymentForm from '@/components/AddPaymentForm';
+import SubscriberAccountInfo from '@/components/SubscriberAccountInfo';
+import Input from '@/components/Input';
 import { InputTypes } from '@/constants';
 
 const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {

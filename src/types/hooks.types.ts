@@ -428,7 +428,7 @@ export interface IUseAccountingReports {
   setPaymentsReportsTotalByDateModalWinState: Func;
 }
 
-export interface IUseCalcByStreetsForm {
+export interface IUseReportsByStreetsForm {
   isLoading: boolean;
   handleSubmit: UseFormHandleSubmit<ITimePeriod, undefined>;
   handleFormSubmit: SubmitHandler<ITimePeriod>;
@@ -461,4 +461,13 @@ export interface IUseDownloadPaymentsFile {
 export interface IUsePeriodsRange {
   nimMonthDate: string;
   maxMonthDate: string;
+}
+
+export interface IUseReportsByHousesForm {
+  isLoading: boolean;
+  handleSubmit: UseFormHandleSubmit<ITimePeriod, undefined>;
+  handleFormSubmit: SubmitHandler<ITimePeriod>;
+  register: UseFormRegister<ITimePeriod>;
+  maxMonthDate: string;
+  nimMonthDate: string;
 }

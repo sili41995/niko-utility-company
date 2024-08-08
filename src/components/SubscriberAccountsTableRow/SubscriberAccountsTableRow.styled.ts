@@ -6,7 +6,7 @@ import {
 
 export const TableBodyRow = styled.tr`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.whiteBG};
 `;
 
 export const TableData = styled.td<IStyledTableDataProps>`

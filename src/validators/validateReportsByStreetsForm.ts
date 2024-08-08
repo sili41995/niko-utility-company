@@ -3,9 +3,11 @@ import { FieldErrors } from 'react-hook-form';
 import showDateFromError from './showDateFromError';
 import showDateToError from './showDateToError';
 
-const validateCalcByStreetsForm = (errors: FieldErrors<ITimePeriod>): void => {
+const validateReportsByStreetsForm = (
+  errors: FieldErrors<ITimePeriod>
+): void => {
   showDateFromError(errors);
   showDateToError(errors);
 };
 
-export default validateCalcByStreetsForm;
+export default validateReportsByStreetsForm;

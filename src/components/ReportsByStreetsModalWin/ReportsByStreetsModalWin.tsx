@@ -6,7 +6,7 @@ import { Container, Form, InputsWrap } from './ReportsByStreetsModalWin.styled';
 import Input from '@/components/Input';
 import { InputTypes } from '@/constants';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
-import { useCalcByStreetsForm } from '@/hooks';
+import { useReportsByStreetsForm } from '@/hooks';
 
 const ReportsByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {
   const {
@@ -16,7 +16,7 @@ const ReportsByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {
     isLoading,
     maxMonthDate,
     nimMonthDate,
-  } = useCalcByStreetsForm();
+  } = useReportsByStreetsForm();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -41,7 +41,7 @@ const ReportsByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {
               width={350}
             />
           </InputsWrap>
-          <SubmitFormBtn title='Зберегти' isLoading={isLoading} />
+          <SubmitFormBtn title='Сформувати' isLoading={isLoading} />
         </Form>
       </Container>
     </ModalWin>

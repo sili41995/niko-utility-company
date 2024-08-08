@@ -5,11 +5,11 @@ import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './PaymentsFilesModalWin.styled';
 import PeriodTitle from '@/components/PeriodTitle';
 import ActionBtn from '@/components/ActionBtn';
-import PaymentsFilesModalWinControls from '../PaymentsFilesModalWinControls';
+import PaymentsFilesModalWinControls from '@/components/PaymentsFilesModalWinControls';
 import { PaymentsFilesCategories } from '@/constants';
 import { InputChangeEvent } from '@/types/types';
 
-import UploadPaymentsFile from '../UploadPaymentsFile';
+import UploadPaymentsFile from '@/components/UploadPaymentsFile';
 
 const PaymentsFilesModalWin: FC<IProps> = ({
   setModalWinState,

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { IStyledTableDataProps } from './PriceAdjustmentsTableRow.types';
 
 export const TableBodyRow = styled.tr`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.whiteBG};
 `;
 
 export const TableData = styled.td<IStyledTableDataProps>`

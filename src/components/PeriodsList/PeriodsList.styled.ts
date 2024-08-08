@@ -6,7 +6,7 @@ export const Container = styled.div`
   top: 100%;
   right: 0;
   padding: ${({ theme }) => theme.spacing(5)};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.whiteBG};
   box-shadow: ${({ theme }) => theme.shadows.primary};
   border-radius: ${({ theme }) => theme.borderRadius.other}px;
 `;

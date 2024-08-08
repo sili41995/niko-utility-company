@@ -9,9 +9,9 @@ import SubscriberAccountInfoModalWinControls from '@/components/SubscriberAccoun
 import EditSubscriberAccountForm from '@/components/EditSubscriberAccountForm';
 import PaymentsCategory from '@/components/PaymentsCategory';
 import PriceAdjustmentsCategory from '@/components/PriceAdjustmentsCategory';
-import PricesCategory from '../PricesCategory';
-import SubscriberAccountInfo from '../SubscriberAccountInfo';
-import BalancesCategory from '../BalancesCategory';
+import PricesCategory from '@/components/PricesCategory';
+import SubscriberAccountInfo from '@/components/SubscriberAccountInfo';
+import BalancesCategory from '@/components/BalancesCategory';
 
 const SubscriberAccountInfoModalWin: FC<IProps> = ({
   setModalWinState,

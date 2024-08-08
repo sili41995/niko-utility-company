@@ -19,6 +19,7 @@ interface ITheme {
     primary: string;
     accent: string;
     white: string;
+    whiteBG: string;
     tableHeader: string;
     red: string;
     green: string;
@@ -66,6 +67,7 @@ const theme: ITheme = {
     black: '#000000',
     red: '#d3232f',
     white: '#FFFFFF',
+    whiteBG: '#FFFCF9',
     body: '#e5e5e5',
     primary: '#3456FF',
     accent: '#4d5ae5',

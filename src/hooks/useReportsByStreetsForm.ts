@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ITimePeriod } from '@/types/data.types';
-import validateCalcByStreetsForm from '@/validators/validateCalcByStreetsForm';
-import { IUseCalcByStreetsForm } from '@/types/hooks.types';
+import { validateReportsByStreetsForm } from '@/validators';
+import { IUseReportsByStreetsForm } from '@/types/hooks.types';
 import accountingService from '@/services/accounting.service';
 import { saveFileToPdf, toasts } from '@/utils';
 import { Messages } from '@/constants';
 import { AxiosError } from 'axios';
 import usePeriodsRange from './usePeriodsRange';
 
-const useCalcByStreetsForm = (): IUseCalcByStreetsForm => {
+const useReportsByStreetsForm = (): IUseReportsByStreetsForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const {
     register,
@@ -22,7 +22,7 @@ const useCalcByStreetsForm = (): IUseCalcByStreetsForm => {
     const invalidFields = Object.keys(errors);
 
     if (invalidFields.length) {
-      validateCalcByStreetsForm(errors);
+      validateReportsByStreetsForm(errors);
     }
   }, [isSubmitting, errors]);
 
@@ -52,4 +52,4 @@ const useCalcByStreetsForm = (): IUseCalcByStreetsForm => {
   };
 };
 
-export default useCalcByStreetsForm;
+export default useReportsByStreetsForm;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import ActionBtn from '../ActionBtn';
-import AttachFileInput from '../AttachFileInput';
+import ActionBtn from '@/components/ActionBtn';
+import AttachFileInput from '@/components/AttachFileInput';
 import { IProps } from './UploadPaymentsFile.types';
 
 const UploadPaymentsFile: FC<IProps> = ({

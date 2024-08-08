@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './PaymentsFilesOshchadbankModalWin.types';
-import PaymentsFilesModalWin from '../PaymentsFilesModalWin';
+import PaymentsFilesModalWin from '@/components/PaymentsFilesModalWin';
 import {
   useUploadPaymentsBankFile,
   useDownloadPaymentsOshchadbankFile,
