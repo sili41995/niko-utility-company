@@ -5,3 +5,4 @@ export { default as validateEditSubscriberAccountForm } from './validateEditSubs
 export { default as validatePriceAdjustmentForm } from './validatePriceAdjustmentForm';
 export { default as validatePaymentForm } from './validatePaymentForm';
 export { default as validateReportsByStreetsForm } from './validateReportsByStreetsForm';
+export { default as validateReportsByHousesForm } from './validateReportsByHousesForm';

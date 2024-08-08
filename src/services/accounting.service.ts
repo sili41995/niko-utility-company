@@ -141,6 +141,15 @@ class AccountingService extends HttpService {
 
     return response.data;
   }
+
+  async fetchReportsByHouses({ from, to }: ITimePeriod): Promise<BlobPart> {
+    const response = await this.get<BlobPart>({
+      url: `accounting/reports/houses?from=${from}&to=${to}`,
+      responseType: 'blob',
+    });
+
+    return response.data;
+  }
 }
 
 const accountingService = new AccountingService();

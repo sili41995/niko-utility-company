@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ITimePeriod } from '@/types/data.types';
-import { validateReportsByStreetsForm } from '@/validators';
+import { validateReportsByHousesForm } from '@/validators';
 import { IUseReportsByHousesForm } from '@/types/hooks.types';
 import accountingService from '@/services/accounting.service';
 import { saveFileToPdf, toasts } from '@/utils';
