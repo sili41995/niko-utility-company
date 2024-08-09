@@ -9,7 +9,7 @@ export interface IUpdateGeneralSettingsData {
 export interface ISettings {
   id: number | null;
   currentAccount: string | null;
-  mfi: string | null;
+  mfi: number | null;
   helpPhone: string | null;
   adsInPayments: string | null;
 }

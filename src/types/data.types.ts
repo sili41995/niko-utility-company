@@ -41,18 +41,25 @@ export interface IGetUpdatedUsersProps {
 }
 
 export interface IGeneralSettings {
-  [key: string]: string | number;
   id: number;
   currentAccount: string;
-  mfi: string;
+  mfi: number;
   helpPhone: string;
+  adsInPayments: string | null;
+}
+
+export interface IGeneralSettingsFormData
+  extends Omit<IGeneralSettings, 'id' | 'mfi'> {
+  mfi: string;
   adsInPayments: string;
 }
 
-export type IGetGeneralSettingsFormDefaultValues = Pick<
-  IGeneralSettings,
-  'adsInPayments' | 'currentAccount' | 'helpPhone' | 'mfi'
->;
+export interface IGeneralSettingsData extends Omit<IGeneralSettings, 'id'> {}
+
+export interface IGetGeneralSettingsFormDefaultValues
+  extends Omit<IGeneralSettingsData, 'mfi'> {
+  mfi: string;
+}
 
 export type CurrentAccount = Pick<IGeneralSettings, 'currentAccount'>;
 

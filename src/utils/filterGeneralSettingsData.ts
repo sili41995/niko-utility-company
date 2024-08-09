@@ -1,17 +1,14 @@
-import { IGeneralSettings } from '@/types/data.types';
+import {
+  IGeneralSettingsData,
+  IGeneralSettingsFormData,
+} from '@/types/data.types';
 
 const filterGeneralSettingsData = (
-  data: IGeneralSettings
-): IGeneralSettings => {
-  const filteredData = { ...data };
-  const keys = Object.keys(data);
-  keys.forEach((key) => {
-    if (data[key]) {
-      filteredData[key] = data[key];
-    }
-  });
-
-  return filteredData;
-};
+  data: IGeneralSettingsFormData
+): IGeneralSettingsData => ({
+  ...data,
+  mfi: Number(data.mfi),
+  adsInPayments: data.adsInPayments ? data.adsInPayments : null,
+});
 
 export default filterGeneralSettingsData;

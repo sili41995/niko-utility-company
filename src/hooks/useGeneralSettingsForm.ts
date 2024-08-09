@@ -5,7 +5,7 @@ import {
   selectUpdateGeneralSettings,
 } from '@/store/generalSettings/selectors';
 import { useGeneralSettingsStore } from '@/store/store';
-import { IGeneralSettings } from '@/types/data.types';
+import { IGeneralSettingsFormData } from '@/types/data.types';
 import { IUseGeneralSettingsForm } from '@/types/hooks.types';
 import {
   filterGeneralSettingsData,
@@ -29,7 +29,7 @@ const useGeneralSettingsForm = (id: number): IUseGeneralSettingsForm => {
     register,
     formState: { errors, isSubmitting },
     handleSubmit,
-  } = useForm<IGeneralSettings>();
+  } = useForm<IGeneralSettingsFormData>();
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);
@@ -38,7 +38,9 @@ const useGeneralSettingsForm = (id: number): IUseGeneralSettingsForm => {
     }
   }, [isSubmitting, errors]);
 
-  const handleFormSubmit: SubmitHandler<IGeneralSettings> = async (data) => {
+  const handleFormSubmit: SubmitHandler<IGeneralSettingsFormData> = async (
+    data
+  ) => {
     try {
       const filteredData = filterGeneralSettingsData(data);
       await updateGeneralSettings({ id, data: filteredData });
@@ -55,8 +57,8 @@ const useGeneralSettingsForm = (id: number): IUseGeneralSettingsForm => {
     register,
     handleFormSubmit,
     isLoading,
-    adsInPayments,
-    mfi,
+    adsInPayments: adsInPayments ? adsInPayments : '',
+    mfi: String(mfi),
     currentAccount,
     helpPhone,
   };

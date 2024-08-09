@@ -6,7 +6,7 @@ const getGeneralSettingsFormDefaultValues = (
 ): IGetGeneralSettingsFormDefaultValues => {
   const { adsInPayments, currentAccount, helpPhone, mfi } = generalSettings;
   const currentAccountDefaultValue = currentAccount ?? '';
-  const mfiDefaultValue = mfi ?? '';
+  const mfiDefaultValue = mfi ? String(mfi) : '';
   const helpPhoneDefaultValue = helpPhone ?? '';
   const adsInPaymentsDefaultValue = adsInPayments ?? '';
 

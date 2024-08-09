@@ -15,7 +15,6 @@ import {
 } from 'react-hook-form';
 import {
   Credentials,
-  IGeneralSettings,
   NewUser,
   SelectData,
   INewTariffFormData,
@@ -24,6 +23,7 @@ import {
   INewPaymentFormData,
   ITimePeriod,
   Payments,
+  IGeneralSettingsFormData,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -89,9 +89,9 @@ export interface IUseAddUserForm {
 }
 
 export interface IUseGeneralSettingsForm {
-  handleSubmit: UseFormHandleSubmit<IGeneralSettings, undefined>;
-  register: UseFormRegister<IGeneralSettings>;
-  handleFormSubmit: SubmitHandler<IGeneralSettings>;
+  handleSubmit: UseFormHandleSubmit<IGeneralSettingsFormData, undefined>;
+  register: UseFormRegister<IGeneralSettingsFormData>;
+  handleFormSubmit: SubmitHandler<IGeneralSettingsFormData>;
   isLoading: boolean;
   adsInPayments: string;
   mfi: string;
