@@ -1,4 +1,3 @@
-import { Messages } from '@/constants';
 import generalSettingsService from '@/services/generalSettings.service';
 import operationWrapper from '@/store/generalSettings/operationWrapper';
 import { IGeneralSettings } from '@/types/data.types';
@@ -6,7 +5,6 @@ import {
   IFetchGeneralSettingsOperationProps,
   IUpdateGeneralSettingsOperationProps,
 } from '@/types/generalSettingsStore.types';
-import { toasts } from '@/utils';
 
 const fetchGeneralSettingsOperation = async ({
   set,
@@ -31,7 +29,6 @@ const updateGeneralSettingsOperation = async ({
   set({
     settings: response,
   });
-  toasts.successToast(Messages.generalSettingsUpdateSuccess);
   return response;
 };
 
