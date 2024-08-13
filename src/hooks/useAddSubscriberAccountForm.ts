@@ -4,12 +4,7 @@ import {
   Messages,
   apartmentTypes,
 } from '@/constants';
-import { selectFetchHouses, selectHouses } from '@/store/houses/selectors';
-import {
-  useHousesStore,
-  useStreetsStore,
-  useSubscriberAccountsStore,
-} from '@/store/store';
+import { useSubscriberAccountsStore } from '@/store/store';
 import {
   selectAddSubscriberAccount,
   selectFetchSubscriberAccounts,
@@ -22,14 +17,13 @@ import {
   getFilteredAddSubscriberAccountData,
   formatDate,
   getAccountTypesData,
-  getSubscriberAccountSelectData,
   toasts,
 } from '@/utils';
 import { validateAddSubscriberAccountForm } from '@/validators';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { selectStreets } from '@/store/streets/selectors';
 import useFilterSearchParams from './useFilterSearchParams';
+import useHousesLocation from './useHousesLocation';
 
 const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const [isRemovalHouseholdWaste, setIsRemovalHouseholdWaste] =
@@ -49,7 +43,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
   const fetchSubscriberAccounts = useSubscriberAccountsStore(
     selectFetchSubscriberAccounts
   );
-  const fetchHouses = useHousesStore(selectFetchHouses);
+
   const addSubscriberAccount = useSubscriberAccountsStore(
     selectAddSubscriberAccount
   );
@@ -58,22 +52,9 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     dateFormat: DateFormats.monthStart,
   });
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
-  const streets = useStreetsStore(selectStreets);
-  const houses = useHousesStore(selectHouses);
-  const { housesData, streetsData } = getSubscriberAccountSelectData({
-    houses,
-    streets,
-  });
-  const streetDefaultValue = streets[0]?.id;
+  const { housesData, streetsData, streetDefaultValue } =
+    useHousesLocation(streetId);
   const accountTypes = getAccountTypesData();
-
-  useEffect(() => {
-    if (!streetId) {
-      return;
-    }
-
-    fetchHouses(Number(streetId));
-  }, [fetchHouses, streetId]);
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);

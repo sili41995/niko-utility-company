@@ -1,7 +1,6 @@
 import { Messages, PagePaths, PaymentSources, SectorTypes } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 import {
-  Houses,
   IPriceAdjustmentFormData,
   INewPaymentFormData,
   INewTariffFormData,
@@ -9,7 +8,6 @@ import {
   ITariff,
   Periods,
   SelectData,
-  Streets,
   Tariffs,
 } from './data.types';
 import {
@@ -114,16 +112,6 @@ export interface IGetDefaultAccountTypesValueProps {
 export interface IFormatDateProps {
   date: Date | string;
   dateFormat: string;
-}
-
-export interface IGetSubscriberAccountDataProps {
-  streets: Streets;
-  houses: Houses;
-}
-
-export interface IGetSubscriberAccountData {
-  streetsData: SelectData;
-  housesData: SelectData;
 }
 
 export interface IGetUpdatedSubscriberAccountsProps {

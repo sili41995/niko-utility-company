@@ -3,3 +3,4 @@ id,amount,source,date,subscriberAccountId,periodId
 2,200,privatbank,2024-07-30,1,15
 3,300,oshchadbank,2024-07-29,1,15
 4,3,postage,2024-07-30,1,15
+5,999,privatbank,2024-07-29,2,4

@@ -471,3 +471,9 @@ export interface IUseReportsByHousesForm {
   maxMonthDate: string;
   nimMonthDate: string;
 }
+
+export interface IUseHousesLocation {
+  housesData: SelectData;
+  streetsData: SelectData;
+  streetDefaultValue: number;
+}

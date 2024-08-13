@@ -19,7 +19,8 @@ export { default as getPaymentSourcesSelectData } from './getPaymentSourcesSelec
 export { default as getNewPaymentData } from './getNewPaymentData';
 export { default as getSubscriberAccountSector } from './getSubscriberAccountSector';
 export { default as getFilteredAddSubscriberAccountData } from './getFilteredAddSubscriberAccountData';
-export { default as getSubscriberAccountSelectData } from './getSubscriberAccountSelectData';
+export { default as getStreetsSelectData } from './getStreetsSelectData';
+export { default as getHousesSelectData } from './getHousesSelectData';
 export { default as getTariffUnits } from './getTariffUnits';
 export { default as getUpdatedTariffData } from './getUpdatedTariffData';
 export { default as saveFileToPdf } from './saveFileToPdf';
