@@ -13,7 +13,7 @@ const AddSubscriberAccountSection: FC = () => {
     <Container>
       <FormDataTitle title='Створення нового Абонентського рахунку:' />
       <ContentWrap>
-        {isLoadingData ? <Loader /> : <>{<AddSubscriberAccountForm />}</>}
+        {isLoadingData ? <Loader /> : <AddSubscriberAccountForm />}
       </ContentWrap>
       {housesError && <ErrorMessage error={housesError} />}
       {streetsError && <ErrorMessage error={streetsError} />}

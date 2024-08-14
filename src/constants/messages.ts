@@ -62,6 +62,8 @@ const enum Messages {
   csvFileExtensionErr = 'Виберіть файл з розширенням .csv',
   invalidDataErr = 'Невалідні дані',
   emptyBalancesList = 'Стан рахунку відсутній',
+  minDebtReqErr = 'Поле Мінімальний борг має бути заповнене',
+  periodIdReqErr = 'Поле Період має бути заповнене',
   //user
   addUser = 'Додати користувача',
   userAddSuccess = 'Користувач успішно доданий',

@@ -13,6 +13,7 @@ const Select: FC<IProps> = ({
   offBorderRadius = false,
   name,
   onChange,
+  capitalize = false,
 }) => {
   const styledSelect = (
     <StyledSelect
@@ -22,6 +23,7 @@ const Select: FC<IProps> = ({
       offBorderRadius={offBorderRadius}
       name={name}
       onChange={onChange}
+      capitalize={capitalize}
       {...settings}
     >
       {data.map(({ value, title }) => (

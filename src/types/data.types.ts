@@ -224,3 +224,19 @@ export interface IBalance {
 }
 
 export type Balances = IBalance[];
+
+export interface IReportsBySubscribersData {
+  minDebt: number;
+  houseId: string;
+  streetId: string;
+  periodId: string;
+}
+
+export interface IReportsBySubscribersFormData
+  extends Omit<IReportsBySubscribersData, 'minDebt'> {
+  minDebt: string;
+}
+
+export type MinDebt = Pick<IReportsBySubscribersFormData, 'minDebt'>;
+
+export type PeriodId = Pick<IReportsBySubscribersFormData, 'periodId'>;

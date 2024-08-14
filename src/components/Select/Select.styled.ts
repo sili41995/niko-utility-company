@@ -31,6 +31,7 @@ export const StyledSelect = styled.select<IStyledProps>`
   font-weight: ${({ theme }) => theme.fontWeight.other};
   font-size: ${({ formType }) => setInputFontSize(formType)}px;
   letter-spacing: 0.04em;
+  text-transform: ${({ capitalize }) => (capitalize ? 'capitalize' : 'none')};
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
 
   &:is(:hover, :focus) {

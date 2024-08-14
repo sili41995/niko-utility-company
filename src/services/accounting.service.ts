@@ -9,6 +9,7 @@ import {
   NewPaymentData,
   Periods,
   NewPayments,
+  IReportsBySubscribersData,
 } from '@/types/data.types';
 import {
   IFetchPaymentsFilters,
@@ -145,6 +146,20 @@ class AccountingService extends HttpService {
   async fetchReportsByHouses({ from, to }: ITimePeriod): Promise<BlobPart> {
     const response = await this.get<BlobPart>({
       url: `accounting/reports/houses?from=${from}&to=${to}`,
+      responseType: 'blob',
+    });
+
+    return response.data;
+  }
+
+  async fetchReportsBySubscribers({
+    houseId,
+    minDebt,
+    periodId,
+    streetId,
+  }: IReportsBySubscribersData): Promise<BlobPart> {
+    const response = await this.get<BlobPart>({
+      url: `accounting/reports/subscribers?debt=${minDebt}&houseId=${houseId}&streetId=${streetId}&periodId=${periodId}`,
       responseType: 'blob',
     });
 

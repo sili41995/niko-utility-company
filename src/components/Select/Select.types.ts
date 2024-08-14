@@ -13,12 +13,14 @@ export interface IProps {
   offBorderRadius?: boolean;
   name?: SearchParamsKeys;
   onChange?: SelectChangeFunc;
+  capitalize?: boolean;
 }
 
 export interface IStyledProps {
   formType?: FormTypes;
   width: number;
   offBorderRadius: boolean;
+  capitalize: boolean;
 }
 
 export interface IStyledSelectWrapProps {

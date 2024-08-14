@@ -29,7 +29,7 @@ const useStreetsData = (): IUseStreetsData => {
     fetchStreets();
   }, [fetchStreets]);
 
-  return { isLoadingData, housesError, streetsError };
+  return { isLoadingData, housesError, streetsError, isLoadingStreets };
 };
 
 export default useStreetsData;

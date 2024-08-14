@@ -24,6 +24,7 @@ import {
   ITimePeriod,
   Payments,
   IGeneralSettingsFormData,
+  IReportsBySubscribersFormData,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -119,6 +120,7 @@ export interface IUseStreetsData {
   isLoadingData: boolean;
   housesError: string | null;
   streetsError: string | null;
+  isLoadingStreets: boolean;
 }
 
 export interface IUseGeneralSettings {
@@ -476,4 +478,14 @@ export interface IUseHousesLocation {
   housesData: SelectData;
   streetsData: SelectData;
   streetDefaultValue: number;
+}
+
+export interface IUseReportsBySubscribersForm {
+  isLoading: boolean;
+  register: UseFormRegister<IReportsBySubscribersFormData>;
+  handleSubmit: UseFormHandleSubmit<IReportsBySubscribersFormData, undefined>;
+  handleFormSubmit: SubmitHandler<IReportsBySubscribersFormData>;
+  houses: SelectData;
+  streets: SelectData;
+  periods: SelectData;
 }

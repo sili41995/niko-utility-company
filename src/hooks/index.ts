@@ -41,3 +41,4 @@ export { default as useDownloadPaymentsPrivatbankFile } from './useDownloadPayme
 export { default as useDownloadPaymentsOshchadbankFile } from './useDownloadPaymentsOshchadbankFile';
 export { default as usePeriodsRange } from './usePeriodsRange';
 export { default as useReportsByHousesForm } from './useReportsByHousesForm';
+export { default as useReportsBySubscribersForm } from './useReportsBySubscribersForm';
