@@ -16,6 +16,9 @@ const useHousesLocation = (streetId: string): IUseHousesLocation => {
   const housesData = getHousesSelectData(houses);
   const streetsData = getStreetsSelectData(streets);
 
+  const allHouses = { title: 'Всі будинки', value: '' };
+  const allHousesData = streetId ? [allHouses, ...housesData] : [allHouses];
+
   useEffect(() => {
     if (!streetId) {
       return;
@@ -24,7 +27,7 @@ const useHousesLocation = (streetId: string): IUseHousesLocation => {
     fetchHouses(Number(streetId));
   }, [fetchHouses, streetId]);
 
-  return { housesData, streetsData, streetDefaultValue };
+  return { housesData, allHousesData, streetsData, streetDefaultValue };
 };
 
 export default useHousesLocation;

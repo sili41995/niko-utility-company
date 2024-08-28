@@ -225,10 +225,13 @@ export interface IBalance {
 
 export type Balances = IBalance[];
 
-export interface IReportsBySubscribersData {
-  minDebt: number;
-  houseId: string;
+export interface IHousesLocationData {
   streetId: string;
+  houseId: string;
+}
+
+export interface IReportsBySubscribersData extends IHousesLocationData {
+  minDebt: number;
   periodId: string;
 }
 

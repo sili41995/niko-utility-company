@@ -25,6 +25,7 @@ import {
   Payments,
   IGeneralSettingsFormData,
   IReportsBySubscribersFormData,
+  IHousesLocationData,
 } from './data.types';
 import { RefObject } from 'react';
 import { AccountTypes } from '@/constants';
@@ -476,6 +477,7 @@ export interface IUseReportsByHousesForm {
 
 export interface IUseHousesLocation {
   housesData: SelectData;
+  allHousesData: SelectData;
   streetsData: SelectData;
   streetDefaultValue: number;
 }
@@ -488,4 +490,18 @@ export interface IUseReportsBySubscribersForm {
   houses: SelectData;
   streets: SelectData;
   periods: SelectData;
+}
+
+export interface IUseHousesLocationSelectData {
+  housesSelectData: SelectData;
+  streetsSelectData: SelectData;
+}
+
+export interface IUseAccountsMessageForm {
+  isLoading: boolean;
+  register: UseFormRegister<IHousesLocationData>;
+  handleSubmit: UseFormHandleSubmit<IHousesLocationData, undefined>;
+  handleFormSubmit: SubmitHandler<IHousesLocationData>;
+  houses: SelectData;
+  streets: SelectData;
 }

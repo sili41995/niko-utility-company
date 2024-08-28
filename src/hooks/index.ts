@@ -30,7 +30,7 @@ export { default as usePriceAdjustmentForm } from './usePriceAdjustmentForm';
 export { default as useAddPaymentForm } from './useAddPaymentForm';
 export { default as usePaymentsModalWin } from './usePaymentsModalWin';
 export { default as usePaymentsSection } from './usePaymentsSection';
-export { default as useAccountsMessageModalWin } from './useAccountsMessageModalWin';
+export { default as useAccountsMessageForm } from './useAccountsMessageForm';
 export { default as usePayAbankModalWin } from './usePayAbankModalWin';
 export { default as useReportsByStreetsForm } from './useReportsByStreetsForm';
 export { default as useAttachCsvFile } from './useAttachCsvFile';
@@ -42,3 +42,4 @@ export { default as useDownloadPaymentsOshchadbankFile } from './useDownloadPaym
 export { default as usePeriodsRange } from './usePeriodsRange';
 export { default as useReportsByHousesForm } from './useReportsByHousesForm';
 export { default as useReportsBySubscribersForm } from './useReportsBySubscribersForm';
+export { default as useHousesLocationSelectData } from './useHousesLocationSelectData';

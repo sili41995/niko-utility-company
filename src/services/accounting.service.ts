@@ -10,6 +10,7 @@ import {
   Periods,
   NewPayments,
   IReportsBySubscribersData,
+  IHousesLocationData,
 } from '@/types/data.types';
 import {
   IFetchPaymentsFilters,
@@ -93,9 +94,12 @@ class AccountingService extends HttpService {
     return response.data;
   }
 
-  async fetchInvoices(): Promise<BlobPart> {
+  async fetchInvoices({
+    houseId,
+    streetId,
+  }: IHousesLocationData): Promise<BlobPart> {
     const response = await this.get<BlobPart>({
-      url: 'accounting/invoices',
+      url: `accounting/invoices?${streetId}&${houseId}`,
       responseType: 'blob',
     });
 

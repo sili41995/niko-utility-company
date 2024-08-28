@@ -1,8 +1,4 @@
-import {
-  IReportsBySubscribersFormData,
-  ISelectData,
-  SelectData,
-} from '@/types/data.types';
+import { IReportsBySubscribersFormData } from '@/types/data.types';
 import { IUseReportsBySubscribersForm } from '@/types/hooks.types';
 import {
   getPeriodsSelectData,
@@ -14,11 +10,11 @@ import validateReportsBySubscribersForm from '@/validators/validateReportsBySubs
 import { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import useHousesLocation from './useHousesLocation';
 import { usePeriodsStore } from '@/store/store';
 import { selectPeriods } from '@/store/periods/selectors';
 import accountingService from '@/services/accounting.service';
 import { Messages } from '@/constants';
+import useHousesLocationSelectData from './useHousesLocationSelectData';
 
 const useReportsBySubscribersForm = (): IUseReportsBySubscribersForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -28,18 +24,12 @@ const useReportsBySubscribersForm = (): IUseReportsBySubscribersForm => {
     watch,
     formState: { isSubmitting, errors },
   } = useForm<IReportsBySubscribersFormData>();
-  const streetId = watch('streetId');
-  const { housesData, streetsData } = useHousesLocation(streetId);
-  const periods = usePeriodsStore(selectPeriods);
 
-  const allHouses: ISelectData = { title: 'Всі будинки', value: '' };
-  const housesSelectData: SelectData = streetId
-    ? [allHouses, ...housesData]
-    : [allHouses];
-  const streetsSelectData: SelectData = [
-    { title: 'Всі вулиці', value: '' },
-    ...streetsData,
-  ];
+  const streetId = watch('streetId');
+  const { housesSelectData, streetsSelectData } =
+    useHousesLocationSelectData(streetId);
+
+  const periods = usePeriodsStore(selectPeriods);
   const periodsSelectData = getPeriodsSelectData(periods);
 
   useEffect(() => {

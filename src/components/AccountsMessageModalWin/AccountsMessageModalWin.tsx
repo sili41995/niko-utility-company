@@ -4,11 +4,13 @@ import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './AccountsMessageModalWin.styled';
 import PeriodTitle from '@/components/PeriodTitle';
-import ActionBtn from '@/components/ActionBtn';
-import { useAccountsMessageModalWin } from '@/hooks';
+import AccountsMessageForm from '@/components/AccountsMessageForm';
+import { useStreetsData } from '@/hooks';
+import Loader from '../Loader';
+import ErrorMessage from '../ErrorMessage';
 
 const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const { isLoading, onActionBtnClick } = useAccountsMessageModalWin();
+  const { isLoadingStreets, housesError, streetsError } = useStreetsData();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -16,12 +18,10 @@ const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
         <FormDataTitle title='Рахунки-повідомлення:' />
         <ContentContainer>
           <PeriodTitle />
-          <ActionBtn
-            title='Сформувати'
-            isLoading={isLoading}
-            onBtnClick={onActionBtnClick}
-          />
+          {isLoadingStreets ? <Loader /> : <AccountsMessageForm />}
         </ContentContainer>
+        {housesError && <ErrorMessage error={housesError} />}
+        {streetsError && <ErrorMessage error={streetsError} />}
       </Container>
     </ModalWin>
   );
