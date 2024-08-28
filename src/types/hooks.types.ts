@@ -113,7 +113,6 @@ export interface IUseAddSubscriberAccountForm {
   onCheckboxChange: InputChangeFunc;
   houses: SelectData;
   streets: SelectData;
-  streetDefaultValue: number;
   accountTypes: SelectData;
 }
 
@@ -479,7 +478,6 @@ export interface IUseHousesLocation {
   housesData: SelectData;
   allHousesData: SelectData;
   streetsData: SelectData;
-  streetDefaultValue: number;
 }
 
 export interface IUseReportsBySubscribersForm {

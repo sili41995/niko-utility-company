@@ -37,7 +37,6 @@ const AddSubscriberAccountForm: FC = () => {
     isEligibleForBenefit,
     onCheckboxChange,
     houses,
-    streetDefaultValue,
     streets,
     accountTypes,
   } = useAddSubscriberAccountForm();
@@ -49,7 +48,6 @@ const AddSubscriberAccountForm: FC = () => {
         <Select
           label='Вулиця:'
           settings={{ ...register('streetId', { required: true }) }}
-          defaultValue={streetDefaultValue}
           data={streets}
           width={550}
           horizontal

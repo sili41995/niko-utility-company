@@ -33,6 +33,7 @@ export const StyledSelect = styled.select<IStyledProps>`
   letter-spacing: 0.04em;
   text-transform: ${({ capitalize }) => (capitalize ? 'capitalize' : 'none')};
   transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
+  cursor: pointer;
 
   &:is(:hover, :focus) {
     outline: none;

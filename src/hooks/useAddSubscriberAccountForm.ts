@@ -52,8 +52,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     dateFormat: DateFormats.monthStart,
   });
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
-  const { housesData, streetsData, streetDefaultValue } =
-    useHousesLocation(streetId);
+  const { housesData, streetsData } = useHousesLocation(streetId);
   const accountTypes = getAccountTypesData();
 
   useEffect(() => {
@@ -120,7 +119,6 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     onCheckboxChange: toggleCheckedStatus,
     houses: housesData,
     streets: streetsData,
-    streetDefaultValue,
     accountTypes,
   };
 };
