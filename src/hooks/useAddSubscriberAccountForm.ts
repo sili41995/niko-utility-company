@@ -40,6 +40,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     reset,
   } = useForm<IAddSubscriberAccountFormData>();
   const streetId = watch('streetId');
+
   const fetchSubscriberAccounts = useSubscriberAccountsStore(
     selectFetchSubscriberAccounts
   );
@@ -52,8 +53,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     dateFormat: DateFormats.monthStart,
   });
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
-  const { housesData, streetsData, streetDefaultValue } =
-    useHousesLocation(streetId);
+  const { housesData, streetsData } = useHousesLocation(streetId);
   const accountTypes = getAccountTypesData();
 
   useEffect(() => {
@@ -121,7 +121,6 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     houses: housesData,
     streets: streetsData,
     accountTypes,
-    streetDefaultValue,
   };
 };
 

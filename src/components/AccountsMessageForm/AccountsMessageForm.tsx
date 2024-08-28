@@ -12,17 +12,15 @@ const AccountsMessageForm: FC = () => {
     isLoading,
     houses,
     streets,
-    streetDefaultValue,
   } = useAccountsMessageForm();
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <InputsWrap>
         <Select
-          settings={{ ...register('streetId') }}
+          settings={{ ...register('streetId', { required: true }) }}
           data={streets}
           label='Вулиця'
-          defaultValue={streetDefaultValue}
           width={500}
         />
         <Select

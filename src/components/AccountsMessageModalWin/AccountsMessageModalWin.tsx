@@ -10,7 +10,7 @@ import Loader from '../Loader';
 import ErrorMessage from '../ErrorMessage';
 
 const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const { isLoadingStreets, housesError, streetsError } = useStreetsData();
+  const { isLoadingData, housesError, streetsError } = useStreetsData();
 
   return (
     <ModalWin setModalWinState={setModalWinState}>
@@ -18,7 +18,7 @@ const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
         <FormDataTitle title='Рахунки-повідомлення:' />
         <ContentContainer>
           <PeriodTitle />
-          {isLoadingStreets ? <Loader /> : <AccountsMessageForm />}
+          {isLoadingData ? <Loader /> : <AccountsMessageForm />}
         </ContentContainer>
         {housesError && <ErrorMessage error={housesError} />}
         {streetsError && <ErrorMessage error={streetsError} />}

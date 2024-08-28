@@ -21,9 +21,9 @@ const Select: FC<IProps> = ({
       width={width}
       formType={formType}
       offBorderRadius={offBorderRadius}
-      name={name}
       onChange={onChange}
       capitalize={capitalize}
+      name={name}
       {...settings}
     >
       {data.map(({ value, title }) => (

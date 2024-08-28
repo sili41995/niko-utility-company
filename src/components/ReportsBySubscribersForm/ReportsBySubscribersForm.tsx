@@ -15,7 +15,6 @@ const ReportsBySubscribersForm: FC = () => {
     houses,
     streets,
     periods,
-    streetDefaultValue,
   } = useReportsBySubscribersForm();
 
   return (
@@ -42,7 +41,6 @@ const ReportsBySubscribersForm: FC = () => {
           settings={{ ...register('streetId') }}
           data={streets}
           label='Вулиця'
-          defaultValue={streetDefaultValue}
           width={500}
         />
         <Select

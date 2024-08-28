@@ -5,8 +5,7 @@ import { IUseHousesLocationSelectData } from '@/types/hooks.types';
 const useHousesLocationSelectData = (
   streetId: string
 ): IUseHousesLocationSelectData => {
-  const { housesData, streetsData, streetDefaultValue } =
-    useHousesLocation(streetId);
+  const { housesData, streetsData } = useHousesLocation(streetId);
 
   const allHouses: ISelectData = { title: 'Всі будинки', value: '' };
 
@@ -18,7 +17,7 @@ const useHousesLocationSelectData = (
     ...streetsData,
   ];
 
-  return { housesSelectData, streetsSelectData, streetDefaultValue };
+  return { housesSelectData, streetsSelectData };
 };
 
 export default useHousesLocationSelectData;
