@@ -39,6 +39,7 @@ const AddSubscriberAccountForm: FC = () => {
     houses,
     streets,
     accountTypes,
+    streetDefaultValue,
   } = useAddSubscriberAccountForm();
 
   return (
@@ -49,6 +50,7 @@ const AddSubscriberAccountForm: FC = () => {
           label='Вулиця:'
           settings={{ ...register('streetId', { required: true }) }}
           data={streets}
+          defaultValue={streetDefaultValue}
           width={550}
           horizontal
         />

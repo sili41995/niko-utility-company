@@ -13,7 +13,8 @@ const useAccountsMessageForm = (): IUseAccountsMessageForm => {
   const { register, handleSubmit, watch } = useForm<IHousesLocationData>();
 
   const streetId = watch('streetId');
-  const { allHousesData, streetsData } = useHousesLocation(streetId);
+  const { allHousesData, streetsData, streetDefaultValue } =
+    useHousesLocation(streetId);
 
   const handleFormSubmit: SubmitHandler<IHousesLocationData> = async (data) => {
     setIsLoading(true);
@@ -38,6 +39,7 @@ const useAccountsMessageForm = (): IUseAccountsMessageForm => {
     handleFormSubmit,
     houses: allHousesData,
     streets: streetsData,
+    streetDefaultValue,
   };
 };
 

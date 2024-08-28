@@ -11,6 +11,8 @@ const useHousesLocation = (streetId: string): IUseHousesLocation => {
   const streets = useStreetsStore(selectStreets);
   const houses = useHousesStore(selectHouses);
 
+  const streetDefaultValue = streets[0]?.id;
+
   const housesData = getHousesSelectData(houses);
   const streetsData = getStreetsSelectData(streets);
 
@@ -25,7 +27,7 @@ const useHousesLocation = (streetId: string): IUseHousesLocation => {
     fetchHouses(Number(streetId));
   }, [fetchHouses, streetId]);
 
-  return { housesData, allHousesData, streetsData };
+  return { housesData, allHousesData, streetsData, streetDefaultValue };
 };
 
 export default useHousesLocation;

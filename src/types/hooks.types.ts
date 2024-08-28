@@ -114,6 +114,7 @@ export interface IUseAddSubscriberAccountForm {
   houses: SelectData;
   streets: SelectData;
   accountTypes: SelectData;
+  streetDefaultValue: number;
 }
 
 export interface IUseStreetsData {
@@ -478,6 +479,7 @@ export interface IUseHousesLocation {
   housesData: SelectData;
   allHousesData: SelectData;
   streetsData: SelectData;
+  streetDefaultValue: number;
 }
 
 export interface IUseReportsBySubscribersForm {
@@ -488,11 +490,13 @@ export interface IUseReportsBySubscribersForm {
   houses: SelectData;
   streets: SelectData;
   periods: SelectData;
+  streetDefaultValue: number;
 }
 
 export interface IUseHousesLocationSelectData {
   housesSelectData: SelectData;
   streetsSelectData: SelectData;
+  streetDefaultValue: number;
 }
 
 export interface IUseAccountsMessageForm {
@@ -502,4 +506,5 @@ export interface IUseAccountsMessageForm {
   handleFormSubmit: SubmitHandler<IHousesLocationData>;
   houses: SelectData;
   streets: SelectData;
+  streetDefaultValue: number;
 }

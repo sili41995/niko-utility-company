@@ -52,7 +52,8 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     dateFormat: DateFormats.monthStart,
   });
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
-  const { housesData, streetsData } = useHousesLocation(streetId);
+  const { housesData, streetsData, streetDefaultValue } =
+    useHousesLocation(streetId);
   const accountTypes = getAccountTypesData();
 
   useEffect(() => {
@@ -120,6 +121,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     houses: housesData,
     streets: streetsData,
     accountTypes,
+    streetDefaultValue,
   };
 };
 

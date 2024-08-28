@@ -12,6 +12,7 @@ const AccountsMessageForm: FC = () => {
     isLoading,
     houses,
     streets,
+    streetDefaultValue,
   } = useAccountsMessageForm();
 
   return (
@@ -21,6 +22,7 @@ const AccountsMessageForm: FC = () => {
           settings={{ ...register('streetId') }}
           data={streets}
           label='Вулиця'
+          defaultValue={streetDefaultValue}
           width={500}
         />
         <Select

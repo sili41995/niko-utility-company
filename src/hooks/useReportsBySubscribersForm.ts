@@ -26,7 +26,7 @@ const useReportsBySubscribersForm = (): IUseReportsBySubscribersForm => {
   } = useForm<IReportsBySubscribersFormData>();
 
   const streetId = watch('streetId');
-  const { housesSelectData, streetsSelectData } =
+  const { housesSelectData, streetsSelectData, streetDefaultValue } =
     useHousesLocationSelectData(streetId);
 
   const periods = usePeriodsStore(selectPeriods);
@@ -70,6 +70,7 @@ const useReportsBySubscribersForm = (): IUseReportsBySubscribersForm => {
     houses: housesSelectData,
     streets: streetsSelectData,
     periods: periodsSelectData,
+    streetDefaultValue,
   };
 };
 
