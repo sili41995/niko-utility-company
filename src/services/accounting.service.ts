@@ -99,7 +99,7 @@ class AccountingService extends HttpService {
     streetId,
   }: IHousesLocationData): Promise<BlobPart> {
     const response = await this.get<BlobPart>({
-      url: `accounting/invoices?${streetId}&${houseId}`,
+      url: `accounting/invoices?streetId=${streetId}&houseId=${houseId}`,
       responseType: 'blob',
     });
 
