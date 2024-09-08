@@ -10,17 +10,16 @@ const useSubscriberAccountsTableRow = (
   const [showInfo, setShowInfo] = useState<boolean>(false);
   const {
     number,
-    accountType,
     apartment,
     isLivingApartment,
     residents,
     street,
     house,
-    isEligibleForBenefit,
     period,
     documents,
     balances,
-    owner: { surname, name, middleName },
+    accountType: { label: accountTypeLabel },
+    owner: { surname, name, middleName, isEligibleForBenefit },
   } = subscriberAccount;
   const apartmentType = apartmentTypes.find(
     ({ value }) => value === String(isLivingApartment)
@@ -48,7 +47,7 @@ const useSubscriberAccountsTableRow = (
   return {
     number,
     fullName,
-    accountType,
+    accountType: accountTypeLabel,
     fullStreetName,
     house: house.number,
     apartment: apartmentValue,

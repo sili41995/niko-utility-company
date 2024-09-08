@@ -4,15 +4,15 @@ import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, ContentContainer } from './PriceAdjustmentsModalWin.styled';
 import FindSubscriberAccountForm from '@/components/FindSubscriberAccountForm';
-import { ISubscriberAccount } from '@/types/subscriberAccount.types';
+import { IFullSubscriberAccount } from '@/types/subscriberAccount.types';
 import PriceAdjustmentForm from '@/components/PriceAdjustmentForm';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
 
 const PriceAdjustmentsModalWin: FC<IProps> = ({ setModalWinState }) => {
-  const [data, setData] = useState<ISubscriberAccount | null>(null);
+  const [data, setData] = useState<IFullSubscriberAccount | null>(null);
 
-  const setSubscriberAccount = (data: ISubscriberAccount): void => {
+  const setSubscriberAccount = (data: IFullSubscriberAccount): void => {
     setData(data);
   };
 

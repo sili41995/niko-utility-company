@@ -1,4 +1,4 @@
-export const enum PaymentSourceType {
+export enum PaymentSourceType {
   cash = 'cash',
   privatbank = 'privatbank',
   oshchadbank = 'oshchadbank',
@@ -9,4 +9,8 @@ export const enum PaymentSourceType {
   aval = 'aval',
   ukrgasbank = 'ukrgasbank',
   abank = 'abank',
+}
+
+export interface IPaymentSource {
+  source: PaymentSourceType;
 }

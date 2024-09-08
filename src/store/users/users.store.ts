@@ -1,4 +1,3 @@
-import { NewUser, UserData, Users } from '@/types/data.types';
 import setState from '@/store/setState';
 import {
   GetUsersStateFunc,
@@ -7,6 +6,7 @@ import {
 } from '@/types/usersStore.types';
 import initialState from './initialState';
 import { addUser, fetchUsers } from './operations';
+import { NewUser, UserData, Users } from '@/types/user.types';
 
 const usersSlice = (
   set: SetUsersStateFunc,

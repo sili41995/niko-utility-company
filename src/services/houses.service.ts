@@ -1,4 +1,4 @@
-import { Houses } from '@/types/data.types';
+import { Houses } from '@/types/house.types';
 import HttpService from './http.service';
 
 class HousesService extends HttpService {

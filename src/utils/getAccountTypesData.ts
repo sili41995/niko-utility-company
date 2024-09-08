@@ -1,8 +1,8 @@
-import { AccountTypes } from '@/constants';
-import { SelectData } from '@/types/data.types';
+import { AccountCategory } from '@/types/accountType';
+import { SelectData } from '@/types/types';
 
 const getAccountTypesData = (): SelectData =>
-  Object.values(AccountTypes).map((type) => ({
+  Object.values(AccountCategory).map((type) => ({
     title: type,
     value: type,
   }));

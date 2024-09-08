@@ -1,4 +1,4 @@
-import { Messages } from '@/constants';
+import { Messages, PagePaths } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 
 export type Func = () => void;
@@ -64,3 +64,42 @@ export interface IGetPaginationBarSettings {
   isShowPrevTemplateBtn: boolean;
   isLastPage: boolean;
 }
+
+export type BooleanValue = 'true' | 'false';
+
+export interface ISelectData {
+  value: string;
+  title: string;
+}
+
+export type SelectData = ISelectData[];
+
+export interface IOnPageBtnClickProps {
+  e: BtnClickEvent;
+  page: number;
+}
+
+export interface IHousesLocationData {
+  streetId: string;
+  houseId: string;
+}
+
+export interface IFormatDateProps {
+  date: Date | string;
+  dateFormat: string;
+}
+
+export interface INavSection {
+  path: PagePaths;
+  title: string;
+  desc: string;
+}
+
+export type NavSections = INavSection[];
+
+export interface IApartmentType {
+  title: string;
+  value: BooleanValue;
+}
+
+export type ApartmentTypes = IApartmentType[];

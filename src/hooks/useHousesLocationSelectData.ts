@@ -1,4 +1,4 @@
-import { ISelectData, SelectData } from '@/types/data.types';
+import { ISelectData, SelectData } from '@/types/types';
 import useHousesLocation from './useHousesLocation';
 import { IUseHousesLocationSelectData } from '@/types/hooks.types';
 

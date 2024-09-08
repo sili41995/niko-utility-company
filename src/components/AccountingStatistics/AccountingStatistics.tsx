@@ -7,12 +7,12 @@ import {
   Title,
   Value,
 } from './AccountingStatistics.styled';
-import { useTargetPeriod } from '@/hooks';
+// import { useTargetPeriod } from '@/hooks';
 
 const AccountingStatistics: FC = () => {
-  const targetPeriod = useTargetPeriod();
-  const { payments } = targetPeriod ?? {};
-  const paymentsValue = payments?.reduce((acc, { amount }) => acc + amount, 0);
+  // const targetPeriod = useTargetPeriod();
+  // const { payments } = targetPeriod ?? {};
+  // const paymentsValue = payments?.reduce((acc, { amount }) => acc + amount, 0);
 
   return (
     <List>
@@ -58,7 +58,7 @@ const AccountingStatistics: FC = () => {
       <ListItem>
         <StatisticsItem>
           <Title>Оплати:</Title>
-          <Value>{paymentsValue}</Value>
+          <Value>{'paymentsValue'}</Value>
         </StatisticsItem>
       </ListItem>
       <ListItem>

@@ -1,7 +1,7 @@
-import { IPrice } from '@/types/price.types';
+import { IFullPrice } from '@/types/price.types';
 
 export interface IProps {
-  price: IPrice;
+  price: IFullPrice;
 }
 
 export interface IStyledTableDataProps {

@@ -1,4 +1,4 @@
-import { IGetGeneralSettingsFormDefaultValues } from '@/types/data.types';
+import { IGetGeneralSettingsFormDefaultValues } from '@/types/generalSettings.types';
 import { ISettings } from '@/types/generalSettingsStore.types';
 
 const getGeneralSettingsFormDefaultValues = (

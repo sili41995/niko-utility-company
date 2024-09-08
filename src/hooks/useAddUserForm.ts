@@ -1,7 +1,7 @@
 import { Messages } from '@/constants';
 import { useUsersStore } from '@/store/store';
 import { selectAddUser, selectIsLoading } from '@/store/users/selectors';
-import { NewUser } from '@/types/data.types';
+import { NewUser } from '@/types/user.types';
 import { IUseAddUserForm } from '@/types/hooks.types';
 import { toasts } from '@/utils';
 import { validateAddUserForm } from '@/validators';

@@ -1,7 +1,7 @@
-import { ISubscriberAccount } from '@/types/subscriberAccount.types';
+import { IFullSubscriberAccount } from '@/types/subscriberAccount.types';
 import { OnBtnClickFunc } from '@/types/types';
 
 export interface IProps {
-  subscriberAccount: ISubscriberAccount | null;
+  subscriberAccount: IFullSubscriberAccount | null;
   resetSubscriberAccount?: OnBtnClickFunc;
 }

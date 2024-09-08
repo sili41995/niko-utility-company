@@ -1,12 +1,19 @@
-export interface AccountType {
+import { SelectData } from './types';
+
+export interface IAccountType {
   id: number;
   category: AccountCategory;
   label: string;
 }
 
-const enum AccountCategory {
+export enum AccountCategory {
   naturalPerson = 'naturalPerson',
   juridicalPerson = 'juridicalPerson',
 }
 
-export type Category = Pick<AccountType, 'category'>;
+export type Category = Pick<IAccountType, 'category'>;
+
+export interface IGetDefaultAccountTypesValueProps {
+  accountTypes: SelectData;
+  category: string;
+}

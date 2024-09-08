@@ -4,9 +4,9 @@ import {
   GetSubscriberAccountsStateFunc,
   ISubscriberAccountsState,
   SetSubscriberAccountsStateFunc,
-  IGetAll,
-  IGetAllFilters,
-  IUpdateByIdData,
+  IFetchSubscriberAccountsFilters,
+  IFetchSubscriberAccountsRes,
+  IUpdateSubscriberAccountByIdData,
 } from '@/types/subscriberAccountsStore.types';
 import {
   fetchSubscriberAccounts,
@@ -24,14 +24,14 @@ const subscriberAccountsSlice = (
 ): ISubscriberAccountsState => ({
   ...initialState,
   fetchSubscriberAccounts: async (
-    data: IGetAllFilters
-  ): Promise<IGetAll | undefined> =>
+    data: IFetchSubscriberAccountsFilters
+  ): Promise<IFetchSubscriberAccountsRes | undefined> =>
     await fetchSubscriberAccounts({
       set: setState({ set, name: 'fetchSubscriberAccounts' }),
       data,
       get,
     }),
-  add: async (
+  addSubscriberAccount: async (
     data: INewSubscriberAccountData
   ): Promise<ISubscriberAccount | undefined> =>
     await addSubscriberAccount({
@@ -39,8 +39,8 @@ const subscriberAccountsSlice = (
       set: setState({ set, name: 'addSubscriberAccount' }),
       get,
     }),
-  updateById: async (
-    data: IUpdateByIdData
+  updateSubscriberAccountById: async (
+    data: IUpdateSubscriberAccountByIdData
   ): Promise<ISubscriberAccount | undefined> =>
     await updateSubscriberAccountById({
       data,

@@ -5,7 +5,7 @@ import {
   selectUpdateGeneralSettings,
 } from '@/store/generalSettings/selectors';
 import { useGeneralSettingsStore } from '@/store/store';
-import { IGeneralSettingsFormData } from '@/types/data.types';
+import { IGeneralSettingsFormData } from '@/types/generalSettings.types';
 import { IUseGeneralSettingsForm } from '@/types/hooks.types';
 import {
   filterGeneralSettingsData,

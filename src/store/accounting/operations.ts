@@ -5,7 +5,7 @@ import {
   ILastCalculate,
 } from '@/types/accountingStore.types';
 import { IPricesOperationsProps } from '@/types/accountingStore.types';
-import { IPriceAdjustment } from '@/types/data.types';
+import { IPriceAdjustment } from '@/types/priceAdjustment.types';
 
 const calculatePricesOperation = async ({
   set,

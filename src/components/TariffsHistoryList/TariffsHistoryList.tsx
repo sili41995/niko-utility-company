@@ -32,7 +32,7 @@ const TariffsHistoryList: FC<IProps> = ({ tariffs, onCloseBtnClick }) => {
               date: start,
               dateFormat: DateFormats.date,
             });
-            const tariffUnits = getTariffUnits(tariffs[0].sector);
+            const tariffUnits = getTariffUnits(tariffs[0].sector.name);
 
             return (
               <ListItem key={id}>

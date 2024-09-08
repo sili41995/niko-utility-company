@@ -1,6 +1,8 @@
-import { IGeneralSettings } from '@/types/data.types';
+import {
+  IGeneralSettings,
+  IUpdateGeneralSettingsData,
+} from '@/types/generalSettings.types';
 import HttpService from './http.service';
-import { IUpdateGeneralSettingsData } from '@/types/generalSettingsStore.types';
 
 class GeneralSettingsService extends HttpService {
   constructor() {

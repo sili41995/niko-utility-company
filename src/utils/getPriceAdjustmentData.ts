@@ -1,5 +1,7 @@
-import { PriceAdjustmentData } from '@/types/data.types';
-import { IGetPriceAdjustmentDataProps } from '@/types/types';
+import {
+  IGetPriceAdjustmentDataProps,
+  PriceAdjustmentData,
+} from '@/types/priceAdjustment.types';
 
 const getPriceAdjustmentData = ({
   data,

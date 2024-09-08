@@ -1,6 +1,6 @@
 import {
-  IEditSubscriberAccountFormData,
-  ISubscriberAccount,
+  IUpdateSubscriberAccountFormData,
+  IFullSubscriberAccount,
 } from '@/types/subscriberAccount.types';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import {
@@ -25,12 +25,12 @@ import { IUseEditSubscriberAccountForm } from '@/types/hooks.types';
 import { validateEditSubscriberAccountForm } from '@/validators';
 
 const useEditSubscriberAccountForm = (
-  subscriberAccount: ISubscriberAccount
+  subscriberAccount: IFullSubscriberAccount
 ): IUseEditSubscriberAccountForm => {
   const [isRemovalHouseHoldWaste, setIsRemovalHouseholdWaste] =
     useState<boolean>(() => subscriberAccount.isRemovalHouseholdWaste);
   const [isEligibleForBenefit, setIsEligibleForBenefit] = useState<boolean>(
-    () => subscriberAccount.isEligibleForBenefit
+    () => subscriberAccount.owner.isEligibleForBenefit
   );
   const isLoading = useSubscriberAccountsStore(selectIsLoading);
   const updateSubscriberAccountById = useSubscriberAccountsStore(
@@ -40,22 +40,17 @@ const useEditSubscriberAccountForm = (
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<IEditSubscriberAccountFormData>();
+  } = useForm<IUpdateSubscriberAccountFormData>();
   const {
     street,
     house,
     apartment,
     number,
-    contract,
-    contractDate,
-    accountType,
     isLivingApartment,
     residents,
     period,
     id,
     owner: {
-      utr,
-      passport,
       surname,
       name,
       phone,
@@ -64,6 +59,7 @@ const useEditSubscriberAccountForm = (
       middleName,
       birthday,
     },
+    contract: { date: contractDate },
   } = subscriberAccount;
   const fullStreetName = `${street.type} ${street.name}`;
   const contractDateValue = formatDate({
@@ -93,7 +89,7 @@ const useEditSubscriberAccountForm = (
   }, [isSubmitting, errors]);
 
   const handleFormSubmit: SubmitHandler<
-    IEditSubscriberAccountFormData
+    IUpdateSubscriberAccountFormData
   > = async (data) => {
     const filteredData = getFilteredEditSubscriberAccountFormData(data);
 
@@ -138,16 +134,12 @@ const useEditSubscriberAccountForm = (
     apartmentType,
     period: periodDefaultValue,
     number,
-    contract,
     contractDateValue,
-    accountType,
     birthday: birthdayDefaultValue,
     residents,
     isRemovalHouseHoldWaste,
     onCheckboxChange,
     email: email ?? '',
-    utr,
-    passport,
     surname,
     name,
     middleName,

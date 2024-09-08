@@ -1,4 +1,4 @@
-import { IDocument } from '@/types/data.types';
+import { IDocument } from '@/types/document.types';
 
 export interface IProps {
   document: IDocument;

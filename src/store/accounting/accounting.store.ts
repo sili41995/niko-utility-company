@@ -7,7 +7,10 @@ import {
   ILastCalculate,
 } from '@/types/accountingStore.types';
 import { calculatePrices, fetchPrices, addPriceAdjustment } from './operations';
-import { PriceAdjustmentData, IPriceAdjustment } from '@/types/data.types';
+import {
+  PriceAdjustmentData,
+  IPriceAdjustment,
+} from '@/types/priceAdjustment.types';
 
 const accountingSlice = (
   set: SetAccountingStateFunc,

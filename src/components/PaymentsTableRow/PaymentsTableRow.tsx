@@ -5,10 +5,10 @@ import { formatDate, getPaymentSource } from '@/utils';
 import { DateFormats } from '@/constants';
 
 const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
-  const { subscriberAccount, date, amount, source, period } = payment;
+  const { subscriberAccount, date, amount, paymentSource, period } = payment;
   const { number } = subscriberAccount ?? {};
   const paymentDate = formatDate({ date, dateFormat: DateFormats.date });
-  const paymentSource = getPaymentSource(source);
+  const source = getPaymentSource(paymentSource);
   const periodDate = formatDate({
     date: period?.start ?? new Date(),
     dateFormat: DateFormats.period,
@@ -24,7 +24,7 @@ const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
         </TableData>
       )}
       <TableData center>{amount}</TableData>
-      <TableData center>{paymentSource}</TableData>
+      <TableData center>{source}</TableData>
       <TableData></TableData>
     </TableBodyRow>
   );

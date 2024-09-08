@@ -8,7 +8,7 @@ import {
   SetPaymentsStateFunc,
 } from '@/types/paymentsStore.types';
 import { addPayment, fetchPayments } from './operations';
-import { IPayment, NewPaymentData } from '@/types/data.types';
+import { IPayment, IPaymentData } from '@/types/payment.types';
 
 const paymentsSlice = (
   set: SetPaymentsStateFunc,
@@ -23,7 +23,7 @@ const paymentsSlice = (
       data,
       get,
     }),
-  addPayment: async (data: NewPaymentData): Promise<IPayment | undefined> =>
+  addPayment: async (data: IPaymentData): Promise<IPayment | undefined> =>
     await addPayment({
       data,
       set: setState({ set, name: 'addPayment' }),

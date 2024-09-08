@@ -6,7 +6,8 @@ import {
   SetPeriodsStateFunc,
 } from '@/types/periodsStore.types';
 import { fetchPeriods, addPeriod, addLocalPayment } from './operations';
-import { IPayment, IPeriod, Periods } from '@/types/data.types';
+import { IPeriod, Periods } from '@/types/period.types';
+import { IPayment } from '@/types/payment.types';
 
 const periodsSlice = (
   set: SetPeriodsStateFunc,

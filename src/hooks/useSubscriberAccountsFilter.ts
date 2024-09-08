@@ -16,12 +16,12 @@ import { useRef } from 'react';
 
 const useSubscriberAccountsFilter = (): IUseSubscriberAccountsFilter => {
   const { updateSearchParams } = useSetSearchParams();
-  const { number, apartment, house, name, street, surname, type } =
+  const { number, apartment, house, name, street, surname, category } =
     useFilterSearchParams();
   const accountTypes = getFilterAccountTypes();
   const defaultAccountTypesValue = getDefaultAccountTypesValue({
     accountTypes,
-    type,
+    category,
   });
   const surnameInputRef = useRef<HTMLInputElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);

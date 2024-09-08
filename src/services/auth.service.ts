@@ -1,6 +1,7 @@
-import { Credentials, UserData } from '@/types/data.types';
+import { UserData } from '@/types/user.types';
 import HttpService from './http.service';
 import { SignInRes } from '@/types/authStore.types';
+import { Credentials } from '@/types/auth.types';
 
 class AuthService extends HttpService {
   constructor() {

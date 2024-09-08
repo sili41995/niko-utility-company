@@ -1,4 +1,5 @@
-import { Houses, SelectData } from '@/types/data.types';
+import { Houses } from '@/types/house.types';
+import { SelectData } from '@/types/types';
 
 const getHousesSelectData = (houses: Houses): SelectData =>
   houses.map(({ id, number }) => ({

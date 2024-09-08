@@ -7,7 +7,7 @@ export interface IPriceAdjustment {
   periodId: number;
 }
 
-export type PriceAdjustment = IPriceAdjustment[];
+export type PriceAdjustments = IPriceAdjustment[];
 
 export type PriceAdjustmentData = Pick<
   IPriceAdjustment,
@@ -25,3 +25,8 @@ export type PriceAdjustmentDate = Pick<IPriceAdjustment, 'date'>;
 export type Price = Pick<IPriceAdjustment, 'price'>;
 
 export type PriceAdjustmentComment = Pick<IPriceAdjustment, 'comment'>;
+
+export interface IGetPriceAdjustmentDataProps {
+  data: IPriceAdjustmentFormData;
+  id: number;
+}

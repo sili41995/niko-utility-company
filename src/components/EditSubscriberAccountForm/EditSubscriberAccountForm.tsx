@@ -33,16 +33,12 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     fullStreetName,
     house,
     apartment,
-    contract,
     contractDateValue,
-    accountType,
     apartmentType,
     residents,
     period,
     isRemovalHouseHoldWaste,
     onCheckboxChange,
-    utr,
-    passport,
     surname,
     name,
     middleName,
@@ -97,15 +93,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           disabled
         />
         <Input
-          settings={{ ...register('contract') }}
-          label='Договір №:'
-          type={InputTypes.text}
-          value={contract}
-          width={550}
-          horizontal
-          disabled
-        />
-        <Input
           settings={{ ...register('contractDate') }}
           label='від'
           type={InputTypes.text}
@@ -116,15 +103,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
         />
       </SubscriberAccountContainer>
       <TypesWrap>
-        <Input
-          settings={{ ...register('accountType') }}
-          label='Тип рахунку:'
-          type={InputTypes.text}
-          value={accountType}
-          width={550}
-          horizontal
-          disabled
-        />
         <Select
           label='Тип приміщення:'
           settings={{ ...register('isLivingApartment', { required: true }) }}
@@ -176,24 +154,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
       <PersonParametersWrap>
         <SectionTitle>Послуги:</SectionTitle>
         <PersonParameters>
-          <Input
-            settings={{ ...register('utr') }}
-            label='ІПН:'
-            type={InputTypes.text}
-            defaultValue={utr}
-            width={550}
-            horizontal
-            disabled
-          />
-          <Input
-            settings={{ ...register('passport') }}
-            label='Паспорт:'
-            type={InputTypes.text}
-            defaultValue={passport}
-            width={550}
-            horizontal
-            disabled
-          />
           <Input
             settings={{ ...register('surname') }}
             label='Прізвище:'

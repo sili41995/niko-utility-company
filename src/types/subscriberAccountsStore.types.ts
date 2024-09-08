@@ -1,12 +1,14 @@
 import { GetStateFunc, SetStateFunc } from './store.types';
 import {
   ISubscriberAccount,
-  SubscriberAccounts,
   IUpdateSubscriberAccountData,
+  INewSubscriberAccountData,
+  FullSubscriberAccounts,
+  IFullSubscriberAccount,
 } from './subscriberAccount.types';
 
 export interface ISubscriberAccountsInitialState {
-  items: SubscriberAccounts;
+  items: FullSubscriberAccounts;
   count: null | number;
   filteredCount: null | number;
   isLoading: boolean;
@@ -40,7 +42,7 @@ export interface IFetchSubscriberAccountsFilters {
 }
 
 export interface IFetchSubscriberAccountsRes {
-  data: SubscriberAccounts;
+  data: FullSubscriberAccounts;
   count: number;
   filteredCount: number;
 }
@@ -56,7 +58,7 @@ export interface IUpdateSubscriberAccountByIdData {
   id: number;
 }
 
-export interface IGetAllProps {
+export interface IFetchSubscriberAccountsProps {
   set: SetSubscriberAccountsStateFunc;
   data: IFetchSubscriberAccountsFilters;
 }
@@ -71,4 +73,9 @@ export interface IAddSubscriberAccountProps {
   set: SetSubscriberAccountsStateFunc;
   get: GetSubscriberAccountsStateFunc;
   data: INewSubscriberAccountData;
+}
+
+export interface IGetUpdatedSubscriberAccountsProps {
+  subscriberAccounts: FullSubscriberAccounts;
+  updatedSubscriberAccount: IFullSubscriberAccount;
 }

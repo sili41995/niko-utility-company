@@ -1,6 +1,6 @@
 import accountingService from '@/services/accounting.service';
 import operationWrapper from '@/store/payments/operationWrapper';
-import { IPayment } from '@/types/data.types';
+import { IPayment } from '@/types/payment.types';
 import {
   IAddPaymentProps,
   IFetchPaymentsProps,

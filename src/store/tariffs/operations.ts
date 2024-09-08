@@ -1,6 +1,6 @@
 import tariffsService from '@/services/tariffs.service';
 import operationWrapper from '@/store/tariffs/operationWrapper';
-import { ITariff, Tariffs } from '@/types/tariff.types';
+import { FullTariffs, ITariff } from '@/types/tariff.types';
 import {
   IAddTariffProps,
   IFetchTariffsProps,
@@ -9,13 +9,14 @@ import { sortTariffs } from '@/utils';
 
 const fetchTariffsOperation = async ({
   set,
-}: IFetchTariffsProps): Promise<Tariffs | undefined> => {
+}: IFetchTariffsProps): Promise<FullTariffs | undefined> => {
   const response = await tariffsService.fetchTariffs();
 
   set({
     items: response,
     isLoaded: true,
   });
+
   return response;
 };
 

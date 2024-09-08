@@ -1,11 +1,13 @@
 import {
   GetGeneralSettingsStateFunc,
   IGeneralSettingsState,
-  IUpdateGeneralSettingsData,
   SetGeneralSettingsStateFunc,
 } from '@/types/generalSettingsStore.types';
 import initialState from './initialState';
-import { IGeneralSettings } from '@/types/data.types';
+import {
+  IGeneralSettings,
+  IUpdateGeneralSettingsData,
+} from '@/types/generalSettings.types';
 import setState from '@/store/setState';
 import { fetchGeneralSettings, updateGeneralSettings } from './operations';
 

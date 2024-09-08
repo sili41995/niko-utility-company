@@ -1,6 +1,6 @@
 import usersService from '@/services/users.service';
 import operationWrapper from '@/store/users/operationWrapper';
-import { UserData, Users } from '@/types/data.types';
+import { UserData, Users } from '@/types/user.types';
 import {
   IAddUserProps,
   IFetchUsersOperationProps,

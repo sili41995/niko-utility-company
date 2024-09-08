@@ -1,4 +1,4 @@
-import { NewUser, UserData, Users } from '@/types/data.types';
+import { NewUser, UserData, Users } from '@/types/user.types';
 import HttpService from './http.service';
 
 class UsersService extends HttpService {

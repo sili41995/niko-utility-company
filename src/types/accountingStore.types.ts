@@ -22,3 +22,13 @@ export type SetAccountingStateFunc = SetStateFunc<IAccountingState>;
 export interface ILastCalculate {
   lastCalculate: Date;
 }
+
+export interface IPricesOperationsProps {
+  set: SetAccountingStateFunc;
+}
+
+export interface IAddPriceAdjustmentOperationProps {
+  set: SetAccountingStateFunc;
+  data: PriceAdjustmentData;
+  get: GetAccountingStateFunc;
+}

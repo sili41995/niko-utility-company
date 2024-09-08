@@ -1,29 +1,25 @@
 import {
-  IEditSubscriberAccountData,
-  IEditSubscriberAccountFormData,
+  IUpdateSubscriberAccountData,
+  IUpdateSubscriberAccountFormData,
 } from '@/types/subscriberAccount.types';
 
 const getFilteredSEditSubscriberAccountFormData = (
-  data: IEditSubscriberAccountFormData
-): IEditSubscriberAccountData => {
+  data: IUpdateSubscriberAccountFormData
+): IUpdateSubscriberAccountData => {
   const {
     additionalPhone,
     birthday,
     email,
-    isEligibleForBenefit,
     isLivingApartment,
     isRemovalHouseholdWaste,
     period,
     phone,
     residents,
     comment,
-    name,
   } = data;
 
   return {
     comment,
-    name,
-    isEligibleForBenefit,
     isLivingApartment: isLivingApartment === 'true' ? true : false,
     residents: Number(residents),
     isRemovalHouseholdWaste,

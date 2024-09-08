@@ -1,9 +1,11 @@
-export interface Contract {
+export interface IContract {
   id: number;
   number: string;
   date: Date;
 }
 
-export type ContractNumber = Pick<Contract, 'number'>;
+export type ContractNumber = Pick<IContract, 'number'>;
 
-export type ContractDate = Pick<Contract, 'date'>;
+export type ContractDate = Pick<IContract, 'date'>;
+
+export type NewContract = Omit<IContract, 'id'>;

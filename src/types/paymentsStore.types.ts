@@ -1,8 +1,8 @@
-import { IPayment, Payments } from './payment.types';
+import { FullPayments, IPayment, IPaymentData } from './payment.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
 
 export interface IPaymentsInitialState {
-  items: Payments;
+  items: FullPayments;
   count: null | number;
   isLoading: boolean;
   isLoaded: boolean;
@@ -10,8 +10,10 @@ export interface IPaymentsInitialState {
 }
 
 export interface IPaymentsState extends IPaymentsInitialState {
-  fetchPayments: (data: IFetchPaymentsFilters) => Promise<IGetAll | undefined>;
-  addPayment: (data: NewPaymentData) => Promise<IPayment | undefined>;
+  fetchPayments: (
+    data: IFetchPaymentsFilters
+  ) => Promise<IFetchPaymentsRes | undefined>;
+  addPayment: (data: IPaymentData) => Promise<IPayment | undefined>;
 }
 
 export interface IFetchPaymentsFilters {
@@ -19,8 +21,8 @@ export interface IFetchPaymentsFilters {
   limit: number;
 }
 
-export interface IGetAll {
-  data: Payments;
+export interface IFetchPaymentsRes {
+  data: FullPayments;
   count: number;
 }
 
@@ -36,5 +38,5 @@ export interface IFetchPaymentsProps {
 export interface IAddPaymentProps {
   set: SetPaymentsStateFunc;
   get: GetPaymentsStateFunc;
-  data: NewPaymentData;
+  data: IPaymentData;
 }

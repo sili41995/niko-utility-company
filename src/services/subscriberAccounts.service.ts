@@ -7,7 +7,8 @@ import HttpService from './http.service';
 import {
   ISubscriberAccount,
   INewSubscriberAccountData,
-  IEditSubscriberAccountData,
+  IUpdateSubscriberAccountData,
+  IFullSubscriberAccount,
 } from '@/types/subscriberAccount.types';
 
 class SubscriberAccountsService extends HttpService {
@@ -35,8 +36,8 @@ class SubscriberAccountsService extends HttpService {
 
   async fetchSubscriberAccountByNumber(
     number: string
-  ): Promise<ISubscriberAccount> {
-    const response = await this.get<ISubscriberAccount>({
+  ): Promise<IFullSubscriberAccount> {
+    const response = await this.get<IFullSubscriberAccount>({
       url: `subscriber-accounts/${number}`,
     });
 
@@ -60,10 +61,10 @@ class SubscriberAccountsService extends HttpService {
   async updateSubscriberAccountById({
     id,
     data,
-  }: IUpdateSubscriberAccountByIdData): Promise<ISubscriberAccount> {
+  }: IUpdateSubscriberAccountByIdData): Promise<IFullSubscriberAccount> {
     const response = await this.put<
-      ISubscriberAccount,
-      IEditSubscriberAccountData
+      IFullSubscriberAccount,
+      IUpdateSubscriberAccountData
     >({
       url: `subscriber-accounts/${id}`,
       data,

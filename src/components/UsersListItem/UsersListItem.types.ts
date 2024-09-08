@@ -1,4 +1,4 @@
-import { UserData } from '@/types/data.types';
+import { UserData } from '@/types/user.types';
 
 export interface IProps {
   user: UserData;

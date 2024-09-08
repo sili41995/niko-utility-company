@@ -1,6 +1,6 @@
-import { Payments } from '@/types/data.types';
+import { FullPayments } from '@/types/payment.types';
 
 export interface IProps {
-  payments: Payments;
+  payments: FullPayments;
   fullInfo?: boolean;
 }

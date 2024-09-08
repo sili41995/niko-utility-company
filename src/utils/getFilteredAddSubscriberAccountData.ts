@@ -1,15 +1,13 @@
 import {
-  INewSubscriberAccountData,
   IAddSubscriberAccountFormData,
+  INewSubscriberAccountData,
 } from '@/types/subscriberAccount.types';
-import getSubscriberAccountSector from './getSubscriberAccountSector';
 
 const getFilteredAddSubscriberAccountData = (
   data: IAddSubscriberAccountFormData
 ): INewSubscriberAccountData => {
   const {
     houseId,
-    streetId,
     isLivingApartment,
     email,
     birthday,
@@ -22,40 +20,35 @@ const getFilteredAddSubscriberAccountData = (
     middleName,
     name,
     surname,
-    passport,
-    utr,
-    accountType,
-    contract,
+    category,
     isEligibleForBenefit,
     isRemovalHouseholdWaste,
     number,
+    contractNumber,
   } = data;
-  const sector = getSubscriberAccountSector(data);
+  const apartmentNumber = apartment! ? apartment : undefined;
+  const isLivingApartmentValue = isLivingApartment === 'true' ? true : false;
+  const birthdayValue = birthday ? new Date(birthday) : undefined;
 
   return {
-    apartment: apartment !== '' ? apartment : undefined,
-    houseId: Number(houseId),
-    streetId: Number(streetId),
-    residents: Number(residents),
-    isLivingApartment: isLivingApartment === 'true' ? true : false,
-    contractDate: new Date(contractDate),
-    period: new Date(period),
-    sector,
-    accountType,
-    contract,
-    isEligibleForBenefit,
-    isRemovalHouseholdWaste,
+    apartment: apartmentNumber,
     number,
+    category,
+    isLivingApartment: isLivingApartmentValue,
+    residents: Number(residents),
+    houseId: Number(houseId),
+    period: new Date(period),
+    isRemovalHouseholdWaste,
+    contract: { number: contractNumber, date: contractDate },
     owner: {
+      surname,
+      name,
+      middleName,
       phone,
       additionalPhone,
-      email: email ? email : undefined,
-      birthday: birthday ? new Date(birthday) : undefined,
-      middleName,
-      name,
-      surname,
-      passport,
-      utr,
+      email,
+      isEligibleForBenefit,
+      birthday: birthdayValue,
     },
   };
 };

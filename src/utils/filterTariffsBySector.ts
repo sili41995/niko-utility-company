@@ -1,10 +1,9 @@
-import { Tariffs } from '@/types/data.types';
-import { IFilterTariffsBySectorProps } from '@/types/types';
+import { IFilterTariffsBySectorProps, FullTariffs } from '@/types/tariff.types';
 
 const filterTariffsBySector = ({
   tariffs,
   sector,
-}: IFilterTariffsBySectorProps): Tariffs =>
-  tariffs.filter((tariff) => tariff.sector === sector);
+}: IFilterTariffsBySectorProps): FullTariffs =>
+  tariffs.filter((tariff) => tariff.sector.name === sector);
 
 export default filterTariffsBySector;

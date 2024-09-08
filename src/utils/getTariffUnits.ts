@@ -1,6 +1,6 @@
-import { SectorTypes } from '@/constants';
+import { SectorType } from '@/types/sector.types';
 
-const getTariffUnits = (sector: SectorTypes) =>
-  sector === SectorTypes.other ? 'грн./м3' : 'грн./мешк.';
+const getTariffUnits = (sector: SectorType) =>
+  sector === SectorType.other ? 'грн./м3' : 'грн./мешк.';
 
 export default getTariffUnits;

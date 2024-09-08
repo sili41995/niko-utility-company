@@ -1,4 +1,4 @@
-import { DateFormats, GeneralParams, SectorTypes } from '@/constants';
+import { DateFormats, GeneralParams } from '@/constants';
 import { useTariffsStore } from '@/store/store';
 import { selectTariffs } from '@/store/tariffs/selectors';
 import {
@@ -10,6 +10,7 @@ import {
 import { BtnClickEvent } from '@/types/types';
 import { useState } from 'react';
 import { IUseTariffsList } from '@/types/hooks.types';
+import { SectorType } from '@/types/sector.types';
 
 const useTariffsList = (): IUseTariffsList => {
   const [showAddPrivateSectorTariffForm, setShowAddPrivateSectorTariffForm] =
@@ -62,15 +63,15 @@ const useTariffsList = (): IUseTariffsList => {
     : GeneralParams.missingValue;
   const multiApartmentSectorTariffs = filterTariffsBySector({
     tariffs,
-    sector: SectorTypes.multiApartment,
+    sector: SectorType.multiApartment,
   });
   const privateSectorTariffs = filterTariffsBySector({
     tariffs,
-    sector: SectorTypes.private,
+    sector: SectorType.private,
   });
   const otherSectorTariffs = filterTariffsBySector({
     tariffs,
-    sector: SectorTypes.other,
+    sector: SectorType.other,
   });
 
   const setShowAddPrivateSectorTariffFormState = () => {

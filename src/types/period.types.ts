@@ -1,3 +1,5 @@
+import { Payments } from './payment.types';
+
 export interface IPeriod {
   id: number;
   isCurrentPeriod: boolean;
@@ -6,14 +8,20 @@ export interface IPeriod {
 
 export type Periods = IPeriod[];
 
+export interface IFullPeriod extends IPeriod {
+  payments: Payments;
+}
+
+export type FullPeriods = IFullPeriod[];
+
 export interface IUpdatePeriodsProps {
-  periods: Periods;
-  newPeriod: IPeriod;
+  periods: FullPeriods;
+  newPeriod: IFullPeriod;
 }
 
 export interface IGetUpdatedPeriodsProps {
-  periods: Periods;
-  updatedPeriod: IPeriod;
+  periods: FullPeriods;
+  updatedPeriod: IFullPeriod;
 }
 
 export interface IPeriodId {

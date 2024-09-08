@@ -1,19 +1,17 @@
 import { ILastCalculate } from '@/types/accountingStore.types';
 import HttpService from './http.service';
 import {
-  PriceAdjustmentData,
-  IPriceAdjustment,
-  IPayment,
-  ITimePeriod,
-  NewPaymentData,
-  NewPayments,
-  IReportsBySubscribersData,
-  IHousesLocationData,
-} from '@/types/data.types';
-import {
   IFetchPaymentsFilters,
   IFetchPaymentsRes,
 } from '@/types/paymentsStore.types';
+import { IPayment, IPaymentData, PaymentsData } from '@/types/payment.types';
+import {
+  IPriceAdjustment,
+  PriceAdjustmentData,
+} from '@/types/priceAdjustment.types';
+import { IHousesLocationData } from '@/types/types';
+import { ITimePeriod } from '@/types/period.types';
+import { IReportsBySubscribersData } from '@/types/report.types';
 
 class AccountingService extends HttpService {
   constructor() {
@@ -22,7 +20,7 @@ class AccountingService extends HttpService {
 
   async fetchPrices(): Promise<ILastCalculate | null> {
     const response = await this.get<ILastCalculate | null>({
-      url: 'accounting/prices',
+      url: 'prices',
     });
 
     return response.data;
@@ -30,7 +28,7 @@ class AccountingService extends HttpService {
 
   async calculatePrices(): Promise<ILastCalculate> {
     const response = await this.patch<ILastCalculate, undefined>({
-      url: 'accounting/prices',
+      url: 'prices',
     });
 
     return response.data;
@@ -40,7 +38,7 @@ class AccountingService extends HttpService {
     data: PriceAdjustmentData
   ): Promise<IPriceAdjustment> {
     const response = await this.post<IPriceAdjustment, PriceAdjustmentData>({
-      url: 'accounting/prices',
+      url: 'prices',
       data,
     });
 
@@ -52,24 +50,24 @@ class AccountingService extends HttpService {
     page = 1,
   }: IFetchPaymentsFilters): Promise<IFetchPaymentsRes> {
     const response = await this.get<IFetchPaymentsRes>({
-      url: `accounting/payments?page=${page}&limit=${limit}`,
+      url: `payments?page=${page}&limit=${limit}`,
     });
 
     return response.data;
   }
 
-  async addPayment(data: NewPaymentData): Promise<IPayment> {
-    const response = await this.post<IPayment, NewPaymentData>({
-      url: 'accounting/payments',
+  async addPayment(data: IPaymentData): Promise<IPayment> {
+    const response = await this.post<IPayment, IPaymentData>({
+      url: 'payments',
       data,
     });
 
     return response.data;
   }
 
-  async addPayments(data: NewPayments): Promise<number> {
-    const response = await this.post<number, NewPayments>({
-      url: 'accounting/payments/multiple',
+  async addPayments(data: PaymentsData): Promise<number> {
+    const response = await this.post<number, PaymentsData>({
+      url: 'payments/multiple',
       data,
     });
 
@@ -81,7 +79,7 @@ class AccountingService extends HttpService {
     streetId,
   }: IHousesLocationData): Promise<BlobPart> {
     const response = await this.get<BlobPart>({
-      url: `accounting/invoices?streetId=${streetId}&houseId=${houseId}`,
+      url: `invoices?streetId=${streetId}&houseId=${houseId}`,
       responseType: 'blob',
     });
 
@@ -90,7 +88,7 @@ class AccountingService extends HttpService {
 
   async fetchPaymentsBySourcePostage(): Promise<string> {
     const response = await this.get<string>({
-      url: 'accounting/payments/postage',
+      url: 'payments/postage',
     });
 
     return response.data;
@@ -98,7 +96,7 @@ class AccountingService extends HttpService {
 
   async fetchPaymentsBySourcePrivatbank(): Promise<string> {
     const response = await this.get<string>({
-      url: 'accounting/payments/privatbank',
+      url: 'payments/privatbank',
     });
 
     return response.data;
@@ -106,7 +104,7 @@ class AccountingService extends HttpService {
 
   async fetchPaymentsBySourceOshchadbank(): Promise<string> {
     const response = await this.get<string>({
-      url: 'accounting/payments/oshchadbank',
+      url: 'payments/oshchadbank',
     });
 
     return response.data;
@@ -114,7 +112,7 @@ class AccountingService extends HttpService {
 
   async fetchPaymentsBySourceAbank(): Promise<string> {
     const response = await this.get<string>({
-      url: 'accounting/payments/abank',
+      url: 'payments/abank',
     });
 
     return response.data;
@@ -122,7 +120,7 @@ class AccountingService extends HttpService {
 
   async fetchReportsByStreets({ from, to }: ITimePeriod): Promise<BlobPart> {
     const response = await this.get<BlobPart>({
-      url: `accounting/reports/streets?from=${from}&to=${to}`,
+      url: `reports/streets?from=${from}&to=${to}`,
       responseType: 'blob',
     });
 
@@ -131,7 +129,7 @@ class AccountingService extends HttpService {
 
   async fetchReportsByHouses({ from, to }: ITimePeriod): Promise<BlobPart> {
     const response = await this.get<BlobPart>({
-      url: `accounting/reports/houses?from=${from}&to=${to}`,
+      url: `reports/houses?from=${from}&to=${to}`,
       responseType: 'blob',
     });
 
@@ -145,7 +143,7 @@ class AccountingService extends HttpService {
     streetId,
   }: IReportsBySubscribersData): Promise<BlobPart> {
     const response = await this.get<BlobPart>({
-      url: `accounting/reports/subscribers?debt=${minDebt}&houseId=${houseId}&streetId=${streetId}&periodId=${periodId}`,
+      url: `reports/subscribers?debt=${minDebt}&houseId=${houseId}&streetId=${streetId}&periodId=${periodId}`,
       responseType: 'blob',
     });
 

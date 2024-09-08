@@ -1,3 +1,5 @@
+import { IHousesLocationData } from './types';
+
 export interface IReportsBySubscribersData extends IHousesLocationData {
   minDebt: number;
   periodId: string;

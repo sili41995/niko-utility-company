@@ -1,7 +1,7 @@
-import { Tariffs } from '@/types/data.types';
+import { FullTariffs } from '@/types/tariff.types';
 import { OnBtnClickFunc } from '@/types/types';
 
 export interface IProps {
-  tariffs: Tariffs;
+  tariffs: FullTariffs;
   onCloseBtnClick: OnBtnClickFunc;
 }

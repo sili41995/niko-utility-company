@@ -1,5 +1,5 @@
-import { Prices } from '@/types/price.types';
+import { FullPrices } from '@/types/price.types';
 
 export interface IProps {
-  prices: Prices;
+  prices: FullPrices;
 }

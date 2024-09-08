@@ -1,4 +1,4 @@
-import { PriceAdjustments } from '@/types/data.types';
+import { PriceAdjustments } from '@/types/priceAdjustment.types';
 
 export interface IProps {
   priceAdjustments: PriceAdjustments;

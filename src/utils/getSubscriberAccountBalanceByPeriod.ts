@@ -1,14 +1,15 @@
-import { PaymentSources } from '@/constants';
+import { IGetSubscriberAccountBalanceByPeriod } from '@/types/balance.types';
+import { PaymentSourceType } from '@/types/paymentSource.types';
 import { IPeriod, IPeriodId } from '@/types/period.types';
-import { ISubscriberAccount } from '@/types/subscriberAccount.types';
-import { IAmount, IGetSubscriberAccountBalanceByPeriod } from '@/types/types';
+import { IFullSubscriberAccount } from '@/types/subscriberAccount.types';
+import { IAmount } from '@/types/types';
 
 const getSubscriberAccountBalanceByPeriod = ({
   period,
   subscriberAccount,
 }: {
   period: IPeriod;
-  subscriberAccount: ISubscriberAccount;
+  subscriberAccount: IFullSubscriberAccount;
 }): IGetSubscriberAccountBalanceByPeriod => {
   const { prices, priceAdjustments, payments, balances } = subscriberAccount;
 
@@ -28,14 +29,14 @@ const getSubscriberAccountBalanceByPeriod = ({
     .reduce((acc, { price }) => acc + price, 0);
   const totalBenefits = payments
     .filter(
-      ({ periodId, source }) =>
-        periodId === period.id && source === PaymentSources.benefits
+      ({ periodId, paymentSource }) =>
+        periodId === period.id && paymentSource === PaymentSourceType.benefits
     )
     .reduce(amountIncrementFunc, 0);
   const totalPayments = payments
     .filter(
-      ({ periodId, source }) =>
-        periodId === period.id && source !== PaymentSources.benefits
+      ({ periodId, paymentSource }) =>
+        periodId === period.id && paymentSource !== PaymentSourceType.benefits
     )
     .reduce(amountIncrementFunc, 0);
   const startingBalance = balances

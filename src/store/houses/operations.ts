@@ -1,6 +1,6 @@
 import housesService from '@/services/houses.service';
 import operationWrapper from '@/store/houses/operationWrapper';
-import { Houses } from '@/types/data.types';
+import { Houses } from '@/types/house.types';
 import { IFetchHousesOperationProps } from '@/types/housesStore.types';
 
 const fetchHousesOperation = async ({

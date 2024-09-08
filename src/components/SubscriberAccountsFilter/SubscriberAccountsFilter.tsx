@@ -94,7 +94,7 @@ const SubscriberAccountsFilter: FC = () => {
         width={210}
         formType={FormTypes.filter}
         offBorderRadius
-        name={SearchParamsKeys.type}
+        name={SearchParamsKeys.category}
         onChange={onFilterChange}
         defaultValue={defaultAccountTypesValue}
       />

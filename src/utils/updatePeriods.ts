@@ -1,9 +1,9 @@
-import { IUpdatePeriodsProps, Periods } from '@/types/period.types';
+import { FullPeriods, IUpdatePeriodsProps } from '@/types/period.types';
 
 const updatePeriods = ({
   periods,
   newPeriod,
-}: IUpdatePeriodsProps): Periods => {
+}: IUpdatePeriodsProps): FullPeriods => {
   const updatedPeriods = periods.map((period) =>
     period.isCurrentPeriod ? { ...period, isCurrentPeriod: false } : period
   );

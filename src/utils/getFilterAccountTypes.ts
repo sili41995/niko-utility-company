@@ -1,4 +1,4 @@
-import { SelectData } from '@/types/data.types';
+import { SelectData } from '@/types/types';
 import getAccountTypesData from './getAccountTypesData';
 
 const getFilterAccountTypes = (): SelectData => {

@@ -1,7 +1,7 @@
 import {
   IGeneralSettingsData,
   IGeneralSettingsFormData,
-} from '@/types/data.types';
+} from '@/types/generalSettings.types';
 
 const filterGeneralSettingsData = (
   data: IGeneralSettingsFormData

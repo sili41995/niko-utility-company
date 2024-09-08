@@ -30,8 +30,17 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
     useState<boolean>(true);
   const [isEligibleForBenefit, setIsEligibleForBenefit] =
     useState<boolean>(false);
-  const { number, apartment, house, limit, name, page, street, surname, type } =
-    useFilterSearchParams();
+  const {
+    number,
+    apartment,
+    house,
+    limit,
+    name,
+    page,
+    street,
+    surname,
+    category,
+  } = useFilterSearchParams();
   const {
     register,
     handleSubmit,
@@ -97,7 +106,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
         name,
         street,
         surname,
-        type,
+        category,
       });
       toasts.successToast(Messages.subscriberAccountAddSuccess);
       reset();

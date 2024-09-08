@@ -1,6 +1,5 @@
 import { FormTypes, SearchParamsKeys } from '@/constants';
-import { SelectData } from '@/types/data.types';
-import { SelectChangeFunc } from '@/types/types';
+import { SelectChangeFunc, SelectData } from '@/types/types';
 
 export interface IProps {
   data: SelectData;

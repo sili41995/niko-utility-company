@@ -1,7 +1,8 @@
-import { PaymentSources, TranslatedPaymentSources } from '@/constants';
+import { TranslatedPaymentSources } from '@/constants';
+import { PaymentSourceType } from '@/types/paymentSource.types';
 
 const getPaymentSourcesSelectData = () => {
-  const sources = Object.values(PaymentSources);
+  const sources = Object.values(PaymentSourceType);
 
   return sources.map((value) => ({
     title: TranslatedPaymentSources[value],

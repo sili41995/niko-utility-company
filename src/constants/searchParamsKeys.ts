@@ -3,7 +3,7 @@ const enum SearchParamsKeys {
   surname = 'surname',
   name = 'name',
   number = 'number',
-  type = 'type',
+  category = 'category',
   street = 'street',
   house = 'house',
   apartment = 'apartment',

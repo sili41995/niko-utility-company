@@ -1,7 +1,7 @@
-import { ISubscriberAccount } from '@/types/subscriberAccount.types';
+import { IFullSubscriberAccount } from '@/types/subscriberAccount.types';
 
 export interface IProps {
-  subscriberAccount: ISubscriberAccount;
+  subscriberAccount: IFullSubscriberAccount;
 }
 
 export interface IStyledTableDataTextProps {

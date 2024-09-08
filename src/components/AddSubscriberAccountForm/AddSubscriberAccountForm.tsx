@@ -79,17 +79,15 @@ const AddSubscriberAccountForm: FC = () => {
           width={550}
         />
         <Input
-          settings={{ ...register('contract', { required: true }) }}
+          settings={{ ...register('contractNumber', { required: true }) }}
           label='Договір №:'
-          placeholder='Договір №'
           type={InputTypes.text}
-          accent
           horizontal
           width={550}
         />
         <Input
           settings={{ ...register('contractDate', { required: true }) }}
-          label='від'
+          label='від:'
           type={InputTypes.date}
           defaultValue={firstDayOfMonth}
           horizontal
@@ -99,7 +97,7 @@ const AddSubscriberAccountForm: FC = () => {
       <TypesWrap>
         <Select
           label='Тип рахунку:'
-          settings={{ ...register('accountType', { required: true }) }}
+          settings={{ ...register('category', { required: true }) }}
           data={accountTypes}
           width={550}
           horizontal
@@ -153,22 +151,6 @@ const AddSubscriberAccountForm: FC = () => {
       <PersonParametersWrap>
         <SectionTitle>Послуги:</SectionTitle>
         <PersonParameters>
-          <Input
-            settings={{ ...register('utr', { required: true }) }}
-            label='ІПН:'
-            placeholder='ІПН'
-            type={InputTypes.text}
-            horizontal
-            width={550}
-          />
-          <Input
-            settings={{ ...register('passport', { required: true }) }}
-            label='Паспорт:'
-            placeholder='Паспорт'
-            type={InputTypes.text}
-            horizontal
-            width={550}
-          />
           <Input
             settings={{ ...register('surname', { required: true }) }}
             label='Прізвище:'

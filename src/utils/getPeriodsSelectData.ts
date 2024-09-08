@@ -1,6 +1,7 @@
-import { Periods, SelectData } from '@/types/data.types';
+import { Periods } from '@/types/period.types';
 import formatDate from './formatDate';
 import { DateFormats } from '@/constants';
+import { SelectData } from '@/types/types';
 
 const getPeriodsSelectData = (periods: Periods): SelectData =>
   periods.map(({ start, id }) => ({

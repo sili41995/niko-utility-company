@@ -1,6 +1,6 @@
-import { SectorTypes } from '@/constants';
+import { SectorType } from '@/types/sector.types';
 
 export interface IProps {
-  sector: SectorTypes;
+  sector: SectorType;
   tariff: number;
 }

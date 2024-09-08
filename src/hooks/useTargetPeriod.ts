@@ -2,7 +2,7 @@ import { selectPeriods } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
 import useSetSearchParams from './useSetSearchParams';
 import { DateFormats, SearchParamsKeys } from '@/constants';
-import { IPeriod } from '@/types/data.types';
+import { IPeriod } from '@/types/period.types';
 import { formatDate } from '@/utils';
 
 const useTargetPeriod = (): IPeriod => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { formatDate, getPriceAdjustmentData, toasts } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { IPriceAdjustmentFormData } from '@/types/data.types';
+import { IPriceAdjustmentFormData } from '@/types/priceAdjustment.types';
 import { useAccountingStore } from '@/store/store';
 import { selectAddPriceAdjustment } from '@/store/accounting/selectors';
 import { validatePriceAdjustmentForm } from '@/validators';

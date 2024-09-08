@@ -1,6 +1,6 @@
 import setState from '@/store/setState';
 import initialState from './initialState';
-import { Houses } from '@/types/data.types';
+import { Houses } from '@/types/house.types';
 import {
   GetHousesStateFunc,
   IHousesState,

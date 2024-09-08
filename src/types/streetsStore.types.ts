@@ -15,3 +15,7 @@ export interface IStreetsState extends IStreetsInitialState {
 export type GetStreetsStateFunc = GetStateFunc<IStreetsState>;
 
 export type SetStreetsStateFunc = SetStateFunc<IStreetsState>;
+
+export interface IFetchStreetsOperationProps {
+  set: SetStreetsStateFunc;
+}

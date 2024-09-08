@@ -1,9 +1,9 @@
-import { IPeriod } from '@/types/data.types';
-import { ISubscriberAccount } from '@/types/subscriberAccount.types';
+import { IPeriod } from '@/types/period.types';
+import { IFullSubscriberAccount } from '@/types/subscriberAccount.types';
 
 export interface IProps {
   period: IPeriod;
-  subscriberAccount: ISubscriberAccount;
+  subscriberAccount: IFullSubscriberAccount;
 }
 
 export interface IStyledTableDataProps {

@@ -5,7 +5,7 @@ import {
   useUploadPaymentsBankFile,
   useDownloadPaymentsPrivatbankFile,
 } from '@/hooks';
-import { PaymentSources } from '@/constants';
+import { PaymentSourceType } from '@/types/paymentSource.types';
 
 const PaymentsFilesPrivatbankModalWin: FC<IProps> = ({ setModalWinState }) => {
   const { isDownload, onDownloadPaymentsBtnClick } =
@@ -17,7 +17,7 @@ const PaymentsFilesPrivatbankModalWin: FC<IProps> = ({ setModalWinState }) => {
     onUploadPaymentsBtnClick,
     resetFile,
     targetFileExtension,
-  } = useUploadPaymentsBankFile(PaymentSources.privatbank);
+  } = useUploadPaymentsBankFile(PaymentSourceType.privatbank);
 
   return (
     <PaymentsFilesModalWin

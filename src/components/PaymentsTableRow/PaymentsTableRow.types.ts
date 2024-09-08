@@ -1,8 +1,8 @@
-import { IPayment } from '@/types/data.types';
+import { IFullPayment } from '@/types/payment.types';
 
 export interface IProps {
-  payment: IPayment;
-  fullInfo:boolean
+  payment: IFullPayment;
+  fullInfo: boolean;
 }
 
 export interface IStyledTableDataProps {

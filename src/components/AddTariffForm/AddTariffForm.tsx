@@ -14,7 +14,7 @@ const AddTariffForm: FC<IProps> = ({ sector, tariff }) => {
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Input
         settings={{
-          ...register('tariff', { required: true }),
+          ...register('price', { required: true }),
         }}
         defaultValue={String(tariff)}
         type={InputTypes.number}

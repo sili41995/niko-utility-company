@@ -17,7 +17,6 @@ export { default as getSubscriberAccountAddress } from './getSubscriberAccountAd
 export { default as getSubscriberAccountInfo } from './getSubscriberAccountInfo';
 export { default as getPaymentSourcesSelectData } from './getPaymentSourcesSelectData';
 export { default as getNewPaymentData } from './getNewPaymentData';
-export { default as getSubscriberAccountSector } from './getSubscriberAccountSector';
 export { default as getFilteredAddSubscriberAccountData } from './getFilteredAddSubscriberAccountData';
 export { default as getStreetsSelectData } from './getStreetsSelectData';
 export { default as getHousesSelectData } from './getHousesSelectData';

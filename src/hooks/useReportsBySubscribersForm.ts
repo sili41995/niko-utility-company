@@ -1,4 +1,4 @@
-import { IReportsBySubscribersFormData } from '@/types/data.types';
+import { IReportsBySubscribersFormData } from '@/types/report.types';
 import { IUseReportsBySubscribersForm } from '@/types/hooks.types';
 import {
   getPeriodsSelectData,

@@ -1,5 +1,14 @@
-import { NewDocument } from './document.types';
-import { IOwner } from './owner.types';
+import { AccountCategory, IAccountType } from './accountType';
+import { FullBalances } from './balance.types';
+import { IContract, NewContract } from './contract.types';
+import { Documents, NewDocument } from './document.types';
+import { IHouse } from './house.types';
+import { IOwner, NewOwner } from './owner.types';
+import { FullPayments } from './payment.types';
+import { FullPrices } from './price.types';
+import { PriceAdjustments } from './priceAdjustment.types';
+import { IStreet } from './street.types';
+import { BooleanValue } from './types';
 
 export interface ISubscriberAccount {
   id: number;
@@ -20,8 +29,24 @@ export interface ISubscriberAccount {
 
 export type SubscriberAccounts = ISubscriberAccount[];
 
+export interface IFullSubscriberAccount extends ISubscriberAccount {
+  prices: FullPrices;
+  priceAdjustments: PriceAdjustments;
+  payments: FullPayments;
+  balances: FullBalances;
+  house: IHouse;
+  street: IStreet;
+  documents: Documents;
+  owner: IOwner;
+  accountType: IAccountType;
+  contract: IContract;
+}
+
+export type FullSubscriberAccounts = IFullSubscriberAccount[];
+
 export interface IUpdateSubscriberAccountData extends ISubscriberAccount {
   document: NewDocument;
+  owner: Partial<NewOwner>;
 }
 
 export type SubscriberAccountNumber = Pick<ISubscriberAccount, 'number'>;
@@ -46,3 +71,52 @@ export type Apartment = Pick<ISubscriberAccount, 'apartment'>;
 export interface ISubscriberAccountWithOwner extends ISubscriberAccount {
   owner: IOwner;
 }
+
+export type InitialSubscriberAccountFormData = Omit<
+  ISubscriberAccount,
+  'id' | 'streetId' | 'houseId' | 'isLivingApartment' | 'period' | 'residents'
+>;
+
+export interface ISubscriberAccountData
+  extends InitialSubscriberAccountFormData,
+    NewOwner {
+  streetId: string;
+  houseId: string;
+  isLivingApartment: BooleanValue;
+  contractDate: Date;
+  period: string;
+  residents: string;
+}
+
+export interface IAddSubscriberAccountFormData extends ISubscriberAccountData {
+  category: AccountCategory;
+  contractNumber: string;
+}
+
+export interface IUpdateSubscriberAccountFormData
+  extends ISubscriberAccountData {
+  street: string;
+  house: string;
+  name: string;
+  comment: string;
+}
+
+export interface INewSubscriberAccountData
+  extends Omit<
+    ISubscriberAccount,
+    | 'id'
+    | 'streetId'
+    | 'apartment'
+    | 'comment'
+    | 'accountTypeId'
+    | 'contractId'
+    | 'ownerId'
+    | 'sectorId'
+  > {
+  category: AccountCategory;
+  apartment: string | undefined;
+  owner: NewOwner;
+  contract: NewContract;
+}
+
+export type SetSubscriberAccountFunc = (data: IFullSubscriberAccount) => void;

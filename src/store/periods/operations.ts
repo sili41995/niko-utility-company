@@ -1,6 +1,6 @@
 import periodsService from '@/services/periods.service';
 import operationWrapper from '@/store/periods/operationWrapper';
-import { IPeriod, Periods } from '@/types/data.types';
+import { IPeriod, Periods } from '@/types/period.types';
 import {
   IFetchPeriodsProps,
   IAddPeriodProps,

@@ -1,8 +1,8 @@
 import { GetStateFunc, SetStateFunc } from './store.types';
-import { ITariff, NewTariff, Tariffs } from './tariff.types';
+import { ITariff, INewTariff, Tariffs, FullTariffs } from './tariff.types';
 
 export interface ITariffsInitialState {
-  items: Tariffs;
+  items: FullTariffs;
   current: Tariffs;
   isLoading: boolean;
   isLoaded: boolean;
@@ -11,7 +11,7 @@ export interface ITariffsInitialState {
 
 export interface ITariffsState extends ITariffsInitialState {
   fetchTariffs: () => Promise<Tariffs | undefined>;
-  addTariff: (data: NewTariff) => Promise<ITariff | undefined>;
+  addTariff: (data: INewTariff) => Promise<ITariff | undefined>;
 }
 
 export type GetTariffsStateFunc = GetStateFunc<ITariffsState>;
@@ -25,5 +25,5 @@ export interface IFetchTariffsProps {
 export interface IAddTariffProps {
   set: SetTariffsStateFunc;
   get: GetTariffsStateFunc;
-  data: NewTariff;
+  data: INewTariff;
 }

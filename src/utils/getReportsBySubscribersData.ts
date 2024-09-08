@@ -1,7 +1,7 @@
 import {
   IReportsBySubscribersData,
   IReportsBySubscribersFormData,
-} from '@/types/data.types';
+} from '@/types/report.types';
 
 const getReportsBySubscribersData = (
   data: IReportsBySubscribersFormData

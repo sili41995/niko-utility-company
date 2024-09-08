@@ -6,7 +6,7 @@ import {
 } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { DateFormats, GeneralParams, Messages } from '@/constants';
-import { INewPaymentFormData } from '@/types/data.types';
+import { IPaymentFormData } from '@/types/payment.types';
 import { validatePaymentForm } from '@/validators';
 import { usePaymentsStore, usePeriodsStore } from '@/store/store';
 import {
@@ -32,7 +32,7 @@ const useAddPaymentForm = (
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-  } = useForm<INewPaymentFormData>();
+  } = useForm<IPaymentFormData>();
   const paymentSources = getPaymentSourcesSelectData();
   const currentDate = formatDate({
     date: new Date(),
@@ -48,7 +48,7 @@ const useAddPaymentForm = (
     }
   }, [isSubmitting, errors]);
 
-  const handleFormSubmit: SubmitHandler<INewPaymentFormData> = async (data) => {
+  const handleFormSubmit: SubmitHandler<IPaymentFormData> = async (data) => {
     if (!subscriberAccount) {
       return;
     }

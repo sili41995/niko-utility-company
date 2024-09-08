@@ -17,10 +17,11 @@ import {
 } from './TariffsList.styled';
 import { MdEditNote, MdListAlt } from 'react-icons/md';
 import AddDataModalForm from '@/components/AddDataModalForm';
-import { GeneralParams, IconSizes, SectorTypes } from '@/constants';
+import { GeneralParams, IconSizes } from '@/constants';
 import { useTariffsList } from '@/hooks';
 import AddTariffForm from '@/components/AddTariffForm';
 import TariffsHistoryList from '@/components/TariffsHistoryList';
+import { SectorType } from '@/types/sector.types';
 
 const TariffsList: FC = () => {
   const {
@@ -102,7 +103,7 @@ const TariffsList: FC = () => {
               marginTop={1}
             >
               <AddTariffForm
-                sector={SectorTypes.multiApartment}
+                sector={SectorType.multiApartment}
                 tariff={multiApartmentSectorTariff}
               />
             </AddDataModalForm>
@@ -152,7 +153,7 @@ const TariffsList: FC = () => {
               marginTop={1}
             >
               <AddTariffForm
-                sector={SectorTypes.private}
+                sector={SectorType.private}
                 tariff={privateSectorTariff}
               />
             </AddDataModalForm>
@@ -202,7 +203,7 @@ const TariffsList: FC = () => {
               marginTop={1}
             >
               <AddTariffForm
-                sector={SectorTypes.other}
+                sector={SectorType.other}
                 tariff={otherSectorTariff}
               />
             </AddDataModalForm>

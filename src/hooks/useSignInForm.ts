@@ -1,7 +1,7 @@
 import { Messages } from '@/constants';
 import { selectIsLoading, selectSignIn } from '@/store/auth/selectors';
 import { useAuthStore } from '@/store/store';
-import { Credentials } from '@/types/data.types';
+import { Credentials } from '@/types/auth.types';
 import { IUseSignInForm } from '@/types/hooks.types';
 import { toasts } from '@/utils';
 import { validateSignInForm } from '@/validators';

@@ -6,9 +6,11 @@ export interface IOwner {
   phone: string;
   additionalPhone: string;
   isEligibleForBenefit: boolean;
-  email: string;
-  birthday: Date;
+  email: string | undefined;
+  birthday: Date | undefined;
 }
+
+export type NewOwner = Omit<IOwner, 'id'>;
 
 export type Surname = Pick<IOwner, 'surname'>;
 

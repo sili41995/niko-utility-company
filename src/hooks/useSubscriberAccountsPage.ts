@@ -30,8 +30,17 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
   const isLoadingData = isLoadingSubscriberAccountsData || isLoadingPeriodsData;
   const showSubscriberAccountsTable = Boolean(isLoaded && totalCount);
 
-  const { number, apartment, house, limit, name, page, street, surname, type } =
-    useFilterSearchParams();
+  const {
+    number,
+    apartment,
+    house,
+    limit,
+    name,
+    page,
+    street,
+    surname,
+    category,
+  } = useFilterSearchParams();
   const isEmptyFilteredList = Boolean(totalCount && !filteredCount);
 
   useEffect(() => {
@@ -42,7 +51,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
       surname,
       name,
       number,
-      type,
+      category,
       street,
       house,
       apartment,
@@ -57,7 +66,7 @@ const useSubscriberAccountsPage = (): IUseSubscriberAccountsPage => {
     page,
     street,
     surname,
-    type,
+    category,
   ]);
 
   const setModalWinState = () => {

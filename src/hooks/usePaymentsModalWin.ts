@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ISubscriberAccount } from '@/types/subscriberAccount.types';
+import { IFullSubscriberAccount } from '@/types/subscriberAccount.types';
 import { useSetSearchParams } from '@/hooks';
 import { Messages, SearchParamsKeys } from '@/constants';
 import { IUsePaymentsModalWin } from '@/types/hooks.types';
@@ -11,9 +11,9 @@ import { toasts } from '@/utils';
 
 const usePaymentsModalWin = (): IUsePaymentsModalWin => {
   const { updateSearchParams } = useSetSearchParams();
-  const [data, setData] = useState<ISubscriberAccount | null>(null);
+  const [data, setData] = useState<IFullSubscriberAccount | null>(null);
 
-  const setSubscriberAccount = (data: ISubscriberAccount | null): void => {
+  const setSubscriberAccount = (data: IFullSubscriberAccount | null): void => {
     setData(data);
   };
 

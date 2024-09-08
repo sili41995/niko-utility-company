@@ -1,4 +1,4 @@
-import { SectorType } from './sector.types';
+import { ISector, SectorType } from './sector.types';
 
 export interface ITariff {
   id: number;
@@ -9,9 +9,17 @@ export interface ITariff {
 
 export type Tariffs = ITariff[];
 
-export type NewTariff = Omit<ITariff, 'id'>;
+export interface IFullTariff extends ITariff {
+  sector: ISector;
+}
 
-export interface ITariffFormData extends Omit<NewTariff, 'start'> {
+export type FullTariffs = IFullTariff[];
+
+export interface INewTariff extends Pick<ITariff, 'price' | 'start'> {
+  sector: SectorType;
+}
+
+export interface ITariffFormData extends Omit<INewTariff, 'start'> {
   start: string;
 }
 
@@ -25,7 +33,12 @@ export interface IGetUpdatedTariffDataProps {
 }
 
 export interface IGetCurrentTariffs {
-  privateSectorTariff: ITariff | undefined;
-  multiApartmentSectorTariff: ITariff | undefined;
-  otherSectorTariff: ITariff | undefined;
+  privateSectorTariff: IFullTariff | undefined;
+  multiApartmentSectorTariff: IFullTariff | undefined;
+  otherSectorTariff: IFullTariff | undefined;
+}
+
+export interface IFilterTariffsBySectorProps {
+  tariffs: FullTariffs;
+  sector: SectorType;
 }

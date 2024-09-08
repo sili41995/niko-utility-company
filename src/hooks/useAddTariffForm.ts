@@ -2,12 +2,13 @@ import { useEffect } from 'react';
 import { useTariffsStore } from '@/store/store';
 import { selectAddTariff, selectIsLoading } from '@/store/tariffs/selectors';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { INewTariffFormData } from '@/types/data.types';
+import { ITariffFormData } from '@/types/tariff.types';
 import { getTariffUnits, getUpdatedTariffData, toasts } from '@/utils';
 import validateAddTariffForm from '@/validators/validateAddTariffForm';
-import { Messages, SectorTypes } from '@/constants';
+import { Messages } from '@/constants';
+import { SectorType } from '@/types/sector.types';
 
-const useAddTariffForm = (sector: SectorTypes) => {
+const useAddTariffForm = (sector: SectorType) => {
   const tariffUnits = getTariffUnits(sector);
   const tariffLabel = `Тариф (${tariffUnits}):`;
   const isLoading = useTariffsStore(selectIsLoading);
@@ -16,7 +17,7 @@ const useAddTariffForm = (sector: SectorTypes) => {
     register,
     formState: { errors, isSubmitting },
     handleSubmit,
-  } = useForm<INewTariffFormData>();
+  } = useForm<ITariffFormData>();
 
   useEffect(() => {
     const invalidFields = Object.keys(errors);
@@ -25,7 +26,7 @@ const useAddTariffForm = (sector: SectorTypes) => {
     }
   }, [isSubmitting, errors]);
 
-  const handleFormSubmit: SubmitHandler<INewTariffFormData> = async (data) => {
+  const handleFormSubmit: SubmitHandler<ITariffFormData> = async (data) => {
     const updatedData = getUpdatedTariffData({ data, sector });
 
     try {

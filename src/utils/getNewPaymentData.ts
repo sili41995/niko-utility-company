@@ -1,10 +1,9 @@
-import { NewPaymentData } from '@/types/data.types';
-import { IGetNewPaymentDataProps } from '@/types/types';
+import { IGetNewPaymentDataProps, IPaymentData } from '@/types/payment.types';
 
 const getNewPaymentData = ({
   data,
   id,
-}: IGetNewPaymentDataProps): NewPaymentData => {
+}: IGetNewPaymentDataProps): IPaymentData => {
   const { amount, date, source } = data;
 
   return {

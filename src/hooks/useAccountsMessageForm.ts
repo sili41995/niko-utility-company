@@ -4,9 +4,9 @@ import { Messages } from '@/constants';
 import { AxiosError } from 'axios';
 import { useState } from 'react';
 import { IUseAccountsMessageForm } from '@/types/hooks.types';
-import { IHousesLocationData } from '@/types/data.types';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import useHousesLocation from './useHousesLocation';
+import { IHousesLocationData } from '@/types/types';
 
 const useAccountsMessageForm = (): IUseAccountsMessageForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);

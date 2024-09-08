@@ -1,12 +1,15 @@
-import { PaymentSources } from '@/constants';
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
-import { NewPaymentData, NewPayments } from '@/types/data.types';
-import { PaymentsDataFromCsv } from '@/types/types';
+import {
+  IPaymentData,
+  PaymentsData,
+  PaymentsDataFromCsv,
+} from '@/types/payment.types';
+import { PaymentSourceType } from '@/types/paymentSource.types';
 
 const convertStringsToPaymentsPostage = (
   data: PaymentsDataFromCsv
-): Promise<NewPayments> => {
-  const promises = data.map(async (item): Promise<NewPaymentData> => {
+): Promise<PaymentsData> => {
+  const promises = data.map(async (item): Promise<IPaymentData> => {
     const subscriberAccount =
       await subscriberAccountsService.fetchSubscriberAccountByNumber(item[5]);
     const date = item[0]
@@ -16,7 +19,7 @@ const convertStringsToPaymentsPostage = (
     return {
       amount: Number(item[6]),
       date: new Date(date),
-      source: PaymentSources.postage,
+      source: PaymentSourceType.postage,
       subscriberAccountId: subscriberAccount.id,
     };
   });

@@ -1,6 +1,6 @@
 import { selectPeriods } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
-import { IPeriod } from '@/types/data.types';
+import { IPeriod } from '@/types/period.types';
 
 const useCurrentPeriod = (): IPeriod | undefined => {
   const periods = usePeriodsStore(selectPeriods);

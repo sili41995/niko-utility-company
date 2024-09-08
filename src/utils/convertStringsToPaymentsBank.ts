@@ -1,12 +1,15 @@
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
-import { NewPaymentData, NewPayments } from '@/types/data.types';
-import { IConvertStringsToPaymentsBankProps } from '@/types/types';
+import {
+  IConvertStringsToPaymentsBankProps,
+  IPaymentData,
+  PaymentsData,
+} from '@/types/payment.types';
 
 const convertStringsToPaymentsBank = ({
   data,
   source,
-}: IConvertStringsToPaymentsBankProps): Promise<NewPayments> => {
-  const promises = data.map(async (item): Promise<NewPaymentData> => {
+}: IConvertStringsToPaymentsBankProps): Promise<PaymentsData> => {
+  const promises = data.map(async (item): Promise<IPaymentData> => {
     const subscriberAccount =
       await subscriberAccountsService.fetchSubscriberAccountByNumber(item[1]);
 

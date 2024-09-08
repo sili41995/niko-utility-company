@@ -1,4 +1,4 @@
-import { Streets } from '@/types/data.types';
+import { Streets } from '@/types/street.types';
 import HttpService from './http.service';
 
 class StreetsService extends HttpService {

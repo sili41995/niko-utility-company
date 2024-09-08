@@ -9,7 +9,7 @@ const useFilterSearchParams = (): IUseSubscriberAccountsFilterSearchParams => {
   const surname = searchParams.get(SearchParamsKeys.surname) ?? '';
   const name = searchParams.get(SearchParamsKeys.name) ?? '';
   const number = searchParams.get(SearchParamsKeys.number) ?? '';
-  const type = searchParams.get(SearchParamsKeys.type) ?? '';
+  const category = searchParams.get(SearchParamsKeys.category) ?? '';
   const street = searchParams.get(SearchParamsKeys.street) ?? '';
   const house = searchParams.get(SearchParamsKeys.house) ?? '';
   const apartment = searchParams.get(SearchParamsKeys.apartment) ?? '';
@@ -22,7 +22,7 @@ const useFilterSearchParams = (): IUseSubscriberAccountsFilterSearchParams => {
     surname,
     name,
     number,
-    type,
+    category,
     street,
     house,
     apartment,

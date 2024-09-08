@@ -1,4 +1,4 @@
-import { IPeriod } from '@/types/data.types';
+import { IPeriod } from '@/types/period.types';
 
 export interface IProps {
   targetPeriod?: IPeriod;
