@@ -1,4 +1,4 @@
-import { PaymentsDataFromCsv } from '@/types/types';
+import { PaymentsDataFromCsv } from '@/types/payment.types';
 
 const readPaymentsDataFromCsv = (file: File): Promise<PaymentsDataFromCsv> => {
   const reader = new FileReader();

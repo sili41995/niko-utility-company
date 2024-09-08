@@ -1,4 +1,4 @@
-import { Streets } from './data.types';
+import { Streets } from '@/types/street.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
 
 export interface IStreetsInitialState {
@@ -15,7 +15,3 @@ export interface IStreetsState extends IStreetsInitialState {
 export type GetStreetsStateFunc = GetStateFunc<IStreetsState>;
 
 export type SetStreetsStateFunc = SetStateFunc<IStreetsState>;
-
-export interface IFetchStreetsOperationProps {
-  set: SetStreetsStateFunc;
-}

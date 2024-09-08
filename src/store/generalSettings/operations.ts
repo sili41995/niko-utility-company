@@ -1,6 +1,6 @@
 import generalSettingsService from '@/services/generalSettings.service';
 import operationWrapper from '@/store/generalSettings/operationWrapper';
-import { IGeneralSettings } from '@/types/data.types';
+import { IGeneralSettings } from '@/types/generalSettings.types';
 import {
   IFetchGeneralSettingsOperationProps,
   IUpdateGeneralSettingsOperationProps,

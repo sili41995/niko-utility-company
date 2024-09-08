@@ -1,4 +1,4 @@
-import { ITimePeriod } from '@/types/data.types';
+import { ITimePeriod } from '@/types/period.types';
 import { FieldErrors } from 'react-hook-form';
 import showDateFromError from './showDateFromError';
 import showDateToError from './showDateToError';

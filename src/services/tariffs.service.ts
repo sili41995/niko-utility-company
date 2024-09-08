@@ -1,5 +1,5 @@
 import HttpService from './http.service';
-import { ITariff, NewTariff, Tariffs } from '@/types/data.types';
+import { ITariff, NewTariff, Tariffs } from '@/types/tariff.types';
 
 class TariffsService extends HttpService {
   constructor() {

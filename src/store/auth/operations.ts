@@ -1,6 +1,6 @@
 import initialState from './initialState';
 import { AxiosError } from 'axios';
-import { UserData } from '@/types/data.types';
+import { UserData } from '@/types/user.types';
 import {
   IAuthOperationProps,
   ISignInOperationProps,
@@ -21,16 +21,15 @@ const signInOperation = async ({
   return result;
 };
 
-const refreshUserOperation = async ({
+const fetchProfileOperation = async ({
   set,
 }: IAuthOperationProps): Promise<UserData | undefined> => {
   try {
     set({ isRefreshing: true, isLoading: true, error: initialState.error });
-    const result = await authService.refreshUser();
-    const { token, ...otherProps } = result;
+    const result = await authService.fetchProfile();
+
     set({
-      user: { ...otherProps },
-      token,
+      user: result,
       isLoggedIn: true,
     });
 
@@ -49,4 +48,4 @@ const refreshUserOperation = async ({
 };
 
 export const signIn = operationWrapper(signInOperation);
-export const refreshUser = refreshUserOperation;
+export const fetchProfile = fetchProfileOperation;

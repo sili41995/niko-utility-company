@@ -1,10 +1,7 @@
-import { IGeneralSettings } from './data.types';
-import { GetStateFunc, SetStateFunc } from './store.types';
-
-export interface IUpdateGeneralSettingsData {
-  id: number;
-  data: Partial<IGeneralSettings>;
-}
+import {
+  IGeneralSettings,
+  IUpdateGeneralSettingsData,
+} from './generalSettings.types';
 
 export interface ISettings {
   id: number | null;
@@ -26,17 +23,4 @@ export interface IGeneralSettingsState extends IGeneralSettingsInitialState {
   updateGeneralSettings: (
     data: IUpdateGeneralSettingsData
   ) => Promise<IGeneralSettings | undefined>;
-}
-
-export type GetGeneralSettingsStateFunc = GetStateFunc<IGeneralSettingsState>;
-
-export type SetGeneralSettingsStateFunc = SetStateFunc<IGeneralSettingsState>;
-
-export interface IFetchGeneralSettingsOperationProps {
-  set: SetGeneralSettingsStateFunc;
-}
-
-export interface IUpdateGeneralSettingsOperationProps {
-  set: SetGeneralSettingsStateFunc;
-  data: IUpdateGeneralSettingsData;
 }

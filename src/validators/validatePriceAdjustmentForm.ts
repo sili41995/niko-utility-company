@@ -1,4 +1,4 @@
-import { IPriceAdjustmentFormData } from '@/types/data.types';
+import { IPriceAdjustmentFormData } from '@/types/priceAdjustment.types';
 import { FieldErrors } from 'react-hook-form';
 import showPriceError from './showPriceError';
 import showPriceAdjustmentDateError from './showPriceAdjustmentDateError';

@@ -1,6 +1,6 @@
 import setState from '@/store/setState';
 import initialState from './initialState';
-import { Streets } from '@/types/data.types';
+import { Streets } from '@/types/street.types';
 import {
   GetStreetsStateFunc,
   IStreetsState,

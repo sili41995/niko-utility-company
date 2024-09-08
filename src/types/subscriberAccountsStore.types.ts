@@ -1,16 +1,9 @@
+import { GetStateFunc, SetStateFunc } from './store.types';
 import {
   ISubscriberAccount,
-  INewSubscriberAccountData,
   SubscriberAccounts,
-  IEditSubscriberAccountData,
+  IUpdateSubscriberAccountData,
 } from './subscriberAccount.types';
-import { GetStateFunc, SetStateFunc } from './store.types';
-
-export interface IFetchSubscriberAccountsRes {
-  data: SubscriberAccounts;
-  count: number;
-  filteredCount: number;
-}
 
 export interface ISubscriberAccountsInitialState {
   items: SubscriberAccounts;
@@ -19,23 +12,6 @@ export interface ISubscriberAccountsInitialState {
   isLoading: boolean;
   isLoaded: boolean;
   error: null | string;
-}
-
-export interface IFetchSubscriberAccountsProps {
-  set: SetSubscriberAccountsStateFunc;
-  data: IFetchSubscriberAccountsFilters;
-}
-
-export interface IFetchSubscriberAccountsFilters {
-  page?: number;
-  limit: number;
-  surname: string;
-  name: string;
-  number: string;
-  type: string;
-  street: string;
-  house: string;
-  apartment: string;
 }
 
 export interface ISubscriberAccountsState
@@ -51,25 +27,48 @@ export interface ISubscriberAccountsState
   ) => Promise<ISubscriberAccount | undefined>;
 }
 
+export interface IFetchSubscriberAccountsFilters {
+  page?: number;
+  limit: number;
+  category: string;
+  surname: string;
+  street: string;
+  name: string;
+  house: string;
+  number: string;
+  apartment: string;
+}
+
+export interface IFetchSubscriberAccountsRes {
+  data: SubscriberAccounts;
+  count: number;
+  filteredCount: number;
+}
+
 export type GetSubscriberAccountsStateFunc =
   GetStateFunc<ISubscriberAccountsState>;
 
 export type SetSubscriberAccountsStateFunc =
   SetStateFunc<ISubscriberAccountsState>;
 
-export interface IAddSubscriberAccountProps {
-  set: SetSubscriberAccountsStateFunc;
-  get: GetSubscriberAccountsStateFunc;
-  data: INewSubscriberAccountData;
+export interface IUpdateSubscriberAccountByIdData {
+  data: IUpdateSubscriberAccountData;
+  id: number;
 }
 
-export interface IUpdateSubscriberAccountByIdData {
-  data: IEditSubscriberAccountData;
-  id: number;
+export interface IGetAllProps {
+  set: SetSubscriberAccountsStateFunc;
+  data: IFetchSubscriberAccountsFilters;
 }
 
 export interface IUpdateSubscriberAccountByIdProps {
   set: SetSubscriberAccountsStateFunc;
   get: GetSubscriberAccountsStateFunc;
   data: IUpdateSubscriberAccountByIdData;
+}
+
+export interface IAddSubscriberAccountProps {
+  set: SetSubscriberAccountsStateFunc;
+  get: GetSubscriberAccountsStateFunc;
+  data: INewSubscriberAccountData;
 }

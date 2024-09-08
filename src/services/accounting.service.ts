@@ -1,13 +1,11 @@
-import { IPricesInfo } from '@/types/accountingStore.types';
+import { ILastCalculate } from '@/types/accountingStore.types';
 import HttpService from './http.service';
 import {
   PriceAdjustmentData,
   IPriceAdjustment,
   IPayment,
-  IPeriod,
   ITimePeriod,
   NewPaymentData,
-  Periods,
   NewPayments,
   IReportsBySubscribersData,
   IHousesLocationData,
@@ -22,32 +20,16 @@ class AccountingService extends HttpService {
     super();
   }
 
-  async fetchPeriods(): Promise<Periods> {
-    const response = await this.get<Periods>({
-      url: 'accounting/periods',
-    });
-
-    return response.data;
-  }
-
-  async addPeriod(): Promise<IPeriod> {
-    const response = await this.post<IPeriod, undefined>({
-      url: 'accounting/periods',
-    });
-
-    return response.data;
-  }
-
-  async fetchPrices(): Promise<IPricesInfo | null> {
-    const response = await this.get<IPricesInfo | null>({
+  async fetchPrices(): Promise<ILastCalculate | null> {
+    const response = await this.get<ILastCalculate | null>({
       url: 'accounting/prices',
     });
 
     return response.data;
   }
 
-  async calculatePrices(): Promise<IPricesInfo> {
-    const response = await this.patch<IPricesInfo, undefined>({
+  async calculatePrices(): Promise<ILastCalculate> {
+    const response = await this.patch<ILastCalculate, undefined>({
       url: 'accounting/prices',
     });
 

@@ -1,4 +1,4 @@
-import { IReportsBySubscribersFormData } from '@/types/data.types';
+import { IReportsBySubscribersFormData } from '@/types/report.types';
 import { FieldErrors } from 'react-hook-form';
 import showPeriodIdError from './showPeriodIdError';
 import showHouseIdError from './showHouseIdError';

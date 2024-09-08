@@ -12,4 +12,4 @@ export const selectIsRefreshing = (state: IAuthState) => state.isRefreshing;
 
 export const selectSignIn = (state: IAuthState) => state.signIn;
 
-export const selectRefreshUser = (state: IAuthState) => state.refreshUser;
+export const selectFetchProfile = (state: IAuthState) => state.fetchProfile;

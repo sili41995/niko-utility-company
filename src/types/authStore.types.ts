@@ -1,6 +1,7 @@
 import { StorageValue } from 'zustand/middleware';
-import { Credentials, IUser, UserData } from './data.types';
+import { Credentials } from './auth.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
+import { IUser, UserData } from './user.types';
 
 export interface IUserState {
   id: null | number;
@@ -8,8 +9,6 @@ export interface IUserState {
   login: null | string;
   email: null | string;
 }
-
-export type SignInRes = Pick<IUser, 'token'>;
 
 export interface IAuthInitialState {
   user: IUserState;
@@ -22,16 +21,10 @@ export interface IAuthInitialState {
 
 export interface IAuthState extends IAuthInitialState {
   signIn: (data: Credentials) => Promise<SignInRes | undefined>;
-  refreshUser: () => Promise<UserData | undefined>;
+  fetchProfile: () => Promise<UserData | undefined>;
 }
 
-export interface IAuthStateLS {
-  state: IAuthState;
-}
-
-export type GetLSGetItem =
-  | StorageValue<IAuthState>
-  | Promise<StorageValue<IAuthState>>;
+export type SignInRes = Pick<IUser, 'token'>;
 
 export type SetAuthStateFunc = SetStateFunc<IAuthState>;
 
@@ -45,3 +38,11 @@ export interface ISignInOperationProps {
 export interface IAuthOperationProps {
   set: SetAuthStateFunc;
 }
+
+export interface IAuthStateLS {
+  state: IAuthState;
+}
+
+export type GetLSGetItem =
+  | StorageValue<IAuthState>
+  | Promise<StorageValue<IAuthState>>;

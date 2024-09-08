@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { PriceAdjustmentComment } from '@/types/data.types';
+import { PriceAdjustmentComment } from '@/types/priceAdjustment.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

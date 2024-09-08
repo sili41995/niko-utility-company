@@ -1,5 +1,4 @@
-import { Periods } from '@/types/data.types';
-import { IUpdatePeriodsProps } from '@/types/types';
+import { IUpdatePeriodsProps, Periods } from '@/types/period.types';
 
 const updatePeriods = ({
   periods,

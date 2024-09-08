@@ -1,4 +1,4 @@
-import { Credentials } from '@/types/data.types';
+import { Credentials } from '@/types/auth.types';
 import { FieldErrors } from 'react-hook-form';
 import showLoginError from './showLoginError';
 import showPassError from './showPassError';

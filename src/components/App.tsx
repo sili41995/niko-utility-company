@@ -8,7 +8,7 @@ import PrivateRoute from './PrivateRoute';
 import { useAuthStore } from '@/store/store';
 import {
   selectIsRefreshing,
-  selectRefreshUser,
+  selectFetchProfile,
   selectToken,
 } from '@/store/auth/selectors';
 
@@ -24,15 +24,15 @@ const DocumentsPage = lazy(() => import('@/pages/DocumentsPage'));
 const App: FC = () => {
   const isRefreshing = useAuthStore(selectIsRefreshing);
   const token = useAuthStore(selectToken);
-  const refreshUser = useAuthStore(selectRefreshUser);
+  const fetchProfile = useAuthStore(selectFetchProfile);
 
   useEffect(() => {
-    const refresh = async () => {
-      await refreshUser();
+    const getProfile = async () => {
+      await fetchProfile();
     };
 
-    token && refresh();
-  }, [refreshUser, token]);
+    token && getProfile();
+  }, [fetchProfile, token]);
 
   return isRefreshing ? (
     <Loader />

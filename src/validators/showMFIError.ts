@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { MFI } from '@/types/data.types';
+import { MFI } from '@/types/generalSettings.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

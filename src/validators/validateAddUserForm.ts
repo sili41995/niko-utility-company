@@ -1,4 +1,4 @@
-import { NewUser } from '@/types/data.types';
+import { NewUser } from '@/types/user.types';
 import { FieldErrors } from 'react-hook-form';
 import showLoginError from './showLoginError';
 import showPassError from './showPassError';

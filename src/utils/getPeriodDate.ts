@@ -1,6 +1,6 @@
 import { DateFormats } from '@/constants';
 import formatDate from './formatDate';
-import { IPeriod } from '@/types/data.types';
+import { IPeriod } from '@/types/period.types';
 
 const getPeriodDate = (period?: IPeriod): string => {
   const { start = new Date() } = period ?? {};

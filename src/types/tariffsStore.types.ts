@@ -1,5 +1,5 @@
-import { ITariff, NewTariff, Tariffs } from './data.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
+import { ITariff, NewTariff, Tariffs } from './tariff.types';
 
 export interface ITariffsInitialState {
   items: Tariffs;

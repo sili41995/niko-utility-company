@@ -21,13 +21,13 @@ class SubscriberAccountsService extends HttpService {
     surname,
     name,
     number,
-    type,
+    category,
     street,
     house,
     apartment,
   }: IFetchSubscriberAccountsFilters): Promise<IFetchSubscriberAccountsRes> {
     const response = await this.get<IFetchSubscriberAccountsRes>({
-      url: `subscriber-accounts?page=${page}&limit=${limit}&surname=${surname}&name=${name}&number=${number}&type=${type}&street=${street}&house=${house}&apartment=${apartment}`,
+      url: `subscriber-accounts?page=${page}&limit=${limit}&surname=${surname}&name=${name}&number=${number}&category=${category}&street=${street}&house=${house}&apartment=${apartment}`,
     });
 
     return response.data;

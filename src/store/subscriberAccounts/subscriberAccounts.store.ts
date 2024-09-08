@@ -4,9 +4,9 @@ import {
   GetSubscriberAccountsStateFunc,
   ISubscriberAccountsState,
   SetSubscriberAccountsStateFunc,
-  IFetchSubscriberAccountsRes,
-  IFetchSubscriberAccountsFilters,
-  IUpdateSubscriberAccountByIdData,
+  IGetAll,
+  IGetAllFilters,
+  IUpdateByIdData,
 } from '@/types/subscriberAccountsStore.types';
 import {
   fetchSubscriberAccounts,
@@ -24,14 +24,14 @@ const subscriberAccountsSlice = (
 ): ISubscriberAccountsState => ({
   ...initialState,
   fetchSubscriberAccounts: async (
-    data: IFetchSubscriberAccountsFilters
-  ): Promise<IFetchSubscriberAccountsRes | undefined> =>
+    data: IGetAllFilters
+  ): Promise<IGetAll | undefined> =>
     await fetchSubscriberAccounts({
       set: setState({ set, name: 'fetchSubscriberAccounts' }),
       data,
       get,
     }),
-  addSubscriberAccount: async (
+  add: async (
     data: INewSubscriberAccountData
   ): Promise<ISubscriberAccount | undefined> =>
     await addSubscriberAccount({
@@ -39,12 +39,12 @@ const subscriberAccountsSlice = (
       set: setState({ set, name: 'addSubscriberAccount' }),
       get,
     }),
-  updateSubscriberAccountById: async (
-    data: IUpdateSubscriberAccountByIdData
+  updateById: async (
+    data: IUpdateByIdData
   ): Promise<ISubscriberAccount | undefined> =>
     await updateSubscriberAccountById({
       data,
-      set: setState({ set, name: 'updateSubscriberAccountById' }),
+      set: setState({ set, name: 'updateById' }),
       get,
     }),
 });

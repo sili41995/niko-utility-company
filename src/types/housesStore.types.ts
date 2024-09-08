@@ -1,4 +1,4 @@
-import { Houses } from './data.types';
+import { Houses } from './house.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
 
 export interface IHousesInitialState {

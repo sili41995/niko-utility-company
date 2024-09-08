@@ -1,5 +1,4 @@
-import { NewTariff } from '@/types/data.types';
-import { IGetUpdatedTariffDataProps } from '@/types/types';
+import { IGetUpdatedTariffDataProps, NewTariff } from '@/types/tariff.types';
 
 const getUpdatedTariffData = ({
   data,

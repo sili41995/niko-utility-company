@@ -9,8 +9,6 @@ import showAccountTypeError from './showAccountTypeError';
 import showIsLivingApartmentError from './showIsLivingApartmentError';
 import showResidentsError from './showResidentsError';
 import showPeriodError from './showPeriodError';
-import showUtrError from './showUtrError';
-import showPassportError from './showPassportError';
 import showSurnameError from './showSurnameError';
 import showNameError from './showNameError';
 import showMiddleNameError from './showMiddleNameError';
@@ -34,8 +32,6 @@ const validateAddSubscriberAccountForm = (
   showIsLivingApartmentError(errors);
   showResidentsError(errors);
   showPeriodError(errors);
-  showUtrError(errors);
-  showPassportError(errors);
   showSurnameError(errors);
   showNameError(errors);
   showMiddleNameError(errors);

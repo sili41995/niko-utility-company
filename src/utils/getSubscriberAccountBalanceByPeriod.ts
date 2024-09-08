@@ -1,11 +1,7 @@
 import { PaymentSources } from '@/constants';
-import { IPeriod } from '@/types/data.types';
+import { IPeriod, IPeriodId } from '@/types/period.types';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
-import {
-  IAmount,
-  IGetSubscriberAccountBalanceByPeriod,
-  IPeriodId,
-} from '@/types/types';
+import { IAmount, IGetSubscriberAccountBalanceByPeriod } from '@/types/types';
 
 const getSubscriberAccountBalanceByPeriod = ({
   period,

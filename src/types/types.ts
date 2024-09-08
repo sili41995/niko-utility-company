@@ -1,21 +1,7 @@
-import { Messages, PagePaths, PaymentSources, SectorTypes } from '@/constants';
+import { Messages } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
-import {
-  IPriceAdjustmentFormData,
-  INewPaymentFormData,
-  INewTariffFormData,
-  IPeriod,
-  ITariff,
-  Periods,
-  SelectData,
-  Tariffs,
-} from './data.types';
-import {
-  ISubscriberAccount,
-  SubscriberAccounts,
-} from './subscriberAccount.types';
 
-export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
+export type Func = () => void;
 
 export type DivClickEvent = MouseEvent<HTMLDivElement>;
 
@@ -31,24 +17,33 @@ export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
 export type onDivClickFunc = (e: DivClickEvent) => void;
 
-export type Func = () => void;
+export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
-export interface INavSection {
-  path: PagePaths;
-  title: string;
-  desc: string;
+export interface IErrorMessage {
+  [key: string]: Messages;
 }
 
-export type NavSections = INavSection[];
-
-export interface IPaths {
-  [PagePaths.subscriberAccounts]: string;
-  [PagePaths.accounting]: string;
+export interface IRegExp {
+  email: RegExp;
+  phone: RegExp;
+  currentAccount: RegExp;
+  mfi: RegExp;
+  login: RegExp;
 }
 
-export interface IOnPageBtnClickProps {
-  e: BtnClickEvent;
-  page: number;
+export interface ISetBtnDisplayProps {
+  currentPage?: number;
+  page?: number;
+  step?: number;
+}
+
+export interface ISaveFileProps {
+  data: BlobPart;
+  fileName: string;
+}
+
+export interface IAmount {
+  amount: number;
 }
 
 export interface IGetPaginationBarSettingsProps {
@@ -68,118 +63,4 @@ export interface IGetPaginationBarSettings {
   isShowFirstPageBtn: boolean;
   isShowPrevTemplateBtn: boolean;
   isLastPage: boolean;
-}
-
-export interface ISetBtnDisplayProps {
-  currentPage?: number;
-  page?: number;
-  step?: number;
-}
-
-export interface IErrorMessage {
-  [key: string]: Messages;
-}
-
-export interface IRegExp {
-  email: RegExp;
-  phone: RegExp;
-  currentAccount: RegExp;
-  mfi: RegExp;
-  login: RegExp;
-}
-
-export interface IApartmentType {
-  title: string;
-  value: BooleanValue;
-}
-
-export type ApartmentTypes = IApartmentType[];
-
-export interface IIndividualHeating {
-  title: string;
-  value: BooleanValue;
-}
-
-export type IndividualHeating = IIndividualHeating[];
-
-export type BooleanValue = 'true' | 'false';
-
-export interface IGetDefaultAccountTypesValueProps {
-  accountTypes: SelectData;
-  type: string;
-}
-
-export interface IFormatDateProps {
-  date: Date | string;
-  dateFormat: string;
-}
-
-export interface IGetUpdatedSubscriberAccountsProps {
-  subscriberAccounts: SubscriberAccounts;
-  updatedSubscriberAccount: ISubscriberAccount;
-}
-
-export interface IGetCurrentTariffs {
-  privateSectorTariff: ITariff | undefined;
-  multiApartmentSectorTariff: ITariff | undefined;
-  otherSectorTariff: ITariff | undefined;
-}
-
-export interface IGetUpdatedTariffDataProps {
-  data: INewTariffFormData;
-  sector: SectorTypes;
-}
-
-export interface IFilterTariffsBySectorProps {
-  tariffs: Tariffs;
-  sector: SectorTypes;
-}
-
-export interface IUpdatePeriodsProps {
-  periods: Periods;
-  newPeriod: IPeriod;
-}
-
-export interface IGetPriceAdjustmentDataProps {
-  data: IPriceAdjustmentFormData;
-  id: number;
-}
-
-export interface IGetNewPaymentDataProps {
-  data: INewPaymentFormData;
-  id: number;
-}
-
-export interface ISaveFileProps {
-  data: BlobPart;
-  fileName: string;
-}
-
-export interface IGetUpdatedPeriodsProps {
-  periods: Periods;
-  updatedPeriod: IPeriod;
-}
-
-export type PaymentsDataFromCsv = string[][];
-
-export interface IConvertStringsToPaymentsBankProps {
-  data: PaymentsDataFromCsv;
-  source: PaymentSources;
-}
-
-export interface IGetSubscriberAccountBalanceByPeriod {
-  totalPrices: number;
-  totalPriceAdjustments: number;
-  totalBenefits: number;
-  totalPayments: number;
-  balance: number;
-  isDebt: boolean;
-}
-
-export interface IPeriodId {
-  periodId: number;
-}
-
-export interface IAmount {
-  amount: number;
 }

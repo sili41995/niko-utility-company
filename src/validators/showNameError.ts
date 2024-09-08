@@ -1,9 +1,9 @@
 import { Messages } from '@/constants';
-import { SubscriberAccountName } from '@/types/subscriberAccount.types';
+import { OwnerName } from '@/types/owner.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showNameError = (errors: FieldErrors<SubscriberAccountName>): void => {
+const showNameError = (errors: FieldErrors<OwnerName>): void => {
   errors.name && toasts.errorToast(Messages.nameReqErr);
 };
 

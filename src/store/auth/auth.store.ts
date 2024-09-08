@@ -1,4 +1,3 @@
-import { Credentials, UserData } from '@/types/data.types';
 import {
   GetLSGetItem,
   IAuthState,
@@ -10,7 +9,9 @@ import setState from '@/store/setState';
 import initialState from './initialState';
 import { AuthParams } from '@/constants';
 import { getTokenFromLS } from '@/utils';
-import { refreshUser, signIn } from './operations';
+import { fetchProfile, signIn } from './operations';
+import { Credentials } from '@/types/auth.types';
+import { UserData } from '@/types/user.types';
 
 const authSlice = (set: SetAuthStateFunc): IAuthState => ({
   ...initialState,
@@ -20,9 +21,9 @@ const authSlice = (set: SetAuthStateFunc): IAuthState => ({
       set: setState({ set, name: 'signIn' }),
       data,
     }),
-  refreshUser: async (): Promise<UserData | undefined> =>
-    await refreshUser({
-      set: setState({ set, name: 'refreshUser' }),
+  fetchProfile: async (): Promise<UserData | undefined> =>
+    await fetchProfile({
+      set: setState({ set, name: 'fetchProfile' }),
     }),
 });
 

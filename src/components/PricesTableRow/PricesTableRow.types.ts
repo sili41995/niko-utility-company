@@ -1,4 +1,4 @@
-import { IPrice } from '@/types/data.types';
+import { IPrice } from '@/types/price.types';
 
 export interface IProps {
   price: IPrice;

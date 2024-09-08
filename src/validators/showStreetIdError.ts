@@ -1,9 +1,9 @@
 import { Messages } from '@/constants';
-import { Street } from '@/types/subscriberAccount.types';
+import { StreetId } from '@/types/subscriberAccount.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showStreetIdError = (errors: FieldErrors<Street>): void => {
+const showStreetIdError = (errors: FieldErrors<StreetId>): void => {
   errors.streetId && toasts.errorToast(Messages.streetReqErr);
 };
 

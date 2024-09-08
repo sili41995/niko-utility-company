@@ -1,4 +1,4 @@
-import { Tariffs } from '@/types/data.types';
+import { Tariffs } from '@/types/tariff.types';
 
 const sortTariffs = (tariffs: Tariffs): Tariffs =>
   [...tariffs].sort((prevTariff, nextTariff) =>

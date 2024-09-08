@@ -1,6 +1,6 @@
 import { SectorTypes } from '@/constants';
-import { Tariffs } from '@/types/data.types';
-import { IGetCurrentTariffs } from '@/types/types';
+import { Tariffs } from '@/types/tariff.types';
+import { IGetCurrentTariffs } from '@/types/tariff.types';
 
 const getCurrentTariffs = (tariffs: Tariffs): IGetCurrentTariffs => {
   const date = new Date();

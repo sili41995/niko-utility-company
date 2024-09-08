@@ -2,14 +2,14 @@ import accountingService from '@/services/accounting.service';
 import operationWrapper from '@/store/accounting/operationWrapper';
 import {
   IAddPriceAdjustmentOperationProps,
-  IPricesInfo,
+  ILastCalculate,
 } from '@/types/accountingStore.types';
 import { IPricesOperationsProps } from '@/types/accountingStore.types';
 import { IPriceAdjustment } from '@/types/data.types';
 
 const calculatePricesOperation = async ({
   set,
-}: IPricesOperationsProps): Promise<IPricesInfo | undefined> => {
+}: IPricesOperationsProps): Promise<ILastCalculate | undefined> => {
   const response = await accountingService.calculatePrices();
 
   set({
@@ -21,7 +21,7 @@ const calculatePricesOperation = async ({
 
 const fetchPricesOperation = async ({
   set,
-}: IPricesOperationsProps): Promise<IPricesInfo | null | undefined> => {
+}: IPricesOperationsProps): Promise<ILastCalculate | null | undefined> => {
   const response = await accountingService.fetchPrices();
 
   set({

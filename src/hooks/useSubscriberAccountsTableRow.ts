@@ -1,11 +1,11 @@
 import { DateFormats, apartmentTypes } from '@/constants';
 import { IUseSubscriberAccountsTableRow } from '@/types/hooks.types';
-import { ISubscriberAccount } from '@/types/subscriberAccount.types';
+import { IFullSubscriberAccount } from '@/types/subscriberAccount.types';
 import { formatDate, getSubscriberAccountBalanceByPeriod } from '@/utils';
 import { useState } from 'react';
 
 const useSubscriberAccountsTableRow = (
-  subscriberAccount: ISubscriberAccount
+  subscriberAccount: IFullSubscriberAccount
 ): IUseSubscriberAccountsTableRow => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
   const {

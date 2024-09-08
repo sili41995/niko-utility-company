@@ -1,4 +1,4 @@
-import { IGeneralSettings } from '@/types/data.types';
+import { IGeneralSettings } from '@/types/generalSettings.types';
 import { FieldErrors } from 'react-hook-form';
 import showHelpPhoneError from './showHelpPhoneError';
 import showMFIError from './showMFIError';

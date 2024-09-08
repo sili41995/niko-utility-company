@@ -1,6 +1,6 @@
 import tariffsService from '@/services/tariffs.service';
 import operationWrapper from '@/store/tariffs/operationWrapper';
-import { ITariff, Tariffs } from '@/types/data.types';
+import { ITariff, Tariffs } from '@/types/tariff.types';
 import {
   IAddTariffProps,
   IFetchTariffsProps,

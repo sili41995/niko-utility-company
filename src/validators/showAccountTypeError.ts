@@ -1,10 +1,10 @@
 import { Messages } from '@/constants';
-import { AccountType } from '@/types/subscriberAccount.types';
+import { Category } from '@/types/accountType';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showAccountTypeError = (errors: FieldErrors<AccountType>): void => {
-  errors.accountType && toasts.errorToast(Messages.accountTypeReqErr);
+const showAccountTypeError = (errors: FieldErrors<Category>): void => {
+  errors.category && toasts.errorToast(Messages.accountTypeReqErr);
 };
 
 export default showAccountTypeError;

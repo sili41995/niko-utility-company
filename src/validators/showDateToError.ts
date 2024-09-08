@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { DateTo } from '@/types/data.types';
+import { DateTo } from '@/types/period.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

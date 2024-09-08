@@ -1,6 +1,6 @@
 import streetsService from '@/services/streets.service';
 import operationWrapper from '@/store/streets/operationWrapper';
-import { Streets } from '@/types/data.types';
+import { Streets } from '@/types/street.types';
 import { IFetchStreetsOperationProps } from '@/types/streetsStore.types';
 
 const fetchStreetsOperation = async ({
