@@ -1,4 +1,4 @@
-import { AccountCategory, IAccountType } from './accountType';
+import { AccountCategory, IAccountType } from './accountType.types';
 import { FullBalances } from './balance.types';
 import { IContract, NewContract } from './contract.types';
 import { Documents, NewDocument } from './document.types';
@@ -44,7 +44,8 @@ export interface IFullSubscriberAccount extends ISubscriberAccount {
 
 export type FullSubscriberAccounts = IFullSubscriberAccount[];
 
-export interface IUpdateSubscriberAccountData extends ISubscriberAccount {
+export interface IUpdateSubscriberAccountData
+  extends Partial<ISubscriberAccount> {
   document: NewDocument;
   owner: Partial<NewOwner>;
 }
@@ -99,6 +100,7 @@ export interface IUpdateSubscriberAccountFormData
   house: string;
   name: string;
   comment: string;
+  documentName: string;
 }
 
 export interface INewSubscriberAccountData

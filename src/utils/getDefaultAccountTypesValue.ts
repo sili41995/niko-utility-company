@@ -1,4 +1,4 @@
-import { IGetDefaultAccountTypesValueProps } from '@/types/accountType';
+import { IGetDefaultAccountTypesValueProps } from '@/types/accountType.types';
 
 const getDefaultAccountTypesValue = ({
   accountTypes,

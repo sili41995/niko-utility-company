@@ -50,6 +50,7 @@ const useEditSubscriberAccountForm = (
     residents,
     period,
     id,
+    accountType: { category },
     owner: {
       surname,
       name,
@@ -59,7 +60,7 @@ const useEditSubscriberAccountForm = (
       middleName,
       birthday,
     },
-    contract: { date: contractDate },
+    contract: { date: contractDate, number: contractNumber },
   } = subscriberAccount;
   const fullStreetName = `${street.type} ${street.name}`;
   const contractDateValue = formatDate({
@@ -92,7 +93,7 @@ const useEditSubscriberAccountForm = (
     IUpdateSubscriberAccountFormData
   > = async (data) => {
     const filteredData = getFilteredEditSubscriberAccountFormData(data);
-
+    console.log(filteredData);
     try {
       await updateSubscriberAccountById({ data: filteredData, id });
       toasts.successToast(Messages.subscriberAccountUpdateSuccess);
@@ -147,6 +148,8 @@ const useEditSubscriberAccountForm = (
     phone,
     additionalPhone,
     isLoading,
+    accountType: category,
+    contract: contractNumber,
   };
 };
 

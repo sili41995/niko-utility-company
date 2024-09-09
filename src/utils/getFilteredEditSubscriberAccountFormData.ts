@@ -16,20 +16,34 @@ const getFilteredSEditSubscriberAccountFormData = (
     phone,
     residents,
     comment,
+    documentName,
+    surname,
+    name,
+    middleName,
+    houseId,
+    isEligibleForBenefit,
   } = data;
 
+  const isLivingApartmentValue = isLivingApartment === 'true' ? true : false;
+  const birthdayValue = birthday ? new Date(birthday) : undefined;
+
   return {
-    comment,
-    isLivingApartment: isLivingApartment === 'true' ? true : false,
+    isLivingApartment: isLivingApartmentValue,
     residents: Number(residents),
-    isRemovalHouseholdWaste,
+    houseId: Number(houseId),
     period: new Date(period),
+    isRemovalHouseholdWaste,
     owner: {
+      surname,
+      name,
+      middleName,
       phone,
       additionalPhone,
-      birthday: birthday ? new Date(birthday) : undefined,
-      email: email ? email : undefined,
+      email,
+      isEligibleForBenefit,
+      birthday: birthdayValue,
     },
+    document: { comment, name: documentName },
   };
 };
 

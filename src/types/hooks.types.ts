@@ -23,7 +23,7 @@ import {
 } from './subscriberAccount.types';
 import { NewUser } from './user.types';
 import { RefObject } from 'react';
-import { AccountCategory } from './accountType';
+import { AccountCategory } from './accountType.types';
 import { IPriceAdjustmentFormData } from './priceAdjustment.types';
 import { ITimePeriod } from './period.types';
 import { IReportsBySubscribersFormData } from './report.types';

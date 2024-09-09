@@ -61,7 +61,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           value={fullStreetName}
           width={550}
           horizontal
-          disabled
         />
         <Input
           settings={{ ...register('house') }}
@@ -70,7 +69,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           value={house}
           width={550}
           horizontal
-          disabled
         />
         <Input
           settings={{ ...register('apartment') }}
@@ -79,7 +77,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           value={apartment}
           width={550}
           horizontal
-          disabled
         />
       </AddressWrap>
       <SubscriberAccountContainer>
@@ -90,7 +87,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           value={number}
           width={550}
           horizontal
-          disabled
         />
         <Input
           settings={{ ...register('contractDate') }}
@@ -99,7 +95,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           value={contractDateValue}
           width={550}
           horizontal
-          disabled
         />
       </SubscriberAccountContainer>
       <TypesWrap>
@@ -161,7 +156,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             defaultValue={surname}
             width={550}
             horizontal
-            disabled
           />
           <Input
             settings={{ ...register('name') }}
@@ -170,7 +164,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             defaultValue={name}
             width={550}
             horizontal
-            disabled
           />
           <Input
             settings={{ ...register('middleName') }}
@@ -179,7 +172,6 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             defaultValue={middleName}
             width={550}
             horizontal
-            disabled
           />
           <CheckboxWrap>
             <CheckboxName>Має право на пільгу</CheckboxName>
@@ -235,7 +227,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             horizontal
           />
           <Input
-            settings={{ ...register('name', { required: true }) }}
+            settings={{ ...register('documentName', { required: true }) }}
             label='Документ:'
             placeholder='Документ'
             type={InputTypes.text}
