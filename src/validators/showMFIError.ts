@@ -1,3 +1,4 @@
+import { Mfi } from '@/types/generalSettingsValidator.types';
 import { FieldErrors } from 'react-hook-form';
 
 const showMfiError = (errors: FieldErrors<Mfi>): void => {
