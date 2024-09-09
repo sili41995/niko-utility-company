@@ -39,7 +39,7 @@ const getFilteredAddSubscriberAccountData = (
     houseId: Number(houseId),
     period: new Date(period),
     isRemovalHouseholdWaste,
-    contract: { number: contractNumber, date: contractDate },
+    contract: { number: contractNumber, date: new Date(contractDate) },
     owner: {
       surname,
       name,

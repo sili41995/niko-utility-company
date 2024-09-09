@@ -44,12 +44,6 @@ export interface IFullSubscriberAccount extends ISubscriberAccount {
 
 export type FullSubscriberAccounts = IFullSubscriberAccount[];
 
-export interface IUpdateSubscriberAccountData
-  extends Partial<ISubscriberAccount> {
-  document: NewDocument;
-  owner: Partial<NewOwner>;
-}
-
 export type SubscriberAccountNumber = Pick<ISubscriberAccount, 'number'>;
 
 export type StreetId = Pick<ISubscriberAccount, 'streetId'>;
@@ -73,52 +67,50 @@ export interface ISubscriberAccountWithOwner extends ISubscriberAccount {
   owner: IOwner;
 }
 
-export type InitialSubscriberAccountFormData = Omit<
-  ISubscriberAccount,
-  'id' | 'streetId' | 'houseId' | 'isLivingApartment' | 'period' | 'residents'
->;
+export type SetSubscriberAccountFunc = (data: IFullSubscriberAccount) => void;
 
-export interface ISubscriberAccountData
-  extends InitialSubscriberAccountFormData,
-    NewOwner {
+export interface IAddSubscriberAccountFormData
+  extends Omit<NewOwner, 'birthday' | 'email'>,
+    Pick<ISubscriberAccount, 'number' | 'isRemovalHouseholdWaste'> {
   streetId: string;
   houseId: string;
-  isLivingApartment: BooleanValue;
-  contractDate: Date;
-  period: string;
-  residents: string;
-}
-
-export interface IAddSubscriberAccountFormData extends ISubscriberAccountData {
-  category: AccountCategory;
+  apartment: string;
   contractNumber: string;
+  contractDate: string;
+  category: AccountCategory;
+  isLivingApartment: BooleanValue;
+  residents: string;
+  period: string;
+  email: string;
+  birthday: string;
 }
 
 export interface IUpdateSubscriberAccountFormData
-  extends ISubscriberAccountData {
-  street: string;
-  house: string;
-  name: string;
+  extends IAddSubscriberAccountFormData {
   comment: string;
   documentName: string;
 }
 
-export interface INewSubscriberAccountData
+export interface IUpdateSubscriberAccountData
   extends Omit<
-    ISubscriberAccount,
-    | 'id'
-    | 'streetId'
-    | 'apartment'
-    | 'comment'
-    | 'accountTypeId'
-    | 'contractId'
-    | 'ownerId'
-    | 'sectorId'
+    INewSubscriberAccountData,
+    'apartment' | 'category' | 'contract' | 'number'
   > {
-  category: AccountCategory;
-  apartment: string | undefined;
-  owner: NewOwner;
-  contract: NewContract;
+  document: NewDocument;
 }
 
-export type SetSubscriberAccountFunc = (data: IFullSubscriberAccount) => void;
+export interface INewSubscriberAccountData
+  extends Pick<
+    ISubscriberAccount,
+    | 'number'
+    | 'isLivingApartment'
+    | 'residents'
+    | 'isRemovalHouseholdWaste'
+    | 'period'
+    | 'houseId'
+  > {
+  apartment: string | undefined;
+  category: AccountCategory;
+  contract: NewContract;
+  owner: NewOwner;
+}

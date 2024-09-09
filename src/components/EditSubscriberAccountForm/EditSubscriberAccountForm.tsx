@@ -55,7 +55,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <AddressWrap>
         <Input
-          settings={{ ...register('street') }}
+          settings={{ ...register('streetId') }}
           label='Вулиця:'
           type={InputTypes.text}
           value={fullStreetName}
@@ -63,7 +63,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           horizontal
         />
         <Input
-          settings={{ ...register('house') }}
+          settings={{ ...register('houseId') }}
           label='Будинок:'
           type={InputTypes.text}
           value={house}
