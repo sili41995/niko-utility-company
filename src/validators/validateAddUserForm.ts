@@ -1,15 +1,13 @@
 import { NewUser } from '@/types/user.types';
 import { FieldErrors } from 'react-hook-form';
 import showLoginError from './showLoginError';
-import showPassError from './showPassError';
-import showNameError from './showFullNameError';
-import showEmailError from './showUserEmailError';
+import showPasswordError from './showPasswordError';
 
 const validateAddUserForm = (errors: FieldErrors<NewUser>): void => {
   showLoginError(errors);
-  showPassError(errors);
-  showNameError(errors);
-  showEmailError(errors);
+  showPasswordError(errors);
+  showUserNameError(errors);
+  showUserEmailError(errors);
 };
 
 export default validateAddUserForm;

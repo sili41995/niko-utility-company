@@ -1,13 +1,13 @@
 import { ITimePeriod } from '@/types/period.types';
 import { FieldErrors } from 'react-hook-form';
-import showDateFromError from './showDateFromError';
-import showDateToError from './showDateToError';
+import showFromError from './showFromError';
+import showToError from './showToError';
 
 const validateReportsByStreetsForm = (
   errors: FieldErrors<ITimePeriod>
 ): void => {
-  showDateFromError(errors);
-  showDateToError(errors);
+  showFromError(errors);
+  showToError(errors);
 };
 
 export default validateReportsByStreetsForm;

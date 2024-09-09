@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { MinDebt } from '@/types/report.types';
+import { MinDebt } from '@/types/reportValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

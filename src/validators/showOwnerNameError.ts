@@ -1,10 +1,10 @@
 import { Messages } from '@/constants';
-import { OwnerName } from '@/types/owner.types';
+import { Name } from '@/types/subscriberAccountValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showNameError = (errors: FieldErrors<OwnerName>): void => {
+const showOwnerNameError = (errors: FieldErrors<Name>): void => {
   errors.name && toasts.errorToast(Messages.nameReqErr);
 };
 
-export default showNameError;
+export default showOwnerNameError;

@@ -1,7 +1,7 @@
 import { Messages } from '@/constants';
 import { IErrorMessage } from '@/types/types';
 
-const getPassFieldError = (type: string): string => {
+const getPasswordFieldError = (type: string): string => {
   const types: IErrorMessage = {
     required: Messages.passReqErr,
     minLength: Messages.passMinLengthErr,
@@ -11,4 +11,4 @@ const getPassFieldError = (type: string): string => {
   return types[type];
 };
 
-export default getPassFieldError;
+export default getPasswordFieldError;

@@ -6,7 +6,7 @@ import {
   saveFileToPdf,
   toasts,
 } from '@/utils';
-import validateReportsBySubscribersForm from '@/validators/validateReportsBySubscribersForm';
+import { validateReportsBySubscribersForm } from '@/validators';
 import { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';

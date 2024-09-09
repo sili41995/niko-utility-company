@@ -1,12 +1,10 @@
 import { Messages } from '@/constants';
-import { PriceAdjustmentDate } from '@/types/priceAdjustment.types';
+import { Date } from '@/types/priceAdjustmentValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showPriceAdjustmentDateError = (
-  errors: FieldErrors<PriceAdjustmentDate>
-): void => {
-  errors.date && toasts.errorToast(Messages.priceReqErr);
+const showPriceAdjustmentDateError = (errors: FieldErrors<Date>): void => {
+  errors.date && toasts.errorToast(Messages.dateReqErr);
 };
 
 export default showPriceAdjustmentDateError;

@@ -3,7 +3,7 @@ import {
   IUpdateSubscriberAccountFormData,
 } from '@/types/subscriberAccount.types';
 
-const getFilteredSEditSubscriberAccountFormData = (
+const getFilteredUpdateSubscriberAccountFormData = (
   data: IUpdateSubscriberAccountFormData
 ): IUpdateSubscriberAccountData => {
   const {
@@ -47,4 +47,4 @@ const getFilteredSEditSubscriberAccountFormData = (
   };
 };
 
-export default getFilteredSEditSubscriberAccountFormData;
+export default getFilteredUpdateSubscriberAccountFormData;

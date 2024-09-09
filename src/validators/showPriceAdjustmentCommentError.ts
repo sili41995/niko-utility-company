@@ -1,12 +1,12 @@
 import { Messages } from '@/constants';
-import { PriceAdjustmentComment } from '@/types/priceAdjustment.types';
+import { Comment } from '@/types/priceAdjustmentValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
 const showPriceAdjustmentCommentError = (
-  errors: FieldErrors<PriceAdjustmentComment>
+  errors: FieldErrors<Comment>
 ): void => {
-  errors.comment && toasts.errorToast(Messages.priceReqErr);
+  errors.comment && toasts.errorToast(Messages.commentReqErr);
 };
 
 export default showPriceAdjustmentCommentError;

@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { IsEligibleForBenefit } from '@/types/owner.types';
+import { IsEligibleForBenefit } from '@/types/subscriberAccountValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

@@ -10,6 +10,6 @@ export interface IReportsBySubscribersFormData
   minDebt: string;
 }
 
-export type MinDebt = Pick<IReportsBySubscribersFormData, 'minDebt'>;
+// export type MinDebt = Pick<IReportsBySubscribersFormData, 'minDebt'>;
 
-export type PeriodIdString = Pick<IReportsBySubscribersFormData, 'periodId'>;
+// export type PeriodIdString = Pick<IReportsBySubscribersFormData, 'periodId'>;

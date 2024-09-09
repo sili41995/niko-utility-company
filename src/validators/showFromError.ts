@@ -1,10 +1,10 @@
 import { Messages } from '@/constants';
-import { DateFrom } from '@/types/period.types';
+import { From } from '@/types/periodValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showDateFromError = (errors: FieldErrors<DateFrom>): void => {
+const showFromError = (errors: FieldErrors<From>): void => {
   errors.from && toasts.errorToast(Messages.dateFromReqErr);
 };
 
-export default showDateFromError;
+export default showFromError;

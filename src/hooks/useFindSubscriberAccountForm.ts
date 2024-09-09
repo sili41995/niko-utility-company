@@ -5,7 +5,7 @@ import {
   SetSubscriberAccountFunc,
   SubscriberAccountNumber,
 } from '@/types/subscriberAccount.types';
-import validateFindSubscriberAccountForm from '@/validators/validateFindSubscriberAccountForm';
+import { validateFindSubscriberAccountForm } from '@/validators';
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
 import { IUseFindSubscriberAccountForm } from '@/types/hooks.types';
 import { AxiosError } from 'axios';

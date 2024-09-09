@@ -4,7 +4,7 @@ import { selectAdd, selectIsLoading } from '@/store/tariffs/selectors';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ITariffFormData } from '@/types/tariff.types';
 import { getTariffUnits, getUpdatedTariffData, toasts } from '@/utils';
-import validateAddTariffForm from '@/validators/validateAddTariffForm';
+import { validateAddTariffForm } from '@/validators';
 import { Messages } from '@/constants';
 import { SectorType } from '@/types/sector.types';
 

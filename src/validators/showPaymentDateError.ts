@@ -1,9 +1,9 @@
 import { Messages } from '@/constants';
-import { PaymentDate } from '@/types/payment.types';
+import { Date } from '@/types/paymentValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showPaymentDateError = (errors: FieldErrors<PaymentDate>): void => {
+const showPaymentDateError = (errors: FieldErrors<Date>): void => {
   errors.date && toasts.errorToast(Messages.dateReqErr);
 };
 

@@ -5,7 +5,7 @@ import {
 import { SubmitHandler, useForm } from 'react-hook-form';
 import {
   formatDate,
-  getFilteredEditSubscriberAccountFormData,
+  getFilteredUpdateSubscriberAccountFormData,
   toasts,
 } from '@/utils';
 import { InputChangeEvent } from '@/types/types';
@@ -21,12 +21,12 @@ import {
   apartmentTypes,
 } from '@/constants';
 import { useEffect, useState } from 'react';
-import { IUseEditSubscriberAccountForm } from '@/types/hooks.types';
-import { validateEditSubscriberAccountForm } from '@/validators';
+import { IUseUpdateSubscriberAccountForm } from '@/types/hooks.types';
+import { validateUpdateSubscriberAccountForm } from '@/validators';
 
-const useEditSubscriberAccountForm = (
+const useUpdateSubscriberAccountForm = (
   subscriberAccount: IFullSubscriberAccount
-): IUseEditSubscriberAccountForm => {
+): IUseUpdateSubscriberAccountForm => {
   const [isRemovalHouseHoldWaste, setIsRemovalHouseholdWaste] =
     useState<boolean>(() => subscriberAccount.isRemovalHouseholdWaste);
   const [isEligibleForBenefit, setIsEligibleForBenefit] = useState<boolean>(
@@ -85,14 +85,14 @@ const useEditSubscriberAccountForm = (
     const invalidFields = Object.keys(errors);
 
     if (invalidFields.length) {
-      validateEditSubscriberAccountForm(errors);
+      validateUpdateSubscriberAccountForm(errors);
     }
   }, [isSubmitting, errors]);
 
   const handleFormSubmit: SubmitHandler<
     IUpdateSubscriberAccountFormData
   > = async (data) => {
-    const filteredData = getFilteredEditSubscriberAccountFormData(data);
+    const filteredData = getFilteredUpdateSubscriberAccountFormData(data);
     console.log(filteredData);
     try {
       await updateSubscriberAccountById({ data: filteredData, id });
@@ -153,4 +153,4 @@ const useEditSubscriberAccountForm = (
   };
 };
 
-export default useEditSubscriberAccountForm;
+export default useUpdateSubscriberAccountForm;

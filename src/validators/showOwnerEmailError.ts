@@ -1,9 +1,9 @@
 import { Messages } from '@/constants';
-import { OwnerEmail } from '@/types/owner.types';
+import { Email } from '@/types/subscriberAccountValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showOwnerEmailError = (errors: FieldErrors<OwnerEmail>): void => {
+const showOwnerEmailError = (errors: FieldErrors<Email>): void => {
   errors.email && toasts.errorToast(Messages.emailRegExpErr);
 };
 

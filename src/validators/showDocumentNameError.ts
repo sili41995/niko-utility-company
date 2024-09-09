@@ -1,10 +1,9 @@
 import { Messages } from '@/constants';
-import { DocumentName } from '@/types/document.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
 const showDocumentNameError = (errors: FieldErrors<DocumentName>): void => {
-  errors.name && toasts.errorToast(Messages.documentNameReqErr);
+  errors.residents && toasts.errorToast(Messages.residentsReqErr);
 };
 
 export default showDocumentNameError;

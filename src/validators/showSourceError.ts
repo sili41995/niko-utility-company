@@ -1,10 +1,10 @@
 import { Messages } from '@/constants';
-import { IPaymentSource } from '@/types/paymentSource.types';
+import { Source } from '@/types/paymentValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showPaymentSourceError = (errors: FieldErrors<IPaymentSource>): void => {
+const showSourceError = (errors: FieldErrors<Source>): void => {
   errors.source && toasts.errorToast(Messages.sourceReqErr);
 };
 
-export default showPaymentSourceError;
+export default showSourceError;

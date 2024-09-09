@@ -32,7 +32,3 @@ export interface ITimePeriod {
   from: string;
   to: string;
 }
-
-export type DateFrom = Pick<ITimePeriod, 'from'>;
-
-export type DateTo = Pick<ITimePeriod, 'to'>;

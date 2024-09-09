@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { Surname } from '@/types/owner.types';
+import { Surname } from '@/types/subscriberAccountValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

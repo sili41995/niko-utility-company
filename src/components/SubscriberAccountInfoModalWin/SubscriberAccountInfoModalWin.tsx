@@ -6,7 +6,7 @@ import { Container, ContentWrap } from './SubscriberAccountInfoModalWin.styled';
 import { SubscriberAccountInfoCategories } from '@/constants';
 import { InputChangeEvent } from '@/types/types';
 import SubscriberAccountInfoModalWinControls from '@/components/SubscriberAccountInfoModalWinControls';
-import EditSubscriberAccountForm from '@/components/EditSubscriberAccountForm';
+import UpdateSubscriberAccountForm from '@/components/UpdateSubscriberAccountForm';
 import PaymentsCategory from '@/components/PaymentsCategory';
 import PriceAdjustmentsCategory from '@/components/PriceAdjustmentsCategory';
 import PricesCategory from '@/components/PricesCategory';
@@ -61,7 +61,9 @@ const SubscriberAccountInfoModalWin: FC<IProps> = ({
           )}
           {isPaymentsCategory && <PaymentsCategory payments={payments} />}
           {isEditingCategory && (
-            <EditSubscriberAccountForm subscriberAccount={subscriberAccount} />
+            <UpdateSubscriberAccountForm
+              subscriberAccount={subscriberAccount}
+            />
           )}
         </ContentWrap>
       </Container>

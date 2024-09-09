@@ -44,24 +44,16 @@ export interface IFullSubscriberAccount extends ISubscriberAccount {
 
 export type FullSubscriberAccounts = IFullSubscriberAccount[];
 
-export type SubscriberAccountNumber = Pick<ISubscriberAccount, 'number'>;
+// export type SubscriberAccountNumber = Pick<ISubscriberAccount, 'number'>;
 
-export type StreetId = Pick<ISubscriberAccount, 'streetId'>;
+// export type IsRemovalHouseholdWaste = Pick<
+//   ISubscriberAccount,
+//   'isRemovalHouseholdWaste'
+// >;
 
-export type HouseId = Pick<ISubscriberAccount, 'houseId'>;
+// export type IsLivingApartment = Pick<ISubscriberAccount, 'isLivingApartment'>;
 
-export type Residents = Pick<ISubscriberAccount, 'residents'>;
-
-export type Period = Pick<ISubscriberAccount, 'period'>;
-
-export type IsRemovalHouseholdWaste = Pick<
-  ISubscriberAccount,
-  'isRemovalHouseholdWaste'
->;
-
-export type IsLivingApartment = Pick<ISubscriberAccount, 'isLivingApartment'>;
-
-export type Apartment = Pick<ISubscriberAccount, 'apartment'>;
+// export type Apartment = Pick<ISubscriberAccount, 'apartment'>;
 
 export interface ISubscriberAccountWithOwner extends ISubscriberAccount {
   owner: IOwner;
@@ -91,26 +83,26 @@ export interface IUpdateSubscriberAccountFormData
   documentName: string;
 }
 
-export interface IUpdateSubscriberAccountData
-  extends Omit<
-    INewSubscriberAccountData,
-    'apartment' | 'category' | 'contract' | 'number'
-  > {
-  document: NewDocument;
-}
+// export interface IUpdateSubscriberAccountData
+//   extends Omit<
+//     INewSubscriberAccountData,
+//     'apartment' | 'category' | 'contract' | 'number'
+//   > {
+//   document: NewDocument;
+// }
 
-export interface INewSubscriberAccountData
-  extends Pick<
-    ISubscriberAccount,
-    | 'number'
-    | 'isLivingApartment'
-    | 'residents'
-    | 'isRemovalHouseholdWaste'
-    | 'period'
-    | 'houseId'
-  > {
-  apartment: string | undefined;
-  category: AccountCategory;
-  contract: NewContract;
-  owner: NewOwner;
-}
+// export interface INewSubscriberAccountData
+//   extends Pick<
+//     ISubscriberAccount,
+//     | 'number'
+//     | 'isLivingApartment'
+//     | 'residents'
+//     | 'isRemovalHouseholdWaste'
+//     | 'period'
+//     | 'houseId'
+//   > {
+//   apartment: string | undefined;
+//   category: AccountCategory;
+//   contract: NewContract;
+//   owner: NewOwner;
+// }

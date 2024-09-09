@@ -215,7 +215,7 @@ export interface IUseDownloadPaymentsFile {
   onDownloadPaymentsBtnClick: OnBtnClickFunc;
 }
 
-export interface IUseEditSubscriberAccountForm {
+export interface IUseUpdateSubscriberAccountForm {
   handleSubmit: UseFormHandleSubmit<
     IUpdateSubscriberAccountFormData,
     undefined

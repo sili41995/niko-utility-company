@@ -1,9 +1,6 @@
-import { Messages } from '@/constants';
-import { MFI } from '@/types/generalSettings.types';
-import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showMFIError = (errors: FieldErrors<MFI>): void => {
+const showMfiError = (errors: FieldErrors<Mfi>): void => {
   errors.mfi &&
     toasts.errorToast(
       errors.mfi.type === 'required'
@@ -12,4 +9,4 @@ const showMFIError = (errors: FieldErrors<MFI>): void => {
     );
 };
 
-export default showMFIError;
+export default showMfiError;

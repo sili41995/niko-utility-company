@@ -18,14 +18,14 @@ import {
   PersonParametersWrap,
   CheckboxWrap,
   CheckboxName,
-} from './EditSubscriberAccountForm.styled';
+} from './UpdateSubscriberAccountForm.styled';
 import Checkbox from '@/components/Checkbox';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Select from '@/components/Select';
-import { IProps } from './EditSubscriberAccountForm.types';
-import { useEditSubscriberAccountForm } from '@/hooks';
+import { IProps } from './UpdateSubscriberAccountForm.types';
+import { useUpdateSubscriberAccountForm } from '@/hooks';
 
-const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
+const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   const {
     handleSubmit,
     handleFormSubmit,
@@ -49,7 +49,7 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     birthday,
     isLoading,
     number,
-  } = useEditSubscriberAccountForm(subscriberAccount);
+  } = useUpdateSubscriberAccountForm(subscriberAccount);
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -249,4 +249,4 @@ const EditSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
   );
 };
 
-export default EditSubscriberAccountForm;
+export default UpdateSubscriberAccountForm;

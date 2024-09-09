@@ -12,7 +12,7 @@ import {
   getGeneralSettingsFormDefaultValues,
   toasts,
 } from '@/utils';
-import validateGeneralSettingsForm from '@/validators/validateGeneralSettingsForm';
+import { validateGeneralSettingsForm } from '@/validators';
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 

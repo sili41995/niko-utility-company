@@ -24,7 +24,7 @@ export { default as getTariffUnits } from './getTariffUnits';
 export { default as getUpdatedTariffData } from './getUpdatedTariffData';
 export { default as saveFileToPdf } from './saveFileToPdf';
 export { default as getPeriodDate } from './getPeriodDate';
-export { default as getFilteredEditSubscriberAccountFormData } from './getFilteredEditSubscriberAccountFormData';
+export { default as getFilteredUpdateSubscriberAccountFormData } from './getFilteredUpdateSubscriberAccountFormData';
 export { default as getGeneralSettingsFormDefaultValues } from './getGeneralSettingsFormDefaultValues';
 export { default as filterGeneralSettingsData } from './filterGeneralSettingsData';
 export { default as getPriceAdjustmentData } from './getPriceAdjustmentData';

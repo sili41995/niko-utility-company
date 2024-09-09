@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { CurrentAccount } from '@/types/generalSettings.types';
+import { CurrentAccount } from '@/types/generalSettingsValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

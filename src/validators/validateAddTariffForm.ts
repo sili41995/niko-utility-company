@@ -1,10 +1,10 @@
 import { ITariffFormData } from '@/types/tariff.types';
 import { FieldErrors } from 'react-hook-form';
-import showTariffError from './showTariffError';
+import showTariffPriceError from './showTariffPriceError';
 import showStartError from './showStartError';
 
 const validateAddTariffForm = (errors: FieldErrors<ITariffFormData>): void => {
-  showTariffError(errors);
+  showTariffPriceError(errors);
   showStartError(errors);
 };
 

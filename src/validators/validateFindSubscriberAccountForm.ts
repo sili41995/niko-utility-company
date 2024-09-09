@@ -1,11 +1,11 @@
-import { SubscriberAccountNumber } from '@/types/subscriberAccount.types';
 import { FieldErrors } from 'react-hook-form';
-import showSubscriberAccountError from './showSubscriberAccountError';
+import showNumberError from './showNumberError';
+import { SubscriberAccountNumber } from '@/types/subscriberAccountValidator.types';
 
 const validateFindSubscriberAccountForm = (
   errors: FieldErrors<SubscriberAccountNumber>
 ): void => {
-  showSubscriberAccountError(errors);
+  showNumberError(errors);
 };
 
 export default validateFindSubscriberAccountForm;

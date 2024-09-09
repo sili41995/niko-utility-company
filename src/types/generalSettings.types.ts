@@ -6,25 +6,25 @@ export interface IGeneralSettings {
   adsInPayments: string | null;
 }
 
-export type CurrentAccount = Pick<IGeneralSettings, 'currentAccount'>;
+// export type CurrentAccount = Pick<IGeneralSettings, 'currentAccount'>;
 
-export type MFI = Pick<IGeneralSettings, 'mfi'>;
+// export type MFI = Pick<IGeneralSettings, 'mfi'>;
 
-export type HelpPhone = Pick<IGeneralSettings, 'helpPhone'>;
+// export type HelpPhone = Pick<IGeneralSettings, 'helpPhone'>;
 
-export type AdsInPayments = Pick<IGeneralSettings, 'adsInPayments'>;
+// export type AdsInPayments = Pick<IGeneralSettings, 'adsInPayments'>;
 
-export interface IUpdateGeneralSettingsData {
-  id: number;
-  data: Partial<IGeneralSettings>;
-}
+// export interface IUpdateGeneralSettingsData {
+//   id: number;
+//   data: Partial<IGeneralSettings>;
+// }
 
-export interface IGeneralSettingsData extends Omit<IGeneralSettings, 'id'> {}
+// export interface IGeneralSettingsData extends Omit<IGeneralSettings, 'id'> {}
 
-export interface IGetGeneralSettingsFormDefaultValues
-  extends Omit<IGeneralSettingsData, 'mfi'> {
-  mfi: string;
-}
+// export interface IGetGeneralSettingsFormDefaultValues
+//   extends Omit<IGeneralSettingsData, 'mfi'> {
+//   mfi: string;
+// }
 
 export interface IGeneralSettingsFormData
   extends Omit<IGeneralSettings, 'id' | 'mfi'> {
