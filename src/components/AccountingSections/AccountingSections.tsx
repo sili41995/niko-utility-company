@@ -9,7 +9,7 @@ import PayAbankModalWin from '@/components/PayAbankModalWin';
 import PaymentsFilesOshchadbankModalWin from '@/components/PaymentsFilesOshchadbankModalWin';
 import PaymentsFilesPrivatbankModalWin from '@/components/PaymentsFilesPrivatbankModalWin';
 import PaymentsFilesPostageModalWin from '@/components/PaymentsFilesPostageModalWin';
-import AccountsMessageModalWin from '@/components/AccountsMessageModalWin';
+import AccountsMessageModalWin from '@/components/InvoicesModalWin';
 import PaymentsModalWin from '@/components/PaymentsModalWin';
 import PriceAdjustmentsModalWin from '@/components/PriceAdjustmentsModalWin';
 

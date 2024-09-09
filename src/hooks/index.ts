@@ -30,7 +30,7 @@ export { default as usePriceAdjustmentForm } from './usePriceAdjustmentForm';
 export { default as useAddPaymentForm } from './useAddPaymentForm';
 export { default as usePaymentsModalWin } from './usePaymentsModalWin';
 export { default as usePaymentsSection } from './usePaymentsSection';
-export { default as useAccountsMessageForm } from './useAccountsMessageForm';
+export { default as useInvoicesForm } from './useInvoicesForm';
 export { default as usePayAbankModalWin } from './usePayAbankModalWin';
 export { default as useReportsByStreetsForm } from './useReportsByStreetsForm';
 export { default as useAttachCsvFile } from './useAttachCsvFile';

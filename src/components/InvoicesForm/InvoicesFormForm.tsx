@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Form, InputsWrap } from './AccountsMessageForm.styled';
+import { Form, InputsWrap } from './InvoicesForm.styled';
 import Select from '../Select';
 import SubmitFormBtn from '../SubmitFormBtn';
-import { useAccountsMessageForm } from '@/hooks';
+import { useInvoicesForm } from '@/hooks';
 
-const AccountsMessageForm: FC = () => {
+const InvoicesForm: FC = () => {
   const {
     handleSubmit,
     register,
@@ -12,7 +12,7 @@ const AccountsMessageForm: FC = () => {
     isLoading,
     houses,
     streets,
-  } = useAccountsMessageForm();
+  } = useInvoicesForm();
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -35,4 +35,4 @@ const AccountsMessageForm: FC = () => {
   );
 };
 
-export default AccountsMessageForm;
+export default InvoicesForm;

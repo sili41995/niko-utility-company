@@ -128,7 +128,7 @@ export interface IUseAccountingSections {
   showPayAbankModalWin: boolean;
 }
 
-export interface IUseAccountsMessageForm {
+export interface IUseInvoicesForm {
   isLoading: boolean;
   register: UseFormRegister<IHousesLocationData>;
   handleSubmit: UseFormHandleSubmit<IHousesLocationData, undefined>;

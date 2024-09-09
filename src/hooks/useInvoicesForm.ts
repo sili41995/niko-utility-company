@@ -3,12 +3,12 @@ import accountingService from '@/services/accounting.service';
 import { Messages } from '@/constants';
 import { AxiosError } from 'axios';
 import { useState } from 'react';
-import { IUseAccountsMessageForm } from '@/types/hooks.types';
+import { IUseInvoicesForm } from '@/types/hooks.types';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import useHousesLocation from './useHousesLocation';
 import { IHousesLocationData } from '@/types/types';
 
-const useAccountsMessageForm = (): IUseAccountsMessageForm => {
+const useInvoicesForm = (): IUseInvoicesForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { register, handleSubmit, watch } = useForm<IHousesLocationData>();
 
@@ -41,4 +41,4 @@ const useAccountsMessageForm = (): IUseAccountsMessageForm => {
   };
 };
 
-export default useAccountsMessageForm;
+export default useInvoicesForm;

@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import { IProps } from './AccountsMessageModalWin.types';
+import { IProps } from './InvoicesModalWin.types';
 import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
-import { Container, ContentContainer } from './AccountsMessageModalWin.styled';
+import { Container, ContentContainer } from './InvoicesModalWin.styled';
 import PeriodTitle from '@/components/PeriodTitle';
-import AccountsMessageForm from '@/components/AccountsMessageForm';
+import InvoicesForm from '@/components/InvoicesForm';
 import { useStreetsData } from '@/hooks';
 import Loader from '../Loader';
 import ErrorMessage from '../ErrorMessage';
 
-const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
+const InvoicesModalWin: FC<IProps> = ({ setModalWinState }) => {
   const { isLoadingData, housesError, streetsError } = useStreetsData();
 
   return (
@@ -18,7 +18,7 @@ const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
         <FormDataTitle title='Рахунки-повідомлення:' />
         <ContentContainer>
           <PeriodTitle />
-          {isLoadingData ? <Loader /> : <AccountsMessageForm />}
+          {isLoadingData ? <Loader /> : <InvoicesForm />}
         </ContentContainer>
         {housesError && <ErrorMessage error={housesError} />}
         {streetsError && <ErrorMessage error={streetsError} />}
@@ -27,4 +27,4 @@ const AccountsMessageModalWin: FC<IProps> = ({ setModalWinState }) => {
   );
 };
 
-export default AccountsMessageModalWin;
+export default InvoicesModalWin;
