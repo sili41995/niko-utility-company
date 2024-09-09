@@ -5,7 +5,7 @@ import {
   SetUsersStateFunc,
 } from '@/types/usersStore.types';
 import initialState from './initialState';
-import { addUser, fetchUsers } from './operations';
+import { add, getAll } from './operations';
 import { NewUser, UserData, Users } from '@/types/user.types';
 
 const usersSlice = (
@@ -13,14 +13,14 @@ const usersSlice = (
   get: GetUsersStateFunc
 ): IUsersState => ({
   ...initialState,
-  fetchUsers: async (): Promise<Users | undefined> =>
-    await fetchUsers({
-      set: setState({ set, name: 'fetchUsers' }),
+  getAll: async (): Promise<Users | undefined> =>
+    await getAll({
+      set: setState({ set, name: 'getAll' }),
       data: undefined,
       get,
     }),
-  addUser: async (data: NewUser): Promise<UserData | undefined> =>
-    await addUser({ data, set: setState({ set, name: 'addUser' }), get }),
+  add: async (data: NewUser): Promise<UserData | undefined> =>
+    await add({ data, set: setState({ set, name: 'add' }), get }),
 });
 
 const params = {

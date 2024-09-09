@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useTariffsStore } from '@/store/store';
-import { selectAddTariff, selectIsLoading } from '@/store/tariffs/selectors';
+import { selectAdd, selectIsLoading } from '@/store/tariffs/selectors';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ITariffFormData } from '@/types/tariff.types';
 import { getTariffUnits, getUpdatedTariffData, toasts } from '@/utils';
@@ -12,7 +12,7 @@ const useAddTariffForm = (sector: SectorType) => {
   const tariffUnits = getTariffUnits(sector);
   const tariffLabel = `Тариф (${tariffUnits}):`;
   const isLoading = useTariffsStore(selectIsLoading);
-  const addTariff = useTariffsStore(selectAddTariff);
+  const addTariff = useTariffsStore(selectAdd);
   const {
     register,
     formState: { errors, isSubmitting },

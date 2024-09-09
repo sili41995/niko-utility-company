@@ -9,7 +9,7 @@ import { IGeneralSettingsState } from '@/types/generalSettingsStore.types';
 import { IStreetsState } from '@/types/streetsStore.types';
 import streetsStore from './streets/streets.store';
 import { IHousesState } from '@/types/housesStore.types';
-import housesStore from './houses/streets.store';
+import housesStore from './houses/houses.store';
 import { ISubscriberAccountsState } from '@/types/subscriberAccountsStore.types';
 import subscriberAccountsStore from './subscriberAccounts/subscriberAccounts.store';
 import { ITariffsState } from '@/types/tariffsStore.types';
@@ -18,10 +18,12 @@ import documentsStore from './documents/documents.store';
 import { IDocumentsState } from '@/types/documentsStore.types';
 import periodsStore from './periods/periods.store';
 import { IPeriodsState } from '@/types/periodsStore.types';
-import { IAccountingState } from '@/types/accountingStore.types';
-import accountingStore from './accounting/accounting.store';
+import { IPricesState } from '@/types/pricesStore.types';
 import { IPaymentsState } from '@/types/paymentsStore.types';
 import paymentsStore from './payments/payments.store';
+import pricesStore from './prices/prices.store';
+import { IPriceAdjustmentsState } from '@/types/priceAdjustmentsStore.types';
+import priceAdjustmentsStore from './priceAdjustments/priceAdjustments.store';
 
 export const useAuthStore = create<IAuthState>()(
   devtools(
@@ -62,10 +64,14 @@ export const usePeriodsStore = create<IPeriodsState>()(
   devtools(periodsStore.store, periodsStore.params)
 );
 
-export const useAccountingStore = create<IAccountingState>()(
-  devtools(accountingStore.store, accountingStore.params)
+export const usePricesStore = create<IPricesState>()(
+  devtools(pricesStore.store, pricesStore.params)
 );
 
 export const usePaymentsStore = create<IPaymentsState>()(
   devtools(paymentsStore.store, paymentsStore.params)
+);
+
+export const usePriceAdjustmentsStore = create<IPriceAdjustmentsState>()(
+  devtools(priceAdjustmentsStore.store, priceAdjustmentsStore.params)
 );

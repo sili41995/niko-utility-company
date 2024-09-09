@@ -1,20 +1,20 @@
 import initialState from './initialState';
 import { AxiosError } from 'axios';
 import {
-  GetAccountingStateFunc,
-  SetAccountingStateFunc,
-} from '@/types/accountingStore.types';
+  GetPriceAdjustmentsStateFunc,
+  SetPriceAdjustmentsStateFunc,
+} from '@/types/priceAdjustmentsStore.types';
 
 const operationWrapper = <T, K>(
   operation: (data: {
-    set: SetAccountingStateFunc;
-    get: GetAccountingStateFunc;
+    set: SetPriceAdjustmentsStateFunc;
+    get: GetPriceAdjustmentsStateFunc;
     data: K;
   }) => Promise<T | undefined>
 ) => {
   return async (data: {
-    set: SetAccountingStateFunc;
-    get: GetAccountingStateFunc;
+    set: SetPriceAdjustmentsStateFunc;
+    get: GetPriceAdjustmentsStateFunc;
     data: K;
   }): Promise<T | undefined> => {
     try {

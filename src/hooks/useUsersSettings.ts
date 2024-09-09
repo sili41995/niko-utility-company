@@ -1,7 +1,7 @@
 import { useUsersStore } from '@/store/store';
 import {
   selectError,
-  selectFetchUsers,
+  selectGetAllUsers,
   selectIsLoaded,
   selectIsLoading,
 } from '@/store/users/selectors';
@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 
 const useUsersSettings = (): IUseUsersSettings => {
   const [showAddUserForm, setShowAddUserForm] = useState<boolean>(false);
-  const fetchUsers = useUsersStore(selectFetchUsers);
+  const fetchUsers = useUsersStore(selectGetAllUsers);
   const isLoading = useUsersStore(selectIsLoading);
   const isLoaded = useUsersStore(selectIsLoaded);
   const isLoadingData = !isLoaded && isLoading;

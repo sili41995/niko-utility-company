@@ -5,7 +5,7 @@ import {
   ITariffsState,
   SetTariffsStateFunc,
 } from '@/types/tariffsStore.types';
-import { fetchTariffs, addTariff } from './operations';
+import { getAll, add } from './operations';
 import { ITariff, INewTariff, FullTariffs } from '@/types/tariff.types';
 
 const tariffsSlice = (
@@ -13,16 +13,16 @@ const tariffsSlice = (
   get: GetTariffsStateFunc
 ): ITariffsState => ({
   ...initialState,
-  fetchTariffs: async (): Promise<FullTariffs | undefined> =>
-    await fetchTariffs({
-      set: setState({ set, name: 'fetchTariffs' }),
+  getAll: async (): Promise<FullTariffs | undefined> =>
+    await getAll({
+      set: setState({ set, name: 'getAll' }),
       get,
       data: undefined,
     }),
-  addTariff: async (data: INewTariff): Promise<ITariff | undefined> =>
-    await addTariff({
+  add: async (data: INewTariff): Promise<ITariff | undefined> =>
+    await add({
       data,
-      set: setState({ set, name: 'addTariff' }),
+      set: setState({ set, name: 'add' }),
       get,
     }),
 });

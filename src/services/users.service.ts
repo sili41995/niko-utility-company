@@ -6,7 +6,7 @@ class UsersService extends HttpService {
     super();
   }
 
-  async fetchUsers(): Promise<Users> {
+  async getAll(): Promise<Users> {
     const response = await this.get<Users>({
       url: 'users',
     });
@@ -14,7 +14,7 @@ class UsersService extends HttpService {
     return response.data;
   }
 
-  async addUser(data: NewUser): Promise<UserData> {
+  async add(data: NewUser): Promise<UserData> {
     const response = await this.post<UserData, NewUser>({
       url: 'users',
       data,

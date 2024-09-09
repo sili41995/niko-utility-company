@@ -8,6 +8,6 @@ export const selectIsLoaded = (state: IUsersState) => state.isLoaded;
 
 export const selectError = (state: IUsersState) => state.error;
 
-export const selectAddUser = (state: IUsersState) => state.addUser;
+export const selectAddUser = (state: IUsersState) => state.add;
 
-export const selectFetchUsers = (state: IUsersState) => state.fetchUsers;
+export const selectGetAllUsers = (state: IUsersState) => state.getAll;

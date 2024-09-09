@@ -1,4 +1,4 @@
-import { ILastCalculate } from '@/types/accountingStore.types';
+import { ILastCalculate } from '@/types/pricesStore.types';
 import HttpService from './http.service';
 import {
   IFetchPaymentsFilters,

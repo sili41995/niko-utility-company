@@ -9,20 +9,20 @@ export interface IUsersInitialState {
 }
 
 export interface IUsersState extends IUsersInitialState {
-  fetchUsers: () => Promise<Users | undefined>;
-  addUser: (data: NewUser) => Promise<UserData | undefined>;
+  getAll: () => Promise<Users | undefined>;
+  add: (data: NewUser) => Promise<UserData | undefined>;
 }
 
 export type GetUsersStateFunc = GetStateFunc<IUsersState>;
 
 export type SetUsersStateFunc = SetStateFunc<IUsersState>;
 
-export interface IAddUserProps {
+export interface IAddProps {
   set: SetUsersStateFunc;
   get: GetUsersStateFunc;
   data: NewUser;
 }
 
-export interface IFetchUsersOperationProps {
+export interface IGetAllProps {
   set: SetUsersStateFunc;
 }

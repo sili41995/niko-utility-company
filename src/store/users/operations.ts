@@ -1,15 +1,12 @@
 import usersService from '@/services/users.service';
 import operationWrapper from '@/store/users/operationWrapper';
 import { UserData, Users } from '@/types/user.types';
-import {
-  IAddUserProps,
-  IFetchUsersOperationProps,
-} from '@/types/usersStore.types';
+import { IAddProps, IGetAllProps } from '@/types/usersStore.types';
 
-const fetchUsersOperation = async ({
+const getAllOperation = async ({
   set,
-}: IFetchUsersOperationProps): Promise<Users | undefined> => {
-  const response = await usersService.fetchUsers();
+}: IGetAllProps): Promise<Users | undefined> => {
+  const response = await usersService.getAll();
   set({
     items: response,
     isLoaded: true,
@@ -17,18 +14,18 @@ const fetchUsersOperation = async ({
   return response;
 };
 
-const addUserOperation = async ({
+const addOperation = async ({
   data,
   set,
   get,
-}: IAddUserProps): Promise<UserData | undefined> => {
+}: IAddProps): Promise<UserData | undefined> => {
   const { items: users } = get();
 
-  const response = await usersService.addUser(data);
+  const response = await usersService.add(data);
   set({ items: [...users, response] });
 
   return response;
 };
 
-export const fetchUsers = operationWrapper(fetchUsersOperation);
-export const addUser = operationWrapper(addUserOperation);
+export const getAll = operationWrapper(getAllOperation);
+export const add = operationWrapper(addOperation);

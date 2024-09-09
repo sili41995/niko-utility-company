@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { formatDate, getPriceAdjustmentData, toasts } from '@/utils';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IPriceAdjustmentFormData } from '@/types/priceAdjustment.types';
-import { useAccountingStore } from '@/store/store';
-import { selectAddPriceAdjustment } from '@/store/accounting/selectors';
+import { usePriceAdjustmentsStore } from '@/store/store';
 import { validatePriceAdjustmentForm } from '@/validators';
 import { ISubscriberAccount } from '@/types/subscriberAccount.types';
 import { DateFormats, Messages } from '@/constants';
 import { IUsePriceAdjustmentForm } from '@/types/hooks.types';
+import { selectAddPriceAdjustment } from '@/store/priceAdjustments/selectors';
 
 const usePriceAdjustmentForm = (
   subscriberAccount: ISubscriberAccount
@@ -18,7 +18,7 @@ const usePriceAdjustmentForm = (
     handleSubmit,
     formState: { isSubmitting, errors },
   } = useForm<IPriceAdjustmentFormData>();
-  const addPriceAdjustment = useAccountingStore(selectAddPriceAdjustment);
+  const addPriceAdjustment = usePriceAdjustmentsStore(selectAddPriceAdjustment);
 
   const currentDate = formatDate({
     date: new Date(),

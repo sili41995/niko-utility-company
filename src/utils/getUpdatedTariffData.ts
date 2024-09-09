@@ -5,7 +5,7 @@ const getUpdatedTariffData = ({
   sector,
 }: IGetUpdatedTariffDataProps): INewTariff => ({
   ...data,
-  sector,
+  name: sector,
   start: new Date(data.start),
   price: Number(data.price),
 });

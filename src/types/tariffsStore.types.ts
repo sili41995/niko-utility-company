@@ -10,19 +10,19 @@ export interface ITariffsInitialState {
 }
 
 export interface ITariffsState extends ITariffsInitialState {
-  fetchTariffs: () => Promise<Tariffs | undefined>;
-  addTariff: (data: INewTariff) => Promise<ITariff | undefined>;
+  getAll: () => Promise<Tariffs | undefined>;
+  add: (data: INewTariff) => Promise<ITariff | undefined>;
 }
 
 export type GetTariffsStateFunc = GetStateFunc<ITariffsState>;
 
 export type SetTariffsStateFunc = SetStateFunc<ITariffsState>;
 
-export interface IFetchTariffsProps {
+export interface IGetAllProps {
   set: SetTariffsStateFunc;
 }
 
-export interface IAddTariffProps {
+export interface IAddProps {
   set: SetTariffsStateFunc;
   get: GetTariffsStateFunc;
   data: INewTariff;

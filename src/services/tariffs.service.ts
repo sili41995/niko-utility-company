@@ -6,7 +6,7 @@ class TariffsService extends HttpService {
     super();
   }
 
-  async fetchTariffs(): Promise<FullTariffs> {
+  async getAll(): Promise<FullTariffs> {
     const response = await this.get<FullTariffs>({
       url: 'tariffs',
     });
@@ -14,7 +14,7 @@ class TariffsService extends HttpService {
     return response.data;
   }
 
-  async addTariff(data: INewTariff): Promise<IFullTariff> {
+  async add(data: INewTariff): Promise<IFullTariff> {
     const response = await this.post<IFullTariff, INewTariff>({
       url: 'tariffs',
       data,

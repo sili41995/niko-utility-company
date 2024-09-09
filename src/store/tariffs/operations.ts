@@ -1,16 +1,13 @@
 import tariffsService from '@/services/tariffs.service';
 import operationWrapper from '@/store/tariffs/operationWrapper';
 import { FullTariffs, ITariff } from '@/types/tariff.types';
-import {
-  IAddTariffProps,
-  IFetchTariffsProps,
-} from '@/types/tariffsStore.types';
+import { IAddProps, IGetAllProps } from '@/types/tariffsStore.types';
 import { sortTariffs } from '@/utils';
 
-const fetchTariffsOperation = async ({
+const getAllOperation = async ({
   set,
-}: IFetchTariffsProps): Promise<FullTariffs | undefined> => {
-  const response = await tariffsService.fetchTariffs();
+}: IGetAllProps): Promise<FullTariffs | undefined> => {
+  const response = await tariffsService.getAll();
 
   set({
     items: response,
@@ -20,19 +17,19 @@ const fetchTariffsOperation = async ({
   return response;
 };
 
-const addTariffOperation = async ({
+const addOperation = async ({
   data,
   get,
   set,
-}: IAddTariffProps): Promise<ITariff | undefined> => {
+}: IAddProps): Promise<ITariff | undefined> => {
   const { items: tariffs } = get();
 
-  const response = await tariffsService.addTariff(data);
+  const response = await tariffsService.add(data);
   const sortedTariffs = sortTariffs([...tariffs, response]);
   set({ items: sortedTariffs });
 
   return response;
 };
 
-export const fetchTariffs = operationWrapper(fetchTariffsOperation);
-export const addTariff = operationWrapper(addTariffOperation);
+export const getAll = operationWrapper(getAllOperation);
+export const add = operationWrapper(addOperation);

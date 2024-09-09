@@ -16,7 +16,7 @@ export interface IFullTariff extends ITariff {
 export type FullTariffs = IFullTariff[];
 
 export interface INewTariff extends Pick<ITariff, 'price' | 'start'> {
-  sector: SectorType;
+  name: SectorType;
 }
 
 export interface ITariffFormData extends Omit<INewTariff, 'start'> {
