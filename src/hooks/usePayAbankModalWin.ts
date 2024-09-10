@@ -15,7 +15,7 @@ const usePayAbankModalWin = (): IUseFetchFile => {
     try {
       const result = await accountingService.fetchPaymentsBySourceAbank();
       saveFileToCsv({ data: result, fileName: 'payments-abank.csv' });
-      toasts.successToast(Messages.fetchPaymentsSuccess);
+      toasts.successToast(Messages.getPaymentsSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {
         const message = error.response?.data.message;

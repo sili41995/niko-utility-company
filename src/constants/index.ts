@@ -23,3 +23,4 @@ export { default as CheckboxNames } from './checkboxNames';
 export { default as TranslatedPaymentSources } from './translatedPaymentSources';
 export { default as SubscriberAccountInfoCategories } from './subscriberAccountInfoCategories';
 export { default as PaymentsFilesCategories } from './paymentsFilesCategories';
+export { default as ErrorMessages } from './errorMessages';

@@ -27,7 +27,7 @@ const useAddUserForm = (): IUseAddUserForm => {
   const handleFormSubmit: SubmitHandler<NewUser> = async (data) => {
     try {
       await addUser(data);
-      toasts.successToast(Messages.userAddSuccess);
+      toasts.successToast(Messages.addUserSuccess);
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);

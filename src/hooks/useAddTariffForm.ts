@@ -31,7 +31,7 @@ const useAddTariffForm = (sector: SectorType) => {
 
     try {
       await addTariff(updatedData);
-      toasts.successToast(Messages.tariffAddSuccess);
+      toasts.successToast(Messages.addTariffSuccess);
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);

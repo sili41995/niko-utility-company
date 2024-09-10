@@ -108,7 +108,7 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
         surname,
         category,
       });
-      toasts.successToast(Messages.subscriberAccountAddSuccess);
+      toasts.successToast(Messages.addSubscriberAccountSuccess);
       reset();
     } catch (error) {
       if (error instanceof Error) {

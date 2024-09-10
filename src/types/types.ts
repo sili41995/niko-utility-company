@@ -1,4 +1,4 @@
-import { Messages, PagePaths } from '@/constants';
+import { ErrorMessages, PagePaths } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 
 export type Func = () => void;
@@ -20,7 +20,7 @@ export type onDivClickFunc = (e: DivClickEvent) => void;
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
 export interface IErrorMessage {
-  [key: string]: Messages;
+  [key: string]: ErrorMessages;
 }
 
 export interface IRegExp {

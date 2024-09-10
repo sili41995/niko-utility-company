@@ -15,7 +15,7 @@ const useDownloadPaymentsPrivatbankFile = (): IUseDownloadPaymentsFile => {
     try {
       const result = await accountingService.fetchPaymentsBySourcePrivatbank();
       saveFileToCsv({ data: result, fileName: 'payments-privatbank.csv' });
-      toasts.successToast(Messages.fetchPaymentsSuccess);
+      toasts.successToast(Messages.getPaymentsSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {
         const message = error.response?.data.message;

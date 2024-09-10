@@ -52,7 +52,7 @@ const useReportsBySubscribersForm = (): IUseReportsBySubscribersForm => {
         updatedData
       );
       saveFileToPdf({ data: result, fileName: 'reports-subscribers.pdf' });
-      toasts.successToast(Messages.fetchReportsSuccess);
+      toasts.successToast(Messages.getReportSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {
         toasts.errorToast(error.message);

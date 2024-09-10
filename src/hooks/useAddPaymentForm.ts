@@ -65,7 +65,7 @@ const useAddPaymentForm = (
         page,
         limit: Number(GeneralParams.paymentsRecordLimit),
       });
-      toasts.successToast(Messages.paymentAddSuccess);
+      toasts.successToast(Messages.addPaymentSuccess);
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);

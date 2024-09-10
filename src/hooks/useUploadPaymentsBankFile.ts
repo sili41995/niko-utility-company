@@ -6,7 +6,7 @@ import {
   readPaymentsDataFromCsv,
   toasts,
 } from '@/utils';
-import { Messages } from '@/constants';
+import { Messages, ErrorMessages } from '@/constants';
 import { BtnClickEvent } from '@/types/types';
 import { IUseUploadPaymentsFile } from '@/types/hooks.types';
 import accountingService from '@/services/accounting.service';
@@ -29,9 +29,9 @@ const useUploadPaymentsBankFile = (
         source,
       });
       await accountingService.addPayments(payments);
-      toasts.successToast(Messages.paymentsAddSuccess);
+      toasts.successToast(Messages.addPaymentsSuccess);
     } catch (error) {
-      toasts.errorToast(Messages.invalidDataErr);
+      toasts.errorToast(ErrorMessages.invalidDataErr);
     } finally {
       setIsUpload(false);
     }

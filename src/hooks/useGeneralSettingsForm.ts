@@ -44,7 +44,7 @@ const useGeneralSettingsForm = (id: number): IUseGeneralSettingsForm => {
     try {
       const filteredData = filterGeneralSettingsData(data);
       await updateGeneralSettings({ id, data: filteredData });
-      toasts.successToast(Messages.generalSettingsUpdateSuccess);
+      toasts.successToast(Messages.updateGeneralSettingsSuccess);
     } catch (error) {
       if (error instanceof Error) {
         toasts.errorToast(error.message);

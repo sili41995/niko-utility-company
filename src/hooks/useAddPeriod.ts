@@ -1,4 +1,4 @@
-import { Messages } from '@/constants';
+import { Messages, ErrorMessages } from '@/constants';
 import { selectAddPeriod, selectIsLoading } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
 import { IUseAddPeriod } from '@/types/hooks.types';
@@ -12,13 +12,13 @@ const useAddPeriod = (): IUseAddPeriod => {
   const addNewPeriod = async () => {
     try {
       await addPeriod();
-      toasts.successToast(Messages.periodAddSuccess);
+      toasts.successToast(Messages.addPeriodSuccess);
     } catch (error) {
       if (error instanceof Error) {
         const isDuplicatePeriodErr =
           error.message.toLowerCase() === 'period already use';
         const errorMessage = isDuplicatePeriodErr
-          ? Messages.duplicatePeriodErr
+          ? ErrorMessages.duplicatePeriodErr
           : error.message;
         toasts.errorToast(errorMessage);
       }

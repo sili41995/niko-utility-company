@@ -19,6 +19,7 @@ import {
   DateFormats,
   Messages,
   apartmentTypes,
+  ErrorMessages,
 } from '@/constants';
 import { useEffect, useState } from 'react';
 import { IUseUpdateSubscriberAccountForm } from '@/types/hooks.types';
@@ -102,7 +103,7 @@ const useUpdateSubscriberAccountForm = (
         const isDuplicateDocumentErr =
           error.message.toLowerCase() === 'document already use';
         const errorMessage = isDuplicateDocumentErr
-          ? Messages.duplicateDocumentErr
+          ? ErrorMessages.duplicateDocumentErr
           : error.message;
         toasts.errorToast(errorMessage);
       }

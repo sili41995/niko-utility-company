@@ -1,11 +1,11 @@
-import { Messages } from '@/constants';
+import { ErrorMessages } from '@/constants';
 import { IErrorMessage } from '@/types/types';
 
 const getPasswordFieldError = (type: string): string => {
   const types: IErrorMessage = {
-    required: Messages.passwordReqErr,
-    minLength: Messages.passwordMinLengthErr,
-    maxLength: Messages.passwordMaxLengthErr,
+    required: ErrorMessages.passwordReqErr,
+    minLength: ErrorMessages.passwordMinLengthErr,
+    maxLength: ErrorMessages.passwordMaxLengthErr,
   };
 
   return types[type];

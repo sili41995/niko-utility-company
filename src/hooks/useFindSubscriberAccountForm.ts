@@ -1,4 +1,4 @@
-import { Messages } from '@/constants';
+import { ErrorMessages } from '@/constants';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { SetSubscriberAccountFunc } from '@/types/subscriberAccount.types';
@@ -43,7 +43,7 @@ const useFindSubscriberAccountForm = (
         const isNotFoundErr =
           message.toLowerCase() === 'subscriber account was not found';
         const errorMessage = isNotFoundErr
-          ? Messages.subscriberAccountNotFoundErr
+          ? ErrorMessages.subscriberAccountNotFoundErr
           : message;
         toasts.errorToast(errorMessage);
       }

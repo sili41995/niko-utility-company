@@ -32,7 +32,7 @@ const useReportsByHousesForm = (): IUseReportsByHousesForm => {
     try {
       const result = await accountingService.fetchReportsByHouses(data);
       saveFileToPdf({ data: result, fileName: 'reports-houses.pdf' });
-      toasts.successToast(Messages.fetchReportsSuccess);
+      toasts.successToast(Messages.getReportSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {
         toasts.errorToast(error.message);

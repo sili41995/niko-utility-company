@@ -21,7 +21,7 @@ const useInvoicesForm = (): IUseInvoicesForm => {
     try {
       const result = await accountingService.fetchInvoices(data);
       saveFileToPdf({ data: result, fileName: 'invoices.pdf' });
-      toasts.successToast(Messages.fetchInvoicesSuccess);
+      toasts.successToast(Messages.getInvoicesSuccess);
     } catch (error) {
       if (error instanceof AxiosError) {
         toasts.errorToast(error.message);
