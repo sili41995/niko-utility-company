@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import {
   formatDate,
   getFilteredUpdateSubscriberAccountFormData,
+  getTranslatedUpdateSAError,
   toasts,
 } from '@/utils';
 import { InputChangeEvent } from '@/types/types';
@@ -19,7 +20,6 @@ import {
   DateFormats,
   Messages,
   apartmentTypes,
-  ErrorMessages,
 } from '@/constants';
 import { useEffect, useState } from 'react';
 import { IUseUpdateSubscriberAccountForm } from '@/types/hooks.types';
@@ -43,8 +43,6 @@ const useUpdateSubscriberAccountForm = (
     formState: { isSubmitting, errors },
   } = useForm<IUpdateSubscriberAccountFormData>();
   const {
-    street,
-    house,
     apartment,
     number,
     isLivingApartment,
@@ -63,7 +61,6 @@ const useUpdateSubscriberAccountForm = (
     },
     contract: { date: contractDate, number: contractNumber },
   } = subscriberAccount;
-  const fullStreetName = `${street.type} ${street.name}`;
   const contractDateValue = formatDate({
     date: contractDate,
     dateFormat: DateFormats.date,
@@ -94,18 +91,14 @@ const useUpdateSubscriberAccountForm = (
     IUpdateSubscriberAccountFormData
   > = async (data) => {
     const filteredData = getFilteredUpdateSubscriberAccountFormData(data);
-    console.log(filteredData);
+
     try {
       await updateSubscriberAccountById({ data: filteredData, id });
       toasts.successToast(Messages.subscriberAccountUpdateSuccess);
     } catch (error) {
       if (error instanceof Error) {
-        const isDuplicateDocumentErr =
-          error.message.toLowerCase() === 'document already use';
-        const errorMessage = isDuplicateDocumentErr
-          ? ErrorMessages.duplicateDocumentErr
-          : error.message;
-        toasts.errorToast(errorMessage);
+        const message = getTranslatedUpdateSAError(error.message);
+        toasts.errorToast(message);
       }
     }
   };
@@ -131,8 +124,6 @@ const useUpdateSubscriberAccountForm = (
     handleFormSubmit,
     register,
     apartment: apartment ?? '',
-    fullStreetName,
-    house: house.number,
     apartmentType,
     period: periodDefaultValue,
     number,
@@ -150,7 +141,7 @@ const useUpdateSubscriberAccountForm = (
     additionalPhone,
     isLoading,
     accountType: category,
-    contract: contractNumber,
+    contractNumber,
   };
 };
 

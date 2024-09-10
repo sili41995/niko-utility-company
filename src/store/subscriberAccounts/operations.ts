@@ -54,7 +54,7 @@ const updateSubscriberAccountByIdOperation = async ({
     subscriberAccounts,
     updatedSubscriberAccount: response,
   });
-  console.log(updatedSubscriberAccounts);
+
   set({ items: updatedSubscriberAccounts });
 
   return response;

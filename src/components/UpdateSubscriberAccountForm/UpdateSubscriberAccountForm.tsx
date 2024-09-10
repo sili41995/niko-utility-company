@@ -30,10 +30,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     handleSubmit,
     handleFormSubmit,
     register,
-    fullStreetName,
-    house,
     apartment,
-    contractDateValue,
     apartmentType,
     residents,
     period,
@@ -55,46 +52,25 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <AddressWrap>
         <Input
-          settings={{ ...register('streetId') }}
-          label='Вулиця:'
-          type={InputTypes.text}
-          value={fullStreetName}
-          width={550}
-          horizontal
-        />
-        <Input
-          settings={{ ...register('houseId') }}
-          label='Будинок:'
-          type={InputTypes.text}
-          value={house}
-          width={550}
-          horizontal
-        />
-        <Input
           settings={{ ...register('apartment') }}
           label='№ квартири:'
           type={InputTypes.text}
-          value={apartment}
+          defaultValue={apartment}
           width={550}
           horizontal
+          disabled
         />
       </AddressWrap>
       <SubscriberAccountContainer>
         <Input
           settings={{ ...register('number') }}
           label='Абонентський рахунок:'
+          placeholder='Абонентський рахунок'
           type={InputTypes.text}
-          value={number}
+          defaultValue={number}
           width={550}
           horizontal
-        />
-        <Input
-          settings={{ ...register('contractDate') }}
-          label='від'
-          type={InputTypes.text}
-          value={contractDateValue}
-          width={550}
-          horizontal
+          disabled
         />
       </SubscriberAccountContainer>
       <TypesWrap>

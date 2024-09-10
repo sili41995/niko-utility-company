@@ -29,6 +29,7 @@ const getFilteredAddSubscriberAccountData = (
   const apartmentNumber = apartment! ? apartment : undefined;
   const isLivingApartmentValue = isLivingApartment === 'true' ? true : false;
   const birthdayValue = birthday ? new Date(birthday) : undefined;
+  const emailValue = email ? email : undefined;
 
   return {
     apartment: apartmentNumber,
@@ -46,7 +47,7 @@ const getFilteredAddSubscriberAccountData = (
       middleName,
       phone,
       additionalPhone,
-      email,
+      email: emailValue,
       isEligibleForBenefit,
       birthday: birthdayValue,
     },

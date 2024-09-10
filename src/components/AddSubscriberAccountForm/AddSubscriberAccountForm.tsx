@@ -81,6 +81,7 @@ const AddSubscriberAccountForm: FC = () => {
         <Input
           settings={{ ...register('contractNumber', { required: true }) }}
           label='Договір №:'
+          placeholder='Договір №'
           type={InputTypes.text}
           horizontal
           width={550}

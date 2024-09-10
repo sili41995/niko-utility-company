@@ -18,6 +18,7 @@ import {
   formatDate,
   getAccountTypesData,
   toasts,
+  getTranslatedAddSAError,
 } from '@/utils';
 import { validateAddSubscriberAccountForm } from '@/validators';
 import { useEffect, useState } from 'react';
@@ -112,7 +113,8 @@ const useAddSubscriberAccountForm = (): IUseAddSubscriberAccountForm => {
       reset();
     } catch (error) {
       if (error instanceof Error) {
-        toasts.errorToast(error.message);
+        const message = getTranslatedAddSAError(error.message);
+        toasts.errorToast(message);
       }
     }
   };

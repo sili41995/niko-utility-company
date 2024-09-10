@@ -47,3 +47,5 @@ export { default as getDefaultAccountTypesValue } from './getDefaultAccountTypes
 export { default as getSubscriberAccountBalanceByPeriod } from './getSubscriberAccountBalanceByPeriod';
 export { default as getReportsBySubscribersData } from './getReportsBySubscribersData';
 export { default as getPeriodsSelectData } from './getPeriodsSelectData';
+export { default as getTranslatedAddSAError } from './getTranslatedAddSAError';
+export { default as getTranslatedUpdateSAError } from './getTranslatedUpdateSAError';

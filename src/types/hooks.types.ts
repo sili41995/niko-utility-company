@@ -222,13 +222,11 @@ export interface IUseUpdateSubscriberAccountForm {
   >;
   handleFormSubmit: SubmitHandler<IUpdateSubscriberAccountFormData>;
   register: UseFormRegister<IUpdateSubscriberAccountFormData>;
-  fullStreetName: string;
-  house: string;
   apartment: string;
   apartmentType: BooleanValue;
   period: string;
   number: string;
-  contract: string;
+  contractNumber: string;
   contractDateValue: string;
   accountType: AccountCategory;
   birthday: string;

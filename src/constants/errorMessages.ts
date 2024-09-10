@@ -63,6 +63,8 @@ const enum ErrorMessages {
   // conflict
   duplicateDocumentErr = 'Такий документ вже існує',
   duplicatePeriodErr = 'Період вже існує',
+  duplicateSubscriberAccountErr = 'Такий абонентський рахунок вже існує',
+  duplicateContractErr = 'Такий контракт вже існує',
   // not found
   subscriberAccountNotFoundErr = 'Абонентський рахунок не знайдено',
 }

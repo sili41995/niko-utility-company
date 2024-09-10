@@ -73,9 +73,11 @@ export interface IUpdateSubscriberAccountFormData
 }
 
 export interface IUpdateSubscriberAccountData
-  extends Omit<
-    INewSubscriberAccountData,
-    'apartment' | 'category' | 'contract' | 'number'
+  extends Partial<
+    Omit<
+      INewSubscriberAccountData,
+      'apartment' | 'category' | 'contract' | 'number'
+    >
   > {
   document: NewDocument;
 }
