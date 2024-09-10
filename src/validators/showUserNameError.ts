@@ -4,7 +4,7 @@ import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
 const showUserNameError = (errors: FieldErrors<Name>): void => {
-  errors.name && toasts.errorToast(Messages.fullNameReqErr);
+  errors.name && toasts.errorToast(Messages.nameReqErr);
 };
 
 export default showUserNameError;

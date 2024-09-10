@@ -1,4 +1,7 @@
-import { IAddSubscriberAccountFormData } from './subscriberAccount.types';
+import {
+  IAddSubscriberAccountFormData,
+  IUpdateSubscriberAccountFormData,
+} from './subscriberAccount.types';
 
 export type Residents = Pick<IAddSubscriberAccountFormData, 'residents'>;
 
@@ -49,3 +52,10 @@ export type AdditionalPhone = Pick<
   IAddSubscriberAccountFormData,
   'additionalPhone'
 >;
+
+export type DocumentName = Pick<
+  IUpdateSubscriberAccountFormData,
+  'documentName'
+>;
+
+export type Comment = Pick<IUpdateSubscriberAccountFormData, 'comment'>;

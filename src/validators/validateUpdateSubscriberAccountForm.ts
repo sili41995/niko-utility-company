@@ -1,6 +1,5 @@
 import { IUpdateSubscriberAccountFormData } from '@/types/subscriberAccount.types';
 import { FieldErrors } from 'react-hook-form';
-import showCommentError from './showCommentError';
 import showDocumentNameError from './showDocumentNameError';
 import showOwnerEmailError from './showOwnerEmailError';
 import showAdditionalPhoneError from './showAdditionalPhoneError';
@@ -19,6 +18,7 @@ import showContractNumberError from './showContractNumberError';
 import showNumberError from './showNumberError';
 import showApartmentError from './showApartmentError';
 import showHouseIdError from './showHouseIdError';
+import showDocumentCommentError from './showDocumentCommentError';
 
 const validateUpdateSubscriberAccountForm = (
   errors: FieldErrors<IUpdateSubscriberAccountFormData>
@@ -41,7 +41,7 @@ const validateUpdateSubscriberAccountForm = (
   showAdditionalPhoneError(errors);
   showOwnerEmailError(errors);
   showDocumentNameError(errors);
-  showCommentError(errors);
+  showDocumentCommentError(errors);
 };
 
 export default validateUpdateSubscriberAccountForm;

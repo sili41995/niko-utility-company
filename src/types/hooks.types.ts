@@ -19,7 +19,6 @@ import {
   IAddSubscriberAccountFormData,
   IFullSubscriberAccount,
   IUpdateSubscriberAccountFormData,
-  SubscriberAccountNumber,
 } from './subscriberAccount.types';
 import { NewUser } from './user.types';
 import { RefObject } from 'react';
@@ -31,6 +30,7 @@ import { SetURLSearchParams } from 'react-router-dom';
 import { Credentials } from './auth.types';
 import { FullTariffs } from './tariff.types';
 import { IGeneralSettingsFormData } from './generalSettings.types';
+import { SubscriberAccountNumber } from './subscriberAccountValidator.types';
 
 export type SetPage = (data: IOnPageBtnClickProps) => void;
 

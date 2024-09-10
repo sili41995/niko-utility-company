@@ -1,15 +1,13 @@
 import { Messages } from '@/constants';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import {
-  SetSubscriberAccountFunc,
-  SubscriberAccountNumber,
-} from '@/types/subscriberAccount.types';
+import { SetSubscriberAccountFunc } from '@/types/subscriberAccount.types';
 import { validateFindSubscriberAccountForm } from '@/validators';
 import subscriberAccountsService from '@/services/subscriberAccounts.service';
 import { IUseFindSubscriberAccountForm } from '@/types/hooks.types';
 import { AxiosError } from 'axios';
 import { toasts } from '@/utils';
+import { SubscriberAccountNumber } from '@/types/subscriberAccountValidator.types';
 
 const useFindSubscriberAccountForm = (
   setSubscriberAccount: SetSubscriberAccountFunc

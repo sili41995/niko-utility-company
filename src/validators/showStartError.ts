@@ -1,5 +1,5 @@
 import { Messages } from '@/constants';
-import { Start } from '@/types/tariff.types';
+import { Start } from '@/types/tariffValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 

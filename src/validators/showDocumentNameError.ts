@@ -1,9 +1,10 @@
 import { Messages } from '@/constants';
+import { DocumentName } from '@/types/subscriberAccountValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
 const showDocumentNameError = (errors: FieldErrors<DocumentName>): void => {
-  errors.residents && toasts.errorToast(Messages.residentsReqErr);
+  errors.documentName && toasts.errorToast(Messages.documentNameReqErr);
 };
 
 export default showDocumentNameError;

@@ -1,9 +1,9 @@
 import { Messages } from '@/constants';
-import { PeriodIdString } from '@/types/report.types';
+import { PeriodId } from '@/types/reportValidator.types';
 import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
-const showPeriodIdError = (errors: FieldErrors<PeriodIdString>): void => {
+const showPeriodIdError = (errors: FieldErrors<PeriodId>): void => {
   errors.periodId && toasts.errorToast(Messages.periodIdReqErr);
 };
 

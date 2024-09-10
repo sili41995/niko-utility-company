@@ -3,9 +3,9 @@ import { IErrorMessage } from '@/types/types';
 
 const getPasswordFieldError = (type: string): string => {
   const types: IErrorMessage = {
-    required: Messages.passReqErr,
-    minLength: Messages.passMinLengthErr,
-    maxLength: Messages.passMaxLengthErr,
+    required: Messages.passwordReqErr,
+    minLength: Messages.passwordMinLengthErr,
+    maxLength: Messages.passwordMaxLengthErr,
   };
 
   return types[type];

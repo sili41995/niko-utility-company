@@ -4,7 +4,7 @@ import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
 const showStreetIdError = (errors: FieldErrors<StreetId>): void => {
-  errors.streetId && toasts.errorToast(Messages.streetReqErr);
+  errors.streetId && toasts.errorToast(Messages.streetIdReqErr);
 };
 
 export default showStreetIdError;

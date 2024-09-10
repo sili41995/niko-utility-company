@@ -4,7 +4,7 @@ import { toasts } from '@/utils';
 import { FieldErrors } from 'react-hook-form';
 
 const showFromError = (errors: FieldErrors<From>): void => {
-  errors.from && toasts.errorToast(Messages.dateFromReqErr);
+  errors.from && toasts.errorToast(Messages.fromReqErr);
 };
 
 export default showFromError;

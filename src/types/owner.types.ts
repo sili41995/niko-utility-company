@@ -11,15 +11,3 @@ export interface IOwner {
 }
 
 export type NewOwner = Omit<IOwner, 'id'>;
-
-// export type OwnerName = Pick<IOwner, 'name'>;
-
-// export type MiddleName = Pick<IOwner, 'middleName'>;
-
-// export type OwnerEmail = Pick<IOwner, 'email'>;
-
-// export type Phone = Pick<IOwner, 'phone'>;
-
-// export type AdditionalPhone = Pick<IOwner, 'additionalPhone'>;
-
-// export type IsEligibleForBenefit = Pick<IOwner, 'isEligibleForBenefit'>;
