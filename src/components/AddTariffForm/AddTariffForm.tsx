@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './AddTariffForm.types';
-import { FormTypes, InputTypes } from '@/constants';
+import { FormTypes, InputLabels, InputTypes } from '@/constants';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Input from '@/components/Input';
 import { Form } from './AddTariffForm.styled';
@@ -19,7 +19,7 @@ const AddTariffForm: FC<IProps> = ({ sector, tariff }) => {
         defaultValue={String(tariff)}
         type={InputTypes.number}
         label={tariffLabel}
-        placeholder='Тариф'
+        placeholder={InputLabels.price}
         formType={FormTypes.addTariff}
         step={0.01}
         width={500}
@@ -28,8 +28,8 @@ const AddTariffForm: FC<IProps> = ({ sector, tariff }) => {
       <Input
         settings={{ ...register('start', { required: true }) }}
         type={InputTypes.date}
-        label='Початок дії:'
-        placeholder='Початок дії'
+        label={`${InputLabels.start}:`}
+        placeholder={InputLabels.start}
         formType={FormTypes.addTariff}
         width={500}
         horizontal

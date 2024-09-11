@@ -1,6 +1,11 @@
 import { FC } from 'react';
 import Input from '@/components/Input';
-import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
+import {
+  FormTypes,
+  InputLabels,
+  InputTypes,
+  SearchParamsKeys,
+} from '@/constants';
 import Select from '@/components/Select';
 import { useSubscriberAccountsFilter } from '@/hooks';
 import { Container } from './SubscriberAccountsFilter.styled.ts';
@@ -40,7 +45,7 @@ const SubscriberAccountsFilter: FC = () => {
   return (
     <Container>
       <Input
-        label='Прізвище'
+        label={InputLabels.surname}
         type={InputTypes.text}
         formType={FormTypes.filter}
         offBorderRadius
@@ -56,7 +61,7 @@ const SubscriberAccountsFilter: FC = () => {
         }
       />
       <Input
-        label="Ім'я"
+        label={InputLabels.ownerName}
         type={InputTypes.text}
         formType={FormTypes.filter}
         offBorderRadius
@@ -72,7 +77,7 @@ const SubscriberAccountsFilter: FC = () => {
         }
       />
       <Input
-        label='Абонентський рахунок'
+        label={InputLabels.subscriberAccountNumber}
         type={InputTypes.text}
         width={180}
         formType={FormTypes.filter}
@@ -89,7 +94,7 @@ const SubscriberAccountsFilter: FC = () => {
         }
       />
       <Select
-        label='Тип рахунку'
+        label={InputLabels.category}
         data={accountTypes}
         width={210}
         formType={FormTypes.filter}
@@ -99,7 +104,7 @@ const SubscriberAccountsFilter: FC = () => {
         defaultValue={defaultAccountTypesValue}
       />
       <Input
-        label='Вулиця'
+        label={InputLabels.street}
         type={InputTypes.text}
         width={180}
         formType={FormTypes.filter}
@@ -116,7 +121,7 @@ const SubscriberAccountsFilter: FC = () => {
         }
       />
       <Input
-        label='Будинок'
+        label={InputLabels.house}
         type={InputTypes.text}
         width={100}
         formType={FormTypes.filter}
@@ -133,7 +138,7 @@ const SubscriberAccountsFilter: FC = () => {
         }
       />
       <Input
-        label='Квартира'
+        label={InputLabels.apartment}
         type={InputTypes.text}
         width={100}
         formType={FormTypes.filter}

@@ -1,6 +1,11 @@
 import { FC } from 'react';
 import Input from '@/components/Input';
-import { FormTypes, InputTypes, SearchParamsKeys } from '@/constants';
+import {
+  FormTypes,
+  InputLabels,
+  InputTypes,
+  SearchParamsKeys,
+} from '@/constants';
 import { useDocumentsFilter } from '@/hooks';
 import { Container } from './DocumentsFilter.styled.ts';
 import ClearFilterBtn from '@/components/ClearFilterBtn';
@@ -21,7 +26,7 @@ const DocumentsFilter: FC = () => {
   return (
     <Container>
       <Input
-        label='Документ'
+        label={InputLabels.documentName}
         type={InputTypes.text}
         formType={FormTypes.filter}
         name={SearchParamsKeys.name}
@@ -38,7 +43,7 @@ const DocumentsFilter: FC = () => {
         }
       />
       <Input
-        label='Коментар'
+        label={InputLabels.comment}
         type={InputTypes.text}
         formType={FormTypes.filter}
         name={SearchParamsKeys.comment}

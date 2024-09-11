@@ -8,7 +8,7 @@ import { usePaymentsModalWin } from '@/hooks';
 import AddPaymentForm from '@/components/AddPaymentForm';
 import SubscriberAccountInfo from '@/components/SubscriberAccountInfo';
 import Input from '@/components/Input';
-import { InputTypes } from '@/constants';
+import { InputLabels, InputTypes } from '@/constants';
 
 const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {
   const { subscriberAccount, onSubscriberAccountInputChange } =
@@ -22,7 +22,7 @@ const PaymentsModalWin: FC<IProps> = ({ setModalWinState }) => {
           <SubscriberAccountInfo subscriberAccount={subscriberAccount} />
           <Input
             type={InputTypes.text}
-            label='Абонентський рахунок'
+            label={InputLabels.subscriberAccountNumber}
             width={550}
             onChange={onSubscriberAccountInputChange}
             horizontal

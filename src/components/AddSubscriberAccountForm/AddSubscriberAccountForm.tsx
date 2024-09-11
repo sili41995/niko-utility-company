@@ -1,7 +1,7 @@
 import { useAddSubscriberAccountForm } from '@/hooks';
 import { FC } from 'react';
 import Input from '@/components/Input';
-import { CheckboxNames, InputTypes, regExp } from '@/constants';
+import { CheckboxNames, InputLabels, InputTypes, regExp } from '@/constants';
 import {
   PersonParameters,
   SubscriberAccountContainer,
@@ -46,14 +46,14 @@ const AddSubscriberAccountForm: FC = () => {
       <PeriodTitle />
       <AddressWrap>
         <Select
-          label='Вулиця:'
+          label={`${InputLabels.street}:`}
           settings={{ ...register('streetId', { required: true }) }}
           data={streets}
           width={550}
           horizontal
         />
         <Select
-          label='Будинок:'
+          label={`${InputLabels.house}:`}
           settings={{ ...register('houseId', { required: true }) }}
           data={houses}
           width={550}
@@ -61,8 +61,8 @@ const AddSubscriberAccountForm: FC = () => {
         />
         <Input
           settings={{ ...register('apartment') }}
-          label='№ квартири:'
-          placeholder='№ квартири'
+          label={`${InputLabels.apartment}:`}
+          placeholder={InputLabels.apartment}
           type={InputTypes.text}
           horizontal
           width={550}
@@ -71,8 +71,8 @@ const AddSubscriberAccountForm: FC = () => {
       <SubscriberAccountContainer>
         <Input
           settings={{ ...register('number', { required: true }) }}
-          label='Абонентський рахунок:'
-          placeholder='Абонентський рахунок'
+          label={`${InputLabels.subscriberAccountNumber}:`}
+          placeholder={InputLabels.subscriberAccountNumber}
           type={InputTypes.text}
           accent
           horizontal
@@ -80,15 +80,15 @@ const AddSubscriberAccountForm: FC = () => {
         />
         <Input
           settings={{ ...register('contractNumber', { required: true }) }}
-          label='Договір №:'
-          placeholder='Договір №'
+          label={`${InputLabels.contractNumber}:`}
+          placeholder={InputLabels.contractNumber}
           type={InputTypes.text}
           horizontal
           width={550}
         />
         <Input
           settings={{ ...register('contractDate', { required: true }) }}
-          label='від:'
+          label={`${InputLabels.contractDate}:`}
           type={InputTypes.date}
           defaultValue={firstDayOfMonth}
           horizontal
@@ -97,14 +97,14 @@ const AddSubscriberAccountForm: FC = () => {
       </SubscriberAccountContainer>
       <TypesWrap>
         <Select
-          label='Тип рахунку:'
+          label={`${InputLabels.category}:`}
           settings={{ ...register('category', { required: true }) }}
           data={accountTypes}
           width={550}
           horizontal
         />
         <Select
-          label='Тип приміщення:'
+          label={`${InputLabels.isLivingApartment}:`}
           settings={{ ...register('isLivingApartment', { required: true }) }}
           data={apartmentTypes}
           width={550}
@@ -112,8 +112,8 @@ const AddSubscriberAccountForm: FC = () => {
         />
         <Input
           settings={{ ...register('residents', { required: true }) }}
-          label='Мешканців:'
-          placeholder='Мешканців'
+          label={`${InputLabels.residents}:`}
+          placeholder={InputLabels.residents}
           type={InputTypes.number}
           horizontal
           width={550}
@@ -124,7 +124,7 @@ const AddSubscriberAccountForm: FC = () => {
           <SectionTitle>Послуги:</SectionTitle>
           <Input
             settings={{ ...register('period', { required: true }) }}
-            label='Послуги надаються з:'
+            label={`${InputLabels.serviceStart}:`}
             type={InputTypes.date}
             horizontal
             width={550}
@@ -154,24 +154,24 @@ const AddSubscriberAccountForm: FC = () => {
         <PersonParameters>
           <Input
             settings={{ ...register('surname', { required: true }) }}
-            label='Прізвище:'
-            placeholder='Прізвище'
+            label={`${InputLabels.surname}:`}
+            placeholder={InputLabels.surname}
             type={InputTypes.text}
             horizontal
             width={550}
           />
           <Input
             settings={{ ...register('name', { required: true }) }}
-            label="Ім'я:"
-            placeholder="Ім'я"
+            label={`${InputLabels.ownerName}:`}
+            placeholder={InputLabels.ownerName}
             type={InputTypes.text}
             horizontal
             width={550}
           />
           <Input
             settings={{ ...register('middleName', { required: true }) }}
-            label='По-батькові:'
-            placeholder='По-батькові'
+            label={`${InputLabels.middleName}:`}
+            placeholder={InputLabels.middleName}
             type={InputTypes.text}
             horizontal
             width={550}
@@ -191,8 +191,8 @@ const AddSubscriberAccountForm: FC = () => {
             settings={{
               ...register('phone', { required: true, pattern: regExp.phone }),
             }}
-            label='Телефон:'
-            placeholder='Телефон'
+            label={`${InputLabels.phone}:`}
+            placeholder={InputLabels.phone}
             type={InputTypes.text}
             horizontal
             width={550}
@@ -204,8 +204,8 @@ const AddSubscriberAccountForm: FC = () => {
                 pattern: regExp.phone,
               }),
             }}
-            label='Телефон додатковий:'
-            placeholder='Телефон додатковий'
+            label={`${InputLabels.additionalPhone}:`}
+            placeholder={InputLabels.additionalPhone}
             type={InputTypes.text}
             horizontal
             width={550}
@@ -214,15 +214,15 @@ const AddSubscriberAccountForm: FC = () => {
             settings={{
               ...register('email', { pattern: regExp.email }),
             }}
-            label='Email:'
-            placeholder='Email'
+            label={`${InputLabels.email}:`}
+            placeholder={InputLabels.email}
             type={InputTypes.text}
             horizontal
             width={550}
           />
           <Input
             settings={{ ...register('birthday') }}
-            label='День народження:'
+            label={`${InputLabels.birthday}:`}
             type={InputTypes.date}
             horizontal
             width={550}

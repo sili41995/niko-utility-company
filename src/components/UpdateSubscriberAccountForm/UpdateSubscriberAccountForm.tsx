@@ -1,6 +1,12 @@
 import { FC } from 'react';
 import Input from '@/components/Input';
-import { CheckboxNames, InputTypes, apartmentTypes, regExp } from '@/constants';
+import {
+  CheckboxNames,
+  InputLabels,
+  InputTypes,
+  apartmentTypes,
+  regExp,
+} from '@/constants';
 import {
   PersonParameters,
   SubscriberAccountContainer,
@@ -53,7 +59,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
       <AddressWrap>
         <Input
           settings={{ ...register('apartment') }}
-          label='№ квартири:'
+          label={`${InputLabels.apartment}:`}
           type={InputTypes.text}
           defaultValue={apartment}
           width={550}
@@ -64,8 +70,8 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
       <SubscriberAccountContainer>
         <Input
           settings={{ ...register('number') }}
-          label='Абонентський рахунок:'
-          placeholder='Абонентський рахунок'
+          label={`${InputLabels.subscriberAccountNumber}:`}
+          placeholder={InputLabels.subscriberAccountNumber}
           type={InputTypes.text}
           defaultValue={number}
           width={550}
@@ -75,8 +81,8 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
       </SubscriberAccountContainer>
       <TypesWrap>
         <Select
-          label='Тип приміщення:'
           settings={{ ...register('isLivingApartment', { required: true }) }}
+          label={`${InputLabels.isLivingApartment}:`}
           data={apartmentTypes}
           defaultValue={apartmentType}
           width={550}
@@ -84,7 +90,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
         />
         <Input
           settings={{ ...register('residents', { required: true }) }}
-          label='Мешканців:'
+          label={`${InputLabels.residents}:`}
           type={InputTypes.number}
           defaultValue={String(residents)}
           width={550}
@@ -96,7 +102,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           <SectionTitle>Послуги:</SectionTitle>
           <Input
             settings={{ ...register('period', { required: true }) }}
-            label='Послуги надаються з:'
+            label={`${InputLabels.serviceStart}:`}
             type={InputTypes.date}
             defaultValue={period}
             width={550}
@@ -127,7 +133,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
         <PersonParameters>
           <Input
             settings={{ ...register('surname') }}
-            label='Прізвище:'
+            label={`${InputLabels.surname}:`}
             type={InputTypes.text}
             defaultValue={surname}
             width={550}
@@ -135,7 +141,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           />
           <Input
             settings={{ ...register('name') }}
-            label="Ім'я:"
+            label={`${InputLabels.ownerName}:`}
             type={InputTypes.text}
             defaultValue={name}
             width={550}
@@ -143,7 +149,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           />
           <Input
             settings={{ ...register('middleName') }}
-            label='По-батькові:'
+            label={`${InputLabels.middleName}:`}
             type={InputTypes.text}
             defaultValue={middleName}
             width={550}
@@ -164,7 +170,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             settings={{
               ...register('phone', { required: true, pattern: regExp.phone }),
             }}
-            label='Телефон:'
+            label={`${InputLabels.phone}:`}
             type={InputTypes.text}
             defaultValue={phone}
             width={550}
@@ -177,7 +183,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
                 pattern: regExp.phone,
               }),
             }}
-            label='Телефон додатковий:'
+            label={`${InputLabels.additionalPhone}:`}
             type={InputTypes.text}
             defaultValue={additionalPhone}
             width={550}
@@ -187,8 +193,8 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
             settings={{
               ...register('email', { pattern: regExp.email }),
             }}
-            label='Email:'
-            placeholder='Email'
+            label={`${InputLabels.email}:`}
+            placeholder={InputLabels.email}
             type={InputTypes.text}
             defaultValue={email}
             width={550}
@@ -196,7 +202,7 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           />
           <Input
             settings={{ ...register('birthday') }}
-            label='День народження:'
+            label={`${InputLabels.birthday}:`}
             type={InputTypes.date}
             defaultValue={birthday}
             width={550}
@@ -204,16 +210,16 @@ const UpdateSubscriberAccountForm: FC<IProps> = ({ subscriberAccount }) => {
           />
           <Input
             settings={{ ...register('documentName', { required: true }) }}
-            label='Документ:'
-            placeholder='Документ'
+            label={`${InputLabels.documentName}:`}
+            placeholder={InputLabels.documentName}
             type={InputTypes.text}
             width={550}
             horizontal
           />
           <Input
             settings={{ ...register('comment', { required: true }) }}
-            label='Коментар:'
-            placeholder='Коментар'
+            label={`${InputLabels.comment}:`}
+            placeholder={InputLabels.comment}
             type={InputTypes.text}
             width={550}
             horizontal

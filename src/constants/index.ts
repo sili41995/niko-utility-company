@@ -9,7 +9,6 @@ export { default as ClassNames } from './classNames';
 export { default as DisplayProp } from './displayProp';
 export { default as InputTypes } from './inputTypes';
 export { default as SettingsCategories } from './settingsCategories';
-export { default as ServiceCategories } from './serviceCategories';
 export { default as FormTypes } from './formTypes';
 export { default as BtnTypes } from './btnTypes';
 export { default as Messages } from './messages';

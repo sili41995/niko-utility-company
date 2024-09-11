@@ -3,6 +3,7 @@ import { Form, InputsWrap } from './InvoicesForm.styled';
 import Select from '../Select';
 import SubmitFormBtn from '../SubmitFormBtn';
 import { useInvoicesForm } from '@/hooks';
+import { InputLabels } from '@/constants';
 
 const InvoicesForm: FC = () => {
   const {
@@ -20,13 +21,13 @@ const InvoicesForm: FC = () => {
         <Select
           settings={{ ...register('streetId', { required: true }) }}
           data={streets}
-          label='Вулиця'
+          label={InputLabels.street}
           width={500}
         />
         <Select
           settings={{ ...register('houseId') }}
           data={houses}
-          label='Будинок'
+          label={InputLabels.house}
           width={250}
         />
       </InputsWrap>

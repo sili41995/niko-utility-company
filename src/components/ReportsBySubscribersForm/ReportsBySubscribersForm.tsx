@@ -3,7 +3,7 @@ import SubmitFormBtn from '../SubmitFormBtn';
 import Select from '../Select';
 import { useReportsBySubscribersForm } from '@/hooks';
 import { Form, InputsWrap } from './ReportsBySubscribersForm.styled';
-import { InputTypes } from '@/constants';
+import { InputLabels, InputTypes } from '@/constants';
 import Input from '../Input';
 
 const ReportsBySubscribersForm: FC = () => {
@@ -23,13 +23,13 @@ const ReportsBySubscribersForm: FC = () => {
         <Select
           settings={{ ...register('periodId', { required: true }) }}
           data={periods}
-          label='Період'
+          label={InputLabels.period}
           width={500}
           capitalize
         />
         <Input
           settings={{ ...register('minDebt', { required: true }) }}
-          label='Мінімальний борг, грн.:'
+          label={`${InputLabels.minDebt}:`}
           type={InputTypes.number}
           defaultValue='0'
           min={0}
@@ -40,13 +40,13 @@ const ReportsBySubscribersForm: FC = () => {
         <Select
           settings={{ ...register('streetId') }}
           data={streets}
-          label='Вулиця'
+          label={InputLabels.street}
           width={500}
         />
         <Select
           settings={{ ...register('houseId') }}
           data={houses}
-          label='Будинок'
+          label={InputLabels.house}
           width={250}
         />
       </InputsWrap>

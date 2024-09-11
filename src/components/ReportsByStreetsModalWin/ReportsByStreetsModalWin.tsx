@@ -4,7 +4,7 @@ import ModalWin from '@/components/ModalWin';
 import FormDataTitle from '@/components/FormDataTitle';
 import { Container, Form, InputsWrap } from './ReportsByStreetsModalWin.styled';
 import Input from '@/components/Input';
-import { InputTypes } from '@/constants';
+import { InputLabels, InputTypes } from '@/constants';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import { useReportsByStreetsForm } from '@/hooks';
 
@@ -26,7 +26,7 @@ const ReportsByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {
           <InputsWrap>
             <Input
               settings={{ ...register('from', { required: true }) }}
-              label='З:'
+              label={`${InputLabels.from}:`}
               type={InputTypes.month}
               min={nimMonthDate}
               max={maxMonthDate}
@@ -34,7 +34,7 @@ const ReportsByStreetsModalWin: FC<IProps> = ({ setModalWinState }) => {
             />
             <Input
               settings={{ ...register('to', { required: true }) }}
-              label='По:'
+              label={`${InputLabels.to}:`}
               type={InputTypes.month}
               min={nimMonthDate}
               max={maxMonthDate}
