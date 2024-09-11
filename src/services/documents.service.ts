@@ -13,10 +13,10 @@ class DocumentsService extends HttpService {
     limit,
     page = 1,
     comment,
-    document,
+    name,
   }: IFetchDocumentsFilters): Promise<IFetchDocumentsRes> {
     const response = await this.get<IFetchDocumentsRes>({
-      url: `documents?page=${page}&limit=${limit}&name=${document}&comment=${comment}`,
+      url: `documents?page=${page}&limit=${limit}&name=${name}&comment=${comment}`,
     });
 
     return response.data;

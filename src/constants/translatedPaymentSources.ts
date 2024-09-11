@@ -1,14 +1,16 @@
-enum TranslatedPaymentSources {
-  cash = 'Каса',
-  privatbank = 'ПриватБанк',
-  oshchadbank = 'Ощадбанк',
-  postage = 'Пошта',
-  ukrsibbank = 'УкрСибБанк',
-  benefits = 'Компенсація пільг',
-  adjustment = 'Коригування',
-  aval = 'Аваль',
-  ukrgasbank = 'Укргаз',
-  abank = 'А-Банк',
-}
+import { PaymentSourceType } from '@/types/paymentSource.types';
 
-export default TranslatedPaymentSources;
+const translatedPaymentSources: { [key in PaymentSourceType]: string } = {
+  [PaymentSourceType.cash]: 'Каса',
+  [PaymentSourceType.privatbank]: 'ПриватБанк',
+  [PaymentSourceType.oshchadbank]: 'Ощадбанк',
+  [PaymentSourceType.postage]: 'Пошта',
+  [PaymentSourceType.ukrsibbank]: 'УкрСибБанк',
+  [PaymentSourceType.benefits]: 'Компенсація пільг',
+  [PaymentSourceType.adjustment]: 'Коригування',
+  [PaymentSourceType.aval]: 'Аваль',
+  [PaymentSourceType.ukrgasbank]: 'Укргаз',
+  [PaymentSourceType.abank]: 'А-Банк',
+};
+
+export default translatedPaymentSources;

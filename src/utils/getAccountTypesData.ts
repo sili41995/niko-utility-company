@@ -1,14 +1,11 @@
+import { translatedAccountCategory } from '@/constants';
 import { AccountCategory } from '@/types/accountType.types';
 import { SelectData } from '@/types/types';
 
 const getAccountTypesData = (isFilter?: boolean): SelectData =>
   Object.values(AccountCategory).map((type) => {
-    const title =
-      type === AccountCategory.naturalPerson
-        ? 'Фізична особа'
-        : type === AccountCategory.juridicalPerson
-        ? 'Юридична особа'
-        : 'інше';
+    const title = translatedAccountCategory[type];
+
     const value = isFilter ? title : type;
 
     return {

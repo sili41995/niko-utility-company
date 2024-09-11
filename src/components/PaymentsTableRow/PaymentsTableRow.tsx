@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { IProps } from './PaymentsTableRow.types';
 import { TableBodyRow, TableData } from './PaymentsTableRow.styled';
 import { formatDate } from '@/utils';
-import { DateFormats } from '@/constants';
+import { DateFormats, translatedPaymentSources } from '@/constants';
 
 const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
   const {
@@ -10,13 +10,14 @@ const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
     amount,
     period,
     subscriberAccount: { number = '' } = {},
-    paymentSource: { label },
+    paymentSource: { name },
   } = payment;
   const paymentDate = formatDate({ date, dateFormat: DateFormats.date });
   const periodDate = formatDate({
     date: period?.start ?? new Date(),
     dateFormat: DateFormats.period,
   });
+  const paymentSourceLabel = translatedPaymentSources[name];
 
   return (
     <TableBodyRow>
@@ -28,7 +29,7 @@ const PaymentsTableRow: FC<IProps> = ({ payment, fullInfo }) => {
         </TableData>
       )}
       <TableData center>{amount}</TableData>
-      <TableData center>{label}</TableData>
+      <TableData center>{paymentSourceLabel}</TableData>
       <TableData></TableData>
     </TableBodyRow>
   );

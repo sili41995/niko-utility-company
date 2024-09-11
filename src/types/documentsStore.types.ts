@@ -19,7 +19,7 @@ export interface IDocumentsState extends IDocumentsInitialState {
 export interface IFetchDocumentsFilters {
   page?: number;
   limit: number;
-  document: string;
+  name: string;
   comment: string;
 }
 

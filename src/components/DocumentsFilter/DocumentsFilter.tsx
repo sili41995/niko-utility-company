@@ -8,7 +8,7 @@ import ClearFilterBtn from '@/components/ClearFilterBtn';
 const DocumentsFilter: FC = () => {
   const {
     onFilterChange,
-    document,
+    name,
     comment,
     documentInputRef,
     commentInputRef,
@@ -24,9 +24,9 @@ const DocumentsFilter: FC = () => {
         label='Документ'
         type={InputTypes.text}
         formType={FormTypes.filter}
-        name={SearchParamsKeys.document}
+        name={SearchParamsKeys.name}
         onChange={onFilterChange}
-        defaultValue={document}
+        defaultValue={name}
         inputRef={documentInputRef}
         width={300}
         offBorderRadius

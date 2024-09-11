@@ -20,7 +20,7 @@ const useDocumentsPage = (): IUseDocumentsPage => {
   const documents = useDocumentsStore(selectDocuments);
   const error = useDocumentsStore(selectError);
   const fetchDocuments = useDocumentsStore(selectFetchDocuments);
-  const { document, comment, limit, page } = useFilterSearchParams();
+  const { name, comment, limit, page } = useFilterSearchParams();
   const isLoadingData = !isLoaded && isLoading;
   const showDocumentsTable = Boolean(isLoaded && totalCount);
   const isEmptyFilteredList = Boolean(totalCount && !filteredCount);
@@ -31,10 +31,10 @@ const useDocumentsPage = (): IUseDocumentsPage => {
     fetchDocuments({
       page: targetPage,
       limit,
-      document,
+      name,
       comment,
     });
-  }, [fetchDocuments, limit, page, document, comment]);
+  }, [fetchDocuments, limit, page, name, comment]);
 
   return {
     isLoadingData,

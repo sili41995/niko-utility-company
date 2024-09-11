@@ -8,10 +8,10 @@ import { IUseDocumentsFilter } from '@/types/hooks.types';
 
 const useDocumentsFilter = (): IUseDocumentsFilter => {
   const { updateSearchParams } = useSetSearchParams();
-  const { comment, document } = useFilterSearchParams();
+  const { comment, name } = useFilterSearchParams();
   const documentInputRef = useRef<HTMLInputElement>(null);
   const commentInputRef = useRef<HTMLInputElement>(null);
-  const showClearDocumentFilterBtn = Boolean(document);
+  const showClearDocumentFilterBtn = Boolean(name);
   const showClearCommentFilterBtn = Boolean(comment);
 
   const onFilterChange = (e: InputChangeEvent): void => {
@@ -26,7 +26,7 @@ const useDocumentsFilter = (): IUseDocumentsFilter => {
     }
 
     makeBlur(e.currentTarget);
-    updateSearchParams({ key: SearchParamsKeys.document, value: '' });
+    updateSearchParams({ key: SearchParamsKeys.name, value: '' });
   };
 
   const clearCommentFilter = (e: BtnClickEvent) => {
@@ -40,7 +40,7 @@ const useDocumentsFilter = (): IUseDocumentsFilter => {
 
   return {
     onFilterChange,
-    document,
+    name,
     comment,
     documentInputRef,
     commentInputRef,

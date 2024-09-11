@@ -189,7 +189,7 @@ export interface IUseCalculatePrices {
 
 export interface IUseDocumentsFilter {
   onFilterChange: InputChangeFunc;
-  document: string;
+  name: string;
   comment: string;
   documentInputRef: RefObject<HTMLInputElement>;
   commentInputRef: RefObject<HTMLInputElement>;
@@ -254,7 +254,6 @@ export interface IUseSubscriberAccountsFilterSearchParams {
   house: string;
   apartment: string;
   comment: string;
-  document: string;
 }
 
 export interface IUseFindSubscriberAccountForm {

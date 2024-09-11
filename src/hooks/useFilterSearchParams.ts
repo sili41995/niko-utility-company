@@ -13,7 +13,6 @@ const useFilterSearchParams = (): IUseSubscriberAccountsFilterSearchParams => {
   const street = searchParams.get(SearchParamsKeys.street) ?? '';
   const house = searchParams.get(SearchParamsKeys.house) ?? '';
   const apartment = searchParams.get(SearchParamsKeys.apartment) ?? '';
-  const document = searchParams.get(SearchParamsKeys.document) ?? '';
   const comment = searchParams.get(SearchParamsKeys.comment) ?? '';
 
   return {
@@ -27,7 +26,6 @@ const useFilterSearchParams = (): IUseSubscriberAccountsFilterSearchParams => {
     house,
     apartment,
     comment,
-    document,
   };
 };
 

@@ -8,7 +8,6 @@ const enum SearchParamsKeys {
   house = 'house',
   apartment = 'apartment',
   comment = 'comment',
-  document = 'document',
   month = 'month',
 }
 
