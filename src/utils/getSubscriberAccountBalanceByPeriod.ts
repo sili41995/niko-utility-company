@@ -29,14 +29,14 @@ const getSubscriberAccountBalanceByPeriod = ({
     .reduce((acc, { price }) => acc + price, 0);
   const totalBenefits = payments
     .filter(
-      ({ periodId, paymentSource }) =>
-        periodId === period.id && paymentSource === PaymentSourceType.benefits
+      ({ periodId, paymentSource: { name } }) =>
+        periodId === period.id && name === PaymentSourceType.benefits
     )
     .reduce(amountIncrementFunc, 0);
   const totalPayments = payments
     .filter(
-      ({ periodId, paymentSource }) =>
-        periodId === period.id && paymentSource !== PaymentSourceType.benefits
+      ({ periodId, paymentSource: { name } }) =>
+        periodId === period.id && name !== PaymentSourceType.benefits
     )
     .reduce(amountIncrementFunc, 0);
   const startingBalance = balances

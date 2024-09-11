@@ -7,7 +7,7 @@ import {
 
 const convertStringsToPaymentsBank = ({
   data,
-  source,
+  name,
 }: IConvertStringsToPaymentsBankProps): Promise<PaymentsData> => {
   const promises = data.map(async (item): Promise<IPaymentData> => {
     const subscriberAccount =
@@ -16,7 +16,7 @@ const convertStringsToPaymentsBank = ({
     return {
       amount: Number(item[5]),
       date: new Date(item[6]),
-      source,
+      name,
       subscriberAccountId: subscriberAccount.id,
     };
   });

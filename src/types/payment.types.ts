@@ -1,4 +1,4 @@
-import { PaymentSourceType } from './paymentSource.types';
+import { IPaymentSource, PaymentSourceType } from './paymentSource.types';
 import { IPeriod } from './period.types';
 import { ISubscriberAccount } from './subscriberAccount.types';
 
@@ -14,7 +14,7 @@ export interface IPayment {
 export type Payments = IPayment[];
 
 export interface IFullPayment extends IPayment {
-  paymentSource: PaymentSourceType;
+  paymentSource: IPaymentSource;
   subscriberAccount: ISubscriberAccount;
   period: IPeriod;
 }
@@ -25,19 +25,19 @@ export type PaymentsDataFromCsv = string[][];
 
 export interface IPaymentData
   extends Pick<IPayment, 'amount' | 'date' | 'subscriberAccountId'> {
-  source: string;
+  name: PaymentSourceType;
 }
 
 export type PaymentsData = IPaymentData[];
 
-export interface IPaymentFormData extends Pick<IPaymentData, 'source'> {
+export interface IPaymentFormData extends Pick<IPaymentData, 'name'> {
   amount: string;
   date: string;
 }
 
 export interface IConvertStringsToPaymentsBankProps {
   data: PaymentsDataFromCsv;
-  source: PaymentSourceType;
+  name: PaymentSourceType;
 }
 
 export interface IGetNewPaymentDataProps {

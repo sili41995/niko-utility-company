@@ -1,12 +1,12 @@
 import { IPaymentFormData } from '@/types/payment.types';
 import { FieldErrors } from 'react-hook-form';
 import showAmountError from './showAmountError';
-import showSourceError from './showSourceError';
+import showPaymentSourceNameError from './showPaymentSourceNameError';
 import showPaymentDateError from './showPaymentDateError';
 
 const validatePaymentForm = (errors: FieldErrors<IPaymentFormData>): void => {
   showAmountError(errors);
-  showSourceError(errors);
+  showPaymentSourceNameError(errors);
   showPaymentDateError(errors);
 };
 

@@ -19,7 +19,7 @@ const convertStringsToPaymentsPostage = (
     return {
       amount: Number(item[6]),
       date: new Date(date),
-      source: PaymentSourceType.postage,
+      name: PaymentSourceType.postage,
       subscriberAccountId: subscriberAccount.id,
     };
   });

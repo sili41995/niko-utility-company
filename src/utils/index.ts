@@ -12,7 +12,6 @@ export { default as setModalFormBGColor } from './setModalFormBGColor';
 export { default as setModalFormBorderRadius } from './setModalFormBorderRadius';
 export { default as setNavSectionTitleWrapBGColor } from './setNavSectionTitleWrapBGColor';
 export { default as getNavSectionDesc } from './getNavSectionDesc';
-export { default as getPaymentSource } from './getPaymentSource';
 export { default as getSubscriberAccountAddress } from './getSubscriberAccountAddress';
 export { default as getSubscriberAccountInfo } from './getSubscriberAccountInfo';
 export { default as getPaymentSourcesSelectData } from './getPaymentSourcesSelectData';

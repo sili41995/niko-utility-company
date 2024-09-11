@@ -31,7 +31,7 @@ const AddPaymentForm: FC<IProps> = ({ subscriberAccount }) => {
         />
         <Select
           label='Спосіб оплати:'
-          settings={{ ...register('source', { required: true }) }}
+          settings={{ ...register('name', { required: true }) }}
           data={paymentSources}
           width={250}
         />

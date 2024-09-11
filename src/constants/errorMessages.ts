@@ -42,7 +42,7 @@ const enum ErrorMessages {
   streetIdReqErr = 'Поле Вулиця має бути заповнене',
   houseIdReqErr = 'Поле Будинок має бути заповнене',
   // payment
-  sourceReqErr = 'Поле Спосіб оплати має бути заповнене',
+  paymentSourceNameReqErr = 'Поле Спосіб оплати має бути заповнене',
   amountReqErr = 'Поле Сума оплати має бути заповнене',
   // price adjustment
   priceAdjustmentPriceReqErr = 'Поле Сума має бути заповнене',

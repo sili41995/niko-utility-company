@@ -13,7 +13,7 @@ import accountingService from '@/services/accounting.service';
 import { PaymentSourceType } from '@/types/paymentSource.types';
 
 const useUploadPaymentsBankFile = (
-  source: PaymentSourceType
+  name: PaymentSourceType
 ): IUseUploadPaymentsFile => {
   const [isUpload, setIsUpload] = useState<boolean>(false);
   const { file, onAttachFileInputChange, targetFileExtension, resetFile } =
@@ -26,7 +26,7 @@ const useUploadPaymentsBankFile = (
       const strings = await readPaymentsDataFromCsv(file);
       const payments = await convertStringsToPaymentsBank({
         data: strings,
-        source,
+        name,
       });
       await accountingService.addPayments(payments);
       toasts.successToast(Messages.addPaymentsSuccess);

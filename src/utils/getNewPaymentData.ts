@@ -4,12 +4,12 @@ const getNewPaymentData = ({
   data,
   id,
 }: IGetNewPaymentDataProps): IPaymentData => {
-  const { amount, date, source } = data;
+  const { amount, date, name } = data;
 
   return {
     amount: Number(amount),
     date: new Date(date),
-    source,
+    name,
     subscriberAccountId: id,
   };
 };

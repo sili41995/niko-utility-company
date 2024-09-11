@@ -12,5 +12,6 @@ export enum PaymentSourceType {
 }
 
 export interface IPaymentSource {
-  source: PaymentSourceType;
+  name: PaymentSourceType;
+  label: string;
 }
