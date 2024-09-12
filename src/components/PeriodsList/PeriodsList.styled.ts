@@ -3,6 +3,7 @@ import { IStyledProps } from './PeriodsList.types';
 
 export const Container = styled.div`
   position: absolute;
+  z-index: 10;
   top: 100%;
   right: 0;
   padding: ${({ theme }) => theme.spacing(5)};
@@ -40,4 +41,12 @@ export const RadioBtn = styled.input`
     color: ${({ theme }) => theme.colors.accent};
     cursor: pointer;
   }
+`;
+
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;

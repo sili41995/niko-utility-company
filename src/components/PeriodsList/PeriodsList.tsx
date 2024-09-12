@@ -2,6 +2,7 @@ import { selectPeriods } from '@/store/periods/selectors';
 import { usePeriodsStore } from '@/store/store';
 import { FC } from 'react';
 import {
+  Backdrop,
   Container,
   List,
   ListItem,
@@ -26,37 +27,44 @@ const PeriodsList: FC<IProps> = ({ setPeriodsListState }) => {
     setPeriodsListState();
   };
 
-  return (
-    <Container>
-      <List>
-        {periods.map((period) => {
-          const { start, isCurrentPeriod, id } = period;
-          const btnTitle = getPeriodDate(period);
-          const periodMonth = formatDate({
-            date: start,
-            dateFormat: DateFormats.monthNumber,
-          });
-          const periodValue = isCurrentPeriod ? '' : periodMonth;
-          const isTargetPeriod = targetMonth === periodValue;
+  const onBackdropClick = () => {
+    setPeriodsListState();
+  };
 
-          return (
-            <ListItem key={id}>
-              <RadioBtnLabel>
-                <RadioBtn
-                  type='radio'
-                  name={SearchParamsKeys.month}
-                  value={periodValue}
-                  onChange={onPeriodChange}
-                />
-                <RadioBtnTitle isTargetPeriod={isTargetPeriod}>
-                  {btnTitle}
-                </RadioBtnTitle>
-              </RadioBtnLabel>
-            </ListItem>
-          );
-        })}
-      </List>
-    </Container>
+  return (
+    <>
+      <Container>
+        <List>
+          {periods.map((period) => {
+            const { start, isCurrentPeriod, id } = period;
+            const btnTitle = getPeriodDate(period);
+            const periodMonth = formatDate({
+              date: start,
+              dateFormat: DateFormats.monthNumber,
+            });
+            const periodValue = isCurrentPeriod ? '' : periodMonth;
+            const isTargetPeriod = targetMonth === periodValue;
+
+            return (
+              <ListItem key={id}>
+                <RadioBtnLabel>
+                  <RadioBtn
+                    type='radio'
+                    name={SearchParamsKeys.month}
+                    value={periodValue}
+                    onChange={onPeriodChange}
+                  />
+                  <RadioBtnTitle isTargetPeriod={isTargetPeriod}>
+                    {btnTitle}
+                  </RadioBtnTitle>
+                </RadioBtnLabel>
+              </ListItem>
+            );
+          })}
+        </List>
+      </Container>
+      <Backdrop onClick={onBackdropClick}></Backdrop>
+    </>
   );
 };
 

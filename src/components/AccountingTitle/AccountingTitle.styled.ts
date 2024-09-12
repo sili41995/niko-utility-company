@@ -12,6 +12,8 @@ export const PeriodsListWrap = styled.div`
 `;
 
 export const ShowPeriodsListBtn = styled.button<IStyledProps>`
+  position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
